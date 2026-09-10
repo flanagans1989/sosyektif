@@ -1,0 +1,31 @@
+name: Günlük Rapor
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # her gün 06:00 UTC (TR saatiyle 09:00)
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  daily-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: agents/package-lock.json
+
+      - working-directory: agents
+        run: npm ci
+
+      - working-directory: agents
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+        run: npm run daily-report

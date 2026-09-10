@@ -1,0 +1,62 @@
+name: İçerik Pipeline'ı
+
+on:
+  schedule:
+    # Günde 6 kez, tam saatler yerine :17'de (yoğunlukta gecikmeyi azaltmak için, PLAN.md R11)
+    - cron: "17 3,7,11,15,19,23 * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: sosyektif-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Repo'yu çek
+        uses: actions/checkout@v4
+
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: agents/package-lock.json
+
+      - name: Bağımlılıkları kur
+        working-directory: agents
+        run: npm ci
+
+      - name: Pipeline'ı çalıştır
+        working-directory: agents
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+          TELEGRAM_PUBLIC_CHANNEL_ID: ${{ secrets.TELEGRAM_PUBLIC_CHANNEL_ID }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+        run: npm run pipeline
+
+      - name: Değişiklikleri commit'le ve gönder
+        run: |
+          git config user.name "sosyektif-bot"
+          git config user.email "deraksizolasyon@gmail.com"
+          git add data/ site/src/content/posts/ site/public/images/posts/
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok, commit atlanıyor."
+          else
+            git commit -m "Otomatik içerik güncellemesi ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            git push
+          fi

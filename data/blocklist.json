@@ -1,0 +1,20 @@
+{
+  "konular": [
+    "siyaset", "seçim", "parti", "cumhurbaşkanı", "milletvekili", "bakan", "başbakan",
+    "vali", "belediye başkanı", "akp", "chp", "mhp", "iyi parti", "dem parti",
+    "cinayet", "tecavüz", "hırsızlık", "dolandırıcılık", "tutuklama", "gözaltı", "suç örgütü",
+    "saldırdı", "saldırı", "silahlı", "bıçaklı", "yaralandı", "ağır yaralı",
+    "deprem", "sel", "yangın felaketi", "ölüm", "öldü", "ölü", "cenaze", "kaza",
+    "yatırım tavsiyesi", "borsa tavsiyesi", "kripto para tavsiyesi", "hisse önerisi",
+    "tedavi öner", "ilaç öner", "diyet öner",
+    "çocuk istismarı", "cinsel içerik", "pornografi", "tehdit"
+  ],
+  "kelimeler": [
+    "terör", "işkence", "katliam", "intihar", "gazeteciye"
+  ],
+  "navigasyonKelimeleri": [
+    "canlı izle", "canlı yayın", "giriş sayfası", "şifre", "maç sonucu",
+    "bilet fiyat", "kur çevirici", "hava durumu", "loto sonuç", "iddaa sonuç",
+    "sınav sonucu", "e-devlet"
+  ]
+}

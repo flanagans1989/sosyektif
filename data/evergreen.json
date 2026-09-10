@@ -1,0 +1,20 @@
+[
+  { "baslik": "Ahtapot", "kategori": "bilim", "formatOnerisi": "trivia", "kullanildi": false },
+  { "baslik": "Uzay", "kategori": "bilim", "formatOnerisi": "liste", "kullanildi": false },
+  { "baslik": "Beyin", "kategori": "bilim", "formatOnerisi": "trivia", "kullanildi": false },
+  { "baslik": "DNA", "kategori": "bilim", "formatOnerisi": "trivia", "kullanildi": false },
+  { "baslik": "Yapay zeka", "kategori": "teknoloji", "formatOnerisi": "liste", "kullanildi": false },
+  { "baslik": "İnternetin tarihi", "kategori": "teknoloji", "formatOnerisi": "trivia", "kullanildi": false },
+  { "baslik": "Video oyunlarının tarihi", "kategori": "teknoloji", "formatOnerisi": "liste", "kullanildi": false },
+  { "baslik": "Olimpiyat Oyunları", "kategori": "spor", "formatOnerisi": "trivia", "kullanildi": false },
+  { "baslik": "Futbolun tarihi", "kategori": "spor", "formatOnerisi": "liste", "kullanildi": false },
+  { "baslik": "Piramitler", "kategori": "tarih", "formatOnerisi": "liste", "kullanildi": false },
+  { "baslik": "İpek Yolu", "kategori": "tarih", "formatOnerisi": "trivia", "kullanildi": false },
+  { "baslik": "Roma İmparatorluğu", "kategori": "tarih", "formatOnerisi": "quiz", "kullanildi": false },
+  { "baslik": "Kahve", "kategori": "yasam", "formatOnerisi": "trivia", "kullanildi": false },
+  { "baslik": "Uyku", "kategori": "yasam", "formatOnerisi": "liste", "kullanildi": false },
+  { "baslik": "Studio Ghibli", "kategori": "pop-kultur", "formatOnerisi": "quiz", "kullanildi": false },
+  { "baslik": "Sinemanın tarihi", "kategori": "pop-kultur", "formatOnerisi": "liste", "kullanildi": false },
+  { "baslik": "Karnaval", "kategori": "eglence", "formatOnerisi": "trivia", "kullanildi": false },
+  { "baslik": "Bulmaca", "kategori": "eglence", "formatOnerisi": "liste", "kullanildi": false }
+]
