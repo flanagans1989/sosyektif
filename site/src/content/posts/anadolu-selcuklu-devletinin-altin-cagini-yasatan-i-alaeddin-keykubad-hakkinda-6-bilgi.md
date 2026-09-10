@@ -33,7 +33,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Kayqubad I
     url: https://en.wikipedia.org/wiki/Kayqubad_I
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Eser Tokas on Pexels
 moderasyon:
   skor: 1
