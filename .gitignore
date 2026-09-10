@@ -1,0 +1,23 @@
+# Sırlar / kişisel dosyalar — asla commit edilmez
+abonelikler ve şifreler.txt
+*.env
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+dist/
+.astro/
+
+# Ajan durum/log dosyaları (çalışma zamanında üretilir)
+agents/dist/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
