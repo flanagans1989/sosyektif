@@ -66,16 +66,23 @@ Detaylı tasarım kararları ve riskler için repo kökündeki `PLAN.md`'ye bak.
 
 ## Onay akışı (Faz 1b/1c)
 
-Moderasyon skoruna göre üç durum:
+Her aday için zincir: sınıflandırma (konu odağı) → Vikipedi TR+EN kaynağı →
+taslak → moderasyon → gerekirse denetçi notlarıyla **1 revizyon turu** →
+görsel → yayın/onay.
 
-- **Skor ≥ `otomatikYayinEsigi`** (varsayılan 0.85): içerik `taslak: false`
-  olarak yazılır, otomatik yayınlanır, Telegram'a bilgi mesajı gider.
-- **`onayaDusEsigi` ≤ skor < `otomatikYayinEsigi`** (varsayılan 0.6-0.85):
-  içerik `taslak: true` olarak yazılır (siteye çıkmaz), Telegram'a onay
-  bildirimi gider. Onaylamak için dosyada `taslak: false` yapıp commit
-  etmen yeterli.
-- **Skor < `onayaDusEsigi`**: dosya yine de `taslak: true` yazılır ama
-  admin'i meşgul eden bir bildirim gitmez (istersen `data/published-index.json`'dan
-  takip edebilirsin).
+Moderasyon skoru = (0.6·doğruluk + 0.4·okur değeri) × (0.6 + 0.4·yapı).
+Doğruluk ve değer hakem modelden (1-5), yapı deterministik kontrollerden gelir.
 
-Eşikleri `data/config.json`'dan ayarlayabilirsin.
+- **Sert red** (kara liste, tekrar konu, hassas içerik): revizyon denenmez,
+  konu 7 gün tekrar denenmez (`data/rejected-topics.json`).
+- **Skor ≥ `otomatikYayinEsigi`** (0.8) ve `provaModu: false`: `taslak: false`
+  yazılır, siteye çıkar, Telegram/Bluesky'de paylaşılır.
+- **`onayaDusEsigi` ≤ skor** (0.55) ya da prova modu açık: `taslak: true`
+  yazılır (siteye çıkmaz); Telegram'a madde başlıkları, puanlar, denetçi notları
+  ve GitHub düzenleme linkiyle onay bildirimi gider. Onaylamak için dosyada
+  `taslak: false` yapıp kaydetmen yeterli.
+- **Skor < `onayaDusEsigi`**: yazılmaz, konu 7 gün tekrar denenmez.
+
+`provaModu: true` iken skor ne olursa olsun hiçbir şey otomatik yayınlanmaz.
+Onayladığın içeriklerin kalitesinden emin olunca `data/config.json`'da
+`provaModu: false` yap.

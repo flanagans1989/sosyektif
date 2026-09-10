@@ -102,15 +102,25 @@ export type TrendCandidate = z.infer<typeof trendCandidateSchema>;
 
 /** Moderasyon Ajanı'nın kararı. */
 export const moderationResultSchema = z.object({
+  /** Skor onay eşiğini geçti mi (en az onay kuyruğuna girebilir mi). */
   gecti: z.boolean(),
+  /** Düzeltilemez red (kara liste, tekrar, hassas) — revizyon denenmez. */
+  sertRed: z.boolean(),
   skor: z.number().min(0).max(1),
   otomatikYayinaUygun: z.boolean(),
   redSebebi: z.string().optional(),
+  /** Yazara geri gönderilecek düzeltme talimatları (revizyon turu için). */
+  duzeltmeNotlari: z.string().optional(),
   detaylar: z.object({
     karaListeIhlali: z.boolean(),
     benzerlikSkoru: z.number().min(0).max(1),
-    hakemOnayi: z.boolean().nullable(),
-    hakemNotu: z.string().optional(),
+    hakemCalisti: z.boolean(),
+    dogrulukPuani: z.number().nullable(),
+    degerPuani: z.number().nullable(),
+    celiskiVarMi: z.boolean().nullable(),
+    baslikYaniltici: z.boolean().nullable(),
+    dayanaksizIddialar: z.array(z.string()),
+    hakemProvider: z.string().optional(),
     tekrarMi: z.boolean(),
   }),
 });

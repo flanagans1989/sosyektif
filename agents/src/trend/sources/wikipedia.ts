@@ -23,8 +23,7 @@ function isOzelSayfa(article: string): boolean {
 
 /**
  * Wikimedia Pageviews API — resmi, ücretsiz, auth gerektirmez.
- * Dünün en çok okunan TR Wikipedia maddelerini döner (bugünün verisi
- * henüz hazır olmadığı için bir gün öncesi kullanılır).
+ * En çok okunan TR Wikipedia maddelerini döner.
  *
  * Not: Sonuçlar arasında "Özel:Ara" gibi navigasyon sayfaları ve +18
  * film/dizi maddeleri çıkabilir (PLAN.md R6) — filtreleme Trend
@@ -32,22 +31,36 @@ function isOzelSayfa(article: string): boolean {
  * bariz sistem sayfaları elenir.
  */
 export async function fetchWikipediaTrending(): Promise<TrendCandidate[]> {
-  const dun = new Date();
-  dun.setDate(dun.getDate() - 1);
-  const yil = dun.getFullYear();
-  const ay = String(dun.getMonth() + 1).padStart(2, "0");
-  const gun = String(dun.getDate()).padStart(2, "0");
+  // Wikimedia'nın günlük top-pageviews verisi bazen "dün" için henüz hazır
+  // olmuyor (gördüğümüz gerçek hata: dün için 404). Veri genelde 1-2 gün
+  // gecikmeli yayınlanıyor, bu yüzden 1'den 3 güne kadar geriye doğru
+  // dener, ilk başarılı olanı kullanır.
+  let sonHata: unknown;
+  for (let gunOncesi = 1; gunOncesi <= 3; gunOncesi++) {
+    const tarih = new Date();
+    tarih.setDate(tarih.getDate() - gunOncesi);
+    const yil = tarih.getFullYear();
+    const ay = String(tarih.getMonth() + 1).padStart(2, "0");
+    const gun = String(tarih.getDate()).padStart(2, "0");
 
-  const url = `https://wikimedia.org/api/rest_v1/metrics/pageviews/top/tr.wikipedia/all-access/${yil}/${ay}/${gun}`;
-  const res = await fetch(url, {
-    headers: { "User-Agent": "sosyektif-bot/0.1 (https://sosyektif.com)" },
-  });
-
-  if (!res.ok) {
-    throw new Error(`wikipedia pageviews ${res.status}`);
+    const url = `https://wikimedia.org/api/rest_v1/metrics/pageviews/top/tr.wikipedia/all-access/${yil}/${ay}/${gun}`;
+    try {
+      const res = await fetch(url, {
+        headers: { "User-Agent": "sosyektif-bot/0.1 (https://sosyektif.com)" },
+      });
+      if (!res.ok) {
+        sonHata = new Error(`wikipedia pageviews ${res.status} (${yil}-${ay}-${gun})`);
+        continue;
+      }
+      return parseWikipediaTrending((await res.json()) as WikimediaPageviewsResponse);
+    } catch (err) {
+      sonHata = err;
+    }
   }
+  throw sonHata ?? new Error("wikipedia pageviews: bilinmeyen hata");
+}
 
-  const data = (await res.json()) as WikimediaPageviewsResponse;
+function parseWikipediaTrending(data: WikimediaPageviewsResponse): TrendCandidate[] {
   const articles = data.items[0]?.articles ?? [];
   const maxViews = Math.max(...articles.map((a) => a.views), 1);
 

@@ -1,7 +1,8 @@
 import { z } from "zod";
 import { chatComplete, type ProviderName } from "../lib/llmRouter.js";
+import { parseJsonLoose } from "../lib/json.js";
 import { slugify } from "../lib/slug.js";
-import { gatherSourceFor, type GatheredSource } from "./sourceGathering.js";
+import type { GatheredSource } from "./sourceGathering.js";
 import {
   SINIFLANDIRMA_SISTEM_PROMPTU,
   siniflandirmaKullaniciPromptu,
@@ -11,162 +12,195 @@ import {
 import {
   kategoriSchema,
   formatSchema,
+  type Format,
+  type Kategori,
   type PostDraft,
   type Post,
+  type QuizSoru,
 } from "../lib/schemas.js";
 
+// ---------------------------------------------------------------------------
+// Sınıflandırma
+// ---------------------------------------------------------------------------
 const siniflandirmaSchema = z.object({
-  degerliMi: z.boolean(),
-  hassasiyetVar: z.boolean(),
-  kategori: kategoriSchema,
-  formatOnerisi: formatSchema,
-  gerekce: z.string(),
+  uygun: z.boolean(),
+  redSebebi: z.string().nullable().optional(),
+  konuOdagi: z.string().default(""),
+  aci: z.string().default(""),
+  kategori: kategoriSchema.catch("yasam"),
+  formatOnerisi: formatSchema.catch("liste"),
+  kisiMi: z.boolean().catch(true),
 });
-export type Siniflandirma = z.infer<typeof siniflandirmaSchema>;
 
-/** JSON çıktısını ayrıştırır; model bazen kod bloğu (```json) ile sarabiliyor. */
-function parseJsonLoose<T>(text: string, schema: z.ZodType<T>): T {
-  const temizlenmis = text.replace(/^```json\s*/i, "").replace(/```\s*$/, "").trim();
-  return schema.parse(JSON.parse(temizlenmis));
+export interface Siniflandirma {
+  konuOdagi: string;
+  aci: string;
+  kategori: Kategori;
+  formatOnerisi: Format;
+  /** Kişi konularında stok fotoğraf aranmaz (kişilik hakkı / Pexels lisansı, PLAN.md R10). */
+  kisiMi: boolean;
 }
 
 export interface TopicClassificationResult {
   uygun: boolean;
-  siniflandirma?: Siniflandirma;
   sebep?: string;
+  /** LLM'e ulaşılamadıysa dolu olur — geçici hata, konu kalıcı olarak reddedilmemeli. */
+  hata?: string;
+  siniflandirma?: Siniflandirma;
   provider?: ProviderName;
 }
 
-/** Trend Ajanı'nın bulduğu bir konunun içerik üretimine uygun olup olmadığına karar verir. */
-export async function classifyTopic(baslik: string): Promise<TopicClassificationResult> {
+/**
+ * Gündem başlığının içerik üretimine uygun olup olmadığına karar verir ve
+ * uygunsa Vikipedi'de aranabilecek zamansız bir konu odağı çıkarır.
+ */
+export async function classifyTopic(
+  baslik: string,
+  kaynakTuru: string
+): Promise<TopicClassificationResult> {
   try {
     const { text, provider } = await chatComplete({
       systemPrompt: SINIFLANDIRMA_SISTEM_PROMPTU,
-      userPrompt: siniflandirmaKullaniciPromptu(baslik),
+      userPrompt: siniflandirmaKullaniciPromptu(baslik, kaynakTuru),
       jsonMode: true,
       temperature: 0.2,
     });
-    const siniflandirma = parseJsonLoose(text, siniflandirmaSchema);
-
-    if (siniflandirma.hassasiyetVar) {
-      return { uygun: false, siniflandirma, sebep: "hassas konu", provider };
+    const s = parseJsonLoose(text, siniflandirmaSchema);
+    if (!s.uygun) {
+      return { uygun: false, sebep: s.redSebebi ?? "uygun bulunmadı", provider };
     }
-    if (!siniflandirma.degerliMi) {
-      return { uygun: false, siniflandirma, sebep: "değer katmıyor", provider };
-    }
-    return { uygun: true, siniflandirma, provider };
-  } catch (err) {
     return {
-      uygun: false,
-      sebep: `sınıflandırma hatası: ${err instanceof Error ? err.message : err}`,
+      uygun: true,
+      provider,
+      siniflandirma: {
+        konuOdagi: s.konuOdagi.trim() || baslik,
+        aci: s.aci.trim(),
+        kategori: s.kategori,
+        formatOnerisi: s.formatOnerisi,
+        kisiMi: s.kisiMi,
+      },
     };
+  } catch (err) {
+    return { uygun: false, hata: err instanceof Error ? err.message : String(err) };
   }
 }
 
-const listeMaddesiUretimSchema = z.object({
-  baslik: z.string(),
-  metin: z.string(),
-});
-
-const quizSorusuUretimSchema = z.object({
-  soru: z.string(),
-  secenekler: z.array(z.string()).min(2).max(6),
-  dogruIndex: z.number().int().min(0),
-  aciklama: z.string().optional(),
-});
-
+// ---------------------------------------------------------------------------
+// İçerik üretimi
+// ---------------------------------------------------------------------------
 const icerikUretimSchema = z.object({
-  baslik: z.string(),
-  seoBaslik: z.string(),
-  metaAciklama: z.string(),
-  girisParagrafi: z.string(),
-  etiketler: z.array(z.string()).default([]),
-  listeMaddeleri: z.array(listeMaddesiUretimSchema).optional(),
-  quizSorulari: z.array(quizSorusuUretimSchema).optional(),
+  baslik: z.string().min(5),
+  seoBaslik: z.string().default(""),
+  metaAciklama: z.string().default(""),
+  girisParagrafi: z.string().default(""),
+  etiketler: z.array(z.string()).catch([]),
+  listeMaddeleri: z.array(z.object({ baslik: z.string(), metin: z.string() })).optional(),
+  quizSorulari: z
+    .array(
+      z.object({
+        soru: z.string(),
+        secenekler: z.array(z.string()),
+        dogruIndex: z.coerce.number().int(),
+        aciklama: z.string().optional(),
+      })
+    )
+    .optional(),
 });
 
 export interface ContentGenerationResult {
   basarili: boolean;
   draft?: PostDraft;
-  kaynak?: GatheredSource;
   uretenProvider?: ProviderName;
   sebep?: string;
 }
 
+function kirp(metin: string, max: number): string {
+  const temiz = metin.trim();
+  if (temiz.length <= max) return temiz;
+  const kesit = temiz.slice(0, max - 1);
+  const bosluk = kesit.lastIndexOf(" ");
+  return `${bosluk > max * 0.6 ? kesit.slice(0, bosluk) : kesit}…`;
+}
+
+/** Şemanın kabul ettiği şekle getirir: 2-6 şık, geçerli doğru cevap indeksi. */
+function quizNormalize(sorular: z.infer<typeof icerikUretimSchema>["quizSorulari"]): QuizSoru[] {
+  return (sorular ?? [])
+    .map((s) => ({ ...s, secenekler: s.secenekler.slice(0, 6) }))
+    .filter((s) => s.secenekler.length >= 2 && s.dogruIndex >= 0 && s.dogruIndex < s.secenekler.length);
+}
+
 /**
- * Bir konu için tam içerik taslağı üretir: önce Wikipedia'dan kaynak metni
- * toplar (bulunamazsa üretim yapılmaz — kaynaksız içerik yok, PLAN.md R2),
- * sonra LLM'e SADECE bu kaynağa dayanarak yazdırır.
+ * Önceden toplanmış kaynağa dayanarak içerik taslağı üretir. Madde sayısı
+ * gibi yapısal eksiklerde taslağı reddetmez — onları Moderasyon Ajanı puanlar
+ * ve gerekirse revizyon notuyla yeniden yazdırır. Yalnızca hiç kullanılabilir
+ * içerik çıkmazsa başarısız döner.
  */
 export async function generateContentDraft(params: {
-  konuBasligi: string;
-  kategori: Siniflandirma["kategori"];
-  format: Siniflandirma["formatOnerisi"];
+  konu: string;
+  aci: string;
+  kategori: Kategori;
+  format: Format;
+  kaynak: GatheredSource;
+  revizyonNotlari?: string;
 }): Promise<ContentGenerationResult> {
-  const kaynak = await gatherSourceFor(params.konuBasligi);
-  if (!kaynak) {
-    return { basarili: false, sebep: "Wikipedia'da yeterli kaynak metni bulunamadı" };
+  const { konu, aci, kategori, kaynak, revizyonNotlari } = params;
+
+  // Kısa kaynakla 7-10 maddelik liste zorlamak dolgu ve uydurmaya iter.
+  const format: Format =
+    params.format === "liste" && kaynak.metin.length < 1500 ? "trivia" : params.format;
+
+  let sonHata = "";
+  for (const sicaklik of [0.8, 0.5]) {
+    try {
+      const { text, provider } = await chatComplete({
+        systemPrompt: ICERIK_URETIM_SISTEM_PROMPTU,
+        userPrompt: icerikUretimKullaniciPromptu({
+          konu,
+          aci,
+          kategori,
+          format,
+          kaynakMetni: kaynak.metin,
+          revizyonNotlari,
+        }),
+        jsonMode: true,
+        temperature: sicaklik,
+      });
+      const u = parseJsonLoose(text, icerikUretimSchema);
+
+      const listeMaddeleri = format === "quiz" ? undefined : u.listeMaddeleri?.filter((m) => m.baslik && m.metin);
+      const quizSorulari = format === "quiz" ? quizNormalize(u.quizSorulari) : undefined;
+      const maddeSayisi = format === "quiz" ? quizSorulari?.length ?? 0 : listeMaddeleri?.length ?? 0;
+      if (maddeSayisi === 0) {
+        sonHata = "kullanılabilir madde/soru üretilmedi";
+        continue;
+      }
+
+      const baslik = u.baslik.trim();
+      const frontmatter: Post = {
+        baslik,
+        seoBaslik: kirp(u.seoBaslik || baslik, 70),
+        metaAciklama: kirp(u.metaAciklama || u.girisParagrafi || baslik, 160),
+        format,
+        kategori,
+        etiketler: u.etiketler.slice(0, 5),
+        yayinTarihi: new Date(),
+        kapakGorseli: "", // Görsel Ajanı doldurur
+        kapakGorselAlt: baslik,
+        listeMaddeleri,
+        quizSorulari,
+        kaynaklar: kaynak.kaynaklar,
+        taslak: true, // yayın kararı pipeline'da verilir
+      };
+
+      return {
+        basarili: true,
+        uretenProvider: provider,
+        draft: { frontmatter, govdeMarkdown: u.girisParagrafi, slug: slugify(baslik) },
+      };
+    } catch (err) {
+      sonHata = err instanceof Error ? err.message : String(err);
+    }
   }
 
-  let sonMetin = "";
-  try {
-    const { text, provider } = await chatComplete({
-      systemPrompt: ICERIK_URETIM_SISTEM_PROMPTU,
-      userPrompt: icerikUretimKullaniciPromptu({
-        konuBasligi: params.konuBasligi,
-        kaynakMetni: kaynak.ozetMetni,
-        kaynakUrl: kaynak.url,
-        format: params.format,
-        kategori: params.kategori,
-      }),
-      jsonMode: true,
-      temperature: 0.8,
-    });
-    sonMetin = text;
-    const uretim = parseJsonLoose(text, icerikUretimSchema);
-
-    if (params.format === "quiz" && (!uretim.quizSorulari || uretim.quizSorulari.length < 2)) {
-      return { basarili: false, kaynak, sebep: "quiz için yetersiz soru üretildi" };
-    }
-    if (params.format !== "quiz" && (!uretim.listeMaddeleri || uretim.listeMaddeleri.length < 2)) {
-      return { basarili: false, kaynak, sebep: "liste/trivia için yetersiz madde üretildi" };
-    }
-
-    const slug = slugify(uretim.baslik);
-    const frontmatter: Post = {
-      baslik: uretim.baslik,
-      seoBaslik: uretim.seoBaslik.slice(0, 70),
-      metaAciklama: uretim.metaAciklama.slice(0, 160),
-      format: params.format,
-      kategori: params.kategori,
-      etiketler: uretim.etiketler ?? [],
-      yayinTarihi: new Date(),
-      kapakGorseli: "", // Görsel Ajanı doldurur
-      kapakGorselAlt: uretim.baslik,
-      listeMaddeleri: uretim.listeMaddeleri,
-      quizSorulari: uretim.quizSorulari,
-      kaynaklar: [
-        {
-          baslik: `Wikipedia — ${kaynak.baslik}`,
-          url: kaynak.url,
-          atif: "CC BY-SA 4.0",
-        },
-      ],
-      taslak: true, // Moderasyon geçene kadar taslak kalır
-    };
-
-    const draft: PostDraft = {
-      frontmatter,
-      govdeMarkdown: uretim.girisParagrafi,
-      slug,
-    };
-
-    return { basarili: true, draft, kaynak, uretenProvider: provider };
-  } catch (err) {
-    return {
-      basarili: false,
-      kaynak,
-      sebep: `içerik üretim hatası: ${err instanceof Error ? err.message : err} (ham yanıt: ${sonMetin.slice(0, 200)})`,
-    };
-  }
+  return { basarili: false, sebep: `içerik üretilemedi: ${sonHata.slice(0, 300)}` };
 }

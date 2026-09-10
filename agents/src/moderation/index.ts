@@ -1,68 +1,98 @@
 import { z } from "zod";
 import { checkBlocklist } from "../lib/blocklist.js";
 import { ngramOverlapScore } from "../lib/similarity.js";
-import { konuDahaOnceIslendiMi } from "../lib/state.js";
+import { konuDahaOnceIslendiMi, type Config } from "../lib/state.js";
 import { chatCompleteExcluding, type ProviderName } from "../lib/llmRouter.js";
+import { parseJsonLoose } from "../lib/json.js";
 import { HAKEM_SISTEM_PROMPTU, hakemKullaniciPromptu } from "../content/prompts.js";
 import type { PostDraft, ModerationResult } from "../lib/schemas.js";
-import type { Config } from "../lib/state.js";
 
-const hakemYanitSchema = z.object({
-  kaynaklaTutarliMi: z.boolean(),
-  yaniltciBaslikMi: z.boolean(),
-  degerKatiyorMu: z.boolean(),
-  notlar: z.string(),
+/**
+ * Moderasyon iki tür sorunu ayırır:
+ *  - SERT RED: kara liste, tekrar konu, hassas içerik → düzeltilemez, konu atlanır.
+ *  - YUMUŞAK SORUN: dayanaksız detay, başlık-madde uyumsuzluğu, kaynağa fazla
+ *    benzerlik, kısa maddeler, düşük okur değeri → puanı düşürür ve yazara
+ *    düzeltme notu olarak geri gönderilir (pipeline bir revizyon turu yapar).
+ *
+ * Skor = (0.6·doğruluk + 0.4·değer) × (0.6 + 0.4·yapı). Böylece doğru ve
+ * düzgün bir içerik ~0.8+ alır; ciddi hata/çelişki onay eşiğinin altına iner.
+ */
+
+const hakemSchema = z.object({
+  dayanaksizIddialar: z.array(z.string()).catch([]),
+  celiskiVarMi: z.boolean().catch(false),
+  baslikYaniltici: z.boolean().catch(false),
+  hassasIcerik: z.boolean().catch(false),
+  dogrulukPuani: z.coerce.number().min(1).max(5),
+  degerPuani: z.coerce.number().min(1).max(5),
+  duzeltmeNotlari: z.string().catch(""),
 });
+type HakemYaniti = z.infer<typeof hakemSchema>;
 
+const BENZERLIK_ESIGI = 0.5;
+
+function maddeler(draft: PostDraft): { baslik: string; metin: string }[] {
+  const fm = draft.frontmatter;
+  if (fm.format === "quiz") {
+    return (fm.quizSorulari ?? []).map((s) => ({ baslik: s.soru, metin: s.aciklama ?? "" }));
+  }
+  return fm.listeMaddeleri ?? [];
+}
+
+/** Hakeme ve benzerlik kontrolüne verilen düz metin. */
 function draftToPlainText(draft: PostDraft): string {
-  const parcalar = [draft.frontmatter.baslik, draft.govdeMarkdown];
-  for (const madde of draft.frontmatter.listeMaddeleri ?? []) {
-    parcalar.push(madde.baslik, madde.metin);
+  const fm = draft.frontmatter;
+  const satirlar = [`BAŞLIK: ${fm.baslik}`, `GİRİŞ: ${draft.govdeMarkdown}`];
+  if (fm.format === "quiz") {
+    (fm.quizSorulari ?? []).forEach((s, i) => {
+      satirlar.push(
+        `${i + 1}. SORU: ${s.soru}\n   ŞIKLAR: ${s.secenekler.join(" | ")}\n   DOĞRU: ${s.secenekler[s.dogruIndex] ?? "?"}\n   AÇIKLAMA: ${s.aciklama ?? ""}`
+      );
+    });
+  } else {
+    (fm.listeMaddeleri ?? []).forEach((m, i) => satirlar.push(`${i + 1}. ${m.baslik}\n   ${m.metin}`));
   }
-  for (const soru of draft.frontmatter.quizSorulari ?? []) {
-    parcalar.push(soru.soru, ...soru.secenekler, soru.aciklama ?? "");
-  }
-  return parcalar.join("\n");
+  return satirlar.join("\n");
 }
 
-function parseJsonLoose<T>(text: string, schema: z.ZodType<T>): T {
-  const temizlenmis = text.replace(/^```json\s*/i, "").replace(/```\s*$/, "").trim();
-  return schema.parse(JSON.parse(temizlenmis));
-}
-
-/** Basit yapısal kalite kontrolleri (uzunluk, madde sayısı, quiz tutarlılığı). */
-function qualityHeuristics(draft: PostDraft): { skor: number; notlar: string[] } {
+/** Ucuz, deterministik yapı kontrolleri → 0..1 puan + yazara notlar. */
+function yapiKontrolu(draft: PostDraft): { skor: number; notlar: string[] } {
+  const fm = draft.frontmatter;
   const notlar: string[] = [];
   let skor = 1;
+  const liste = maddeler(draft);
+  const n = liste.length;
+  const min = fm.format === "liste" ? 5 : fm.format === "trivia" ? 3 : 4;
+  const birim = fm.format === "quiz" ? "soru" : "madde";
 
-  if (draft.frontmatter.baslik.length < 10) {
-    skor -= 0.3;
-    notlar.push("başlık çok kısa");
+  if (n < min) {
+    skor -= 0.4;
+    notlar.push(`En az ${min} ${birim} olmalı (şu an ${n}).`);
   }
 
-  if (draft.frontmatter.format === "quiz") {
-    const sorular = draft.frontmatter.quizSorulari ?? [];
-    if (sorular.length < 3) {
-      skor -= 0.3;
-      notlar.push("3'ten az quiz sorusu");
+  const sayi = fm.baslik.match(/(?<![\p{L}\p{N}])(\d{1,2})(?![\p{L}\p{N}])/u);
+  if (sayi && Number(sayi[1]) !== n) {
+    skor -= 0.3;
+    notlar.push(`Başlıktaki sayı (${sayi[1]}) ile ${birim} sayısı (${n}) aynı olmalı.`);
+  }
+
+  if (fm.format !== "quiz") {
+    const kisalar = liste.filter((m) => m.metin.trim().length < 60).length;
+    if (kisalar > 0) {
+      skor -= Math.min(0.3, kisalar * 0.1);
+      notlar.push(`${kisalar} maddenin metni çok kısa; her maddeyi 2-4 cümleye çıkar.`);
     }
-    for (const soru of sorular) {
-      if (soru.dogruIndex >= soru.secenekler.length) {
-        skor -= 0.5;
-        notlar.push("quiz doğru cevap indexi geçersiz");
-      }
-    }
-  } else {
-    const maddeler = draft.frontmatter.listeMaddeleri ?? [];
-    const minMadde = draft.frontmatter.format === "liste" ? 5 : 3;
-    if (maddeler.length < minMadde) {
-      skor -= 0.3;
-      notlar.push(`${minMadde}'ten az madde`);
-    }
-    if (maddeler.some((m) => m.metin.length < 20)) {
-      skor -= 0.2;
-      notlar.push("bazı madde metinleri çok kısa");
-    }
+  }
+
+  const benzersiz = new Set(liste.map((m) => m.baslik.toLocaleLowerCase("tr").trim()));
+  if (benzersiz.size < n) {
+    skor -= 0.2;
+    notlar.push("Tekrarlanan madde başlıkları var; her madde farklı bir bilgi vermeli.");
+  }
+
+  if (draft.govdeMarkdown.trim().length < 40) {
+    skor -= 0.1;
+    notlar.push("Giriş paragrafı çok kısa; 2-3 cümlelik bir kanca yaz.");
   }
 
   return { skor: Math.max(0, skor), notlar };
@@ -71,102 +101,136 @@ function qualityHeuristics(draft: PostDraft): { skor: number; notlar: string[] }
 export interface ModerateParams {
   draft: PostDraft;
   kaynakMetni: string;
+  /** Tekrar kontrolü için sınıflandırmanın bulduğu konu odağı. */
+  konuOdagi: string;
   uretenProvider: ProviderName;
   config: Config;
 }
 
 export async function moderateDraft(params: ModerateParams): Promise<ModerationResult> {
-  const { draft, kaynakMetni, uretenProvider, config } = params;
+  const { draft, kaynakMetni, konuOdagi, uretenProvider, config } = params;
   const tamMetin = draftToPlainText(draft);
 
-  // 1. Kara liste
-  const blocklistSonucu = await checkBlocklist(tamMetin);
-  if (blocklistSonucu.ihlalVar) {
-    return {
-      gecti: false,
-      skor: 0,
-      otomatikYayinaUygun: false,
-      redSebebi: `Kara liste ihlali: ${blocklistSonucu.eslesenTerimler.join(", ")}`,
-      detaylar: {
-        karaListeIhlali: true,
-        benzerlikSkoru: 0,
-        hakemOnayi: null,
-        tekrarMi: false,
-      },
-    };
+  const bosDetay = {
+    karaListeIhlali: false,
+    benzerlikSkoru: 0,
+    hakemCalisti: false,
+    dogrulukPuani: null,
+    degerPuani: null,
+    celiskiVarMi: null,
+    baslikYaniltici: null,
+    dayanaksizIddialar: [],
+    tekrarMi: false,
+  };
+  const sertRed = (sebep: string, ek: Partial<ModerationResult["detaylar"]>): ModerationResult => ({
+    gecti: false,
+    sertRed: true,
+    skor: 0,
+    otomatikYayinaUygun: false,
+    redSebebi: sebep,
+    detaylar: { ...bosDetay, ...ek },
+  });
+
+  // 1. Kara liste: konu listesi yalnızca başlıkta; gövdede yalnızca kesin
+  //    yasak kelimeler. (Gövdede "saldırı", "ölüm" gibi kelimeler bir hayvanın
+  //    avlanması ya da tarihî bir olayın anlatımında doğal olarak geçer;
+  //    bağlam değerlendirmesi hakemin işi.)
+  const baslikKontrol = await checkBlocklist(draft.frontmatter.baslik);
+  const govdeKontrol = await checkBlocklist(tamMetin, { sadeceKesinKelimeler: true });
+  const ihlaller = [...baslikKontrol.eslesenTerimler, ...govdeKontrol.eslesenTerimler];
+  if (ihlaller.length > 0) {
+    return sertRed(`Kara liste ihlali: ${[...new Set(ihlaller)].join(", ")}`, { karaListeIhlali: true });
   }
 
-  // 2. Tekrar kontrolü
-  const tekrarMi = await konuDahaOnceIslendiMi(draft.frontmatter.baslik);
-  if (tekrarMi) {
-    return {
-      gecti: false,
-      skor: 0,
-      otomatikYayinaUygun: false,
-      redSebebi: "Bu konu daha önce işlenmiş",
-      detaylar: {
-        karaListeIhlali: false,
-        benzerlikSkoru: 0,
-        hakemOnayi: null,
-        tekrarMi: true,
-      },
-    };
+  // 2. Tekrar konu
+  if (await konuDahaOnceIslendiMi(konuOdagi)) {
+    return sertRed("Bu konu daha önce işlenmiş", { tekrarMi: true });
   }
 
-  // 3. Benzerlik (kaynaktan birebir kopyalama kontrolü)
+  // 3. Kaynağa aşırı benzerlik (kopyalama)
   const benzerlikSkoru = ngramOverlapScore(tamMetin, kaynakMetni);
-  const benzerlikEsigiAsildi = benzerlikSkoru > 0.5;
 
-  // 4. Hakem modeli — üretenden FARKLI sağlayıcı zorunlu
-  let hakemOnayi: boolean | null = null;
-  let hakemNotu: string | undefined;
+  // 4. Yapı
+  const yapi = yapiKontrolu(draft);
+
+  // 5. Hakem — üretenden farklı bir sağlayıcı
+  let hakem: HakemYaniti | null = null;
+  let hakemProvider: ProviderName | undefined;
+  let hakemHatasi: string | undefined;
   try {
-    const { text } = await chatCompleteExcluding(uretenProvider, {
+    const { text, provider } = await chatCompleteExcluding(uretenProvider, {
       systemPrompt: HAKEM_SISTEM_PROMPTU,
       userPrompt: hakemKullaniciPromptu({ uretilenIcerik: tamMetin, kaynakMetni }),
       jsonMode: true,
-      temperature: 0.2,
+      temperature: 0.1,
     });
-    const hakemYaniti = parseJsonLoose(text, hakemYanitSchema);
-    hakemOnayi =
-      hakemYaniti.kaynaklaTutarliMi &&
-      !hakemYaniti.yaniltciBaslikMi &&
-      hakemYaniti.degerKatiyorMu;
-    hakemNotu = hakemYaniti.notlar;
+    hakem = parseJsonLoose(text, hakemSchema);
+    hakemProvider = provider;
   } catch (err) {
-    hakemNotu = `hakem modeli çalıştırılamadı: ${err instanceof Error ? err.message : err}`;
+    hakemHatasi = err instanceof Error ? err.message : String(err);
   }
 
-  // 5. Yapısal kalite
-  const kalite = qualityHeuristics(draft);
+  const detaylar = {
+    ...bosDetay,
+    benzerlikSkoru,
+    hakemCalisti: hakem !== null,
+    dogrulukPuani: hakem?.dogrulukPuani ?? null,
+    degerPuani: hakem?.degerPuani ?? null,
+    celiskiVarMi: hakem?.celiskiVarMi ?? null,
+    baslikYaniltici: hakem?.baslikYaniltici ?? null,
+    dayanaksizIddialar: hakem?.dayanaksizIddialar ?? [],
+    hakemProvider,
+  };
 
-  // Genel skor: kalite ağırlıklı, benzerlik cezası, hakem onayı olmazsa büyük ceza
-  let skor = kalite.skor;
-  if (benzerlikEsigiAsildi) skor -= 0.4;
-  if (hakemOnayi === false) skor -= 0.5;
-  if (hakemOnayi === null) skor -= 0.15; // hakem çalışmadıysa temkinli ol
-  skor = Math.max(0, Math.min(1, skor));
+  if (hakem?.hassasIcerik) {
+    return { ...sertRed("Hakem hassas içerik tespit etti", {}), detaylar: { ...detaylar } };
+  }
 
-  const gecti = skor > 0 && !benzerlikEsigiAsildi && hakemOnayi !== false;
-  const otomatikYayinaUygun = gecti && skor >= config.otomatikYayinEsigi;
+  // Skor
+  let skor: number;
+  if (hakem) {
+    const dogruluk = (hakem.dogrulukPuani - 1) / 4;
+    const deger = (hakem.degerPuani - 1) / 4;
+    skor = (0.6 * dogruluk + 0.4 * deger) * (0.6 + 0.4 * yapi.skor);
+    if (hakem.celiskiVarMi) skor = Math.min(skor, 0.45);
+    if (hakem.baslikYaniltici) skor -= 0.15;
+  } else {
+    // Hakem çalışmadıysa içerik en fazla onay kuyruğuna gidebilir.
+    skor = 0.7 * yapi.skor;
+  }
+  if (benzerlikSkoru > BENZERLIK_ESIGI) skor = Math.min(skor, 0.5);
+  skor = Math.round(Math.max(0, Math.min(1, skor)) * 100) / 100;
 
-  const redSebepleri = [
-    ...(benzerlikEsigiAsildi ? ["kaynakla aşırı benzerlik"] : []),
-    ...(hakemOnayi === false ? ["hakem modeli onaylamadı"] : []),
-    ...kalite.notlar,
-  ];
+  // Yazara geri gidecek düzeltme notları
+  const notlar = [...yapi.notlar];
+  if (benzerlikSkoru > BENZERLIK_ESIGI) {
+    notlar.push("Metin kaynak cümlelerine çok yakın; tüm cümleleri tamamen kendi üslubunla yeniden kur.");
+  }
+  if (hakem?.dayanaksizIddialar.length) {
+    notlar.push(
+      `Şu iddiaları kaynağa uygun düzelt ya da çıkar: ${hakem.dayanaksizIddialar.slice(0, 5).join("; ")}`
+    );
+  }
+  if (hakem?.duzeltmeNotlari.trim()) notlar.push(hakem.duzeltmeNotlari.trim());
+
+  const gecti = skor >= config.onayaDusEsigi;
+  const otomatikYayinaUygun =
+    gecti &&
+    hakem !== null &&
+    !hakem.celiskiVarMi &&
+    !hakem.baslikYaniltici &&
+    benzerlikSkoru <= BENZERLIK_ESIGI &&
+    skor >= config.otomatikYayinEsigi;
 
   return {
     gecti,
+    sertRed: false,
     skor,
     otomatikYayinaUygun,
-    redSebebi: gecti ? undefined : redSebepleri.join("; "),
-    detaylar: {
-      karaListeIhlali: false,
-      benzerlikSkoru,
-      hakemOnayi,
-      hakemNotu,
-      tekrarMi: false,
-    },
+    redSebebi: gecti
+      ? undefined
+      : `Düşük skor (${skor})${hakemHatasi ? ` — hakem çalışmadı: ${hakemHatasi.slice(0, 120)}` : ""}${notlar.length ? ` — ${notlar.join(" ")}` : ""}`,
+    duzeltmeNotlari: notlar.length ? notlar.map((n) => `- ${n}`).join("\n") : undefined,
+    detaylar,
   };
 }

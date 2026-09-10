@@ -1,10 +1,10 @@
 {
   "konular": [
-    "siyaset", "seçim", "parti", "cumhurbaşkanı", "milletvekili", "bakan", "başbakan",
+    "siyaset", "cumhurbaşkanı", "milletvekili", "başbakan", "bakanlık",
     "vali", "belediye başkanı", "akp", "chp", "mhp", "iyi parti", "dem parti",
     "cinayet", "tecavüz", "hırsızlık", "dolandırıcılık", "tutuklama", "gözaltı", "suç örgütü",
-    "saldırdı", "saldırı", "silahlı", "bıçaklı", "yaralandı", "ağır yaralı",
-    "deprem", "sel", "yangın felaketi", "ölüm", "öldü", "ölü", "cenaze", "kaza",
+    "saldırdı", "silahlı", "bıçaklı", "yaralandı", "ağır yaralı",
+    "deprem", "yangın felaketi", "öldü", "cenaze", "trafik kazası",
     "yatırım tavsiyesi", "borsa tavsiyesi", "kripto para tavsiyesi", "hisse önerisi",
     "tedavi öner", "ilaç öner", "diyet öner",
     "çocuk istismarı", "cinsel içerik", "pornografi", "tehdit"

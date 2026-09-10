@@ -1,5 +1,10 @@
 import { optionalEnv } from "./env.js";
 
+/** parse_mode=HTML ile gönderilen mesajlarda kullanıcı/LLM metnini güvenli hale getirir. */
+export function escapeHtml(metin: string): string {
+  return metin.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 function botToken(): string | undefined {
   return optionalEnv("TELEGRAM_BOT_TOKEN");
 }

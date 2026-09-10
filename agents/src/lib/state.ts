@@ -9,6 +9,12 @@ import { PATHS, DATA_DIR } from "./paths.js";
 export const configSchema = z.object({
   paused: z.boolean().default(false),
   pausedReason: z.string().optional(),
+  /**
+   * Faz 1b prova modu: skor ne olursa olsun hiçbir içerik otomatik
+   * yayınlanmaz/paylaşılmaz; geçen her içerik taslak olarak onaya düşer.
+   * Güvenli varsayılan: açık.
+   */
+  provaModu: z.boolean().default(true),
   gunlukHedefIcerikSayisi: z.number().int().min(0).default(2),
   otomatikYayinEsigi: z.number().min(0).max(1).default(0.85),
   onayaDusEsigi: z.number().min(0).max(1).default(0.6),
@@ -145,6 +151,49 @@ export async function readRunSummary(): Promise<RunSummary | null> {
   } catch {
     return null;
   }
+}
+
+// ---------------------------------------------------------------------------
+// rejected-topics.json — uygun bulunmayan konuları bir süre tekrar denememek
+// için. Aksi halde aynı YouTube şarkısı günde 6 kez sınıflandırılıp LLM
+// kotası ve deneme hakkı boşa harcanıyor.
+// ---------------------------------------------------------------------------
+const rejectedEntrySchema = z.object({
+  parmakIzi: z.string(),
+  baslik: z.string(),
+  sebep: z.string(),
+  tarih: z.string(),
+});
+type RejectedEntry = z.infer<typeof rejectedEntrySchema>;
+
+async function readRejected(): Promise<RejectedEntry[]> {
+  try {
+    const raw = await readFile(PATHS.rejected, "utf-8");
+    return z.array(rejectedEntrySchema).parse(JSON.parse(raw));
+  } catch {
+    return [];
+  }
+}
+
+export async function addRejected(baslik: string, sebep: string): Promise<void> {
+  const otuzGunOnce = Date.now() - 30 * 24 * 60 * 60 * 1000;
+  const liste = (await readRejected()).filter((e) => new Date(e.tarih).getTime() > otuzGunOnce);
+  liste.push({
+    parmakIzi: konuParmakIzi(baslik),
+    baslik,
+    sebep: sebep.slice(0, 300),
+    tarih: new Date().toISOString(),
+  });
+  await writeFile(PATHS.rejected, JSON.stringify(liste, null, 2) + "\n", "utf-8");
+}
+
+export async function yakindaReddedilenler(gun = 7): Promise<Set<string>> {
+  const sinir = Date.now() - gun * 24 * 60 * 60 * 1000;
+  return new Set(
+    (await readRejected())
+      .filter((e) => new Date(e.tarih).getTime() > sinir)
+      .map((e) => e.parmakIzi)
+  );
 }
 
 export function dataPath(...segments: string[]): string {

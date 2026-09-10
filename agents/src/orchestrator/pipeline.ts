@@ -1,14 +1,36 @@
-import { readConfig, writeConfig, readPublishedIndex, writeRunSummary, readCategoryWeights, markEvergreenUsed } from "../lib/state.js";
+import {
+  readConfig,
+  writeConfig,
+  readPublishedIndex,
+  writeRunSummary,
+  readCategoryWeights,
+  addRejected,
+  yakindaReddedilenler,
+  konuParmakIzi,
+} from "../lib/state.js";
 import { gatherTrendCandidates } from "../trend/index.js";
-import { classifyTopic, generateContentDraft } from "../content/index.js";
-import { moderateDraft } from "../moderation/index.js";
-import { generateCoverImage } from "../image/index.js";
-import { publishDraft } from "../publish/index.js";
-import { distributeContent } from "../distribute/index.js";
-import { notifyAdmin } from "../lib/telegram.js";
+import { processCandidate } from "./processCandidate.js";
+import { notifyAdmin, escapeHtml } from "../lib/telegram.js";
 import type { TrendCandidate } from "../lib/schemas.js";
 
-const MAX_DENENECEK_ADAY = 6;
+const MAX_DENENECEK_ADAY = 10;
+/** GitHub Actions job'u 15 dk'da kesilir; yeni adaya başlamayı 9 dk'da bırak. */
+const ZAMAN_BUTCESI_MS = 9 * 60 * 1000;
+
+/**
+ * Kaynak güvenilirliği: bir adayın gerçekten içeriğe dönüşme ihtimali.
+ * İlk sürümde YouTube şarkı/oyun videoları ham ilgi skoruyla en üste çıkıyor,
+ * Vikipedi karşılığı olmadığı için hepsi eleniyordu. Vikipedi'nin en çok
+ * okunanları ve evergreen havuzu kaynağı hazır konular olduğu için öne alınır.
+ */
+const KAYNAK_GUVENI: Record<TrendCandidate["kaynak"], number> = {
+  wikipedia: 1,
+  evergreen: 0.95,
+  "google-trends": 0.75,
+  "google-news": 0.6,
+  reddit: 0.4,
+  youtube: 0.35,
+};
 
 function bugununTarihi(): string {
   return new Date().toISOString().slice(0, 10);
@@ -20,89 +42,22 @@ async function bugunUretilenSayisi(): Promise<number> {
   return index.filter((e) => e.yayinTarihi.slice(0, 10) === bugun).length;
 }
 
-async function agirlikliSirala(adaylar: TrendCandidate[]): Promise<TrendCandidate[]> {
-  const agirliklar = await readCategoryWeights();
-  return [...adaylar].sort((a, b) => {
-    const aSkor = a.tahminiIlgi * (a.kategoriTahmini ? agirliklar[a.kategoriTahmini] ?? 1 : 1);
-    const bSkor = b.tahminiIlgi * (b.kategoriTahmini ? agirliklar[b.kategoriTahmini] ?? 1 : 1);
-    return bSkor - aSkor;
-  });
-}
+async function siraliAdaylar(): Promise<TrendCandidate[]> {
+  const [adaylar, agirliklar, reddedilenler] = await Promise.all([
+    gatherTrendCandidates(),
+    readCategoryWeights(),
+    yakindaReddedilenler(),
+  ]);
+  const puan = (a: TrendCandidate) =>
+    KAYNAK_GUVENI[a.kaynak] * (0.4 + 0.6 * a.tahminiIlgi) * (a.kategoriTahmini ? agirliklar[a.kategoriTahmini] ?? 1 : 1);
 
-interface DenemeSonucu {
-  basarili: boolean;
-  otomatikYayinlandi: boolean;
-  sebep?: string;
-}
-
-async function tekAdayiIsle(aday: TrendCandidate, onayaDusEsigi: number, otomatikYayinEsigi: number): Promise<DenemeSonucu> {
-  // 1. Sınıflandırma (evergreen'de zaten kategori/format belli, yine de hassasiyet kontrolü yapılır)
-  const siniflandirma = await classifyTopic(aday.baslik);
-  if (!siniflandirma.uygun) {
-    return { basarili: false, otomatikYayinlandi: false, sebep: `sınıflandırma: ${siniflandirma.sebep}` };
-  }
-
-  const kategori = aday.kategoriTahmini ?? siniflandirma.siniflandirma!.kategori;
-  const format = aday.formatOnerisi ?? siniflandirma.siniflandirma!.formatOnerisi;
-
-  // 2. İçerik üretimi (kaynak + LLM)
-  const uretim = await generateContentDraft({ konuBasligi: aday.baslik, kategori, format });
-  if (!uretim.basarili || !uretim.draft || !uretim.kaynak || !uretim.uretenProvider) {
-    return { basarili: false, otomatikYayinlandi: false, sebep: `üretim: ${uretim.sebep}` };
-  }
-
-  // 3. Moderasyon
-  const config = await readConfig();
-  const moderasyon = await moderateDraft({
-    draft: uretim.draft,
-    kaynakMetni: uretim.kaynak.ozetMetni,
-    uretenProvider: uretim.uretenProvider,
-    config,
-  });
-
-  if (!moderasyon.gecti) {
-    return { basarili: false, otomatikYayinlandi: false, sebep: `moderasyon reddi: ${moderasyon.redSebebi}` };
-  }
-
-  // 4. Görsel
-  const cover = await generateCoverImage({
-    slug: uretim.draft.slug,
-    baslik: uretim.draft.frontmatter.baslik,
-    kategori,
-  });
-
-  // 5. Yayın (otomatik ya da onaya düşen taslak olarak)
-  const otomatikYayinlandi = moderasyon.otomatikYayinaUygun;
-  const yayin = await publishDraft({
-    draft: uretim.draft,
-    cover,
-    otomatikYayinlandi,
-    moderasyonSkoru: moderasyon.skor,
-  });
-
-  if (aday.kaynak === "evergreen") {
-    await markEvergreenUsed(aday.baslik);
-  }
-
-  // 6. Dağıtım (sadece otomatik yayınlananlar için) / onay bildirimi
-  if (otomatikYayinlandi) {
-    await distributeContent({ frontmatter: uretim.draft.frontmatter, publicUrl: yayin.publicUrl });
-    await notifyAdmin(
-      `✅ Otomatik yayınlandı (skor ${moderasyon.skor.toFixed(2)}): <b>${uretim.draft.frontmatter.baslik}</b>\n${yayin.publicUrl}`
-    );
-  } else if (moderasyon.skor >= onayaDusEsigi) {
-    await notifyAdmin(
-      `⏳ Onayını bekliyor (skor ${moderasyon.skor.toFixed(2)}): <b>${uretim.draft.frontmatter.baslik}</b>\n` +
-        `Dosya: ${yayin.dosyaYolu}\n` +
-        `Onaylamak için frontmatter'da taslak: false yap ve commit et.`
-    );
-  }
-  // skor onayaDusEsigi'nin de altındaysa dosya taslak olarak kalır ama admin'i meşgul etmez.
-
-  return { basarili: true, otomatikYayinlandi, sebep: moderasyon.redSebebi };
+  return adaylar
+    .filter((a) => !reddedilenler.has(konuParmakIzi(a.baslik)))
+    .sort((a, b) => puan(b) - puan(a));
 }
 
 async function main() {
+  const baslangic = Date.now();
   const config = await readConfig();
 
   if (config.paused) {
@@ -116,8 +71,8 @@ async function main() {
     return;
   }
 
-  const hamAdaylar = await gatherTrendCandidates();
-  const adaylar = await agirlikliSirala(hamAdaylar);
+  const adaylar = await siraliAdaylar();
+  console.log(`[pipeline] ${adaylar.length} aday; ilk ${MAX_DENENECEK_ADAY} denenecek (prova modu: ${config.provaModu})`);
 
   const hatalar: string[] = [];
   let otomatikYayinlanan = 0;
@@ -125,16 +80,20 @@ async function main() {
   let denemeSayisi = 0;
 
   for (const aday of adaylar.slice(0, MAX_DENENECEK_ADAY)) {
+    if (Date.now() - baslangic > ZAMAN_BUTCESI_MS) {
+      hatalar.push("zaman bütçesi doldu, kalan adaylar sonraki çalışmaya kaldı");
+      break;
+    }
     denemeSayisi++;
+    console.log(`[pipeline] aday ${denemeSayisi}: [${aday.kaynak}] ${aday.baslik}`);
     try {
-      const sonuc = await tekAdayiIsle(aday, config.onayaDusEsigi, config.otomatikYayinEsigi);
-      if (sonuc.basarili) {
-        if (sonuc.otomatikYayinlandi) otomatikYayinlanan++;
-        else onayaDusen++;
-        break; // bu çalışma için bir içerik üretmek yeterli
-      } else {
-        hatalar.push(`${aday.baslik}: ${sonuc.sebep}`);
-      }
+      const sonuc = await processCandidate(aday, config);
+      if (sonuc.durum === "otomatik") otomatikYayinlanan++;
+      if (sonuc.durum === "onay") onayaDusen++;
+      if (sonuc.durum !== "red") break; // bu çalışma için bir içerik yeterli
+
+      hatalar.push(`${aday.baslik}: ${sonuc.sebep}`);
+      if (sonuc.kaliciRed) await addRejected(aday.baslik, sonuc.sebep ?? "red");
     } catch (err) {
       hatalar.push(`${aday.baslik}: beklenmeyen hata: ${err instanceof Error ? err.message : err}`);
     }
@@ -143,21 +102,23 @@ async function main() {
   const uretilenToplam = otomatikYayinlanan + onayaDusen;
   const basarili = uretilenToplam > 0;
 
-  const yeniConfig = { ...config };
+  // Config'i yeniden oku: çalışma sırasında elle yapılan değişiklikleri
+  // (ör. eşik ayarı, duraklatma) ezmemek için yalnızca sayaç alanları güncellenir.
+  const guncel = await readConfig();
   if (basarili) {
-    yeniConfig.ardisikBasarisizCalisma = 0;
+    guncel.ardisikBasarisizCalisma = 0;
   } else {
-    yeniConfig.ardisikBasarisizCalisma += 1;
-    if (yeniConfig.ardisikBasarisizCalisma >= config.ardisikBasarisizCalismaLimiti) {
-      yeniConfig.paused = true;
-      yeniConfig.pausedReason = `${yeniConfig.ardisikBasarisizCalisma} ardışık başarısız çalışma`;
+    guncel.ardisikBasarisizCalisma += 1;
+    if (guncel.ardisikBasarisizCalisma >= guncel.ardisikBasarisizCalismaLimiti) {
+      guncel.paused = true;
+      guncel.pausedReason = `${guncel.ardisikBasarisizCalisma} ardışık başarısız çalışma`;
       await notifyAdmin(
-        `🛑 Pipeline otomatik duraklatıldı: ${yeniConfig.ardisikBasarisizCalisma} ardışık başarısız çalışma.\n` +
-          `Son hatalar:\n${hatalar.slice(-3).join("\n")}`
+        `🛑 Pipeline otomatik duraklatıldı: ${guncel.ardisikBasarisizCalisma} ardışık başarısız çalışma.\n` +
+          `Son hatalar:\n${escapeHtml(hatalar.slice(-3).join("\n"))}`
       );
     }
   }
-  await writeConfig(yeniConfig);
+  await writeConfig(guncel);
 
   await writeRunSummary({
     tarih: new Date().toISOString(),
@@ -172,7 +133,7 @@ async function main() {
   console.log(
     `[pipeline] tamamlandı: ${uretilenToplam} üretildi (${otomatikYayinlanan} otomatik, ${onayaDusen} onay bekliyor), ${denemeSayisi} aday denendi`
   );
-  if (hatalar.length > 0) console.log("[pipeline] hatalar:\n" + hatalar.join("\n"));
+  if (hatalar.length > 0) console.log("[pipeline] elenenler:\n" + hatalar.join("\n"));
 }
 
 main().catch((err) => {
