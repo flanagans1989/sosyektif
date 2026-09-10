@@ -164,6 +164,7 @@ export async function generateContentDraft(params: {
         }),
         jsonMode: true,
         temperature: sicaklik,
+        kalite: "yuksek",
       });
       const u = parseJsonLoose(text, icerikUretimSchema);
 

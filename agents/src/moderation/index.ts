@@ -20,6 +20,7 @@ import type { PostDraft, ModerationResult } from "../lib/schemas.js";
 
 const hakemSchema = z.object({
   dayanaksizIddialar: z.array(z.string()).catch([]),
+  dilHatalari: z.array(z.string()).catch([]),
   celiskiVarMi: z.boolean().catch(false),
   baslikYaniltici: z.boolean().catch(false),
   hassasIcerik: z.boolean().catch(false),
@@ -211,12 +212,20 @@ export async function moderateDraft(params: ModerateParams): Promise<ModerationR
       `Şu iddiaları kaynağa uygun düzelt ya da çıkar: ${hakem.dayanaksizIddialar.slice(0, 5).join("; ")}`
     );
   }
+  if (hakem?.dilHatalari.length) {
+    notlar.push(`Şu yazım/dil hatalarını düzelt: ${hakem.dilHatalari.slice(0, 8).join("; ")}`);
+  }
   if (hakem?.duzeltmeNotlari.trim()) notlar.push(hakem.duzeltmeNotlari.trim());
+
+  // Bilinen bir hata (dayanaksız iddia, dil hatası) içeren içerik puanı ne olursa
+  // olsun kendiliğinden yayınlanmaz; pipeline önce notlarla revizyon dener.
+  const bilinenHataVar = Boolean(hakem?.dayanaksizIddialar.length || hakem?.dilHatalari.length);
 
   const gecti = skor >= config.onayaDusEsigi;
   const otomatikYayinaUygun =
     gecti &&
     hakem !== null &&
+    !bilinenHataVar &&
     !hakem.celiskiVarMi &&
     !hakem.baslikYaniltici &&
     benzerlikSkoru <= BENZERLIK_ESIGI &&

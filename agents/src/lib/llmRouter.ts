@@ -18,6 +18,11 @@ export interface ChatCompleteParams {
   /** Bu sağlayıcılar zincirden çıkarılır (örn. hakem modeli üreticiden farklı olsun diye). */
   exclude?: ProviderName[];
   temperature?: number;
+  /**
+   * "yuksek": kaliteyi belirleyen ama az çağrılan adımlar (içerik üretimi) için
+   * sağlayıcının güçlü modeli önce denenir; kotası dolarsa hafif modele düşer.
+   */
+  kalite?: "normal" | "yuksek";
 }
 
 export interface ChatCompleteResult {
@@ -66,38 +71,61 @@ async function openAiCompatibleCall(
   return content;
 }
 
+// Güçlü modellerin ücretsiz kotası düşük (günde onlarca istek); bu yüzden
+// yalnızca "yuksek" kalite çağrılarında (içerik üretimi, günde birkaç kez)
+// kullanılır. Sınıflandırma gibi sık çağrılar hafif modelde kalır.
+const GEMINI_MODELLERI: Record<"normal" | "yuksek", string[]> = {
+  normal: ["gemini-3.5-flash-lite"],
+  yuksek: ["gemini-3.8-flash", "gemini-flash-latest", "gemini-3.5-flash-lite"],
+};
+
+async function geminiModelCall(apiKey: string, model: string, params: ChatCompleteParams): Promise<string> {
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: params.systemPrompt }] },
+        contents: [{ role: "user", parts: [{ text: params.userPrompt }] }],
+        generationConfig: {
+          temperature: params.temperature ?? 0.7,
+          ...(params.jsonMode ? { responseMimeType: "application/json" } : {}),
+        },
+      }),
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error(`gemini/${model} ${res.status}: ${(await res.text()).slice(0, 300)}`);
+  }
+
+  const data = (await res.json()) as {
+    candidates?: { content?: { parts?: { text?: string; thought?: boolean }[] } }[];
+  };
+  // "Düşünen" modeller birden fazla parça döndürebilir; düşünce parçaları atlanır.
+  const text = (data.candidates?.[0]?.content?.parts ?? [])
+    .filter((p) => !p.thought && p.text)
+    .map((p) => p.text)
+    .join("");
+  if (!text) throw new Error(`gemini/${model}: boş yanıt`);
+  return text;
+}
+
 const geminiAdapter: ProviderAdapter = {
   name: "gemini",
   isConfigured: () => optionalEnv("GEMINI_API_KEY") !== undefined,
   async call(params) {
     const apiKey = optionalEnv("GEMINI_API_KEY")!;
-    const model = "gemini-3.5-flash-lite";
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: params.systemPrompt }] },
-          contents: [{ role: "user", parts: [{ text: params.userPrompt }] }],
-          generationConfig: {
-            temperature: params.temperature ?? 0.7,
-            ...(params.jsonMode ? { responseMimeType: "application/json" } : {}),
-          },
-        }),
+    const hatalar: string[] = [];
+    for (const model of GEMINI_MODELLERI[params.kalite ?? "normal"]) {
+      try {
+        return await geminiModelCall(apiKey, model, params);
+      } catch (err) {
+        hatalar.push(err instanceof Error ? err.message : String(err));
       }
-    );
-
-    if (!res.ok) {
-      throw new Error(`gemini ${res.status}: ${await res.text()}`);
     }
-
-    const data = (await res.json()) as {
-      candidates?: { content?: { parts?: { text?: string }[] } }[];
-    };
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!text) throw new Error("gemini: boş yanıt");
-    return text;
+    throw new Error(hatalar.join(" | "));
   },
 };
 
