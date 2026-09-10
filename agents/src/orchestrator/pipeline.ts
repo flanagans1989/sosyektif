@@ -65,8 +65,10 @@ async function main() {
     return;
   }
 
+  // Elle tetiklenen çalıştırmalarda (GUNLUK_HEDEF_ATLA=1) günlük hedef kontrolü atlanır.
+  const hedefAtla = process.env.GUNLUK_HEDEF_ATLA === "1";
   const bugunUretilen = await bugunUretilenSayisi();
-  if (bugunUretilen >= config.gunlukHedefIcerikSayisi) {
+  if (!hedefAtla && bugunUretilen >= config.gunlukHedefIcerikSayisi) {
     console.log(`[pipeline] bugünkü hedefe ulaşıldı (${bugunUretilen}/${config.gunlukHedefIcerikSayisi})`);
     return;
   }
