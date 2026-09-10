@@ -1,0 +1,10 @@
+name = "sosyektif-telegram-onay"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Secrets (dashboard > Settings > Variables and Secrets ile eklenir, buraya YAZILMAZ):
+#   GITHUB_TOKEN            - "Contents: Read and write" izinli fine-grained PAT (sadece bu repo için)
+#   GITHUB_REPO             - "kullanici/repo" formatinda, orn. flanagans1989/sosyektif
+#   TELEGRAM_BOT_TOKEN      - BotFather'dan alinan token
+#   TELEGRAM_WEBHOOK_SECRET - setWebhook cagrisinda verilen rastgele gizli deger
+#   TELEGRAM_ADMIN_CHAT_ID  - sadece bu chat'ten gelen callback_query kabul edilir

@@ -1,4 +1,16 @@
+import { createHash } from "node:crypto";
 import { optionalEnv } from "./env.js";
+
+/**
+ * Telegram callback_data alanı en fazla 64 bayt kabul eder; slug'lar bunu
+ * kolayca aşıyor (bkz. Keykubad örneği). Bunun yerine slug'ın kısa bir
+ * hash'i gönderilir; worker (worker/telegram-onay) GitHub'daki taslak
+ * klasörünü listeleyip aynı hash'i üreten dosyayı bularak gerçek slug'a
+ * geri döner.
+ */
+export function onayKisaId(slug: string): string {
+  return createHash("sha256").update(slug).digest("hex").slice(0, 12);
+}
 
 /** parse_mode=HTML ile gönderilen mesajlarda kullanıcı/LLM metnini güvenli hale getirir. */
 export function escapeHtml(metin: string): string {
@@ -41,6 +53,32 @@ export async function notifyAdmin(text: string): Promise<void> {
     return;
   }
   await sendMessage(chatId, text);
+}
+
+/**
+ * Yöneticiye, altında "✅ Yayınla" / "❌ Yayınlama" inline butonları olan bir
+ * onay mesajı gönderir. Butona basıldığında Telegram, kurulu webhook'a
+ * (bkz. worker/telegram-onay) bir callback_query yollar; o da GitHub'daki
+ * taslak dosyasını commit ile günceller/siler. Böylece onay için GitHub'a
+ * gidip dosya düzenlemeye gerek kalmaz.
+ */
+export async function notifyAdminOnayButonlu(text: string, slug: string): Promise<void> {
+  const chatId = optionalEnv("TELEGRAM_ADMIN_CHAT_ID");
+  if (!chatId) {
+    console.warn("[telegram] TELEGRAM_ADMIN_CHAT_ID yok, admin bildirimi atlandı");
+    return;
+  }
+  const id = onayKisaId(slug);
+  await sendMessage(chatId, text, {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          { text: "✅ Yayınla", callback_data: `approve:${id}` },
+          { text: "❌ Yayınlama", callback_data: `reject:${id}` },
+        ],
+      ],
+    },
+  });
 }
 
 /** Herkese açık kanala yeni içerik duyurusu gönderir (Dağıtım Ajanı). */

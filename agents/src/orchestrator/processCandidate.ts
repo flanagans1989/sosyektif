@@ -4,7 +4,7 @@ import { moderateDraft } from "../moderation/index.js";
 import { generateCoverImage } from "../image/index.js";
 import { publishDraft, type PublishResult } from "../publish/index.js";
 import { distributeContent } from "../distribute/index.js";
-import { notifyAdmin, escapeHtml } from "../lib/telegram.js";
+import { notifyAdmin, notifyAdminOnayButonlu, escapeHtml } from "../lib/telegram.js";
 import { konuDahaOnceIslendiMi, markEvergreenUsed, type Config } from "../lib/state.js";
 import { FORMAT_ETIKETLERI_TR } from "../lib/formatLabels.js";
 import type { ModerationResult, PostDraft, TrendCandidate } from "../lib/schemas.js";
@@ -41,8 +41,8 @@ function onayMesaji(draft: PostDraft, moderasyon: ModerationResult, yayin: Publi
   }
   satirlar.push(
     "",
-    `✏️ Onaylamak için dosyada <code>taslak: true</code> → <code>taslak: false</code> yap:`,
-    `https://github.com/${REPO}/edit/main/site/src/content/posts/${yayin.slug}.md`
+    `Aşağıdaki butonla onaylayabilir ya da reddedebilirsin.`,
+    `<i>(Buton çalışmazsa manuel düzenleme: <a href="https://github.com/${REPO}/edit/main/site/src/content/posts/${yayin.slug}.md">GitHub'da aç</a> — taslak: true → false)</i>`
   );
   return satirlar.join("\n");
 }
@@ -140,7 +140,7 @@ export async function processCandidate(aday: TrendCandidate, config: Config): Pr
       `✅ Otomatik yayınlandı (skor ${moderasyon.skor}): <b>${escapeHtml(draft.frontmatter.baslik)}</b>\n${yayin.publicUrl}`
     );
   } else {
-    await notifyAdmin(onayMesaji(draft, moderasyon, yayin, config.provaModu));
+    await notifyAdminOnayButonlu(onayMesaji(draft, moderasyon, yayin, config.provaModu), yayin.slug);
   }
 
   return {
