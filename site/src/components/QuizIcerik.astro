@@ -1,0 +1,83 @@
+---
+interface Soru {
+  soru: string;
+  secenekler: string[];
+  dogruIndex: number;
+  aciklama?: string;
+}
+
+interface Props {
+  sorular: Soru[];
+}
+
+const { sorular } = Astro.props;
+---
+
+<div id="quiz-kok" class="flex flex-col gap-6" data-toplam={sorular.length}>
+  {sorular.map((soru, si) => (
+    <fieldset class="quiz-soru rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5" data-soru-index={si} data-dogru={soru.dogruIndex}>
+      <legend class="text-lg font-bold text-murekkep">{si + 1}. {soru.soru}</legend>
+      <div class="mt-3 flex flex-col gap-2">
+        {soru.secenekler.map((secenek, oi) => (
+          <button
+            type="button"
+            class="quiz-secenek rounded-xl border border-black/10 px-4 py-2 text-left transition hover:border-marka"
+            data-opsiyon-index={oi}
+          >
+            {secenek}
+          </button>
+        ))}
+      </div>
+      {soru.aciklama && (
+        <p class="quiz-aciklama mt-3 hidden rounded-lg bg-marka/5 p-3 text-sm text-murekkep/80">
+          {soru.aciklama}
+        </p>
+      )}
+    </fieldset>
+  ))}
+
+  <div id="quiz-sonuc" class="hidden rounded-2xl bg-marka px-5 py-4 text-center text-lg font-bold text-white"></div>
+</div>
+
+<script>
+  const kok = document.getElementById('quiz-kok');
+  if (kok) {
+    const toplam = Number(kok.dataset.toplam ?? '0');
+    let dogruSayisi = 0;
+    let cevaplanan = 0;
+
+    kok.querySelectorAll<HTMLFieldSetElement>('.quiz-soru').forEach((soruEl) => {
+      const dogruIndex = Number(soruEl.dataset.dogru);
+      const butonlar = Array.from(soruEl.querySelectorAll<HTMLButtonElement>('.quiz-secenek'));
+      const aciklama = soruEl.querySelector<HTMLParagraphElement>('.quiz-aciklama');
+
+      butonlar.forEach((buton) => {
+        buton.addEventListener('click', () => {
+          if (soruEl.dataset.cevaplandi === 'true') return;
+          soruEl.dataset.cevaplandi = 'true';
+          cevaplanan += 1;
+
+          const secilenIndex = Number(buton.dataset.opsiyonIndex);
+          const dogruMu = secilenIndex === dogruIndex;
+          if (dogruMu) dogruSayisi += 1;
+
+          butonlar.forEach((b, i) => {
+            b.disabled = true;
+            if (i === dogruIndex) b.classList.add('bg-emerald-100', 'border-emerald-400');
+            else if (i === secilenIndex) b.classList.add('bg-red-100', 'border-red-400');
+          });
+
+          aciklama?.classList.remove('hidden');
+
+          if (cevaplanan === toplam) {
+            const sonuc = document.getElementById('quiz-sonuc');
+            if (sonuc) {
+              sonuc.textContent = `Sonucun: ${dogruSayisi} / ${toplam} doğru!`;
+              sonuc.classList.remove('hidden');
+            }
+          }
+        });
+      });
+    });
+  }
+</script>

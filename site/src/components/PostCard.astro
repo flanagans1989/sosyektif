@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { KATEGORILER, FORMAT_ETIKETLERI } from '../lib/kategoriler';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { baslik, kategori, format, kapakGorseli, kapakGorselAlt } = post.data;
+---
+
+<a
+  href={`/${post.id}/`}
+  class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-lg"
+>
+  <div class="relative aspect-video overflow-hidden bg-black/5">
+    <img
+      src={kapakGorseli}
+      alt={kapakGorselAlt}
+      loading="lazy"
+      class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+    />
+    <span class="absolute left-3 top-3 rounded-full bg-marka px-2.5 py-1 text-xs font-bold text-white shadow">
+      {FORMAT_ETIKETLERI[format]}
+    </span>
+  </div>
+  <div class="flex flex-1 flex-col gap-2 p-4">
+    <span class="text-xs font-semibold uppercase tracking-wide text-marka">
+      {KATEGORILER[kategori].emoji} {KATEGORILER[kategori].etiket}
+    </span>
+    <h3 class="text-lg font-bold leading-snug text-murekkep group-hover:text-marka">
+      {baslik}
+    </h3>
+  </div>
+</a>

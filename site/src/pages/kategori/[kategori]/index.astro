@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import { KATEGORILER, type KategoriAnahtari } from '../../../lib/kategoriler';
+
+export async function getStaticPaths() {
+  return (Object.keys(KATEGORILER) as KategoriAnahtari[]).map((kategori) => ({
+    params: { kategori },
+  }));
+}
+
+const { kategori } = Astro.params as { kategori: KategoriAnahtari };
+const bilgi = KATEGORILER[kategori];
+
+const tumYazilar = await getCollection(
+  'posts',
+  ({ data }) => !data.taslak && data.kategori === kategori
+);
+const yazilar = tumYazilar.sort(
+  (a, b) => b.data.yayinTarihi.valueOf() - a.data.yayinTarihi.valueOf()
+);
+---
+
+<Layout title={bilgi.etiket} description={`${bilgi.etiket} kategorisindeki en yeni içerikler.`}>
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <h1 class="mb-6 text-3xl font-extrabold text-murekkep">
+      {bilgi.emoji} {bilgi.etiket}
+    </h1>
+
+    {yazilar.length === 0 ? (
+      <p class="text-murekkep/60">Bu kategoride henüz içerik yok.</p>
+    ) : (
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {yazilar.map((yazi) => <PostCard post={yazi} />)}
+      </div>
+    )}
+  </section>
+</Layout>

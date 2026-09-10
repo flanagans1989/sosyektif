@@ -1,0 +1,27 @@
+---
+interface Madde {
+  baslik: string;
+  metin: string;
+  gorselAlt?: string;
+}
+
+interface Props {
+  maddeler: Madde[];
+}
+
+const { maddeler } = Astro.props;
+---
+
+<ol class="flex flex-col gap-6">
+  {maddeler.map((madde, i) => (
+    <li class="flex gap-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+      <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-marka text-lg font-extrabold text-white">
+        {i + 1}
+      </span>
+      <div>
+        <h2 class="text-xl font-bold text-murekkep">{madde.baslik}</h2>
+        <p class="mt-1 text-murekkep/80 leading-relaxed">{madde.metin}</p>
+      </div>
+    </li>
+  ))}
+</ol>

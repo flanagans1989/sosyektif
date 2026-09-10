@@ -1,0 +1,92 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ListeIcerik from '../../components/ListeIcerik.astro';
+import TriviaIcerik from '../../components/TriviaIcerik.astro';
+import QuizIcerik from '../../components/QuizIcerik.astro';
+import { KATEGORILER, FORMAT_ETIKETLERI } from '../../lib/kategoriler';
+
+export async function getStaticPaths() {
+  const yazilar = await getCollection('posts', ({ data }) => !data.taslak);
+  return yazilar.map((yazi) => ({
+    params: { slug: yazi.id },
+    props: { yazi },
+  }));
+}
+
+const { yazi } = Astro.props;
+const { Content } = await render(yazi);
+const {
+  baslik,
+  seoBaslik,
+  metaAciklama,
+  format,
+  kategori,
+  kapakGorseli,
+  kapakGorselAlt,
+  gorselKredisi,
+  listeMaddeleri,
+  quizSorulari,
+  kaynaklar,
+  yayinTarihi,
+} = yazi.data;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: baslik,
+  description: metaAciklama,
+  image: [new URL(kapakGorseli, Astro.site).toString()],
+  datePublished: yayinTarihi.toISOString(),
+  author: { '@type': 'Organization', name: 'sosyektif' },
+  publisher: { '@type': 'Organization', name: 'sosyektif' },
+};
+---
+
+<Layout title={seoBaslik} description={metaAciklama} image={kapakGorseli}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
+  <article class="mx-auto max-w-3xl px-4 py-10">
+    <p class="text-xs font-semibold uppercase tracking-wide text-marka">
+      {KATEGORILER[kategori].emoji} {KATEGORILER[kategori].etiket} · {FORMAT_ETIKETLERI[format]}
+    </p>
+    <h1 class="mt-2 text-3xl font-extrabold leading-tight text-murekkep sm:text-4xl">{baslik}</h1>
+
+    <figure class="mt-6 overflow-hidden rounded-2xl">
+      <img src={kapakGorseli} alt={kapakGorselAlt} class="w-full object-cover" />
+      {gorselKredisi && (
+        <figcaption class="mt-1 text-xs text-murekkep/50">{gorselKredisi}</figcaption>
+      )}
+    </figure>
+
+    <div class="prose prose-neutral mt-8 max-w-none prose-headings:font-bold">
+      <Content />
+    </div>
+
+    {format === 'liste' && listeMaddeleri && (
+      <div class="mt-8"><ListeIcerik maddeler={listeMaddeleri} /></div>
+    )}
+    {format === 'trivia' && listeMaddeleri && (
+      <div class="mt-8"><TriviaIcerik maddeler={listeMaddeleri} /></div>
+    )}
+    {format === 'quiz' && quizSorulari && (
+      <div class="mt-8"><QuizIcerik sorular={quizSorulari} /></div>
+    )}
+
+    {kaynaklar.length > 0 && (
+      <aside class="mt-10 rounded-2xl bg-black/5 p-5 text-sm text-murekkep/70">
+        <h2 class="mb-2 font-semibold text-murekkep">Kaynaklar</h2>
+        <ul class="list-inside list-disc space-y-1">
+          {kaynaklar.map((kaynak) => (
+            <li>
+              <a href={kaynak.url} class="underline hover:text-marka" rel="nofollow noopener" target="_blank">
+                {kaynak.baslik}
+              </a>
+              {kaynak.atif && <span class="text-xs"> — {kaynak.atif}</span>}
+            </li>
+          ))}
+        </ul>
+      </aside>
+    )}
+  </article>
+</Layout>

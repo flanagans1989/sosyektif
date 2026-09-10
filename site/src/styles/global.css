@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --color-marka: #ff4f64;
+  --color-marka-koyu: #d63a4d;
+  --color-zemin: #fffaf7;
+  --color-murekkep: #201a1c;
+}
+
+body {
+  background-color: var(--color-zemin);
+  color: var(--color-murekkep);
+}

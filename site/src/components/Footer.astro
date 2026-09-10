@@ -1,0 +1,43 @@
+---
+const yil = new Date().getFullYear();
+---
+
+<footer class="border-t border-black/5 bg-white">
+  <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-murekkep/70">
+    <div class="grid gap-8 sm:grid-cols-3">
+      <div>
+        <p class="text-lg font-extrabold text-murekkep">
+          sos<span class="text-marka">yektif</span>
+        </p>
+        <p class="mt-2 max-w-xs">
+          Gündemi, ilginç bilgileri ve eğlenceli listeleri bir araya getiren içerik platformu.
+        </p>
+      </div>
+
+      <div>
+        <p class="mb-2 font-semibold text-murekkep">Kurumsal</p>
+        <ul class="space-y-1">
+          <li><a href="/iletisim/" class="hover:text-marka">İletişim</a></li>
+          <li><a href="/editoryal-politika/" class="hover:text-marka">Editoryal Politika</a></li>
+          <li><a href="/gizlilik-politikasi/" class="hover:text-marka">Gizlilik Politikası</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="mb-2 font-semibold text-murekkep">Takip Et</p>
+        <ul class="space-y-1">
+          <li><a href="https://t.me/sosyektif" class="hover:text-marka" rel="me">Telegram</a></li>
+          <li><a href="https://bsky.app/profile/sosyektif.com" class="hover:text-marka" rel="me">Bluesky</a></li>
+          <li><a href="/rss.xml" class="hover:text-marka">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="mt-8 border-t border-black/5 pt-4 text-xs text-murekkep/50">
+      Görseller: Pexels ve Unsplash lisansları kapsamında kullanılmaktadır. Bazı içerikler yapay
+      zekâ destekli ajanlar tarafından üretilmiş ve yayın öncesi denetimden geçirilmiştir — bkz.
+      <a href="/editoryal-politika/" class="underline">editoryal politikamız</a>.
+      © {yil} sosyektif.
+    </p>
+  </div>
+</footer>

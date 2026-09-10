@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Editoryal Politika" description="sosyektif içeriklerinin nasıl üretildiği ve denetlendiği.">
+  <article class="prose prose-neutral mx-auto max-w-2xl px-4 py-12">
+    <h1>Editoryal Politika</h1>
+
+    <p>
+      sosyektif'teki içeriklerin bir kısmı, güncel konuları takip eden ve bunları liste, trivia
+      ("bunu bilmiyordun") ve quiz formatlarına dönüştüren yapay zekâ destekli ajanlar tarafından
+      üretilmektedir. Şeffaflık ilkemiz gereği bu süreci burada açıklıyoruz.
+    </p>
+
+    <h2>İçerik Nasıl Üretiliyor?</h2>
+    <ol>
+      <li>Konu adayları güncel trendlerden ve güvenilir kaynaklardan (Wikipedia, haber kuruluşları) toplanır.</li>
+      <li>Bir yapay zekâ modeli, toplanan kaynak metinlerden yola çıkarak içeriği kendi cümleleriyle oluşturur.</li>
+      <li>Ayrı bir yapay zekâ modeli, üretilen içerikteki her iddiayı kaynaklarla karşılaştırarak doğrular.</li>
+      <li>Hassas konular (siyaset, suç, trajedi, sağlık/finans tavsiyesi, özel kişiler hakkında spekülasyon vb.) otomatik olarak reddedilir.</li>
+      <li>Belirli bir kalite eşiğinin altındaki içerikler yayınlanmadan önce insan onayından geçer.</li>
+    </ol>
+
+    <h2>Hata Bildirimi</h2>
+    <p>
+      Otomasyona rağmen hatalar olabilir. Bir içerikte yanlış veya güncel olmayan bilgi
+      görürseniz lütfen <a href="/iletisim/">iletişim sayfamızdan</a> bize bildirin — talebiniz
+      önceliklendirilir.
+    </p>
+  </article>
+</Layout>
