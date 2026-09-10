@@ -32,7 +32,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Outer space
     url: https://en.wikipedia.org/wiki/Outer_space
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Chait Goli on Pexels
 moderasyon:
   skor: 1
