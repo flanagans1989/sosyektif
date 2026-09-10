@@ -132,7 +132,7 @@ const cerebrasAdapter: ProviderAdapter = {
     openAiCompatibleCall(
       "https://api.cerebras.ai/v1",
       optionalEnv("CEREBRAS_API_KEY")!,
-      "llama3.1-8b",
+      "gpt-oss-120b",
       params
     ),
 };
