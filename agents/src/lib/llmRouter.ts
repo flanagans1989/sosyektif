@@ -71,7 +71,7 @@ const geminiAdapter: ProviderAdapter = {
   isConfigured: () => optionalEnv("GEMINI_API_KEY") !== undefined,
   async call(params) {
     const apiKey = optionalEnv("GEMINI_API_KEY")!;
-    const model = "gemini-2.5-flash-lite";
+    const model = "gemini-3.5-flash-lite";
     const res = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
       {
