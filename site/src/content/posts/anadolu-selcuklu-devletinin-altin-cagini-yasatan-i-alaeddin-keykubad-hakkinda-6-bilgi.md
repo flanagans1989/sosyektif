@@ -8,8 +8,8 @@ etiketler:
   - tarih
   - selçuklu
   - alâeddin keykubad
-  - osmanlı
-  - padişahlar
+  - anadolu selçuklu devleti
+  - sultanlar
 yayinTarihi: '2026-09-10T22:08:50.057Z'
 kapakGorseli: /images/posts/anadolu-selcuklu-devletinin-altin-cagini-yasatan-i-alaeddin-keykubad-hakkinda-6-bilgi.webp
 kapakGorselAlt: Anadolu Selçuklu Devleti'nin Altın Çağını Yaşatan I. Alâeddin Keykubad Hakkında 6 Bilgi
@@ -24,7 +24,7 @@ listeMaddeleri:
     metin: 1221 yılında Akdeniz'in kilit noktalarından Kalonoros Kalesi'ni fethederek burayı kendi adından esinlenerek Alaiye yani Alanya adıyla yeniden inşa ettirdi. Buraya bir tersane kurarak deniz ticaret yollarının güvenliğini sağladı ve Karadeniz'deki ticareti güvenceye almak için Suğdak Seferi'ni düzenledi.
   - baslik: Orta Çağ'da tüccarlar için devlet sigortası sistemi kurdu
     metin: İdari alanda kurumsallaşmaya büyük önem veren Keykubad, Anadolu genelinde inşa ettirdiği devasa kervansaray şebekesiyle uluslararası ticarete adeta can suyu verdi. Daha da şaşırtıcısı, tüccarların ticari zararlarını karşılayan erken dönem bir devlet sigortası sistemi hayata geçirdi.
-  - baslik: Kayseri'de yabancı elçilere verilen ziyarette şüpheli şekilde zehirlendi
+  - baslik: Kayseri'de yabancı elçilere verilen ziyafette şüpheli şekilde zehirlendi
     metin: 1237 yılında Kayseri'de yabancı elçiler onuruna düzenlenen görkemli bir ziyafet sırasında aniden ve şüpheli bir şekilde zehirlenerek hayatını kaybetti. Vefatının ardından naaşı Konya'ya götürülerek Alâeddin Tepesi'ndeki 'Kümbed-hâne' adı verilen anıt mezara defnedildi.
 kaynaklar:
   - baslik: Vikipedi — I. Alâeddin Keykubad
@@ -34,7 +34,7 @@ kaynaklar:
     url: https://en.wikipedia.org/wiki/Kayqubad_I
     atif: CC BY-SA 4.0
 taslak: true
-gorselKredisi: Photo by Alex Bian on Pexels
+gorselKredisi: Photo by Eser Tokas on Pexels
 moderasyon:
   skor: 1
   otomatikYayinlandi: false

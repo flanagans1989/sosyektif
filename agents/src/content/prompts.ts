@@ -46,11 +46,14 @@ JSON şeması:
   "aci": string,
   "kategori": "eglence" | "pop-kultur" | "bilim" | "teknoloji" | "spor" | "yasam" | "tarih",
   "formatOnerisi": "liste" | "trivia" | "quiz",
-  "kisiMi": boolean
+  "kisiMi": boolean,
+  "gorselAramaTerimi": string
 }
 
 "aci": içeriğin tek cümlelik açısı (ör. "Ahtapotların insanı şaşırtan biyolojik özellikleri").
-"kisiMi": konu odağı bir insan (tarihî kişi dahil) ise true; hayvan, yer, eser, kavram, olay ise false.`;
+"kisiMi": konu odağı bir insan (tarihî kişi dahil) ise true; hayvan, yer, eser, kavram, olay ise false.
+"gorselAramaTerimi": kapak fotoğrafı için stok görsel sitesinde (Pexels) aranacak İNGİLİZCE, 2-4 kelimelik, somut ve GENEL bir sahne/nesne/kavram tarifi.
+  KURALLAR: Asla bir kişinin adını, unvanını ya da o kişiyi betimleyen bir ifade yazma (bir sultanın adıyla arama yapmak alakasız/rastgele sonuç getirir). Konu bir kişiyse, o kişinin YAŞADIĞI DÖNEM/YER/ESERİ betimleyen somut bir sahne yaz (ör. "I. Alâeddin Keykubad" için "medieval castle stone" ya da "seljuk architecture"). Konu bir hayvan/nesne/yerse doğrudan onun İngilizce adını ve varsa somut bir sahneyi yaz (ör. "Ahtapot" için "octopus underwater", "Uzay" için "starry night sky"). Pexels'te gerçekten fotoğrafı bulunan, yaygın ve somut bir terim seç; nadir/özel isim kullanma.`;
 }
 
 // ---------------------------------------------------------------------------

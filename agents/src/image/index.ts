@@ -24,32 +24,34 @@ async function stokAra(terim: string): Promise<StockPhoto | null> {
 
 /**
  * Kapak görseli seçimi (PLAN.md R10):
- *  - Konu bir KİŞİ ise stok fotoğraf aranmaz → tipografik kapak. (Stok bir
- *    yüzün gerçek bir kişiyle ilişkilendirilmesi kişilik hakkı ve Pexels
- *    lisansı açısından risklidir.)
- *  - Kişi değilse önce konunun İngilizce adıyla aranır ("Octopus" gibi) —
- *    ilk sürüm yalnızca kategori kelimesiyle arıyordu ve ahtapot yazısına
- *    laboratuvar fotoğrafı geldi. Bulunamazsa kategori kelimesine düşülür.
- *  - Hiçbiri yoksa tipografik kapak.
+ *  - Arama terimi olarak konunun kendi adı (İngilizce Vikipedi başlığı vb.)
+ *    KULLANILMAZ — özellikle kişi/nadir özel isimlerde Pexels alakasız sonuç
+ *    döndürüyor (ör. "Kayqubad I" aramasında bir tekne fotoğrafı çıktı).
+ *    Bunun yerine İçerik Ajanı'nın ürettiği `gorselAramaTerimi` kullanılır:
+ *    bu, LLM tarafından üretilmiş, kişi içermeyen somut bir sahne tarifidir
+ *    (ör. bir sultan için "medieval castle stone", ahtapot için "octopus
+ *    underwater"). Bulunamazsa kategori anahtar kelimesine düşülür.
+ *  - Kişi konularında (kisiMi: true) bu terim zaten kişinin kendisini değil
+ *    dönemini/eserini tarif eder; yine de gerçek bir portre gelme ihtimaline
+ *    karşı ekstra güvenlik yoktur — bu yüzden yazım kuralı prompttadır.
+ *  - Hiçbir stok sonucu yoksa tipografik kapak kullanılır.
  */
 export async function generateCoverImage(params: {
   slug: string;
   baslik: string;
   kategori: Kategori;
-  kisiMi?: boolean;
-  konuAramaTerimi?: string;
+  gorselAramaTerimi?: string;
 }): Promise<CoverImageResult> {
   await mkdir(IMAGES_DIR, { recursive: true });
 
+  const terimler = [params.gorselAramaTerimi, KATEGORI_ARAMA_KELIMELERI[params.kategori]].filter(
+    (t): t is string => Boolean(t && t.trim())
+  );
+
   let stok: StockPhoto | null = null;
-  if (!params.kisiMi) {
-    const terimler = [params.konuAramaTerimi, KATEGORI_ARAMA_KELIMELERI[params.kategori]].filter(
-      (t): t is string => Boolean(t)
-    );
-    for (const terim of terimler) {
-      stok = await stokAra(terim);
-      if (stok) break;
-    }
+  for (const terim of terimler) {
+    stok = await stokAra(terim);
+    if (stok) break;
   }
 
   const dosyaAdi = `${params.slug}.webp`;

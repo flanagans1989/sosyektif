@@ -33,7 +33,7 @@ kaynaklar:
     url: https://en.wikipedia.org/wiki/Octopus
     atif: CC BY-SA 4.0
 taslak: true
-gorselKredisi: Photo by Artem Podrez on Pexels
+gorselKredisi: Photo by Ann Antonova on Pexels
 moderasyon:
   skor: 0.9
   otomatikYayinlandi: false

@@ -121,8 +121,7 @@ export async function processCandidate(aday: TrendCandidate, config: Config): Pr
     slug: draft.slug,
     baslik: draft.frontmatter.baslik,
     kategori,
-    kisiMi: sinif.siniflandirma.kisiMi,
-    konuAramaTerimi: kaynak.enBaslik,
+    gorselAramaTerimi: sinif.siniflandirma.gorselAramaTerimi,
   });
   const yayin = await publishDraft({
     draft,

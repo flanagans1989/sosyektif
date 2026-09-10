@@ -30,6 +30,7 @@ const siniflandirmaSchema = z.object({
   kategori: kategoriSchema.catch("yasam"),
   formatOnerisi: formatSchema.catch("liste"),
   kisiMi: z.boolean().catch(true),
+  gorselAramaTerimi: z.string().catch(""),
 });
 
 export interface Siniflandirma {
@@ -37,8 +38,10 @@ export interface Siniflandirma {
   aci: string;
   kategori: Kategori;
   formatOnerisi: Format;
-  /** Kişi konularında stok fotoğraf aranmaz (kişilik hakkı / Pexels lisansı, PLAN.md R10). */
+  /** Kişi konularında stok arama terimi kişinin kendisi değil, dönemi/eseridir (PLAN.md R10). */
   kisiMi: boolean;
+  /** Kapak görseli için İngilizce, kişi içermeyen somut arama terimi. */
+  gorselAramaTerimi: string;
 }
 
 export interface TopicClassificationResult {
@@ -78,6 +81,7 @@ export async function classifyTopic(
         kategori: s.kategori,
         formatOnerisi: s.formatOnerisi,
         kisiMi: s.kisiMi,
+        gorselAramaTerimi: s.gorselAramaTerimi.trim(),
       },
     };
   } catch (err) {

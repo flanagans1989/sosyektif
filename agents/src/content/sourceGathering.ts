@@ -28,8 +28,6 @@ const KESILECEK_BOLUMLER = [
 export interface GatheredSource {
   /** Ana madde başlığı (TR yoksa EN). */
   baslik: string;
-  /** İngilizce Wikipedia başlığı — stok görsel araması için en isabetli terim. */
-  enBaslik?: string;
   /** LLM'e verilen birleşik kaynak metni. */
   metin: string;
   url: string;
@@ -181,7 +179,6 @@ export async function gatherSourceFor(konu: string): Promise<GatheredSource | nu
 
   return {
     baslik: trBaslik ?? enBaslik ?? konu,
-    enBaslik: enBaslik && enMetin ? enBaslik : undefined,
     metin: parcalar.join("\n\n"),
     url: kaynaklar[0]!.url,
     kaynaklar,
