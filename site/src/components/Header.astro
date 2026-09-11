@@ -5,53 +5,55 @@ const kategoriGirdileri = Object.entries(KATEGORILER);
 const kesifLinkleri = [
   { href: '/gunun-sorusu/', etiket: 'Günün Sorusu', emoji: '🎯' },
   { href: '/tarihte-bugun/', etiket: 'Tarihte Bugün', emoji: '📅' },
-  { href: '/burc/', etiket: 'Burç', emoji: '🔮' },
+  { href: '/burc/', etiket: 'Günlük Burç', emoji: '🔮' },
 ];
+const pillSinifi =
+  'shrink-0 whitespace-nowrap rounded-full bg-marka/10 px-3 py-1.5 text-sm font-semibold text-marka transition hover:bg-marka/20';
 ---
 
+<!-- İki satır da aynı max-w-6xl kutusunda: logo, öne çıkan linkler ve
+     kategoriler aynı sol/sağ kenara hizalanır. Masaüstünde öne çıkan linkler
+     üst satırın sağında; mobilde yer açmak için kategori şeridinin başına
+     geçer. Şerit taşarsa satır kırmak yerine yana kayar. -->
 <header class="sticky top-0 z-40 border-b border-black/5 bg-zemin/90 backdrop-blur">
-  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-    <a href="/" class="shrink-0 text-2xl font-extrabold tracking-tight text-murekkep">
-      sos<span class="text-marka">yektif</span>
-    </a>
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="flex h-16 items-center justify-between gap-4">
+      <a href="/" class="shrink-0 text-2xl font-extrabold tracking-tight text-murekkep">
+        sos<span class="text-marka">yektif</span>
+      </a>
 
-    <div class="flex shrink-0 items-center gap-2">
-      <a
-        href="/ara/"
-        aria-label="Ara"
-        class="rounded-full p-2 text-murekkep/70 transition hover:bg-black/5 hover:text-marka"
-      >
-        🔍
-      </a>
-      <a
-        href="/"
-        class="rounded-full bg-marka px-4 py-2 text-sm font-semibold text-white transition hover:bg-marka-koyu"
-      >
-        Keşfet
-      </a>
+      <div class="flex items-center gap-2">
+        <nav class="hidden items-center gap-2 md:flex" aria-label="Öne çıkanlar">
+          {kesifLinkleri.map(({ href, etiket, emoji }) => (
+            <a href={href} class={pillSinifi}>{emoji} {etiket}</a>
+          ))}
+        </nav>
+        <a
+          href="/ara/"
+          aria-label="Ara"
+          class="flex h-9 w-9 items-center justify-center rounded-full text-murekkep/70 transition hover:bg-black/5 hover:text-marka"
+        >
+          🔍
+        </a>
+      </div>
     </div>
-  </div>
 
-  <!-- Tüm ekran genişliklerinde aynı, tek satırlık, taşınca yana kayan şerit —
-       ayrı masaüstü/mobil sürümlerin farklı kırılma noktalarında metinlerin
-       satıra bölünüp barı düzensiz göstermesini önler. -->
-  <nav class="flex gap-1.5 overflow-x-auto px-4 pb-3" aria-label="Keşfet ve kategoriler">
-    {kesifLinkleri.map(({ href, etiket, emoji }) => (
-      <a
-        href={href}
-        class="shrink-0 whitespace-nowrap rounded-full bg-marka/10 px-3 py-1.5 text-sm font-bold text-marka transition hover:bg-marka/20"
-      >
-        {emoji} {etiket}
-      </a>
-    ))}
-    <span class="mx-1 my-auto h-5 w-px shrink-0 bg-black/10" aria-hidden="true"></span>
-    {kategoriGirdileri.map(([anahtar, { etiket }]) => (
-      <a
-        href={`/kategori/${anahtar}/`}
-        class="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-murekkep/70 transition hover:bg-black/5 hover:text-marka"
-      >
-        {etiket}
-      </a>
-    ))}
-  </nav>
+    <nav
+      class="-mx-4 flex items-center gap-1 overflow-x-auto px-4 pb-3 [scrollbar-width:none] md:mx-0 md:-ml-3 md:px-0 [&::-webkit-scrollbar]:hidden"
+      aria-label="Kategoriler"
+    >
+      {kesifLinkleri.map(({ href, etiket, emoji }) => (
+        <a href={href} class={`${pillSinifi} md:hidden`}>{emoji} {etiket}</a>
+      ))}
+      <span class="mx-1 h-5 w-px shrink-0 bg-black/10 md:hidden" aria-hidden="true"></span>
+      {kategoriGirdileri.map(([anahtar, { etiket }]) => (
+        <a
+          href={`/kategori/${anahtar}/`}
+          class="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-murekkep/70 transition hover:bg-black/5 hover:text-marka"
+        >
+          {etiket}
+        </a>
+      ))}
+    </nav>
+  </div>
 </header>
