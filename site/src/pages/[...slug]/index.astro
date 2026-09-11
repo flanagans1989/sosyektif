@@ -6,6 +6,7 @@ import TriviaIcerik from '../../components/TriviaIcerik.astro';
 import QuizIcerik from '../../components/QuizIcerik.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
 import IlgiliIcerikler from '../../components/IlgiliIcerikler.astro';
+import Yorumlar from '../../components/Yorumlar.astro';
 import { KATEGORILER, FORMAT_ETIKETLERI } from '../../lib/kategoriler';
 
 export async function getStaticPaths() {
@@ -99,5 +100,10 @@ const sayfaUrl = new URL(`/${yazi.id}/`, Astro.site).toString();
     </div>
 
     <IlgiliIcerikler mevcut={yazi} tumYazilar={tumYazilar} />
+
+    <section class="mt-12 border-t border-black/5 pt-8">
+      <h2 class="mb-4 text-xl font-bold text-murekkep">Yorumlar</h2>
+      <Yorumlar />
+    </section>
   </article>
 </Layout>
