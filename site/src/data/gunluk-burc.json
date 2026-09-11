@@ -1,18 +1,66 @@
 {
-  "tarih": "1970-01-01",
-  "uretenProvider": "yer-tutucu",
+  "tarih": "2026-09-11",
+  "uretenProvider": "gemini",
   "burclar": {
-    "koc": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 7, "sansliRenk": "Kırmızı" },
-    "boga": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 3, "sansliRenk": "Yeşil" },
-    "ikizler": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 12, "sansliRenk": "Sarı" },
-    "yengec": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 9, "sansliRenk": "Gümüş" },
-    "aslan": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 5, "sansliRenk": "Altın" },
-    "basak": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 14, "sansliRenk": "Kahverengi" },
-    "terazi": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 6, "sansliRenk": "Mavi" },
-    "akrep": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 8, "sansliRenk": "Bordo" },
-    "yay": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 21, "sansliRenk": "Mor" },
-    "oglak": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 4, "sansliRenk": "Siyah" },
-    "kova": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 11, "sansliRenk": "Turkuaz" },
-    "balik": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 2, "sansliRenk": "Deniz Mavisi" }
+    "koc": {
+      "yorum": "Bugün enerjin tavan yapmış durumda sevgili Koç, ama her önüne çıkan duvara kafa atmamakta fayda var. İş yerinde liderliği ele alırken ekibin kalbini kırmamaya dikkat et, aşk hayatında ise ufak bir sürpriz kapıda.",
+      "sansliSayi": 7,
+      "sansliRenk": "Kırmızı"
+    },
+    "boga": {
+      "yorum": "Konfor alanından çıkmak bugün gözünü korkutabilir ama inatçılığı biraz bir kenara bırakırsan harika fırsatlarla karşılaşabilirsin. Akşama doğru sevdiğin bir yemekle kendini ödüllendirmek tüm yorgunluğunu alacaktır.",
+      "sansliSayi": 12,
+      "sansliRenk": "Yeşil"
+    },
+    "ikizler": {
+      "yorum": "Aklında bin bir tane fikir, telefonunda okunmamış onlarca mesajla güne başlarken kafan biraz karışabilir. İletişim trafiğin o kadar yoğun ki, akşam olunca 'ben bugün ne yaptım' diye düşünebilirsin; sakin ol, hepsinin üstesinden gelirsin.",
+      "sansliSayi": 23,
+      "sansliRenk": "Sarı"
+    },
+    "yengec": {
+      "yorum": "Evinin huzuru ve sevdiklerinin tatlı sözleri bugün en büyük sığınağın olacak. Duygusal dalgalanmalar yaşasan da, günün ilerleyen saatlerinde alacağın tatlı bir haber yüzünü güldürecek.",
+      "sansliSayi": 4,
+      "sansliRenk": "Gümüş"
+    },
+    "aslan": {
+      "yorum": "Işıkları üzerine çekmek için ekstra bir çaba sarf etmene gerek yok, çünkü bugün aurapla herkesi büyüleyeceksin. Kariyerinde yaptığın cesur bir hamle, yakın çevrende takdirle karşılanabilir.",
+      "sansliSayi": 1,
+      "sansliRenk": "Altın Sarısı"
+    },
+    "basak": {
+      "yorum": "Detaylarda kaybolma eğilimin bugün zirve yapabilir, her şeyi kusursuz yapmaya çalışırken kendini yıpratma. Planlı yapın sayesinde işleri erken bitirip kendine uzun zamandır okumak istediğin kitap için vakit ayırabilirsin.",
+      "sansliSayi": 15,
+      "sansliRenk": "Lacivert"
+    },
+    "terazi": {
+      "yorum": "Karar vermekte zorlandığın bir konuyu bugün nihayet netleştirebilirsin, dengeyi bulmak senin uzmanlık alanın ne de olsa. Sosyal ilişkilerde tatlı dille çözemeyeceğin hiçbir kriz yok.",
+      "sansliSayi": 6,
+      "sansliRenk": "Pembe"
+    },
+    "akrep": {
+      "yorum": "Sezgilerinin sesine kulak vermen gereken bir gün; içine kurt düşen bir konuda yanılmadığını göreceksin. Gizemli hallerin çevrendekilerin dikkatini çekerken, aşkta derin sohbetler kapıda.",
+      "sansliSayi": 9,
+      "sansliRenk": "Bordo"
+    },
+    "yay": {
+      "yorum": "Yeni yerler keşfetme veya seyahat planları yapma isteğin bugün seni oldukça hareketli kılacak. Rutin işlerden sıkıldıysan, günün ikinci yarısında ufak kaçamaklar için harika enerjiler var.",
+      "sansliSayi": 33,
+      "sansliRenk": "Mor"
+    },
+    "oglak": {
+      "yorum": "Disiplinli duruşun yine iş başında, sorumluluklarını birer birer listeden siliyorsun. Ancak akşam saatlerinde biraz sosyalleşmek ve iş konuşmamak ruhuna çok iyi gelecektir.",
+      "sansliSayi": 8,
+      "sansliRenk": "Kahverengi"
+    },
+    "kova": {
+      "yorum": "Farklı ve sıra dışı fikirlerinle bugün toplantıların veya sohbetlerin yıldızı sensin. Teknolojiyle ilgili ufak bir aksilik yaşansa da pratik zekanla hemen çözüme ulaşırsın.",
+      "sansliSayi": 17,
+      "sansliRenk": "Mavi"
+    },
+    "balik": {
+      "yorum": "Hayal gücün o kadar aktif ki, gerçek dünya ile rüya aleminde gidip gelebilirsin. Sanatsal faaliyetlerle ilgilenmek veya müzik dinlemek günün stresini unutturup sana ilham verecek.",
+      "sansliSayi": 11,
+      "sansliRenk": "Turkuaz"
+    }
   }
 }
