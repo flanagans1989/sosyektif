@@ -1,0 +1,95 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { BURCLAR, BURC_ANAHTARLARI, type UyumVerisi } from '../../../lib/burclar';
+import burcUyum from '../../../data/burc-uyum.json';
+
+const uyumlar = burcUyum as Record<string, UyumVerisi>;
+const mevcutAnahtarlar = Object.keys(uyumlar);
+const secimSinifi =
+  'w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-murekkep focus:border-marka focus:outline-none';
+---
+
+<Layout title="Burç Uyumu" description="İki burcu seç; aşk, arkadaşlık ve iş uyumunu yüzdesiyle öğren. 12 burcun 78 uyum yorumu.">
+  <div class="mx-auto max-w-3xl px-4 py-10">
+    <a href="/burc/" class="text-sm font-semibold text-marka hover:underline">← Günlük burç yorumları</a>
+    <h1 class="mt-4 text-3xl font-extrabold text-murekkep">💞 Burç Uyumu</h1>
+    <p class="mt-2 text-murekkep/70">İki burcu seç, aşk, arkadaşlık ve iş uyumunu öğren.</p>
+
+    <form
+      id="uyum-formu"
+      class="mt-6 grid items-end gap-3 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 sm:grid-cols-[1fr_1fr_auto]"
+      data-sira={JSON.stringify(BURC_ANAHTARLARI)}
+      data-mevcut={JSON.stringify(mevcutAnahtarlar)}
+    >
+      <label class="flex flex-col gap-1 text-sm font-semibold text-murekkep/70">
+        Senin burcun
+        <select id="burc-a" class={secimSinifi}>
+          {BURC_ANAHTARLARI.map((b) => <option value={b}>{BURCLAR[b].emoji} {BURCLAR[b].isim}</option>)}
+        </select>
+      </label>
+      <label class="flex flex-col gap-1 text-sm font-semibold text-murekkep/70">
+        Onun burcu
+        <select id="burc-b" class={secimSinifi}>
+          {BURC_ANAHTARLARI.map((b) => <option value={b}>{BURCLAR[b].emoji} {BURCLAR[b].isim}</option>)}
+        </select>
+      </label>
+      <button type="submit" class="rounded-xl bg-marka px-6 py-3 font-bold text-white transition hover:bg-marka-koyu">
+        Uyumu gör
+      </button>
+      <p id="uyum-mesaj" class="hidden text-sm text-murekkep/60 sm:col-span-3">Bu çiftin yorumu hazırlanıyor, çok yakında burada!</p>
+    </form>
+
+    {mevcutAnahtarlar.length > 0 && (
+      <section class="mt-10 flex flex-col gap-6">
+        <h2 class="text-xl font-bold text-murekkep">Tüm Burç Uyumları</h2>
+        {BURC_ANAHTARLARI.map((a, i) => (
+          <div>
+            <h3 class="mb-2 text-sm font-semibold uppercase tracking-wide text-murekkep/50">
+              {BURCLAR[a].emoji} {BURCLAR[a].isim}
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {BURC_ANAHTARLARI.slice(i).map((b) => {
+                const anahtar = `${a}-${b}`;
+                return uyumlar[anahtar] ? (
+                  <a href={`/burc/uyum/${anahtar}/`} class="rounded-full bg-white px-3 py-1.5 text-sm text-murekkep/80 shadow-sm ring-1 ring-black/5 transition hover:text-marka hover:ring-marka">
+                    {BURCLAR[a].isim} & {BURCLAR[b].isim} · <span class="font-semibold text-marka">%{uyumlar[anahtar].puan}</span>
+                  </a>
+                ) : null;
+              })}
+            </div>
+          </div>
+        ))}
+      </section>
+    )}
+  </div>
+</Layout>
+
+<script>
+  const form = document.getElementById('uyum-formu') as HTMLFormElement | null;
+  const secimA = document.getElementById('burc-a') as HTMLSelectElement | null;
+  const secimB = document.getElementById('burc-b') as HTMLSelectElement | null;
+
+  if (form && secimA && secimB) {
+    const sira: string[] = JSON.parse(form.dataset.sira ?? '[]');
+    const mevcut = new Set<string>(JSON.parse(form.dataset.mevcut ?? '[]'));
+
+    // /burc/ sayfasında seçilmiş burç varsa "senin burcun" olarak gelsin.
+    try {
+      const kayitli = localStorage.getItem('sosyektif-burc');
+      if (kayitli && sira.includes(kayitli)) secimA.value = kayitli;
+    } catch {
+      // localStorage kapalı olabilir.
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const [a, b] = [secimA.value, secimB.value];
+      const anahtar = sira.indexOf(a) <= sira.indexOf(b) ? `${a}-${b}` : `${b}-${a}`;
+      if (mevcut.has(anahtar)) {
+        location.href = `/burc/uyum/${anahtar}/`;
+      } else {
+        document.getElementById('uyum-mesaj')?.classList.remove('hidden');
+      }
+    });
+  }
+</script>

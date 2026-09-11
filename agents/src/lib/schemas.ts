@@ -17,7 +17,7 @@ export const KATEGORILER = [
 export const kategoriSchema = z.enum(KATEGORILER);
 export type Kategori = z.infer<typeof kategoriSchema>;
 
-export const formatSchema = z.enum(["liste", "trivia", "quiz"]);
+export const formatSchema = z.enum(["liste", "trivia", "quiz", "kisilik"]);
 export type Format = z.infer<typeof formatSchema>;
 
 export const kaynakSchema = z.object({
@@ -42,6 +42,20 @@ export const quizSoruSchema = z.object({
 });
 export type QuizSoru = z.infer<typeof quizSoruSchema>;
 
+/** Kişilik testi ("Sen hangi gezegensin?"): her şık bir sonuca oy verir. */
+export const kisilikSonucSchema = z.object({
+  id: z.string(),
+  baslik: z.string(),
+  aciklama: z.string(),
+});
+export type KisilikSonuc = z.infer<typeof kisilikSonucSchema>;
+
+export const kisilikSoruSchema = z.object({
+  soru: z.string(),
+  secenekler: z.array(z.object({ metin: z.string(), sonucId: z.string() })).min(2).max(6),
+});
+export type KisilikSoru = z.infer<typeof kisilikSoruSchema>;
+
 export const postSchema = z.object({
   baslik: z.string().min(5),
   seoBaslik: z.string().max(70),
@@ -58,6 +72,8 @@ export const postSchema = z.object({
 
   listeMaddeleri: z.array(listeMaddesiSchema).optional(),
   quizSorulari: z.array(quizSoruSchema).optional(),
+  kisilikSonuclari: z.array(kisilikSonucSchema).optional(),
+  kisilikSorulari: z.array(kisilikSoruSchema).optional(),
 
   kaynaklar: z.array(kaynakSchema).default([]),
 

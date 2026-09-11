@@ -85,6 +85,8 @@ const { sorular, baslik, sayfaUrl, sonrakiTestUrl, sonrakiTestBaslik } = Astro.p
 </div>
 
 <script>
+  import { sonucKartiCiz, kartiPaylas } from '../lib/sonucKarti';
+
   const kok = document.getElementById('quiz-kok');
   if (kok) {
     const toplam = Number(kok.dataset.toplam ?? '0');
@@ -112,103 +114,27 @@ const { sorular, baslik, sayfaUrl, sonrakiTestUrl, sonrakiTestBaslik } = Astro.p
       return 'Bir daha dene! 💪';
     }
 
-    function satirlaraBol(ctx: CanvasRenderingContext2D, metin: string, maksGenislik: number): string[] {
-      const kelimeler = metin.split(' ');
-      const satirlar: string[] = [];
-      let mevcut = '';
-      for (const kelime of kelimeler) {
-        const aday = mevcut ? `${mevcut} ${kelime}` : kelime;
-        if (ctx.measureText(aday).width > maksGenislik && mevcut) {
-          satirlar.push(mevcut);
-          mevcut = kelime;
-        } else {
-          mevcut = aday;
-        }
-      }
-      if (mevcut) satirlar.push(mevcut);
-      return satirlar;
+    function meydanUrl(): string {
+      return `${sayfaUrl}${sayfaUrl.includes('?') ? '&' : '?'}meydan=${dogruSayisi}-${toplam}`;
     }
 
-    function kartCiz(dogru: number, toplamSoru: number): HTMLCanvasElement | null {
+    document.getElementById('kart-paylas-buton')?.addEventListener('click', () => {
       const canvas = document.getElementById('sonuc-kart-canvas') as HTMLCanvasElement | null;
-      if (!canvas) return null;
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return null;
-
-      const G = canvas.width;
-      const oran = dogru / toplamSoru;
-
-      // Arka plan
-      ctx.fillStyle = '#fffaf7';
-      ctx.fillRect(0, 0, G, G);
-
-      // Üst marka şeridi
-      ctx.fillStyle = '#ff4f64';
-      ctx.fillRect(0, 0, G, 160);
-      ctx.fillStyle = '#ffffff';
-      ctx.font = 'bold 64px system-ui, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.fillText('sosyektif.com', G / 2, 100);
-
-      // Başlık (sarmalı)
-      ctx.fillStyle = '#201a1c';
-      ctx.font = 'bold 44px system-ui, sans-serif';
-      const satirlar = satirlaraBol(ctx, baslik, G - 160).slice(0, 3);
-      satirlar.forEach((satir, i) => {
-        ctx.fillText(satir, G / 2, 300 + i * 56);
+      if (!canvas || cevaplanan < toplam) return;
+      sonucKartiCiz(canvas, {
+        ustBaslik: baslik,
+        buyukMetin: `${dogruSayisi}/${toplam}`,
+        altMetin: performansIfadesi(dogruSayisi / toplam),
+        cagri: 'Sen kaç yaparsın? sosyektif.com',
       });
-
-      // Büyük skor
-      ctx.fillStyle = '#ff4f64';
-      ctx.font = 'bold 220px system-ui, sans-serif';
-      ctx.fillText(`${dogru}/${toplamSoru}`, G / 2, 680);
-
-      // Performans ifadesi
-      ctx.fillStyle = '#201a1c';
-      ctx.font = 'bold 56px system-ui, sans-serif';
-      ctx.fillText(performansIfadesi(oran), G / 2, 800);
-
-      // Alt çağrı
-      ctx.fillStyle = 'rgba(32,26,28,0.6)';
-      ctx.font = '38px system-ui, sans-serif';
-      ctx.fillText('Sen kaç yaparsın? sosyektif.com', G / 2, 960);
-
-      return canvas;
-    }
-
-    async function kartPaylas(dogru: number, toplamSoru: number): Promise<void> {
-      const canvas = kartCiz(dogru, toplamSoru);
-      if (!canvas) return;
-
-      const meydanUrl = `${sayfaUrl}${sayfaUrl.includes('?') ? '&' : '?'}meydan=${dogru}-${toplamSoru}`;
-      const paylasimMetni = `${baslik} testinde ${dogru}/${toplamSoru} yaptım! Sen kaç yaparsın?`;
-
-      canvas.toBlob(async (blob) => {
-        if (!blob) return;
-        const dosya = new File([blob], 'sosyektif-sonuc.png', { type: 'image/png' });
-
-        if (navigator.share && navigator.canShare?.({ files: [dosya] })) {
-          try {
-            await navigator.share({ files: [dosya], title: baslik, text: paylasimMetni, url: meydanUrl });
-            return;
-          } catch {
-            // Kullanıcı paylaşım penceresini kapattıysa sessizce devam et.
-          }
-        }
-
-        // Web Share API desteklenmiyorsa: kartı önizleme olarak göster ve
-        // indirilebilir hale getir.
-        const onizleme = document.getElementById('sonuc-kart-onizleme') as HTMLImageElement | null;
-        if (onizleme) {
-          onizleme.src = canvas.toDataURL('image/png');
-          onizleme.classList.remove('hidden');
-        }
-        const indirLink = document.createElement('a');
-        indirLink.href = canvas.toDataURL('image/png');
-        indirLink.download = 'sosyektif-sonuc.png';
-        indirLink.click();
-      }, 'image/png');
-    }
+      kartiPaylas(canvas, {
+        dosyaAdi: 'sosyektif-sonuc.png',
+        baslik,
+        metin: `${baslik} testinde ${dogruSayisi}/${toplam} yaptım! Sen kaç yaparsın?`,
+        url: meydanUrl(),
+        onizleme: document.getElementById('sonuc-kart-onizleme') as HTMLImageElement | null,
+      });
+    });
 
     kok.querySelectorAll<HTMLFieldSetElement>('.quiz-soru').forEach((soruEl) => {
       const dogruIndex = Number(soruEl.dataset.dogru);
@@ -222,8 +148,7 @@ const { sorular, baslik, sayfaUrl, sonrakiTestUrl, sonrakiTestBaslik } = Astro.p
           cevaplanan += 1;
 
           const secilenIndex = Number(buton.dataset.opsiyonIndex);
-          const dogruMu = secilenIndex === dogruIndex;
-          if (dogruMu) dogruSayisi += 1;
+          if (secilenIndex === dogruIndex) dogruSayisi += 1;
 
           butonlar.forEach((b, i) => {
             b.disabled = true;
@@ -242,15 +167,11 @@ const { sorular, baslik, sayfaUrl, sonrakiTestUrl, sonrakiTestBaslik } = Astro.p
               sonuc.classList.add('flex');
             }
 
-            const meydanUrl = `${sayfaUrl}${sayfaUrl.includes('?') ? '&' : '?'}meydan=${dogruSayisi}-${toplam}`;
             const whatsappLink = document.getElementById('whatsapp-paylas-link') as HTMLAnchorElement | null;
             if (whatsappLink) {
-              const metin = `${baslik} testinde ${dogruSayisi}/${toplam} yaptım! Sen kaç yaparsın? ${meydanUrl}`;
+              const metin = `${baslik} testinde ${dogruSayisi}/${toplam} yaptım! Sen kaç yaparsın? ${meydanUrl()}`;
               whatsappLink.href = `https://wa.me/?text=${encodeURIComponent(metin)}`;
             }
-
-            const kartButon = document.getElementById('kart-paylas-buton');
-            kartButon?.addEventListener('click', () => kartPaylas(dogruSayisi, toplam));
           }
         });
       });

@@ -5,4 +5,5 @@ export const FORMAT_ETIKETLERI_TR: Record<Format, string> = {
   liste: "Liste",
   trivia: "Bunu Bilmiyordun",
   quiz: "Quiz",
+  kisilik: "Kişilik Testi",
 };

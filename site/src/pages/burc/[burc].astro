@@ -1,0 +1,130 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import {
+  BURCLAR,
+  BURC_ANAHTARLARI,
+  uyumAnahtari,
+  tarihEtiketi,
+  haftaEtiketi,
+  type BurcAnahtari,
+  type GunlukYorum,
+  type HaftalikYorum,
+  type UyumVerisi,
+} from '../../lib/burclar';
+import gunlukBurc from '../../data/gunluk-burc.json';
+import haftalikBurc from '../../data/haftalik-burc.json';
+import burcUyum from '../../data/burc-uyum.json';
+
+export function getStaticPaths() {
+  return BURC_ANAHTARLARI.map((burc) => ({ params: { burc } }));
+}
+
+const burc = Astro.params.burc as BurcAnahtari;
+const bilgi = BURCLAR[burc];
+const gunluk = (gunlukBurc.burclar as Record<string, GunlukYorum>)[burc];
+const haftalik = (haftalikBurc.burclar as Record<string, HaftalikYorum>)[burc];
+const uyumlar = burcUyum as Record<string, UyumVerisi>;
+
+const sayfaUrl = new URL(`/burc/${burc}/`, Astro.site).toString();
+const paylasimUrl = `https://wa.me/?text=${encodeURIComponent(`${bilgi.isim} burcu için bugünün yorumu 🔮 ${sayfaUrl}`)}`;
+const cipSinifi = 'rounded-full bg-black/5 px-3 py-1 text-murekkep/70';
+---
+
+<Layout
+  title={`${bilgi.isim} Burcu Günlük ve Haftalık Yorum`}
+  description={`${bilgi.isim} burcu (${bilgi.tarihAraligi}) günlük yorumu, haftalık yorumu, özellikleri ve diğer burçlarla uyumu.`}
+>
+  <div class="mx-auto max-w-3xl px-4 py-10">
+    <a href="/burc/" class="text-sm font-semibold text-marka hover:underline">← Tüm burçlar</a>
+
+    <div class="mt-4 flex items-center gap-4">
+      <span class="text-6xl" aria-hidden="true">{bilgi.emoji}</span>
+      <div>
+        <h1 class="text-3xl font-extrabold text-murekkep">{bilgi.isim} Burcu</h1>
+        <p class="text-murekkep/60">{bilgi.tarihAraligi}</p>
+      </div>
+    </div>
+
+    <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+      <span class={cipSinifi}>Element: {bilgi.element}</span>
+      <span class={cipSinifi}>Yönetici gezegen: {bilgi.gezegen}</span>
+      <span class={cipSinifi}>Nitelik: {bilgi.nitelik}</span>
+    </div>
+    <p class="mt-3 text-sm text-murekkep/70">Öne çıkan özellikleri: {bilgi.ozellikler.join(', ')}.</p>
+
+    {gunluk && (
+      <section class="mt-8 rounded-2xl bg-marka p-6 text-white shadow-sm">
+        <p class="text-sm font-semibold text-white/70">Bugünün yorumu · {tarihEtiketi(gunlukBurc.tarih)}</p>
+        <p class="mt-2 leading-relaxed">{gunluk.yorum}</p>
+        <p class="mt-3 text-sm font-semibold text-white/90">
+          🍀 Şanslı sayı: {gunluk.sansliSayi} · Şanslı renk: {gunluk.sansliRenk}
+        </p>
+        <a
+          href={paylasimUrl}
+          target="_blank"
+          rel="noopener"
+          class="mt-4 inline-flex items-center gap-1 rounded-full bg-white px-5 py-2 text-sm font-bold text-marka transition hover:bg-white/90"
+        >
+          WhatsApp'ta Paylaş
+        </a>
+      </section>
+    )}
+
+    {haftalik && (
+      <section class="mt-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
+        <h2 class="text-xl font-bold text-murekkep">
+          Bu Haftanın Yorumu
+          <span class="text-sm font-medium text-murekkep/50">({haftaEtiketi(haftalikBurc.hafta)})</span>
+        </h2>
+        <p class="mt-3 leading-relaxed text-murekkep/80">{haftalik.genel}</p>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          <div class="rounded-xl bg-marka/5 p-4">
+            <p class="text-sm font-bold text-marka">❤️ Aşk</p>
+            <p class="mt-1 text-sm leading-relaxed text-murekkep/80">{haftalik.ask}</p>
+          </div>
+          <div class="rounded-xl bg-marka/5 p-4">
+            <p class="text-sm font-bold text-marka">💼 Kariyer</p>
+            <p class="mt-1 text-sm leading-relaxed text-murekkep/80">{haftalik.kariyer}</p>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <section class="mt-10">
+      <h2 class="text-xl font-bold text-murekkep">{bilgi.isim} Burcunun Uyumu</h2>
+      <p class="mt-1 text-sm text-murekkep/60">Bir burca dokun, aşk, arkadaşlık ve iş uyumunu gör.</p>
+      <div class="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
+        {BURC_ANAHTARLARI.map((diger) => {
+          const anahtar = uyumAnahtari(burc, diger);
+          const uyum = uyumlar[anahtar];
+          return uyum ? (
+            <a
+              href={`/burc/uyum/${anahtar}/`}
+              class="flex items-center justify-between gap-2 rounded-xl bg-white px-4 py-3 shadow-sm ring-1 ring-black/5 transition hover:ring-marka"
+            >
+              <span class="text-sm font-semibold text-murekkep">{BURCLAR[diger].emoji} {BURCLAR[diger].isim}</span>
+              <span class="text-sm font-bold text-marka">%{uyum.puan}</span>
+            </a>
+          ) : (
+            <div class="flex items-center justify-between gap-2 rounded-xl bg-black/5 px-4 py-3 text-murekkep/50">
+              <span class="text-sm font-semibold">{BURCLAR[diger].emoji} {BURCLAR[diger].isim}</span>
+              <span class="text-xs">yakında</span>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <nav class="mt-10 flex flex-wrap gap-2" aria-label="Diğer burçlar">
+      {BURC_ANAHTARLARI.filter((b) => b !== burc).map((b) => (
+        <a href={`/burc/${b}/`} class="rounded-full bg-black/5 px-3 py-1.5 text-sm text-murekkep/70 transition hover:bg-marka/10 hover:text-marka">
+          {BURCLAR[b].emoji} {BURCLAR[b].isim}
+        </a>
+      ))}
+    </nav>
+
+    <p class="mt-8 text-center text-xs text-murekkep/40">
+      Bu yorumlar eğlence amaçlıdır, kesin bir öngörü olarak değerlendirilmemelidir.
+    </p>
+  </div>
+</Layout>

@@ -1,0 +1,96 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { BURCLAR, BURC_ANAHTARLARI, uyumAnahtari, uyumEtiketi, type BurcAnahtari, type UyumVerisi } from '../../../lib/burclar';
+import burcUyum from '../../../data/burc-uyum.json';
+
+export function getStaticPaths() {
+  const uyumlar = burcUyum as Record<string, UyumVerisi>;
+  return Object.entries(uyumlar).flatMap(([cift, uyum]) => {
+    const [a, b] = cift.split('-') as [BurcAnahtari, BurcAnahtari];
+    if (!(a in BURCLAR) || !(b in BURCLAR)) return [];
+    return [{ params: { cift }, props: { a, b, uyum } }];
+  });
+}
+
+const { a, b, uyum } = Astro.props as { a: BurcAnahtari; b: BurcAnahtari; uyum: UyumVerisi };
+const A = BURCLAR[a];
+const B = BURCLAR[b];
+const uyumlar = burcUyum as Record<string, UyumVerisi>;
+const ayniBurc = a === b;
+const baslik = ayniBurc ? `İki ${A.isim} Burcunun Uyumu` : `${A.isim} ve ${B.isim} Burcu Uyumu`;
+
+const sayfaUrl = new URL(`/burc/uyum/${a}-${b}/`, Astro.site).toString();
+const paylasimUrl = `https://wa.me/?text=${encodeURIComponent(`${baslik}: %${uyum.puan} 💞 ${sayfaUrl}`)}`;
+
+const bolumler = [
+  { etiket: '❤️ Aşk', metin: uyum.ask },
+  { etiket: '🤝 Arkadaşlık', metin: uyum.arkadaslik },
+  { etiket: '💼 İş', metin: uyum.is },
+];
+---
+
+<Layout title={baslik} description={`${baslik}: aşk, arkadaşlık ve iş uyumu. ${uyum.ozet}`.slice(0, 160)}>
+  <div class="mx-auto max-w-2xl px-4 py-10">
+    <a href="/burc/uyum/" class="text-sm font-semibold text-marka hover:underline">← Burç uyumu</a>
+
+    <div class="mt-6 flex items-center justify-center gap-3 text-5xl" aria-hidden="true">
+      <span>{A.emoji}</span><span class="text-3xl">💞</span><span>{B.emoji}</span>
+    </div>
+    <h1 class="mt-4 text-center text-3xl font-extrabold text-murekkep">{baslik}</h1>
+
+    <div class="mt-6 rounded-2xl bg-white p-6 text-center shadow-sm ring-1 ring-black/5">
+      <p class="text-6xl font-extrabold text-marka">%{uyum.puan}</p>
+      <p class="mt-1 font-semibold text-murekkep/70">{uyumEtiketi(uyum.puan)}</p>
+      <div class="mx-auto mt-4 h-3 max-w-sm overflow-hidden rounded-full bg-black/5">
+        <div class="h-full rounded-full bg-marka" style={`width:${uyum.puan}%`}></div>
+      </div>
+      <p class="mt-4 italic text-murekkep/80">“{uyum.ozet}”</p>
+    </div>
+
+    <div class="mt-6 flex flex-col gap-4">
+      {bolumler.map(({ etiket, metin }) => (
+        <section class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+          <h2 class="font-bold text-murekkep">{etiket}</h2>
+          <p class="mt-2 leading-relaxed text-murekkep/80">{metin}</p>
+        </section>
+      ))}
+    </div>
+
+    <div class="mt-6 flex flex-wrap justify-center gap-2">
+      <a
+        href={paylasimUrl}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-1 rounded-full bg-[#25D366] px-5 py-2 text-sm font-bold text-white transition hover:opacity-90"
+      >
+        WhatsApp'ta Paylaş
+      </a>
+      <a href={`/burc/${a}/`} class="rounded-full bg-marka/10 px-4 py-2 text-sm font-semibold text-marka hover:bg-marka/20">
+        {A.emoji} {A.isim} yorumu
+      </a>
+      {!ayniBurc && (
+        <a href={`/burc/${b}/`} class="rounded-full bg-marka/10 px-4 py-2 text-sm font-semibold text-marka hover:bg-marka/20">
+          {B.emoji} {B.isim} yorumu
+        </a>
+      )}
+    </div>
+
+    <section class="mt-10">
+      <h2 class="text-lg font-bold text-murekkep">{A.isim} burcunun diğer uyumları</h2>
+      <div class="mt-3 flex flex-wrap gap-2">
+        {BURC_ANAHTARLARI.filter((d) => d !== b).map((d) => {
+          const anahtar = uyumAnahtari(a, d);
+          return uyumlar[anahtar] ? (
+            <a href={`/burc/uyum/${anahtar}/`} class="rounded-full bg-black/5 px-3 py-1.5 text-sm text-murekkep/70 transition hover:bg-marka/10 hover:text-marka">
+              {BURCLAR[d].emoji} {BURCLAR[d].isim} · %{uyumlar[anahtar].puan}
+            </a>
+          ) : null;
+        })}
+      </div>
+    </section>
+
+    <p class="mt-8 text-center text-xs text-murekkep/40">
+      Bu yorumlar eğlence amaçlıdır, kesin bir öngörü olarak değerlendirilmemelidir.
+    </p>
+  </div>
+</Layout>

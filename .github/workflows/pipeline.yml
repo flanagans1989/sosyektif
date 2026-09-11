@@ -58,5 +58,8 @@ jobs:
             echo "Değişiklik yok, commit atlanıyor."
           else
             git commit -m "Otomatik içerik güncellemesi ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            # Çalışma sürerken Telegram onay worker'ı ya da başka bir workflow
+            # main'e commit atmış olabilir; push reddedilmesin diye önce üstüne al.
+            git pull --rebase origin main
             git push
           fi

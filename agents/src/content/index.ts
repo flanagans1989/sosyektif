@@ -17,6 +17,8 @@ import {
   type PostDraft,
   type Post,
   type QuizSoru,
+  type KisilikSonuc,
+  type KisilikSoru,
 } from "../lib/schemas.js";
 
 // ---------------------------------------------------------------------------
@@ -31,6 +33,7 @@ const siniflandirmaSchema = z.object({
   formatOnerisi: formatSchema.catch("liste"),
   kisiMi: z.boolean().catch(true),
   gorselAramaTerimi: z.string().catch(""),
+  kisilikTestiUygun: z.boolean().catch(false),
 });
 
 export interface Siniflandirma {
@@ -42,6 +45,8 @@ export interface Siniflandirma {
   kisiMi: boolean;
   /** Kapak görseli için İngilizce, kişi içermeyen somut arama terimi. */
   gorselAramaTerimi: string;
+  /** Konu "ben hangisiyim?" tarzı bir kişilik testine uygun bir küme mi. */
+  kisilikTestiUygun: boolean;
 }
 
 export interface TopicClassificationResult {
@@ -82,6 +87,7 @@ export async function classifyTopic(
         formatOnerisi: s.formatOnerisi,
         kisiMi: s.kisiMi,
         gorselAramaTerimi: s.gorselAramaTerimi.trim(),
+        kisilikTestiUygun: s.kisilikTestiUygun,
       },
     };
   } catch (err) {
@@ -106,6 +112,17 @@ const icerikUretimSchema = z.object({
         secenekler: z.array(z.string()),
         dogruIndex: z.coerce.number().int(),
         aciklama: z.string().optional(),
+      })
+    )
+    .optional(),
+  kisilikSonuclari: z
+    .array(z.object({ id: z.string().default(""), baslik: z.string(), aciklama: z.string() }))
+    .optional(),
+  kisilikSorulari: z
+    .array(
+      z.object({
+        soru: z.string(),
+        secenekler: z.array(z.object({ metin: z.string(), sonucId: z.string() })),
       })
     )
     .optional(),
@@ -134,6 +151,35 @@ function quizNormalize(sorular: z.infer<typeof icerikUretimSchema>["quizSorulari
 }
 
 /**
+ * Kişilik testi: sonuç kimliklerini slug'a çevirip tekilleştirir (LLM şıklarda
+ * kimlik yerine sonuç adını da yazabiliyor — ikisi de aynı slug'a iner), var
+ * olmayan bir sonuca bağlanan şıkları atar, 2'den az geçerli şıkkı kalan
+ * soruyu çıkarır.
+ */
+function kisilikNormalize(u: z.infer<typeof icerikUretimSchema>): {
+  sonuclar: KisilikSonuc[];
+  sorular: KisilikSoru[];
+} {
+  const sonuclar: KisilikSonuc[] = [];
+  for (const s of u.kisilikSonuclari ?? []) {
+    const id = slugify(s.id || s.baslik);
+    if (!id || !s.baslik.trim() || !s.aciklama.trim() || sonuclar.some((x) => x.id === id)) continue;
+    sonuclar.push({ id, baslik: s.baslik.trim(), aciklama: s.aciklama.trim() });
+  }
+  const gecerli = new Set(sonuclar.map((s) => s.id));
+  const sorular = (u.kisilikSorulari ?? [])
+    .map((s) => ({
+      soru: s.soru.trim(),
+      secenekler: s.secenekler
+        .map((o) => ({ metin: o.metin.trim(), sonucId: slugify(o.sonucId) }))
+        .filter((o) => o.metin && gecerli.has(o.sonucId))
+        .slice(0, 6),
+    }))
+    .filter((s) => s.soru && s.secenekler.length >= 2);
+  return { sonuclar, sorular };
+}
+
+/**
  * Önceden toplanmış kaynağa dayanarak içerik taslağı üretir. Madde sayısı
  * gibi yapısal eksiklerde taslağı reddetmez — onları Moderasyon Ajanı puanlar
  * ve gerekirse revizyon notuyla yeniden yazdırır. Yalnızca hiç kullanılabilir
@@ -150,8 +196,13 @@ export async function generateContentDraft(params: {
   const { konu, aci, kategori, kaynak, revizyonNotlari } = params;
 
   // Kısa kaynakla 7-10 maddelik liste zorlamak dolgu ve uydurmaya iter.
+  // Aynı sebeple kısa kaynakla 4-6 farklı sonuçlu kişilik testi de kurulamaz; quiz'e düşülür.
   const format: Format =
-    params.format === "liste" && kaynak.metin.length < 1500 ? "trivia" : params.format;
+    params.format === "liste" && kaynak.metin.length < 1500
+      ? "trivia"
+      : params.format === "kisilik" && kaynak.metin.length < 1200
+        ? "quiz"
+        : params.format;
 
   let sonHata = "";
   for (const sicaklik of [0.8, 0.5]) {
@@ -172,9 +223,18 @@ export async function generateContentDraft(params: {
       });
       const u = parseJsonLoose(text, icerikUretimSchema);
 
-      const listeMaddeleri = format === "quiz" ? undefined : u.listeMaddeleri?.filter((m) => m.baslik && m.metin);
+      const listeBicimi = format === "liste" || format === "trivia";
+      const listeMaddeleri = listeBicimi ? u.listeMaddeleri?.filter((m) => m.baslik && m.metin) : undefined;
       const quizSorulari = format === "quiz" ? quizNormalize(u.quizSorulari) : undefined;
-      const maddeSayisi = format === "quiz" ? quizSorulari?.length ?? 0 : listeMaddeleri?.length ?? 0;
+      const kisilik = format === "kisilik" ? kisilikNormalize(u) : undefined;
+      const maddeSayisi =
+        format === "quiz"
+          ? quizSorulari?.length ?? 0
+          : kisilik
+            ? kisilik.sonuclar.length >= 3
+              ? kisilik.sorular.length
+              : 0
+            : listeMaddeleri?.length ?? 0;
       if (maddeSayisi === 0) {
         sonHata = "kullanılabilir madde/soru üretilmedi";
         continue;
@@ -193,6 +253,8 @@ export async function generateContentDraft(params: {
         kapakGorselAlt: baslik,
         listeMaddeleri,
         quizSorulari,
+        kisilikSonuclari: kisilik?.sonuclar,
+        kisilikSorulari: kisilik?.sorular,
         kaynaklar: kaynak.kaynaklar,
         taslak: true, // yayın kararı pipeline'da verilir
       };

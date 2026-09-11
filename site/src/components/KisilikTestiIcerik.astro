@@ -1,0 +1,186 @@
+---
+interface Sonuc {
+  id: string;
+  baslik: string;
+  aciklama: string;
+}
+
+interface Soru {
+  soru: string;
+  secenekler: { metin: string; sonucId: string }[];
+}
+
+interface Props {
+  sonuclar: Sonuc[];
+  sorular: Soru[];
+  baslik: string;
+  sayfaUrl: string;
+}
+
+const { sonuclar, sorular, baslik, sayfaUrl } = Astro.props;
+---
+
+<div
+  id="kisilik-kok"
+  class="flex flex-col gap-6"
+  data-toplam={sorular.length}
+  data-baslik={baslik}
+  data-sayfa-url={sayfaUrl}
+>
+  {sorular.map((soru, si) => (
+    <fieldset class="kisilik-soru scroll-mt-28 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+      <legend class="text-lg font-bold text-murekkep">{si + 1}. {soru.soru}</legend>
+      <div class="mt-3 grid gap-2 sm:grid-cols-2">
+        {soru.secenekler.map((secenek) => (
+          <button
+            type="button"
+            class="kisilik-secenek rounded-xl border border-black/10 px-4 py-3 text-left transition hover:border-marka"
+            data-sonuc={secenek.sonucId}
+          >
+            {secenek.metin}
+          </button>
+        ))}
+      </div>
+    </fieldset>
+  ))}
+
+  <p id="kisilik-ilerleme" class="text-center text-sm text-murekkep/50">0 / {sorular.length} soru cevaplandı</p>
+
+  <div id="kisilik-sonuc" class="hidden scroll-mt-28 flex-col items-center gap-4 rounded-2xl bg-marka px-5 py-6 text-center text-white">
+    <p class="text-sm font-semibold uppercase tracking-wide text-white/70">Senin sonucun</p>
+    {sonuclar.map((sonuc) => (
+      <div class="kisilik-sonuc-detay hidden" data-sonuc-id={sonuc.id}>
+        <h3 class="text-3xl font-extrabold">{sonuc.baslik}</h3>
+        <p class="mt-3 leading-relaxed text-white/90">{sonuc.aciklama}</p>
+      </div>
+    ))}
+
+    <canvas id="kisilik-kart-canvas" width="1080" height="1080" class="hidden"></canvas>
+    <img id="kisilik-kart-onizleme" alt="Sonuç kartı" class="hidden w-40 rounded-xl shadow-lg" />
+
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      <button
+        id="kisilik-kart-paylas"
+        type="button"
+        class="inline-flex items-center gap-1 rounded-full bg-white px-5 py-2 text-sm font-bold text-marka transition hover:bg-white/90"
+      >
+        🖼️ Sonucunu Paylaş
+      </button>
+      <a
+        id="kisilik-whatsapp"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-1 rounded-full bg-[#25D366] px-5 py-2 text-sm font-bold text-white transition hover:opacity-90"
+      >
+        WhatsApp'ta Paylaş
+      </a>
+      <button
+        id="kisilik-tekrar"
+        type="button"
+        class="inline-flex items-center gap-1 rounded-full border-2 border-white px-5 py-2 text-sm font-bold text-white transition hover:bg-white/10"
+      >
+        ↺ Tekrar çöz
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { sonucKartiCiz, kartiPaylas } from '../lib/sonucKarti';
+
+  const kok = document.getElementById('kisilik-kok');
+  if (kok) {
+    const toplam = Number(kok.dataset.toplam ?? '0');
+    const baslik = kok.dataset.baslik ?? 'sosyektif kişilik testi';
+    const sayfaUrl = kok.dataset.sayfaUrl ?? location.href;
+    const sorular = Array.from(kok.querySelectorAll<HTMLFieldSetElement>('.kisilik-soru'));
+    const ilerleme = document.getElementById('kisilik-ilerleme');
+    const panel = document.getElementById('kisilik-sonuc');
+
+    // Soru → seçilen sonuç. "sira" beraberlikte en son verilen cevabı öne almak için.
+    const secimler = new Map<HTMLFieldSetElement, { sonucId: string; sira: number }>();
+    let sayac = 0;
+    let kazananBaslik = '';
+
+    function ilerlemeGuncelle() {
+      if (ilerleme) ilerleme.textContent = `${secimler.size} / ${toplam} soru cevaplandı`;
+    }
+
+    function sonucuGoster() {
+      const sayim = new Map<string, { adet: number; son: number }>();
+      for (const { sonucId, sira } of secimler.values()) {
+        const k = sayim.get(sonucId) ?? { adet: 0, son: 0 };
+        sayim.set(sonucId, { adet: k.adet + 1, son: Math.max(k.son, sira) });
+      }
+      const [kazananId] = [...sayim.entries()].sort((a, b) => b[1].adet - a[1].adet || b[1].son - a[1].son)[0];
+
+      let detay: HTMLElement | null = null;
+      kok!.querySelectorAll<HTMLElement>('.kisilik-sonuc-detay').forEach((el) => {
+        const eslesti = el.dataset.sonucId === kazananId;
+        el.classList.toggle('hidden', !eslesti);
+        if (eslesti) detay = el;
+      });
+      kazananBaslik = (detay as HTMLElement | null)?.querySelector('h3')?.textContent?.trim() ?? '';
+
+      const whatsapp = document.getElementById('kisilik-whatsapp') as HTMLAnchorElement | null;
+      if (whatsapp) {
+        const metin = `"${baslik}" testinde ben ${kazananBaslik} çıktım! Sen hangisisin? ${sayfaUrl}`;
+        whatsapp.href = `https://wa.me/?text=${encodeURIComponent(metin)}`;
+      }
+
+      panel?.classList.remove('hidden');
+      panel?.classList.add('flex');
+      panel?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    sorular.forEach((soruEl) => {
+      const butonlar = Array.from(soruEl.querySelectorAll<HTMLButtonElement>('.kisilik-secenek'));
+      butonlar.forEach((buton) => {
+        buton.addEventListener('click', () => {
+          const ilkCevap = !secimler.has(soruEl);
+          butonlar.forEach((b) => b.classList.remove('border-marka', 'bg-marka/10', 'font-semibold'));
+          buton.classList.add('border-marka', 'bg-marka/10', 'font-semibold');
+          secimler.set(soruEl, { sonucId: buton.dataset.sonuc ?? '', sira: ++sayac });
+          ilerlemeGuncelle();
+
+          if (secimler.size === toplam) {
+            sonucuGoster();
+          } else if (ilkCevap) {
+            // Okuru bir sonraki cevaplanmamış soruya taşı.
+            sorular.find((s) => !secimler.has(s))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
+
+    document.getElementById('kisilik-kart-paylas')?.addEventListener('click', () => {
+      const canvas = document.getElementById('kisilik-kart-canvas') as HTMLCanvasElement | null;
+      if (!canvas || !kazananBaslik) return;
+      sonucKartiCiz(canvas, {
+        ustBaslik: baslik,
+        buyukMetin: kazananBaslik,
+        altMetin: 'Benim sonucum bu! ✨',
+        cagri: 'Sen hangisisin? sosyektif.com',
+      });
+      kartiPaylas(canvas, {
+        dosyaAdi: 'sosyektif-sonuc.png',
+        baslik,
+        metin: `"${baslik}" testinde ben ${kazananBaslik} çıktım! Sen hangisisin?`,
+        url: sayfaUrl,
+        onizleme: document.getElementById('kisilik-kart-onizleme') as HTMLImageElement | null,
+      });
+    });
+
+    document.getElementById('kisilik-tekrar')?.addEventListener('click', () => {
+      secimler.clear();
+      kazananBaslik = '';
+      kok.querySelectorAll('.kisilik-secenek').forEach((b) => b.classList.remove('border-marka', 'bg-marka/10', 'font-semibold'));
+      panel?.classList.add('hidden');
+      panel?.classList.remove('flex');
+      document.getElementById('kisilik-kart-onizleme')?.classList.add('hidden');
+      ilerlemeGuncelle();
+      sorular[0]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+</script>

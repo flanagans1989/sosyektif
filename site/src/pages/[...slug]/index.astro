@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import ListeIcerik from '../../components/ListeIcerik.astro';
 import TriviaIcerik from '../../components/TriviaIcerik.astro';
 import QuizIcerik from '../../components/QuizIcerik.astro';
+import KisilikTestiIcerik from '../../components/KisilikTestiIcerik.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
 import IlgiliIcerikler from '../../components/IlgiliIcerikler.astro';
 import SiradakiIcerik from '../../components/SiradakiIcerik.astro';
@@ -32,6 +33,8 @@ const {
   gorselKredisi,
   listeMaddeleri,
   quizSorulari,
+  kisilikSonuclari,
+  kisilikSorulari,
   kaynaklar,
   yayinTarihi,
 } = yazi.data;
@@ -92,6 +95,11 @@ const sonrakiTest = digerQuizler[0] ?? null;
           sonrakiTestUrl={sonrakiTest ? `/${sonrakiTest.id}/` : undefined}
           sonrakiTestBaslik={sonrakiTest?.data.baslik}
         />
+      </div>
+    )}
+    {format === 'kisilik' && kisilikSonuclari && kisilikSorulari && (
+      <div class="mt-8">
+        <KisilikTestiIcerik sonuclar={kisilikSonuclari} sorular={kisilikSorulari} baslik={baslik} sayfaUrl={sayfaUrl} />
       </div>
     )}
 

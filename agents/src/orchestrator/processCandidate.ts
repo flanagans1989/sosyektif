@@ -11,10 +11,11 @@ import {
   markEvergreenUsed,
   ozelGunIcerikUretildiMi,
   markOzelGunIcerikUretildi,
+  readPublishedIndex,
   type Config,
 } from "../lib/state.js";
 import { FORMAT_ETIKETLERI_TR } from "../lib/formatLabels.js";
-import type { ModerationResult, PostDraft, TrendCandidate } from "../lib/schemas.js";
+import type { Format, ModerationResult, PostDraft, TrendCandidate } from "../lib/schemas.js";
 
 export interface AdaySonucu {
   durum: "otomatik" | "onay" | "red";
@@ -37,10 +38,34 @@ function ozelGunAdiVeYili(baslik: string): { ad: string; yil: number } | null {
   return eslesme ? { ad: eslesme[1]!, yil: Number(eslesme[2]) } : null;
 }
 
+const FORMATLAR: Format[] = ["liste", "trivia", "quiz", "kisilik"];
+const DENGE_PENCERESI = 8;
+
+/**
+ * Format çeşitliliği: tüm formatlar eşit ağırlıkta. Sınıflandırıcı neredeyse
+ * her konuya "liste" öneriyordu; site tek tip içeriğe dönüyor, Günün Sorusu
+ * havuzu da boş kalıyordu. Son yayınlarda EN AZ kullanılmış formatı seçer;
+ * birden fazla format eşit azsa ve öneri aralarındaysa öneriye uyar.
+ * Kişilik testi yalnızca konu uygunsa (4-6 üyeli bir küme) aday olur.
+ */
+async function formatDengele(onerilen: Format, kisilikUygun: boolean): Promise<Format> {
+  const son = (await readPublishedIndex()).slice(-DENGE_PENCERESI).map((e) => e.format);
+  const adaylar = FORMATLAR.filter((f) => f !== "kisilik" || kisilikUygun);
+  const kullanim = (f: Format) => son.filter((x) => x === f).length;
+  const enAz = Math.min(...adaylar.map(kullanim));
+  const enAzKullanilanlar = adaylar.filter((f) => kullanim(f) === enAz);
+  return enAzKullanilanlar.includes(onerilen) ? onerilen : enAzKullanilanlar[0]!;
+}
+
 function onayMesaji(draft: PostDraft, moderasyon: ModerationResult, yayin: PublishResult, provaModu: boolean): string {
   const fm = draft.frontmatter;
   const maddeBasliklari =
-    fm.format === "quiz" ? (fm.quizSorulari ?? []).map((s) => s.soru) : (fm.listeMaddeleri ?? []).map((m) => m.baslik);
+    fm.format === "quiz"
+      ? (fm.quizSorulari ?? []).map((s) => s.soru)
+      : fm.format === "kisilik"
+        ? (fm.kisilikSonuclari ?? []).map((s) => s.baslik)
+        : (fm.listeMaddeleri ?? []).map((m) => m.baslik);
+  const birim = fm.format === "quiz" ? "soru" : fm.format === "kisilik" ? "sonuç" : "madde";
   const d = moderasyon.detaylar;
   const puanlar = d.hakemCalisti ? `doğruluk ${d.dogrulukPuani}/5 · değer ${d.degerPuani}/5` : "hakem çalışmadı";
 
@@ -48,7 +73,7 @@ function onayMesaji(draft: PostDraft, moderasyon: ModerationResult, yayin: Publi
     `⏳ <b>Onay bekliyor</b> — skor ${moderasyon.skor} (${puanlar})${provaModu ? " · prova modu" : ""}`,
     "",
     `<b>${escapeHtml(fm.baslik)}</b>`,
-    `${fm.kategori} · ${FORMAT_ETIKETLERI_TR[fm.format]} · ${maddeBasliklari.length} ${fm.format === "quiz" ? "soru" : "madde"}`,
+    `${fm.kategori} · ${FORMAT_ETIKETLERI_TR[fm.format]} · ${maddeBasliklari.length} ${birim}`,
     "",
     ...maddeBasliklari.slice(0, 6).map((b) => `• ${escapeHtml(b)}`),
   ];
@@ -87,7 +112,11 @@ export async function processCandidate(aday: TrendCandidate, config: Config): Pr
   }
   const { konuOdagi, aci } = sinif.siniflandirma;
   const kategori = aday.kategoriTahmini ?? sinif.siniflandirma.kategori;
-  const format = aday.formatOnerisi ?? sinif.siniflandirma.formatOnerisi;
+  const onerilenFormat = aday.formatOnerisi ?? sinif.siniflandirma.formatOnerisi;
+  // Özel günlerin formatı elle seçildiği için dengelemeye girmez.
+  const format = ozelGun
+    ? onerilenFormat
+    : await formatDengele(onerilenFormat, sinif.siniflandirma.kisilikTestiUygun);
 
   // Özel günler için kalıcı tekrar kontrolü bilerek atlanır (yukarıdaki
   // yıl bazlı kontrol zaten aynı yıl içinde tekrarı engelliyor); aksi halde

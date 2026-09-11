@@ -1,6 +1,6 @@
 {
   "paused": false,
-  "provaModu": true,
+  "provaModu": false,
   "gunlukHedefIcerikSayisi": 4,
   "otomatikYayinEsigi": 0.8,
   "onayaDusEsigi": 0.55,

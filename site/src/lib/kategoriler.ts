@@ -14,4 +14,5 @@ export const FORMAT_ETIKETLERI = {
   liste: 'Liste',
   trivia: 'Bunu Bilmiyordun',
   quiz: 'Quiz',
+  kisilik: 'Kişilik Testi',
 } as const;

@@ -37,6 +37,9 @@ function maddeler(draft: PostDraft): { baslik: string; metin: string }[] {
   if (fm.format === "quiz") {
     return (fm.quizSorulari ?? []).map((s) => ({ baslik: s.soru, metin: s.aciklama ?? "" }));
   }
+  if (fm.format === "kisilik") {
+    return (fm.kisilikSorulari ?? []).map((s) => ({ baslik: s.soru, metin: "" }));
+  }
   return fm.listeMaddeleri ?? [];
 }
 
@@ -49,6 +52,16 @@ function draftToPlainText(draft: PostDraft): string {
       satirlar.push(
         `${i + 1}. SORU: ${s.soru}\n   ŞIKLAR: ${s.secenekler.join(" | ")}\n   DOĞRU: ${s.secenekler[s.dogruIndex] ?? "?"}\n   AÇIKLAMA: ${s.aciklama ?? ""}`
       );
+    });
+  } else if (fm.format === "kisilik") {
+    const sonuclar = fm.kisilikSonuclari ?? [];
+    const sonucAdi = new Map(sonuclar.map((s) => [s.id, s.baslik]));
+    satirlar.push("SONUÇLAR:");
+    sonuclar.forEach((s) => satirlar.push(`- ${s.baslik}: ${s.aciklama}`));
+    satirlar.push("SORULAR:");
+    (fm.kisilikSorulari ?? []).forEach((s, i) => {
+      const siklar = s.secenekler.map((o) => `${o.metin} → ${sonucAdi.get(o.sonucId) ?? "?"}`).join(" | ");
+      satirlar.push(`${i + 1}. SORU: ${s.soru}\n   ŞIKLAR: ${siklar}`);
     });
   } else {
     (fm.listeMaddeleri ?? []).forEach((m, i) => satirlar.push(`${i + 1}. ${m.baslik}\n   ${m.metin}`));
@@ -63,8 +76,8 @@ function yapiKontrolu(draft: PostDraft): { skor: number; notlar: string[] } {
   let skor = 1;
   const liste = maddeler(draft);
   const n = liste.length;
-  const min = fm.format === "liste" ? 5 : fm.format === "trivia" ? 3 : 4;
-  const birim = fm.format === "quiz" ? "soru" : "madde";
+  const min = fm.format === "liste" ? 5 : fm.format === "trivia" ? 3 : fm.format === "kisilik" ? 5 : 4;
+  const birim = fm.format === "quiz" || fm.format === "kisilik" ? "soru" : "madde";
 
   if (n < min) {
     skor -= 0.4;
@@ -77,7 +90,26 @@ function yapiKontrolu(draft: PostDraft): { skor: number; notlar: string[] } {
     notlar.push(`Başlıktaki sayı (${sayi[1]}) ile ${birim} sayısı (${n}) aynı olmalı.`);
   }
 
-  if (fm.format !== "quiz") {
+  if (fm.format === "kisilik") {
+    const sonuclar = fm.kisilikSonuclari ?? [];
+    if (sonuclar.length < 4) {
+      skor -= 0.4;
+      notlar.push(`En az 4 sonuç olmalı (şu an ${sonuclar.length}).`);
+    }
+    const kullanilan = new Set((fm.kisilikSorulari ?? []).flatMap((s) => s.secenekler.map((o) => o.sonucId)));
+    const ulasilamayan = sonuclar.filter((s) => !kullanilan.has(s.id)).length;
+    if (ulasilamayan > 0) {
+      skor -= 0.2;
+      notlar.push(`${ulasilamayan} sonuca hiçbir şık bağlanmamış; her sonuç birkaç şıkta geçmeli ki çıkabilsin.`);
+    }
+    const kisaSonuc = sonuclar.filter((s) => s.aciklama.trim().length < 80).length;
+    if (kisaSonuc > 0) {
+      skor -= Math.min(0.3, kisaSonuc * 0.1);
+      notlar.push(`${kisaSonuc} sonucun açıklaması çok kısa; her sonucu 2-4 cümleye çıkar.`);
+    }
+  }
+
+  if (fm.format === "liste" || fm.format === "trivia") {
     const kisalar = liste.filter((m) => m.metin.trim().length < 60).length;
     if (kisalar > 0) {
       skor -= Math.min(0.3, kisalar * 0.1);

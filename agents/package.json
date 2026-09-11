@@ -11,6 +11,7 @@
     "daily-report": "tsx src/orchestrator/dailyReport.ts",
     "weekly-analytics": "tsx src/analytics/index.ts",
     "burc": "tsx src/orchestrator/burc.ts",
+    "burc-uyum": "tsx src/orchestrator/burcUyum.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

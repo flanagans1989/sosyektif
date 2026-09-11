@@ -2,8 +2,16 @@ name = "sosyektif-telegram-onay"
 main = "src/index.ts"
 compatibility_date = "2025-01-01"
 
+# GitHub Actions'ın kendi "schedule" tetikleyicisi az hareketli repolarda
+# saatlerce gecikiyor ya da hiç çalışmıyor. Bunun yerine Cloudflare her saat
+# :17'de worker'ı uyandırır; worker da saate göre ilgili workflow'u
+# workflow_dispatch ile başlatır (bkz. src/index.ts -> ZAMANLAMA).
+# Tek bir cron ifadesi kullanılıyor (ücretsiz plan cron sayısı sınırlı).
+[triggers]
+crons = ["17 * * * *"]
+
 # Secrets (dashboard > Settings > Variables and Secrets ile eklenir, buraya YAZILMAZ):
-#   GITHUB_TOKEN            - "Contents: Read and write" izinli fine-grained PAT (sadece bu repo için)
+#   GITHUB_TOKEN            - "Contents: Read and write" + "Actions: Read and write" izinli fine-grained PAT (sadece bu repo için)
 #   GITHUB_REPO             - "kullanici/repo" formatinda, orn. flanagans1989/sosyektif
 #   TELEGRAM_BOT_TOKEN      - BotFather'dan alinan token
 #   TELEGRAM_WEBHOOK_SECRET - setWebhook cagrisinda verilen rastgele gizli deger

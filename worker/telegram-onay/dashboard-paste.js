@@ -144,7 +144,55 @@ function editMessage(env, chatId, messageId, text) {
   });
 }
 
+// Saatlik cron (her saat :17) → UTC saatine göre başlatılacak workflow'lar.
+const ZAMANLAMA = [
+  { workflow: "pipeline.yml", saatler: [3, 7, 11, 15, 19, 23] },
+  { workflow: "burc.yml", saatler: [2] },
+  { workflow: "daily-report.yml", saatler: [6] },
+  { workflow: "weekly-analytics.yml", saatler: [5], sadecePazartesi: true },
+];
+
+async function workflowBaslat(env, workflow) {
+  const res = await fetch(
+    `https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/${workflow}/dispatches`,
+    {
+      method: "POST",
+      headers: { ...ghHeaders(env), "Content-Type": "application/json" },
+      body: JSON.stringify({ ref: "main" }),
+    }
+  );
+  if (!res.ok) throw new Error(`${workflow} başlatılamadı: ${res.status} ${await res.text()}`);
+}
+
+async function zamanlanmisCalisma(env, zaman) {
+  const saat = zaman.getUTCHours();
+  const pazartesi = zaman.getUTCDay() === 1;
+  const baslatilacaklar = ZAMANLAMA.filter(
+    (z) => z.saatler.includes(saat) && (!z.sadecePazartesi || pazartesi)
+  ).map((z) => z.workflow);
+
+  const hatalar = [];
+  for (const workflow of baslatilacaklar) {
+    try {
+      await workflowBaslat(env, workflow);
+      console.log(`[cron] ${workflow} başlatıldı`);
+    } catch (err) {
+      hatalar.push(err instanceof Error ? err.message : String(err));
+    }
+  }
+  if (hatalar.length > 0) {
+    await tgCall(env, "sendMessage", {
+      chat_id: env.TELEGRAM_ADMIN_CHAT_ID,
+      text: `⚠️ Zamanlayıcı workflow başlatamadı:\n${hatalar.join("\n").slice(0, 800)}`,
+    });
+  }
+}
+
 export default {
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(zamanlanmisCalisma(env, new Date(event.scheduledTime)));
+  },
+
   async fetch(request, env) {
     if (request.method !== "POST") return new Response("ok");
 

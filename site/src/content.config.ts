@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-// Ajanların ürettiği içerik üç formattan birine ayrılır: liste, trivia, quiz.
+// Ajanların ürettiği içerik dört formattan birine ayrılır: liste, trivia, quiz, kisilik.
 // Şema, agents/ tarafındaki zod şemasıyla birebir uyumlu tutulmalıdır.
 
 const kategori = z.enum([
@@ -34,11 +34,22 @@ const quizSoru = z.object({
   aciklama: z.string().optional(),
 });
 
+const kisilikSonuc = z.object({
+  id: z.string(),
+  baslik: z.string(),
+  aciklama: z.string(),
+});
+
+const kisilikSoru = z.object({
+  soru: z.string(),
+  secenekler: z.array(z.object({ metin: z.string(), sonucId: z.string() })).min(2).max(6),
+});
+
 const postSchema = z.object({
   baslik: z.string(),
   seoBaslik: z.string().max(70),
   metaAciklama: z.string().max(160),
-  format: z.enum(['liste', 'trivia', 'quiz']),
+  format: z.enum(['liste', 'trivia', 'quiz', 'kisilik']),
   kategori,
   etiketler: z.array(z.string()).default([]),
   yayinTarihi: z.coerce.date(),
@@ -52,6 +63,8 @@ const postSchema = z.object({
   // Format'a göre biri dolu olur
   listeMaddeleri: z.array(listeMaddesi).optional(),
   quizSorulari: z.array(quizSoru).optional(),
+  kisilikSonuclari: z.array(kisilikSonuc).optional(),
+  kisilikSorulari: z.array(kisilikSoru).optional(),
 
   kaynaklar: z.array(kaynak).default([]),
 
