@@ -169,7 +169,13 @@ async function main() {
   if (hatalar.length > 0) console.log("[pipeline] elenenler:\n" + hatalar.join("\n"));
 }
 
-main().catch((err) => {
-  console.error("[pipeline] beklenmeyen hata:", err);
-  process.exit(1);
-});
+// Açık process.exit(0): görsel işleme (sharp) veya fetch keep-alive
+// bağlantıları bazen event loop'u açık tutup Node'un kendiliğinden
+// çıkmasını engelliyor — bu da CI'da iş bitmesine rağmen 15 dakikalık
+// zaman aşımına takılıp "cancelled" görünmesine yol açıyordu.
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error("[pipeline] beklenmeyen hata:", err);
+    process.exit(1);
+  });

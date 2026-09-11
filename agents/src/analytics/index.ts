@@ -61,8 +61,10 @@ async function main() {
 
 // Doğrudan çalıştırıldığında (tsx src/analytics/index.ts) main() çalışır.
 if (import.meta.url === `file://${process.argv[1]}`) {
-  main().catch((err) => {
-    console.error("[analytics] hata:", err);
-    process.exit(1);
-  });
+  main()
+    .then(() => process.exit(0))
+    .catch((err) => {
+      console.error("[analytics] hata:", err);
+      process.exit(1);
+    });
 }

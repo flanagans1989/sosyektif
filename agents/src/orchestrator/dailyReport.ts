@@ -46,7 +46,9 @@ async function main() {
   console.log(satirlar.join("\n"));
 }
 
-main().catch((err) => {
-  console.error("[daily-report] hata:", err);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error("[daily-report] hata:", err);
+    process.exit(1);
+  });

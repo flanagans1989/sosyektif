@@ -396,9 +396,11 @@ async function main() {
   );
 }
 
-main().catch(async (err) => {
-  const mesaj = err instanceof Error ? err.message : String(err);
-  console.error("[tarihte-bugun] hata:", mesaj);
-  await notifyAdmin(`⚠️ Tarihte Bugün seçkisi üretilemedi:\n${mesaj.slice(0, 500)}`).catch(() => {});
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch(async (err) => {
+    const mesaj = err instanceof Error ? err.message : String(err);
+    console.error("[tarihte-bugun] hata:", mesaj);
+    await notifyAdmin(`⚠️ Tarihte Bugün seçkisi üretilemedi:\n${mesaj.slice(0, 500)}`).catch(() => {});
+    process.exit(1);
+  });
