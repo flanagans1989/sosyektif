@@ -1,0 +1,118 @@
+---
+// Dolar/Euro/Altın/Gümüş: finans.truncgil.com (hesap/anahtar gerekmeyen,
+// yaygın kullanılan açık bir Türkçe finans API'si). Bitcoin/Ethereum:
+// CoinGecko'nun ücretsiz public API'si. İkisi de CORS'a açık; istekler
+// doğrudan ziyaretçinin tarayıcısından atılıyor — sunucu/anahtar/maliyet yok.
+---
+
+<div id="piyasa-seridi" class="overflow-hidden border-b border-black/10 bg-murekkep" aria-label="Canlı piyasa verileri">
+  <div id="piyasa-icerik" class="flex w-max animate-piyasa-kaydir whitespace-nowrap py-1.5 text-xs font-semibold text-white/90">
+    <span class="px-3 text-white/40">Piyasa verileri yükleniyor…</span>
+  </div>
+</div>
+
+<style>
+  @keyframes piyasa-kaydir {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* İçerik iki kez art arda basılıyor; %50 tam bir tur demek — dikişsiz döngü. */
+      transform: translateX(-50%);
+    }
+  }
+  .animate-piyasa-kaydir {
+    animation: piyasa-kaydir 35s linear infinite;
+  }
+  #piyasa-seridi:hover .animate-piyasa-kaydir {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-piyasa-kaydir {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  interface TruncgilVeri {
+    Satış: string;
+    Değişim: string;
+  }
+
+  const TRUNCGIL_URL = 'https://finans.truncgil.com/today.json';
+  const COINGECKO_URL =
+    'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=try&include_24hr_change=true';
+  const YENILEME_MS = 60_000;
+
+  function degisimEtiketi(yuzdeMetni: string): string {
+    const negatif = yuzdeMetni.includes('-');
+    const renk = negatif ? 'text-red-400' : 'text-emerald-400';
+    const ok = negatif ? '▼' : '▲';
+    return `<span class="${renk}">${ok} ${yuzdeMetni.replace('-', '')}</span>`;
+  }
+
+  function trFiyat(deger: number, ondalik = 2): string {
+    return deger.toLocaleString('tr-TR', { minimumFractionDigits: ondalik, maximumFractionDigits: ondalik });
+  }
+
+  async function truncgilOgeleri(): Promise<string[]> {
+    const res = await fetch(TRUNCGIL_URL);
+    if (!res.ok) throw new Error(`truncgil ${res.status}`);
+    const veri = (await res.json()) as Record<string, TruncgilVeri>;
+
+    const olustur = (emoji: string, ad: string, anahtar: string): string | null => {
+      const oge = veri[anahtar];
+      if (!oge) return null;
+      const fiyat = parseFloat(oge.Satış.replace(/\./g, '').replace(',', '.'));
+      return `<span class="flex items-center gap-1.5 px-4">${emoji} ${ad}: <b>${trFiyat(fiyat)} ₺</b> ${degisimEtiketi(oge.Değişim)}</span>`;
+    };
+
+    return [
+      olustur('💵', 'Dolar', 'USD'),
+      olustur('💶', 'Euro', 'EUR'),
+      olustur('🪙', 'Gram Altın', 'gram-altin'),
+      olustur('🥈', 'Gümüş', 'gumus'),
+    ].filter((x): x is string => x !== null);
+  }
+
+  async function coingeckoOgeleri(): Promise<string[]> {
+    const res = await fetch(COINGECKO_URL);
+    if (!res.ok) throw new Error(`coingecko ${res.status}`);
+    const veri = (await res.json()) as Record<string, { try: number; try_24h_change?: number }>;
+
+    const olustur = (emoji: string, ad: string, anahtar: string): string | null => {
+      const oge = veri[anahtar];
+      if (!oge) return null;
+      const degisim = oge.try_24h_change ?? 0;
+      const renk = degisim >= 0 ? 'text-emerald-400' : 'text-red-400';
+      const ok = degisim >= 0 ? '▲' : '▼';
+      return `<span class="flex items-center gap-1.5 px-4">${emoji} ${ad}: <b>${Math.round(oge.try).toLocaleString('tr-TR')} ₺</b> <span class="${renk}">${ok} %${Math.abs(degisim).toFixed(2)}</span></span>`;
+    };
+
+    return [olustur('₿', 'Bitcoin', 'bitcoin'), olustur('Ξ', 'Ethereum', 'ethereum')].filter(
+      (x): x is string => x !== null
+    );
+  }
+
+  async function guncelle(): Promise<void> {
+    const icerik = document.getElementById('piyasa-icerik');
+    if (!icerik) return;
+
+    const [truncgil, coingecko] = await Promise.allSettled([truncgilOgeleri(), coingeckoOgeleri()]);
+    const ogeler = [
+      ...(truncgil.status === 'fulfilled' ? truncgil.value : []),
+      ...(coingecko.status === 'fulfilled' ? coingecko.value : []),
+    ];
+
+    if (ogeler.length === 0) {
+      icerik.innerHTML = '<span class="px-3 text-white/40">Piyasa verileri şu an alınamıyor.</span>';
+      return;
+    }
+    // Kayan şerit dikişsiz dönsün diye içerik iki kez art arda basılıyor.
+    icerik.innerHTML = ogeler.join('') + ogeler.join('');
+  }
+
+  guncelle();
+  setInterval(guncelle, YENILEME_MS);
+</script>
