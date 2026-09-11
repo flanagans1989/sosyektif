@@ -10,6 +10,7 @@ import {
 } from "../lib/state.js";
 import { gatherTrendCandidates } from "../trend/index.js";
 import { processCandidate } from "./processCandidate.js";
+import { kutlaBugunkuOzelGunler } from "../distribute/kutlama.js";
 import { notifyAdmin, escapeHtml } from "../lib/telegram.js";
 import type { TrendCandidate } from "../lib/schemas.js";
 
@@ -24,6 +25,7 @@ const ZAMAN_BUTCESI_MS = 9 * 60 * 1000;
  * okunanları ve evergreen havuzu kaynağı hazır konular olduğu için öne alınır.
  */
 const KAYNAK_GUVENI: Record<TrendCandidate["kaynak"], number> = {
+  "ozel-gun": 1.2,
   wikipedia: 1,
   evergreen: 0.95,
   "google-trends": 0.75,
@@ -64,6 +66,11 @@ async function main() {
     console.log(`[pipeline] duraklatılmış (${config.pausedReason ?? "sebep belirtilmemiş"}), çıkılıyor`);
     return;
   }
+
+  // Günün özel gün kutlaması, içerik günlük kotasından bağımsız her çalışmada kontrol edilir.
+  await kutlaBugunkuOzelGunler(config).catch((err) =>
+    console.error("[pipeline] kutlama kontrolü hata:", err)
+  );
 
   // Elle tetiklenen çalıştırmalarda (GUNLUK_HEDEF_ATLA=1) günlük hedef kontrolü atlanır.
   const hedefAtla = process.env.GUNLUK_HEDEF_ATLA === "1";

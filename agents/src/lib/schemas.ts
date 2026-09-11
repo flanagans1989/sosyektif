@@ -91,6 +91,7 @@ export const trendCandidateSchema = z.object({
     "youtube",
     "reddit",
     "evergreen",
+    "ozel-gun",
   ]),
   url: z.string().url().optional(),
   tahminiIlgi: z.number().min(0).max(1).default(0.5),

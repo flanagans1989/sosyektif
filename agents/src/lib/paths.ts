@@ -33,4 +33,6 @@ export const PATHS = {
   categoryWeights: path.join(DATA_DIR, "category-weights.json"),
   runLog: path.join(DATA_DIR, "last-run.json"),
   rejected: path.join(DATA_DIR, "rejected-topics.json"),
+  ozelGunler: path.join(DATA_DIR, "ozel-gunler.json"),
+  kutlamaIndex: path.join(DATA_DIR, "kutlama-index.json"),
 } as const;

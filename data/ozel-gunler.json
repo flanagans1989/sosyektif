@@ -1,0 +1,144 @@
+[
+  {
+    "ad": "Yılbaşı",
+    "tur": "sabit",
+    "ay": 1,
+    "gun": 1,
+    "kategori": "yasam",
+    "formatOnerisi": "liste",
+    "konuBaslik": "Yeni yıl kutlamaları",
+    "oncedenGun": 5
+  },
+  {
+    "ad": "Sevgililer Günü",
+    "tur": "sabit",
+    "ay": 2,
+    "gun": 14,
+    "kategori": "yasam",
+    "formatOnerisi": "liste",
+    "konuBaslik": "Sevgililer Günü",
+    "oncedenGun": 4
+  },
+  {
+    "ad": "Dünya Kadınlar Günü",
+    "tur": "sabit",
+    "ay": 3,
+    "gun": 8,
+    "kategori": "tarih",
+    "formatOnerisi": "liste",
+    "konuBaslik": "Dünya Kadınlar Günü",
+    "oncedenGun": 4
+  },
+  {
+    "ad": "23 Nisan Ulusal Egemenlik ve Çocuk Bayramı",
+    "tur": "sabit",
+    "ay": 4,
+    "gun": 23,
+    "kategori": "tarih",
+    "formatOnerisi": "liste",
+    "konuBaslik": "23 Nisan Ulusal Egemenlik ve Çocuk Bayramı",
+    "oncedenGun": 5
+  },
+  {
+    "ad": "Emek ve Dayanışma Günü",
+    "tur": "sabit",
+    "ay": 5,
+    "gun": 1,
+    "kategori": "tarih",
+    "formatOnerisi": "liste",
+    "konuBaslik": "1 Mayıs Emek ve Dayanışma Günü",
+    "oncedenGun": 4
+  },
+  {
+    "ad": "Anneler Günü",
+    "tur": "degisken",
+    "ay": 5,
+    "haftaninGunu": 0,
+    "kacinciHafta": 2,
+    "kategori": "yasam",
+    "formatOnerisi": "liste",
+    "konuBaslik": "Anneler Günü",
+    "oncedenGun": 5
+  },
+  {
+    "ad": "19 Mayıs Atatürk'ü Anma, Gençlik ve Spor Bayramı",
+    "tur": "sabit",
+    "ay": 5,
+    "gun": 19,
+    "kategori": "tarih",
+    "formatOnerisi": "liste",
+    "konuBaslik": "19 Mayıs Atatürk'ü Anma, Gençlik ve Spor Bayramı",
+    "oncedenGun": 5
+  },
+  {
+    "ad": "Babalar Günü",
+    "tur": "degisken",
+    "ay": 6,
+    "haftaninGunu": 0,
+    "kacinciHafta": 3,
+    "kategori": "yasam",
+    "formatOnerisi": "liste",
+    "konuBaslik": "Babalar Günü",
+    "oncedenGun": 5
+  },
+  {
+    "ad": "30 Ağustos Zafer Bayramı",
+    "tur": "sabit",
+    "ay": 8,
+    "gun": 30,
+    "kategori": "tarih",
+    "formatOnerisi": "liste",
+    "konuBaslik": "30 Ağustos Zafer Bayramı",
+    "oncedenGun": 5
+  },
+  {
+    "ad": "29 Ekim Cumhuriyet Bayramı",
+    "tur": "sabit",
+    "ay": 10,
+    "gun": 29,
+    "kategori": "tarih",
+    "formatOnerisi": "liste",
+    "konuBaslik": "29 Ekim Cumhuriyet Bayramı",
+    "oncedenGun": 6
+  },
+  {
+    "ad": "Atatürk'ü Anma Günü (10 Kasım)",
+    "tur": "sabit",
+    "ay": 11,
+    "gun": 10,
+    "kategori": "tarih",
+    "formatOnerisi": "trivia",
+    "konuBaslik": "Mustafa Kemal Atatürk",
+    "oncedenGun": 4
+  },
+  {
+    "ad": "Öğretmenler Günü",
+    "tur": "sabit",
+    "ay": 11,
+    "gun": 24,
+    "kategori": "yasam",
+    "formatOnerisi": "liste",
+    "konuBaslik": "Türkiye'de Öğretmenler Günü",
+    "oncedenGun": 4
+  },
+  {
+    "ad": "Ramazan Bayramı",
+    "tur": "dini",
+    "kategori": "yasam",
+    "formatOnerisi": "liste",
+    "konuBaslik": "Ramazan Bayramı",
+    "oncedenGun": 6,
+    "_not": "Hicri takvime göre her yıl ~10-11 gün öne kayar; Diyanet'in yıllık takviminden alınıp elle güncellenmesi gerekir.",
+    "tarihler": ["2027-03-09"]
+  },
+  {
+    "ad": "Kurban Bayramı",
+    "tur": "dini",
+    "kategori": "yasam",
+    "formatOnerisi": "liste",
+    "konuBaslik": "Kurban Bayramı",
+    "oncedenGun": 6,
+    "_not": "Hicri takvime göre her yıl ~10-11 gün öne kayar; Diyanet'in yıllık takviminden alınıp elle güncellenmesi gerekir.",
+    "tarihler": ["2027-05-16"]
+  }
+]

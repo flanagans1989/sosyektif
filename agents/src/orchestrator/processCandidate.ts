@@ -5,7 +5,13 @@ import { generateCoverImage } from "../image/index.js";
 import { publishDraft, type PublishResult } from "../publish/index.js";
 import { distributeContent } from "../distribute/index.js";
 import { notifyAdmin, notifyAdminOnayButonlu, escapeHtml } from "../lib/telegram.js";
-import { konuDahaOnceIslendiMi, markEvergreenUsed, type Config } from "../lib/state.js";
+import {
+  konuDahaOnceIslendiMi,
+  markEvergreenUsed,
+  ozelGunIcerikUretildiMi,
+  markOzelGunIcerikUretildi,
+  type Config,
+} from "../lib/state.js";
 import { FORMAT_ETIKETLERI_TR } from "../lib/formatLabels.js";
 import type { ModerationResult, PostDraft, TrendCandidate } from "../lib/schemas.js";
 
@@ -19,6 +25,16 @@ export interface AdaySonucu {
 }
 
 const REPO = process.env.GITHUB_REPOSITORY ?? "flanagans1989/sosyektif";
+
+/**
+ * Özel gün adaylarının başlığı "<ad> (<yıl>)" biçimindedir (bkz.
+ * trend/ozelGunler.ts). Yıl bazlı üretim-idempotenslik kontrolü için ikisini
+ * ayırır.
+ */
+function ozelGunAdiVeYili(baslik: string): { ad: string; yil: number } | null {
+  const eslesme = baslik.match(/^(.*) \((\d{4})\)$/);
+  return eslesme ? { ad: eslesme[1]!, yil: Number(eslesme[2]) } : null;
+}
 
 function onayMesaji(draft: PostDraft, moderasyon: ModerationResult, yayin: PublishResult, provaModu: boolean): string {
   const fm = draft.frontmatter;
@@ -52,6 +68,14 @@ function onayMesaji(draft: PostDraft, moderasyon: ModerationResult, yayin: Publi
  * sınıflandırma → kaynak → taslak → moderasyon (→ gerekirse 1 revizyon) → görsel → yayın/onay.
  */
 export async function processCandidate(aday: TrendCandidate, config: Config): Promise<AdaySonucu> {
+  // Özel günler (bayramlar vb.) her yıl yeniden işlenmesi GEREKEN tek kalıcı-
+  // tekrar istisnasıdır. Aynı yıl içinde (aday "oncedenGun" penceresinde her
+  // çalışmada tekrar geldiği için) ikinci kez üretilmesini engeller.
+  const ozelGun = aday.kaynak === "ozel-gun" ? ozelGunAdiVeYili(aday.baslik) : null;
+  if (ozelGun && (await ozelGunIcerikUretildiMi(ozelGun.ad, ozelGun.yil))) {
+    return { durum: "red", sebep: `"${ozelGun.ad}" (${ozelGun.yil}) için içerik zaten üretildi`, kaliciRed: false };
+  }
+
   // 1. Sınıflandırma + konu odağı
   const sinif = await classifyTopic(aday.baslik, aday.kaynak);
   if (sinif.hata) {
@@ -64,7 +88,10 @@ export async function processCandidate(aday: TrendCandidate, config: Config): Pr
   const kategori = aday.kategoriTahmini ?? sinif.siniflandirma.kategori;
   const format = aday.formatOnerisi ?? sinif.siniflandirma.formatOnerisi;
 
-  if (await konuDahaOnceIslendiMi(konuOdagi)) {
+  // Özel günler için kalıcı tekrar kontrolü bilerek atlanır (yukarıdaki
+  // yıl bazlı kontrol zaten aynı yıl içinde tekrarı engelliyor); aksi halde
+  // ilk yıl yayınlanan bir bayram konusu sonraki yıllarda hep engellenirdi.
+  if (!ozelGun && (await konuDahaOnceIslendiMi(konuOdagi))) {
     return { durum: "red", sebep: `"${konuOdagi}" daha önce işlendi`, kaliciRed: true };
   }
 
@@ -132,6 +159,7 @@ export async function processCandidate(aday: TrendCandidate, config: Config): Pr
     hakemModel: moderasyon.detaylar.hakemProvider,
   });
   if (aday.kaynak === "evergreen") await markEvergreenUsed(aday.baslik);
+  if (ozelGun) await markOzelGunIcerikUretildi(ozelGun.ad, ozelGun.yil);
 
   // 5. Dağıtım ya da onay bildirimi
   if (otomatik) {

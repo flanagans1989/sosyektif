@@ -199,3 +199,99 @@ export async function yakindaReddedilenler(gun = 7): Promise<Set<string>> {
 export function dataPath(...segments: string[]): string {
   return path.join(DATA_DIR, ...segments);
 }
+
+// ---------------------------------------------------------------------------
+// ozel-gunler.json — Türkiye'deki milli/dini/özel günler takvimi
+// (Trend Ajanı'na zamanında içerik önerisi + Dağıtım Ajanı'na kutlama mesajı)
+// ---------------------------------------------------------------------------
+export const ozelGunSchema = z.object({
+  ad: z.string(),
+  tur: z.enum(["sabit", "degisken", "dini"]),
+  // sabit: her yıl aynı ay/gün.
+  ay: z.number().min(1).max(12).optional(),
+  gun: z.number().min(1).max(31).optional(),
+  // degisken: ayın n'inci belirli haftanın günü (ör. Anneler Günü = Mayıs'ın 2. Pazarı).
+  haftaninGunu: z.number().min(0).max(6).optional(),
+  kacinciHafta: z.number().min(1).max(5).optional(),
+  // dini: hicri takvime göre kaydığı için elle girilen, teyitli tarih listesi.
+  tarihler: z.array(z.string()).optional(),
+  kategori: z.string(),
+  formatOnerisi: z.enum(["liste", "trivia", "quiz"]),
+  konuBaslik: z.string(),
+  /** İçerik, günden kaç gün önce aday havuzuna girmeye başlasın. */
+  oncedenGun: z.number().min(0).max(30).default(5),
+});
+export type OzelGun = z.infer<typeof ozelGunSchema>;
+
+export async function readOzelGunler(): Promise<OzelGun[]> {
+  const raw = await readFile(PATHS.ozelGunler, "utf-8");
+  return z.array(ozelGunSchema).parse(JSON.parse(raw));
+}
+
+function haftaninGunuTarihi(yil: number, ay: number, haftaninGunu: number, kacinciHafta: number): Date {
+  const ilkGun = new Date(Date.UTC(yil, ay - 1, 1));
+  const ilkGunHaftaninGunu = ilkGun.getUTCDay();
+  const ilkEslesme = 1 + ((haftaninGunu - ilkGunHaftaninGunu + 7) % 7);
+  return new Date(Date.UTC(yil, ay - 1, ilkEslesme + (kacinciHafta - 1) * 7));
+}
+
+/**
+ * Bir özel günün, verilen referans tarihinden sonraki (bugün dahil) en
+ * yakın gerçekleşme tarihini döner. "dini" türde tarih listesinde gelecek
+ * tarih yoksa null döner (takvimin güncellenmesi gerektiği anlamına gelir).
+ */
+export function ozelGununHedefTarihi(gun: OzelGun, referans: Date): Date | null {
+  if (gun.tur === "dini") {
+    const gelecekler = (gun.tarihler ?? [])
+      .map((t) => new Date(`${t}T00:00:00Z`))
+      .filter((t) => t.getTime() >= referans.getTime() - 24 * 60 * 60 * 1000)
+      .sort((a, b) => a.getTime() - b.getTime());
+    return gelecekler[0] ?? null;
+  }
+
+  const buYil = referans.getUTCFullYear();
+  const hesapla = (yil: number): Date =>
+    gun.tur === "sabit"
+      ? new Date(Date.UTC(yil, (gun.ay ?? 1) - 1, gun.gun ?? 1))
+      : haftaninGunuTarihi(yil, gun.ay ?? 1, gun.haftaninGunu ?? 0, gun.kacinciHafta ?? 1);
+
+  const buYilki = hesapla(buYil);
+  const dunGeceYarisi = new Date(referans);
+  dunGeceYarisi.setUTCHours(0, 0, 0, 0);
+  return buYilki.getTime() >= dunGeceYarisi.getTime() ? buYilki : hesapla(buYil + 1);
+}
+
+// ---------------------------------------------------------------------------
+// kutlama-index.json — anahtar (ör. "icerik:23 Nisan..." / "kutlama:...") başına
+// "en son hangi yıl işlendi" bilgisini tutan genel bir yıllık işaretleyici.
+// Özel günler her yıl tekrar işlenmesi gereken TEK kalıcı-tekrar istisnası
+// olduğu için, normal "daha önce işlendi mi" (kalıcı) kontrolünün yerine
+// bunlar için yıl bazlı bu mekanizma kullanılır (bkz. processCandidate.ts).
+// ---------------------------------------------------------------------------
+async function readYillikIsaretler(): Promise<Record<string, number>> {
+  try {
+    const raw = await readFile(PATHS.kutlamaIndex, "utf-8");
+    return z.record(z.string(), z.number()).parse(JSON.parse(raw));
+  } catch {
+    return {};
+  }
+}
+
+async function yillikIsaretliMi(anahtar: string, yil: number): Promise<boolean> {
+  const index = await readYillikIsaretler();
+  return index[anahtar] === yil;
+}
+
+async function yillikIsaretle(anahtar: string, yil: number): Promise<void> {
+  const index = await readYillikIsaretler();
+  index[anahtar] = yil;
+  await mkdir(DATA_DIR, { recursive: true });
+  await writeFile(PATHS.kutlamaIndex, JSON.stringify(index, null, 2) + "\n", "utf-8");
+}
+
+export const kutlamaGonderildiMi = (ad: string, yil: number) => yillikIsaretliMi(`kutlama:${ad}`, yil);
+export const markKutlamaGonderildi = (ad: string, yil: number) => yillikIsaretle(`kutlama:${ad}`, yil);
+
+/** Bu özel gün için bu yıl zaten içerik üretimi denendi/başarılı oldu mu? */
+export const ozelGunIcerikUretildiMi = (ad: string, yil: number) => yillikIsaretliMi(`icerik:${ad}`, yil);
+export const markOzelGunIcerikUretildi = (ad: string, yil: number) => yillikIsaretle(`icerik:${ad}`, yil);

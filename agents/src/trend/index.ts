@@ -3,6 +3,7 @@ import { fetchWikipediaTrending } from "./sources/wikipedia.js";
 import { fetchGoogleNews } from "./sources/googleNews.js";
 import { fetchYouTubeTrending } from "./sources/youtube.js";
 import { fetchRedditTrending } from "./sources/reddit.js";
+import { gatherOzelGunAdaylari } from "./ozelGunler.js";
 import { isNavigationNoise, checkBlocklist } from "../lib/blocklist.js";
 import { readEvergreen, konuDahaOnceIslendiMi } from "../lib/state.js";
 import type { TrendCandidate } from "../lib/schemas.js";
@@ -40,7 +41,7 @@ async function safeGather(
 const GUVENLI_HABER_KATEGORILERI = ["eglence", "bilim", "teknoloji", "spor"] as const;
 
 export async function gatherTrendCandidates(): Promise<TrendCandidate[]> {
-  const [google, wikipedia, newsPerKategori, youtube, reddit] = await Promise.all([
+  const [google, wikipedia, newsPerKategori, youtube, reddit, ozelGunler] = await Promise.all([
     safeGather("google-trends", fetchGoogleTrends),
     safeGather("wikipedia", fetchWikipediaTrending),
     Promise.all(
@@ -50,10 +51,11 @@ export async function gatherTrendCandidates(): Promise<TrendCandidate[]> {
     ),
     safeGather("youtube", fetchYouTubeTrending),
     safeGather("reddit", fetchRedditTrending),
+    safeGather("ozel-gun", gatherOzelGunAdaylari),
   ]);
 
   const news = newsPerKategori.flat();
-  const hamAdaylar = [...google, ...wikipedia, ...news, ...youtube, ...reddit];
+  const hamAdaylar = [...google, ...wikipedia, ...news, ...youtube, ...reddit, ...ozelGunler];
 
   const filtrelenmis: TrendCandidate[] = [];
   for (const aday of hamAdaylar) {
