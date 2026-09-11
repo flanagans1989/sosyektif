@@ -1,9 +1,9 @@
 {
-  "eglence": 0.5,
-  "pop-kultur": 0.5,
-  "bilim": 6.037313432835821,
-  "teknoloji": 0.5,
-  "spor": 0.5,
-  "yasam": 0.5,
-  "tarih": 1.962686567164179
+  "eglence": 1,
+  "pop-kultur": 1,
+  "bilim": 1,
+  "teknoloji": 1,
+  "spor": 1,
+  "yasam": 1,
+  "tarih": 1
 }

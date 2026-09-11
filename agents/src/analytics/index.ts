@@ -5,18 +5,37 @@ import { KATEGORILER } from "../lib/schemas.js";
 import { notifyAdmin } from "../lib/telegram.js";
 
 /**
+ * Site yeniyken (az yazı varken) tek bir erken yazının şansına aldığı
+ * trafik bile toplam sinyalin neredeyse tamamını oluşturuyor — bu da
+ * "eşit dağılım" isteğinin tam tersi, aşırı sivri bir ağırlığa yol açıyor
+ * (ör. 4 yazıdan 3'ü bilimse bilim anında baskın kategori oluyor).
+ * Yeterli sayıda yazı birikene kadar (kategori başına en az birkaç yazı
+ * ortalaması) tüm kategoriler bilerek eşit tutulur; siteye içerik
+ * biriktikçe performans sinyali organik olarak devreye girer.
+ */
+const MIN_TOPLAM_YAYIN_ESIGI = KATEGORILER.length * 5;
+
+/**
  * Haftalık analitik geri besleme (PLAN.md §3.7): hangi kategori daha çok
  * ilgi görüyorsa Trend Ajanı'nın konu seçiminde o kategoriye biraz daha
  * ağırlık verilir. Ağırlıklar asla sıfıra inmez (0.5 taban) — az veri olan
  * yeni kategoriler tamamen elenmesin diye.
  */
 export async function updateCategoryWeights(): Promise<Record<string, number>> {
+  const publishedIndex = await readPublishedIndex();
+
+  if (publishedIndex.length < MIN_TOPLAM_YAYIN_ESIGI) {
+    // Henüz yeterli veri yok — tüm kategoriler eşit ağırlıkta kalır.
+    const agirliklar = Object.fromEntries(KATEGORILER.map((k) => [k, 1]));
+    await writeCategoryWeights(agirliklar);
+    return agirliklar;
+  }
+
   const [pageviews, searchClicks] = await Promise.all([
     fetchPageviewsByPath(),
     fetchSearchConsoleClicksByPath(),
   ]);
 
-  const publishedIndex = await readPublishedIndex();
   const slugToKategori = new Map(publishedIndex.map((e) => [e.slug, e.kategori]));
 
   const kategoriPuanlari: Record<string, number> = Object.fromEntries(
