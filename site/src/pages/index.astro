@@ -7,9 +7,32 @@ const tumYazilar = await getCollection('posts', ({ data }) => !data.taslak);
 const yazilar = tumYazilar.sort(
   (a, b) => b.data.yayinTarihi.valueOf() - a.data.yayinTarihi.valueOf()
 );
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      name: 'sosyektif',
+      url: 'https://sosyektif.com/',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://sosyektif.com/ara/?q={search_term_string}',
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
+      '@type': 'Organization',
+      name: 'sosyektif',
+      url: 'https://sosyektif.com/',
+      logo: 'https://sosyektif.com/favicon.svg',
+    },
+  ],
+};
 ---
 
 <Layout title="Anasayfa">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <section class="border-b border-black/5 bg-gradient-to-br from-marka/10 via-zemin to-zemin">
     <div class="mx-auto max-w-6xl px-4 py-14 text-center">
       <h1 class="text-4xl font-extrabold tracking-tight text-murekkep sm:text-5xl">

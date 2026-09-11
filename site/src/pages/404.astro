@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sayfa Bulunamadı" description="Aradığınız sayfa bulunamadı." noindex={true}>
+  <section class="mx-auto flex max-w-2xl flex-col items-center px-4 py-20 text-center">
+    <p class="text-7xl font-extrabold text-marka">404</p>
+    <h1 class="mt-4 text-2xl font-bold text-murekkep">Bu sayfayı bulamadık</h1>
+    <p class="mt-3 text-murekkep/70">
+      Aradığınız içerik kaldırılmış ya da hiç var olmamış olabilir. Ama merak etmeyin, keşfedecek çok şey var.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a
+        href="/"
+        class="rounded-full bg-marka px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-marka-koyu"
+      >
+        Ana Sayfaya Dön
+      </a>
+      <a
+        href="/ara/"
+        class="rounded-full bg-black/5 px-5 py-2.5 text-sm font-semibold text-murekkep transition hover:bg-black/10"
+      >
+        🔍 Sitede Ara
+      </a>
+    </div>
+  </section>
+</Layout>

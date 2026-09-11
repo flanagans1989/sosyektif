@@ -13,7 +13,15 @@ import Layout from '../../layouts/Layout.astro';
   <script is:inline>
     window.addEventListener('DOMContentLoaded', () => {
       if (window.PagefindUI) {
-        new window.PagefindUI({ element: '#arama', showSubResults: true, showImages: true });
+        // Google'ın sitelinks arama kutusundan (/ara/?q=...) gelen sorguyu
+        // otomatik doldurup çalıştırır — bkz. index.astro'daki SearchAction şeması.
+        const baslangicSorgusu = new URLSearchParams(location.search).get('q') ?? '';
+        new window.PagefindUI({
+          element: '#arama',
+          showSubResults: true,
+          showImages: true,
+          initialQuery: baslangicSorgusu,
+        });
       }
     });
   </script>
