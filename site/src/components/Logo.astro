@@ -1,0 +1,20 @@
+---
+// sosyektif = sosyal + dedektif. İşaret: pembe kare içinde beyaz büyüteç —
+// public/favicon.svg ile aynı çizim, sekme ikonu ve logo birbirini tutsun.
+// Yazı gerçek HTML metni (erişilebilir, seçilebilir); ikon em ile boyutlanıyor,
+// Header ve Footer'daki farklı yazı boyutlarında orantılı kalıyor.
+interface Props {
+  class?: string;
+}
+
+const { class: className = 'text-2xl' } = Astro.props;
+---
+
+<span class={`inline-flex items-center gap-[0.32em] font-extrabold tracking-tight text-murekkep ${className}`}>
+  <svg class="h-[1.25em] w-[1.25em] shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+    <rect width="48" height="48" rx="11" fill="#ff4f64"></rect>
+    <circle cx="21" cy="21" r="9.5" fill="none" stroke="#ffffff" stroke-width="4.5"></circle>
+    <line x1="28.2" y1="28.2" x2="36.5" y2="36.5" stroke="#ffffff" stroke-width="5" stroke-linecap="round"></line>
+  </svg>
+  <span>sos<span class="text-marka">yektif</span></span>
+</span>
