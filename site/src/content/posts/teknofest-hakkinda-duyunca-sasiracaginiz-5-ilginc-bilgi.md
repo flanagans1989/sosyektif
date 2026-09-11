@@ -30,7 +30,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Teknofest
     url: https://en.wikipedia.org/wiki/Teknofest
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Pavel Danilyuk on Pexels
 moderasyon:
   skor: 1
