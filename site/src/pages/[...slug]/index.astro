@@ -4,6 +4,8 @@ import Layout from '../../layouts/Layout.astro';
 import ListeIcerik from '../../components/ListeIcerik.astro';
 import TriviaIcerik from '../../components/TriviaIcerik.astro';
 import QuizIcerik from '../../components/QuizIcerik.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
+import IlgiliIcerikler from '../../components/IlgiliIcerikler.astro';
 import { KATEGORILER, FORMAT_ETIKETLERI } from '../../lib/kategoriler';
 
 export async function getStaticPaths() {
@@ -16,6 +18,7 @@ export async function getStaticPaths() {
 
 const { yazi } = Astro.props;
 const { Content } = await render(yazi);
+const tumYazilar = await getCollection('posts', ({ data }) => !data.taslak);
 const {
   baslik,
   seoBaslik,
@@ -41,6 +44,8 @@ const jsonLd = {
   author: { '@type': 'Organization', name: 'sosyektif' },
   publisher: { '@type': 'Organization', name: 'sosyektif' },
 };
+
+const sayfaUrl = new URL(`/${yazi.id}/`, Astro.site).toString();
 ---
 
 <Layout title={seoBaslik} description={metaAciklama} image={kapakGorseli}>
@@ -88,5 +93,11 @@ const jsonLd = {
         </ul>
       </aside>
     )}
+
+    <div class="mt-8 border-t border-black/5 pt-6">
+      <ShareButtons url={sayfaUrl} baslik={baslik} />
+    </div>
+
+    <IlgiliIcerikler mevcut={yazi} tumYazilar={tumYazilar} />
   </article>
 </Layout>

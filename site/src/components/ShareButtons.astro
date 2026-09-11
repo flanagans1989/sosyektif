@@ -1,0 +1,48 @@
+---
+interface Props {
+  url: string;
+  baslik: string;
+}
+
+const { url, baslik } = Astro.props;
+const kodlanmisBaslik = encodeURIComponent(baslik);
+const kodlanmisUrl = encodeURIComponent(url);
+
+const baglantilar = [
+  {
+    ad: 'WhatsApp',
+    href: `https://api.whatsapp.com/send?text=${kodlanmisBaslik}%20${kodlanmisUrl}`,
+    emoji: '💬',
+  },
+  {
+    ad: 'X',
+    href: `https://twitter.com/intent/tweet?text=${kodlanmisBaslik}&url=${kodlanmisUrl}`,
+    emoji: '🐦',
+  },
+  {
+    ad: 'Facebook',
+    href: `https://www.facebook.com/sharer/sharer.php?u=${kodlanmisUrl}`,
+    emoji: '📘',
+  },
+  {
+    ad: 'Telegram',
+    href: `https://t.me/share/url?url=${kodlanmisUrl}&text=${kodlanmisBaslik}`,
+    emoji: '✈️',
+  },
+];
+---
+
+<div class="flex flex-wrap items-center gap-2">
+  <span class="text-sm font-semibold text-murekkep/70">Paylaş:</span>
+  {baglantilar.map((b) => (
+    <a
+      href={b.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-1.5 rounded-full bg-black/5 px-3 py-1.5 text-sm font-medium text-murekkep/80 transition hover:bg-marka/10 hover:text-marka"
+      aria-label={`${b.ad}'da paylaş`}
+    >
+      <span aria-hidden="true">{b.emoji}</span> {b.ad}
+    </a>
+  ))}
+</div>

@@ -21,12 +21,21 @@ const kategoriGirdileri = Object.entries(KATEGORILER);
       ))}
     </nav>
 
-    <a
-      href="/"
-      class="rounded-full bg-marka px-4 py-2 text-sm font-semibold text-white transition hover:bg-marka-koyu"
-    >
-      Keşfet
-    </a>
+    <div class="flex items-center gap-2">
+      <a
+        href="/ara/"
+        aria-label="Ara"
+        class="rounded-full p-2 text-murekkep/70 transition hover:bg-black/5 hover:text-marka"
+      >
+        🔍
+      </a>
+      <a
+        href="/"
+        class="rounded-full bg-marka px-4 py-2 text-sm font-semibold text-white transition hover:bg-marka-koyu"
+      >
+        Keşfet
+      </a>
+    </div>
   </div>
 
   <nav class="flex gap-1 overflow-x-auto px-4 pb-3 md:hidden" aria-label="Kategoriler (mobil)">

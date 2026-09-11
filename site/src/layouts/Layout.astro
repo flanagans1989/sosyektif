@@ -51,7 +51,7 @@ const ogImage = image ? new URL(image, Astro.site).toString() : new URL('/og-def
   </head>
   <body class="flex min-h-screen flex-col font-sans">
     <Header />
-    <main class="flex-1">
+    <main class="flex-1" data-pagefind-body>
       <slot />
     </main>
     <Footer />

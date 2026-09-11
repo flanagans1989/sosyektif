@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PostCard from './PostCard.astro';
+
+interface Props {
+  mevcut: CollectionEntry<'posts'>;
+  tumYazilar: CollectionEntry<'posts'>[];
+}
+
+const { mevcut, tumYazilar } = Astro.props;
+
+// Skor: aynı kategori +2, her ortak etiket +1. En yüksek skorlu 3 yazı gösterilir.
+const etiketSeti = new Set(mevcut.data.etiketler);
+const adaylar = tumYazilar
+  .filter((y) => y.id !== mevcut.id)
+  .map((y) => {
+    let skor = y.data.kategori === mevcut.data.kategori ? 2 : 0;
+    skor += y.data.etiketler.filter((e) => etiketSeti.has(e)).length;
+    return { y, skor };
+  })
+  .filter((a) => a.skor > 0)
+  .sort((a, b) => b.skor - a.skor || b.y.data.yayinTarihi.valueOf() - a.y.data.yayinTarihi.valueOf())
+  .slice(0, 3)
+  .map((a) => a.y);
+---
+
+{adaylar.length > 0 && (
+  <section class="mt-12">
+    <h2 class="mb-4 text-xl font-bold text-murekkep">İlgili İçerikler</h2>
+    <div class="grid gap-6 sm:grid-cols-2">
+      {adaylar.map((yazi) => <PostCard post={yazi} />)}
+    </div>
+  </section>
+)}
