@@ -22,7 +22,11 @@ const yazilar = tumYazilar.sort(
 );
 ---
 
-<Layout title={bilgi.etiket} description={`${bilgi.etiket} kategorisindeki en yeni içerikler.`}>
+<Layout
+  title={bilgi.etiket}
+  description={`${bilgi.etiket} kategorisindeki en yeni içerikler.`}
+  noindex={yazilar.length === 0}
+>
   <section class="mx-auto max-w-6xl px-4 py-10">
     <h1 class="mb-6 text-3xl font-extrabold text-murekkep">
       {bilgi.emoji} {bilgi.etiket}
