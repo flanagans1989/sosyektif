@@ -34,5 +34,14 @@
     "format": "trivia",
     "yayinTarihi": "2026-09-11T08:06:33.439Z",
     "otomatikYayinlandi": false
+  },
+  {
+    "slug": "dna-hakkinda-bilgilerinizi-test-edecek-5-zorlu-soru",
+    "baslik": "DNA Hakkında Bilgilerinizi Test Edecek 5 Zorlu Soru",
+    "konuParmakIzi": "dna",
+    "kategori": "bilim",
+    "format": "quiz",
+    "yayinTarihi": "2026-09-11T15:07:31.879Z",
+    "otomatikYayinlandi": true
   }
 ]
