@@ -167,20 +167,32 @@ export default {
       return new Response("ok");
     }
 
+    // ÖNEMLİ: callback_query'ye Telegram'ın beklediği kısa sürede cevap
+    // verilmezse ("query too old" vb.) istemci hata gösterir — GitHub'daki
+    // asıl işlem (birkaç ardışık API çağrısı) o pencereyi kolayca aşabilir.
+    // Bu yüzden önce anında "işleniyor" cevabı veriliyor, asıl sonuç ise
+    // (başarı ya da hata fark etmeksizin) mesaj düzenlemesiyle bildiriliyor —
+    // editMessageText'in böyle bir zaman sınırı yok.
+    await answerCallback(env, cq.id, "İşleniyor…");
+
     try {
       const slug = await resolveSlug(env, id);
       if (aksiyon === "approve") {
         await approvePost(env, slug);
-        await answerCallback(env, cq.id, "✅ Yayınlandı!");
         await editMessage(env, cq.message.chat.id, cq.message.message_id, `✅ <b>Yayınlandı</b> — ${slug}`);
       } else {
         await rejectPost(env, slug);
-        await answerCallback(env, cq.id, "🗑️ Reddedildi ve silindi.");
         await editMessage(env, cq.message.chat.id, cq.message.message_id, `❌ <b>Yayınlanmadı</b> (silindi) — ${slug}`);
       }
     } catch (err) {
       console.error(err);
-      await answerCallback(env, cq.id, "Hata oluştu (log'a bak).");
+      const mesaj = err instanceof Error ? err.message : String(err);
+      await editMessage(
+        env,
+        cq.message.chat.id,
+        cq.message.message_id,
+        `⚠️ <b>Hata oluştu</b>\n${mesaj.slice(0, 300)}\n\nGitHub'ı elle kontrol edin, işlem tamamlanmamış olabilir.`
+      );
     }
 
     return new Response("ok");
