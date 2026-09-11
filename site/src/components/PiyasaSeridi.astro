@@ -27,6 +27,13 @@
   #piyasa-seridi:hover .animate-piyasa-kaydir {
     animation-play-state: paused;
   }
+  /* Piksel hızı her ekranda aynı olsa da dar ekranda aynı anda bir-iki kalem
+     göründüğü için şerit yavaş hissettiriyordu; telefonda daha hızlı akar. */
+  @media (max-width: 767px) {
+    .animate-piyasa-kaydir {
+      animation-duration: 18s;
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     .animate-piyasa-kaydir {
       animation: none;
