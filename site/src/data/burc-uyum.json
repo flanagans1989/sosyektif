@@ -1,1 +1,548 @@
-{}
+{
+  "koc-koc": {
+    "puan": 70,
+    "ozet": "İki ateşin buluşması evde yangın çıkarabilir ama en eğlenceli partiyi de kesinlikle onlar verir.",
+    "ask": "Aşk hayatınız adeta bir aksiyon filmi gibi; bolca tutku, biraz kıskançlık ve anlık parlamalarla dolu. İkiniz de liderlik tasmayı bırakmak istemediğiniz için ego savaşları kaçınılmaz olabilir, ama barışma anları da bir o kadar ateşli geçer.",
+    "arkadaslik": "Macera ve adrenalin arıyorsanız bu ikilinin üstüne yok. Dağ tepe demez gezersiniz, yeter ki kimin önce varacağı konusunda iddiaya girmeyin.",
+    "is": "İş hayatında projeleri hızla hayata geçirirsiniz fakat sabırsızlık ikinizin de zayıf noktasıdır. Biri gaza basarken diğeri de frene basmayı öğrenirse harika işler başarırsınız."
+  },
+  "koc-boga": {
+    "puan": 55,
+    "ozet": "Koç'un aceleciliği ile Boğa'nın inatçılığı karşılaşırsa, kahveler soğuyana kadar tartışma garanti.",
+    "ask": "Mars'ın yönettiği aceleci Koç ile Venüs'ün konfor düşkünü Boğa ilk başta birbirini mıknatıs gibi çekebilir. Ancak Koç 'hadi' dedikçe Boğa 'dur' derse, romantizm inatlaşmaya dönebilir.",
+    "arkadaslik": "Koç dışarıda koşturmak ister, Boğa ise evde dizi izleyip mantı açmak; ortak nokta bulmak biraz diplomatik beceri ister. Yine de birbirinizin dünyasını zenginleştirebilirsiniz.",
+    "is": "Koç vizyonu çizer, fikir üretir; Boğa ise o fikri somutlaştırıp paraya çevirir. Temponuz uymasa da pratik zekanız birleştiğinde ticarette sırtınız yere gelmez."
+  },
+  "koc-ikizler": {
+    "puan": 90,
+    "ozet": "Rüzgarla yarışan bir Koç ve her çiçeğe konan bir İkizler; bu ilişki asla sıkıcı olamaz.",
+    "ask": "Ateş ve havanın muhteşem dansı sayesinde aranızdaki mental ve fiziksel çekim tavan yapar. Birbirinizin özgürlük alanına saygı duyduğunuz sürece, bu ilişki hiç bitmeyen bir üniversite partisi gibi akar.",
+    "arkadaslik": "Dedikodunun, spontane seyahatlerin ve çılgın fikirlerin 1 numaralı partnerlerisiniz. Birbirinizin yarıda bıraktığı cümleleri diğeriniz tamamlar.",
+    "is": "Yaratıcı projeler, PR ve medya işleri için biçilmiş kaftansınız. Koç'un cesareti İkizler'in kıvrak zekasıyla birleşince piyasayı alt üst edersiniz."
+  },
+  "koc-yengec": {
+    "puan": 45,
+    "ozet": "Koç'un patavatsızlığı Yengeç'in kabuğuna çekilmesine, Yengeç'in alınganlığı da Koç'u çileden çıkarmaya yeter.",
+    "ask": "Ateş ve suyun imtihanı dedikleri bu olsa gerek; Koç dürtüsel bir şekilde kalbe girmeye çalışırken, Yengeç kalenin kapılarına kırk kilit vurup duygusal güven arar. Birbirinizi anlamak için çaba sarf etmeniz şart.",
+    "arkadaslik": "Sosyal ortamlarda Koç dışa dönük enerjisiyle Yengeç'i korur kol大战, Yengeç de Koç'a ev yemeği yedirip ruhunu dinlendirir. Farklı dünyaların insanı olsanız da tatlı bir dengeniz olabilir.",
+    "is": "İş yerinde Koç sonuç odaklıdır ve hemen olsun ister, Yengeç ise manevi tatmin ve güvenli adımlar peşindedir. Koç'un dili biraz kemiksiz kalırsa Yengeç'i küstürebilir."
+  },
+  "koc-aslan": {
+    "puan": 95,
+    "ozet": "Kraliyet ailesi gibi yaşarsınız; sahne sizin, alkışlar ise sadece ikinize ait.",
+    "ask": "İki ateş burcunun buluşması adeta görkemli bir havai fişek gösterisidir. Ego kapışmalarını bir kenara bırakabildiğiniz sürece hem çok tutkulu bir aşk yaşar hem de hayatın tadını sonuna kadar çıkarırsınız.",
+    "arkadaslik": "Eğlencenin, lüksün ve sosyal hayatın merkezinde hep siz varsınız. Birbirinizi cesaretlendirir, sırtınızı daima sağlam bir dağa yaslamış gibi hissedersiniz.",
+    "is": "Liderlik vasıflarınız tavan olduğu için ortak projelerde kimin patron olacağı küçük bir krize yol açabilir. Güçlerinizi birleştirirseniz alt edemeyeceğiniz rakip yoktur."
+  },
+  "koc-basak": {
+    "puan": 50,
+    "ozet": "Koç ortalığı dağıtır, Başak arkasını toplar; bu ilişki ya bir danışmanlık seansına ya da tatlı bir kaosa döner.",
+    "ask": "Koç'un delidolu ve kafasına eseni yapan yapısı, detaycı ve her şeyi planlayan Başak'ı başta büyüleyebilir ama sonra sinir krizi geçirtebilir. Başak sürekli eleştirdikçe Koç oradan uzaklaşmak isteyebilir.",
+    "arkadaslik": "Hayata tamamen zout pencerelerden bakarsınız; Koç coşkuyla atlar, Başak 'dur bir fizibilite raporu hazırlayayım' der. Birbirinizin eksik yönlerini törpüleyebilirsiniz.",
+    "is": "İş ve kariyerde muazzam bir denge tutturabilirsiniz çünkü Koç başlatır, Başak kusursuzlaştırır. Başak'ın eleştirilerini Koç kişisel algılamazsa şirketiniz kâr rekoru kırar."
+  },
+  "koc-terazi": {
+    "puan": 65,
+    "ozet": "Zıtların çekimi tam gaz devrede; ya muazzam bir aşk doğar ya da sürekli bir tatlı tatlı kapışma hali.",
+    "ask": "Koç'un ateşi Terazi'nin zarafetiyle buluşunca ortalık adeta romantik bir komedi setine döner. Biri hemen karar vermek ister, diğeri 'acaba hangisi daha estetik durur' diye düşünür ama bu tezat birbirlerini çekici kılar.",
+    "arkadaslik": "Sosyal ortamlarda birbirlerini mükemmel tamamlarlar; Koç maceraya atılır, Terazi ise o maceraya en şık kıyafetle eşlik eder. Karar mekanizmasında biraz zorlansalar da beraber vakit geçirmekten keyif alırlar.",
+    "is": "Koç'un liderlik dürtüsü ve Terazi'nin adalet duygusu iyi bir ikili oluşturabilir. Koç projeyi başlatır, Terazi ise insan ilişkilerini yönetip dengeyi kurar."
+  },
+  "koc-akrep": {
+    "puan": 55,
+    "ozet": "İki güçlü karakterin mücadelesi; bu ilişki ya küllerinden yeniden doğar ya da tutkudan birbirini yer.",
+    "ask": "Mars'ın iki asi çocuğu karşı karşıya gelince tutku tavan yapar ama inatlaşmalar da eksik olmaz. Koç her şeyi açıkta yaşamak isterken, Akrep gizemden beslenir; bu yüzden kıskançlık krizleri kaçınılmaz olabilir.",
+    "arkadaslik": "İkisi de oldukça sadık ve güçlüdür, bu yüzden birbirlerinin arkasında daima dururlar. Ancak ego savaşları yüzünden ufak çaplı kıyametler kopabilir.",
+    "is": "Strateji ve hız bir arada! Akrep derinlemesine plan yaparken Koç anında aksiyona geçer; doğru yönetilirse bu ikili iş dünyasında dağları devirir."
+  },
+  "koc-yay": {
+    "puan": 90,
+    "ozet": "Durdurulamayan iki ateş buluştu; bu ilişki başladığı yerde kalmaz, dünyayı turlar.",
+    "ask": "Hayat enerjileri o kadar yüksek ki, beraberken can sıkıntısı lügatlerinden tamamen silinir. Biri gaza getirir, diğeri 'hadi' der ve kendilerini spontane bir Karadeniz turunda bulabilirler.",
+    "arkadaslik": "En çılgın fikirlerin ortağı bu ikilidir. Sabırsızlıkları tutsa da birbirlerini yargılamadıkları için arkadaşlıkları uzun yıllar boyunca hiç eskimez.",
+    "is": "Vizyoner Yay ufukları açarken, cesur Koç projeyi hayata geçirir. Bürokratik işlerden sıkılsalar da büyük resimde harika işler çıkarırlar."
+  },
+  "koc-oglak": {
+    "puan": 45,
+    "ozet": "Koç gaz pedalına basarken Oğlak el frenini çeker; zor ama öğretici bir tezat.",
+    "ask": "Koç'un sabırsız ve aceleci halleri, Oğlak'ın geleneksel ve temkinli yapısına başta çok cazip gelse de zamanla yorabilir. Biri hemen olsun ister, diğeri 'temeli sağlam atalım' der.",
+    "arkadaslik": "Disiplinli Oğlak ile deli dolu Koç'un arkadaşlığı biraz zıt poleklerdir. Birlikte eğlenmekte zorlansalar da birbirlerinin farklı bakış açılarından çok şey öğrenirler.",
+    "is": "İş hayatında kural tanımayan Koç ile kuralları yazan Oğlak karşı karşıya gelir. Eğer görev dağılımı net yapılırsa, Koç'un cesareti ve Oğlak'ın organizasyon yeteneği başarıyı getirir."
+  },
+  "koc-kova": {
+    "puan": 85,
+    "ozet": "Özgürlüğüne düşkün iki ruhun buluşma noktası; sıkılmaya vakit yok.",
+    "ask": "Ateş ve hava elementinin bu harika uyumu, entelektüel ve heyecan dolu bir ilişki vadeder. Kova'nın farklı ve yenilikçi fikirleri Koç'un anında ilgisini çeker, ikisi de birbirinin alanına saygı duyar.",
+    "arkadaslik": "En çılgın projelerin, sabaha kadar süren felsefi veya absürt sohbetlerin kahramanlarıdır. Birlikte keşfetmeyi severler ve birbirlerini asla kısıtlamazlar.",
+    "is": "Yenilikçi Kova ve cesur Koç projelerde harika bir inovasyon ekibi oluşturur. Alışılmışın dışına çıkmak istediklerinde kimse tutamaz onları."
+  },
+  "koc-balik": {
+    "puan": 50,
+    "ozet": "Ateş suyla imtihanda; biri yakar, diğeri söndürür ama duygusal derinlik büyüleyicidir.",
+    "ask": "Koç'un patavatsız ve direkt halleri hassas Balık'ı bazen istemeden kırabilir. Ancak Koç'un korumacı yapısı ve Balık'ın romantik teslimiyeti aradaki sert duvarları eritebilir.",
+    "arkadaslik": "Balık dünyadan kaçmak istediğinde Koç onu gerçekliğe çeker, Koç yorulduğunda ise Balık ona huzurlu bir liman sunar. Zıt kutuplar bazen şaşırtıcı şekilde iyi anlaşır.",
+    "is": "Koç işleri hızlandırmak isterken Balık akışına bırakmayı tercih eder; bu yüzden tempo konusunda anlaşmazlıklar çıkabilir. Empatiyle yaklaşırlarsa Balık'ın sezgileri Koç'a rehberlik eder."
+  },
+  "boga-boga": {
+    "puan": 85,
+    "ozet": "Konfor alanından dışarı adım atmayan, dünyanın en huzurlu ama belki de en inatçı ikilisi.",
+    "ask": "Venüs'ün çocukları bir araya gelince aşk, iyi yemek, konforlu yataklar ve kesintisiz bir huzur anlamına gelir. İki taraf da değişime dirençli olduğu için ilişki adeta zamanın durduğu güvenli bir limana dönüşür, tek risk fazla konfordan paslanmak.",
+    "arkadaslik": "Birlikte en iyi restoranları keşfetmek ve kanepede yayılarak film maratonu yapmak için onlardan iyisi yoktur. Kimse kimseyi acele ettirmez, herkes anın tadını çıkarır.",
+    "is": "İş dünyasında sabır ve istikrar arıyorsanız bu ikili tam size göre, adım adım ama sağlam ilerlerler. Ancak ikisi de inatçı boğa olduğu için bir konuda ters düşerlerse o proje onuncu aya sarkar."
+  },
+  "boga-ikizler": {
+    "puan": 55,
+    "ozet": "Toprak ve havanın buluşması; biri durmak ister, diğeri koşmak.",
+    "ask": "Boğa'nın sakinliği İkizler'e güven verirken, İkizler'in uçarı zekası Boğa'nın hayatına neşe getirir. Tabii Boğa evde dizi izlemek isterken İkizler aniden sörf kursuna yazılmak isterse biraz ikna turu gerekebilir.",
+    "arkadaslik": "Meraklı İkizler Boğa'ya dünyayı anlatır, dünyevi Boğa da İkizler'e ayağını biraz olsun yere basmayı öğretir. Birbirlerinin eksiklerini eğlenceli bir şekilde kapatırlar.",
+    "is": "İkizler'in parlak fikirlerini Boğa somutlaştırıp hayata geçirebilirse harika işler çıkarabilirler. Fakat İkizler'in hızına Boğa'nın ağırkanlılığı yetişemezse ortalık biraz gerilebilir."
+  },
+  "boga-yengec": {
+    "puan": 90,
+    "ozet": "Ay ve Venüs'ün tatlı uyumuyla örülmüş, mis kokulu ev yemekleri tadında bir ilişki.",
+    "ask": "Toprak ve su elementinin bu harika buluşması, adeta tencere kapak uyumu gibidir. Sevgi, sadakat ve güven bu ilişkinin temel harcıdır; birbirlerinin gözünün içine bakarak bir ömür mutlu mesut yaşayabilirler.",
+    "arkadaslik": "Derin sohbetlerin, dertleşmelerin ve nostaljik gecelerin vazgeçilmez ikilisidir. Birbirlerini kelimelere gerek kalmadan, sadece bir bakışla anlarlar.",
+    "is": "Finansal konularda temkinli Boğa ile sezgileri güçlü Yengeç harika bir ortaklık kurar. Risk almayı sevmeyen yapıları sayesinde batma ihtimalleri neredeyse sıfırdır, güvenle büyürler."
+  },
+  "boga-aslan": {
+    "puan": 60,
+    "ozet": "İki dik başlı kraliyet figürünün ihtişamlı ama inat dolu dansı.",
+    "ask": "Sabit nitelikteki bu iki burç bir araya gelince tutku yüksek olur ama ego savaşları da kaçınılmazdır. Boğa konfor ve huzur isterken, Aslan sahne ışıkları ve iltifat bekler; bu dengeyi kurmak biraz diplomasi ister.",
+    "arkadaslik": "Lüks mekanlarda takılmayı, güzel yaşamayı ve zevk almayı sevdikleri için sosyal hayatları epey renkli geçer. Ancak ikisi de kural koymayı sevdiği için 'bu akşam nereye gidiyoruz' sorusu minik bir krize dönüşebilir.",
+    "is": "İkisi de inatçı olduğu için liderlik konusunda küçük taht kavgaları yaşanabilir. Aslan vizyonu çizerken Boğa işin bütçesini ve kalitesini sıkı bir şekilde denetlerse işler yürür."
+  },
+  "boga-basak": {
+    "puan": 95,
+    "ozet": "Toprak elementinin kusursuz pratikliği ve huzur dolu ortaklığı.",
+    "ask": "Düzenli, güvenilir ve ayakları yere basan bu ikili birbirini neredeyse kelimesiz anlar. Büyük dramlardan uzak, sakin, huzurlu ve uzun ömürlü bir aşkın kapılarını aralarlar.",
+    "arkadaslik": "Dedikodunun en kalitelisi, en mantıklı hayat tavsiyeleri ve planlı tatiller bu ikiliden sorulur. Biri bir şey unutursa diğeri kesinlikle yedekle gelmiştir.",
+    "is": "İş hayatında rüya takımdır; biri planlar diğeri uygular, hata payı minimuma iner. Detaylara verdikleri önem sayesinde en karmaşık projelerin bile altından başarıyla kalkarlar."
+  },
+  "boga-terazi": {
+    "puan": 70,
+    "ozet": "Ortak yöneticileri Venüs olan, estetik ve keyif düşkünü kibar bir ikili.",
+    "ask": "Sanat, iyi yemek ve güzellik sevgisi onları hemen çeker ancak Boğa'nın inatçılığı ile Terazi'nin kararsızlığı bazen komik çıkmazlar yaratabilir. Boğa 'evde kalalım' derken Terazi 'sosyal etkinliklere akalım' diyerek ufak atışmalar yaşayabilir.",
+    "arkadaslik": "Alışverişe çıkmak, sergi gezmek ve estetik hakkında saatlerce konuşmak için harika arkadaşlar olurlar. Hayatın güzelliklerini kutlamak konusunda birbirlerini çok iyi tamamlarlar.",
+    "is": "Estetik, moda, sanat veya halkla ilişkiler gibi alanlarda harika işler çıkarabilirler. Terazi insan ilişkilerini yönetirken Boğa operasyonel işleri güvenle sırtlar."
+  },
+  "boga-akrep": {
+    "puan": 78,
+    "ozet": "Zodyak'ın zıt ama çekilmez şekilde çekici karıştırıcısı, sessiz bir tutku savaşı.",
+    "ask": "Karşı zıtlar birbirini çeker kuralının canlı kanıtı olan bu ikili, göz göze geldiklerinde zamanı durdurabilir. Boğa'nın inatçı huzuru ile Akrep'in derin gizemi birleşince aradaki manyetik alan neredeyse elle tutulur hale gelir.",
+    "arkadaslik": "İki taraf da kolay kolay sır vermez ama birbirlerinin sınırlarına saygı duymayı iyi bilirler. Dedikodudan uzak, sakin ama güçlü bir bağ kurarlar.",
+    "is": "Sabit nitelikteki bu iki burç bir araya geldiğinde ortaya tam anlamıyla bir inat ve kararlılık abidesi çıkar. Projeleri bitirme konusunda ellerine kimse su dökemez, yeter ki kimin liderlik edeceği konusunda küçük bir güç savaşı çıkmasın."
+  },
+  "boga-yay": {
+    "puan": 52,
+    "ozet": "Ev kuşu ile dünya gezgininin aynı masada buluşma çabası, tatlı bir zıtlık.",
+    "ask": "Boğa en konforlu battaniyesini, Yay ise sırt çantasını kapıp kapıya çıkarsa ne olur? Aşkta bu ikili birbirine çok şey öğretebilir; Yay Boğa'ya esneklik katarken, Boğa da Yay'a 'biraz durup soluklan' der.",
+    "arkadaslik": "Yay'ın bitmek bilmeyen enerjisi Boğa'ya başta çok yorucu gelebilir, Boğa'nın durağanlığı da Yay'ı daraltabilir. Yine de kahve eşliğinde yapılan uzun sohbetler, dünyaya farklı açılardan bakmalarını sağlar.",
+    "is": "İş dünyasında Yay vizyoner fikirlerle masaya gelir, Boğa ise o fikirleri somutlaştırıp paraya çevirir. Farklı tempoda çalışsalar da iyi bir denge tutturabilirler."
+  },
+  "boga-oglak": {
+    "puan": 92,
+    "ozet": "Toprak elementinin en sağlam ve konforlu kalesi, geleceğe güvenle bakan bir ikili.",
+    "ask": "İki toprak burcu bir araya gelince aşk romantik bir komediden ziyade sağlam bir yatırım projesine dönebilir ama bu onların mutlu olmadığı anlamına gelmez. Güven, sadakat ve huzur bu ilişkinin omurgasını oluşturur, akşam yemeğinde ne yeneceği bile planlıdır.",
+    "arkadaslik": "Birbirlerinin hayatındaki en güvenilir liman olurlar; gece yarısı 'yardım et' deseniz ikisi de sorgulamadan koşar. Alışverişe gitmekten ya da bütçe planlaması yapmaktan aynı zevki alabilirler.",
+    "is": "İş hayatında bu ikiliye altından kalkamayacağı görev yoktur; planlı, disiplinli ve hedef odaklıdırlar. Kısa sürede küçük bir imparatorluk kurup başa geçerlerse şaşırmamak lazım."
+  },
+  "boga-kova": {
+    "puan": 45,
+    "ozet": "Geleneklerin efendisi Boğa ile geleceğin mimarı Kova'nın kafa kafaya tokuşması.",
+    "ask": "Boğa toprağa basmak ister, Kova ise uzay boşluğunda süzülmeyi tercih eder; bu yüzden romantizmde aynı frekansı yakalamak biraz mesai ister. Kova'nın beklenmedik hareketleri Boğa'nın o konforlu rutinini altüst edebilir.",
+    "arkadaslik": "İlk başta birbirlerinin dünyasını anlamakta zorlanabilirler çünkü bakış açıkları taban tabana zuttur. Ancak bu farklılık, ikisine de önyargısız olmayı öğreten harika bir dostluk fırsatı sunar.",
+    "is": "Biri klasik yöntemlerden vazgeçmez, diğeri ise sürekli sistemi hacklemeye çalışır. Ortak bir paydada buluşmak zor olsa da, buluştuklarında piyasayı sarsacak yenilikçi işler çıkarabilirler."
+  },
+  "boga-balik": {
+    "puan": 85,
+    "ozet": "Toprağın şefkatiyle sulanan, masalsı ve huzurlu bir liman.",
+    "ask": "Boğa'nın dünyevi ve güven veren yapısı, Balık'ın hassas ve romantik ruhuna adeta bir sığınak olur. Sarılıp film izlenen, hayatın sert rüzgarlarından korunulan tatlı ve masum bir aşk yaşarlar.",
+    "arkadaslik": "Balık dalıp gittiğinde Boğa onu nazikçe yere basar, Boğa kasıldığında ise Balık ona şefkatle yaklaşır. Birbirlerinin yaralarını kelimesiz sarabilen nadir ikililerdendir.",
+    "is": "Boğa işin pratik ve maddî kısmını hallederken, Balık yaratıcı ve sezgisel katkılar sunar. Sanatsal veya insani yardım odaklı projelerde harika bir uyum yakalarlar."
+  },
+  "ikizler-ikizler": {
+    "puan": 68,
+    "ozet": "Aynı anda dört farklı yerde olmak isteyen, kelimelerin dans ettiği iki zihin.",
+    "ask": "Bu ilişkide asla sıkıntıya yer yok; çünkü ortada ikişer kişiden dört kişilik bir sohbet grubu var gibi. Ancak sürekli zihinsel uyarım aradıkları için, derinleşmekte ve duygusal olarak kök salmakta zorlanabilirler.",
+    "arkadaslik": "Dünyanın en iyi dedikodu partnerleri ve seyahat arkadaşları olurlar, kahkahalar hiç eksik olmaz. Birlikte ne yapacaklarına karar vermeleri ise plan yapma yetenekleri zayıf olduğu için biraz zaman alabilir.",
+    "is": "İletişim, medya ve pazarlama işlerinde devleşebilirler; fikirler havada uçuşur, projeler hızla şekillenir. Ancak ikisinin de dikkati çabuk dağıldığı için detayları toparlayacak üçüncü bir kişiye ihtiyaç duyabilirler."
+  },
+  "ikizler-yengec": {
+    "puan": 45,
+    "ozet": "Hava'nın rüzgarlı halleri ile Su'yun derin dalgaları aynı denizde buluşmaya çalışıyor.",
+    "ask": "İkizler'in zihinsel uçuşmaları Yengeç'in evcimen ve duygusal dünyasına biraz fazla rüzgarlı gelebilir. Yengeç güven ararken, İkizler o an başka bir sohbete ışınlanıyor olabilir; yine de bu zıtlık tatlı bir merak uyandırabilir.",
+    "arkadaslik": "Biri dedikodu radarını açıp dünyayı gezerken, diğeri evde demleme çay eşliğinde hayatı sorgulatır. Farklı kafalarda olsalar da birbirlerinin zıt dünyalarını izlemekten keyif alırlar.",
+    "is": "İkizler fikir üretir, projeden projeye koşar; Yengeç ise o fikirleri besleyip büyütür ve ofis ortamını huzurlu kılar. İletişim kazalarını önlerlerse fena bir ikili olamazlar."
+  },
+  "ikizler-aslan": {
+    "puan": 85,
+    "ozet": "Sahnenin yıldızı ile sahnede soru soran neşeli yönetmen, birlikte harika bir şov çıkarır.",
+    "ask": "Ateş ve Hava'nın bu neşeli buluşmasındaflörtün ve heyecanın dozu hiç düşmez. Aslan hayranlık beklerken İkizler zaten o alkışı zekice esprileriyle çoktan toplar, geriye keyifli bir ego dansı kalır.",
+    "arkadaslik": "Bu ikilinin olduğu yerde asla sıkıntı kelimesi sözlükte geçmez. Dünyayı gezmek, yeni insanlarla tanışmak ve en absürt planları hayata geçirmek için birbirlerini bulmuşlardır.",
+    "is": "İkizler'in parlak fikirleri Aslan'ın liderlik ruhu ve özgüveniyle birleştiğinde pazarlık masasında devleşirler. İkisi de risk almayı sever, sadece biraz pratik detaylara odaklanan birine ihtiyaç duyabilirler."
+  },
+  "ikizler-basak": {
+    "puan": 60,
+    "ozet": "Merkür'ün iki farklı çocuğu; biri dünyayı gezmek ister, diğeri Excel tablosunu düzenlemek.",
+    "ask": "İkisi de Merkür tarafından yönetildiği için kelimelerle araları harikadır, sabaha kadar konuşabilirler ancak İkizler'in dağınıklığı Başak'ın tıkını bozabilir. Başak eleştiri oklarını kılıfında tutarsa, bu ilişki zihinsel bir şölene dönüşebilir.",
+    "arkadaslik": "Kitap tavsiyeleri, güncel olaylar ve entelektüel tartışmalar bu dostluğun temelidir. Başak İkizler'in hayatını organize ederken, İkizler de Başak'a biraz rahatlamayı öğretebilir.",
+    "is": "Stratejik planlama ve detay gerektiren işlerde Başak harikalar yaratır, İkizler ise PR ve iletişim kısımlarını ustalıkla yönetir. Birbirlerinin eksiklerini kapatan oldukça verimli bir ortaklık kurabilirler."
+  },
+  "ikizler-terazi": {
+    "puan": 92,
+    "ozet": "İki hava burcu rüzgarda dans ediyor; hafif, neşeli ve bolca sohbet dolu.",
+    "ask": "Flörtün, estetiğin ve zeka oyunlarının zirvesinde bir ilişki sizleri bekliyor. Karar vermekte biraz zorlansalar da, birlikte geçirdikleri her anın tadı damaklarında kalır.",
+    "arkadaslik": "Kahve masalarının vazgeçilmez ikilisi olan bu ikili, dedikodunun da en nezihini yapar. Birbirlerinin özgürlük alanına saygı duydukları için arkadaşlıkları yıllarca aynı tazelikte kalır.",
+    "is": "İletişim, sanat, halkla ilişkiler ve tasarım gibi alanlarda harikalar yaratırlar. İşler biraz pratikleşmesi gerektiğinde ikisi de havada kalabilir, o yüzden yanlarına bir toprak burcu almak iyi fikir olabilir."
+  },
+  "ikizler-akrep": {
+    "puan": 50,
+    "ozet": "Rüzgar gibi esen bir İkizler ile okyanusun en derin ve gizemli suları aynı masada.",
+    "ask": "İkizler her şeyi hafif ve merakla ele alırken, Akrep her şeyi tutkuyla ve kökten yaşamak ister. Akrep'in kıskançlık ve sahiplenme dürtüsü, özgürlüğüne düşkün İkizler'i ilk başta korkutabilir.",
+    "arkadaslik": "İlk başta birbirlerinin zıt enerjilerine çekilirler; Akrep İkizler'in neşesine hayran kalır, İkizler de Akrep'in gizemini çözmeye çalışır. Derin sularla sığ suların buluşması gibi şaşırtıcı bir dostluktur.",
+    "is": "Araştırma, kriz yönetimi ve strateji kurmada Akrep'in keskin sezgileri, İkizler'in hızlı zekasıyla birleşince sıradışı sonuçlar verebilir. Güven meselesini hallederlerse iş dünyasında ses getirirler."
+  },
+  "ikizler-yay": {
+    "puan": 88,
+    "ozet": "Zodyak'ın en maceracı ikilisi pasaportları hazırlamış, yeni ufuklara koşuyor.",
+    "ask": "Zıt burçların o karşı konulmaz çekimi burada tam anlamıyla çalışır; ikisi de özgürlüğüne, gezmeye ve öğrenmeye aşıktır. Birlikte sınırları zorlarlar ama yerleşik bir hayata geçmek biraz sabır isteyebilir.",
+    "arkadaslik": "Yolculukların, spontane planların ve sabaha kadar süren felsefi tartışmaların başrolündedirler. Birbirlerinin potini sıkmazlar, tam aksine yeni maceralar için cesaretlendirirler.",
+    "is": "Seyahat, turizm, medya veya eğitim sektörlerinde tuttuğunu koparan bir çifttir. Büyük resme odaklanıp küçük detayları unutmaları muhtemeldir, bu yüzden hesap kitap işini başkasına devretmelidirler."
+  },
+  "ikizler-oglak": {
+    "puan": 45,
+    "ozet": "Hızlı İkizler'in kafasını Ciddi Oğlak nasıl toplasın, haydi hayırlısı!",
+    "ask": "Hava elementinin cıvıl cıvıl çocuğu İkizler ile Toprak'ın en ciddi, en planlı neferi Oğlak bir araya gelince biraz 'frekans uyuşmazlığı' yaşanabilir. İkizler esprili sohbetiyle ice breaker yapmaya çalışırken Oğlak 'önce iş' diyerek konuyu bütçeye getirebilir; ama bu zıtlık birbirlerini dengelemeyi öğrenirlerse eğlenceli bir macera da olabilmekte.",
+    "arkadaslik": "Sosyal ortamlarda İkizler herkesle gülüşürken, Oğlak köşede iki kişiyle derin sohbeti tercih eder. Arkadaşlıkları tam bir 'zıt kutuplar birbirini çeker' belgeseli gibidir.",
+    "is": "İkizler'in uçuşan parlak fikirlerini Oğlak somut projelere dönüştürebilir. Biri vizyon çizer, diğeri Excel tablosunu hazırlar; iş bölümü doğru yapılırsa fena bir ikili değiller."
+  },
+  "ikizler-kova": {
+    "puan": 88,
+    "ozet": "Beyin fırtınasının ve entelektüel çılgınlığın doruklarında bir ikili!",
+    "ask": "İki hava burcunun buluşması demek, sabaha kadar süren absürt sohbetler ve asla sıkılmamak demektir. Duygusal melodrama pek yer vermeyen bu ilişkide özgürlük alanı geniştir, birbirlerinin alanına saygı duydukça aşkları havada uçar.",
+    "arkadaslik": "Girdikleri ortamda en tuhaf konuları tartışıp kahkaha krizine giren o iki kişi kesinlikle onlardır. Arkadaşlıkları hiç paslanmayan, her daim güncellenen bir yazılım gibidir.",
+    "is": "Yenilikçi fikirler havada uçuşur, ufuk açıcı projeler doğar. Tek risk, ikisinin de detaylarda sıkılıp işi yarı yolda bırakma ihtimalidir; yanlarına bir de toprak burcu almak gerekebilir."
+  },
+  "ikizler-balik": {
+    "puan": 52,
+    "ozet": "Biri mantık terazisinde, diğeri duygu okyanusunda kayıp birer ruh.",
+    "ask": "Merkür'ün zeki çocuğu İkizler her şeyi mantık süzgecinden geçirirken, Neptün'ün hayalperest Balık'ı hisleriyle yaşar. İkizler'in zaman zaman patavatsızlaşabilen halleri, hassas Balık'ın kalbini incitebilir ama bu ilişki ikisine de dünyaya farklı bir pencereden bakmayı öğretir.",
+    "arkadaslik": "İkizler dedikodu ve güncel olaylarla ilgilenirken, Balık daha çok sanatsal ve ruhsal konuları sever. Ortak noktayı bulduklarında keyifli sohbetler çıkar.",
+    "is": "İkizler pazarlama ve iletişimde harikalar yaratırken, Balık yaratıcı ve sezgisel projelerde parlar. Yönetim becerileri konusunda birbirlerini desteklemeleri gerekir."
+  },
+  "yengec-yengec": {
+    "puan": 82,
+    "ozet": "Duygu tsunamisi, ev yapımı kurabiyeler ve sonsuz bir koruma içgüdüsü.",
+    "ask": "İki Yengeç yan yana geldiğinde evrenin en sıcak, en korunaklı yuvası kurulur. Birbirlerinin kalbini kelimelere gerek kalmadan o kadar iyi hissederler ki, bazen küsmek bile aynı anda gelir; neyse ki sarılarak barışmak da pek uzakta değildir.",
+    "arkadaslik": "Dert dinleme seanslarının aranan ismi bu ikilidir. Gece yarısı kahve eşliğinde yapılan nostaljik sohbetlerin ve anı biriktirmenin ta kendisidir.",
+    "is": "İş yerinde anne-baba şefkatiyle yaklaşırlar ekibe, ofis ortamını aile sıcaklığına çevirirler. Kriz anında duygusal reaksiyon vermeye meyilli olsalar da sezgileriyle harika kararlar alabilirler."
+  },
+  "yengec-aslan": {
+    "puan": 65,
+    "ozet": "Ay'ın hassasiyeti ile Güneş'in ihtişamı aynı çatı altında.",
+    "ask": "Yengeç ilgi ve şefkat beklerken, Aslan övgü ve sahne ışığı ister; bu da ortaya tatlı bir denge çıkarır. Yengeç Aslan'ı evinde krallar gibi ağırlarken, Aslan da Yengeç'i dış dünyanın sert rüzgarlarından kahramanca korur.",
+    "arkadaslik": "Sosyal ortamlarda Aslan parıldar, Yengeç arka plandan ona hayranlıkla bakar. Biri sahneyi sever, diğeri kulisi; iyi bir uyum yakalarlar.",
+    "is": "Aslan'ın liderlik kumaşı ile Yengeç'in insan ilişkilerindeki sezgisel başarısı birleşirse güzel işler çıkar. Yengeç ekibin ruhunu besler, Aslan vizyonu çizer."
+  },
+  "yengec-basak": {
+    "puan": 90,
+    "ozet": "Toprağın ve suyun muazzam buluşmasıyla kurulan huzurlu bir krallık.",
+    "ask": "Yengeç'in derin duygusal kolları ile Başak'ın hayatı organize eden pratik zekası birbirini mükemmel tamamlar. Başak, Yengeç'in kuruntu ve kaygılarını mantıklı açıklamalarla dindirirken, Yengeç de Başak'ın o eleştirel zihnini sevgiyle sarıp sarmalar.",
+    "arkadaslik": "Ev gezmelerinin, uzun yemek masalarının ve 'hayat nasıl gidiyor' sorusunun en samimi cevabıdır. Birbirlerinin en güvenli sığınağı olurlar.",
+    "is": "Kusursuz bir çalışma ikilisi! Başak planı yapar, detayları kusursuzlaştırır; Yengeç ise projenin insan odaklı yönünü yönetir, hata payı neredeyse sıfıra iner."
+  },
+  "yengec-terazi": {
+    "puan": 55,
+    "ozet": "Yengeç'in evi özlemesiyle Terazi'nin sosyalleşme tutkusu arasında tatlı bir denge arayışı.",
+    "ask": "Yengeç duygusal güvenlik isterken, Venüs'ün göz bebeği Terazi flörtöz enerjisiyle Yengeç'in kabuğundan çıkmasını sağlayabilir. Ancak Yengeç'in alıngan halleri Terazi'nin diplomatik sabrını zorlayabilir.",
+    "arkadaslik": "İkisi de estetiğe ve güzel sofralara düşkün olduğu için harika sanat ve yemek partneri olurlar. Yine de Yengeç evde Netflix izlemek isterken, Terazi dışarıdaki en popüler sergiye gitmek isteyebilir.",
+    "is": "Terazi'nin adalet duygusu ve estetik vizyonu ile Yengeç'in sezgisel insan yönetimi birleşirse fena işler çıkmaz. Fakat karar alma süreçlerinde Terazi'nin kararsızlığı Yengeç'i telaşlandırabilir."
+  },
+  "yengec-akrep": {
+    "puan": 88,
+    "ozet": "Su elementinin derinliklerinde buluşan, kelimelere gerek duymayan ruh ikizleri.",
+    "ask": "Yengeç ve Akrep bir araya geldiğinde duygusal telepati başlar; göz göze gelmeleri yeter. Kıskançlık krizleri ve dramatik anlar eksik olmaz belki ama aralarındaki tutku ve sadakat macera arayanları kıskandırır.",
+    "arkadaslik": "Sırlar odasına hoş geldiniz; bu ikili birbirinin en mahrem sırlarını mezara kadar götürür. Arkadaş olarak gece yarısı felsefi sohbetlerinin ve dertleşmelerin aranan ikilisidirler.",
+    "is": "İş hayatında sezgileriyle hareket eden bu ekip, arka planda dönen dolapları kilometrelerce öteden sezer. Yengeç korumacı içgüdüleriyle kolları sıvarken, Akrep stratejik zekasıyla projeyi zirveye taşır."
+  },
+  "yengec-yay": {
+    "puan": 48,
+    "ozet": "Yengeç liman ararken, Yay sonsuz okyanuslara yelken açmak ister.",
+    "ask": "Yengeç, Yay'ın özgür ruhlu ve patavatsız hallerini ilk başta büyüleyici bulsa da zamanla 'Beni yeterince önemsemiyor' diye sızlanmaya başlayabilir. Yay ise Yengeç'in evcimen baskısı altında daralıp ilk uçak biletini alabilir.",
+    "arkadaslik": "Farklı dünyaların insanı olsalar da birbirlerine anlatacak çok hikayeleri vardır. Yay Yengeç'e hayatın eğlenceli tarafını gösterirken, Yengeç de Yay'a biraz durmayı öğretir.",
+    "is": "Yengeç işin idari ve insan kaynakları tarafını toparlarken, Yay vizyoner fikirleriyle ufuk açar. Ancak Yay'ın detaylardan sıkılan aceleci yapısı, titiz Yengeç'i çileden çıkarabilir."
+  },
+  "yengec-oglak": {
+    "puan": 78,
+    "ozet": "Zodyak'ın zıt kutupları birbirini çeker; ev ve kariyer dengesinin kusursuz tablosu.",
+    "ask": "Yengeç'in şefkatli kalbi ile Oğlak'ın koruyucu ve güven veren duruşu birbirini mükemmel tamamlar. Başlarda Oğlak fazla mesafeli gelebilir ama Yengeç o buzdan kaleyi yumuşatmanın bir yolunu mutlaka bulur.",
+    "arkadaslik": "Güven üzerine kurulu, uzun soluklu bir dostluktur onlarınki. Zor günde ilk arayacağınız kişilerdir; Yengeç çorba kaynatırken, Oğlak hukuki veya pratik çözümleri masaya yatırır.",
+    "is": "İş ortaklığında iflas etmesi en zor ikililerden biridir. Yengeç şirketin ruhunu ve müşteri ilişkilerini yönetirken, Oğlak finansı ve uzun vadeli stratejileri demir yumrukla yönetir."
+  },
+  "yengec-kova": {
+    "puan": 42,
+    "ozet": "Yengeç nostalji ararken, Kova geleceğin uzay gemisine bilet keser.",
+    "ask": "Yengeç yakınlık, şefkat ve el ele tutuşmak isterken, Kova bağımsızlığına ve zihinsel alanına düşkündür. Yengeç'in duygusal talepleri Kova'ya biraz 'yapışkan' gelebilir, Kova'nın mesafeli hali ise Yengeç'i korkutabilir.",
+    "arkadaslik": "Sosyal çevrelerinde birbirlerinin tamamen farklı bakış açılarından keyif alabilirler. Ancak iş birebir samimiyete gelince Yengeç'in duygusallığı Kova'nın rasyonel dünyasında havada kalabilir.",
+    "is": "Yaratıcı projelerde Kova'nın devrimci fikirleri ile Yengeç'in toplumsal ihtiyaçları sezme yeteneği harika bir sinerji yaratır. Günlük rutin işlerde ise anlaşmazlıklar kaçınılmazdır çünkü ikisinin hızı ve motivasyonu tamamen farklıdır."
+  },
+  "yengec-balik": {
+    "puan": 92,
+    "ozet": "İki su damlasının okyanusta buluşması gibi, masalsı ve büyüleyici bir uyum.",
+    "ask": "Romantizmin zirvesinde yaşarlar; kelimelere gerek kalmadan birbirlerinin ruh halini anlarlar. O kadar hassas ve hayalperest bir çifttirler ki, bazen gerçek dünyadan tamamen kopup kendi fantezi evrenlerinde kaybolabilirler.",
+    "arkadaslik": "Ağlak sinema gecelerinin, sabaha kadar süren dert maratonlarının ve sınırsız anlayışın adresidir bu dostluk. Kimse kimseyi yargılamaz, sadece sarılıp teselli bulurlar.",
+    "is": "İş dünyasının sert kuralları bu ikiliye biraz fazla gelebilir. Yaratıcı işlerde, sanatta, psikolojide veya sosyal sorumluluk projelerinde mucizeler yaratırlar ama bütçe yönetimi konusunda dışarıdan bir desteğe ihtiyaçları kesinlikle vardır."
+  },
+  "aslan-aslan": {
+    "puan": 70,
+    "ozet": "İki kral veya kraliçe aynı tahtta oturmaya çalışırsa, ortalık ya saray şölenine döner ya da taht savaşlarına.",
+    "ask": "Güneş'in çocukları olarak birbirinizi parlatırsınız, ikiniz de ilgi odağı olmak isterken romantizm bir güzellik yarışmasına dönüşebilir. Eonuz biraz yüksek olsa da, cömertliğiniz ve tutkunuz ilişkiyi her daim sahnede tutar.",
+    "arkadaslik": "Birlikte dışarı çıktığınızda tüm gözler üzerinizdedir ve eğlencenin doruklarına ulaşırsınız. Kimin daha havalı olduğu yarışını bir kenara bırakabildiğiniz sürece sırtınız yere gelmez.",
+    "is": "İki lider ruhlu insanı aynı projeye koymak patlamaya hazır bir güç gösterisidir. Görev dağılımını iyi yaparsanız, altından kalkamayacağınız iş yoktur."
+  },
+  "aslan-basak": {
+    "puan": 55,
+    "ozet": "Aslan sahne ışıkları ister, Başak ise kuliste detayları düzeltir; zıtlığın tatlı ama yorucu dansı.",
+    "ask": "Aslan'ın görkemi ve Başak'ın eleştirel gözü bazen birbirini yorabilir. Başak'ın pratikliği Aslan'ı yere indirmek isterken, Aslan Başak'ın hayatına neşe ve renk getirir.",
+    "arkadaslik": "Sosyal ortamlarda birbirinizi tamamlayabilirsiniz; Başak planı yapar, Aslan uygular. Ancak Başak'ın bitmek bilmeyen eleştirileri Aslan'ın gururuna dokunabilir.",
+    "is": "İş hayatında harika bir ikili olabilirsiniz çünkü Başak detayları yönetirken Aslan vizyon çizer. Başak sürekli kusur aramazsa, bu ortaklık dağları devirir."
+  },
+  "aslan-terazi": {
+    "puan": 88,
+    "ozet": "Güneş ve Venüs'ün zarif buluşması; sosyal hayatın aranan, en şık ve havalı çifti.",
+    "ask": "Ateşin coşkusu ve havanın zarafeti birleşince ortaya romantik komedileri kıskandıracak bir aşk çıkar. Terazi'nin adalet duygusu ve kararsızlığına, Aslan'ın netliği ve liderliği çok iyi gelir.",
+    "arkadaslik": "Gittikleri her ortamda dikkat çeken, estetik zevkleri yüksek bir ikili olurlar. Birlikte sanatsal etkinliklere gitmek ve sosyalleşmekten büyük keyif alırlar.",
+    "is": "Terazi halkla ilişkiler ve diplomaside harikalar yaratırken, Aslan yönetimi ele alır. Birbirlerinin eksik yönlerini ustaca kapatarak başarılı işlere imza atarlar."
+  },
+  "aslan-akrep": {
+    "puan": 45,
+    "ozet": "Ateş ile suyun buharlaşma savaşı; ya büyük bir tutku patlaması ya da sessiz bir güç mücadelesi.",
+    "ask": "Aslan her şeyi göz önünde yaşamak isterken, Akrep mahremiyet ve gizem arar. İnatçılıkta üstünüze olmadığını düşünürsek, ufak bir ego çatışması bile küçük çaplı bir kriz yaratabilir.",
+    "arkadaslik": "Birbirinizin gizli dünyasına girmek kolay değildir, mesafeli bir saygı geliştirirsiniz. Arkadaşlıkta ikinizin de inatçı yönü tutarsa uzun süre küs kalabilirsiniz.",
+    "is": "İş ortaklığında Aslan'ın benmerkezci yapısı ile Akrep'in stratejik ve manipülatif tarzı çarpışabilir. Güç savaşlarını bir tarafa bırakıp ortak bir amaca odaklanırlarsa güçlü bir sinerji doğar."
+  },
+  "aslan-yay": {
+    "puan": 92,
+    "ozet": "Ateş elementinin coşkulu buluşması; macera, neşe ve durmaksızın süren bir hayat kutlaması.",
+    "ask": "Hayata aynı pencereden bakan, enerjisi hiç bitmeyen iki maceraperestsiniz. Birbirinizin özgürlük alanına saygı duyduğunuz sürece bu ilişki kahkaha ve tutku dolu bir yolculuğa dönüşür.",
+    "arkadaslik": "Dünyayı gezip tozmak, yeni yerler keşfetmek ve sabahlara kadar sohbet etmek için en ideal ikilisiniz. Sizi durdurabilecek tek şey muhtemelen enerjinizin tükenmesidir ki o da pek mümkün görünmüyor.",
+    "is": "Vizyoner Yay ve yaratıcı Aslan bir araya geldiğinde ortaya yenilikçi ve büyük fikirler çıkar. Detaylarla uğraşmayı pek sevmeseniz de ilham dolu projeler yaratırsınız."
+  },
+  "aslan-oglak": {
+    "puan": 50,
+    "ozet": "Aslan parlamak ister, Oğlak ise çalışmak; biri krallıkta eğlenirken diğeri bütçe hesaplar.",
+    "ask": "Aslan'ın dramatik ve eğlenceli dünyası, Oğlak'ın ciddi ve kuralcı yapısına başta ilginç gelebilir. Zamanla Aslan'ın 'hadi eğlenelim' halleri Oğlak'a yorucu, Oğlak'ın mesafeli duruşu da Aslan'a fazla soğuk gelebilir.",
+    "arkadaslik": "Sosyal çevreleri ve hayata bakış açtıkları oldukça farklıdır, bu yüzden ilk başta anlaşmakta zorlanabilirler. Ancak birbirlerinin farklı güçlerine saygı duyduklarında sağlam bir dostluk kurabilirler.",
+    "is": "İş dünyasında Oğlak'ın disiplini ve Aslan'ın karizması iyi bir denge kurabilir. Aslan vizyonu çizer, Oğlak ise onu titizlikle hayata geçirir; iyi bir CEO-Yönetim Kurulu başkanı ikilisi olurlar."
+  },
+  "aslan-kova": {
+    "puan": 75,
+    "ozet": "Zodyak'ın karşıt iki ucu sahneyi paylaşırsa, ya Oscar töreni olur ya da gala gecesi kıyameti!",
+    "ask": "Güneş'in favorisi Aslan ile Uranüs'ün asi çocuğu Kova birbirini hem çeker hem de deli eder. Sen 'beni öv' derken, o 'hadi toplumu kurtaralım' diyebilir; ama bu zıtlık yatak odasında nefis bir gerilim yaratır.",
+    "arkadaslik": "Sosyal ortamlarda ikisi de dikkat çekmeyi sever ama biri kral edasıyla, diğeri marjinal tarzıyla yapar bunu. Birbirlerinin egosunu beslemek yerine farklı dünyalarını izlemekten keyif alırlar.",
+    "is": "İş hayatında vizyoner Kova ile gösterişli proje yöneticisi Aslan harika işler çıkarabilir. Yeter ki Aslan sürekli alkış beklerken, Kova'nın işin ruhsal boyutuna dalıp masayı terk etmesine Aslan katlanabilsin."
+  },
+  "aslan-balik": {
+    "puan": 60,
+    "ozet": "Kraliyet tahtı ile okyanusun derinlikleri buluşursa, romantik bir dramanın başrolü olursunuz.",
+    "ask": "Aslan ilgi ve dramatik aşk ister, Balık ise koşulsuz şefkat ve masal arar. Aslan'ın kükremeleri hassas Balık'ı korkutabilir; Balık'ın sürekli daldığı denizler de Aslan'ı biraz sıkar.",
+    "arkadaslik": "Balık dert dinlerken, Aslan o dertleri nasıl çözeceğine dair kahramanlık senaryoları yazar. Arkadaşlıkları biraz asimetriktir ama birbirlerinin eksik dünyasını hayranlıkla izlerler.",
+    "is": "İş ortaklığında Aslan projeyi pazarlayan, Balık ise arkada sessizce tasarlayan taraf olur. Aslan'ın pratikliği olmasa, Balık hayaller aleminde kaybolmaya mahkûmdur."
+  },
+  "basak-basak": {
+    "puan": 70,
+    "ozet": "İki Başak bir araya gelirse dünyayı kurtarırlar ama önce masadaki tozları silmeleri gerekir.",
+    "ask": "İlişkileri Excel tablosu gibi başlar, romantizm bile planlı programlı ilerler. Sürekli birbirlerini eleştirmekten aşkı yaşamayı unutmasalar, mükemmel bir huzur yakalayabilirler.",
+    "arkadaslik": "Dedikodunun en entelektüeli ve en detaylısı bu ikili arasında döner. Hayatın lojistik problemlerini çözmekte üstlerine yoktur, birlikte IKEA mobilyası kurmak bile terapi gibidir.",
+    "is": "İş dünyasının en kusursuz denetim ekibi karşınızda duruyor. Hata yapma lüksleri sıfırdır, ancak aşırı detaycılıktan büyük resmi kaçırma riskleri de epey yüksektir."
+  },
+  "basak-terazi": {
+    "puan": 65,
+    "ozet": "Merkür'ün mantığı Venüs'ün estetiğiyle buluşur, geriye sadece zarif bir uyum denemesi kalır.",
+    "ask": "Terazi'nin kararsızlığı Başak'ın sabrını sınarken, Başak'ın eleştirel dili de Terazi'nin estetik ruhunu incitebilir. Yine de ikisinin de akılcı yaklaşımı ilişkiyi kibar bir çizgide tutar.",
+    "arkadaslik": "Sanat galerilerini gezmek veya şık bir kafede dedikodu yapmak için ideal ikilidirler. Başak pratik tavsiyeler verir, Terazi ise olaya estetik ve tarafsız bir gözle bakar.",
+    "is": "Ofis uyumları gayet başarılıdır; Terazi halkla ilişkileri ve sunumları yönetirken, Başak işin operasyonel ve analitik kısmını kusursuz halleder. Biri güzelleştirir, diğeri sağlamlaştırır."
+  },
+  "basak-akrep": {
+    "puan": 85,
+    "ozet": "Toprak ve suyun bu gizli ittifakı, sessiz ama sarsılmaz bir imparatorluk kurar.",
+    "ask": "Başak'ın analitik zihni ile Akrep'in sezgisel derinliği birbirini kelimesiz anlar. Güven bu ilişkinin 30 yıllık tapusu gibidir; kimse kimsenin sırrını dışarı sızdıramaz.",
+    "arkadaslik": "İkisi de hayata biraz mesafeli yaklaştığı için dışarıdan 'soğuk' görünürler ama kendi aralarındaki bağ çeliktendir. Saatlerce insan analizi yapabilir ve asla sıkılmazlar.",
+    "is": "İş dünyasında bu ikiliden korkulur; sır saklama yetenekleri ve stratejik zekaları her projeyi başarıya götürür. Başak planlar, Akrep ise karanlıkta kalan riskleri ustalıkla bertaraf eder."
+  },
+  "basak-yay": {
+    "puan": 45,
+    "ozet": "Planlı programlı Başak ile rüzgar gibi esen Yay aynı trene biner ama farklı duraklarda iner.",
+    "ask": "Başak bütçe ve düzen ister, Yay ise 'dünyayı gezelim, çadırda yatalım' der. Başak'ın detaycı eleştirileri, özgürlüğüne düşkün Yay'ı evden kaçırabilir.",
+    "arkadaslik": "Dünyaya bakış açıları zıt olduğu için başlangıçta birbirlerini ilginç bulurlar. Birlikte seyahat etmek eğlenceli olabilir ama seyahat bittiğinde Başak'ın Yay'a vereceği 'dakiklik' dersleri kaçınılmazdır.",
+    "is": "Başak detayları toplar, Yay ise büyük resmi çizer ve hemen uygular. Yay'ın dağınıklığını Başak toplamak zorunda kalır ki bu da Başak için uzun vadede tükenmişlik sendromudur."
+  },
+  "basak-oglak": {
+    "puan": 92,
+    "ozet": "Toprak elementinin en çalışkan ve sağlamcı iki temsilcisi, dünyayı ele geçirmeye hazır.",
+    "ask": "Aranızdaki çekim ilk başta Excel tabloları kadar düzenli görünse de, zamanla derin ve sarsılmaz bir güvene dönüşür. Detaycı Başak ile stratejist Oğlak birbirlerinin kusurlarını sevgiyle törpüler, romantizmi bile pratik bir boyuta taşırsınız. Evliliğin ve uzun vadeli planların favori ikilisisiniz.",
+    "arkadaslik": "Dedikodunun bile en mantıklısını yapar, hayatın lojistik krizlerini birlikte kahve içerek çözersiniz. Birbirinizin sınırlarına saygı duymanız dostluğunuzu ömürlük kılar.",
+    "is": "İş dünyasının dream team'i karşınızda duruyor. Biri planlar, diğeri uygular; unvanlar ve başarılar arkası arkasına gelir."
+  },
+  "basak-kova": {
+    "puan": 58,
+    "ozet": "Düzen hastası Başak ile kaos sevdalısı Kova'nın aşkı, laboratuvarda yapılan çılgın bir deneye benzer.",
+    "ask": "Başak her şeyi organize etmek isterken, Kova özgürlük alanına müdahale edilsin istemez. Bu zıtlık başta heyecan verici gelse de, Başak'ın eleştirileri Kova'yı uzay boşluğuna kaçırabilir. Farklı dünyaların insanı olsanız da entelektüel paylaşımlarınız ilişkiyi ayakta tutar.",
+    "arkadaslik": "Toplumsal meseleleri tartışmak için harika bir ikilisiniz ama ev düzeni konusunda anlaşmanız imkansıza yakın. Kova'nın çılgın fikirlerini Başak mantık süzgecinden geçirir.",
+    "is": "Yenilikçi Kova vizyon çizer, titiz Başak projeyi hayata geçirir. İletişim kazalarına dikkat ederseniz işler yolunda gider."
+  },
+  "basak-balik": {
+    "puan": 78,
+    "ozet": "Zodyak'ın zıt kutupları birbirini çeker; biri hayal kurar, diğeri emniyet kemerini bağlar.",
+    "ask": "Başak'ın analitik zihni, Balık'ın okyanuslar kadar derin ve bulanık duygularında kaybolabilir. Başak dünyayı kurtarmaya çalışırken, Balık hayal kurar; birbirinizi dengelemek için harika bir fırsatsınız. Romantizmde Başak pratik şefkat gösterirken, Balık ruhsal bağ arar.",
+    "arkadaslik": "Balık'ın dertlerini dinleyip ona akıl vermek Başak'ın en sevdiği hobilerden biridir. Balık da Başak'a hayatın o kadar da ciddi olmadığını hatırlatır.",
+    "is": "Başak detayları kaçırmaz, Balık ise yaratıcı vizyonu sağlar. Görev dağılımı net olursa harika işler çıkarırsınız."
+  },
+  "terazi-terazi": {
+    "puan": 74,
+    "ozet": "Estetik, zarafet ve 'acaba hangisini seçsem' kararsızlığının ta kendisi.",
+    "ask": "İki Terazi bir araya gelince ortalık adeta romantik bir film setine döner; şık akşam yemekleri ve tatlı diller havada uçuşur. Tek tehlike, ikinizin de tartışmadan kaçarak sorunları halının altına süpürmesi ve karar vermenin ölümcül derecede uzamasıdır. Estetik zevkiniz ve uyum arayışınız sizi harika bir çift yapar.",
+    "arkadaslik": "Alışverişe çıkmak, sanat galerisi gezmek veya saatlerce dedikodu yapmak için en ideal ortaklarsınız. Kötü gününüzde bile birbirinize kibarlık yapmayı ihmal etmezsiniz.",
+    "is": "Müzakere becerileriniz ve halkla ilişkiler yeteneğiniz kusursuzdur. Sadece ortak bir karara varmak biraz zaman alabilir, o kadar."
+  },
+  "terazi-akrep": {
+    "puan": 62,
+    "ozet": "Hava'nın esintisi ile Su'yun derinliği buluştuğunda gizemli ve bir o kadar yorucu bir dans başlar.",
+    "ask": "Terazi'nin sosyal ve flörtöz yapısı, Akrep'in kıskançlık ve sahiplenme duygularını tetikleyebilir. Terazi durumu hafifletmeye çalışırken Akrep olayı dramatik boyutlara taşıyabilir. Ancak bu manyetik çekim ve tutku, tüm bu zıtlıkları gölgede bırakacak kadar güçlüdür.",
+    "arkadaslik": "Sosyal ortamlarda Terazi parlar, Akrep ise köşeden insanları analiz eder. Birbirinizin sırdaşı olursunuz ama Akrep biraz fazla derinleşmek isteyebilir.",
+    "is": "Terazi'nin diplomatik zekası ile Akrep'in stratejik sezgileri iyi bir kriz yönetimi sağlar. Güven sorunu yaşanmazsa işler yürür."
+  },
+  "terazi-yay": {
+    "puan": 85,
+    "ozet": "Gezgin Yay ile sosyal kelebek Terazi'nin buluştuğu yerde eğlence ve macera asla bitmez.",
+    "ask": "İkisi de hayatı güzelliklerle ve keşiflerle yaşamak ister; aradaki uyum adeta neşeli bir festival gibidir. Yay'ın patavatsızlığı Terazi'nin diplomatik sinirini bazen bozsa da, uzun süre küs kalamazlar. Birlikte seyahat etmek, yeni yerler keşfetmek ilişkinin en keyifli yanıdır.",
+    "arkadaslik": "Partilerin, organizasyonların ve seyahatlerin aranan ikilisisiniz. Sıkılmak sizin sözlüğünüzde yazmaz, her anı eğlenceye çevirirsiniz.",
+    "is": "Yay büyük resmi görür, Terazi ise insan ilişkilerini yönetir. Birlikte harika bir pazarlama veya halkla ilişkiler ekibi olursunuz."
+  },
+  "terazi-oglak": {
+    "puan": 52,
+    "ozet": "Venüs'ün zarafeti ile Satürn'ün disiplini aynı masada buluşursa, önce dekorasyon tartışması çıkabilir.",
+    "ask": "Terazi'nin flörtöz ve estetik düşkünü yapısı, Oğlak'ın ciddi ve garanti arayan dünyasına başta biraz 'fazla hafif' gelebilir. Zamanla birbirlerinin eksiklerini kapatsalar da, Terazi sosyal rüzgarlar estirmek isterken Oğlak evde Excel tablosu incelemek isteyebilir.",
+    "arkadaslik": "Ortak zevklerde buluşmak için ideal bir ikilidir; sergi gezmek veya şık bir restoranda yemek yemek favori aktiviteleridir. Yine de Terazi'nin kararsızlığı, her şeyi net planlamak isteyen Oğlak'ı çıldırtabilir.",
+    "is": "İş dünyasında harika bir denge kurabilirler çünkü Terazi halkla ilişkiler ve vizyonda usta, Oğlak ise operasyon ve yönetimde dâhidir. Sadece Oğlak'ın fazla otoriter tavrı, hassas Terazi'yi masadan kaçırabilir."
+  },
+  "terazi-kova": {
+    "puan": 88,
+    "ozet": "Hava elementinin iki özgür ruhu, zihinsel bir festivalin biletini çoktan kesmiş demektir.",
+    "ask": "Birbirlerinin alanına saygı duyan, sabahlara kadar felsefe ve sanat konuşabilen modern bir çifttir. Terazi'nin romantik dokunuşları, Kova'nın bazen fazla 'mesafeli' zihnini bile yumuşatmayı başarır.",
+    "arkadaslik": "Grup aktivitelerinin, partilerin ve sosyal projelerin aranan ikilisidirler. Sıkılmak onların lügatında yoktur, çünkü her gün yeni bir fikirle birbirlerini heyecanlandırırlar.",
+    "is": "Yenilikçi projeler, tasarım ve sosyal medya işleri için müthiş bir uyum yakalarlar. Kova vizyonu çizer, Terazi ise bu vizyonu en şık ve kabul edilebilir şekilde dünyaya sunar."
+  },
+  "terazi-balik": {
+    "puan": 68,
+    "ozet": "İki romantik hayalperest gerçekle yüzleştiğinde, sanatsal bir dramanın başrolü olurlar.",
+    "ask": "Venüs'ün yönettiği Terazi ile Neptün'ün yönettiği Balık arasında masalsı bir çekim başlar. Ancak ikisi de karar almakta ve sorumluluk üstlenmekte zorlandığı için, ilişkide 'faturayı kim ödeyecek?' sorusu büyük bir krize dönüşebilir.",
+    "arkadaslik": "Dert ortalığı yapmak, kahve falı bakmak veya romantik filmler izlemek için bundan daha iyi bir ikili olamaz. Duygusal olarak birbirlerini çok iyi anlarlar ama pratik hayatta birbirlerine pek faydaları dokunmaz.",
+    "is": "Sanat, müzik, tasarım veya yardım kuruluşları gibi alanlarda çok yaratıcı işler çıkarabilirler. Fakat iş bütçe planlamasına ve zaman yönetimine geldiğinde ikisi de masanın altında kaybolabilir."
+  },
+  "akrep-akrep": {
+    "puan": 74,
+    "ozet": "İki gizemli ruhun buluşması ya muazzam bir tutku patlamasıdır ya da karşılıklı casusluk filmi.",
+    "ask": "Derin, yoğun ve göz temasıyla anlaşan bir aşk yaşarlar; aralarındaki manyetik çekim evrensel boyuttadır. Fakat ikisinin de inatçı ve kıskanç yapısı devreye girerse, küçük bir yanlış anlaşılma sessiz bir soğuk savaşa dönebilir.",
+    "arkadaslik": "Sır saklama konusunda üstlerine yoktur, dünyayı onlardan başka kimse bu kadar 'çözmüş' olamaz zaten. Dostlukları ölümüne ve sadakate dayalıdır ama ortak bir kin gütme eğilimleri de pek ünlüdür.",
+    "is": "Strateji, kriz yönetimi ve finansal analiz gerektiren işlerde sırt sırta verdimi yıkılmaz bir kaledirler. Kimin lider olacağı konusunda ego çatışmaları çıkmazsa, sektörü alt üst edebilirler."
+  },
+  "akrep-yay": {
+    "puan": 58,
+    "ozet": "Yeraltının kaşifiyle gökyüzünün maceraperest okçusu aynı yolda yürümeye çalışırsa eğlenceli bir kaos doğar.",
+    "ask": "Akrep sahiplenmek ve derinleşmek ister, Yay ise özgürlüğüne düşkündür ve ufka doğru koşar; bu yüzden Akrep'in kıskançlığı Yay'a dar bir kafes gibi gelebilir. Yine de Yay'ın neşesi, Akrep'in o karanlık ve kuşkulu dünyasına muazzam bir güneş gibi doğar.",
+    "arkadaslik": "Keşfetmek, seyahat etmek ve hayatın anlamını tartıştıkları uzun gece sohbetleri için harika bir dinamiktir. Yay patavatsızlığıyla Akrep'i kızdırabilir, Akrep ise iğneli diliyle Yay'ın neşesini anında söndürebilir.",
+    "is": "Risk alma becerisi yüksek Yay ile hedef odaklı ve stratejik Akrep iyi bir risk/kazanç ortaklığı kurabilir. Yay projeyi genişletirken, Akrep arka plandaki tüm güvenlik açıklarını ustalıkla kapatır."
+  },
+  "akrep-oglak": {
+    "puan": 82,
+    "ozet": "Güç birliği nedir arıyorsanız, bu ikilinin kurduğu imparatorluğa bakmanız yeterlidir.",
+    "ask": "Sözlerin değil, sadakatin ve fedakarlığın konuştuğu, zamanla beton gibi sağlamlaşan bir aşk uyumudur. Başta ikisi de kabuğundan çıkmasa da, birbirlerinin güvenilirliğini gördüklerinde aralarında devasa bir bağ kurulur.",
+    "arkadaslik": "Dedikodudan uzak, kariyer, yatırım ve hayatın gerçekleri üzerine kurulan çok sağlam bir dostluktur. Birbirlerinin en zor gününde ilk arayacakları insan kesinlikle diğeridir.",
+    "is": "İş dünyasının 'boss' ikilisi karşınızda duruyor; kriz yönetimi, şirket kurma ve finansal büyüme konusunda sırtları asla yere gelmez. Birlikte çalışırken duyguları kapıda bırakıp sadece sonuca odaklanırlar."
+  },
+  "akrep-kova": {
+    "puan": 45,
+    "ozet": "Biri gizemden beslenir, diğeri özgürlükten; bu ilişki tam bir casusluk filmine dönebilir.",
+    "ask": "Akrep'in derin ve sahiplenici tutkusu, Kova'nın bağımsız ve mesafeli ruhuna fazla gelebilir. Birlikte çok şey öğrenirler ama birbirlerini çözmek için detektif tutmaları gerekebilir.",
+    "arkadaslik": "Fikir tartışmaları ve dünyayı kurtarma planları sabahlara kadar sürebilir. Ancak iş duygusal yakınlığa gelince Kova kaçmak ister, Akrep ise duvara toslar.",
+    "is": "Yenilikçi Kova vizyonunu ortaya koyar, stratejist Akrep ise arkadaki karanlık işleri halleder. Güç birliği yaparlarsa alt edemeyecekleri proje yoktur."
+  },
+  "akrep-balik": {
+    "puan": 92,
+    "ozet": "Su elementinin en derin ve ezoterik buluşması, adeta ruhsal bir telepati seansı.",
+    "ask": "Göz göze geldiklerinde kelimelere gerek kalmaz, su elementi akışta adeta erir gider. Akrep Balık'ı korur kolollar, Balık ise Akrep'in o sert kabuğunu şefkatiyle eritir.",
+    "arkadaslik": "Dedikodunun en âlâsı bu ikili arasında döner çünkü kimsenin sezemediği detayları onlar çözer. Sır küpü dostlukları ömür boyu sürebilir.",
+    "is": "Yaratıcı projelerde ve sezgi gerektiren işlerde harika bir ikili olurlar. Biri vizyonu çizer, diğeri derinlemesine işler; fakat bütçe yönetimini başkasına versinler."
+  },
+  "yay-yay": {
+    "puan": 78,
+    "ozet": "İki maceraperestin pasaportu yırtılır, dünya turu başlar ama evde bulaşıklar dağ gibi kalır.",
+    "ask": "Flört aşamasında kahkahalar havada uçuşur, sırt çantasını kapıp aniden Nepal'e gidebilirler. İkisi de özgürlüğüne düşkün olduğu için birbirini boğmaz, ama ilişkiyi toparlayacak 'yetişkin' bulmakta zorlanabilirler.",
+    "arkadaslik": "Girdikleri her ortamın neşe kaynağı olurlar, onlarla arkadaş olanın sırtı yere gelmez. Plan yapmayı sevmeyen bu ikili doğaçlama yaşamaya bayılır.",
+    "is": "Fikir üretme aşamasında harikalar yaratırlar ancak iş detaya ve uygulamaya gelince ikisi de kaybolur. Vizyoner projeler için iyidirler ama muhasebeyi onlara bırakmayın."
+  },
+  "yay-oglak": {
+    "puan": 52,
+    "ozet": "Biri gezegenleri keşfetmek ister, diğeri tarlayı sürmek; ilginç bir tezat.",
+    "ask": "Yay'ın dağınıklığı ve coşkusu, Oğlak'ın kuralcı ve ciddi dünyasına ilk başta çekici gelebilir. Zamanla Yay Oğlak'ı fazla sıkıcı bulurken, Oğlak da Yay'ı 'büyümemiş bir çocuk' olarak görebilir.",
+    "arkadaslik": "Hayata bakış açıkları zıt olsa da birbirlerinin eksiklerini kapatabilirler. Oğlak Yay'a sınır çizmeyi öğretir, Yay da Oğlak'a biraz gülmeyi.",
+    "is": "İş hayatında oldukça verimli bir ortaklık kurabilirler; Oğlak hedefe kilitlenir, Yay ise pazarlamayı ve dış ilişkileri yönetir. Aralarındaki disiplin çatışması tatlı bir rekabete dönüşebilir."
+  },
+  "yay-kova": {
+    "puan": 88,
+    "ozet": "Geleceğe koşan iki vizyoner ruh, sınırsız ve engelsiz bir aşk.",
+    "ask": "Ateş ve havanın muhteşem dansı; birbirlerinin özgürlük alanına saygı duydukları sürece harika bir uyum yakalarlar. Sıkılmaya asla vakitleri yoktur, sürekli yeni bir şeyler öğrenirler.",
+    "arkadaslik": "Dünyayı değiştirmek, felsefe yapmak ve sabahlara kadar gülmek için bundan daha iyi bir ikili olamaz. Dostlukları zamanla sıradışı bir aşka da dönüşebilir.",
+    "is": "Girişimcilik ve teknoloji alanında çılgın fikirler üretip altını doldurabilirler. Kuralları sevmeyen bu ikili kendi işlerinin patronu olmak için doğmuştur."
+  },
+  "yay-balik": {
+    "puan": 60,
+    "ozet": "Biri hayallerin peşinden koşar, diğeri okyanusta kaybolur; romantik ama dağınık bir ikili.",
+    "ask": "Jüpiter'in ikilisi olmaları sayesinde hayatı ve felsefeyi konuşarak çok eğlenirler. Ancak Yay'ın patavatsızlığı, hassas Balık'ın kalbini istemeden kırabilir; gerçek hayatın pratikliği ise ikisine de ağır gelebilir.",
+    "arkadaslik": "Sanatsal ve ruhsal konularda muazzam bir paylaşımları olur, hayal dünyalarında beraber yaşayabilirler. Fakat iş sorumluluk almaya gelince birbirlerinden güç alamazlar.",
+    "is": "Yaratıcı sektörlerde ve sosyal sorumluluk projelerinde çok başarılı olabilirler. Sadece finansal konularda biraz daha ayakları yere basan birine ihtiyaç duyarlar."
+  },
+  "oglak-oglak": {
+    "puan": 78,
+    "ozet": "İki CEO'nun aynı şirketi yönetmeye çalışması gibi, disiplinli ve mesafeli bir güç birliği.",
+    "ask": "Duyguları Excel tablosuna döküp romantizmi planlamadığınız sürece oldukça sadık ve sağlam bir ilişki sizi bekliyor. İkiniz de statüye ve güvene önem verdiğiniz için birbirinizin başarısını herkesten çok desteklersiniz. Tabii biraz akışına bırakmayı öğrenmek ikinize de iyi gelir.",
+    "arkadaslik": "Dedikodu yaparken bile geleceğe yatırım planları konuşan, aranıza sızmanın imkansız olduğu bir ikilisiniz. Birlikte dağa tırmanmak veya sıfırdan şirket kurmak gibi ciddi hobileriniz olur.",
+    "is": "İş dünyasının en korkulan ve en verimli ikilisi olabilirsiniz çünkü iş, sorumluluk ve kariyer sizin için hayatın merkezidir. Projeler zamanında biter, bütçe asla aşılmaz; tek risk fazla ciddiyetten rutine boğulmaktır."
+  },
+  "oglak-kova": {
+    "puan": 58,
+    "ozet": "Toprak ve havanın tuhaf dansı; biri sınır koyar, diğeri gökyüzüne uçmak ister.",
+    "ask": "Oğlak geleneksel güven ararken, Kova özgürlük ve çılgın fikirler peşindedir; bu zıtlık ilk başta cazip gelse de zaman zaman kafa karıştırabilir. Siz birbirinizin eksik yönlerini tamamlama potansiyeline sahipsiniz, yeter ki Oğlak biraz esnemeyi, Kova ise köklenmeyi bilsin.",
+    "arkadaslik": "Dünyaya bakış açınız tamamen farklı olsa da sabahlara kadar süren felsefi tartışmalarda harika bir ikili olursunuz. Kova Oğlak'ın kafasını açar, Oğlak da Kova'nın uçan uçurtmasını sağlam bir ipte tutar.",
+    "is": "İş hayatında Oğlak stratejiyi ve sistemi kurar, Kova ise çığır açan inovatif fikirlerle masaya yenilik getirir. Kova'nın dağınıklığını Oğlak toparlarsa harika işler çıkabilir ama yönetim kimde olacak tartışması çıkabilir."
+  },
+  "oglak-balik": {
+    "puan": 82,
+    "ozet": "Gerçekçi Oğlak ile hayalperest Balık, birbirini iyileştiren gizli bir ruh ikizliği yakalar.",
+    "ask": "Toprak ve suyun bu uyumu masalları andırır; Oğlak ilişkiye güven ve ayakları yere basan bir liman sunarken, Balık da o katı dünyaya şiir ve şefkat getirir. Oğlak Balık'ın hayallerini gerçekleştirir, Balık da Oğlak'ın buzlarını eritir.",
+    "arkadaslik": "Balık dert yandığında Oğlak pratik bir çözüm sunar, Oğlak yorulduğunda Balık ona sığınacak sakin bir liman olur. Birbirlerinin zayıf noktalarını kollayan çok vefalı bir dostluk kurarlar.",
+    "is": "Oğlak projeyi planlar ve disiplinle uygular, Balık ise yaratıcı vizyonu ve sezgileriyle projeye ruh katar. Oğlak fazlaka gerçekçi olup Balık'ı boğmadığı sürece bu ortaklık hem karlı hem de huzurlu olur."
+  },
+  "kova-kova": {
+    "puan": 72,
+    "ozet": "Uzaylıların kendi aralarındaki toplantısı gibi, dışarıdan kimsenin anlayamayacağı özgür bir bağ.",
+    "ask": "İki Kova yan yana geldiğinde 'biz' olmaktan ziyade 'özgür iki birey' konsepti öne çıkar ve bu durum ilişkiye nefis bir alan tanır. Ancak herkes kendi kafasının dikine gittiği ve duygusal derinlikten biraz kaçtığı için ilişki bazen iki oda arkadaşı modeline dönebilir.",
+    "arkadaslik": "Dünyayı kurtarma projeleri, en son teknoloji sohbetleri ve absürt mizah anlayışıyla asla sıkılmayacağınız bir dostluğunuz olur. Birbirinizin özel alanına o kadar saygı duyarsınız ki haftalarca görüşmeyip tek bir mesajla kaldığınız yerden devam edebilirsiniz.",
+    "is": "Geleneksel kurallardan nefret eden ve geleceğin trendlerini önceden sezen bir ekip olursunuz. Fikirler havada uçuşur, projeler çok yenilikçi olur ama işin idari ve bürokratik kısmını yapacak birine mutlaka ihtiyaç duyarsınız."
+  },
+  "kova-balik": {
+    "puan": 65,
+    "ozet": "Aklın sınırlarında gezinen Kova ile kalbin okyanuslarında kaybolan Balık'ın ezoterik buluşması.",
+    "ask": "Hava elementinin mantıksal ve mesafeli yapısı ile su elementinin aşırı duygusal ve akışkan doğası bazen birbirini yanlış anlayabilir. Kova durumu rasyonalize etmeye çalışırken Balık duygusal kriz yaşayabilir, ama bu farklılık doğru yönetilirse muazzam bir ilham kaynağı olur.",
+    "arkadaslik": "Sanat, felsefe, astroloji ve evrenin sırları üzerine sabahlara kadar konuşabilirsiniz. İkiniz de bu dünyanın kalabalığından sıkıldığınız için birbirinizin sığınağı olursunuz.",
+    "is": "Balık'ın sezgisel yaratıcılığı ile Kova'nın vizyoner öngörüsü birleştiğinde ortaya çok orijinal projeler çıkabilir. Ancak iş takvimi oluşturmak, bütçe yönetmek ve günlük rutinleri takip etmek ikinize de zor gelebilir."
+  },
+  "balik-balik": {
+    "puan": 75,
+    "ozet": "İki balığın aynı akvaryumda telepatik iletişim kurması gibi, kelimelere gerek kalmayan bir aşk.",
+    "ask": "Derin duygular, romantik anlar, sınırsız fedakarlıklar ve tabii ki kaçınılmaz dramalar bu ilişkinin doğasında var. Birbirinizi o kadar iyi hissedersiniz ki gözlerinizle anlaşabilirsiniz, ancak ikiniz de kriz anında gerçeklerden kaçmaya meyilli olduğunuz için dünyadan kopma riskiniz yüksek.",
+    "arkadaslik": "Ağlamak istediğinizde omzunu yaslayacağınız en doğru kişi diğer Balık'tır çünkü kimse sizi onun kadar yargılamadan dinlemez. Birlikte sanatla ilgilenmek, hayal kurmak ve dedikodu yapmak müthiş keyiflidir.",
+    "is": "İlham gerektiren yaratıcı işlerde muazzam sonuçlar alırsınız ama işin finansal boyutu, sözleşmeler ve pazarlıklar işin içine girince zorlanabilirsiniz. Biriniz mutlaka dış dünyaya açılma ve somut adım atma sorumluluğunu üstlenmeli."
+  }
+}
