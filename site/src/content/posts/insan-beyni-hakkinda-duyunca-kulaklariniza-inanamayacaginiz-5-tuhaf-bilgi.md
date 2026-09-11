@@ -30,7 +30,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Brain
     url: https://en.wikipedia.org/wiki/Brain
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Amel Uzunovic on Pexels
 moderasyon:
   skor: 1
