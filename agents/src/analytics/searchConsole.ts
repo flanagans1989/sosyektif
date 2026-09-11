@@ -69,9 +69,12 @@ export async function fetchSearchConsoleClicksByPath(): Promise<Record<string, n
     const yediGunOnce = new Date(simdi.getTime() - 7 * 24 * 60 * 60 * 1000);
     const iso = (d: Date) => d.toISOString().slice(0, 10);
 
+    // sosyektif.com bir "domain property" (sc-domain:sosyektif.com) olarak
+    // doğrulanmış — URL-prefix ("https://sosyektif.com/") formatıyla sorgu
+    // atmak siteyi bulamadığı için hep hata döner.
     const res = await fetch(
       `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent(
-        "https://sosyektif.com/"
+        "sc-domain:sosyektif.com"
       )}/searchAnalytics/query`,
       {
         method: "POST",
