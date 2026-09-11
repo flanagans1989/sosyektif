@@ -2,13 +2,15 @@ name = "sosyektif-telegram-onay"
 main = "src/index.ts"
 compatibility_date = "2025-01-01"
 
-# Yedek tetikleyici: Cloudflare her saat :17'de worker'ı uyandırır, worker da
-# saate göre ilgili workflow'u workflow_dispatch ile başlatır (bkz.
-# src/index.ts -> ZAMANLAMA). Asıl tetikleyici artık workflow'ların kendi
-# saatlik schedule'ı. Not (2026-09-11): bu cron Cloudflare'de kayıtlı
-# görünmesine rağmen hiç çalışmadı (analitikte ve wrangler tail'de sıfır
-# zamanlanmış çağrı); sebep bulunamadı, yedek olarak duruyor.
-# Tek bir cron ifadesi kullanılıyor (ücretsiz plan cron sayısı sınırlı).
+# Yedek tetikleyici: Cloudflare her saat :17'de worker'ı uyandırmaya çalışır.
+# Not (2026-09-11): bu cron Cloudflare dashboard'unda kayıtlı görünmesine
+# rağmen hiç çalışmadı — wrangler tail ile canlı doğrulandı (dakikalık crona
+# geçirilip 3 dakika izlendi, tek bir zamanlanmış çağrı bile gelmedi). Sebep
+# bulunamadı (muhtemelen hesaba özgü bir kısıt); yedek olarak duruyor, zarar
+# vermiyor. ASIL tetikleyici artık dışarıdan cron-job.org'un saatte bir
+# GET /tetikle?anahtar=... çağrısı (bkz. src/index.ts). GitHub'ın kendi
+# "schedule" tetikleyicisi de az hareketli repolarda saatlerce gecikiyor;
+# ikisine de güvenmek yerine bu dış tetikleyici asıl mekanizma.
 [triggers]
 crons = ["17 * * * *"]
 
@@ -18,3 +20,6 @@ crons = ["17 * * * *"]
 #   TELEGRAM_BOT_TOKEN      - BotFather'dan alinan token
 #   TELEGRAM_WEBHOOK_SECRET - setWebhook cagrisinda verilen rastgele gizli deger
 #   TELEGRAM_ADMIN_CHAT_ID  - sadece bu chat'ten gelen callback_query kabul edilir
+#   TETIKLE_ANAHTARI        - cron-job.org'un GET /tetikle?anahtar=... çağrısında
+#                             göndereceği rastgele değer (GitHub/Telegram
+#                             token'larından bağımsız, yalnızca bu uç noktayı korur)

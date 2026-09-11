@@ -17,6 +17,8 @@ export interface Env {
   TELEGRAM_BOT_TOKEN: string;
   TELEGRAM_WEBHOOK_SECRET: string;
   TELEGRAM_ADMIN_CHAT_ID: string;
+  /** GET /tetikle uç noktasını korur — bkz. dosyanın altındaki fetch handler'ı. */
+  TETIKLE_ANAHTARI: string;
 }
 
 const POSTS_DIR = "site/src/content/posts";
@@ -164,14 +166,19 @@ function editMessage(env: Env, chatId: number, messageId: number, text: string):
 }
 
 /**
- * Saatlik cron (wrangler.toml, her saat :17) → UTC saatine göre hangi
- * workflow'ların başlatılacağı. Aynı saatte iki workflow'un main'e aynı anda
- * push etmemesi için burç ayrı bir saate konuldu.
+ * Saatlik tetikleme (Cloudflare cron VE/YA DA dışarıdan cron-job.org ile
+ * GET /tetikle çağrısı — bkz. wrangler.toml) → UTC saatine göre hangi
+ * workflow'ların başlatılacağı.
+ *
+ * pipeline.yml HER saat tetiklenir; yayın zamanlaması (TR 08-24 arası, iki
+ * içerik arası en az 3 saat, günlük hedef) agents/src/orchestrator/pipeline.ts
+ * içinde kontrol edildiği için burada saat kısıtlamaya gerek yok — gereksiz
+ * çağrılar orada zaten no-op olarak biter.
  */
-const ZAMANLAMA: { workflow: string; saatler: number[]; sadecePazartesi?: boolean }[] = [
-  { workflow: "pipeline.yml", saatler: [3, 7, 11, 15, 19, 23] }, // TR 06, 10, 14, 18, 22, 02
-  { workflow: "burc.yml", saatler: [2] }, // TR 05:17 — insanlar uyanmadan
-  { workflow: "daily-report.yml", saatler: [6] }, // TR 09:17
+const ZAMANLAMA: { workflow: string; saatler: number[] | "hepsi"; sadecePazartesi?: boolean }[] = [
+  { workflow: "pipeline.yml", saatler: "hepsi" },
+  { workflow: "burc.yml", saatler: [2] }, // TR 05:00 — insanlar uyanmadan
+  { workflow: "daily-report.yml", saatler: [6] }, // TR 09:00
   { workflow: "weekly-analytics.yml", saatler: [5], sadecePazartesi: true },
 ];
 
@@ -191,16 +198,19 @@ async function zamanlanmisCalisma(env: Env, zaman: Date): Promise<void> {
   const saat = zaman.getUTCHours();
   const pazartesi = zaman.getUTCDay() === 1;
   const baslatilacaklar = ZAMANLAMA.filter(
-    (z) => z.saatler.includes(saat) && (!z.sadecePazartesi || pazartesi)
+    (z) => (z.saatler === "hepsi" || z.saatler.includes(saat)) && (!z.sadecePazartesi || pazartesi)
   ).map((z) => z.workflow);
 
+  console.log(`[cron] saat ${saat}, başlatılacaklar: ${JSON.stringify(baslatilacaklar)}`);
   const hatalar: string[] = [];
   for (const workflow of baslatilacaklar) {
     try {
       await workflowBaslat(env, workflow);
       console.log(`[cron] ${workflow} başlatıldı`);
     } catch (err) {
-      hatalar.push(err instanceof Error ? err.message : String(err));
+      const mesaj = err instanceof Error ? err.message : String(err);
+      console.error(`[cron] ${workflow} hata: ${mesaj}`);
+      hatalar.push(mesaj);
     }
   }
   // Sessiz arıza olmasın: tetikleme başarısızsa admin'e haber ver.
@@ -224,6 +234,25 @@ export default {
   },
 
   async fetch(request: Request, env: Env): Promise<Response> {
+    const url = new URL(request.url);
+
+    // Cloudflare'in kendi cron tetikleyicisi bu hesapta kayıtlı görünmesine
+    // rağmen hiç çalışmadı (2026-09-11, wrangler tail ile canlı doğrulandı:
+    // dakikada bir tetiklenen bir cron 3 dakika boyunca hiçbir zamanlanmış
+    // çağrı üretmedi). Yedek/asıl tetikleyici: dışarıdan (cron-job.org) saatte
+    // bir bu uç noktaya yapılan basit bir GET isteği. `anahtar` sorgu
+    // parametresi yalnızca bu isteğin yetkili olduğunu doğrular; GitHub ya da
+    // Telegram token'larına erişim vermez.
+    if (request.method === "GET" && url.pathname === "/tetikle") {
+      if (url.searchParams.get("anahtar") !== env.TETIKLE_ANAHTARI) {
+        return new Response("forbidden", { status: 403 });
+      }
+      const zaman = new Date();
+      console.log(`[tetikle] çağrıldı, UTC saat: ${zaman.getUTCHours()}`);
+      await zamanlanmisCalisma(env, zaman);
+      return new Response("ok");
+    }
+
     if (request.method !== "POST") return new Response("ok");
 
     const secret = request.headers.get("X-Telegram-Bot-Api-Secret-Token");

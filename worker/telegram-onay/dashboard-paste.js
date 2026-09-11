@@ -144,9 +144,11 @@ function editMessage(env, chatId, messageId, text) {
   });
 }
 
-// Saatlik cron (her saat :17) → UTC saatine göre başlatılacak workflow'lar.
+// Saatlik tetikleme (Cloudflare cron ve/ya da dışarıdan cron-job.org ile
+// GET /tetikle) → UTC saatine göre başlatılacak workflow'lar. pipeline.yml
+// her saat tetiklenir; yayın zamanlaması agents/.../pipeline.ts içinde.
 const ZAMANLAMA = [
-  { workflow: "pipeline.yml", saatler: [3, 7, 11, 15, 19, 23] },
+  { workflow: "pipeline.yml", saatler: "hepsi" },
   { workflow: "burc.yml", saatler: [2] },
   { workflow: "daily-report.yml", saatler: [6] },
   { workflow: "weekly-analytics.yml", saatler: [5], sadecePazartesi: true },
@@ -168,7 +170,7 @@ async function zamanlanmisCalisma(env, zaman) {
   const saat = zaman.getUTCHours();
   const pazartesi = zaman.getUTCDay() === 1;
   const baslatilacaklar = ZAMANLAMA.filter(
-    (z) => z.saatler.includes(saat) && (!z.sadecePazartesi || pazartesi)
+    (z) => (z.saatler === "hepsi" || z.saatler.includes(saat)) && (!z.sadecePazartesi || pazartesi)
   ).map((z) => z.workflow);
 
   const hatalar = [];
@@ -194,6 +196,19 @@ export default {
   },
 
   async fetch(request, env) {
+    const url = new URL(request.url);
+
+    // Cloudflare'in kendi cron'u bu hesapta hiç çalışmadı (canlı log ile
+    // doğrulandı). Asıl tetikleyici: cron-job.org'un saatte bir yaptığı basit
+    // bir GET isteği. `anahtar` yalnızca isteğin yetkili olduğunu doğrular.
+    if (request.method === "GET" && url.pathname === "/tetikle") {
+      if (url.searchParams.get("anahtar") !== env.TETIKLE_ANAHTARI) {
+        return new Response("forbidden", { status: 403 });
+      }
+      await zamanlanmisCalisma(env, new Date());
+      return new Response("ok");
+    }
+
     if (request.method !== "POST") return new Response("ok");
 
     const secret = request.headers.get("X-Telegram-Bot-Api-Secret-Token");
