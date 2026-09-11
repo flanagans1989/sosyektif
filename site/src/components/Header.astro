@@ -35,6 +35,12 @@ const kategoriGirdileri = Object.entries(KATEGORILER);
         🎯 Günün Sorusu
       </a>
       <a
+        href="/burc/"
+        class="hidden items-center gap-1 rounded-full px-3 py-1.5 text-sm font-semibold text-murekkep/70 transition hover:bg-marka/10 hover:text-marka sm:inline-flex"
+      >
+        🔮 Burç
+      </a>
+      <a
         href="/ara/"
         aria-label="Ara"
         class="rounded-full p-2 text-murekkep/70 transition hover:bg-black/5 hover:text-marka"
@@ -62,6 +68,12 @@ const kategoriGirdileri = Object.entries(KATEGORILER);
       class="whitespace-nowrap rounded-full bg-black/5 px-3 py-1 text-xs font-medium text-murekkep/70"
     >
       📅 Tarihte Bugün
+    </a>
+    <a
+      href="/burc/"
+      class="whitespace-nowrap rounded-full bg-black/5 px-3 py-1 text-xs font-medium text-murekkep/70"
+    >
+      🔮 Burç
     </a>
     {kategoriGirdileri.map(([anahtar, { etiket }]) => (
       <a

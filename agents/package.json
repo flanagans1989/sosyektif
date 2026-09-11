@@ -10,6 +10,7 @@
     "pipeline": "tsx src/orchestrator/pipeline.ts",
     "daily-report": "tsx src/orchestrator/dailyReport.ts",
     "weekly-analytics": "tsx src/analytics/index.ts",
+    "burc": "tsx src/orchestrator/burc.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

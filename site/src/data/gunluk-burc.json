@@ -1,0 +1,18 @@
+{
+  "tarih": "1970-01-01",
+  "uretenProvider": "yer-tutucu",
+  "burclar": {
+    "koc": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 7, "sansliRenk": "Kırmızı" },
+    "boga": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 3, "sansliRenk": "Yeşil" },
+    "ikizler": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 12, "sansliRenk": "Sarı" },
+    "yengec": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 9, "sansliRenk": "Gümüş" },
+    "aslan": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 5, "sansliRenk": "Altın" },
+    "basak": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 14, "sansliRenk": "Kahverengi" },
+    "terazi": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 6, "sansliRenk": "Mavi" },
+    "akrep": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 8, "sansliRenk": "Bordo" },
+    "yay": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 21, "sansliRenk": "Mor" },
+    "oglak": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 4, "sansliRenk": "Siyah" },
+    "kova": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 11, "sansliRenk": "Turkuaz" },
+    "balik": { "yorum": "Bugünün burç yorumu hazırlanıyor, birazdan burada olacak!", "sansliSayi": 2, "sansliRenk": "Deniz Mavisi" }
+  }
+}

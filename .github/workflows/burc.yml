@@ -1,0 +1,47 @@
+name: Günlük Burç Yorumu
+
+on:
+  schedule:
+    - cron: "30 3 * * *" # her gün 03:30 UTC (TR saatiyle 06:30, insanlar uyanmadan)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  gunluk-burc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: agents/package-lock.json
+
+      - working-directory: agents
+        run: npm ci
+
+      - working-directory: agents
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+        run: npm run burc
+
+      - name: Değişiklikleri commit'le ve gönder
+        run: |
+          git config user.name "sosyektif-bot"
+          git config user.email "deraksizolasyon@gmail.com"
+          git add site/src/data/gunluk-burc.json
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok, commit atlanıyor."
+          else
+            git commit -m "Günlük burç yorumu güncellendi ($(date -u +%Y-%m-%d))"
+            git push
+          fi
