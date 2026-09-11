@@ -4,6 +4,7 @@ import { moderateDraft } from "../moderation/index.js";
 import { generateCoverImage } from "../image/index.js";
 import { publishDraft, type PublishResult } from "../publish/index.js";
 import { distributeContent } from "../distribute/index.js";
+import { bildirIndexNow } from "../lib/indexnow.js";
 import { notifyAdmin, notifyAdminOnayButonlu, escapeHtml } from "../lib/telegram.js";
 import {
   konuDahaOnceIslendiMi,
@@ -164,6 +165,7 @@ export async function processCandidate(aday: TrendCandidate, config: Config): Pr
   // 5. Dağıtım ya da onay bildirimi
   if (otomatik) {
     await distributeContent({ frontmatter: draft.frontmatter, publicUrl: yayin.publicUrl });
+    await bildirIndexNow(yayin.publicUrl);
     await notifyAdmin(
       `✅ Otomatik yayınlandı (skor ${moderasyon.skor}): <b>${escapeHtml(draft.frontmatter.baslik)}</b>\n${yayin.publicUrl}`
     );

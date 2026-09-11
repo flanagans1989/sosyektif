@@ -6,6 +6,10 @@
  */
 
 const POSTS_DIR = "site/src/content/posts";
+// IndexNow: açık, hesap gerektirmeyen protokol. Key, site/public/<key>.txt
+// dosyasıyla eşleşmeli (bkz. agents/src/lib/indexnow.ts — aynı key).
+const INDEXNOW_HOST = "sosyektif.com";
+const INDEXNOW_KEY = "bf89cbfcce3949c4708fcd42c7dde58a";
 
 function b64EncodeUnicode(str) {
   const bytes = new TextEncoder().encode(str);
@@ -84,6 +88,23 @@ async function approvePost(env, slug) {
     }
   );
   if (!res.ok) throw new Error(`GitHub PUT ${path} başarısız: ${res.status} ${await res.text()}`);
+
+  // İçerik artık gerçekten canlı — Bing'e (IndexNow) tarama beklemeden haber ver.
+  const publicUrl = `https://${INDEXNOW_HOST}/${slug}/`;
+  try {
+    await fetch("https://api.indexnow.org/indexnow", {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify({
+        host: INDEXNOW_HOST,
+        key: INDEXNOW_KEY,
+        keyLocation: `https://${INDEXNOW_HOST}/${INDEXNOW_KEY}.txt`,
+        urlList: [publicUrl],
+      }),
+    });
+  } catch (err) {
+    console.warn("[indexnow] bildirim başarısız (yoksayılıyor):", err);
+  }
 }
 
 async function rejectPost(env, slug) {
