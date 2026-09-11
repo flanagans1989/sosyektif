@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { KATEGORILER, FORMAT_ETIKETLERI } from '../lib/kategoriler';
+
+interface Props {
+  mevcut: CollectionEntry<'posts'>;
+  tumYazilar: CollectionEntry<'posts'>[];
+}
+
+const { mevcut, tumYazilar } = Astro.props;
+
+// Yayın tarihine göre sıralı liste içinde bir sonraki (kronolojik olarak daha
+// yeni) yazı; en yeni yazıdaysak listenin başına sarılır. Amaç: okuyucuya her
+// zaman "devam edecek bir şey" göstermek, tek yönlü bir okuma akışı kurmak.
+const siraliYazilar = [...tumYazilar].sort(
+  (a, b) => a.data.yayinTarihi.valueOf() - b.data.yayinTarihi.valueOf()
+);
+const mevcutIndex = siraliYazilar.findIndex((y) => y.id === mevcut.id);
+const sonraki =
+  siraliYazilar.length > 1
+    ? siraliYazilar[(mevcutIndex + 1) % siraliYazilar.length]
+    : null;
+---
+
+{sonraki && (
+  <section class="mt-12">
+    <a
+      href={`/${sonraki.id}/`}
+      class="group flex flex-col overflow-hidden rounded-2xl bg-murekkep text-white shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-lg sm:flex-row"
+    >
+      <div class="relative aspect-video overflow-hidden bg-black/20 sm:aspect-auto sm:w-64 sm:shrink-0">
+        <img
+          src={sonraki.data.kapakGorseli}
+          alt={sonraki.data.kapakGorselAlt}
+          loading="lazy"
+          class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+        />
+      </div>
+      <div class="flex flex-1 flex-col justify-center gap-2 p-6">
+        <span class="text-xs font-semibold uppercase tracking-wide text-white/60">
+          Sıradaki İçerik · {KATEGORILER[sonraki.data.kategori].emoji} {KATEGORILER[sonraki.data.kategori].etiket} · {FORMAT_ETIKETLERI[sonraki.data.format]}
+        </span>
+        <h3 class="text-xl font-bold leading-snug group-hover:text-marka sm:text-2xl">
+          {sonraki.data.baslik}
+        </h3>
+        <span class="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-marka">
+          Devam et →
+        </span>
+      </div>
+    </a>
+  </section>
+)}

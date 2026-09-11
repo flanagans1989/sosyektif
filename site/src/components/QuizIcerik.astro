@@ -8,12 +8,24 @@ interface Soru {
 
 interface Props {
   sorular: Soru[];
+  baslik: string;
+  sayfaUrl: string;
+  sonrakiTestUrl?: string;
+  sonrakiTestBaslik?: string;
 }
 
-const { sorular } = Astro.props;
+const { sorular, baslik, sayfaUrl, sonrakiTestUrl, sonrakiTestBaslik } = Astro.props;
 ---
 
-<div id="quiz-kok" class="flex flex-col gap-6" data-toplam={sorular.length}>
+<div
+  id="quiz-kok"
+  class="flex flex-col gap-6"
+  data-toplam={sorular.length}
+  data-baslik={baslik}
+  data-sayfa-url={sayfaUrl}
+>
+  <div id="meydan-banner" class="hidden rounded-2xl bg-marka/10 px-5 py-4 text-sm font-semibold text-marka"></div>
+
   {sorular.map((soru, si) => (
     <fieldset class="quiz-soru rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5" data-soru-index={si} data-dogru={soru.dogruIndex}>
       <legend class="text-lg font-bold text-murekkep">{si + 1}. {soru.soru}</legend>
@@ -36,15 +48,167 @@ const { sorular } = Astro.props;
     </fieldset>
   ))}
 
-  <div id="quiz-sonuc" class="hidden rounded-2xl bg-marka px-5 py-4 text-center text-lg font-bold text-white"></div>
+  <div id="quiz-sonuc" class="hidden flex-col items-center gap-4 rounded-2xl bg-marka px-5 py-6 text-center text-white">
+    <p id="quiz-sonuc-metin" class="text-lg font-bold"></p>
+
+    <canvas id="sonuc-kart-canvas" width="1080" height="1080" class="hidden"></canvas>
+    <img id="sonuc-kart-onizleme" alt="Sonuç kartı" class="hidden w-40 rounded-xl shadow-lg" />
+
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      <button
+        id="kart-paylas-buton"
+        type="button"
+        class="inline-flex items-center gap-1 rounded-full bg-white px-5 py-2 text-sm font-bold text-marka transition hover:bg-white/90"
+      >
+        🖼️ Sonuç Kartını Paylaş
+      </button>
+      <a
+        id="whatsapp-paylas-link"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-1 rounded-full bg-[#25D366] px-5 py-2 text-sm font-bold text-white transition hover:opacity-90"
+      >
+        WhatsApp'ta Meydan Oku
+      </a>
+    </div>
+
+    {sonrakiTestUrl && (
+      <a
+        href={sonrakiTestUrl}
+        class="inline-flex items-center gap-1 rounded-full border-2 border-white px-5 py-2 text-sm font-bold text-white transition hover:bg-white/10"
+      >
+        Sıradaki test{sonrakiTestBaslik ? `: ${sonrakiTestBaslik}` : ''} →
+      </a>
+    )}
+  </div>
 </div>
 
 <script>
   const kok = document.getElementById('quiz-kok');
   if (kok) {
     const toplam = Number(kok.dataset.toplam ?? '0');
+    const baslik = kok.dataset.baslik ?? 'sosyektif quiz';
+    const sayfaUrl = kok.dataset.sayfaUrl ?? location.href;
     let dogruSayisi = 0;
     let cevaplanan = 0;
+
+    // Meydan okuma: ?meydan=8-10 ile gelen ziyaretçiye üstte bir bilgi
+    // kutusu gösterilir. Link, quiz sonucu paylaşırken otomatik üretilir.
+    const meydanParam = new URLSearchParams(location.search).get('meydan');
+    if (meydanParam && /^\d+-\d+$/.test(meydanParam)) {
+      const [meydanDogru, meydanToplam] = meydanParam.split('-');
+      const banner = document.getElementById('meydan-banner');
+      if (banner) {
+        banner.textContent = `👋 Bir arkadaşın bu testte ${meydanDogru}/${meydanToplam} yaptı. Onu geçebilir misin?`;
+        banner.classList.remove('hidden');
+      }
+    }
+
+    function performansIfadesi(oran: number): string {
+      if (oran >= 0.9) return 'Efsane! 🏆';
+      if (oran >= 0.7) return 'Çok iyi! 🎉';
+      if (oran >= 0.5) return 'Fena değil 👍';
+      return 'Bir daha dene! 💪';
+    }
+
+    function satirlaraBol(ctx: CanvasRenderingContext2D, metin: string, maksGenislik: number): string[] {
+      const kelimeler = metin.split(' ');
+      const satirlar: string[] = [];
+      let mevcut = '';
+      for (const kelime of kelimeler) {
+        const aday = mevcut ? `${mevcut} ${kelime}` : kelime;
+        if (ctx.measureText(aday).width > maksGenislik && mevcut) {
+          satirlar.push(mevcut);
+          mevcut = kelime;
+        } else {
+          mevcut = aday;
+        }
+      }
+      if (mevcut) satirlar.push(mevcut);
+      return satirlar;
+    }
+
+    function kartCiz(dogru: number, toplamSoru: number): HTMLCanvasElement | null {
+      const canvas = document.getElementById('sonuc-kart-canvas') as HTMLCanvasElement | null;
+      if (!canvas) return null;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return null;
+
+      const G = canvas.width;
+      const oran = dogru / toplamSoru;
+
+      // Arka plan
+      ctx.fillStyle = '#fffaf7';
+      ctx.fillRect(0, 0, G, G);
+
+      // Üst marka şeridi
+      ctx.fillStyle = '#ff4f64';
+      ctx.fillRect(0, 0, G, 160);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 64px system-ui, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('sosyektif.com', G / 2, 100);
+
+      // Başlık (sarmalı)
+      ctx.fillStyle = '#201a1c';
+      ctx.font = 'bold 44px system-ui, sans-serif';
+      const satirlar = satirlaraBol(ctx, baslik, G - 160).slice(0, 3);
+      satirlar.forEach((satir, i) => {
+        ctx.fillText(satir, G / 2, 300 + i * 56);
+      });
+
+      // Büyük skor
+      ctx.fillStyle = '#ff4f64';
+      ctx.font = 'bold 220px system-ui, sans-serif';
+      ctx.fillText(`${dogru}/${toplamSoru}`, G / 2, 680);
+
+      // Performans ifadesi
+      ctx.fillStyle = '#201a1c';
+      ctx.font = 'bold 56px system-ui, sans-serif';
+      ctx.fillText(performansIfadesi(oran), G / 2, 800);
+
+      // Alt çağrı
+      ctx.fillStyle = 'rgba(32,26,28,0.6)';
+      ctx.font = '38px system-ui, sans-serif';
+      ctx.fillText('Sen kaç yaparsın? sosyektif.com', G / 2, 960);
+
+      return canvas;
+    }
+
+    async function kartPaylas(dogru: number, toplamSoru: number): Promise<void> {
+      const canvas = kartCiz(dogru, toplamSoru);
+      if (!canvas) return;
+
+      const meydanUrl = `${sayfaUrl}${sayfaUrl.includes('?') ? '&' : '?'}meydan=${dogru}-${toplamSoru}`;
+      const paylasimMetni = `${baslik} testinde ${dogru}/${toplamSoru} yaptım! Sen kaç yaparsın?`;
+
+      canvas.toBlob(async (blob) => {
+        if (!blob) return;
+        const dosya = new File([blob], 'sosyektif-sonuc.png', { type: 'image/png' });
+
+        if (navigator.share && navigator.canShare?.({ files: [dosya] })) {
+          try {
+            await navigator.share({ files: [dosya], title: baslik, text: paylasimMetni, url: meydanUrl });
+            return;
+          } catch {
+            // Kullanıcı paylaşım penceresini kapattıysa sessizce devam et.
+          }
+        }
+
+        // Web Share API desteklenmiyorsa: kartı önizleme olarak göster ve
+        // indirilebilir hale getir.
+        const onizleme = document.getElementById('sonuc-kart-onizleme') as HTMLImageElement | null;
+        if (onizleme) {
+          onizleme.src = canvas.toDataURL('image/png');
+          onizleme.classList.remove('hidden');
+        }
+        const indirLink = document.createElement('a');
+        indirLink.href = canvas.toDataURL('image/png');
+        indirLink.download = 'sosyektif-sonuc.png';
+        indirLink.click();
+      }, 'image/png');
+    }
 
     kok.querySelectorAll<HTMLFieldSetElement>('.quiz-soru').forEach((soruEl) => {
       const dogruIndex = Number(soruEl.dataset.dogru);
@@ -71,10 +235,22 @@ const { sorular } = Astro.props;
 
           if (cevaplanan === toplam) {
             const sonuc = document.getElementById('quiz-sonuc');
-            if (sonuc) {
-              sonuc.textContent = `Sonucun: ${dogruSayisi} / ${toplam} doğru!`;
+            const sonucMetin = document.getElementById('quiz-sonuc-metin');
+            if (sonuc && sonucMetin) {
+              sonucMetin.textContent = `Sonucun: ${dogruSayisi} / ${toplam} doğru!`;
               sonuc.classList.remove('hidden');
+              sonuc.classList.add('flex');
             }
+
+            const meydanUrl = `${sayfaUrl}${sayfaUrl.includes('?') ? '&' : '?'}meydan=${dogruSayisi}-${toplam}`;
+            const whatsappLink = document.getElementById('whatsapp-paylas-link') as HTMLAnchorElement | null;
+            if (whatsappLink) {
+              const metin = `${baslik} testinde ${dogruSayisi}/${toplam} yaptım! Sen kaç yaparsın? ${meydanUrl}`;
+              whatsappLink.href = `https://wa.me/?text=${encodeURIComponent(metin)}`;
+            }
+
+            const kartButon = document.getElementById('kart-paylas-buton');
+            kartButon?.addEventListener('click', () => kartPaylas(dogruSayisi, toplam));
           }
         });
       });

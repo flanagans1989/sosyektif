@@ -23,6 +23,18 @@ const kategoriGirdileri = Object.entries(KATEGORILER);
 
     <div class="flex items-center gap-2">
       <a
+        href="/tarihte-bugun/"
+        class="hidden items-center gap-1 rounded-full px-3 py-1.5 text-sm font-semibold text-murekkep/70 transition hover:bg-marka/10 hover:text-marka lg:inline-flex"
+      >
+        📅 Tarihte Bugün
+      </a>
+      <a
+        href="/gunun-sorusu/"
+        class="hidden items-center gap-1 rounded-full px-3 py-1.5 text-sm font-semibold text-murekkep/70 transition hover:bg-marka/10 hover:text-marka md:inline-flex"
+      >
+        🎯 Günün Sorusu
+      </a>
+      <a
         href="/ara/"
         aria-label="Ara"
         class="rounded-full p-2 text-murekkep/70 transition hover:bg-black/5 hover:text-marka"
@@ -39,6 +51,18 @@ const kategoriGirdileri = Object.entries(KATEGORILER);
   </div>
 
   <nav class="flex gap-1 overflow-x-auto px-4 pb-3 md:hidden" aria-label="Kategoriler (mobil)">
+    <a
+      href="/gunun-sorusu/"
+      class="whitespace-nowrap rounded-full bg-marka/10 px-3 py-1 text-xs font-bold text-marka"
+    >
+      🎯 Günün Sorusu
+    </a>
+    <a
+      href="/tarihte-bugun/"
+      class="whitespace-nowrap rounded-full bg-black/5 px-3 py-1 text-xs font-medium text-murekkep/70"
+    >
+      📅 Tarihte Bugün
+    </a>
     {kategoriGirdileri.map(([anahtar, { etiket }]) => (
       <a
         href={`/kategori/${anahtar}/`}

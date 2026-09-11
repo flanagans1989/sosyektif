@@ -1,0 +1,213 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// Havuz: tüm yayınlanmış quiz yazılarındaki sorular tek bir listede birleşir.
+// Hangi sorunun "bugünün sorusu" olacağı istemci tarafında, Türkiye gününe
+// göre hesaplanır — böylece build zamanından bağımsız olarak her gün (ve
+// herkes için aynı anda) doğal olarak değişir; Wordle mantığının aynısı.
+const quizYazilari = await getCollection('posts', ({ data }) => !data.taslak && data.format === 'quiz');
+
+const havuz = quizYazilari.flatMap((yazi) =>
+  (yazi.data.quizSorulari ?? []).map((soru) => ({
+    postSlug: yazi.id,
+    postBaslik: yazi.data.baslik,
+    soru: soru.soru,
+    secenekler: soru.secenekler,
+    dogruIndex: soru.dogruIndex,
+    aciklama: soru.aciklama ?? '',
+  }))
+);
+---
+
+<Layout title="Günün Sorusu" description="Her gün yeni bir soru, kaç gün üst üste bileceksin?">
+  <div class="mx-auto max-w-xl px-4 py-10">
+    <h1 class="text-3xl font-extrabold text-murekkep">🎯 Günün Sorusu</h1>
+    <p class="mt-2 text-murekkep/70">Her gün yeni bir soru gelir. Serini bozma!</p>
+
+    <div id="streak-rozeti" class="mt-4 hidden inline-flex items-center gap-1 rounded-full bg-marka/10 px-4 py-1.5 text-sm font-bold text-marka">
+      🔥 <span id="streak-sayisi">0</span> gün üst üste
+    </div>
+
+    <div id="soru-alani" class="mt-6"></div>
+
+    {havuz.length === 0 && (
+      <div class="mt-6 rounded-2xl bg-black/5 p-6 text-center text-murekkep/70">
+        Henüz günlük soru havuzu boş — ilk quiz içeriği yayınlandığında burada bir soru göreceksin. Yakında! 👀
+      </div>
+    )}
+  </div>
+
+  <script type="application/json" id="soru-havuzu" set:html={JSON.stringify(havuz)} />
+
+  <script>
+    interface HavuzSorusu {
+      postSlug: string;
+      postBaslik: string;
+      soru: string;
+      secenekler: string[];
+      dogruIndex: number;
+      aciklama: string;
+    }
+
+    interface StreakDurumu {
+      streak: number;
+      sonOynananTarih: string; // YYYY-MM-DD (Türkiye günü)
+      bugununCevabi?: { secilenIndex: number; dogruMu: boolean };
+    }
+
+    const DEPO_ANAHTARI = 'sosyektif-gunun-sorusu';
+    const TURKIYE_OFFSET_MS = 3 * 60 * 60 * 1000; // UTC+3, sabit (Türkiye 2016'dan beri DST uygulamıyor)
+
+    function turkiyeGunAnahtari(tarih: Date): string {
+      const kaydirilmis = new Date(tarih.getTime() + TURKIYE_OFFSET_MS);
+      return kaydirilmis.toISOString().slice(0, 10);
+    }
+
+    function turkiyeEpokGunu(tarih: Date): number {
+      const kaydirilmis = new Date(tarih.getTime() + TURKIYE_OFFSET_MS);
+      return Math.floor(kaydirilmis.getTime() / 86_400_000);
+    }
+
+    function oncekiGun(gunAnahtari: string): string {
+      const [y, m, d] = gunAnahtari.split('-').map(Number);
+      const tarih = new Date(Date.UTC(y, m - 1, d));
+      tarih.setUTCDate(tarih.getUTCDate() - 1);
+      return tarih.toISOString().slice(0, 10);
+    }
+
+    function durumOku(): StreakDurumu | null {
+      try {
+        const ham = localStorage.getItem(DEPO_ANAHTARI);
+        return ham ? (JSON.parse(ham) as StreakDurumu) : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function durumYaz(durum: StreakDurumu): void {
+      try {
+        localStorage.setItem(DEPO_ANAHTARI, JSON.stringify(durum));
+      } catch {
+        // localStorage kapalı olabilir (gizli sekme vb.) — sessizce yoksay.
+      }
+    }
+
+    function baslat(): void {
+      const havuzEl = document.getElementById('soru-havuzu');
+      const alan = document.getElementById('soru-alani');
+      const streakRozeti = document.getElementById('streak-rozeti');
+      const streakSayisiEl = document.getElementById('streak-sayisi');
+      if (!havuzEl || !alan) return;
+
+      const havuz: HavuzSorusu[] = JSON.parse(havuzEl.textContent ?? '[]');
+      if (havuz.length === 0) return;
+
+      const bugun = new Date();
+      const bugununAnahtari = turkiyeGunAnahtari(bugun);
+      const indeks = turkiyeEpokGunu(bugun) % havuz.length;
+      const soru = havuz[indeks];
+
+      let durum = durumOku();
+
+      // Streak hesapla: dün oynanmışsa devam eder, bugün zaten oynanmışsa
+      // dokunulmaz, aksi halde (dün oynanmamışsa) sıfırdan 1'e başlar.
+      if (!durum) {
+        durum = { streak: 0, sonOynananTarih: '' };
+      }
+      const zatenBugunOynandi = durum.sonOynananTarih === bugununAnahtari;
+
+      function rozetiGuncelle(streak: number) {
+        if (!streakRozeti || !streakSayisiEl) return;
+        if (streak > 0) {
+          streakSayisiEl.textContent = String(streak);
+          streakRozeti.classList.remove('hidden');
+          streakRozeti.classList.add('inline-flex');
+        }
+      }
+      rozetiGuncelle(durum.streak);
+
+      function sonucGoster(secilenIndex: number, dogruMu: boolean, streak: number) {
+        const paylasimMetni = dogruMu
+          ? `sosyektif Günün Sorusu'nda ${streak} gündür seriyi bozmadım! 🔥 Sen de dene:`
+          : `sosyektif Günün Sorusu'nu çözmeye çalışıyorum. Sen de dene:`;
+        const paylasimUrl = `https://wa.me/?text=${encodeURIComponent(`${paylasimMetni} ${location.origin}/gunun-sorusu/`)}`;
+        alan!.innerHTML = `
+          <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
+            <p class="text-lg font-bold text-murekkep">${soru.soru}</p>
+            <div class="mt-4 flex flex-col gap-2">
+              ${soru.secenekler
+                .map((s, i) => {
+                  const dogru = i === soru.dogruIndex;
+                  const secili = i === secilenIndex;
+                  const renk = dogru
+                    ? 'bg-emerald-100 border-emerald-400'
+                    : secili
+                      ? 'bg-red-100 border-red-400'
+                      : 'border-black/10';
+                  return `<div class="rounded-xl border px-4 py-2 ${renk}">${s}</div>`;
+                })
+                .join('')}
+            </div>
+            ${soru.aciklama ? `<p class="mt-3 rounded-lg bg-marka/5 p-3 text-sm text-murekkep/80">${soru.aciklama}</p>` : ''}
+            <p class="mt-4 text-center text-lg font-bold ${dogruMu ? 'text-emerald-600' : 'text-red-500'}">
+              ${dogruMu ? '✅ Doğru bildin!' : '❌ Bu sefer olmadı.'}
+            </p>
+            <a href="/${soru.postSlug}/" class="mt-3 block text-center text-sm font-semibold text-marka underline">
+              Kaynağı gör: ${soru.postBaslik}
+            </a>
+            <a
+              href="${paylasimUrl}"
+              target="_blank"
+              rel="noopener"
+              class="mt-4 mx-auto flex w-fit items-center gap-1 rounded-full bg-[#25D366] px-5 py-2 text-sm font-bold text-white transition hover:opacity-90"
+            >
+              WhatsApp'ta Paylaş
+            </a>
+            <p class="mt-4 text-center text-sm text-murekkep/50">Yarın yeni bir soru burada olacak. Sakın kaçırma!</p>
+          </div>
+        `;
+      }
+
+      if (zatenBugunOynandi && durum.bugununCevabi) {
+        sonucGoster(durum.bugununCevabi.secilenIndex, durum.bugununCevabi.dogruMu, durum.streak);
+        return;
+      }
+
+      alan.innerHTML = `
+        <fieldset class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
+          <legend class="text-lg font-bold text-murekkep">${soru.soru}</legend>
+          <div class="mt-4 flex flex-col gap-2" id="gunun-secenekleri">
+            ${soru.secenekler
+              .map(
+                (s, i) =>
+                  `<button type="button" data-index="${i}" class="gunun-secenek rounded-xl border border-black/10 px-4 py-2 text-left transition hover:border-marka">${s}</button>`
+              )
+              .join('')}
+          </div>
+        </fieldset>
+      `;
+
+      alan.querySelectorAll<HTMLButtonElement>('.gunun-secenek').forEach((buton) => {
+        buton.addEventListener('click', () => {
+          const secilenIndex = Number(buton.dataset.index);
+          const dogruMu = secilenIndex === soru.dogruIndex;
+
+          const oncekiTarih = oncekiGun(bugununAnahtari);
+          const yeniStreak = durum!.sonOynananTarih === oncekiTarih ? durum!.streak + 1 : 1;
+
+          durum = {
+            streak: yeniStreak,
+            sonOynananTarih: bugununAnahtari,
+            bugununCevabi: { secilenIndex, dogruMu },
+          };
+          durumYaz(durum);
+          rozetiGuncelle(yeniStreak);
+          sonucGoster(secilenIndex, dogruMu, yeniStreak);
+        });
+      });
+    }
+
+    baslat();
+  </script>
+</Layout>

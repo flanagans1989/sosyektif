@@ -6,6 +6,7 @@ import TriviaIcerik from '../../components/TriviaIcerik.astro';
 import QuizIcerik from '../../components/QuizIcerik.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
 import IlgiliIcerikler from '../../components/IlgiliIcerikler.astro';
+import SiradakiIcerik from '../../components/SiradakiIcerik.astro';
 import Yorumlar from '../../components/Yorumlar.astro';
 import { KATEGORILER, FORMAT_ETIKETLERI } from '../../lib/kategoriler';
 
@@ -47,6 +48,13 @@ const jsonLd = {
 };
 
 const sayfaUrl = new URL(`/${yazi.id}/`, Astro.site).toString();
+
+// Quiz bitince "sıradaki test"e tek tıkla geçiş için: aynı formattaki en
+// yeni diğer yazı (yayın tarihine göre), yoksa null.
+const digerQuizler = tumYazilar
+  .filter((y) => y.data.format === 'quiz' && y.id !== yazi.id)
+  .sort((a, b) => b.data.yayinTarihi.valueOf() - a.data.yayinTarihi.valueOf());
+const sonrakiTest = digerQuizler[0] ?? null;
 ---
 
 <Layout title={seoBaslik} description={metaAciklama} image={kapakGorseli}>
@@ -76,7 +84,15 @@ const sayfaUrl = new URL(`/${yazi.id}/`, Astro.site).toString();
       <div class="mt-8"><TriviaIcerik maddeler={listeMaddeleri} /></div>
     )}
     {format === 'quiz' && quizSorulari && (
-      <div class="mt-8"><QuizIcerik sorular={quizSorulari} /></div>
+      <div class="mt-8">
+        <QuizIcerik
+          sorular={quizSorulari}
+          baslik={baslik}
+          sayfaUrl={sayfaUrl}
+          sonrakiTestUrl={sonrakiTest ? `/${sonrakiTest.id}/` : undefined}
+          sonrakiTestBaslik={sonrakiTest?.data.baslik}
+        />
+      </div>
     )}
 
     {kaynaklar.length > 0 && (
@@ -98,6 +114,8 @@ const sayfaUrl = new URL(`/${yazi.id}/`, Astro.site).toString();
     <div class="mt-8 border-t border-black/5 pt-6">
       <ShareButtons url={sayfaUrl} baslik={baslik} />
     </div>
+
+    <SiradakiIcerik mevcut={yazi} tumYazilar={tumYazilar} />
 
     <IlgiliIcerikler mevcut={yazi} tumYazilar={tumYazilar} />
 

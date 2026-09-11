@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Türkiye UTC+3 sabit (2016'dan beri DST yok). Build anındaki Türkiye gününü
+// hesaplayıp Vikipedi'nin ücretsiz, hesap gerektirmeyen "Tarihte Bugün" REST
+// API'sinden o güne ait olayları çekiyoruz. Build ile ziyaret arasında gün
+// değişmişse (nadir), sayfadaki script aynı isteği istemci tarafında tazeler.
+const TURKIYE_OFFSET_MS = 3 * 60 * 60 * 1000;
+const simdi = new Date(Date.now() + TURKIYE_OFFSET_MS);
+const ay = String(simdi.getUTCMonth() + 1).padStart(2, '0');
+const gun = String(simdi.getUTCDate()).padStart(2, '0');
+const buildGunAnahtari = `${ay}-${gun}`;
+
+interface VikipediOlay {
+  text: string;
+  year: number;
+  pages?: { title: string; displaytitle: string }[];
+}
+
+let olaylar: VikipediOlay[] = [];
+try {
+  const res = await fetch(`https://tr.wikipedia.org/api/rest_v1/feed/onthisday/events/${ay}/${gun}`);
+  if (res.ok) {
+    const veri = (await res.json()) as { events?: VikipediOlay[] };
+    olaylar = (veri.events ?? []).sort((a, b) => b.year - a.year).slice(0, 12);
+  }
+} catch {
+  // Build sırasında Vikipedi'ye ulaşılamazsa sayfa boş listeyle üretilir;
+  // istemci tarafındaki script yine de deneyecektir.
+}
+---
+
+<Layout title="Tarihte Bugün" description="Bugün tarihte neler oldu? Vikipedi kaynaklı, her gün güncellenen olaylar.">
+  <div class="mx-auto max-w-2xl px-4 py-10">
+    <h1 class="text-3xl font-extrabold text-murekkep">📅 Tarihte Bugün</h1>
+    <p class="mt-2 text-murekkep/70">Bugünün tarihinde geçmişte neler yaşanmış, bir bak.</p>
+
+    <div id="olay-listesi" class="mt-6 flex flex-col gap-4" data-build-gun={buildGunAnahtari}>
+      {olaylar.length === 0 && (
+        <p class="rounded-2xl bg-black/5 p-5 text-center text-murekkep/60">Olaylar yükleniyor…</p>
+      )}
+      {olaylar.map((olay) => (
+        <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+          <span class="text-sm font-bold text-marka">{olay.year}</span>
+          <p class="mt-1 text-murekkep/90">{olay.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-6 text-center text-xs text-murekkep/40">Kaynak: Vikipedi "Tarihte Bugün"</p>
+  </div>
+
+  <script>
+    const TURKIYE_OFFSET_MS = 3 * 60 * 60 * 1000;
+
+    function turkiyeAyGun(): { ay: string; gun: string; anahtar: string } {
+      const simdi = new Date(Date.now() + TURKIYE_OFFSET_MS);
+      const ay = String(simdi.getUTCMonth() + 1).padStart(2, '0');
+      const gun = String(simdi.getUTCDate()).padStart(2, '0');
+      return { ay, gun, anahtar: `${ay}-${gun}` };
+    }
+
+    interface VikipediOlay {
+      text: string;
+      year: number;
+    }
+
+    async function tazele(): Promise<void> {
+      const liste = document.getElementById('olay-listesi');
+      if (!liste) return;
+
+      const { ay, gun, anahtar } = turkiyeAyGun();
+      const buildGunu = liste.dataset.buildGun;
+
+      // Build zamanındaki gün, ziyaretçinin güncel Türkiye günüyle aynıysa
+      // sunucudan gelen (SEO için indexlenebilir) içerik zaten doğru — tekrar
+      // ağa gitmeye gerek yok.
+      if (buildGunu === anahtar && liste.children.length > 0 && !liste.querySelector('p')) return;
+
+      try {
+        const res = await fetch(`https://tr.wikipedia.org/api/rest_v1/feed/onthisday/events/${ay}/${gun}`);
+        if (!res.ok) return;
+        const veri = (await res.json()) as { events?: VikipediOlay[] };
+        const olaylar = (veri.events ?? []).sort((a, b) => b.year - a.year).slice(0, 12);
+        if (olaylar.length === 0) return;
+
+        liste.innerHTML = olaylar
+          .map(
+            (olay) => `
+              <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+                <span class="text-sm font-bold text-marka">${olay.year}</span>
+                <p class="mt-1 text-murekkep/90">${olay.text}</p>
+              </div>
+            `
+          )
+          .join('');
+      } catch {
+        // Ağ hatası: sayfadaki mevcut içerik (varsa) olduğu gibi kalır.
+      }
+    }
+
+    tazele();
+  </script>
+</Layout>
