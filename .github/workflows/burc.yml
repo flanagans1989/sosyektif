@@ -1,17 +1,27 @@
-name: Günlük Burç Yorumu
+name: Günlük Burç ve Tarihte Bugün
 
+# Asıl tetikleyici Cloudflare Worker'ın saatlik cron'u (bkz. worker/telegram-onay).
+# GitHub'ın kendi schedule'ı yedek olarak duruyor; iki script de idempotent
+# olduğu için çift çalışma içeriği değiştirmez.
 on:
   schedule:
-    - cron: "30 3 * * *" # her gün 03:30 UTC (TR saatiyle 06:30, insanlar uyanmadan)
+    - cron: "30 3 * * *" # 03:30 UTC (TR 06:30)
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
 jobs:
-  gunluk-burc:
+  gunluk-icerik:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
     steps:
       - uses: actions/checkout@v4
 
@@ -24,25 +34,26 @@ jobs:
       - working-directory: agents
         run: npm ci
 
-      - working-directory: agents
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+      # Biri başarısız olursa diğerinin çıktısı yine commit'lensin.
+      - name: Burç yorumları
+        working-directory: agents
+        continue-on-error: true
         run: npm run burc
+
+      - name: Tarihte Bugün seçkisi
+        working-directory: agents
+        continue-on-error: true
+        run: npm run tarihte-bugun
 
       - name: Değişiklikleri commit'le ve gönder
         run: |
           git config user.name "sosyektif-bot"
           git config user.email "deraksizolasyon@gmail.com"
-          git add site/src/data/gunluk-burc.json site/src/data/haftalik-burc.json
+          git add site/src/data/gunluk-burc.json site/src/data/haftalik-burc.json site/src/data/tarihte-bugun.json
           if git diff --cached --quiet; then
             echo "Değişiklik yok, commit atlanıyor."
           else
-            git commit -m "Burç yorumları güncellendi ($(date -u +%Y-%m-%d))"
+            git commit -m "Günlük içerik güncellendi: burç, tarihte bugün ($(date -u +%Y-%m-%d))"
             git pull --rebase origin main
             git push
           fi
