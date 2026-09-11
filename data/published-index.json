@@ -43,5 +43,14 @@
     "format": "quiz",
     "yayinTarihi": "2026-09-11T15:07:31.879Z",
     "otomatikYayinlandi": true
+  },
+  {
+    "slug": "teknofest-hakkinda-duyunca-sasiracaginiz-5-ilginc-bilgi",
+    "baslik": "TEKNOFEST Hakkında Duyunca Şaşıracağınız 5 İlginç Bilgi",
+    "konuParmakIzi": "teknofest",
+    "kategori": "bilim",
+    "format": "trivia",
+    "yayinTarihi": "2026-09-11T20:01:11.594Z",
+    "otomatikYayinlandi": false
   }
 ]
