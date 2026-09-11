@@ -1,11 +1,13 @@
 name: Günlük Burç ve Tarihte Bugün
 
-# Asıl tetikleyici Cloudflare Worker'ın saatlik cron'u (bkz. worker/telegram-onay).
-# GitHub'ın kendi schedule'ı yedek olarak duruyor; iki script de idempotent
+# Tetikleyiciler: GitHub'ın kendi schedule'ı (aşağıda) ve yedek olarak Cloudflare
+# Worker'ın saatlik cron'u (bkz. worker/telegram-onay). İki script de idempotent
 # olduğu için çift çalışma içeriği değiştirmez.
 on:
   schedule:
-    - cron: "30 3 * * *" # 03:30 UTC (TR 06:30)
+    # TR 05:30, 07:30, 09:30, 11:30 — GitHub bazı zamanlanmış çalışmaları
+    # atlayabildiği için birkaç deneme; üretim idempotent, sonrakiler bir şey yapmaz.
+    - cron: "30 2,4,6,8 * * *"
   workflow_dispatch: {}
 
 permissions:

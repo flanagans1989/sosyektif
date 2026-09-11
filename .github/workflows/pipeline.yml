@@ -2,8 +2,12 @@ name: İçerik Pipeline'ı
 
 on:
   schedule:
-    # Günde 6 kez, tam saatler yerine :17'de (yoğunlukta gecikmeyi azaltmak için, PLAN.md R11)
-    - cron: "17 3,7,11,15,19,23 * * *"
+    # Saatte bir, tam saat yerine :17'de. GitHub az hareketli repolarda
+    # zamanlanmış çalışmaları saatlerce geciktirip bazılarını hiç yapmıyor;
+    # sık tetikleyip yayın zamanlamasını pipeline.ts'e bıraktık (TR 08-24
+    # arası, iki içerik arası en az 3 saat, günlük hedef). Repo public olduğu
+    # için Actions dakikaları ücretsiz.
+    - cron: "17 * * * *"
   workflow_dispatch: {}
 
 concurrency:

@@ -2,10 +2,12 @@ name = "sosyektif-telegram-onay"
 main = "src/index.ts"
 compatibility_date = "2025-01-01"
 
-# GitHub Actions'ın kendi "schedule" tetikleyicisi az hareketli repolarda
-# saatlerce gecikiyor ya da hiç çalışmıyor. Bunun yerine Cloudflare her saat
-# :17'de worker'ı uyandırır; worker da saate göre ilgili workflow'u
-# workflow_dispatch ile başlatır (bkz. src/index.ts -> ZAMANLAMA).
+# Yedek tetikleyici: Cloudflare her saat :17'de worker'ı uyandırır, worker da
+# saate göre ilgili workflow'u workflow_dispatch ile başlatır (bkz.
+# src/index.ts -> ZAMANLAMA). Asıl tetikleyici artık workflow'ların kendi
+# saatlik schedule'ı. Not (2026-09-11): bu cron Cloudflare'de kayıtlı
+# görünmesine rağmen hiç çalışmadı (analitikte ve wrangler tail'de sıfır
+# zamanlanmış çağrı); sebep bulunamadı, yedek olarak duruyor.
 # Tek bir cron ifadesi kullanılıyor (ücretsiz plan cron sayısı sınırlı).
 [triggers]
 crons = ["17 * * * *"]

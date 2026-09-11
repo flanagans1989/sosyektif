@@ -15,6 +15,10 @@ import { notifyAdmin, escapeHtml } from "../lib/telegram.js";
 import type { TrendCandidate } from "../lib/schemas.js";
 
 const MAX_DENENECEK_ADAY = 10;
+/** Türkiye saatiyle bu saatten önce içerik üretilmez (gece yayını kimse görmüyor). */
+const YAYIN_BASLANGIC_SAATI_TR = 8;
+/** Workflow saatte bir tetikleniyor; yayınlar güne yayılsın diye iki içerik arası en az bu kadar saat. */
+const MIN_YAYIN_ARALIGI_SAAT = 3;
 /** GitHub Actions job'u 15 dk'da kesilir; yeni adaya başlamayı 9 dk'da bırak. */
 const ZAMAN_BUTCESI_MS = 9 * 60 * 1000;
 
@@ -78,6 +82,26 @@ async function main() {
   if (!hedefAtla && bugunUretilen >= config.gunlukHedefIcerikSayisi) {
     console.log(`[pipeline] bugünkü hedefe ulaşıldı (${bugunUretilen}/${config.gunlukHedefIcerikSayisi})`);
     return;
+  }
+
+  // GitHub'ın zamanlayıcısı az hareketli repolarda saatlerce gecikip bazı
+  // çalışmaları hiç yapmadığı için workflow saatte bir tetikleniyor; yayın
+  // zamanlaması burada belirleniyor: yalnızca TR gündüz saatlerinde ve son
+  // içerikten en az MIN_YAYIN_ARALIGI_SAAT sonra.
+  if (!hedefAtla) {
+    const trSaat = (new Date().getUTCHours() + 3) % 24;
+    if (trSaat < YAYIN_BASLANGIC_SAATI_TR) {
+      console.log(`[pipeline] yayın penceresi dışında (TR saat ${trSaat}), çıkılıyor`);
+      return;
+    }
+    const son = (await readPublishedIndex()).at(-1);
+    const gecenSaat = son ? (Date.now() - new Date(son.yayinTarihi).getTime()) / 3_600_000 : Infinity;
+    if (gecenSaat < MIN_YAYIN_ARALIGI_SAAT) {
+      console.log(
+        `[pipeline] son içerikten bu yana ${gecenSaat.toFixed(1)} saat geçti (en az ${MIN_YAYIN_ARALIGI_SAAT}), çıkılıyor`
+      );
+      return;
+    }
   }
 
   const adaylar = await siraliAdaylar();
