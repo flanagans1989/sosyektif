@@ -13,6 +13,7 @@
     "burc": "tsx src/orchestrator/burc.ts",
     "burc-uyum": "tsx src/orchestrator/burcUyum.ts",
     "tarihte-bugun": "tsx src/orchestrator/tarihteBugun.ts",
+    "marka-gorselleri": "tsx scripts/marka-gorselleri.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

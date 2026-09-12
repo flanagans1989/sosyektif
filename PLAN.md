@@ -629,6 +629,7 @@ modunda, test kullanıcısı rolüyle kalır.
   - **Bug bulundu ve düzeltildi:** her iki platformun da container oluşturma/yayınlama uç noktaları GET değil **POST** olmalı — GET ile "Tried accessing nonexisting field" hatası veriyordu.
   - **Bug bulundu ve düzeltildi:** Threads container'ı oluşturulduktan hemen sonra yayınlamak "Medya bulunamıyor" hatası veriyordu — `status` alanı `FINISHED` olana kadar kısa aralıklarla yoklama (polling) eklendi.
 - [x] **`/bio` sayfası:** 2026-09-12, `site/src/pages/bio/index.astro` — son 12 içerik, `astro check` ile doğrulandı.
+- [x] **Profil/kapak görselleri:** 2026-09-12, `agents/scripts/marka-gorselleri.ts` (`npm run marka-gorselleri`) — favicon/Logo.astro ile aynı marka (pembe kare + beyaz büyüteç) `sharp` ile ölçeklenip 1080×1080 profil fotoğrafı ve 820×312 Facebook kapak fotoğrafı üretiyor. Instagram, Threads (ayrı senkronize olmuyor — Instagram'dan bağımsız elle yüklendi) ve Facebook Sayfası'na elle yüklendi (bu platformların hiçbirinde API ile profil/kapak fotoğrafı değiştirme desteği yok).
 
 | | Threads | Instagram |
 |---|---|---|
