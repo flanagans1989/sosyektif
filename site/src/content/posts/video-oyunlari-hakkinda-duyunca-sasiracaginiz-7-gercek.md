@@ -34,7 +34,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Video game
     url: https://en.wikipedia.org/wiki/Video_game
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Dan Butler on Pexels
 moderasyon:
   skor: 1
