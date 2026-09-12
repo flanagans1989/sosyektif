@@ -153,7 +153,18 @@ export async function processCandidate(aday: TrendCandidate, config: Config): Pr
       `[aday] "${uretim.draft.frontmatter.baslik}" tur ${tur + 1}: skor ${moderasyon.skor}` +
         (moderasyon.sertRed ? " (sert red)" : moderasyon.otomatikYayinaUygun ? " (otomatik seviye)" : "")
     );
-    if (!enIyi || moderasyon.skor > enIyi.moderasyon.skor) enIyi = { draft: uretim.draft, moderasyon };
+    // Eşit skorda, düzeltme turundan geçip otomatik yayın seviyesine ulaşan
+    // sürüm tercih edilir — yoksa bir önceki (düzeltilmemiş, onaya düşen)
+    // sürüm "en iyi" sayılmaya devam eder ve otomatik yayın hakkı kaybolur.
+    if (
+      !enIyi ||
+      moderasyon.skor > enIyi.moderasyon.skor ||
+      (moderasyon.skor === enIyi.moderasyon.skor &&
+        moderasyon.otomatikYayinaUygun &&
+        !enIyi.moderasyon.otomatikYayinaUygun)
+    ) {
+      enIyi = { draft: uretim.draft, moderasyon };
+    }
     if (moderasyon.sertRed || moderasyon.otomatikYayinaUygun || !moderasyon.duzeltmeNotlari) break;
     notlar = moderasyon.duzeltmeNotlari;
   }
