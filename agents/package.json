@@ -14,11 +14,13 @@
     "burc-uyum": "tsx src/orchestrator/burcUyum.ts",
     "tarihte-bugun": "tsx src/orchestrator/tarihteBugun.ts",
     "marka-gorselleri": "tsx scripts/marka-gorselleri.ts",
+    "slayt-onizle": "tsx scripts/slayt-onizle.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@atproto/api": "^0.13.35",
     "js-yaml": "^4.1.0",
+    "playwright-core": "^1.63.0",
     "rss-parser": "^3.13.0",
     "sharp": "^0.35.4",
     "zod": "^3.24.1"

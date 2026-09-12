@@ -41,6 +41,22 @@ jobs:
         working-directory: agents
         run: npm ci
 
+      - name: Chromium önbelleği (carousel slayt render'ı)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ hashFiles('agents/package-lock.json') }}
+
+      # Instagram carousel slaytları HTML/CSS olarak gerçek tarayıcıda render
+      # ediliyor (agents/src/image/htmlRender.ts). Renkli emoji fontu olmadan
+      # emoji'ler bozuk çıkar.
+      - name: Slayt render bağımlılıkları (Chromium + renkli emoji fontu)
+        working-directory: agents
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-color-emoji
+          npx playwright-core install --with-deps chromium
+
       - name: Pipeline'ı çalıştır
         working-directory: agents
         env:

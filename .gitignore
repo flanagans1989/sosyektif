@@ -21,3 +21,6 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+
+# Carousel slayt önizlemeleri (npm run slayt-onizle)
+agents/slayt-onizleme/
