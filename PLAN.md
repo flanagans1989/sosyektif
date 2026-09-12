@@ -369,9 +369,10 @@ Her adım bitip **1 hafta veriyle doğrulandıktan sonra** bir sonrakine geçili
 ---
 
 ### S1 — Kendi ölçümü ve ajana geri besleme
-**Durum (2026-09-12): kısmen tamamlandı.** Sayfa görüntüleme (Cloudflare) + Search Console
+**Durum (2026-09-12): büyük kısmı tamamlandı.** Sayfa görüntüleme (Cloudflare) + Search Console
 geri beslemesi zaten `agents/src/analytics/` içinde kodluymuş, plan yazılırken fark edilmemişti.
-Eksik kalan tek parça: etkileşim sayaçları (S2 ile aynı KV'yi bekliyor).
+Tepki sayaçları S2 ile birlikte KV'ye taşındı. Eksik kalan tek şey: "içeriği sonuna kadar
+okudu" / "quiz'i bitirdi" gibi tamamlanma olayları — düşük öncelik, henüz yapılmadı.
 
 **Amaç:** Ajanlar şu an konu seçerken hangi içeriğin tuttuğunu bilmiyor. Bu döngü kurulmazsa sistem
 yıllarca aynı körlükte içerik basar. Bölüm 3.7'deki Analitik Ajanı'nın eksik kalan ayağı budur.
