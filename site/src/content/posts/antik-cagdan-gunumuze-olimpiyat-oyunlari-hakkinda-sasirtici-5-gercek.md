@@ -30,7 +30,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Olympic Games
     url: https://en.wikipedia.org/wiki/Olympic_Games
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Tom Hermans on Pexels
 moderasyon:
   skor: 1
