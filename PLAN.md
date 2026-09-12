@@ -578,9 +578,9 @@ Google Discover**'dan gelir. Yeni domainde Google organik araması aylar alır (
 Threads/Instagram'dan gelmesi beklenir. **Gerçekçi beklenti: anlamlı trafik 3-6 ay.**
 
 ### 11.0 Şimdiden yapılabilir (kullanıcı, isteğe bağlı)
-- [ ] `@sosyektif` Instagram hesabı → **Profesyonel (İşletme)** hesaba çevir (API yalnızca profesyonel hesapta paylaşım yapar)
-- [ ] Aynı hesaptan **Threads** profili
-- [ ] **Facebook Sayfası**
+- [x] Instagram hesabı → **Profesyonel (İşletme)** hesaba çevir (API yalnızca profesyonel hesapta paylaşım yapar) — 2026-09-12
+- [x] Aynı hesaptan **Threads** profili — 2026-09-12
+- [ ] **Facebook Sayfası** — kişisel profil "sosyektif" adıyla açılamaz (Meta gerçek isim kuralı; kapatılırsa bağlı Sayfa ve geliştirici uygulaması da gider). Doğru yol: kullanıcının kişisel hesabından "sosyektif" adlı **Sayfa**; Sayfada yöneticinin adı görünmez. Threads/Instagram paylaşımı Sayfa gerektirmez, sadece Facebook'a paylaşım için lazım. Meta geliştirici hesabı (11.2) yine de kişisel Facebook hesabıyla girişi gerektirir
 - [ ] **WhatsApp Kanalı** (Türkiye'de Telegram'dan çok daha yaygın)
 
 **Neden erken:** Kullanıcı adı başkası almadan ayrılır; Meta yeni açılıp hemen yoğun otomatik paylaşım
