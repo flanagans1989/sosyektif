@@ -344,25 +344,35 @@ Hepsi sağlandığında S1'e başlanır:
 Kapı açılmadan tek istisna **S7 (güven katmanı)**: o, trafikten bağımsız olarak R1/R3 savunması
 olduğu için gerekirse sıradan öne alınabilir.
 
+**2026-09-12 güncellemesi:** Kullanıcı isteğiyle kapı beklenmeden S3-S8'e (S2 hariç) başlandı —
+büyük kısmı zaten kodda mevcuttu ya da dış hesap gerektirmeden tamamlanabildi. Aşağıdaki tabloda
+gerçek durum işaretli. Bu, "kapı erken açıldı" demek değil — kapı hâlâ geçerli, ama kapıyı beklemek
+zorunda olmayan (trafik/hacimden bağımsız, salt mühendislik) kısımlar öne alındı.
+
 ### 10.1 Sıra ve gerekçe
 Sıra keyfi değil: S1 sisteme **göz** verir (ajan neyin tuttuğunu öğrenir), S2-S3 **bedava dağıtım**
 sağlar, S4-S6 oturumu uzatır, S7 cezaya karşı sigortadır, S8 geliri hazırlar.
 Her adım bitip **1 hafta veriyle doğrulandıktan sonra** bir sonrakine geçilir; aynı anda iki adım açılmaz.
+(Bu kural S2'nin KV'si hazır olup açıldığında yeniden geçerli olacak — S3-S8 istisnai olarak birlikte yapıldı.)
 
-| # | Adım | Bağımlılık | Tahmini iş |
+| # | Adım | Bağımlılık | Durum |
 |---|---|---|---|
-| S1 | Ölçüm → ajana geri besleme | — | 2-3 gün |
-| S2 | Oylama/anket + tepki barı | S1 (aynı KV) | 2 gün |
-| S3 | Quiz/test sonuç kartı + skor OG | — | 1-2 gün |
-| S4 | Mobil kaydırmalı kart + sonsuz akış | — | 2 gün |
-| S5 | Alışkanlık: seri + bülten | — | 1-2 gün |
-| S6 | Keşif: etiket, en çok okunanlar, seriler | S1 (en çok okunanlar için) | 2 gün |
-| S7 | Güven katmanı (E-E-A-T + hukuki) | — | 1-2 gün |
-| S8 | Gelir hazırlığı | S1..S6 | 1 gün |
+| S1 | Ölçüm → ajana geri besleme | — | ✅ Sayfa görüntüleme + Search Console geri beslemesi zaten koddaymış (fark edilmemiş). ⏳ Etkileşim sayaçları (oy/tepki) S2'nin KV'sini bekliyor |
+| S2 | Oylama/anket + tepki barı | S1 (aynı KV) | 🚫 **Bloke** — Cloudflare KV namespace'i gerekiyor, kullanıcı oluşturup ID vermeyi bekliyoruz |
+| S3 | Quiz/test sonuç kartı + skor OG | — | ✅ Zaten tamamlanmıştı (canvas tabanlı `sonucKarti.ts`, "meydan oku" linki, WhatsApp paylaşımı) — plandan daha iyi bir çözümdü |
+| S4 | Mobil kaydırmalı kart + sonsuz akış | — | ✅ Okuma ilerleme çubuğu + mobil kaydırmalı kart (2026-09-12). Gerçek "sonsuz akış" bilinçli olarak yapılmadı (bkz. altı) |
+| S5 | Alışkanlık: seri + bülten | — | ✅ Seri (streak) zaten tamamlanmıştı (`gunun-sorusu`). 🚫 Bülten **bloke** — e-posta servisi hesabı gerekiyor |
+| S6 | Keşif: etiket, en çok okunanlar, seriler | S1 (en çok okunanlar için) | ✅ Etiket sayfaları + en çok okunanlar (2026-09-12). ⏸️ Seri/dosya alanı yapılmadı (düşük öncelik) |
+| S7 | Güven katmanı (E-E-A-T + hukuki) | — | ✅ Tamamlandı (2026-09-12): görünür tarih/dateModified, düzeltme kaydı + `/duzeltmeler`, bildirim formu → Telegram. Künye hâlâ hukukçu teyidi bekliyor (Bölüm 5) |
+| S8 | Gelir hazırlığı | S1..S6 | ✅ Reklam slotları eklendi, `REKLAM_AKTIF=false` ile kapalı (2026-09-12) |
 
 ---
 
 ### S1 — Kendi ölçümü ve ajana geri besleme
+**Durum (2026-09-12): kısmen tamamlandı.** Sayfa görüntüleme (Cloudflare) + Search Console
+geri beslemesi zaten `agents/src/analytics/` içinde kodluymuş, plan yazılırken fark edilmemişti.
+Eksik kalan tek parça: etkileşim sayaçları (S2 ile aynı KV'yi bekliyor).
+
 **Amaç:** Ajanlar şu an konu seçerken hangi içeriğin tuttuğunu bilmiyor. Bu döngü kurulmazsa sistem
 yıllarca aynı körlükte içerik basar. Bölüm 3.7'deki Analitik Ajanı'nın eksik kalan ayağı budur.
 
@@ -389,6 +399,10 @@ ağırlıklar" görünüyor ve `category-weights.json` en az bir kez otomatik de
 ---
 
 ### S2 — Oylama / anket + tepki barı
+**Durum: bloke.** Cloudflare KV namespace'i gerekiyor — kullanıcı dashboard'dan
+oluşturup ID'yi verdiğinde uygulanacak. Diğer tüm S-adımları (S1 kalanı hariç) bu koşulmadan
+tamamlandı.
+
 **Amaç:** Onedio'nun asıl motoru liste değil, **"sence?" oylaması**. Canlı yüzde sonucu
 ("%68'i seninle aynı düşünüyor") hem geri dönüş hem paylaşım üretir. giscus yorumları GitHub
 hesabı istediği için sürtünmesi yüksek; tepki barı ise tek tıklık ve en iyi kalite sinyali.
@@ -408,6 +422,11 @@ haftalık raporda izleniyor.
 ---
 
 ### S3 — Quiz/kişilik testi sonuç kartı + skora özel OG görseli
+**Durum: ✅ zaten tamamlanmıştı.** `site/src/lib/sonucKarti.ts` canvas ile paylaşılabilir
+kare kart çiziyor, `QuizIcerik.astro`/`KisilikTestiIcerik.astro` "meydan oku" linki (`?meydan=8-10`)
+ve WhatsApp paylaşımıyla birlikte kullanıyor. Build-zamanı OG üretimi yerine bu (daha esnek,
+herhangi bir skor için çalışıyor) — plan güncellendi, aşağıdaki "ne yapılır" artık tarihsel.
+
 **Amaç:** Quiz ve kişilik testinin tek gerçek viral mekanizması, paylaşılabilir sonuçtur.
 "18/20 doğru bildim" kartı bedava dağıtım demek.
 
@@ -425,6 +444,12 @@ haftalık raporda izleniyor.
 ---
 
 ### S4 — Mobil format: kaydırmalı kartlar + sonsuz akış
+**Durum: ✅ kısmen tamamlandı (2026-09-12).** Okuma ilerleme çubuğu ve mobilde (<640px)
+yatay kaydırmalı kart görünümü (`ListeIcerik`, `TriviaIcerik`) canlı. Gerçek "sonsuz akış"
+(sayfa sonunda bir sonraki içeriği DOM'a inline yükleme) bilinçli olarak yapılmadı — statik bir
+Astro sitesinde kırılgan olurdu (hydration/analytics riski); `SiradakiIcerik.astro` zaten
+tıkla-devam-et kartı sağlıyor.
+
 **Amaç:** Trafiğin ~%85'i mobil olacak. Oturum süresini en çok etkileyen iki değişiklik.
 
 **Ne yapılır**
@@ -442,6 +467,11 @@ haftalık raporda izleniyor.
 ---
 
 ### S5 — Alışkanlık: seri (streak) + bülten
+**Durum: ✅ seri zaten tamamlanmıştı, 🚫 bülten bloke.** `gunun-sorusu` sayfasında
+localStorage tabanlı seri takibi, Türkiye günü hesaplaması ve WhatsApp paylaşımı çalışıyor —
+plan yazılırken fark edilmemişti. Bülten için e-posta servisi (Buttondown/MailerLite) hesabı
+kullanıcı tarafından açılmayı bekliyor.
+
 **Amaç:** `gunun-sorusu` var ama geri gelme sebebi yok. Yeni domain Google'da aylarca zayıf
 kalacağı için (R8) doğrudan kanal kurmak zorunlu.
 
@@ -459,6 +489,10 @@ kalacağı için (R8) doğrudan kanal kurmak zorunlu.
 ---
 
 ### S6 — Keşif
+**Durum: ✅ büyük kısmı tamamlandı (2026-09-12).** Etiket sayfaları
+(`/etiket/[etiket]/`) ve "Bu Hafta En Çok Okunanlar" (anasayfa, haftalık analitikten) canlı.
+Seriler/dosyalar ("Uzay Dosyası" gibi) henüz yapılmadı — düşük öncelik, ayrı bir oturumda ele alınabilir.
+
 **Amaç:** Kategori çok kaba bir kırılım; 500+ içerikte arşiv keşfedilmez hale gelir.
 
 **Ne yapılır**
@@ -475,6 +509,11 @@ kalacağı için (R8) doğrudan kanal kurmak zorunlu.
 ---
 
 ### S7 — Güven katmanı (E-E-A-T + hukuki) — trafikten bağımsız, gerekirse öne alınır
+**Durum: ✅ tamamlandı (2026-09-12)**, künye hariç. Görünür yayın/güncelleme tarihi +
+JSON-LD `dateModified`, `duzeltmeNotu` alanı + `/duzeltmeler` sayfası, `/iletisim`'de gerçek
+bildirim formu (Worker'ın `/bildir` uç noktasına, Telegram admin sohbetine düşüyor). Künye hâlâ
+Bölüm 5'teki hukukçu teyidini bekliyor.
+
 **Amaç:** R1 (scaled content abuse) ve R3 (hukuki risk) karşısındaki en somut savunma.
 Editoryal politika sayfası var; eksikleri tamamlanır.
 
@@ -495,6 +534,9 @@ uçtan uca bir kez test edilmiş.
 ---
 
 ### S8 — Gelir hazırlığı
+**Durum: ✅ tamamlandı (2026-09-12).** `ReklamAlani.astro` bileşeni + `REKLAM_AKTIF=false`
+anahtarı — kapalıyken hiç DOM'a girmiyor, CWV etkisi sıfır.
+
 **Ne yapılır**
 - `Layout.astro`'ya **boş reklam slotları** (içerik üstü, içerik arası, kenar) şimdiden ayrılır ki
   sonradan tasarım bozulmasın; slotlar bir konfig anahtarıyla kapalı durur.
