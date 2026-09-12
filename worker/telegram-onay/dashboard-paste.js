@@ -6,6 +6,18 @@
  * Edit Code alanına olduğu gibi yapıştırıp Deploy'a bas.
  */
 
+/**
+ * Telegram onay butonlarını dinleyen Cloudflare Worker.
+ *
+ * Yayın Ajanı bir taslağı onaya düşürdüğünde admin sohbetine
+ * "✅ Yayınla" / "❌ Yayınlama" butonlu bir mesaj gider (bkz.
+ * agents/src/lib/telegram.ts -> notifyAdminOnayButonlu). Kullanıcı butona
+ * bastığında Telegram bu worker'a bir callback_query webhook'u yollar; worker
+ * da GitHub Contents API üzerinden ilgili .md dosyasını commit ile
+ * günceller (onay -> taslak:false) ya da siler (red).
+ *
+ * Kurulum notları wrangler.toml içinde.
+ */
 const POSTS_DIR = "site/src/content/posts";
 // IndexNow: açık, hesap gerektirmeyen protokol. Key, site/public/<key>.txt
 // dosyasıyla eşleşmeli (bkz. agents/src/lib/indexnow.ts — aynı key).
@@ -192,6 +204,102 @@ async function tepkiSonucGetir(request, env) {
         headers: { ...corsHeaders(), "Content-Type": "application/json" },
     });
 }
+function metaTokenAnahtari(platform) {
+    return `meta_token:${platform}`;
+}
+/**
+ * Threads/Instagram uzun ömürlü erişim token'ları (PLAN.md Bölüm 11.2).
+ * Bootstrap (ilk token) ve periyodik yenileme burada okur/yazar; ajanlar
+ * (GitHub Actions'ta çalışan Node.js süreçleri) KV'ye doğrudan erişemediği
+ * için bu uç noktalar üzerinden okur. Aynı `anahtar` sorgu parametresi
+ * /tetikle ile aynı sırrı kullanır — GitHub/Telegram token'larına erişim
+ * vermez, yalnızca bu iki uç noktayı korur.
+ */
+async function metaTokenGetir(request, env) {
+    const url = new URL(request.url);
+    if (url.searchParams.get("anahtar") !== env.AGENT_PAYLASIM_ANAHTARI) {
+        return new Response("forbidden", { status: 403 });
+    }
+    const platform = url.searchParams.get("platform");
+    if (platform !== "threads" && platform !== "instagram") {
+        return new Response("geçersiz platform", { status: 400 });
+    }
+    const mevcut = await env.METRIKLER.get(metaTokenAnahtari(platform));
+    if (!mevcut)
+        return new Response("bulunamadı", { status: 404 });
+    return new Response(mevcut, { status: 200, headers: { "Content-Type": "application/json" } });
+}
+async function metaTokenYaz(request, env) {
+    const url = new URL(request.url);
+    if (url.searchParams.get("anahtar") !== env.AGENT_PAYLASIM_ANAHTARI) {
+        return new Response("forbidden", { status: 403 });
+    }
+    let govde;
+    try {
+        govde = await request.json();
+    }
+    catch {
+        return new Response("geçersiz istek", { status: 400 });
+    }
+    if ((govde.platform !== "threads" && govde.platform !== "instagram") ||
+        !govde.access_token ||
+        typeof govde.expires_at !== "number") {
+        return new Response("geçersiz alanlar", { status: 400 });
+    }
+    const token = {
+        access_token: govde.access_token,
+        expires_at: govde.expires_at,
+        ig_user_id: govde.ig_user_id,
+    };
+    await env.METRIKLER.put(metaTokenAnahtari(govde.platform), JSON.stringify(token));
+    return new Response("ok");
+}
+/**
+ * Süresi 5 günden az kalan token'ları yeniler. Threads ve Instagram'ın
+ * "refresh_access_token" uç noktaları yalnızca mevcut uzun ömürlü token'ı
+ * ister — app secret gerekmez (bootstrap'tan farklı). Başarısızlık
+ * (ör. token zaten süresi dolmuş) admin'e Telegram'dan bildirilir; bir
+ * sonraki bootstrap'a kadar o platformun paylaşımı sessizce atlanmaya
+ * devam eder (agents/src/lib/threads.ts ve instagram.ts token yoksa/eskiyse
+ * paylaşımı atlar).
+ */
+async function metaTokenlariYenile(env) {
+    const BES_GUN_MS = 5 * 24 * 60 * 60 * 1000;
+    const now = Date.now();
+    const yenilemeUclari = {
+        threads: "https://graph.threads.net/refresh_access_token?grant_type=th_refresh_token&access_token=",
+        instagram: "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=",
+    };
+    for (const platform of ["threads", "instagram"]) {
+        const mevcutRaw = await env.METRIKLER.get(metaTokenAnahtari(platform));
+        if (!mevcutRaw)
+            continue; // henüz bootstrap edilmemiş — sessizce atla
+        const mevcut = JSON.parse(mevcutRaw);
+        if (mevcut.expires_at - now > BES_GUN_MS)
+            continue; // henüz erken
+        try {
+            const res = await fetch(`${yenilemeUclari[platform]}${mevcut.access_token}`);
+            if (!res.ok)
+                throw new Error(`${res.status} ${await res.text()}`);
+            const veri = (await res.json());
+            const yeni = {
+                access_token: veri.access_token,
+                expires_at: now + veri.expires_in * 1000,
+                ig_user_id: mevcut.ig_user_id,
+            };
+            await env.METRIKLER.put(metaTokenAnahtari(platform), JSON.stringify(yeni));
+            console.log(`[meta-token] ${platform} yenilendi`);
+        }
+        catch (err) {
+            const mesaj = err instanceof Error ? err.message : String(err);
+            console.error(`[meta-token] ${platform} yenilenemedi:`, mesaj);
+            await tgCall(env, "sendMessage", {
+                chat_id: env.TELEGRAM_ADMIN_CHAT_ID,
+                text: `⚠️ ${platform} token'ı yenilenemedi (süresi dolmak üzere/doldu):\n${mesaj.slice(0, 300)}\n\nYeniden bootstrap gerekebilir.`,
+            });
+        }
+    }
+}
 /**
  * Düzeltme/kaldırma talep formu (PLAN.md §5, Bölüm 10 / S7). KV veya başka
  * bir depolama gerektirmez — gelen talep doğrudan admin sohbetine düşer.
@@ -257,6 +365,7 @@ async function workflowBaslat(env, workflow) {
         throw new Error(`${workflow} başlatılamadı: ${res.status} ${await res.text()}`);
 }
 async function zamanlanmisCalisma(env, zaman) {
+    await metaTokenlariYenile(env).catch((err) => console.error("[meta-token] yenileme döngüsü hata:", err));
     const saat = zaman.getUTCHours();
     const pazartesi = zaman.getUTCDay() === 1;
     const baslatilacaklar = ZAMANLAMA.filter((z) => (z.saatler === "hepsi" || z.saatler.includes(saat)) && (!z.sadecePazartesi || pazartesi)).map((z) => z.workflow);
@@ -300,6 +409,13 @@ export default {
             if (request.method === "POST")
                 return tepkiVer(request, env);
             return new Response("method not allowed", { status: 405, headers: corsHeaders() });
+        }
+        if (url.pathname === "/meta-token") {
+            if (request.method === "GET")
+                return metaTokenGetir(request, env);
+            if (request.method === "POST")
+                return metaTokenYaz(request, env);
+            return new Response("method not allowed", { status: 405 });
         }
         if (url.pathname === "/tepki-sonuc") {
             if (request.method === "OPTIONS")

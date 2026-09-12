@@ -1,0 +1,57 @@
+---
+/**
+ * Instagram profil linki için (PLAN.md Bölüm 11.2) — Instagram gönderi
+ * açıklamalarındaki linkler tıklanamıyor, "Link profilde" yönlendirmesi
+ * buraya gelir. Linktree gibi bir araca gerek yok: son içerikleri
+ * listeleyen basit, sıfır maliyetli bir sayfa yeterli.
+ */
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { KATEGORILER, FORMAT_ETIKETLERI } from '../../lib/kategoriler';
+
+const tumYazilar = await getCollection('posts', ({ data }) => !data.taslak);
+const sonIcerikler = tumYazilar
+  .sort((a, b) => b.data.yayinTarihi.valueOf() - a.data.yayinTarihi.valueOf())
+  .slice(0, 12);
+---
+
+<Layout title="sosyektif" description="sosyektif'in en yeni içerikleri — listeler, quizler ve bunu bilmiyordun içerikleri.">
+  <section class="mx-auto max-w-lg px-4 py-10">
+    <div class="text-center">
+      <h1 class="text-2xl font-extrabold text-murekkep">🔥 sosyektif</h1>
+      <p class="mt-1 text-sm text-murekkep/60">
+        Gündemi, ilginç bilgileri ve eğlenceli listeleri bir araya getiren içerik platformu.
+      </p>
+      <a
+        href="/"
+        class="mt-3 inline-flex items-center gap-1 rounded-full bg-marka px-5 py-2 text-sm font-bold text-white transition hover:bg-marka-koyu"
+      >
+        sosyektif.com'a git →
+      </a>
+    </div>
+
+    <div class="mt-8 flex flex-col gap-3">
+      {sonIcerikler.map((yazi) => (
+        <a
+          href={`/${yazi.id}/`}
+          class="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-md"
+        >
+          <img
+            src={yazi.data.kapakGorseli}
+            alt={yazi.data.kapakGorselAlt}
+            loading="lazy"
+            class="h-16 w-16 shrink-0 rounded-xl object-cover"
+          />
+          <div class="min-w-0">
+            <p class="truncate text-xs font-semibold uppercase tracking-wide text-marka">
+              {KATEGORILER[yazi.data.kategori].emoji} {FORMAT_ETIKETLERI[yazi.data.format]}
+            </p>
+            <p class="line-clamp-2 text-sm font-bold leading-snug text-murekkep">
+              {yazi.data.baslik}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>

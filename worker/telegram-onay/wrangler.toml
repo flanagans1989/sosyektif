@@ -37,3 +37,8 @@ id = "fdb4338b9f094a2083dcb827207c2d80" # sosyektif_metrikler (deraksizolasyon h
 #   TETIKLE_ANAHTARI        - cron-job.org'un GET /tetikle?anahtar=... çağrısında
 #                             göndereceği rastgele değer (GitHub/Telegram
 #                             token'larından bağımsız, yalnızca bu uç noktayı korur)
+#   AGENT_PAYLASIM_ANAHTARI - agents'ın (GitHub Actions) /meta-token GET/POST
+#                             uç noktalarını çağırırken göndereceği rastgele
+#                             değer (Bölüm 11.2, Threads/Instagram token
+#                             okuma/yazma). GitHub Secrets'taki aynı isimli
+#                             secret ile birebir eşleşmeli.

@@ -616,16 +616,19 @@ Sadece kendi hesaplarımıza paylaşım yapıldığı için **Meta App Review ge
 modunda, test kullanıcısı rolüyle kalır.
 
 **Mühendislik işleri:**
-- [ ] **JPEG çıktısı:** Instagram API yalnızca JPEG kabul ediyor; kapaklar şu an WebP
-- [ ] **1080×1350 dikey carousel şablonu** (satori altyapısı mevcut). Mevcut 1200×630 kapaklar akışta küçük kalıyor. Format bazında:
+- [x] **JPEG çıktısı:** 2026-09-12, `agents/src/image/social.ts` — Instagram API yalnızca JPEG kabul ediyor; site içi kapaklar (WebP) ayrı, bu tamamen yeni bir üretim yolu (`sharp` ile SVG→JPEG)
+- [x] **1080×1350 dikey carousel şablonu** — 2026-09-12, satori kullanılmadı (proje zaten hand-written SVG + sharp deseni kullanıyor, `typographic.ts` ile tutarlı). Format bazında uygulandı:
   - Liste/trivia → her madde bir slayt (en fazla 10)
-  - Quiz → soru kartları, son slayt "Cevaplar ve skorun için sitede"
+  - Quiz → soru kartları, son slayt "Cevapları ve skorunu görmek için siteye gel!"
   - Kişilik testi → merak uyandıran tek kart
-- [ ] **Geçici görsel barındırma:** Meta görseli herkese açık URL'den çeker → görsel siteye geçici yüklenir, paylaşım sonrası silinir (R9'daki 20.000 dosya sınırına takılmamak için)
-- [ ] `agents/src/distribute/threads.ts` + `instagram.ts` + Facebook Sayfası adaptörü (Bölüm 3.6 deseni)
-- [ ] **Platforma özel metin:** aynı açıklama kopyalanmaz — Threads kısa/sohbet havasında + link, Instagram hashtag'li + "Link profilde"
-- [ ] **Token yenileme:** Meta uzun ömürlü token'ları 60 günde yenilenmeli, yoksa paylaşım sessizce durur (R12). Token KV'de (`METRIKLER` ya da ayrı namespace) tutulur, Worker'ın saatlik tetikleyicisi yeniler; süresi yaklaşınca Telegram uyarısı
-- [ ] **`/bio` sayfası:** Instagram açıklamasındaki linkler tıklanamıyor; Linktree yerine sitede son içerikleri listeleyen sayfa, profil linki buraya
+- [x] **Görsel barındırma:** 2026-09-12, bilinçli basitleştirme — geçici yükle/sil yerine `site/public/images/social/` altında kalıcı tutuluyor (Cloudflare Pages zaten public/ klasörünü olduğu gibi sunuyor, ayrı barındırma servisi gerekmedi). R9 dosya bütçesine küçük bir ek; sorun çıkarsa retensiyon eklenir.
+- [x] `agents/src/lib/threads.ts` + `instagram.ts` (Bölüm 3.6 deseni, `distribute/index.ts`'e bağlandı) — Facebook Sayfası adaptörü **yapılmadı** (Threads+Instagram önceliklendirildi, Instagram Login akışı Facebook Sayfası gerektirmiyor)
+- [x] **Platforma özel metin:** 2026-09-12, `distribute/index.ts` — Threads kısa + link, Instagram açıklama + "Link profilde" + hashtag
+- [x] **Token yenileme:** 2026-09-12, Worker'da `metaTokenlariYenile` (saatlik `zamanlanmisCalisma` içinde), süresi 5 günden az kalan token'ları `refresh_access_token` ile yeniler, başarısızlıkta Telegram uyarısı. Token'lar `METRIKLER` KV'sinde (`meta_token:threads`/`meta_token:instagram`), agents tarafı Worker'ın `/meta-token` uç noktasından okuyor (`agents/src/lib/metaToken.ts`) — GitHub Actions KV'ye doğrudan erişemediği için.
+- [x] **İlk bootstrap:** 2026-09-12, Meta dashboard'ının "Generate token"/"User Token Generator" araçlarıyla (OAuth redirect akışı gerekmedi — self-use test kullanıcısı için doğrudan üretim) her iki platform için de uzun ömürlü token üretildi, doğrulandı (`graph.threads.net`/`graph.instagram.com` `/me` çağrısı) ve Worker KV'sine yazıldı. Gerçek test paylaşımıyla uçtan uca doğrulandı.
+  - **Bug bulundu ve düzeltildi:** her iki platformun da container oluşturma/yayınlama uç noktaları GET değil **POST** olmalı — GET ile "Tried accessing nonexisting field" hatası veriyordu.
+  - **Bug bulundu ve düzeltildi:** Threads container'ı oluşturulduktan hemen sonra yayınlamak "Medya bulunamıyor" hatası veriyordu — `status` alanı `FINISHED` olana kadar kısa aralıklarla yoklama (polling) eklendi.
+- [x] **`/bio` sayfası:** 2026-09-12, `site/src/pages/bio/index.astro` — son 12 içerik, `astro check` ile doğrulandı.
 
 | | Threads | Instagram |
 |---|---|---|

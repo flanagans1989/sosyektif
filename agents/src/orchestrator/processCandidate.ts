@@ -204,7 +204,11 @@ export async function processCandidate(aday: TrendCandidate, config: Config): Pr
 
   // 5. Dağıtım ya da onay bildirimi
   if (otomatik) {
-    await distributeContent({ frontmatter: draft.frontmatter, publicUrl: yayin.publicUrl });
+    await distributeContent({
+      frontmatter: draft.frontmatter,
+      slug: draft.slug,
+      publicUrl: yayin.publicUrl,
+    });
     await bildirIndexNow(yayin.publicUrl);
     await notifyAdmin(
       `✅ Otomatik yayınlandı (skor ${moderasyon.skor}): <b>${escapeHtml(draft.frontmatter.baslik)}</b>\n${yayin.publicUrl}`

@@ -57,6 +57,7 @@ jobs:
           TELEGRAM_PUBLIC_CHANNEL_ID: ${{ secrets.TELEGRAM_PUBLIC_CHANNEL_ID }}
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          AGENT_PAYLASIM_ANAHTARI: ${{ secrets.AGENT_PAYLASIM_ANAHTARI }}
         run: npm run pipeline
 
       - name: Değişiklikleri commit'le ve gönder
