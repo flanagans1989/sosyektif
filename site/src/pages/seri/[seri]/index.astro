@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import { etiketSlugla } from '../../../lib/etiketler';
+
+export async function getStaticPaths() {
+  const tumYazilar = await getCollection('posts', ({ data }) => !data.taslak && Boolean(data.seri));
+
+  // slug -> gerçek görüntülenen seri adı (ilk rastlanan yazım korunur)
+  const seriAdlari = new Map<string, string>();
+  for (const yazi of tumYazilar) {
+    const seri = yazi.data.seri!;
+    const slug = etiketSlugla(seri);
+    if (slug && !seriAdlari.has(slug)) seriAdlari.set(slug, seri);
+  }
+
+  return Array.from(seriAdlari.entries()).map(([slug, ad]) => ({
+    params: { seri: slug },
+    props: { seriAdi: ad },
+  }));
+}
+
+const { seri } = Astro.params as { seri: string };
+const { seriAdi } = Astro.props as { seriAdi: string };
+
+const tumYazilar = await getCollection(
+  'posts',
+  ({ data }) => !data.taslak && Boolean(data.seri) && etiketSlugla(data.seri!) === seri
+);
+// Seri içinde kronolojik sırayla okunsun diye eskiden yeniye.
+const yazilar = tumYazilar.sort(
+  (a, b) => a.data.yayinTarihi.valueOf() - b.data.yayinTarihi.valueOf()
+);
+---
+
+<Layout
+  title={seriAdi}
+  description={`${seriAdi} serisindeki tüm içerikler.`}
+  noindex={yazilar.length === 0}
+>
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <p class="text-xs font-semibold uppercase tracking-wide text-marka">📁 Dosya</p>
+    <h1 class="mb-6 mt-1 text-3xl font-extrabold text-murekkep">{seriAdi}</h1>
+
+    {yazilar.length === 0 ? (
+      <p class="text-murekkep/60">Bu seride henüz içerik yok.</p>
+    ) : (
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {yazilar.map((yazi, i) => (
+          <div class="relative">
+            <span class="absolute -left-2 -top-2 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-marka text-xs font-extrabold text-white shadow">
+              {i + 1}
+            </span>
+            <PostCard post={yazi} />
+          </div>
+        ))}
+      </div>
+    )}
+  </section>
+</Layout>

@@ -52,6 +52,9 @@ const postSchema = z.object({
   format: z.enum(['liste', 'trivia', 'quiz', 'kisilik']),
   kategori,
   etiketler: z.array(z.string()).default([]),
+  // Aynı konuyu sürdüren içerikleri gruplamak için isteğe bağlı (ör. "Uzay Dosyası").
+  // Ajanlar henüz doldurmuyor -- yayın sonrası elle eklenir (bkz. PLAN.md Bölüm 10 / S6).
+  seri: z.string().optional(),
   yayinTarihi: z.coerce.date(),
   guncellemeTarihi: z.coerce.date().optional(),
 
