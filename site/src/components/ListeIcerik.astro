@@ -12,7 +12,8 @@ interface Props {
 const { maddeler } = Astro.props;
 ---
 
-<ol class="flex flex-col gap-6">
+{/* Masaüstü/tablet: dikey liste (PLAN.md Bölüm 10 / S4 öncesi orijinal görünüm) */}
+<ol class="hidden flex-col gap-6 sm:flex">
   {maddeler.map((madde, i) => (
     <li class="flex gap-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5">
       <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-marka text-lg font-extrabold text-white">
@@ -25,3 +26,21 @@ const { maddeler } = Astro.props;
     </li>
   ))}
 </ol>
+
+{/* Mobil: tek elle kaydırılan kart görünümü (PLAN.md Bölüm 10 / S4) */}
+<div class="sm:hidden">
+  <ol class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    {maddeler.map((madde, i) => (
+      <li class="flex w-[85%] shrink-0 snap-center flex-col gap-3 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-marka text-lg font-extrabold text-white">
+          {i + 1}
+        </span>
+        <div>
+          <h2 class="text-xl font-bold text-murekkep">{madde.baslik}</h2>
+          <p class="mt-1 text-murekkep/80 leading-relaxed">{madde.metin}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+  <p class="mt-1 text-center text-xs text-murekkep/40">👉 Kaydırarak devam et ({maddeler.length} madde)</p>
+</div>

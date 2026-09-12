@@ -12,7 +12,8 @@ interface Props {
 const { maddeler } = Astro.props;
 ---
 
-<div class="flex flex-col gap-6">
+{/* Masaüstü/tablet: dikey liste */}
+<div class="hidden flex-col gap-6 sm:flex">
   {maddeler.map((madde) => (
     <div class="rounded-2xl border-2 border-dashed border-marka/30 bg-white p-5">
       <div class="flex items-center gap-2 text-marka">
@@ -22,4 +23,20 @@ const { maddeler } = Astro.props;
       <p class="mt-2 text-murekkep/80 leading-relaxed">{madde.metin}</p>
     </div>
   ))}
+</div>
+
+{/* Mobil: tek elle kaydırılan kart görünümü (PLAN.md Bölüm 10 / S4) */}
+<div class="sm:hidden">
+  <div class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    {maddeler.map((madde) => (
+      <div class="w-[85%] shrink-0 snap-center rounded-2xl border-2 border-dashed border-marka/30 bg-white p-5">
+        <div class="flex items-center gap-2 text-marka">
+          <span class="text-2xl" aria-hidden="true">💡</span>
+          <h2 class="text-xl font-bold text-murekkep">{madde.baslik}</h2>
+        </div>
+        <p class="mt-2 text-murekkep/80 leading-relaxed">{madde.metin}</p>
+      </div>
+    ))}
+  </div>
+  <p class="mt-1 text-center text-xs text-murekkep/40">👉 Kaydırarak devam et ({maddeler.length} madde)</p>
 </div>

@@ -76,6 +76,8 @@ const sonrakiTest = digerQuizler[0] ?? null;
 <Layout title={seoBaslik} description={metaAciklama} image={kapakGorseli}>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
 
+  <div id="okuma-ilerleme" class="fixed left-0 top-0 z-50 h-1 w-0 bg-marka transition-[width]"></div>
+
   <article class="mx-auto max-w-3xl px-4 py-10">
     <p class="text-xs font-semibold uppercase tracking-wide text-marka">
       {KATEGORILER[kategori].emoji} {KATEGORILER[kategori].etiket} · {FORMAT_ETIKETLERI[format]}
@@ -176,4 +178,22 @@ const sonrakiTest = digerQuizler[0] ?? null;
       <Yorumlar />
     </section>
   </article>
+
+  <script>
+    // Okuma ilerleme çubuğu (PLAN.md Bölüm 10 / S4). Makale gövdesinin ne
+    // kadarının okunduğunu üstteki ince şeritle gösterir.
+    const cubuk = document.getElementById('okuma-ilerleme');
+    const gövde = document.querySelector('article');
+    if (cubuk && gövde) {
+      const guncelle = () => {
+        const { top, height } = gövde.getBoundingClientRect();
+        const okunabilirYukseklik = height - window.innerHeight;
+        const kaydirilan = -top;
+        const oran = okunabilirYukseklik > 0 ? Math.min(1, Math.max(0, kaydirilan / okunabilirYukseklik)) : 0;
+        cubuk.style.width = `${oran * 100}%`;
+      };
+      document.addEventListener('scroll', guncelle, { passive: true });
+      guncelle();
+    }
+  </script>
 </Layout>

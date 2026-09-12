@@ -11,7 +11,13 @@ const yazilar = tumYazilar.sort(
 
 // Haftalık Analitik Ajanı'nın ürettiği liste (PLAN.md Bölüm 10 / S6) — henüz
 // veri yoksa (yeni site) ya da eşleşen yazı silinmişse bölüm hiç görünmez.
-const enCokOkunan = enCokOkunanVerisi.icerikler
+interface EnCokOkunanGirdi {
+  slug: string;
+  baslik: string;
+  goruntulenme: number;
+}
+const enCokOkunanIcerikler = enCokOkunanVerisi.icerikler as EnCokOkunanGirdi[];
+const enCokOkunan = enCokOkunanIcerikler
   .map((girdi) => tumYazilar.find((y) => y.id === girdi.slug))
   .filter((y): y is (typeof tumYazilar)[number] => Boolean(y));
 
