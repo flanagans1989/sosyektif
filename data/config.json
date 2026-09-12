@@ -2,8 +2,8 @@
   "paused": false,
   "provaModu": false,
   "gunlukHedefIcerikSayisi": 5,
-  "otomatikYayinEsigi": 0.8,
+  "otomatikYayinEsigi": 0.65,
   "onayaDusEsigi": 0.55,
   "ardisikBasarisizCalismaLimiti": 6,
-  "ardisikBasarisizCalisma": 0
+  "ardisikBasarisizCalisma": 1
 }
