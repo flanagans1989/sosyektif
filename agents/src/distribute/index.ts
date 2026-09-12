@@ -2,8 +2,9 @@ import { postToPublicChannel } from "../lib/telegram.js";
 import { postSkeet } from "../lib/bluesky.js";
 import { postToThreads } from "../lib/threads.js";
 import { postToInstagram } from "../lib/instagram.js";
-import { FORMAT_ETIKETLERI_TR } from "../lib/formatLabels.js";
+import { FORMAT_ETIKETLERI_TR, FORMAT_EMOJI, KATEGORI_EMOJI } from "../lib/formatLabels.js";
 import { generateCarouselSlides, writeCarouselSlides } from "../image/social.js";
+import { dosyalariHemenYayinla, canliyaCikanaKadarBekle } from "../lib/gitYayinla.js";
 import type { Post } from "../lib/schemas.js";
 
 /**
@@ -18,11 +19,13 @@ export async function distributeContent(params: {
 }): Promise<void> {
   const { frontmatter, slug, publicUrl } = params;
   const etiket = FORMAT_ETIKETLERI_TR[frontmatter.format];
+  const formatEmoji = FORMAT_EMOJI[frontmatter.format];
+  const kategoriEmoji = KATEGORI_EMOJI[frontmatter.kategori] ?? "🔍";
 
-  const telegramMetni = `🆕 <b>${etiket}</b>\n${frontmatter.baslik}\n\n${frontmatter.metaAciklama}\n\n${publicUrl}`;
-  const blueskyMetni = `${frontmatter.baslik}\n\n${frontmatter.metaAciklama}`;
-  const threadsMetni = `${frontmatter.baslik}\n\n${frontmatter.metaAciklama}`;
-  const instagramMetni = `${frontmatter.baslik}\n\n${frontmatter.metaAciklama}\n\nDetaylar ve devamı için bio'daki linke bak 👆\n\n#sosyektif #${frontmatter.kategori}`;
+  const telegramMetni = `${formatEmoji} <b>${etiket}</b>\n\n${frontmatter.baslik}\n\n${frontmatter.metaAciklama}\n\n👉 ${publicUrl}`;
+  const blueskyMetni = `${formatEmoji} ${frontmatter.baslik}\n\n${frontmatter.metaAciklama}`;
+  const threadsMetni = `${formatEmoji} ${frontmatter.baslik}\n\n${frontmatter.metaAciklama}`;
+  const instagramMetni = `${formatEmoji} ${frontmatter.baslik}\n\n${frontmatter.metaAciklama}\n\n👆 Detaylar ve devamı bio'daki linkte\n\n${kategoriEmoji} #sosyektif #${frontmatter.kategori} #${frontmatter.format}`;
 
   await Promise.all([
     postToPublicChannel(telegramMetni).catch((err) =>
@@ -37,7 +40,29 @@ export async function distributeContent(params: {
     (async () => {
       try {
         const slaytlar = await generateCarouselSlides(frontmatter);
-        const urls = await writeCarouselSlides(slug, slaytlar);
+        const yazilanlar = await writeCarouselSlides(slug, slaytlar);
+        const urls = yazilanlar.map((y) => y.url);
+
+        // Kritik: bu görseller normalde pipeline SONUNDA commit'lenir, ama
+        // Instagram'ın çekeceği URL'in paylaşım anında zaten canlı olması
+        // gerekiyor — yoksa görselsiz/kırık paylaşım gider (bkz. gitYayinla.ts
+        // başlık yorumu, 2026-09-13'te gerçek paylaşımda tespit edildi).
+        const dosyalar = yazilanlar.map((y) => y.dosyaYolu);
+        const pushEdildi = dosyalariHemenYayinla(
+          dosyalar,
+          `Sosyal medya görselleri: ${slug} (${dosyalar.length} slayt)`
+        );
+        if (!pushEdildi) {
+          console.warn("[distribute] görseller push edilemedi, Instagram paylaşımı atlanıyor");
+          return;
+        }
+        const canli = await canliyaCikanaKadarBekle(urls);
+        if (!canli) {
+          console.warn(
+            "[distribute] görseller zaman aşımına uğradı (Cloudflare Pages build gecikti?), Instagram paylaşımı atlanıyor"
+          );
+          return;
+        }
         await postToInstagram(instagramMetni, urls);
       } catch (err) {
         console.error("[distribute] instagram hata:", err);

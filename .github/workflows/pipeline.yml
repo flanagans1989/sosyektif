@@ -64,7 +64,7 @@ jobs:
         run: |
           git config user.name "sosyektif-bot"
           git config user.email "deraksizolasyon@gmail.com"
-          git add data/ site/src/content/posts/ site/public/images/posts/
+          git add data/ site/src/content/posts/ site/public/images/posts/ site/public/images/social/
           if git diff --cached --quiet; then
             echo "Değişiklik yok, commit atlanıyor."
           else
