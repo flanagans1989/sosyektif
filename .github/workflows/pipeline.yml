@@ -8,7 +8,12 @@ on:
     # arası, iki içerik arası en az 3 saat, günlük hedef). Repo public olduğu
     # için Actions dakikaları ücretsiz.
     - cron: "17 * * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      hedef_atla:
+        description: "Yayın penceresi ve günlük hedef kontrolünü atla (manuel test için)"
+        type: boolean
+        default: false
 
 concurrency:
   group: sosyektif-pipeline
@@ -39,6 +44,7 @@ jobs:
       - name: Pipeline'ı çalıştır
         working-directory: agents
         env:
+          GUNLUK_HEDEF_ATLA: ${{ (github.event_name == 'workflow_dispatch' && inputs.hedef_atla) && '1' || '' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
