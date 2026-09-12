@@ -606,11 +606,11 @@ Bölüm 3.6'daki bilinen sorun: onaylanan içerik hiçbir kanala gitmiyor.
       App domains: `sosyektif.com`, Threads Redirect Callback URL: `https://sosyektif.com/`
       (App domains önce kaydedilmeden Redirect URL kaydı "Form can't be saved" hatası veriyordu —
       sıra önemli). App secret GitHub Secrets'a **henüz eklenmedi**, adaptör yazılırken eklenecek.
-- [~] Instagram ve Threads hesaplarını **test kullanıcısı** olarak ekle — 2026-09-12, davetler gönderildi
-      (App roles → Instagram Tester + Threads Tester, kullanıcı adı: `sosyektif`), ikisi de **Pending**.
-      **Kalan adım: kullanıcı, davetleri kendi Instagram ve Threads hesabından kabul etmeli**
-      (Instagram: Ayarlar → Uygulamalar ve web siteleri → Davetler; Threads: Ayarlar → Hesap →
-      Website permissions → Davetler).
+- [x] Instagram ve Threads hesaplarını **test kullanıcısı** olarak ekle — 2026-09-12, tamamlandı.
+      Davetler gönderildi (App roles → Instagram Tester + Threads Tester, kullanıcı adı: `sosyektif`)
+      ve her iki hesaptan da kabul edildi (Instagram: Ayarlar → Uygulamalar ve İnternet Siteleri →
+      Test Kullanıcısı Davetleri; Threads: Ayarlar → İnternet sitesi izinleri → Davetler). Meta
+      dashboard'unda "Pending" durumu kalktı, ikisi de aktif.
 
 Sadece kendi hesaplarımıza paylaşım yapıldığı için **Meta App Review gerekmez** — uygulama geliştirme
 modunda, test kullanıcısı rolüyle kalır.
