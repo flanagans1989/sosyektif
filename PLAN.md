@@ -580,7 +580,7 @@ Threads/Instagram'dan gelmesi beklenir. **Gerçekçi beklenti: anlamlı trafik 3
 ### 11.0 Şimdiden yapılabilir (kullanıcı, isteğe bağlı)
 - [x] Instagram hesabı → **Profesyonel (İşletme)** hesaba çevir (API yalnızca profesyonel hesapta paylaşım yapar) — 2026-09-12
 - [x] Aynı hesaptan **Threads** profili — 2026-09-12
-- [ ] **Facebook Sayfası** — kişisel profil "sosyektif" adıyla açılamaz (Meta gerçek isim kuralı; kapatılırsa bağlı Sayfa ve geliştirici uygulaması da gider). Doğru yol: kullanıcının kişisel hesabından "sosyektif" adlı **Sayfa**; Sayfada yöneticinin adı görünmez. Threads/Instagram paylaşımı Sayfa gerektirmez, sadece Facebook'a paylaşım için lazım. Meta geliştirici hesabı (11.2) yine de kişisel Facebook hesabıyla girişi gerektirir
+- [x] **Facebook Sayfası** — 2026-09-12 açıldı: "Sosyektif" (Facebook büyük harfe çevirdi), kategori Eğlence Sitesi, site + e-posta ekli, telefon/adres boş. https://www.facebook.com/profile.php?id=61594245544144 — Not: kişisel profil "sosyektif" adıyla açılamaz (Meta gerçek isim kuralı; kapatılırsa bağlı Sayfa ve geliştirici uygulaması da gider). Doğru yol: kullanıcının kişisel hesabından "sosyektif" adlı **Sayfa**; Sayfada yöneticinin adı görünmez. Threads/Instagram paylaşımı Sayfa gerektirmez, sadece Facebook'a paylaşım için lazım. Meta geliştirici hesabı (11.2) yine de kişisel Facebook hesabıyla girişi gerektirir
 - [ ] **WhatsApp Kanalı** (Türkiye'de Telegram'dan çok daha yaygın)
 
 **Neden erken:** Kullanıcı adı başkası almadan ayrılır; Meta yeni açılıp hemen yoğun otomatik paylaşım
