@@ -155,6 +155,62 @@ function answerCallback(env: Env, callbackQueryId: string, text: string): Promis
   return tgCall(env, "answerCallbackQuery", { callback_query_id: callbackQueryId, text, show_alert: false });
 }
 
+function sendAdminMessage(env: Env, text: string): Promise<void> {
+  return tgCall(env, "sendMessage", { chat_id: env.TELEGRAM_ADMIN_CHAT_ID, text, parse_mode: "HTML" });
+}
+
+const SITE_ORIGIN = "https://sosyektif.com";
+
+function corsHeaders(): HeadersInit {
+  return {
+    "Access-Control-Allow-Origin": SITE_ORIGIN,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+}
+
+function escapeHtml(s: string): string {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+/**
+ * Düzeltme/kaldırma talep formu (PLAN.md §5, Bölüm 10 / S7). KV veya başka
+ * bir depolama gerektirmez — gelen talep doğrudan admin sohbetine düşer.
+ * Kaba hız sınırlaması: mesaj uzunluğu + basit bir honeypot alanı
+ * (bot'lar genelde her alanı doldurur, insan "web_sitesi" alanını boş bırakır).
+ */
+async function bildirimGonder(request: Request, env: Env): Promise<Response> {
+  let gövde: { eposta?: string; mesaj?: string; sayfaUrl?: string; web_sitesi?: string };
+  try {
+    gövde = await request.json();
+  } catch {
+    return new Response("geçersiz istek", { status: 400, headers: corsHeaders() });
+  }
+
+  // Honeypot: gizli alan doluysa sessizce "başarılı" dön, bot'u oyalama.
+  if (gövde.web_sitesi) {
+    return new Response("ok", { status: 200, headers: corsHeaders() });
+  }
+
+  const mesaj = (gövde.mesaj ?? "").trim().slice(0, 2000);
+  const eposta = (gövde.eposta ?? "").trim().slice(0, 200);
+  const sayfaUrl = (gövde.sayfaUrl ?? "").trim().slice(0, 300);
+
+  if (!mesaj || mesaj.length < 10) {
+    return new Response("mesaj çok kısa", { status: 400, headers: corsHeaders() });
+  }
+
+  await sendAdminMessage(
+    env,
+    `📩 <b>Düzeltme/kaldırma talebi</b>\n` +
+      (sayfaUrl ? `Sayfa: ${escapeHtml(sayfaUrl)}\n` : "") +
+      (eposta ? `E-posta: ${escapeHtml(eposta)}\n` : "(e-posta verilmemiş)\n") +
+      `\n${escapeHtml(mesaj)}`
+  );
+
+  return new Response("ok", { status: 200, headers: corsHeaders() });
+}
+
 function editMessage(env: Env, chatId: number, messageId: number, text: string): Promise<void> {
   return tgCall(env, "editMessageText", {
     chat_id: chatId,
@@ -235,6 +291,12 @@ export default {
 
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
+
+    if (url.pathname === "/bildir") {
+      if (request.method === "OPTIONS") return new Response(null, { headers: corsHeaders() });
+      if (request.method === "POST") return bildirimGonder(request, env);
+      return new Response("method not allowed", { status: 405, headers: corsHeaders() });
+    }
 
     // Cloudflare'in kendi cron tetikleyicisi bu hesapta kayıtlı görünmesine
     // rağmen hiç çalışmadı (2026-09-11, wrangler tail ile canlı doğrulandı:

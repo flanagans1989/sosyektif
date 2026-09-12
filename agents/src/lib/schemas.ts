@@ -85,6 +85,10 @@ export const postSchema = z.object({
     })
     .optional(),
 
+  // Yayın sonrası elle girilir (ajanlar bu alanı hiç üretmez) — yayınlanmış
+  // bir içerikte hata düzeltildiğinde şeffaflık notu (bkz. /duzeltmeler).
+  duzeltmeNotu: z.string().optional(),
+
   taslak: z.boolean().default(false),
 });
 export type Post = z.infer<typeof postSchema>;

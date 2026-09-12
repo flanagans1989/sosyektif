@@ -2,6 +2,12 @@ name = "sosyektif-telegram-onay"
 main = "src/index.ts"
 compatibility_date = "2025-01-01"
 
+# Deploy edilen gerçek adres (2026-09-12'de Telegram getWebhookInfo ile
+# doğrulandı — bu Worker, site/domain'in olduğu "Sosyektif@gmail.com's
+# Account" Cloudflare hesabında DEĞİL, "deraks-rental" workers.dev alt alan
+# adına sahip başka bir hesapta deploy edilmiş durumda):
+# https://sosyektif-telegram-onay.deraks-rental.workers.dev
+
 # Yedek tetikleyici: Cloudflare her saat :17'de worker'ı uyandırmaya çalışır.
 # Not (2026-09-11): bu cron Cloudflare dashboard'unda kayıtlı görünmesine
 # rağmen hiç çalışmadı — wrangler tail ile canlı doğrulandı (dakikalık crona

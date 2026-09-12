@@ -19,8 +19,95 @@ import Layout from '../../layouts/Layout.astro';
     <h2>İçerik Kaldırma / Düzeltme Talepleri</h2>
     <p>
       Yayınlanan bir içerikte hatalı bilgi, telif sorunu veya kişilik haklarına ilişkin bir
-      itirazınız varsa lütfen yukarıdaki e-posta adresinden bizimle iletişime geçin. Talepler
-      öncelikli olarak değerlendirilir ve makul sürede yanıtlanır.
+      itirazınız varsa aşağıdaki formu doldurun ya da yukarıdaki e-posta adresinden bize ulaşın.
+      Talepler öncelikli olarak değerlendirilir ve makul sürede yanıtlanır.
     </p>
   </article>
+
+  <form id="bildirim-formu" class="mx-auto mt-2 flex max-w-2xl flex-col gap-4 px-4 pb-16">
+    <div>
+      <label for="sayfaUrl" class="mb-1 block text-sm font-semibold text-murekkep">İlgili sayfa (varsa)</label>
+      <input
+        type="url"
+        id="sayfaUrl"
+        name="sayfaUrl"
+        placeholder="https://sosyektif.com/..."
+        class="w-full rounded-xl border border-black/10 px-4 py-2 focus:border-marka focus:outline-none"
+      />
+    </div>
+    <div>
+      <label for="eposta" class="mb-1 block text-sm font-semibold text-murekkep">E-posta (isteğe bağlı — yanıt istiyorsanız)</label>
+      <input
+        type="email"
+        id="eposta"
+        name="eposta"
+        placeholder="ornek@eposta.com"
+        class="w-full rounded-xl border border-black/10 px-4 py-2 focus:border-marka focus:outline-none"
+      />
+    </div>
+    <div>
+      <label for="mesaj" class="mb-1 block text-sm font-semibold text-murekkep">Mesajınız</label>
+      <textarea
+        id="mesaj"
+        name="mesaj"
+        required
+        minlength="10"
+        rows="5"
+        placeholder="Neyin düzeltilmesini/kaldırılmasını istediğinizi açıklayın…"
+        class="w-full rounded-xl border border-black/10 px-4 py-2 focus:border-marka focus:outline-none"
+      ></textarea>
+    </div>
+    {/* Honeypot: botlar genelde her alanı doldurur, gerçek kullanıcı bunu görmez/doldurmaz. */}
+    <div class="hidden" aria-hidden="true">
+      <label for="web_sitesi">Web siteniz</label>
+      <input type="text" id="web_sitesi" name="web_sitesi" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <button
+      type="submit"
+      class="inline-flex items-center justify-center rounded-full bg-marka px-6 py-3 font-bold text-white transition hover:bg-marka-koyu disabled:opacity-50"
+    >
+      Gönder
+    </button>
+    <p id="bildirim-durum" class="text-sm" role="status"></p>
+  </form>
+
+  <script>
+    const BILDIRIM_UC_NOKTASI = 'https://sosyektif-telegram-onay.deraks-rental.workers.dev/bildir';
+
+    const form = document.getElementById('bildirim-formu') as HTMLFormElement | null;
+    const durum = document.getElementById('bildirim-durum');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const buton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+      const veri = new FormData(form);
+      const gövde = {
+        sayfaUrl: String(veri.get('sayfaUrl') ?? ''),
+        eposta: String(veri.get('eposta') ?? ''),
+        mesaj: String(veri.get('mesaj') ?? ''),
+        web_sitesi: String(veri.get('web_sitesi') ?? ''),
+      };
+
+      if (buton) buton.disabled = true;
+      if (durum) durum.textContent = 'Gönderiliyor…';
+
+      try {
+        const res = await fetch(BILDIRIM_UC_NOKTASI, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(gövde),
+        });
+        if (!res.ok) throw new Error(await res.text());
+        if (durum) durum.textContent = '✅ Talebiniz iletildi, teşekkürler.';
+        form.reset();
+      } catch {
+        if (durum) {
+          durum.textContent = '⚠️ Gönderilemedi. Lütfen sosyektif@gmail.com adresine e-posta atın.';
+        }
+      } finally {
+        if (buton) buton.disabled = false;
+      }
+    });
+  </script>
 </Layout>
