@@ -2,7 +2,7 @@
 
 **Hedef:** onedio.com formatında (liste, "bunu bilmiyordun", quiz) içerik sitesini, minimum insan müdahalesiyle ajanlar tarafından üretip yayınlamak.
 **Ana kısıt:** Zorunlu giderler hariç sıfır maliyet. Zorunlu olan ödenir (şu an sadece domain); "kolaylık" için ücretli servis kullanılmaz.
-**Durum:** Site ve ajan zinciri çalışıyor (Faz 1c). Site özellikleri yol haritası Bölüm 10'da — içerik olgunlaşınca uygulanacak.
+**Durum:** Site ve ajan zinciri çalışıyor (Faz 1c). Site özellikleri (Bölüm 10) büyük ölçüde tamamlandı. Sıradaki: Faz 3 — Trafik Büyümesi (Bölüm 11), içerik kapısı (~150 içerik) açılınca.
 **Son güncelleme:** 2026-09-12
 
 ---
@@ -55,7 +55,7 @@ Reddit RSS'i GitHub Actions gibi bulut IP'lerinden sık sık 403 dönüyor.
 
 **R8 — Yeni domain = aylarca düşük trafik**
 Onedio'nun trafiği büyük oranda sosyal medya + Google Discover. X ücretli oldu, Meta platformları onay süreci istiyor. Yeni domain Google'da aylarca zayıf kalır.
-→ **Çözüm:** Faz 1'de ücretsiz ve onaysız dağıtım: **Telegram kanalı + Bluesky**. Faz 2'de Threads + Instagram + Facebook (tek Meta uygulamasıyla; Türkiye Threads'in en büyük pazarlarından). Discover için 1200px+ görsel + `max-image-preview:large`. Bing/Yandex için IndexNow (Yandex Türkiye'de ciddi pay sahibi). **Beklenti:** ilk 2-3 ay trafik düşük olacak, bu normal.
+→ **Çözüm:** Faz 1'de ücretsiz ve onaysız dağıtım: **Telegram kanalı + Bluesky**. Faz 3'te Threads + Instagram + Facebook (Bölüm 11) (tek Meta uygulamasıyla; Türkiye Threads'in en büyük pazarlarından). Discover için 1200px+ görsel + `max-image-preview:large`. Bing/Yandex için IndexNow (Yandex Türkiye'de ciddi pay sahibi). **Beklenti:** ilk 2-3 ay trafik düşük olacak, bu normal.
 
 ### 🟡 Orta
 
@@ -145,7 +145,7 @@ Orkestratör (GitHub Actions cron, günde ~6 kez)
  ▼
 5. Yayın Ajanı ───── toplu commit → Cloudflare build → IndexNow ping
  ▼
-6. Dağıtım Ajanı ─── Telegram kanalı + Bluesky (Faz 2: Threads/IG/FB)
+6. Dağıtım Ajanı ─── Telegram kanalı + Bluesky (Faz 3: Threads/IG/FB — Bölüm 11)
  ▼
 7. Analitik Ajanı ── (haftalık) Cloudflare + Search Console → kategori ağırlıkları
 ```
@@ -184,7 +184,7 @@ Skor → otomatik yayın / onaya düş / red.
 ### 3.4 Görsel Ajanı
 - Kişi/olay konusu → **tipografik kapak** (yerel üretim, lisans riski yok)
 - Nesne/mekan/kavram → Pexels (insan içermeyen tercih) → Unsplash yedek → tipografik kapak son yedek
-- Çıktı: WebP 1200×675 (Discover için), OG görseli; Faz 2'de Instagram için JPEG 4:5
+- Çıktı: WebP 1200×675 (Discover için), OG görseli; Faz 3'te Instagram için JPEG 4:5 (Bölüm 11.2)
 - Fotoğrafçı kredisi içeriğin frontmatter'ına yazılır
 
 ### 3.5 Yayın Ajanı
@@ -299,12 +299,15 @@ Otomatikleştirilemeyen, hesap/kimlik gerektiren adımlar:
 - Günlük rapor + alarm + otomatik duraklatma aktif
 
 ### Faz 2 — Büyüme
-- Meta entegrasyonu (Threads, Instagram, Facebook)
 - Analitik geri besleme döngüsü aktif
 - Telegram'dan tek tık onay butonları (Cloudflare Worker, ücretsiz katman)
 - **Site özellikleri (Bölüm 10):** kapı koşulları sağlandığında S1'den başlanır — ölçüm/geri besleme, oylama, paylaşılabilir sonuç kartı, mobil format, keşif, güven katmanı
 
-### Faz 3 — Ölçek ve gelir
+### Faz 3 — Trafik Büyümesi
+- Dağıtım onarımı, Threads/Instagram/Facebook, Discover, SEO, hacim artışı — **ayrıntı Bölüm 11**
+- Başlama koşulu: Bölüm 10.0'daki içerik kapısı (~150 içerik)
+
+### Faz 4 — Ölçek ve gelir
 - Reklam/gelir modeli (AdSense başvurusu belirli içerik olgunluğu ister; hazırlığı Bölüm 10 / S8)
 - Dosya limitine yaklaşılırsa görsellerin harici depolamaya taşınması
 - Bütçe olursa X dağıtımı
@@ -562,3 +565,99 @@ anahtarı — kapalıyken hiç DOM'a girmiyor, CWV etkisi sıfır.
 | Web push bildirimi | Telegram + bülten aynı işi ücretsiz yapıyor; gereksiz servis bağımlılığı (R5) |
 | A/B başlık testi | Statik sitede Worker gerektirir; anlamlı sonuç için mevcut trafiğin katı lazım |
 | X (Twitter) dağıtımı | Ücretli (Bölüm 3.6) |
+
+---
+
+## 11. Faz 3 — Trafik Büyümesi (içerik kapısı açıldığında)
+
+**Başlama koşulu:** Bölüm 10.0'daki kapı (~150 içerik). Tek istisna **11.0**: hesap açma ve kullanıcı
+adı ayırma maliyetsiz olduğu için şimdiden yapılabilir.
+
+**Temel varsayım:** Onedio tipi sitelerin trafiğinin çoğu arama motorundan değil, **sosyal medya ve
+Google Discover**'dan gelir. Yeni domainde Google organik araması aylar alır (R8); ilk hareketin
+Threads/Instagram'dan gelmesi beklenir. **Gerçekçi beklenti: anlamlı trafik 3-6 ay.**
+
+### 11.0 Şimdiden yapılabilir (kullanıcı, isteğe bağlı)
+- [ ] `@sosyektif` Instagram hesabı → **Profesyonel (İşletme)** hesaba çevir (API yalnızca profesyonel hesapta paylaşım yapar)
+- [ ] Aynı hesaptan **Threads** profili
+- [ ] **Facebook Sayfası**
+- [ ] **WhatsApp Kanalı** (Türkiye'de Telegram'dan çok daha yaygın)
+
+**Neden erken:** Kullanıcı adı başkası almadan ayrılır; Meta yeni açılıp hemen yoğun otomatik paylaşım
+yapan hesapları şüpheli bulur — birkaç haftalık hesap daha güvenli başlar.
+
+### 11.1 Hafta 1 — Kırık dağıtımı onar (öncelik 1)
+Bölüm 3.6'daki bilinen sorun: onaylanan içerik hiçbir kanala gitmiyor.
+- [ ] Herkese açık Telegram kanalı + `TELEGRAM_PUBLIC_CHANNEL_ID` secret'ı
+- [ ] Onay Worker'ı → GitHub Actions'ta "onaylananı dağıt" workflow'unu tetikler (Worker'ın `Actions: write` yetkisi var)
+- [ ] WhatsApp Kanalı: resmi otomatik gönderim API'si sınırlı; ilk aşamada günlük özet elle paylaşılır
+
+**Bitti kriteri:** Telegram'dan onaylanan bir içerik birkaç dakika içinde Telegram kanalı + Bluesky'de görünüyor.
+
+### 11.2 Ay 1-2 — Threads + Instagram + Facebook
+Üçü tek bir Meta uygulamasıyla bağlanır. Türkiye, Threads'in en büyük pazarlarından.
+
+**Kullanıcı adımları (Chrome'da birlikte, giriş/onayları kullanıcı yapar):**
+- [ ] developers.facebook.com geliştirici hesabı (telefon doğrulaması isteyebilir)
+- [ ] Uygulama oluştur; kullanım senaryoları: **Threads API** + **Instagram içerik yönetimi**
+- [ ] Instagram ve Threads hesaplarını **test kullanıcısı** olarak ekle, davetleri uygulama ayarlarından kabul et
+
+Sadece kendi hesaplarımıza paylaşım yapıldığı için **Meta App Review gerekmez** — uygulama geliştirme
+modunda, test kullanıcısı rolüyle kalır.
+
+**Mühendislik işleri:**
+- [ ] **JPEG çıktısı:** Instagram API yalnızca JPEG kabul ediyor; kapaklar şu an WebP
+- [ ] **1080×1350 dikey carousel şablonu** (satori altyapısı mevcut). Mevcut 1200×630 kapaklar akışta küçük kalıyor. Format bazında:
+  - Liste/trivia → her madde bir slayt (en fazla 10)
+  - Quiz → soru kartları, son slayt "Cevaplar ve skorun için sitede"
+  - Kişilik testi → merak uyandıran tek kart
+- [ ] **Geçici görsel barındırma:** Meta görseli herkese açık URL'den çeker → görsel siteye geçici yüklenir, paylaşım sonrası silinir (R9'daki 20.000 dosya sınırına takılmamak için)
+- [ ] `agents/src/distribute/threads.ts` + `instagram.ts` + Facebook Sayfası adaptörü (Bölüm 3.6 deseni)
+- [ ] **Platforma özel metin:** aynı açıklama kopyalanmaz — Threads kısa/sohbet havasında + link, Instagram hashtag'li + "Link profilde"
+- [ ] **Token yenileme:** Meta uzun ömürlü token'ları 60 günde yenilenmeli, yoksa paylaşım sessizce durur (R12). Token KV'de (`METRIKLER` ya da ayrı namespace) tutulur, Worker'ın saatlik tetikleyicisi yeniler; süresi yaklaşınca Telegram uyarısı
+- [ ] **`/bio` sayfası:** Instagram açıklamasındaki linkler tıklanamıyor; Linktree yerine sitede son içerikleri listeleyen sayfa, profil linki buraya
+
+| | Threads | Instagram |
+|---|---|---|
+| Link | Tıklanabilir → doğrudan trafik | Açıklamada tıklanamaz |
+| En iyi çalışan | Soru ile başlayan kısa kanca + link | Kaydırmalı gönderi (kaydetme/paylaşma algoritmayı besler) |
+| Trafik yolu | Doğrudan link | Profil linki → `/bio` |
+| Günlük limit | 250 gönderi | ~50 (Meta zaman zaman değiştiriyor) |
+
+**Kurallar:**
+- **Isınma:** ilk 2 hafta günde 1-2 gönderi, sonra kademeli artış. İlk günden günde 10 otomatik gönderi = hesap kısıtlaması riski
+- **Yorumlara cevap insan işi:** ilk aylarda etkileşimin asıl motoru; otomatik bot cevabı riskli ve samimiyetsiz
+- **Kaynak notu:** Wikipedia kaynaklı içerikte açıklamaya kısa kaynak; Pexels görselleri sosyal medyada serbest
+
+**Format ağırlığı:** Kişilik testleri Türkiye'de en çok paylaşılan format (sonuç kartı + "meydan oku" hazır).
+Üretimde bu formatın payı artırılır.
+
+**Bitti kriteri:** İki hafta boyunca otomatik paylaşım kesintisiz; token yenileme en az bir kez otomatik çalışmış.
+
+### 11.3 Google Discover
+Yeni domainde organik aramadan daha hızlı sonuç verebilir.
+- Teknik şartlar **hazır:** 1200px görsel, `max-image-preview:large`, görünür yayın tarihi, E-E-A-T sayfaları (S7)
+- [ ] **Gündem hızı:** Discover taze konuyu ödüllendirir. Pipeline şu an iki içerik arası en az 3 saat bekliyor; gündem kaynaklı adaylar (Google Trends/News) için bu aralığı atlayan hızlı yol
+- Başlık merak uyandırsın, yanıltmasın — hakem modeli `baslikYaniltici` kontrolünü zaten yapıyor
+
+### 11.4 Ay 2-3 — SEO (yavaş ama kalıcı)
+- [ ] **Konu kümeleri:** `seri` alanı (S6) ile birbirine bağlı içerik grupları — Google konu otoritesini böyle anlıyor. Trend Ajanı mevcut bir seriyi sürdürmeyi tercih edebilsin
+- [ ] **Arama niyeti odaklı evergreen:** "... hakkında ilginç bilgiler", "... testi" gibi gerçekten aranan kalıplar; Search Console gösterim verisi (analitik ajanı zaten çekiyor) hangi sorgulara yaklaştığımızı gösterir
+- [ ] **Link çekecek özgün içerik:** trend verisinden başka yerde olmayan derlemeler (örn. "2026'da Türkiye'nin en çok merak ettiği 20 konu") — sıfır maliyetli tek gerçekçi backlink yolu
+- [ ] **Özel günler:** `data/ozel-gunler.json` → içerik günden **5-7 gün önce** yayında olmalı ki indekslensin (`oncedenGun` alanı kontrol edilir)
+
+### 11.5 Hacmi kademeli artır
+- [ ] Kalite metrikleri iyi giderse günde 5 → 10-15 içerik (`gunlukHedefIcerikSayisi`)
+- **R1 riski burada en yüksek:** her artıştan sonraki 2 hafta Search Console gösterimleri izlenir; düşüş görülürse geri çekilir
+
+### 11.6 Sürekli — Ölçüm döngüsü
+- [ ] Haftalık analitik kategori ağırlıklarına ek olarak **format ağırlığı** ve **tepki barı verisi** (hangi format daha çok tepki alıyor)
+- [ ] Sosyal platformlarda aynı içerik iki farklı başlıkla denenir; tutan başlık sitede kullanılır
+
+### 11.7 Bilinçli olarak önerilmeyenler
+| Yöntem | Neden |
+|---|---|
+| Forum/Reddit/Ekşi Sözlük'e otomatik paylaşım | Spam kurallarına takılır, itibar zedeler. Yapılacaksa elle ve seyrek |
+| Mynet tarzı agresif reklam (interstitial, içerik içi video) | Hızı ve kullanıcı deneyimini öldürür; yeni site bunu marka gücüyle affettiremez (S8) |
+| "Devamını oku" tıklat-göster, sayfa bölme | Sahte sayfa görüntüleme; R1 (scaled content abuse) riskini artırır |
+| X (Twitter) | Ücretli (Bölüm 3.6) |
