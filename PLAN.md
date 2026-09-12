@@ -358,7 +358,7 @@ Her adım bitip **1 hafta veriyle doğrulandıktan sonra** bir sonrakine geçili
 | # | Adım | Bağımlılık | Durum |
 |---|---|---|---|
 | S1 | Ölçüm → ajana geri besleme | — | ✅ Sayfa görüntüleme + Search Console geri beslemesi zaten koddaymış (fark edilmemiş). ⏳ Etkileşim sayaçları (oy/tepki) S2'nin KV'sini bekliyor |
-| S2 | Oylama/anket + tepki barı | S1 (aynı KV) | 🚫 **Bloke** — Cloudflare KV namespace'i gerekiyor, kullanıcı oluşturup ID vermeyi bekliyoruz |
+| S2 | Oylama/anket + tepki barı | S1 (aynı KV) | ✅ Tepki barı + KV altyapısı tamamlandı. 🚫 Anket formatı bilerek yapılmadı (üretim pipeline riski) |
 | S3 | Quiz/test sonuç kartı + skor OG | — | ✅ Zaten tamamlanmıştı (canvas tabanlı `sonucKarti.ts`, "meydan oku" linki, WhatsApp paylaşımı) — plandan daha iyi bir çözümdü |
 | S4 | Mobil kaydırmalı kart + sonsuz akış | — | ✅ Okuma ilerleme çubuğu + mobil kaydırmalı kart (2026-09-12). Gerçek "sonsuz akış" bilinçli olarak yapılmadı (bkz. altı) |
 | S5 | Alışkanlık: seri + bülten | — | ✅ Seri (streak) zaten tamamlanmıştı (`gunun-sorusu`). 🚫 Bülten **bloke** — e-posta servisi hesabı gerekiyor |
@@ -399,9 +399,14 @@ ağırlıklar" görünüyor ve `category-weights.json` en az bir kez otomatik de
 ---
 
 ### S2 — Oylama / anket + tepki barı
-**Durum: bloke.** Cloudflare KV namespace'i gerekiyor — kullanıcı dashboard'dan
-oluşturup ID'yi verdiğinde uygulanacak. Diğer tüm S-adımları (S1 kalanı hariç) bu koşulmadan
-tamamlandı.
+**Durum: ✅ tepki barı tamamlandı (2026-09-12), 🚫 anket formatı bilerek yapılmadı.**
+KV namespace'i (`sosyektif_metrikler`, deraksizolasyon hesabı, ID `fdb4338b9f094a2083dcb827207c2d80`)
+oluşturuldu, Worker'a `METRIKLER` binding'i olarak bağlandı. `POST /tepki` ve
+`GET /tepki-sonuc?slug=` uç noktaları canlı; her içeriğin altında 4 emoji tepki
+(şaşırdım/güldüm/inanmadım/bilgilendim), localStorage ile çift oy engeli. Gerçek istekle
+uçtan uca doğrulandı. **Yeni "anket" içerik formatı bilerek yapılmadı** — canlı otonom
+içerik üretim pipeline'ının prompt'larına/şemasına dokunmayı gerektiriyor, bu risk şu an
+değere değmiyor; tepki barı S2'nin asıl sinyal değerini zaten sağlıyor.
 
 **Amaç:** Onedio'nun asıl motoru liste değil, **"sence?" oylaması**. Canlı yüzde sonucu
 ("%68'i seninle aynı düşünüyor") hem geri dönüş hem paylaşım üretir. giscus yorumları GitHub
