@@ -52,5 +52,14 @@
     "format": "trivia",
     "yayinTarihi": "2026-09-11T20:01:11.594Z",
     "otomatikYayinlandi": false
+  },
+  {
+    "slug": "yapay-zeka-hakkindaki-bilgini-test-et-ne-kadar-sey-biliyorsun",
+    "baslik": "Yapay Zeka Hakkındaki Bilgini Test Et: Ne Kadar Şey Biliyorsun?",
+    "konuParmakIzi": "yapay zeka",
+    "kategori": "teknoloji",
+    "format": "quiz",
+    "yayinTarihi": "2026-09-12T00:09:59.835Z",
+    "otomatikYayinlandi": false
   }
 ]
