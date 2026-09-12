@@ -1,8 +1,14 @@
+import { writeFile, mkdir } from "node:fs/promises";
+import path from "node:path";
 import { fetchPageviewsByPath } from "./cloudflare.js";
 import { fetchSearchConsoleClicksByPath } from "./searchConsole.js";
 import { readPublishedIndex, writeCategoryWeights } from "../lib/state.js";
 import { KATEGORILER } from "../lib/schemas.js";
 import { notifyAdmin } from "../lib/telegram.js";
+import { SITE_DIR } from "../lib/paths.js";
+
+const EN_COK_OKUNAN_YOL = path.join(SITE_DIR, "src", "data", "en-cok-okunan.json");
+const EN_COK_OKUNAN_LIMIT = 6;
 
 /**
  * Site yeniyken (az yazı varken) tek bir erken yazının şansına aldığı
@@ -68,8 +74,36 @@ export async function updateCategoryWeights(): Promise<Record<string, number>> {
   return agirliklar;
 }
 
+/**
+ * "Bu hafta en çok okunanlar" (PLAN.md Bölüm 10 / S6): son 7 günün Cloudflare
+ * sayfa görüntülemelerinden en çok okunan N içerik, Astro'nun build zamanında
+ * doğrudan import ettiği bir JSON dosyasına yazılır (burc.ts'teki desenin
+ * aynısı). Site tamamen statik kaldığı için çalışma zamanında sorgu yok.
+ */
+export async function updateEnCokOkunanlar(): Promise<void> {
+  const [pageviews, publishedIndex] = await Promise.all([fetchPageviewsByPath(), readPublishedIndex()]);
+
+  const baslikBySlug = new Map(publishedIndex.map((e) => [e.slug, e.baslik]));
+
+  const siralanan = Object.entries(pageviews)
+    .filter(([slug]) => baslikBySlug.has(slug))
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, EN_COK_OKUNAN_LIMIT)
+    .map(([slug, goruntulenme]) => ({ slug, baslik: baslikBySlug.get(slug)!, goruntulenme }));
+
+  await mkdir(path.dirname(EN_COK_OKUNAN_YOL), { recursive: true });
+  await writeFile(
+    EN_COK_OKUNAN_YOL,
+    JSON.stringify({ guncellemeTarihi: new Date().toISOString(), icerikler: siralanan }, null, 2) + "\n",
+    "utf-8"
+  );
+}
+
 async function main() {
   const agirliklar = await updateCategoryWeights();
+  await updateEnCokOkunanlar().catch((err) =>
+    console.error("[analytics] en-cok-okunan güncellenemedi:", err)
+  );
   const ozet = Object.entries(agirliklar)
     .sort((a, b) => b[1] - a[1])
     .map(([k, v]) => `${k}: ${v.toFixed(2)}`)

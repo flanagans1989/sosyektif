@@ -2,11 +2,18 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import PostCard from '../components/PostCard.astro';
+import enCokOkunanVerisi from '../data/en-cok-okunan.json';
 
 const tumYazilar = await getCollection('posts', ({ data }) => !data.taslak);
 const yazilar = tumYazilar.sort(
   (a, b) => b.data.yayinTarihi.valueOf() - a.data.yayinTarihi.valueOf()
 );
+
+// Haftalık Analitik Ajanı'nın ürettiği liste (PLAN.md Bölüm 10 / S6) — henüz
+// veri yoksa (yeni site) ya da eşleşen yazı silinmişse bölüm hiç görünmez.
+const enCokOkunan = enCokOkunanVerisi.icerikler
+  .map((girdi) => tumYazilar.find((y) => y.id === girdi.slug))
+  .filter((y): y is (typeof tumYazilar)[number] => Boolean(y));
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -43,6 +50,15 @@ const jsonLd = {
       </p>
     </div>
   </section>
+
+  {enCokOkunan.length > 0 && (
+    <section class="mx-auto max-w-6xl px-4 pt-10">
+      <h2 class="mb-4 text-xl font-bold text-murekkep">🔥 Bu Hafta En Çok Okunanlar</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {enCokOkunan.map((yazi) => <PostCard post={yazi} />)}
+      </div>
+    </section>
+  )}
 
   <section class="mx-auto max-w-6xl px-4 py-10">
     {yazilar.length === 0 ? (

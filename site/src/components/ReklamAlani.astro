@@ -1,0 +1,24 @@
+---
+/**
+ * Boş reklam slotu (PLAN.md Bölüm 10 / S8). REKLAM_AKTIF false olduğu
+ * sürece render edilmez — tasarımda yer ayrılmış olur ama hiçbir
+ * görsel/performans etkisi olmaz. AdSense (veya başka bir sağlayıcı)
+ * açıldığında burada gerçek reklam kodu render edilir.
+ */
+import { REKLAM_AKTIF } from '../lib/config';
+
+interface Props {
+  konum: 'icerik-ustu' | 'icerik-arasi';
+}
+
+const { konum } = Astro.props;
+---
+
+{REKLAM_AKTIF && (
+  <div
+    class="my-6 flex min-h-24 items-center justify-center rounded-2xl border border-dashed border-black/10 bg-black/[0.02] text-xs text-murekkep/40"
+    data-reklam-konum={konum}
+  >
+    Reklam Alanı
+  </div>
+)}
