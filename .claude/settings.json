@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude-in-chrome__get_page_text",
+      "mcp__claude-in-chrome__find",
+      "mcp__claude-in-chrome__tabs_context_mcp",
+      "mcp__claude_ai_Gmail__search_threads",
+      "mcp__claude-in-chrome__read_page",
+      "Bash(gh secret list *)",
+      "Bash(npm run typecheck)",
+      "mcp__claude_ai_Gmail__get_thread",
+      "mcp__claude-in-chrome__read_console_messages",
+      "mcp__claude-in-chrome__read_network_requests",
+      "mcp__claude_ai_Gmail__list_drafts"
+    ]
+  }
+}

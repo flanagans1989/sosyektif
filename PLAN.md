@@ -2,8 +2,8 @@
 
 **Hedef:** onedio.com formatında (liste, "bunu bilmiyordun", quiz) içerik sitesini, minimum insan müdahalesiyle ajanlar tarafından üretip yayınlamak.
 **Ana kısıt:** Zorunlu giderler hariç sıfır maliyet. Zorunlu olan ödenir (şu an sadece domain); "kolaylık" için ücretli servis kullanılmaz.
-**Durum:** Planlama tamamlandı, uygulama başlamadı.
-**Son güncelleme:** 2026-09-10
+**Durum:** Site ve ajan zinciri çalışıyor (Faz 1c). Site özellikleri yol haritası Bölüm 10'da — içerik olgunlaşınca uygulanacak.
+**Son güncelleme:** 2026-09-12
 
 ---
 
@@ -74,6 +74,10 @@ Gündem konuları belirli kişiler/olaylar hakkında; Pexels'te bunlar yok. Stok
 
 **R13 — Türkçe karakterler / içerik tekrarı**
 → **Çözüm:** Türkçe slug dönüşümü (ç→c, ğ→g, ı→i, ö→o, ş→s, ü→u); yayınlanmış konuların parmak izi dizini ile kendi içeriğimizin tekrarı engellenir.
+
+**R14 — Cloudflare KV ücretsiz katman yazma limiti (günde ~1.000 yazma)**
+Bölüm 10'daki etkileşim özellikleri (oylama, tepki, tamamlanma sayacı) olay başına KV yazarsa limit ilk yüz ziyaretçide dolar ve sayaçlar sessizce durur.
+→ **Çözüm:** Olay başına yazma yok; `gun:slug:olay` anahtarlarında gün içinde biriktirme, sayfa görüntülemenin Web Analytics'ten okunması, limite yaklaşınca Telegram alarmı (bkz. Bölüm 10 / S1).
 
 ---
 
@@ -288,9 +292,10 @@ Otomatikleştirilemeyen, hesap/kimlik gerektiren adımlar:
 - Meta entegrasyonu (Threads, Instagram, Facebook)
 - Analitik geri besleme döngüsü aktif
 - Telegram'dan tek tık onay butonları (Cloudflare Worker, ücretsiz katman)
+- **Site özellikleri (Bölüm 10):** kapı koşulları sağlandığında S1'den başlanır — ölçüm/geri besleme, oylama, paylaşılabilir sonuç kartı, mobil format, keşif, güven katmanı
 
 ### Faz 3 — Ölçek ve gelir
-- Reklam/gelir modeli (AdSense başvurusu belirli içerik olgunluğu ister)
+- Reklam/gelir modeli (AdSense başvurusu belirli içerik olgunluğu ister; hazırlığı Bölüm 10 / S8)
 - Dosya limitine yaklaşılırsa görsellerin harici depolamaya taşınması
 - Bütçe olursa X dağıtımı
 
@@ -310,3 +315,192 @@ Otomatikleştirilemeyen, hesap/kimlik gerektiren adımlar:
 4. ✅ Konu kara listesi (Bölüm 5) olduğu gibi onaylandı
 
 Tüm kararlar alındı; plan uygulamaya hazır.
+
+---
+
+## 10. Site Özellikleri Yol Haritası (Faz 2.5 — içerik olgunlaştıkça)
+
+Bu bölümdeki özellikler **şimdi yapılmaz.** Otonom zincirin asıl işi içerik üretmek; bu özelliklerin
+hiçbiri içerik azken değer üretmez (boş bir sitede "en çok okunanlar" da, oylama da anlamsızdır).
+Aşağıdaki kapı açıldığında, **sırayla ve tek tek** uygulanır.
+
+### 10.0 Başlama kapısı
+Hepsi sağlandığında S1'e başlanır:
+- [ ] En az **~150 yayınlanmış içerik** (günde 5 ile ~1 ay)
+- [ ] Search Console'da indekslenmiş sayfa oranı **> %70**
+- [ ] Günlük **en az ~100 ziyaret** (ölçüm için anlamlı taban; altında veri gürültüden ayrılmaz)
+- [ ] Faz 1c istikrarlı: 2 hafta boyunca otomatik duraklatma tetiklenmemiş
+
+Kapı açılmadan tek istisna **S7 (güven katmanı)**: o, trafikten bağımsız olarak R1/R3 savunması
+olduğu için gerekirse sıradan öne alınabilir.
+
+### 10.1 Sıra ve gerekçe
+Sıra keyfi değil: S1 sisteme **göz** verir (ajan neyin tuttuğunu öğrenir), S2-S3 **bedava dağıtım**
+sağlar, S4-S6 oturumu uzatır, S7 cezaya karşı sigortadır, S8 geliri hazırlar.
+Her adım bitip **1 hafta veriyle doğrulandıktan sonra** bir sonrakine geçilir; aynı anda iki adım açılmaz.
+
+| # | Adım | Bağımlılık | Tahmini iş |
+|---|---|---|---|
+| S1 | Ölçüm → ajana geri besleme | — | 2-3 gün |
+| S2 | Oylama/anket + tepki barı | S1 (aynı KV) | 2 gün |
+| S3 | Quiz/test sonuç kartı + skor OG | — | 1-2 gün |
+| S4 | Mobil kaydırmalı kart + sonsuz akış | — | 2 gün |
+| S5 | Alışkanlık: seri + bülten | — | 1-2 gün |
+| S6 | Keşif: etiket, en çok okunanlar, seriler | S1 (en çok okunanlar için) | 2 gün |
+| S7 | Güven katmanı (E-E-A-T + hukuki) | — | 1-2 gün |
+| S8 | Gelir hazırlığı | S1..S6 | 1 gün |
+
+---
+
+### S1 — Kendi ölçümü ve ajana geri besleme
+**Amaç:** Ajanlar şu an konu seçerken hangi içeriğin tuttuğunu bilmiyor. Bu döngü kurulmazsa sistem
+yıllarca aynı körlükte içerik basar. Bölüm 3.7'deki Analitik Ajanı'nın eksik kalan ayağı budur.
+
+**Ne yapılır**
+- **Sayfa görüntüleme / arama performansı:** Cloudflare Web Analytics GraphQL API + Search Console API
+  (zaten planda, Bölüm 3.7). Yeni altyapı gerekmez, sadece ajan tarafı yazılır.
+- **Etkileşim olayları:** mevcut `worker/telegram-onay` Worker'ına bir KV namespace (`METRIKLER`) ve
+  `POST /olay` uç noktası eklenir. Olay türleri: `tamamlandi` (yazının sonuna gelindi),
+  `quiz_bitti`, `oy`, `tepki`.
+- **Yazma limiti kısıtı (bkz. R14):** KV ücretsiz katmanı **günde ~1.000 yazma** verir. Bu yüzden
+  olay başına yazma **yapılmaz**; anahtar `gun:slug:olay` biçiminde tutulur ve gün içinde
+  biriktirilir → yazma sayısı "o gün etkileşim alan içerik sayısı" kadar olur (günde 5 içerikle
+  rahat sığar). Sayfa görüntüleme sayacı KV'ye **hiç** yazılmaz, o Web Analytics'ten gelir.
+- **Geri besleme:** Analitik Ajanı haftalık çalışır → `data/performance.json` üretir →
+  `data/category-weights.json` ve format ağırlıklarını günceller → Trend Ajanı bir sonraki hafta
+  buna göre seçer. Ağırlık değişimi **tek seferde en fazla ±%20** ile sınırlanır (tek haftalık
+  gürültünün konu havuzunu bozmasını engeller).
+- **Gizlilik:** çerez yok, IP saklanmaz, kullanıcı kimliği yok — yalnızca sayaç. KVKK açısından
+  gizlilik politikasına tek paragraf eklenir.
+
+**Bitti kriteri:** Telegram'a düşen haftalık raporda "en iyi/en kötü 5 içerik + güncellenen
+ağırlıklar" görünüyor ve `category-weights.json` en az bir kez otomatik değişmiş.
+
+---
+
+### S2 — Oylama / anket + tepki barı
+**Amaç:** Onedio'nun asıl motoru liste değil, **"sence?" oylaması**. Canlı yüzde sonucu
+("%68'i seninle aynı düşünüyor") hem geri dönüş hem paylaşım üretir. giscus yorumları GitHub
+hesabı istediği için sürtünmesi yüksek; tepki barı ise tek tıklık ve en iyi kalite sinyali.
+
+**Ne yapılır**
+- Yeni içerik formatı: **anket** (`format: anket`) — içerik şemasına (`site/src/content.config.ts`)
+  eklenir, İçerik Ajanı'na prompt ve zod şeması yazılır.
+- Her içeriğin altına **tepki barı**: şaşırdım / güldüm / inanmadım / bilgilendim.
+- Oy ve tepki S1'deki aynı Worker + KV üzerinden; sonuçlar `GET /sonuc?slug=` ile okunur.
+- Çift oy kontrolü localStorage ile (kesin değil, yeterli — amaç sinyal toplamak, seçim yapmak değil).
+- **Kötüye kullanım:** slug başına dakikalık oran sınırı, yalnızca bilinen slug'lar kabul edilir
+  (build'de üretilen slug listesi Worker'a verilir), gövde boyutu sınırı.
+
+**Bitti kriteri:** Anket formatında en az 10 içerik yayında ve etkileşim oranı (oy/görüntüleme)
+haftalık raporda izleniyor.
+
+---
+
+### S3 — Quiz/kişilik testi sonuç kartı + skora özel OG görseli
+**Amaç:** Quiz ve kişilik testinin tek gerçek viral mekanizması, paylaşılabilir sonuçtur.
+"18/20 doğru bildim" kartı bedava dağıtım demek.
+
+**Ne yapılır**
+- Sonuç URL'i: `/<slug>/?skor=4` — sonuç ekranı doğrudan paylaşılabilir olur.
+- OG görseli **build sırasında önceden üretilir**: quiz 5-6 soruluk olduğu için olası her skor için
+  (0..N) tek bir `satori` çıktısı yeterli. Site statik kaldığı için çalışma zamanında görsel
+  üretmeye gerek yok — bu, dinamik OG'nin bütün karmaşasını ortadan kaldırır.
+- Kişilik testinde aynı yaklaşım: her sonuç tipi için bir kart (`site/src/lib/sonucKarti.ts`
+  zaten var, OG üretimiyle birleştirilir).
+- Paylaş butonları (`ShareButtons.astro`) skorlu URL'i kullanacak şekilde güncellenir.
+
+**Bitti kriteri:** Skorlu bir URL Telegram/Bluesky/WhatsApp önizlemesinde doğru kartı gösteriyor.
+
+---
+
+### S4 — Mobil format: kaydırmalı kartlar + sonsuz akış
+**Amaç:** Trafiğin ~%85'i mobil olacak. Oturum süresini en çok etkileyen iki değişiklik.
+
+**Ne yapılır**
+- `ListeIcerik.astro` için ikinci bir görünüm: liste maddelerini **tek tek kaydırılan kart**
+  (CSS scroll-snap, JS'siz çalışır; ilerleme göstergesi küçük bir island).
+- Okuma ilerleme çubuğu (üstte ince şerit).
+- `SiradakiIcerik.astro` sayfa sonunda **otomatik yüklenir** (IntersectionObserver + fetch) →
+  sonsuz akış. Tarayıcı adresi `history.replaceState` ile güncellenir ki geri tuşu bozulmasın.
+- Sonsuz akış yalnızca mobilde ve en fazla 3 içerik derinliğinde (sayfa ağırlığı ve Core Web
+  Vitals bozulmasın).
+
+**Bitti kriteri:** Web Analytics'te mobil ortalama oturum süresi ölçülebilir şekilde artmış
+(karşılaştırma için S4 öncesi 1 haftalık taban kaydedilir).
+
+---
+
+### S5 — Alışkanlık: seri (streak) + bülten
+**Amaç:** `gunun-sorusu` var ama geri gelme sebebi yok. Yeni domain Google'da aylarca zayıf
+kalacağı için (R8) doğrudan kanal kurmak zorunlu.
+
+**Ne yapılır**
+- **Seri:** "7 gün üst üste doğru bildin" — localStorage tabanlı, hesap gerekmez. Seri kartı
+  paylaşılabilir (S3'teki OG altyapısı kullanılır).
+- **Günlük bülten:** Telegram kanalı zaten var; e-posta için ücretsiz katmanlı bir servis
+  (ör. Buttondown/MailerLite) — abonelik formu + günlük özetin otomatik gönderimi.
+  Form eklendiği an **KVKK aydınlatma metni güncellenmek zorunda** (Bölüm 5'teki "Faz 1'de form ve
+  çerez yok" varsayımı geçersiz olur).
+- Bülten gönderimi Dağıtım Ajanı'na yeni bir adaptör olarak eklenir (Bölüm 3.6 deseni).
+
+**Bitti kriteri:** 2 hafta üst üste otomatik bülten gitmiş, abone sayısı raporda izleniyor.
+
+---
+
+### S6 — Keşif
+**Amaç:** Kategori çok kaba bir kırılım; 500+ içerikte arşiv keşfedilmez hale gelir.
+
+**Ne yapılır**
+- **Etiket sayfaları:** `etiketler` alanı şemada **zaten var** ama sayfası yok →
+  `site/src/pages/etiket/[etiket]/index.astro` + içerik altında etiket çipleri.
+- **"Bugün/bu hafta en çok okunanlar":** S1'deki sayaçtan bedava gelir; ana sayfa ve kenar bloğu.
+- **Seriler/dosyalar:** aynı konuyu sürdüren içerikleri bir koleksiyonda toplama (ör. "Uzay Dosyası").
+  İçerik şemasına isteğe bağlı `seri` alanı; Trend Ajanı mevcut bir seriyi sürdürmeyi tercih edebilir.
+- **Arama:** Pagefind zaten kurulu (`build` script'inde) — `ara/` sayfasında sonuç kalitesi,
+  etiket/kategori filtresi ve boş sonuç davranışı gözden geçirilir.
+
+**Bitti kriteri:** Etiket ve seri sayfaları sitemap'te ve Search Console'da indekslenmiş.
+
+---
+
+### S7 — Güven katmanı (E-E-A-T + hukuki) — trafikten bağımsız, gerekirse öne alınır
+**Amaç:** R1 (scaled content abuse) ve R3 (hukuki risk) karşısındaki en somut savunma.
+Editoryal politika sayfası var; eksikleri tamamlanır.
+
+**Ne yapılır**
+- **Künye/yazar sayfası:** içeriği kimin ürettiği ve denetlediği, iletişim (5651 md. 3 zorunluluğu
+  Bölüm 5'te; hukukçu teyidi hâlâ bekliyor).
+- **Kaynaklar bölümü her içerikte görünür** — üretimde zaten toplanıyor, ama okuyucuya net
+  gösterilmesi hem güven hem R2 savunması.
+- **Yayın + güncelleme tarihi** her içerikte görünür ve JSON-LD'de (`dateModified`).
+- **Düzeltme (errata) kaydı:** düzeltilen içeriğin altında "2026-10-03'te düzeltildi: ..." notu ve
+  `/duzeltmeler` sayfası. Otomatik yayın yapan bir site için en güçlü iyi niyet göstergesi.
+- **Düzeltme/kaldırma talep formu:** şu an yalnızca e-posta var; form → Telegram'a düşer
+  (Bölüm 5'teki prosedürün kullanıcı tarafı).
+
+**Bitti kriteri:** Künye, kaynaklar, `dateModified` ve `/duzeltmeler` yayında; kaldırma talebi
+uçtan uca bir kez test edilmiş.
+
+---
+
+### S8 — Gelir hazırlığı
+**Ne yapılır**
+- `Layout.astro`'ya **boş reklam slotları** (içerik üstü, içerik arası, kenar) şimdiden ayrılır ki
+  sonradan tasarım bozulmasın; slotlar bir konfig anahtarıyla kapalı durur.
+- AdSense başvurusu belirli içerik olgunluğu ister → S1..S6 bitip trafik istikrara kavuştuğunda.
+- Reklam açıldıktan sonra Core Web Vitals yeniden ölçülür; LCP bozulursa slot kaldırılır
+  (hız, bu sitenin tek rekabet avantajı).
+
+**Bitti kriteri:** Slotlar yerinde, kapalı ve CWV etkisi ölçülmüş.
+
+---
+
+### 10.2 Bilinçli olarak sonraya bırakılanlar
+| Özellik | Neden şimdi değil |
+|---|---|
+| Kullanıcı hesabı / giriş | Statik + sıfır maliyet kısıtını en çok zorlayan şey; trafik olmadan değeri yok |
+| Kullanıcı içeriği gönderme (UGC) | Moderasyon yükü + hukuki sorumluluk; ajan zinciri oturmadan açılmaz |
+| Web push bildirimi | Telegram + bülten aynı işi ücretsiz yapıyor; gereksiz servis bağımlılığı (R5) |
+| A/B başlık testi | Statik sitede Worker gerektirir; anlamlı sonuç için mevcut trafiğin katı lazım |
+| X (Twitter) dağıtımı | Ücretli (Bölüm 3.6) |
