@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-09-11",
+  "tarih": "2026-09-12",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1816,
-      "baslik": "Carl Zeiss doğdu: Hâlâ ayakta olan optik devinin kurucusu",
-      "metin": "Alman bilimsel alet yapımcısı ve optisyen Carl Zeiss dünyaya geldi. 1846’da kurduğu atölye bugün hâlâ faaliyette; yani mikroskop merceğine ya da fotoğraf makinesi objektifine “Zeiss” yazısını gördüğünüzde, 180 yıllık bir hikâyeye bakıyorsunuz.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Carl_Zeiss"
+      "yil": 1885,
+      "baslik": "Arbroath - Bon Accord Maçı",
+      "metin": "İskoçya Kupası'nda Arbroath ile Bon Accord arasında oynanan maç 36-0 sona erdi. Bu skor, profesyonel futbol tarihindeki en farklı galibiyet olarak kırılması güç bir rekor bıraktı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/1885%E2%80%9386_Scottish_Cup"
     },
     {
-      "yil": 1862,
-      "baslik": "O. Henry doğdu: Asıl adı William Sydney Porter olan öykü ustası",
-      "metin": "Asıl adı William Sydney Porter olan ve önde gelen takma adıyla bilinen Amerikalı yazar O. Henry dünyaya geldi. Edebiyat dünyasında özellikle \"Noel Hediyesi\" gibi unutulmaz kısa öyküleriyle tanınan yazar, modern öykücülüğün en önemli isimlerinden biri haline geldi.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/O._Henry"
+      "yil": 1933,
+      "baslik": "Nükleer Zincirleme Reaksiyon Fikri",
+      "metin": "Macar asıllı fizikçi Leo Szilard, Londra'da bir trafik ışığında beklerken nükleer zincirleme reaksiyon fikrini akletti. Bu ani ilham, nükleer fiziğin ve modern bilimin seyrini tamamen değiştirdi.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Leo_Szilard"
     },
     {
-      "yil": 1893,
-      "baslik": "Swami Vivekananda'nın Chicago'daki Hinduizm konuşması",
-      "metin": "Swami Vivekananda, Chicago'daki ilk Dünya Dinleri Parlamentosu'nun açılış gününde Hinduizm'i tanıtan tarihi bir konuşma yaptı. Bu önemli konuşma, Doğu felsefesinin ve Hinduizm'in Batı dünyasında tanınmasında dönüm noktası oldu.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Swami_Vivekananda"
+      "yil": 1940,
+      "baslik": "Lascaux Mağarası",
+      "metin": "Fransa'da dört genç tarafından keşfedilen Lascaux Mağarası, duvarlarında yer alan 17 bin yıllık büyüleyici resimlerle arkeoloji dünyasını sarstı. Tarih öncesi sanatın en muazzam örneklerinden biri olan mağara, insanlık tarihine ışık tuttu.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Fransa"
+    },
+    {
+      "yil": 1958,
+      "baslik": "İlk Entegre Devre",
+      "metin": "Jack Kilby, Texas Instruments'ta çalışırken ilk çalışan entegre devre gösterimini başarıyla gerçekleştirdi. Bu devrim niteliğindeki buluş, modern elektronik dünyasının temelini attı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Jack_Kilby"
     },
     {
       "yil": 1992,
-      "baslik": "TEMA Vakfı İstanbul'da kuruldu",
-      "metin": "Türkiye Erozyonla Mücadele Ağaçlandırma ve Doğal Varlıkları Koruma Vakfı, Hayrettin Karaca ve Nihat Gökyiğit tarafından İstanbul'da kuruldu. Vakıf, ülkenin çevre sorunlarına ve erozyon tehlikesine karşı toplumsal bilinç oluşturmak amacıyla faaliyete başladı.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/TEMA"
-    },
-    {
-      "yil": 1995,
-      "baslik": "Dünya Satranç Şampiyonası maçı Dünya Ticaret Merkezi'nde yapıldı",
-      "metin": "Klasik Dünya Satranç Şampiyonası'nın açılış maçı, unvan sahibi Garry Kasparov ile meydan okuyan Viswanathan Anand arasında New York'taki Dünya Ticaret Merkezi'nin 107. katında gerçekleştirildi. Yükseklerdeki bu heyecan dolu mücadele satranç severlerin hafızasına kazındı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Classical_World_Chess_Championship_1995"
-    },
-    {
-      "yil": 1997,
-      "baslik": "NASA'nın Mars Global Surveyor aracı Mars'a ulaştı",
-      "metin": "ABD'nin sivil uzay programından sorumlu bağımsız ajansı NASA'nın uzay aracı Mars Global Surveyor, uzun yolculuğunun ardından Mars'a ulaştı. Bu başarı, Kızıl Gezegen'in yüzeyinin ve atmosferinin detaylı bir şekilde incelenmesinde yeni bir çığır açtı.",
+      "baslik": "Uzaya Giden İlk Siyah Kadın",
+      "metin": "Space Shuttle Endeavour görevinde yer alan Amerikalı Mae Jemison, uzaya seyahat eden ilk Siyah kadın olarak tarihe geçti. Bu ilham verici yolculuk, uzay tarihinde unutulmaz bir dönüm noktası oldu.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/NASA"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour"
+    },
+    {
+      "yil": 2003,
+      "baslik": "Steam'in Yayınlanması",
+      "metin": "Dijital oyun dağıtım platformu Steam, ilk kez bilgisayar kullanıcıları için indirilebilir hale getirildi. Valve tarafından geliştirilen bu platform, zamanla oyun dünyasının buluşma noktası haline geldi.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Steam_(service)"
     }
   ]
 }
