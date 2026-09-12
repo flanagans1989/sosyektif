@@ -68,7 +68,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Internet
     url: https://en.wikipedia.org/wiki/Internet
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by panumas nikhomkhai on Pexels
 moderasyon:
   skor: 1
