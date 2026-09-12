@@ -60,7 +60,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Artificial intelligence
     url: https://en.wikipedia.org/wiki/Artificial_intelligence
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Alex Knight on Pexels
 moderasyon:
   skor: 1
