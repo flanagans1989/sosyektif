@@ -12,6 +12,7 @@ import Yorumlar from '../../components/Yorumlar.astro';
 import { KATEGORILER, FORMAT_ETIKETLERI } from '../../lib/kategoriler';
 import { etiketSlugla } from '../../lib/etiketler';
 import ReklamAlani from '../../components/ReklamAlani.astro';
+import TepkiBari from '../../components/TepkiBari.astro';
 
 export async function getStaticPaths() {
   const yazilar = await getCollection('posts', ({ data }) => !data.taslak);
@@ -172,6 +173,8 @@ const sonrakiTest = digerQuizler[0] ?? null;
         </ul>
       </aside>
     )}
+
+    <TepkiBari slug={yazi.id} />
 
     <ReklamAlani konum="icerik-arasi" />
 

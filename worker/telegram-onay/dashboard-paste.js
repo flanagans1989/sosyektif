@@ -138,6 +138,60 @@ function corsHeaders() {
 function escapeHtml(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
+const TEPKI_TURLERI = ["sasirdim", "guldum", "inanmadim", "bilgilendim"];
+function bosTepkiSayaclari() {
+    return { sasirdim: 0, guldum: 0, inanmadim: 0, bilgilendim: 0 };
+}
+/** Slug'ları KV anahtarı olarak güvenli hale getirir — build'de üretilen
+ * gerçek slug'lar zaten [a-z0-9-] setinde, burada sadece savunma amaçlı. */
+function slugTemizle(slug) {
+    const temiz = slug.trim().toLowerCase().slice(0, 200);
+    return /^[a-z0-9-]+$/.test(temiz) ? temiz : null;
+}
+/**
+ * Tepki barı (PLAN.md Bölüm 10 / S2). Sitedeki her içeriğin altında dört
+ * emoji tepkiden birine tıklanabilir; sayaçlar KV'de slug başına tek bir
+ * JSON kayıtta tutulur (günlük anahtar biriktirmesi yok — mevcut trafik
+ * hacminde ücretsiz katmanın 1000 yazma/gün sınırına yaklaşmak yıllar alır;
+ * trafik büyürse bu fonksiyon Durable Object'e taşınabilir).
+ * Çift oy engeli sunucuda yok, istemcide localStorage ile yapılıyor —
+ * amaç kesin sayım değil, kaba bir ilgi sinyali.
+ */
+async function tepkiVer(request, env) {
+    let govde;
+    try {
+        govde = await request.json();
+    }
+    catch {
+        return new Response("geçersiz istek", { status: 400, headers: corsHeaders() });
+    }
+    const slug = slugTemizle(govde.slug ?? "");
+    const tepki = govde.tepki;
+    if (!slug || !tepki || !TEPKI_TURLERI.includes(tepki)) {
+        return new Response("geçersiz slug/tepki", { status: 400, headers: corsHeaders() });
+    }
+    const anahtar = `tepki:${slug}`;
+    const mevcut = await env.METRIKLER.get(anahtar);
+    const sayaclar = mevcut ? JSON.parse(mevcut) : bosTepkiSayaclari();
+    sayaclar[tepki] += 1;
+    await env.METRIKLER.put(anahtar, JSON.stringify(sayaclar));
+    return new Response(JSON.stringify(sayaclar), {
+        status: 200,
+        headers: { ...corsHeaders(), "Content-Type": "application/json" },
+    });
+}
+async function tepkiSonucGetir(request, env) {
+    const url = new URL(request.url);
+    const slug = slugTemizle(url.searchParams.get("slug") ?? "");
+    if (!slug)
+        return new Response("geçersiz slug", { status: 400, headers: corsHeaders() });
+    const mevcut = await env.METRIKLER.get(`tepki:${slug}`);
+    const sayaclar = mevcut ? JSON.parse(mevcut) : bosTepkiSayaclari();
+    return new Response(JSON.stringify(sayaclar), {
+        status: 200,
+        headers: { ...corsHeaders(), "Content-Type": "application/json" },
+    });
+}
 /**
  * Düzeltme/kaldırma talep formu (PLAN.md §5, Bölüm 10 / S7). KV veya başka
  * bir depolama gerektirmez — gelen talep doğrudan admin sohbetine düşer.
@@ -238,6 +292,20 @@ export default {
                 return new Response(null, { headers: corsHeaders() });
             if (request.method === "POST")
                 return bildirimGonder(request, env);
+            return new Response("method not allowed", { status: 405, headers: corsHeaders() });
+        }
+        if (url.pathname === "/tepki") {
+            if (request.method === "OPTIONS")
+                return new Response(null, { headers: corsHeaders() });
+            if (request.method === "POST")
+                return tepkiVer(request, env);
+            return new Response("method not allowed", { status: 405, headers: corsHeaders() });
+        }
+        if (url.pathname === "/tepki-sonuc") {
+            if (request.method === "OPTIONS")
+                return new Response(null, { headers: corsHeaders() });
+            if (request.method === "GET")
+                return tepkiSonucGetir(request, env);
             return new Response("method not allowed", { status: 405, headers: corsHeaders() });
         }
         // Cloudflare'in kendi cron tetikleyicisi bu hesapta kayıtlı görünmesine

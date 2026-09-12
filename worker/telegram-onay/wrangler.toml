@@ -20,6 +20,14 @@ compatibility_date = "2025-01-01"
 [triggers]
 crons = ["17 * * * *"]
 
+# Tepki barı sayaçları (PLAN.md Bölüm 10 / S2). Bu Worker dashboard'dan
+# "Quick Edit" ile deploy edildiği için bu blok gerçek deploy'u etkilemiyor
+# (KV bağlama işlemi dashboard > Bindings sekmesinden elle yapıldı,
+# 2026-09-12) — burada sadece belgeleme/gelecekteki wrangler deploy için.
+[[kv_namespaces]]
+binding = "METRIKLER"
+id = "fdb4338b9f094a2083dcb827207c2d80" # sosyektif_metrikler (deraksizolasyon hesabı)
+
 # Secrets (dashboard > Settings > Variables and Secrets ile eklenir, buraya YAZILMAZ):
 #   GITHUB_TOKEN            - "Contents: Read and write" + "Actions: Read and write" izinli fine-grained PAT (sadece bu repo için)
 #   GITHUB_REPO             - "kullanici/repo" formatinda, orn. flanagans1989/sosyektif

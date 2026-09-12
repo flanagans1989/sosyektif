@@ -1,0 +1,108 @@
+---
+/**
+ * Tepki barı (PLAN.md Bölüm 10 / S2). Her içeriğin altında dört emoji
+ * tepkiden birine tıklanabilir; sayaçlar Cloudflare Worker + KV üzerinden
+ * gelir. Sunucu tarafında çift oy engeli yok (amaç kaba bir ilgi sinyali,
+ * kesin sayım değil) — tekrar oy vermeyi engellemek localStorage ile.
+ */
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+
+const TEPKILER = [
+  { id: 'sasirdim', emoji: '😲', etiket: 'Şaşırdım' },
+  { id: 'guldum', emoji: '😄', etiket: 'Güldüm' },
+  { id: 'inanmadim', emoji: '🤨', etiket: 'İnanmadım' },
+  { id: 'bilgilendim', emoji: '💡', etiket: 'Bilgilendim' },
+] as const;
+---
+
+<div
+  class="tepki-bari mt-8 flex flex-wrap items-center justify-center gap-3 rounded-2xl bg-black/[0.03] p-5"
+  data-slug={slug}
+>
+  <p class="w-full text-center text-sm font-semibold text-murekkep/60">Bu içerik hakkında ne düşünüyorsun?</p>
+  {TEPKILER.map((t) => (
+    <button
+      type="button"
+      class="tepki-buton flex flex-col items-center gap-1 rounded-xl px-4 py-2 text-sm font-semibold text-murekkep/70 transition hover:bg-white disabled:cursor-default disabled:hover:bg-transparent"
+      data-tepki={t.id}
+    >
+      <span class="text-2xl" aria-hidden="true">{t.emoji}</span>
+      <span>{t.etiket}</span>
+      <span class="tepki-sayi text-xs font-normal text-murekkep/40">0</span>
+    </button>
+  ))}
+</div>
+
+<script>
+  const WORKER_URL = 'https://sosyektif-telegram-onay.deraks-rental.workers.dev';
+
+  document.querySelectorAll<HTMLDivElement>('.tepki-bari').forEach((bar) => {
+    const slug = bar.dataset.slug;
+    if (!slug) return;
+    const depoAnahtari = `sosyektif-tepki-${slug}`;
+    const butonlar = Array.from(bar.querySelectorAll<HTMLButtonElement>('.tepki-buton'));
+
+    function sayilariGoster(sayaclar: Record<string, number>) {
+      butonlar.forEach((buton) => {
+        const tepki = buton.dataset.tepki;
+        const sayiEl = buton.querySelector('.tepki-sayi');
+        if (tepki && sayiEl && typeof sayaclar[tepki] === 'number') {
+          sayiEl.textContent = String(sayaclar[tepki]);
+        }
+      });
+    }
+
+    function kilitle(secilenTepki: string) {
+      butonlar.forEach((buton) => {
+        buton.disabled = true;
+        if (buton.dataset.tepki === secilenTepki) {
+          buton.classList.add('bg-white', 'ring-2', 'ring-marka/40');
+        } else {
+          buton.classList.add('opacity-40');
+        }
+      });
+    }
+
+    // Mevcut sayıları getir (arızi bir iyileştirme — başarısız olursa 0'larla kalır).
+    fetch(`${WORKER_URL}/tepki-sonuc?slug=${encodeURIComponent(slug)}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((sayaclar) => sayaclar && sayilariGoster(sayaclar))
+      .catch(() => {});
+
+    let oyVerilmisTepki: string | null = null;
+    try {
+      oyVerilmisTepki = localStorage.getItem(depoAnahtari);
+    } catch {
+      // localStorage kapalı olabilir — sessizce yoksay.
+    }
+    if (oyVerilmisTepki) kilitle(oyVerilmisTepki);
+
+    butonlar.forEach((buton) => {
+      buton.addEventListener('click', () => {
+        if (oyVerilmisTepki) return;
+        const tepki = buton.dataset.tepki;
+        if (!tepki) return;
+
+        kilitle(tepki);
+        try {
+          localStorage.setItem(depoAnahtari, tepki);
+        } catch {
+          // yoksay
+        }
+
+        fetch(`${WORKER_URL}/tepki`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug, tepki }),
+        })
+          .then((res) => (res.ok ? res.json() : null))
+          .then((sayaclar) => sayaclar && sayilariGoster(sayaclar))
+          .catch(() => {});
+      });
+    });
+  });
+</script>
