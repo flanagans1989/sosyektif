@@ -598,9 +598,19 @@ Bölüm 3.6'daki bilinen sorun: onaylanan içerik hiçbir kanala gitmiyor.
 Üçü tek bir Meta uygulamasıyla bağlanır. Türkiye, Threads'in en büyük pazarlarından.
 
 **Kullanıcı adımları (Chrome'da birlikte, giriş/onayları kullanıcı yapar):**
-- [ ] developers.facebook.com geliştirici hesabı (telefon doğrulaması isteyebilir)
-- [ ] Uygulama oluştur; kullanım senaryoları: **Threads API** + **Instagram içerik yönetimi**
-- [ ] Instagram ve Threads hesaplarını **test kullanıcısı** olarak ekle, davetleri uygulama ayarlarından kabul et
+- [x] developers.facebook.com geliştirici hesabı — 2026-09-12, zaten vardı (başka bir proje için açılmış)
+- [x] Uygulama oluştur — 2026-09-12, adı "sosyektif", App ID `1451284036848190`. Kullanım senaryoları:
+      **Threads API** (izin: `threads_basic` + `threads_content_publish`) + **Instagram içerik yönetimi**
+      ("Manage messaging & content on Instagram"). İşletme portföyü bağlanmadı (gerek yok, doğrulama
+      gerektirir). "Requirements": App Review gerektirmiyor, doğrulandı.
+      App domains: `sosyektif.com`, Threads Redirect Callback URL: `https://sosyektif.com/`
+      (App domains önce kaydedilmeden Redirect URL kaydı "Form can't be saved" hatası veriyordu —
+      sıra önemli). App secret GitHub Secrets'a **henüz eklenmedi**, adaptör yazılırken eklenecek.
+- [~] Instagram ve Threads hesaplarını **test kullanıcısı** olarak ekle — 2026-09-12, davetler gönderildi
+      (App roles → Instagram Tester + Threads Tester, kullanıcı adı: `sosyektif`), ikisi de **Pending**.
+      **Kalan adım: kullanıcı, davetleri kendi Instagram ve Threads hesabından kabul etmeli**
+      (Instagram: Ayarlar → Uygulamalar ve web siteleri → Davetler; Threads: Ayarlar → Hesap →
+      Website permissions → Davetler).
 
 Sadece kendi hesaplarımıza paylaşım yapıldığı için **Meta App Review gerekmez** — uygulama geliştirme
 modunda, test kullanıcısı rolüyle kalır.
