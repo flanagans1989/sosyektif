@@ -202,6 +202,15 @@ Skor → otomatik yayın / onaya düş / red.
 | Facebook Sayfası | 2 | 0 | Aynı Meta uygulaması |
 | X (Twitter) | — | **Ücretli** | 2026'da ücretsiz katman kalktı; bütçe olursa eklenir |
 
+**Bilinen sorun (2026-09-12'de tespit edildi, düzeltmesi bilerek ertelendi — henüz yeterli içerik hacmi yok):**
+`distributeContent` yalnızca **otomatik yayınlanan** içerikte çağrılıyor. Telegram'dan elle
+onaylanan içerikler (şu ana kadarki yayınların çoğu) hiçbir kanala dağıtılmıyor — onay Worker'ı
+(`worker/telegram-onay`) sadece `taslak: false` yapıp commit atıyor, dağıtımı tetiklemiyor.
+Ayrıca `TELEGRAM_PUBLIC_CHANNEL_ID` secret'ı hiç ayarlanmamış, yani otomatik yayınlanan içerikte
+bile Telegram kanal paylaşımı sessizce atlanıyor (yalnızca Bluesky çalışıyor). Düzeltme: (1) herkese
+açık Telegram kanalı aç + secret'ı ekle, (2) onay Worker'ı, GitHub Actions'ta küçük bir
+"onaylananı dağıt" workflow'unu tetiklesin (Worker'ın zaten `Actions: write` yetkisi var).
+
 ### 3.7 Analitik Ajanı (haftalık)
 - Cloudflare Web Analytics (cookie'siz, ücretsiz) → GraphQL API ile sayfa bazlı görüntülenme
 - Google Search Console API → sorgu, tıklama, CTR
@@ -262,12 +271,13 @@ Alternatif: `sosyektif.pages.dev` ile tamamen ücretsiz başlanabilir, ama sonra
 
 ### Faz 0 — Hazırlık (1-2 gün, senin yapman gerekenler)
 Otomatikleştirilemeyen, hesap/kimlik gerektiren adımlar:
-- [ ] Cloudflare hesabı + **sosyektif.com satın alma** (1 Kasım'dan önce)
-- [ ] GitHub: hangi hesap kullanılacak kararı + özel repo
-- [ ] API anahtarları: Google AI Studio (Gemini), Mistral (telefon doğrulaması ister), Groq, Cerebras, Pexels, YouTube Data API
-- [ ] Telegram: BotFather ile bot + özel onay sohbeti + herkese açık kanal
-- [ ] Bluesky hesabı + uygulama şifresi
-- [ ] Künye için iletişim bilgileri
+- [x] Cloudflare hesabı + **sosyektif.com satın alma** (1 Kasım'dan önce)
+- [x] GitHub: hangi hesap kullanılacak kararı + özel repo — `flanagans1989/sosyektif`
+- [x] API anahtarları: Google AI Studio (Gemini), Mistral (telefon doğrulaması ister), Groq, Cerebras, Pexels, YouTube Data API — tümü GitHub Secrets'ta
+- [x] Telegram: BotFather ile bot + özel onay sohbeti
+- [ ] Telegram: **herkese açık kanal** — bot ve onay sohbeti çalışıyor ama `TELEGRAM_PUBLIC_CHANNEL_ID` secret'ı hiç ayarlanmamış; kanal ya hiç açılmadı ya da açıldıysa bağlanmadı. Onaylanan içeriklerin dağıtımı bu yüzden çalışmıyor (2026-09-12'de tespit edildi, düzeltmesi bilerek ertelendi — bkz. Bölüm 3.6 notu)
+- [x] Bluesky hesabı + uygulama şifresi — `sosyektif.bsky.social`, aktif
+- [~] Künye için iletişim bilgileri — `/iletisim` sayfası var (site adı + e-posta) ama 5651 md. 3'ün tam gerektirdiği bilgiler (adres, gerçek/tüzel kişi kimliği) hukukçu teyidi bekliyor (bkz. Bölüm 5)
 
 ### Faz 1a — Site iskeleti
 - Astro kurulumu, onedio tarzı tasarım (kart ızgarası, kategoriler, makale, liste ve quiz bileşenleri)
