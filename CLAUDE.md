@@ -11,10 +11,12 @@ tamamını okumadan önce `grep -n "^#" PLAN.md` ile ilgili bölümü bul, sadec
 - `agents/src/` — üretim zinciri: `trend/` (konu bulma), `content/` (yazı üretimi + `prompts.ts`),
   `moderation/` (kalite/hakem kapısı), `image/` (kapak; `social.ts`+`socialSablon.ts` Instagram carousel,
   `reelSablon.ts`+`reelRender.ts` Reels videosu — HTML/CSS Chromium'da render, ffmpeg), `publish/`,
-  `distribute/` (Telegram/Bluesky/Threads/Instagram/Facebook; `reel.ts` Reels onay+paylaşım),
+  `distribute/` (`kuyruk.ts` durum tabanlı dağıtım kuyruğu — tüm canlı içerik × Telegram/Bluesky/Threads/Instagram/Facebook,
+  durum `data/dagitim.json`; `reel.ts` Reels onay+paylaşım → IG Reels/FB/YouTube Shorts),
+  `saglik/kontroller.ts` (gözetim ajanının ~45 gerçek-durum kontrolü),
   `analytics/` (haftalık geri besleme + `socialPerformance.ts`), `orchestrator/` (`pipeline.ts` ana zincir;
-  `dailyReport.ts` gözetim, `sosyalPerformans.ts`; ayrıca `burc.ts`, `burcUyum.ts`, `tarihteBugun.ts`),
-  `lib/` (`llmRouter.ts`, `state.ts`, `metaToken.ts`, `threads.ts`/`instagram.ts`/`facebook.ts`).
+  `saglikDenetimi.ts` gözetim/audit + otomatik onarım, `dailyReport.ts`, `sosyalPerformans.ts`; ayrıca `burc.ts`, `burcUyum.ts`, `tarihteBugun.ts`),
+  `lib/` (`llmRouter.ts`, `state.ts`, `metaToken.ts`, `threads.ts`/`instagram.ts`/`facebook.ts`/`youtube.ts`, `dagitimDurumu.ts`).
 - `agents/assets/` — `fonts/` (Poppins, OFL), `muzik/` (Reels müziği, yalnızca CC0 — lisanslar `muzik.json`'da).
 - `worker/telegram-onay/` — Cloudflare Worker: Telegram onay butonları (içerik + Reels `reel_ok`/`reel_no`),
   Meta token KV'si (`/meta-token`, Threads/Instagram otomatik yenileme) + `data/config.json` acil durdurma.
@@ -22,12 +24,13 @@ tamamını okumadan önce `grep -n "^#" PLAN.md` ile ilgili bölümü bul, sadec
   **Deploy:** wrangler bu hesaba bağlı değil — `dashboard-paste.js` (tsc çıktısı) Cloudflare panelinde Quick Edit'e yapıştırılır.
 - `data/` — çalışma zamanı durumu: `config.json` (paused flag), `blocklist.json`, `category-weights.json`,
   `evergreen.json`, `published-index.json` (tekrar önleme), `rejected-topics.json`, `last-run.json`. **Üretilmiş/durum verisi — gözle incelemek gerekirse `grep`/`jq` ile ilgili anahtarı çek, tamamını okuma.**
-- `.github/workflows/` — `pipeline.yml` (ana cron), `daily-report.yml`, `weekly-analytics.yml` (+ sosyal performans),
+- `.github/workflows/` — `pipeline.yml` (ana cron), `dagitim.yml` (sosyal medya kuyruğu, saatlik + pipeline/onay sonrası),
+  `saglik-denetimi.yml` (6 saatte bir audit + onarım), `daily-report.yml`, `weekly-analytics.yml` (+ sosyal performans),
   `burc.yml`, `burc-uyum.yml`, `reel-onizle-telegram.yml` (elle: Reels'i onay butonlarıyla Telegram'a gönderir),
   `reel-paylas.yml` (Worker'ın ✅ butonu başlatır).
 
 ## Komutlar
-- Ajanlar: `cd agents && npm run pipeline` / `daily-report` / `weekly-analytics` / `sosyal-performans` / `burc` / `typecheck`
+- Ajanlar: `cd agents && npm run pipeline` / `dagit` / `saglik-denetimi` / `youtube-yetkilendir` / `daily-report` / `weekly-analytics` / `sosyal-performans` / `burc` / `typecheck`
 - Görsel önizleme (paylaşmaz): `npm run slayt-onizle -- <slug>` (carousel), `npm run reel-onizle -- <slug> [--kareler]` (Reels)
 - Site: `cd site && npm run dev` (arkaplanda: `astro dev --background`, durum: `astro dev status`) / `npm run build` (Astro + Pagefind) / `npm run check`
 - Worker: `cd worker/telegram-onay && npm run dev` / `npm run deploy` (wrangler)
