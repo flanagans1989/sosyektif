@@ -172,5 +172,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "antik-cagdan-gunumuze-olimpiyat-oyunlari-hakkinda-sasirtici-5-gercek": {
+    "eklendi": "2026-09-13T19:10:17.967Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-13T19:10:18.440Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgccroykg2r"
+      }
+    },
+    "reelIdleri": {}
   }
 }
