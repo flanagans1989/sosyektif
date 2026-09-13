@@ -3,7 +3,6 @@ import { gatherSourceFor } from "../content/sourceGathering.js";
 import { moderateDraft } from "../moderation/index.js";
 import { generateCoverImage } from "../image/index.js";
 import { publishDraft, type PublishResult } from "../publish/index.js";
-import { distributeContent } from "../distribute/index.js";
 import { bildirIndexNow } from "../lib/indexnow.js";
 import { notifyAdmin, notifyAdminOnayButonlu, escapeHtml } from "../lib/telegram.js";
 import {
@@ -12,7 +11,6 @@ import {
   ozelGunIcerikUretildiMi,
   markOzelGunIcerikUretildi,
   readPublishedIndex,
-  updatePublishedEntrySosyal,
   type Config,
 } from "../lib/state.js";
 import { FORMAT_ETIKETLERI_TR } from "../lib/formatLabels.js";
@@ -203,28 +201,14 @@ export async function processCandidate(aday: TrendCandidate, config: Config): Pr
   if (aday.kaynak === "evergreen") await markEvergreenUsed(aday.baslik);
   if (ozelGun) await markOzelGunIcerikUretildi(ozelGun.ad, ozelGun.yil);
 
-  // 5. Dağıtım ya da onay bildirimi
+  // 5. Onay bildirimi. Sosyal medya dağıtımı artık burada yapılmıyor:
+  // pipeline bitip içerik canlıya çıktıktan sonra dağıtım kuyruğu
+  // (distribute/kuyruk.ts, dagitim.yml) otomatik ve elle onaylanan TÜM
+  // içerikleri paylaşır, başarısız kanalları tekrar dener.
   if (otomatik) {
-    const dagitimSonucu = await distributeContent({
-      frontmatter: draft.frontmatter,
-      slug: draft.slug,
-      publicUrl: yayin.publicUrl,
-      reelsAktif: config.reelsAktif,
-    });
-    if (Object.keys(dagitimSonucu.sosyalPaylasimlar).length > 0) {
-      await updatePublishedEntrySosyal(draft.slug, dagitimSonucu.sosyalPaylasimlar);
-    }
     await bildirIndexNow(yayin.publicUrl);
-    // Sosyal kanallardan biri sessizce başarısız olduysa (ör. token süresi
-    // dolmuş) admin'e haber ver — önceden bu hatalar sadece ephemeral
-    // runner'ın konsol logunda kalıyordu, kimse fark etmiyordu
-    // (2026-09-13'te 8 saatlik bir pipeline arızasıyla aynı gün tespit edildi).
-    const uyari =
-      dagitimSonucu.basarisizlar.length > 0
-        ? `\n\n⚠️ Bazı kanallar atlandı:\n${escapeHtml(dagitimSonucu.basarisizlar.join("\n"))}`
-        : "";
     await notifyAdmin(
-      `✅ Otomatik yayınlandı (skor ${moderasyon.skor}): <b>${escapeHtml(draft.frontmatter.baslik)}</b>\n${yayin.publicUrl}${uyari}`
+      `✅ Otomatik yayınlandı (skor ${moderasyon.skor}): <b>${escapeHtml(draft.frontmatter.baslik)}</b>\n${yayin.publicUrl}\n📣 Sosyal medya paylaşımı birkaç dakika içinde dağıtım kuyruğundan yapılacak.`
     );
   } else {
     await notifyAdminOnayButonlu(onayMesaji(draft, moderasyon, yayin, config.provaModu), yayin.slug);

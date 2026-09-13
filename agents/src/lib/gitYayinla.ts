@@ -49,7 +49,12 @@ export function dosyalariHemenYayinla(dosyalar: string[], commitMesaji: string):
     }
     git(["commit", "-m", commitMesaji]);
     // Aynı anda Telegram onay worker'ı da main'e push etmiş olabilir.
-    git(["pull", "--rebase", "origin", "main"]);
+    // --autostash şart: pipeline sırasında çalışma alanında henüz commit'lenmemiş
+    // başka değişiklikler (yeni içerik, data/*.json) oluyor ve düz
+    // "pull --rebase" bunlar yüzünden reddediliyordu ("You have unstaged
+    // changes") — Instagram/Facebook paylaşımı bu yüzden her seferinde iptal
+    // oluyordu (2026-09-13'te pipeline loglarında tespit edildi).
+    git(["pull", "--rebase", "--autostash", "origin", "main"]);
     git(["push"]);
     return true;
   } catch (err) {

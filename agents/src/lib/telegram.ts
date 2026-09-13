@@ -21,11 +21,13 @@ function botToken(): string | undefined {
   return optionalEnv("TELEGRAM_BOT_TOKEN");
 }
 
-async function sendMessage(chatId: string, text: string, extra?: Record<string, unknown>) {
+/** @returns Gönderim başarılı mı. Hata fırlatmaz (admin bildirimleri akışı
+ *   durdurmamalı); kanal paylaşımı gibi sonucun önemli olduğu yerler dönüşe bakar. */
+async function sendMessage(chatId: string, text: string, extra?: Record<string, unknown>): Promise<boolean> {
   const token = botToken();
   if (!token) {
     console.warn("[telegram] TELEGRAM_BOT_TOKEN yok, mesaj gönderilmedi:", text);
-    return;
+    return false;
   }
 
   const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
@@ -42,7 +44,9 @@ async function sendMessage(chatId: string, text: string, extra?: Record<string, 
 
   if (!res.ok) {
     console.error("[telegram] gönderim başarısız:", res.status, await res.text());
+    return false;
   }
+  return true;
 }
 
 /** Yöneticiye (özel onay/uyarı sohbeti) mesaj gönderir. */
@@ -88,7 +92,8 @@ export async function postToPublicChannel(text: string): Promise<void> {
     console.warn("[telegram] TELEGRAM_PUBLIC_CHANNEL_ID yok, kanal paylaşımı atlandı");
     return;
   }
-  await sendMessage(chatId, text);
+  // Dağıtım kuyruğu başarısızlığı görmeli (önceden sessizce yutuluyordu).
+  if (!(await sendMessage(chatId, text))) throw new Error("[telegram] kanal mesajı gönderilemedi");
 }
 
 /**

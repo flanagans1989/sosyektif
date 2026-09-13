@@ -15,6 +15,7 @@
  */
 import { readPublishedIndex, readCategoryWeights, writeCategoryWeights } from "../lib/state.js";
 import { getMetaToken } from "../lib/metaToken.js";
+import { readDagitimDurumu } from "../lib/dagitimDurumu.js";
 
 export interface PostEngagement {
   slug: string;
@@ -70,11 +71,21 @@ async function facebookEtkilesimi(postId: string, accessToken: string): Promise<
 
 /** Son `gunSayisi` günde sosyal paylaşımı olan her içerik için etkileşim toplar. */
 export async function fetchSocialEngagement(gunSayisi = 14): Promise<PostEngagement[]> {
-  const index = await readPublishedIndex();
+  const [index, dagitim] = await Promise.all([readPublishedIndex(), readDagitimDurumu()]);
   const kesim = Date.now() - gunSayisi * 24 * 60 * 60 * 1000;
-  const adaylar = index.filter(
-    (e) => e.sosyalPaylasimlar && new Date(e.yayinTarihi).getTime() >= kesim
-  );
+  // Paylaşım kimlikleri artık data/dagitim.json'da (distribute/kuyruk.ts);
+  // carousel ve Reels gönderilerinin etkileşimi birlikte sayılır.
+  const idler = (slug: string) => {
+    const k = dagitim[slug];
+    return {
+      instagram: [k?.kanallar.instagram?.id, k?.reelIdleri.instagram].filter((x): x is string => Boolean(x)),
+      facebook: [k?.kanallar.facebook?.id, k?.reelIdleri.facebook].filter((x): x is string => Boolean(x)),
+    };
+  };
+  const adaylar = index.filter((e) => {
+    const i = idler(e.slug);
+    return (i.instagram.length > 0 || i.facebook.length > 0) && new Date(e.yayinTarihi).getTime() >= kesim;
+  });
   if (adaylar.length === 0) return [];
 
   const [instagramToken, facebookToken] = await Promise.all([
@@ -85,10 +96,9 @@ export async function fetchSocialEngagement(gunSayisi = 14): Promise<PostEngagem
   const sonuclar: PostEngagement[] = [];
   for (const entry of adaylar) {
     let toplam = 0;
-    const igId = entry.sosyalPaylasimlar?.instagram;
-    const fbId = entry.sosyalPaylasimlar?.facebook;
-    if (igId && instagramToken) toplam += await instagramEtkilesimi(igId, instagramToken.access_token);
-    if (fbId && facebookToken) toplam += await facebookEtkilesimi(fbId, facebookToken.access_token);
+    const i = idler(entry.slug);
+    if (instagramToken) for (const id of i.instagram) toplam += await instagramEtkilesimi(id, instagramToken.access_token);
+    if (facebookToken) for (const id of i.facebook) toplam += await facebookEtkilesimi(id, facebookToken.access_token);
     sonuclar.push({ slug: entry.slug, kategori: entry.kategori, format: entry.format, toplam });
   }
   return sonuclar;

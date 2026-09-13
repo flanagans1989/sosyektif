@@ -108,3 +108,24 @@ export async function fetchSearchConsoleClicksByPath(): Promise<Record<string, n
     return {};
   }
 }
+
+/**
+ * Sağlık denetimi için (saglik/kontroller.ts): kimlik bilgisiyle token alınıp
+ * mülke erişilebiliyor mu? `fetchSearchConsoleClicksByPath` hataları yutup
+ * `{}` döndüğü için "veri yok" ile "erişim bozuk" orada ayırt edilemiyor.
+ * @returns true ya da hatanın kısa açıklaması.
+ */
+export async function searchConsoleErisimiDene(): Promise<true | string> {
+  const rawCreds = optionalEnv("GOOGLE_SEARCH_CONSOLE_CREDENTIALS_JSON");
+  if (!rawCreds) return "kimlik bilgisi yok";
+  try {
+    const accessToken = await getAccessToken(JSON.parse(rawCreds) as ServiceAccountKey);
+    const res = await fetch(
+      `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent("sc-domain:sosyektif.com")}`,
+      { headers: { Authorization: `Bearer ${accessToken}` } }
+    );
+    return res.ok ? true : `${res.status} ${(await res.text()).slice(0, 160)}`;
+  } catch (err) {
+    return err instanceof Error ? err.message : String(err);
+  }
+}

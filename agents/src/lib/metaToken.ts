@@ -32,7 +32,9 @@ export async function getMetaToken(platform: "threads" | "instagram" | "facebook
       return null;
     }
     const token = (await res.json()) as MetaToken;
-    if (token.expires_at < Date.now()) {
+    // expires_at 0 = süresiz (Facebook Page token'ı). Önceden 0 da "süresi
+    // dolmuş" sayılıyordu → Facebook paylaşımı her seferinde sessizce atlanıyordu.
+    if (token.expires_at !== 0 && token.expires_at < Date.now()) {
       console.warn(`[meta-token] ${platform} token'ının süresi dolmuş`);
       return null;
     }

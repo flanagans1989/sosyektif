@@ -1,0 +1,62 @@
+name: Dağıtım Kuyruğu
+
+# Canlıdaki her içeriği sosyal kanallara paylaşır (agents/src/distribute/kuyruk.ts):
+# otomatik yayınlananlar da, Telegram'dan elle onaylananlar da. Başarısız
+# kanalı sonraki çalışmalarda tekrar dener, eski içerikleri saatte bir tane
+# olacak şekilde yavaş yavaş paylaşır. Durum data/dagitim.json'da.
+#
+# Tetikleyiciler: pipeline bitince (pipeline.yml son adımı), Telegram onayı
+# gelince (Worker, approve), saatlik zamanlayıcı (Worker /tetikle + aşağıdaki
+# yedek schedule), sağlık denetimi (bekleyen paylaşım görürse).
+on:
+  schedule:
+    - cron: "43 * * * *"
+  workflow_dispatch: {}
+
+# Aynı anda iki dağıtım çalışırsa aynı içerik iki kez paylaşılabilir.
+concurrency:
+  group: sosyektif-dagitim
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  dagit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: agents/package-lock.json
+
+      - working-directory: agents
+        run: npm ci
+
+      - name: Chromium önbelleği (carousel ve Reels render'ı)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ hashFiles('agents/package-lock.json') }}
+
+      - name: Render bağımlılıkları (Chromium + renkli emoji fontu + ffmpeg)
+        working-directory: agents
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-color-emoji ffmpeg
+          npx playwright-core install --with-deps chromium
+
+      - name: Kuyruğu işle
+        working-directory: agents
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+          TELEGRAM_PUBLIC_CHANNEL_ID: ${{ secrets.TELEGRAM_PUBLIC_CHANNEL_ID }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          AGENT_PAYLASIM_ANAHTARI: ${{ secrets.AGENT_PAYLASIM_ANAHTARI }}
+        run: npm run dagit

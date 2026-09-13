@@ -1,6 +1,8 @@
 import { readConfig, readPublishedIndex, readRunSummary } from "../lib/state.js";
 import { notifyAdmin } from "../lib/telegram.js";
-import { getMetaToken } from "../lib/metaToken.js";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import { DATA_DIR } from "../lib/paths.js";
 
 /**
  * Günde bir kez çalışır (.github/workflows/daily-report.yml). Sessiz
@@ -43,19 +45,25 @@ async function main() {
     satirlar.push("⚠️ Son 24 saattir hiç yeni içerik yayınlanmadı — pipeline'ı kontrol et.");
   }
 
-  // Meta (Threads/Instagram/Facebook) token'ları — süresi dolmadan önce
-  // uyarmak, dolduktan sonra "paylaşım sessizce atlandı" diye fark etmemekten
-  // iyidir (R5 deseni: token yoksa/dolmuşsa atlanır ama kimseye haber vermez,
-  // bu kontrol o boşluğu kapatıyor).
-  const BES_GUN_MS = 5 * 24 * 60 * 60 * 1000;
-  for (const platform of ["threads", "instagram", "facebook"] as const) {
-    const token = await getMetaToken(platform);
-    if (!token) {
-      satirlar.push(`⚠️ ${platform} token'ı yok/süresi dolmuş — paylaşımlar sessizce atlanıyor, yeniden bootstrap gerekebilir.`);
-    } else if (token.expires_at !== 0 && token.expires_at - Date.now() < BES_GUN_MS) {
-      const kalanGun = Math.round((token.expires_at - Date.now()) / (24 * 60 * 60 * 1000));
-      satirlar.push(`⚠️ ${platform} token'ının süresi ${kalanGun} gün içinde doluyor.`);
-    }
+  // Kanal/token/anahtar kontrolleri artık sağlık denetiminde (saglikDenetimi.ts,
+  // 6 saatte bir). Burada yalnızca özetini ve denetimin kendisinin çalışıp
+  // çalışmadığını gösteriyoruz — gözetimi de gözetle.
+  try {
+    const saglik = JSON.parse(await readFile(path.join(DATA_DIR, "saglik.json"), "utf-8")) as {
+      sonDenetim: string;
+      sorunlar: Record<string, { durum: string }>;
+    };
+    const saat = (Date.now() - new Date(saglik.sonDenetim).getTime()) / (60 * 60 * 1000);
+    const sorunlar = Object.values(saglik.sorunlar);
+    const hata = sorunlar.filter((s) => s.durum === "hata").length;
+    satirlar.push(
+      sorunlar.length === 0
+        ? `🩺 Sistem sağlığı: her şey çalışıyor (son denetim ${Math.round(saat)} saat önce)`
+        : `🩺 Sistem sağlığı: ${hata} hata, ${sorunlar.length - hata} uyarı açık (ayrıntılar sağlık denetimi mesajında)`
+    );
+    if (saat > 8) satirlar.push("⚠️ Sağlık denetimi 8 saattir çalışmadı — saglik-denetimi.yml'i kontrol et.");
+  } catch {
+    satirlar.push("⚠️ Sağlık denetimi kaydı yok — saglik-denetimi.yml hiç çalışmamış olabilir.");
   }
 
   await notifyAdmin(satirlar.join("\n"));

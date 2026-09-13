@@ -9,6 +9,8 @@
   "scripts": {
     "pipeline": "tsx src/orchestrator/pipeline.ts",
     "daily-report": "tsx src/orchestrator/dailyReport.ts",
+    "saglik-denetimi": "tsx src/orchestrator/saglikDenetimi.ts",
+    "dagit": "tsx scripts/dagit.ts",
     "weekly-analytics": "tsx src/analytics/index.ts",
     "sosyal-performans": "tsx src/orchestrator/sosyalPerformans.ts",
     "burc": "tsx src/orchestrator/burc.ts",
@@ -19,7 +21,8 @@
     "reel-onizle": "tsx scripts/reel-onizle.ts",
     "reel-onizle-telegram": "tsx scripts/reel-onizle-telegram.ts",
     "reel-paylas": "tsx scripts/reel-paylas.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "youtube-yetkilendir": "tsx scripts/youtube-yetkilendir.ts"
   },
   "dependencies": {
     "@atproto/api": "^0.13.35",

@@ -38,7 +38,12 @@ export async function postToThreads(text: string, url: string): Promise<string |
     return null;
   }
 
-  const metin = `${text}\n\n${url}`.slice(0, 500); // Threads gönderi sınırı
+  // Threads sınırı 500 karakter. Önceden birleşik metin sondan kesiliyordu —
+  // uzun açıklamalarda kırpılan kısım linkin kendisi oluyordu. Gövdeyi kırp, linki koru.
+  const ek = `\n\n${url}`;
+  const butce = 500 - [...ek].length;
+  const karakterler = [...text];
+  const metin = (karakterler.length <= butce ? text : `${karakterler.slice(0, butce - 1).join("").trimEnd()}…`) + ek;
 
   // 1) Medya container'ı oluştur (TEXT_POST, link Threads'te otomatik önizleme kartına dönüşür).
   // Not: bu iki uç nokta POST olmalı — GET ile çağrıldığında Graph API

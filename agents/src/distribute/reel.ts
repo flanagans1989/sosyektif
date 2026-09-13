@@ -23,8 +23,9 @@ import { canliyaCikanaKadarBekle, dosyalariHemenYayinla } from "../lib/gitYayinl
 import { postReelToInstagram } from "../lib/instagram.js";
 import { postVideoToFacebook } from "../lib/facebook.js";
 import { escapeHtml, notifyAdmin, sendVideoToAdmin } from "../lib/telegram.js";
-import { updatePublishedEntrySosyal } from "../lib/state.js";
-import { PATHS, POSTS_DIR } from "../lib/paths.js";
+import { postShortToYouTube } from "../lib/youtube.js";
+import { DAGITIM_DOSYASI, bosKayit, readDagitimDurumu, writeDagitimDurumu } from "../lib/dagitimDurumu.js";
+import { POSTS_DIR } from "../lib/paths.js";
 import { FORMAT_EMOJI, KATEGORI_EMOJI } from "../lib/formatLabels.js";
 import type { Post } from "../lib/schemas.js";
 
@@ -50,7 +51,7 @@ export async function reeliOnayaGonder(frontmatter: Post, slug: string): Promise
   const { video, sureMs } = await reelUret(frontmatter, muzik?.dosya ?? null);
   await sendVideoToAdmin(
     video,
-    `🎬 <b>Reels onayı</b>\n${escapeHtml(frontmatter.baslik)}\n${muzik ? `🎵 ${escapeHtml(muzik.ruhHali)}\n` : ""}\n✅ basarsan Instagram Reels + Facebook'ta paylaşılır (~5 dk).`,
+    `🎬 <b>Reels onayı</b>\n${escapeHtml(frontmatter.baslik)}\n${muzik ? `🎵 ${escapeHtml(muzik.ruhHali)}\n` : ""}\n✅ basarsan Instagram Reels + Facebook + YouTube Shorts'ta paylaşılır (~5 dk).`,
     { onaySlug: slug, genislik: REEL_GENISLIK, yukseklik: REEL_YUKSEKLIK, sureSn: sureMs / 1000 }
   );
 }
@@ -93,26 +94,35 @@ export async function reeliPaylas(slug: string): Promise<void> {
   }
 
   const hatalar: string[] = [];
-  const [igId, fbId] = await Promise.all([
-    postReelToInstagram(metinler.instagram, dosya.url).catch((err) => {
-      hatalar.push(`instagram: ${err instanceof Error ? err.message : err}`.slice(0, 200));
-      return null;
-    }),
-    postVideoToFacebook(metinler.facebook, dosya.url).catch((err) => {
-      hatalar.push(`facebook: ${err instanceof Error ? err.message : err}`.slice(0, 200));
-      return null;
-    }),
+  const hataYaz = (kanal: string) => (err: unknown) => {
+    hatalar.push(`${kanal}: ${err instanceof Error ? err.message : err}`.slice(0, 200));
+    return null;
+  };
+  const [igId, fbId, yt] = await Promise.all([
+    postReelToInstagram(metinler.instagram, dosya.url).catch(hataYaz("instagram")),
+    postVideoToFacebook(metinler.facebook, dosya.url).catch(hataYaz("facebook")),
+    postShortToYouTube({
+      baslik: frontmatter.baslik,
+      aciklama: `${frontmatter.metaAciklama}\n\n👉 Devamı: ${publicUrl}\n\n#sosyektif #${frontmatter.kategori}`,
+      etiketler: ["sosyektif", frontmatter.kategori, frontmatter.format, ...(frontmatter.etiketler ?? [])],
+      video,
+    }).catch(hataYaz("youtube")),
   ]);
 
-  const sosyal = { ...(igId ? { instagram: igId } : {}), ...(fbId ? { facebook: fbId } : {}) };
-  if (Object.keys(sosyal).length > 0) {
-    await updatePublishedEntrySosyal(slug, sosyal).catch(() => {
-      // İçerik published-index'te yoksa (ör. eski/elle eklenmiş) sorun değil.
-    });
-    dosyalariHemenYayinla([PATHS.publishedIndex], `Reels paylaşım ID'leri: ${slug}`);
-  }
+  // Paylaşım kimliklerini dağıtım kaydına yaz (sosyal performans ve sağlık denetimi okur).
+  const durum = await readDagitimDurumu();
+  const kayit = (durum[slug] ??= bosKayit());
+  const simdi = new Date().toISOString();
+  kayit.kanallar.reel = { durum: igId || fbId || yt ? "ok" : "hata", deneme: 1, sonDeneme: simdi };
+  if (igId) kayit.reelIdleri.instagram = igId;
+  if (fbId) kayit.reelIdleri.facebook = fbId;
+  if (yt) kayit.kanallar.youtube = { durum: "ok", deneme: 1, id: yt.id, sonDeneme: simdi };
+  await writeDagitimDurumu(durum);
+  dosyalariHemenYayinla([DAGITIM_DOSYASI], `Reels paylaşım durumu: ${slug}`);
 
-  const paylasilan = [igId ? "Instagram Reels" : null, fbId ? "Facebook" : null].filter(Boolean).join(" + ");
+  // YouTube denetimden geçmemiş projelerde videoyu "özel" kilitler — bunu gizleme.
+  const ytNotu = yt && yt.gizlilik !== "public" ? ` (YouTube videoyu "${yt.gizlilik}" olarak tuttu — API denetimi onaylanana kadar herkese açık olmaz)` : "";
+  const paylasilan = [igId ? "Instagram Reels" : null, fbId ? "Facebook" : null, yt ? `YouTube Shorts${ytNotu}` : null].filter(Boolean).join(" + ");
   await notifyAdmin(
     (paylasilan ? `🎬 Reels paylaşıldı (${paylasilan}): <b>${escapeHtml(frontmatter.baslik)}</b>` : `⚠️ Reels paylaşılamadı: <b>${escapeHtml(frontmatter.baslik)}</b>`) +
       (hatalar.length ? `\n\n${escapeHtml(hatalar.join("\n"))}` : "")

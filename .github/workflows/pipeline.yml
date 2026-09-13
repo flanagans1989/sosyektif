@@ -21,6 +21,7 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write # dağıtım kuyruğunu başlatmak için
 
 jobs:
   run-pipeline:
@@ -50,9 +51,6 @@ jobs:
       # Instagram carousel slaytları HTML/CSS olarak gerçek tarayıcıda render
       # ediliyor (agents/src/image/htmlRender.ts). Renkli emoji fontu olmadan
       # emoji'ler bozuk çıkar.
-      # ffmpeg burada da lazım: reelsAktif açıldığında (config.json, varsayılan
-      # kapalı) distribute/index.ts reelRender.ts'i çağırıyor — ubuntu-latest
-      # runner'ında önyüklü DEĞİL (2026-09-13'te tespit edildi).
       - name: Slayt render bağımlılıkları (Chromium + renkli emoji fontu + ffmpeg)
         working-directory: agents
         run: |
@@ -80,6 +78,7 @@ jobs:
         run: npm run pipeline
 
       - name: Değişiklikleri commit'le ve gönder
+        id: commit
         run: |
           git config user.name "sosyektif-bot"
           git config user.email "deraksizolasyon@gmail.com"
@@ -102,4 +101,13 @@ jobs:
             # main'e commit atmış olabilir; push reddedilmesin diye önce üstüne al.
             git pull --rebase origin main
             git push
+            echo "yeni=1" >> "$GITHUB_OUTPUT"
           fi
+
+      # Sosyal medya paylaşımı artık ayrı bir kuyrukta (dagitim.yml): içerik
+      # canlıya çıktıktan sonra paylaşır, başarısız kanalları tekrar dener.
+      - name: Dağıtım kuyruğunu başlat
+        if: steps.commit.outputs.yeni == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run dagitim.yml --ref main

@@ -369,6 +369,10 @@ function editCaption(env, chatId, messageId, caption) {
  */
 const ZAMANLAMA = [
     { workflow: "pipeline.yml", saatler: "hepsi" },
+    // Dağıtım kuyruğu: başarısız paylaşımları tekrar dener, eski içerikleri saatte bir paylaşır.
+    { workflow: "dagitim.yml", saatler: "hepsi" },
+    // Gözetim ajanı sağlık denetimi (06 UTC = TR 09:00 çalışması günlük tam rapor).
+    { workflow: "saglik-denetimi.yml", saatler: [0, 6, 12, 18] },
     { workflow: "burc.yml", saatler: [2] }, // TR 05:00 — insanlar uyanmadan
     { workflow: "daily-report.yml", saatler: [6] }, // TR 09:00
     { workflow: "weekly-analytics.yml", saatler: [5], sadecePazartesi: true },
@@ -512,7 +516,18 @@ export default {
             const slug = await resolveSlug(env, id);
             if (aksiyon === "approve") {
                 await approvePost(env, slug);
-                await editMessage(env, cq.message.chat.id, cq.message.message_id, `✅ <b>Yayınlandı</b> — ${slug}`);
+                // Elle onaylanan içerik de sosyal medyada paylaşılsın (önceden hiç
+                // paylaşılmıyordu). Kuyruk, site build'i bitip link canlıya çıkınca paylaşır.
+                let dagitimNotu = "📣 Sosyal medya paylaşımı birkaç dakika içinde başlayacak.";
+                try {
+                    await workflowBaslat(env, "dagitim.yml");
+                }
+                catch (err) {
+                    console.error(err);
+                    dagitimNotu = "⚠️ Dağıtım hemen başlatılamadı; saatlik kuyruk paylaşacak.";
+                }
+                await editMessage(env, cq.message.chat.id, cq.message.message_id, `✅ <b>Yayınlandı</b> — ${slug}
+${dagitimNotu}`);
             }
             else {
                 await rejectPost(env, slug);

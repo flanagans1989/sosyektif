@@ -3,7 +3,7 @@ name: Reels Paylaş (Telegram onayı sonrası)
 # Telegram'daki "✅ Reels olarak paylaş" butonuna basılınca worker
 # (worker/telegram-onay, reel_ok) bu işi başlatır (PLAN.md Bölüm 11.9):
 # video üretilip siteye yüklenir, canlıya çıkınca Instagram Reels + Facebook
-# video olarak paylaşılır, sonuç Telegram'a bildirilir.
+# video + YouTube Shorts olarak paylaşılır, sonuç Telegram'a bildirilir.
 on:
   workflow_dispatch:
     inputs:
@@ -53,4 +53,8 @@ jobs:
           AGENT_PAYLASIM_ANAHTARI: ${{ secrets.AGENT_PAYLASIM_ANAHTARI }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+          # YouTube Shorts (yapılandırılmamışsa yükleme atlanır, bkz. src/lib/youtube.ts)
+          YOUTUBE_OAUTH_CLIENT_ID: ${{ secrets.YOUTUBE_OAUTH_CLIENT_ID }}
+          YOUTUBE_OAUTH_CLIENT_SECRET: ${{ secrets.YOUTUBE_OAUTH_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
         run: npm run reel-paylas -- "${{ inputs.slug }}"
