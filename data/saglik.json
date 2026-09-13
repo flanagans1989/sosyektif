@@ -1,0 +1,32 @@
+{
+  "sonDenetim": "2026-09-13T18:46:39.852Z",
+  "toplamKontrol": 45,
+  "sorunlar": {
+    "gorsel-unsplash": {
+      "alan": "Görsel",
+      "durum": "uyari",
+      "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
+      "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "kanal-telegram": {
+      "alan": "Sosyal kanallar",
+      "durum": "uyari",
+      "detay": "Telegram herkese açık kanal tanımlı değil — bu kanala paylaşım yapılmıyor.",
+      "cozum": "Telegram'da kanal aç, botu yönetici yap, kanal kimliğini TELEGRAM_PUBLIC_CHANNEL_ID secret'ı olarak ekle.",
+      "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "kanal-youtube": {
+      "alan": "Sosyal kanallar",
+      "durum": "uyari",
+      "detay": "YouTube yüklemesi yapılandırılmamış — Shorts paylaşılmıyor.",
+      "cozum": "YouTube OAuth kurulumu gerekiyor (npm run youtube-yetkilendir, PLAN.md 11.9).",
+      "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "bekleyen-telegram": {
+      "alan": "Dağıtım",
+      "durum": "uyari",
+      "detay": "telegram çalışmadığı için 14 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    }
+  }
+}
