@@ -22,7 +22,8 @@
     "reel-onizle-telegram": "tsx scripts/reel-onizle-telegram.ts",
     "reel-paylas": "tsx scripts/reel-paylas.ts",
     "typecheck": "tsc --noEmit",
-    "youtube-yetkilendir": "tsx scripts/youtube-yetkilendir.ts"
+    "youtube-yetkilendir": "tsx scripts/youtube-yetkilendir.ts",
+    "youtube-gorselleri": "tsx scripts/youtube-gorselleri.ts"
   },
   "dependencies": {
     "@atproto/api": "^0.13.35",
