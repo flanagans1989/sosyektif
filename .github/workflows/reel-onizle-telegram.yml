@@ -32,6 +32,11 @@ jobs:
       - working-directory: agents
         run: npm ci
 
+      # ffmpeg ubuntu-latest runner'ında önyüklü DEĞİL (2026-09-13'te "spawn
+      # ffmpeg ENOENT" ile tespit edildi) — reelRender.ts için şart.
+      - name: ffmpeg kur
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
       - working-directory: agents
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

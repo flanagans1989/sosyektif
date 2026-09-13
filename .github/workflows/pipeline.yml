@@ -50,11 +50,14 @@ jobs:
       # Instagram carousel slaytları HTML/CSS olarak gerçek tarayıcıda render
       # ediliyor (agents/src/image/htmlRender.ts). Renkli emoji fontu olmadan
       # emoji'ler bozuk çıkar.
-      - name: Slayt render bağımlılıkları (Chromium + renkli emoji fontu)
+      # ffmpeg burada da lazım: reelsAktif açıldığında (config.json, varsayılan
+      # kapalı) distribute/index.ts reelRender.ts'i çağırıyor — ubuntu-latest
+      # runner'ında önyüklü DEĞİL (2026-09-13'te tespit edildi).
+      - name: Slayt render bağımlılıkları (Chromium + renkli emoji fontu + ffmpeg)
         working-directory: agents
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-noto-color-emoji
+          sudo apt-get install -y -qq fonts-noto-color-emoji ffmpeg
           npx playwright-core install --with-deps chromium
 
       - name: Pipeline'ı çalıştır
