@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import PostCard from '../components/PostCard.astro';
-import EkodektifBandi from '../components/EkodektifBandi.astro';
 import enCokOkunanVerisi from '../data/en-cok-okunan.json';
 
 const tumYazilar = await getCollection('posts', ({ data }) => !data.taslak);
@@ -57,8 +56,6 @@ const jsonLd = {
       </p>
     </div>
   </section>
-
-  <EkodektifBandi />
 
   {enCokOkunan.length > 0 && (
     <section class="mx-auto max-w-6xl px-4 pt-10">
