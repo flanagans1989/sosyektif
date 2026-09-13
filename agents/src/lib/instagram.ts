@@ -26,7 +26,7 @@ async function containerOlustur(
   return id;
 }
 
-async function yayinla(igUserId: string, accessToken: string, creationId: string): Promise<void> {
+async function yayinla(igUserId: string, accessToken: string, creationId: string): Promise<string> {
   const res = await fetch(
     `${GRAPH_BASE}/${igUserId}/media_publish?` +
       new URLSearchParams({ creation_id: creationId, access_token: accessToken }),
@@ -35,23 +35,49 @@ async function yayinla(igUserId: string, accessToken: string, creationId: string
   if (!res.ok) {
     throw new Error(`[instagram] yayınlanamadı: ${res.status} ${await res.text()}`);
   }
+  const { id } = (await res.json()) as { id: string };
+  return id;
+}
+
+function bekle(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/** Video (Reels) container'ı arka planda işleniyor — threads.ts'teki aynı
+ * desen. Fotoğraf container'ları genelde anında hazır, video ise dakikalar
+ * sürebilir; FINISHED olmadan yayınlamak hata veriyor. */
+async function videoHazirOlanaKadarBekle(containerId: string, accessToken: string): Promise<void> {
+  for (let deneme = 0; deneme < 20; deneme++) {
+    await bekle(5000);
+    const res = await fetch(
+      `${GRAPH_BASE}/${containerId}?` +
+        new URLSearchParams({ fields: "status_code", access_token: accessToken })
+    );
+    if (!res.ok) continue;
+    const { status_code } = (await res.json()) as { status_code?: string };
+    if (status_code === "FINISHED") return;
+    if (status_code === "ERROR") throw new Error("[instagram] video container işlenirken hata oluştu");
+  }
+  // Zaman aşımı (~100sn) — yine de yayınlamayı dene.
 }
 
 /**
  * @param imageUrls Herkese açık, sırayla gösterilecek görsel URL'leri
  *   (agents/src/image/social.ts -> writeCarouselSlides). Tek görselse
  *   normal tek fotoğraf gönderisi, birden fazlaysa carousel olur.
+ * @returns Yayınlanan gönderinin media ID'si (sosyal performans ajanı için) —
+ *   token/görsel yoksa `null`.
  */
-export async function postToInstagram(caption: string, imageUrls: string[]): Promise<void> {
+export async function postToInstagram(caption: string, imageUrls: string[]): Promise<string | null> {
   const token = await getMetaToken("instagram");
   const ig_user_id = token?.ig_user_id;
   if (!token || !ig_user_id) {
     console.warn("[instagram] token/hesap bilgisi yok, paylaşım atlandı");
-    return;
+    return null;
   }
   if (imageUrls.length === 0) {
     console.warn("[instagram] görsel yok, paylaşım atlandı");
-    return;
+    return null;
   }
 
   const { access_token } = token;
@@ -61,8 +87,7 @@ export async function postToInstagram(caption: string, imageUrls: string[]): Pro
       image_url: imageUrls[0]!,
       caption,
     });
-    await yayinla(ig_user_id, access_token, containerId);
-    return;
+    return yayinla(ig_user_id, access_token, containerId);
   }
 
   // Carousel: en fazla 10 alt öğe (Instagram sınırı — image/social.ts zaten bu sınırı uyguluyor).
@@ -80,5 +105,31 @@ export async function postToInstagram(caption: string, imageUrls: string[]): Pro
     children: altOgeIdleri.join(","),
     caption,
   });
-  await yayinla(ig_user_id, access_token, carouselId);
+  return yayinla(ig_user_id, access_token, carouselId);
+}
+
+/**
+ * Reels (dikey video) paylaşımı — carousel'e göre çok daha yüksek erişim
+ * alıyor (Instagram algoritması feed carousel'i geriye itiyor). Video
+ * container'ı fotoğraftan farklı olarak arka planda işleniyor, bu yüzden
+ * FINISHED olana kadar poll ediliyor (bkz. videoHazirOlanaKadarBekle).
+ * @param videoUrl Herkese açık .mp4 URL'i (agents/src/image/reelRender.ts).
+ * @returns Yayınlanan Reels'in media ID'si — token/kurulum eksikse `null`.
+ */
+export async function postReelToInstagram(caption: string, videoUrl: string): Promise<string | null> {
+  const token = await getMetaToken("instagram");
+  const ig_user_id = token?.ig_user_id;
+  if (!token || !ig_user_id) {
+    console.warn("[instagram] token/hesap bilgisi yok, reels paylaşımı atlandı");
+    return null;
+  }
+  const { access_token } = token;
+
+  const containerId = await containerOlustur(ig_user_id, access_token, {
+    media_type: "REELS",
+    video_url: videoUrl,
+    caption,
+  });
+  await videoHazirOlanaKadarBekle(containerId, access_token);
+  return yayinla(ig_user_id, access_token, containerId);
 }

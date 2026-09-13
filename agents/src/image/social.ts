@@ -188,3 +188,15 @@ export async function writeCarouselSlides(
   }
   return sonuc;
 }
+
+/** writeCarouselSlides'ın video karşılığı — bkz. reelRender.ts. */
+export async function writeReelVideo(
+  slug: string,
+  video: Buffer
+): Promise<{ url: string; dosyaYolu: string }> {
+  await mkdir(SOCIAL_DIR, { recursive: true });
+  const dosyaAdi = `${slug}-reel.mp4`;
+  const dosyaYolu = path.join(SOCIAL_DIR, dosyaAdi);
+  await writeFile(dosyaYolu, video);
+  return { url: `https://sosyektif.com/images/social/${dosyaAdi}`, dosyaYolu };
+}

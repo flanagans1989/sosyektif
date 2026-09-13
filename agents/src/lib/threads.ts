@@ -29,11 +29,13 @@ async function containerHazirOlanaKadarBekle(containerId: string, accessToken: s
   // Zaman aşımı — yine de yayınlamayı dene, çoğu zaman bu noktada hazırdır.
 }
 
-export async function postToThreads(text: string, url: string): Promise<void> {
+/** @returns Yayınlanan gönderinin ID'si (sosyal performans ajanı için,
+ *   bkz. agents/src/orchestrator/sosyalPerformans.ts) — token yoksa `null`. */
+export async function postToThreads(text: string, url: string): Promise<string | null> {
   const token = await getMetaToken("threads");
   if (!token) {
     console.warn("[threads] token yok, paylaşım atlandı");
-    return;
+    return null;
   }
 
   const metin = `${text}\n\n${url}`.slice(0, 500); // Threads gönderi sınırı
@@ -70,4 +72,6 @@ export async function postToThreads(text: string, url: string): Promise<void> {
   if (!yayinRes.ok) {
     throw new Error(`[threads] yayınlanamadı: ${yayinRes.status} ${await yayinRes.text()}`);
   }
+  const { id } = (await yayinRes.json()) as { id: string };
+  return id;
 }

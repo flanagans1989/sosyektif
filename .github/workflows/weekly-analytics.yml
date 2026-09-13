@@ -33,6 +33,19 @@ jobs:
           TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
         run: npm run weekly-analytics
 
+      # Sosyal performans ajanı (PLAN.md 11.6): analytics/index.ts'in
+      # üzerine, Instagram/Facebook etkileşimini küçük bir sinyal olarak
+      # ekler. AGENT_PAYLASIM_ANAHTARI yoksa/token'lar eksikse sessizce
+      # atlanır (R5 deseni) — ayrı bir job'a gerek yok, hatası bu adımı
+      # (dolayısıyla commit'i) etkilemesin diye continue-on-error.
+      - working-directory: agents
+        continue-on-error: true
+        env:
+          AGENT_PAYLASIM_ANAHTARI: ${{ secrets.AGENT_PAYLASIM_ANAHTARI }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+        run: npm run sosyal-performans
+
       - name: category-weights.json'u commit'le
         run: |
           git config user.name "sosyektif-bot"

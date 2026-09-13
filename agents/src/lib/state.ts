@@ -20,6 +20,14 @@ export const configSchema = z.object({
   onayaDusEsigi: z.number().min(0).max(1).default(0.6),
   ardisikBasarisizCalismaLimiti: z.number().int().min(1).default(3),
   ardisikBasarisizCalisma: z.number().int().min(0).default(0),
+  /**
+   * Reels/video ajanı (PLAN.md Bölüm 11.2) — carousel slaytlarından ffmpeg ile
+   * kısa dikey video üretip Instagram Reels + Facebook video olarak paylaşır.
+   * Varsayılan kapalı: yeni bir içerik biçimi olduğu için önce
+   * `npm run reel-onizle -- <slug>` ile gözle kontrol edilmesi öneriliyor
+   * (bkz. sosyal-gorsel-tasarim-yonu memory notu — önce önizle, sonra aç).
+   */
+  reelsAktif: z.boolean().default(false),
 });
 export type Config = z.infer<typeof configSchema>;
 
@@ -82,6 +90,15 @@ export const publishedEntrySchema = z.object({
   format: z.string(),
   yayinTarihi: z.string(),
   otomatikYayinlandi: z.boolean(),
+  /** Sosyal performans ajanı için (bkz. orchestrator/sosyalPerformans.ts) —
+   * her platformda paylaşılan gönderinin ID'si, atlanmışsa alan yok. */
+  sosyalPaylasimlar: z
+    .object({
+      threads: z.string().optional(),
+      instagram: z.string().optional(),
+      facebook: z.string().optional(),
+    })
+    .optional(),
 });
 export type PublishedEntry = z.infer<typeof publishedEntrySchema>;
 
@@ -94,6 +111,22 @@ export async function appendPublishedEntry(entry: PublishedEntry): Promise<void>
   const entries = await readPublishedIndex();
   entries.push(entry);
   await writeFile(PATHS.publishedIndex, JSON.stringify(entries, null, 2) + "\n", "utf-8");
+}
+
+/**
+ * Dağıtım (distribute/index.ts) publishDraft'tan SONRA çalıştığı için sosyal
+ * gönderi ID'leri ancak burada, ayrı bir adımda eklenebiliyor (sosyal
+ * performans ajanı bunları okuyor, bkz. orchestrator/sosyalPerformans.ts).
+ */
+export async function updatePublishedEntrySosyal(
+  slug: string,
+  sosyal: NonNullable<PublishedEntry["sosyalPaylasimlar"]>
+): Promise<void> {
+  const entries = await readPublishedIndex();
+  const guncellenmis = entries.map((e) =>
+    e.slug === slug ? { ...e, sosyalPaylasimlar: { ...e.sosyalPaylasimlar, ...sosyal } } : e
+  );
+  await writeFile(PATHS.publishedIndex, JSON.stringify(guncellenmis, null, 2) + "\n", "utf-8");
 }
 
 /** Basit konu parmak izi: küçük harf + boşluk normalize — tam tekrar kontrolü için. */

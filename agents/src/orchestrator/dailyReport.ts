@@ -1,5 +1,6 @@
 import { readConfig, readPublishedIndex, readRunSummary } from "../lib/state.js";
 import { notifyAdmin } from "../lib/telegram.js";
+import { getMetaToken } from "../lib/metaToken.js";
 
 /**
  * Günde bir kez çalışır (.github/workflows/daily-report.yml). Sessiz
@@ -40,6 +41,21 @@ async function main() {
 
   if (sonYayinZamanAsimi > yirmiDortSaatMs) {
     satirlar.push("⚠️ Son 24 saattir hiç yeni içerik yayınlanmadı — pipeline'ı kontrol et.");
+  }
+
+  // Meta (Threads/Instagram/Facebook) token'ları — süresi dolmadan önce
+  // uyarmak, dolduktan sonra "paylaşım sessizce atlandı" diye fark etmemekten
+  // iyidir (R5 deseni: token yoksa/dolmuşsa atlanır ama kimseye haber vermez,
+  // bu kontrol o boşluğu kapatıyor).
+  const BES_GUN_MS = 5 * 24 * 60 * 60 * 1000;
+  for (const platform of ["threads", "instagram", "facebook"] as const) {
+    const token = await getMetaToken(platform);
+    if (!token) {
+      satirlar.push(`⚠️ ${platform} token'ı yok/süresi dolmuş — paylaşımlar sessizce atlanıyor, yeniden bootstrap gerekebilir.`);
+    } else if (token.expires_at !== 0 && token.expires_at - Date.now() < BES_GUN_MS) {
+      const kalanGun = Math.round((token.expires_at - Date.now()) / (24 * 60 * 60 * 1000));
+      satirlar.push(`⚠️ ${platform} token'ının süresi ${kalanGun} gün içinde doluyor.`);
+    }
   }
 
   await notifyAdmin(satirlar.join("\n"));

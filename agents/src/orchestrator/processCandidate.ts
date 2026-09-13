@@ -12,6 +12,7 @@ import {
   ozelGunIcerikUretildiMi,
   markOzelGunIcerikUretildi,
   readPublishedIndex,
+  updatePublishedEntrySosyal,
   type Config,
 } from "../lib/state.js";
 import { FORMAT_ETIKETLERI_TR } from "../lib/formatLabels.js";
@@ -204,14 +205,26 @@ export async function processCandidate(aday: TrendCandidate, config: Config): Pr
 
   // 5. Dağıtım ya da onay bildirimi
   if (otomatik) {
-    await distributeContent({
+    const dagitimSonucu = await distributeContent({
       frontmatter: draft.frontmatter,
       slug: draft.slug,
       publicUrl: yayin.publicUrl,
+      reelsAktif: config.reelsAktif,
     });
+    if (Object.keys(dagitimSonucu.sosyalPaylasimlar).length > 0) {
+      await updatePublishedEntrySosyal(draft.slug, dagitimSonucu.sosyalPaylasimlar);
+    }
     await bildirIndexNow(yayin.publicUrl);
+    // Sosyal kanallardan biri sessizce başarısız olduysa (ör. token süresi
+    // dolmuş) admin'e haber ver — önceden bu hatalar sadece ephemeral
+    // runner'ın konsol logunda kalıyordu, kimse fark etmiyordu
+    // (2026-09-13'te 8 saatlik bir pipeline arızasıyla aynı gün tespit edildi).
+    const uyari =
+      dagitimSonucu.basarisizlar.length > 0
+        ? `\n\n⚠️ Bazı kanallar atlandı:\n${escapeHtml(dagitimSonucu.basarisizlar.join("\n"))}`
+        : "";
     await notifyAdmin(
-      `✅ Otomatik yayınlandı (skor ${moderasyon.skor}): <b>${escapeHtml(draft.frontmatter.baslik)}</b>\n${yayin.publicUrl}`
+      `✅ Otomatik yayınlandı (skor ${moderasyon.skor}): <b>${escapeHtml(draft.frontmatter.baslik)}</b>\n${yayin.publicUrl}${uyari}`
     );
   } else {
     await notifyAdminOnayButonlu(onayMesaji(draft, moderasyon, yayin, config.provaModu), yayin.slug);

@@ -30,13 +30,15 @@ async function fotoYukle(
  * @param imageUrls Herkese açık görsel URL'leri (agents/src/image/social.ts ->
  *   writeCarouselSlides). Tek görselse doğrudan fotoğraflı gönderi, birden
  *   fazlaysa çoklu fotoğraf albümü olur.
+ * @returns Yayınlanan gönderinin ID'si (sosyal performans ajanı için) —
+ *   token yoksa `null`.
  */
-export async function postToFacebook(message: string, imageUrls: string[]): Promise<void> {
+export async function postToFacebook(message: string, imageUrls: string[]): Promise<string | null> {
   const token = await getMetaToken("facebook");
   const pageId = token?.page_id;
   if (!token || !pageId) {
     console.warn("[facebook] token/sayfa bilgisi yok, paylaşım atlandı");
-    return;
+    return null;
   }
   const { access_token } = token;
 
@@ -51,7 +53,8 @@ export async function postToFacebook(message: string, imageUrls: string[]): Prom
     if (!res.ok) {
       throw new Error(`[facebook] gönderi paylaşılamadı: ${res.status} ${await res.text()}`);
     }
-    return;
+    const { id } = (await res.json()) as { id: string };
+    return id;
   }
 
   if (imageUrls.length === 1) {
@@ -67,7 +70,8 @@ export async function postToFacebook(message: string, imageUrls: string[]): Prom
     if (!res.ok) {
       throw new Error(`[facebook] fotoğraf paylaşılamadı: ${res.status} ${await res.text()}`);
     }
-    return;
+    const { post_id, id } = (await res.json()) as { post_id?: string; id: string };
+    return post_id ?? id;
   }
 
   // Çoklu görsel: önce her birini yayınlanmamış olarak yükle, sonra tek bir
@@ -86,4 +90,36 @@ export async function postToFacebook(message: string, imageUrls: string[]): Prom
   if (!res.ok) {
     throw new Error(`[facebook] albüm paylaşılamadı: ${res.status} ${await res.text()}`);
   }
+  const { id } = (await res.json()) as { id: string };
+  return id;
+}
+
+/**
+ * Facebook Sayfası video paylaşımı (Reels'e Facebook'ta karşılık gelen
+ * biçim). instagram.ts'teki postReelToInstagram ile aynı video dosyasını
+ * kullanır. Facebook'un video yükleme uç noktası dosya URL'ini kendi çekip
+ * işliyor — Threads/Instagram'daki gibi ayrı bir "container hazır mı" polling
+ * adımı gerekmiyor, `/videos` çağrısı doğrudan post ID döner.
+ * @param videoUrl Herkese açık .mp4 URL'i (agents/src/image/reelRender.ts).
+ * @returns Yayınlanan videonun ID'si — token yoksa `null`.
+ */
+export async function postVideoToFacebook(description: string, videoUrl: string): Promise<string | null> {
+  const token = await getMetaToken("facebook");
+  const pageId = token?.page_id;
+  if (!token || !pageId) {
+    console.warn("[facebook] token/sayfa bilgisi yok, video paylaşımı atlandı");
+    return null;
+  }
+  const { access_token } = token;
+
+  const res = await fetch(
+    `${GRAPH_BASE}/${pageId}/videos?` +
+      new URLSearchParams({ file_url: videoUrl, description, access_token }),
+    { method: "POST" }
+  );
+  if (!res.ok) {
+    throw new Error(`[facebook] video paylaşılamadı: ${res.status} ${await res.text()}`);
+  }
+  const { id } = (await res.json()) as { id: string };
+  return id;
 }

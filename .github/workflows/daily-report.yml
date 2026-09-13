@@ -28,4 +28,6 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+          # Meta (Threads/Instagram/Facebook) token süre kontrolü için.
+          AGENT_PAYLASIM_ANAHTARI: ${{ secrets.AGENT_PAYLASIM_ANAHTARI }}
         run: npm run daily-report
