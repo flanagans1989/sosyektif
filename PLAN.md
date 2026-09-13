@@ -2,8 +2,17 @@
 
 **Hedef:** onedio.com formatında (liste, "bunu bilmiyordun", quiz) içerik sitesini, minimum insan müdahalesiyle ajanlar tarafından üretip yayınlamak.
 **Ana kısıt:** Zorunlu giderler hariç sıfır maliyet. Zorunlu olan ödenir (şu an sadece domain); "kolaylık" için ücretli servis kullanılmaz.
-**Durum:** Site ve ajan zinciri çalışıyor (Faz 1c). Site özellikleri (Bölüm 10) büyük ölçüde tamamlandı. Sıradaki: Faz 3 — Trafik Büyümesi (Bölüm 11), içerik kapısı (~150 içerik) açılınca.
-**Son güncelleme:** 2026-09-12
+**Durum:** Site ve ajan zinciri çalışıyor (Faz 1c). Site özellikleri (Bölüm 10) büyük ölçüde tamamlandı. Faz 3'ün sosyal medya ayağı (Bölüm 11.2) erken kuruldu: Threads, Instagram ve Facebook Sayfası otomatik paylaşımda; Reels videosu Telegram onayıyla hazır. Yayınlanan içerik: 11 (kapı ~150).
+**Son güncelleme:** 2026-09-13
+
+### Son değişiklikler — 2026-09-13
+- **Facebook Sayfası paylaşımı** devreye alındı (Bölüm 11.2): adaptör, Pages API kullanım durumu, süresiz Page Access Token, Worker'da `meta_token:facebook`. Gerçek Sayfa ID'si `1243429762194033`.
+- **`AGENT_PAYLASIM_ANAHTARI` rotasyonu:** GitHub Secrets + Cloudflare Worker'da yeni değer.
+- **Kritik bug:** `pipeline.yml` commit adımı ~8 saat boyunca çöküyordu (eksik `site/public/images/social/` klasörü) — düzeltildi, doğrulandı (Bölüm 11.8).
+- **Instagram slaytları** HTML/CSS + Chromium render'a taşındı; CI'da Chromium + renkli emoji fontu kurulumu ilk gerçek çalışmada doğrulandı.
+- **Üç yeni ajan:** Gözetim (token süresi + sessiz kanal hataları, Bölüm 11.8), Sosyal Performans (haftalık etkileşim → kategori ağırlıkları, Bölüm 11.6), Reels/Video (Bölüm 11.9).
+- **Reels:** sinematik 9:16 video şablonu, CC0 müzik (kullanıcının seçtiği "Sinematik elektronik"), Telegram'a "✅ Reels olarak paylaş / ❌ Paylaşma" butonlarıyla onay, onayda Instagram Reels + Facebook video. `reelsAktif` henüz **kapalı** — açılırsa yeni içeriklerin Instagram/Facebook paylaşımı carousel yerine Reels onayına düşer.
+- **Bekleyen kullanıcı kararları:** `reelsAktif`'i açmak; müzik kütüphanesine yeni parça eklemek (şu an tek parça); Telegram herkese açık kanalı (Bölüm 11.1); isteğe bağlı App Secret sıfırlama (bootstrap sırasında sohbete yapıştırıldı).
 
 ---
 
@@ -145,10 +154,16 @@ Orkestratör (GitHub Actions cron, günde ~6 kez)
  ▼
 5. Yayın Ajanı ───── toplu commit → Cloudflare build → IndexNow ping
  ▼
-6. Dağıtım Ajanı ─── Telegram kanalı + Bluesky (Faz 3: Threads/IG/FB — Bölüm 11)
+6. Dağıtım Ajanı ─── Telegram kanalı + Bluesky + Threads + Instagram + Facebook Sayfası
+ │     └── reelsAktif açıksa: Reels videosu → Telegram onayı → Instagram Reels + Facebook video
  ▼
 7. Analitik Ajanı ── (haftalık) Cloudflare + Search Console → kategori ağırlıkları
+ └── Sosyal Performans Ajanı (haftalık, 7'den sonra) → Instagram/Facebook etkileşimi → ağırlıklara yumuşak çarpan
+
+Gözetim (günlük rapor) ── pipeline özeti + 24 saat yayın yok alarmı + Meta token süresi
 ```
+
+_Güncelleme 2026-09-13: Threads/Instagram/Facebook dağıtımı ile Sosyal Performans, Gözetim ve Reels ajanları eklendi (ayrıntı Bölüm 11.2, 11.6, 11.8, 11.9)._
 
 ### 3.1 Trend Ajanı
 | Kaynak | Erişim | Not |
@@ -197,9 +212,9 @@ Skor → otomatik yayın / onaya düş / red.
 |---|---|---|---|
 | Telegram kanalı | 1 | 0 | Bot API, onay süreci yok |
 | Bluesky | 1 | 0 | Açık API, onay süreci yok |
-| Threads | 2 | 0 | Günde 250 post limiti, Meta uygulaması gerekir |
-| Instagram | 2 | 0 | Professional hesap + Meta uygulaması; kendi hesabı için tester rolüyle review gerekmez |
-| Facebook Sayfası | 2 | 0 | Aynı Meta uygulaması |
+| Threads | 2 | 0 | Günde 250 post limiti, Meta uygulaması gerekir — **2026-09-12'den beri aktif** |
+| Instagram | 2 | 0 | Professional hesap + Meta uygulaması; kendi hesabı için tester rolüyle review gerekmez — **2026-09-12'den beri aktif** (carousel; Reels Telegram onayıyla hazır, 2026-09-13) |
+| Facebook Sayfası | 2 | 0 | Aynı Meta uygulaması — **2026-09-13'ten beri aktif** (albüm + link) |
 | X (Twitter) | — | **Ücretli** | 2026'da ücretsiz katman kalktı; bütçe olursa eklenir |
 
 **Bilinen sorun (2026-09-12'de tespit edildi, düzeltmesi bilerek ertelendi — henüz yeterli içerik hacmi yok):**
@@ -210,12 +225,14 @@ Ayrıca `TELEGRAM_PUBLIC_CHANNEL_ID` secret'ı hiç ayarlanmamış, yani otomati
 bile Telegram kanal paylaşımı sessizce atlanıyor (yalnızca Bluesky çalışıyor). Düzeltme: (1) herkese
 açık Telegram kanalı aç + secret'ı ekle, (2) onay Worker'ı, GitHub Actions'ta küçük bir
 "onaylananı dağıt" workflow'unu tetiklesin (Worker'ın zaten `Actions: write` yetkisi var).
+_2026-09-13 durum: hâlâ geçerli ve bilerek bekliyor. Otomatik yayınlanan içerikte Bluesky, Threads, Instagram ve Facebook çalışıyor; `TELEGRAM_PUBLIC_CHANNEL_ID` hâlâ yok. Kanal hataları artık admin bildirimine düşüyor (Bölüm 11.8)._
 
 ### 3.7 Analitik Ajanı (haftalık)
 - Cloudflare Web Analytics (cookie'siz, ücretsiz) → GraphQL API ile sayfa bazlı görüntülenme
 - Google Search Console API → sorgu, tıklama, CTR
 - Çıktı: kategori/format ağırlıkları güncellenir → Trend Ajanı bir sonraki hafta buna göre seçer
 - Haftalık performans özeti Telegram'a
+- _2026-09-13:_ Sosyal Performans Ajanı aynı haftalık işe eklendi (Instagram/Facebook etkileşimi, Bölüm 11.6)
 
 ---
 
@@ -580,7 +597,7 @@ Threads/Instagram'dan gelmesi beklenir. **Gerçekçi beklenti: anlamlı trafik 3
 ### 11.0 Şimdiden yapılabilir (kullanıcı, isteğe bağlı)
 - [x] Instagram hesabı → **Profesyonel (İşletme)** hesaba çevir (API yalnızca profesyonel hesapta paylaşım yapar) — 2026-09-12
 - [x] Aynı hesaptan **Threads** profili — 2026-09-12
-- [x] **Facebook Sayfası** — 2026-09-12 açıldı: "Sosyektif" (Facebook büyük harfe çevirdi), kategori Eğlence Sitesi, site + e-posta ekli, telefon/adres boş. https://www.facebook.com/profile.php?id=61594245544144 — Not: kişisel profil "sosyektif" adıyla açılamaz (Meta gerçek isim kuralı; kapatılırsa bağlı Sayfa ve geliştirici uygulaması da gider). Doğru yol: kullanıcının kişisel hesabından "sosyektif" adlı **Sayfa**; Sayfada yöneticinin adı görünmez. Threads/Instagram paylaşımı Sayfa gerektirmez, sadece Facebook'a paylaşım için lazım. Meta geliştirici hesabı (11.2) yine de kişisel Facebook hesabıyla girişi gerektirir
+- [x] **Facebook Sayfası** — 2026-09-12 açıldı: "Sosyektif" (Facebook büyük harfe çevirdi), kategori Eğlence Sitesi, site + e-posta ekli, telefon/adres boş. https://www.facebook.com/profile.php?id=61594245544144 (bu URL numarası Graph API Sayfa ID'si değil; gerçek Sayfa ID'si `1243429762194033`, 2026-09-13) — Not: kişisel profil "sosyektif" adıyla açılamaz (Meta gerçek isim kuralı; kapatılırsa bağlı Sayfa ve geliştirici uygulaması da gider). Doğru yol: kullanıcının kişisel hesabından "sosyektif" adlı **Sayfa**; Sayfada yöneticinin adı görünmez. Threads/Instagram paylaşımı Sayfa gerektirmez, sadece Facebook'a paylaşım için lazım. Meta geliştirici hesabı (11.2) yine de kişisel Facebook hesabıyla girişi gerektirir
 - [ ] **WhatsApp Kanalı** (Türkiye'de Telegram'dan çok daha yaygın)
 
 **Neden erken:** Kullanıcı adı başkası almadan ayrılır; Meta yeni açılıp hemen yoğun otomatik paylaşım
@@ -648,6 +665,8 @@ modunda, test kullanıcısı rolüyle kalır.
 | En iyi çalışan | Soru ile başlayan kısa kanca + link | Kaydırmalı gönderi (kaydetme/paylaşma algoritmayı besler) |
 | Trafik yolu | Doğrudan link | Profil linki → `/bio` |
 | Günlük limit | 250 gönderi | ~50 (Meta zaman zaman değiştiriyor) |
+
+_Facebook Sayfası (2026-09-13):_ tıklanabilir link + fotoğraf albümü aynı gönderide; Instagram için üretilen görseller yeniden kullanılıyor. Reels açıldığında video olarak paylaşılıyor.
 
 **Kurallar:**
 - **Isınma:** ilk 2 hafta günde 1-2 gönderi, sonra kademeli artış. İlk günden günde 10 otomatik gönderi = hesap kısıtlaması riski
