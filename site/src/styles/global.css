@@ -16,3 +16,16 @@ body {
   background-color: var(--color-zemin);
   color: var(--color-murekkep);
 }
+
+/* Ekodektif koyu yüzeyleri: sağ üstte para yeşili ışıma + çok silik bir grafik
+   kağıdı ızgarası (ana sayfa bandı, /ekodektif/ hero'su). */
+.eko-doku {
+  background-image:
+    radial-gradient(38rem 22rem at 100% 0%, rgb(14 159 110 / 0.35), transparent 65%),
+    linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size:
+    auto,
+    32px 32px,
+    32px 32px;
+}

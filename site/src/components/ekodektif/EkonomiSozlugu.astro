@@ -1,0 +1,58 @@
+---
+// Kısa ekonomi sözlüğü: panoda ve haberlerde geçen terimlerin sade tanımları.
+// Tavsiye içermez; yalnızca kavram açıklaması (bkz. editoryal politika).
+
+const TERIMLER = [
+  {
+    terim: 'Enflasyon',
+    tanim: 'Fiyatların genel seviyesinin zamanla artması. Aynı parayla dün alabildiğinden daha azını bugün alabiliyorsan, enflasyonu cebinde hissediyorsun demektir.',
+  },
+  {
+    terim: 'Faiz',
+    tanim: 'Paranın kirası. Borç alan, borç verene belli bir süre sonunda aldığı paranın üzerine ek bir ödeme yapar; bu ek ödemenin yıllık oranı faiz oranıdır.',
+  },
+  {
+    terim: 'Devalüasyon',
+    tanim: 'Bir ülke parasının diğer paralar karşısındaki değerinin resmî bir kararla düşürülmesi. Kurun piyasada kendiliğinden yükselmesine ise değer kaybı denir.',
+  },
+  {
+    terim: 'Makas',
+    tanim: 'Alış ve satış fiyatı arasındaki fark. Döviz ya da altın alıp hemen geri satarsan, bu fark kadar kaybedersin; makas ne kadar açıksa fark o kadar büyüktür.',
+  },
+  {
+    terim: 'Ons',
+    tanim: "Altın ve gümüşün uluslararası ağırlık birimi. Kıymetli madenlerde kullanılan troy ons yaklaşık 31,1 gramdır; dünya altın fiyatları ons başına dolar olarak açıklanır.",
+  },
+  {
+    terim: 'Ayar',
+    tanim: "Altının saflık derecesi. 24 ayar neredeyse saf altındır; 22 ayarın binde 916'sı, 14 ayarın binde 585'i altındır. Geri kalanı dayanıklılık için eklenen başka metallerdir.",
+  },
+  {
+    terim: 'Borsa',
+    tanim: 'Şirket hisseleri gibi değerli kâğıtların kurallara bağlı olarak alınıp satıldığı düzenli piyasa. Türkiye’deki borsa Borsa İstanbul’dur.',
+  },
+  {
+    terim: 'Kripto para',
+    tanim: 'Merkezi bir banka yerine şifreleme ve dağıtık kayıt defteri (blokzincir) ile işleyen dijital para. İlk ve en bilineni 2009’da ortaya çıkan Bitcoin’dir.',
+  },
+];
+---
+
+<section id="sozluk" class="mt-14 scroll-mt-28" aria-labelledby="sozluk-baslik">
+  <h2 id="sozluk-baslik" class="text-2xl font-extrabold text-murekkep">📖 Cep Sözlüğü</h2>
+  <p class="mt-1 text-murekkep/60">Haberlerde duyduğun ekonomi terimleri, tek cümleyle.</p>
+
+  <dl class="mt-5 grid overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 sm:grid-cols-2">
+    {TERIMLER.map(({ terim, tanim }, i) => (
+      <div class={`flex gap-4 p-5 ${i > 0 ? 'border-t border-black/5' : ''} ${i === 1 ? 'sm:border-t-0' : ''} ${i % 2 === 1 ? 'sm:border-l' : ''}`}>
+        <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-eko/10 text-sm font-extrabold text-eko-koyu" aria-hidden="true">
+          {terim.charAt(0)}
+        </span>
+        <div>
+          <dt class="font-bold text-murekkep">{terim}</dt>
+          <dd class="mt-1 text-sm leading-relaxed text-murekkep/70">{tanim}</dd>
+        </div>
+      </div>
+    ))}
+  </dl>
+</section>

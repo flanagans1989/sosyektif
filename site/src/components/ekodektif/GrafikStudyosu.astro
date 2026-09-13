@@ -1,0 +1,312 @@
+---
+// Etkileşimli fiyat grafiği: varlık (Dolar, Euro, Gram Altın, Bitcoin,
+// Ethereum) ve dönem seçilir; imleç/parmakla grafiğin üzerinde gezinince o
+// günün değeri görünür. Veriler lib/piyasa.ts → gecmisSeri (Frankfurter +
+// CoinGecko, anahtarsız, tarayıcıdan).
+
+const VARLIKLAR = [
+  { anahtar: 'USD', ad: 'Dolar' },
+  { anahtar: 'EUR', ad: 'Euro' },
+  { anahtar: 'gram-altin', ad: 'Gram Altın' },
+  { anahtar: 'bitcoin', ad: 'Bitcoin' },
+  { anahtar: 'ethereum', ad: 'Ethereum' },
+];
+
+const dugmeSinifi =
+  'shrink-0 rounded-full px-3.5 py-1.5 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-eko aria-pressed:bg-murekkep aria-pressed:text-white';
+---
+
+<section id="grafik" class="mt-14 scroll-mt-28" aria-labelledby="grafik-baslik">
+  <h2 id="grafik-baslik" class="text-2xl font-extrabold text-murekkep">📊 Grafik Stüdyosu</h2>
+  <p class="mt-1 text-murekkep/60">Bir varlık ve dönem seç, grafiğin üzerinde gezinerek o günün fiyatını gör.</p>
+
+  <div class="mt-5 rounded-3xl bg-white p-4 shadow-sm ring-1 ring-black/5 sm:p-6">
+    <div class="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" role="group" aria-label="Varlık seç">
+      {VARLIKLAR.map((v, i) => (
+        <button type="button" class={`${dugmeSinifi} bg-black/5 text-murekkep/70 hover:bg-black/10`} data-varlik={v.anahtar} aria-pressed={i === 0 ? 'true' : 'false'}>
+          {v.ad}
+        </button>
+      ))}
+    </div>
+
+    <div class="mt-5 flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-murekkep/45" id="grafik-etiket">Dolar / TL</p>
+        <p class="mt-1 text-3xl font-extrabold tabular-nums text-murekkep sm:text-4xl" id="grafik-deger">—</p>
+        <p class="mt-1 text-sm font-semibold tabular-nums text-murekkep/50" id="grafik-degisim">&nbsp;</p>
+      </div>
+      <div class="flex gap-1 rounded-full bg-black/5 p-1" role="group" aria-label="Dönem seç" id="grafik-araliklar"></div>
+    </div>
+
+    <div class="relative mt-5 h-60 touch-pan-y select-none sm:h-80" id="grafik-alan">
+      <svg class="absolute inset-0 h-full w-full overflow-visible text-eko" viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true" id="grafik-svg">
+        <defs>
+          <linearGradient id="grafik-dolgu" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="currentColor" stop-opacity="0.22"></stop>
+            <stop offset="100%" stop-color="currentColor" stop-opacity="0"></stop>
+          </linearGradient>
+        </defs>
+        <g stroke="#201a1c" stroke-opacity="0.06" stroke-width="1" vector-effect="non-scaling-stroke">
+          <line x1="0" y1="24" x2="1000" y2="24" vector-effect="non-scaling-stroke"></line>
+          <line x1="0" y1="150" x2="1000" y2="150" vector-effect="non-scaling-stroke"></line>
+          <line x1="0" y1="276" x2="1000" y2="276" vector-effect="non-scaling-stroke"></line>
+        </g>
+        <path data-grafik="alan" d="" fill="url(#grafik-dolgu)"></path>
+        <path data-grafik="cizgi" d="" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+      </svg>
+
+      <span class="pointer-events-none absolute right-0 top-[8%] -translate-y-full rounded bg-white/80 px-1 text-[11px] font-semibold tabular-nums text-murekkep/45" id="grafik-max"></span>
+      <span class="pointer-events-none absolute bottom-[8%] right-0 translate-y-full rounded bg-white/80 px-1 text-[11px] font-semibold tabular-nums text-murekkep/45" id="grafik-min"></span>
+
+      <div class="pointer-events-none absolute inset-y-0 w-px bg-murekkep/25" id="grafik-cizgi" hidden></div>
+      <div class="pointer-events-none absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-current shadow text-eko" id="grafik-nokta" hidden></div>
+      <div class="pointer-events-none absolute top-0 z-10 -translate-x-1/2 whitespace-nowrap rounded-lg bg-murekkep px-2.5 py-1.5 text-xs font-semibold tabular-nums text-white shadow-lg" id="grafik-ipucu" hidden></div>
+
+      <p class="absolute inset-0 flex items-center justify-center text-sm text-murekkep/50" id="grafik-durum">Grafik yükleniyor…</p>
+    </div>
+
+    <div class="mt-3 flex justify-between text-[11px] font-semibold tabular-nums text-murekkep/40">
+      <span id="grafik-bas-tarih">&nbsp;</span>
+      <span id="grafik-son-tarih">&nbsp;</span>
+    </div>
+
+    <dl class="mt-5 grid grid-cols-3 gap-3 border-t border-black/5 pt-4 text-sm">
+      <div>
+        <dt class="text-[11px] font-semibold uppercase tracking-wider text-murekkep/45">Dönem başı</dt>
+        <dd class="mt-0.5 font-bold tabular-nums text-murekkep" id="grafik-ozet-bas">—</dd>
+      </div>
+      <div>
+        <dt class="text-[11px] font-semibold uppercase tracking-wider text-murekkep/45">En yüksek</dt>
+        <dd class="mt-0.5 font-bold tabular-nums text-murekkep" id="grafik-ozet-max">—</dd>
+      </div>
+      <div>
+        <dt class="text-[11px] font-semibold uppercase tracking-wider text-murekkep/45">En düşük</dt>
+        <dd class="mt-0.5 font-bold tabular-nums text-murekkep" id="grafik-ozet-min">—</dd>
+      </div>
+    </dl>
+    <p class="mt-4 text-[11px] text-murekkep/40" id="grafik-kaynak">&nbsp;</p>
+  </div>
+</section>
+
+<script>
+  import { gecmisSeri, tlBicimle, VARLIK_ARALIKLARI, yuzdeBicimle, type Aralik, type SeriNoktasi, type Varlik } from '../../lib/piyasa';
+
+  const EN = 1000;
+  const BOY = 300;
+  const UST = 24;
+  const ALT = 276;
+  const MAKS_NOKTA = 400;
+
+  const VARLIK_ADI: Record<Varlik, string> = {
+    USD: 'Dolar / TL',
+    EUR: 'Euro / TL',
+    'gram-altin': 'Gram Altın / TL',
+    bitcoin: 'Bitcoin / TL',
+    ethereum: 'Ethereum / TL',
+  };
+  const ARALIK_ADI: Record<Aralik, string> = { '7G': '7G', '1A': '1A', '1Y': '1Y', '5Y': '5Y', TUMU: '2005+' };
+  const ARALIK_UZUN: Record<Aralik, string> = {
+    '7G': 'son 7 günde',
+    '1A': 'son 1 ayda',
+    '1Y': 'son 1 yılda',
+    '5Y': 'son 5 yılda',
+    TUMU: "2005'ten bu yana",
+  };
+  const KAYNAK: Record<Varlik, string> = {
+    USD: 'Kaynak: Avrupa Merkez Bankası referans kurları (Frankfurter). Hafta sonları ve tatillerde veri yoktur.',
+    EUR: 'Kaynak: Avrupa Merkez Bankası referans kurları (Frankfurter). Hafta sonları ve tatillerde veri yoktur.',
+    'gram-altin': 'Kaynak: CoinGecko, PAX Gold (1 ons fiziki altın) fiyatından gram başına hesaplanır. Kuyumcu fiyatından farklı olabilir.',
+    bitcoin: 'Kaynak: CoinGecko.',
+    ethereum: 'Kaynak: CoinGecko.',
+  };
+
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T | null;
+  const alan = $('grafik-alan');
+  const svg = document.getElementById('grafik-svg');
+  const araliklarEl = $('grafik-araliklar');
+
+  let varlik: Varlik = 'USD';
+  let aralik: Aralik = '1Y';
+  let seri: SeriNoktasi[] = [];
+  let istekNo = 0;
+
+  function seyrelt(noktalar: SeriNoktasi[]): SeriNoktasi[] {
+    if (noktalar.length <= MAKS_NOKTA) return noktalar;
+    const adim = Math.ceil(noktalar.length / MAKS_NOKTA);
+    const sonuc = noktalar.filter((_, i) => i % adim === 0);
+    if (sonuc[sonuc.length - 1] !== noktalar[noktalar.length - 1]) sonuc.push(noktalar[noktalar.length - 1]);
+    return sonuc;
+  }
+
+  function tarihBicimle(ms: number, saatli: boolean): string {
+    return new Date(ms).toLocaleDateString('tr-TR', {
+      day: 'numeric',
+      month: 'short',
+      year: saatli ? undefined : 'numeric',
+      hour: saatli ? '2-digit' : undefined,
+      minute: saatli ? '2-digit' : undefined,
+    });
+  }
+
+  function araliklariCiz(): void {
+    if (!araliklarEl) return;
+    const secenekler = VARLIK_ARALIKLARI[varlik];
+    if (!secenekler.includes(aralik)) aralik = '1Y';
+    araliklarEl.innerHTML = '';
+    for (const a of secenekler) {
+      const d = document.createElement('button');
+      d.type = 'button';
+      d.textContent = ARALIK_ADI[a];
+      d.setAttribute('aria-pressed', String(a === aralik));
+      d.className =
+        'rounded-full px-3 py-1 text-xs font-bold text-murekkep/60 transition hover:text-murekkep focus-visible:outline-2 focus-visible:outline-eko aria-pressed:bg-white aria-pressed:text-murekkep aria-pressed:shadow-sm';
+      d.addEventListener('click', () => {
+        aralik = a;
+        araliklariCiz();
+        yukle();
+      });
+      araliklarEl.appendChild(d);
+    }
+  }
+
+  function konum(n: SeriNoktasi, t0: number, t1: number, min: number, max: number) {
+    const x = ((n.zaman - t0) / (t1 - t0 || 1)) * EN;
+    const y = UST + (1 - (n.deger - min) / (max - min || 1)) * (ALT - UST);
+    return { x, y };
+  }
+
+  function ciz(): void {
+    const durum = $('grafik-durum');
+    const saatli = aralik === '7G';
+    if (seri.length < 2) {
+      if (durum) {
+        durum.hidden = false;
+        durum.textContent = 'Bu dönem için veri bulunamadı.';
+      }
+      return;
+    }
+    if (durum) durum.hidden = true;
+
+    const t0 = seri[0].zaman;
+    const t1 = seri[seri.length - 1].zaman;
+    const degerler = seri.map((n) => n.deger);
+    const min = Math.min(...degerler);
+    const max = Math.max(...degerler);
+    const noktalar = seri.map((n) => konum(n, t0, t1, min, max));
+    const cizgi = `M${noktalar.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' L')}`;
+    svg?.querySelector('[data-grafik="cizgi"]')?.setAttribute('d', cizgi);
+    svg?.querySelector('[data-grafik="alan"]')?.setAttribute('d', `${cizgi} L${EN},${BOY} L0,${BOY} Z`);
+
+    const ilk = seri[0].deger;
+    const son = seri[seri.length - 1].deger;
+    const degisim = ((son - ilk) / ilk) * 100;
+    const renk = degisim < 0 ? 'text-rose-600' : 'text-eko';
+    svg?.classList.remove('text-rose-600', 'text-eko');
+    svg?.classList.add(renk);
+    const nokta = $('grafik-nokta');
+    nokta?.classList.remove('text-rose-600', 'text-eko');
+    nokta?.classList.add(renk);
+
+    const yaz = (id: string, metin: string) => {
+      const el = $(id);
+      if (el) el.textContent = metin;
+    };
+    yaz('grafik-etiket', VARLIK_ADI[varlik]);
+    yaz('grafik-deger', `${tlBicimle(son)} ₺`);
+    const degisimEl = $('grafik-degisim');
+    if (degisimEl) {
+      degisimEl.textContent = `${yuzdeBicimle(degisim)} ${ARALIK_UZUN[aralik]}`;
+      degisimEl.className = `mt-1 text-sm font-semibold tabular-nums ${degisim < 0 ? 'text-rose-600' : 'text-eko-koyu'}`;
+    }
+    yaz('grafik-max', `${tlBicimle(max)} ₺`);
+    yaz('grafik-min', `${tlBicimle(min)} ₺`);
+    yaz('grafik-bas-tarih', tarihBicimle(t0, saatli));
+    yaz('grafik-son-tarih', tarihBicimle(t1, saatli));
+    yaz('grafik-ozet-bas', `${tlBicimle(ilk)} ₺`);
+    yaz('grafik-ozet-max', `${tlBicimle(max)} ₺`);
+    yaz('grafik-ozet-min', `${tlBicimle(min)} ₺`);
+    yaz('grafik-kaynak', KAYNAK[varlik]);
+  }
+
+  async function yukle(): Promise<void> {
+    const no = ++istekNo;
+    const durum = $('grafik-durum');
+    if (durum && seri.length === 0) {
+      durum.hidden = false;
+      durum.textContent = 'Grafik yükleniyor…';
+    }
+    alan?.classList.add('opacity-60');
+    try {
+      const veri = seyrelt(await gecmisSeri(varlik, aralik));
+      if (no !== istekNo) return;
+      seri = veri;
+      ciz();
+    } catch {
+      if (no !== istekNo) return;
+      seri = [];
+      if (durum) {
+        durum.hidden = false;
+        durum.textContent = 'Grafik verisi şu an alınamadı, birazdan tekrar dene.';
+      }
+      svg?.querySelectorAll('path[data-grafik]').forEach((p) => p.setAttribute('d', ''));
+    } finally {
+      if (no === istekNo) alan?.classList.remove('opacity-60');
+    }
+  }
+
+  function ipucuGoster(e: PointerEvent): void {
+    if (!alan || seri.length < 2) return;
+    const kutu = alan.getBoundingClientRect();
+    const oran = Math.min(1, Math.max(0, (e.clientX - kutu.left) / kutu.width));
+    const t0 = seri[0].zaman;
+    const t1 = seri[seri.length - 1].zaman;
+    const hedef = t0 + oran * (t1 - t0);
+    let lo = 0;
+    let hi = seri.length - 1;
+    while (hi - lo > 1) {
+      const orta = (lo + hi) >> 1;
+      if (seri[orta].zaman < hedef) lo = orta;
+      else hi = orta;
+    }
+    const n = hedef - seri[lo].zaman < seri[hi].zaman - hedef ? seri[lo] : seri[hi];
+    const degerler = seri.map((s) => s.deger);
+    const p = konum(n, t0, t1, Math.min(...degerler), Math.max(...degerler));
+    const xPx = (p.x / EN) * kutu.width;
+    const yPx = (p.y / BOY) * kutu.height;
+
+    const cizgi = $('grafik-cizgi');
+    const nokta = $('grafik-nokta');
+    const ipucu = $('grafik-ipucu');
+    if (!cizgi || !nokta || !ipucu) return;
+    cizgi.hidden = nokta.hidden = ipucu.hidden = false;
+    cizgi.style.left = `${xPx}px`;
+    nokta.style.left = `${xPx}px`;
+    nokta.style.top = `${yPx}px`;
+    ipucu.textContent = `${tarihBicimle(n.zaman, aralik === '7G')} · ${tlBicimle(n.deger)} ₺`;
+    const yarim = ipucu.offsetWidth / 2;
+    ipucu.style.left = `${Math.min(kutu.width - yarim, Math.max(yarim, xPx))}px`;
+  }
+
+  function ipucuGizle(): void {
+    ['grafik-cizgi', 'grafik-nokta', 'grafik-ipucu'].forEach((id) => {
+      const el = $(id);
+      if (el) el.hidden = true;
+    });
+  }
+
+  alan?.addEventListener('pointermove', ipucuGoster);
+  alan?.addEventListener('pointerdown', ipucuGoster);
+  alan?.addEventListener('pointerleave', ipucuGizle);
+
+  document.querySelectorAll<HTMLButtonElement>('[data-varlik]').forEach((d) => {
+    d.addEventListener('click', () => {
+      varlik = d.dataset.varlik as Varlik;
+      document.querySelectorAll('[data-varlik]').forEach((x) => x.setAttribute('aria-pressed', String(x === d)));
+      araliklariCiz();
+      yukle();
+    });
+  });
+
+  araliklariCiz();
+  yukle();
+</script>

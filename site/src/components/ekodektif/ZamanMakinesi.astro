@@ -1,0 +1,190 @@
+---
+// "Zaman makinesi": seçilen yılın Ocak ayında 1 dolar/euro kaç TL'ydi, bugün
+// kaç TL? İki uç da aynı kaynaktan (Avrupa Merkez Bankası referans kuru,
+// Frankfurter) gelir ki kıyas tutarlı olsun. TL 2005'te altı sıfır atılarak
+// yeniden düzenlendiği için seri 2005'ten başlar.
+
+const BASLANGIC_YILI = 2005;
+const SON_YIL = new Date().getFullYear() - 1;
+const VARSAYILAN_YIL = 2015;
+---
+
+<section id="zaman-makinesi" class="mt-14 scroll-mt-28" aria-labelledby="zm-baslik">
+  <div class="relative isolate overflow-hidden rounded-3xl bg-murekkep text-white">
+    <div class="eko-doku pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
+
+    <div class="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_1.15fr] lg:gap-12">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-emerald-300">⏳ Zaman makinesi</p>
+        <h2 id="zm-baslik" class="mt-2 text-2xl font-extrabold leading-tight text-balance sm:text-3xl">
+          Geçmişte 1 dolar kaç lira ediyordu?
+        </h2>
+        <p class="mt-2 text-white/65">Bir yıl seç, o günkü kurla bugünü yan yana koy.</p>
+
+        <form class="mt-6 flex flex-col gap-5" id="zm-form">
+          <div class="flex gap-1 self-start rounded-full bg-white/10 p-1" role="group" aria-label="Para birimi">
+            <button type="button" data-zm-para="USD" aria-pressed="true" class="rounded-full px-4 py-1.5 text-sm font-bold text-white/70 transition aria-pressed:bg-white aria-pressed:text-murekkep focus-visible:outline-2 focus-visible:outline-emerald-300">Dolar</button>
+            <button type="button" data-zm-para="EUR" aria-pressed="false" class="rounded-full px-4 py-1.5 text-sm font-bold text-white/70 transition aria-pressed:bg-white aria-pressed:text-murekkep focus-visible:outline-2 focus-visible:outline-emerald-300">Euro</button>
+          </div>
+
+          <label class="flex flex-col gap-2" for="zm-yil">
+            <span class="flex items-baseline justify-between text-xs font-semibold uppercase tracking-wider text-white/55">
+              Yıl
+              <output class="text-4xl font-extrabold tabular-nums tracking-tight text-white" id="zm-yil-cikti" for="zm-yil">{VARSAYILAN_YIL}</output>
+            </span>
+            <input
+              id="zm-yil"
+              type="range"
+              min={BASLANGIC_YILI}
+              max={SON_YIL}
+              step="1"
+              value={VARSAYILAN_YIL}
+              class="w-full accent-emerald-400"
+            />
+            <span class="flex justify-between text-[11px] font-semibold tabular-nums text-white/40">
+              <span>{BASLANGIC_YILI}</span>
+              <span>{SON_YIL}</span>
+            </span>
+          </label>
+
+          <label class="flex flex-col gap-1 text-xs font-semibold uppercase tracking-wider text-white/55" for="zm-miktar">
+            O gün cebinde (₺)
+            <input
+              id="zm-miktar"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="any"
+              value="1000"
+              class="rounded-xl border border-white/15 bg-white/5 px-3 py-2.5 text-base font-bold normal-case tracking-normal tabular-nums text-white focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/30"
+            />
+          </label>
+        </form>
+      </div>
+
+      <div class="flex flex-col justify-center gap-5" aria-live="polite">
+        <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+          <div class="rounded-2xl bg-white/[0.06] p-4 ring-1 ring-white/10">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-white/50" id="zm-eski-etiket">Ocak {VARSAYILAN_YIL}</p>
+            <p class="mt-1 text-2xl font-extrabold tabular-nums sm:text-3xl" id="zm-eski-kur">—</p>
+          </div>
+          <span class="text-2xl text-white/30" aria-hidden="true">→</span>
+          <div class="rounded-2xl bg-eko/20 p-4 ring-1 ring-emerald-400/30">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-emerald-200/80" id="zm-yeni-etiket">Bugün</p>
+            <p class="mt-1 text-2xl font-extrabold tabular-nums sm:text-3xl" id="zm-yeni-kur">—</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-6xl font-extrabold leading-none tabular-nums tracking-tight text-emerald-400 sm:text-7xl" id="zm-kat">×—</p>
+          <p class="mt-2 text-white/70" id="zm-kat-metin">Kur hesaplanıyor…</p>
+        </div>
+
+        <p class="rounded-2xl bg-white/[0.06] p-4 text-sm leading-relaxed text-white/80 ring-1 ring-white/10" id="zm-hikaye">&nbsp;</p>
+
+        <p class="text-[11px] text-white/40">
+          Avrupa Merkez Bankası referans kurları (Frankfurter). Enflasyon hesabı değildir; yalnızca kur karşılaştırmasıdır.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { referansKur, tlBicimle } from '../../lib/piyasa';
+
+  type Para = 'USD' | 'EUR';
+  const PARA_ADI: Record<Para, string> = { USD: 'dolar', EUR: 'euro' };
+
+  // Yılın okunuşuna göre ünlü/ünsüz uyumu: 2010'da, 2015'te, 2006'dan, 2013'ten...
+  // Son okunan kelime son rakam (bir, iki, üç...) ya da sıfırsa onlar basamağı (on, yirmi).
+  function yilEki(yil: number, tur: 'de' | 'den'): string {
+    const BIRLER = ['', 'de', 'de', 'te', 'te', 'te', 'da', 'de', 'de', 'da'];
+    const ONLAR = ['', 'da', 'de', 'da', 'da', 'de', 'da', 'de', 'de', 'da'];
+    const ek = yil % 10 !== 0 ? BIRLER[yil % 10] : ONLAR[Math.floor(yil / 10) % 10];
+    return `${yil}'${tur === 'de' ? ek : ek + 'n'}`;
+  }
+
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T | null;
+  const yilEl = $<HTMLInputElement>('zm-yil');
+  const miktarEl = $<HTMLInputElement>('zm-miktar');
+
+  let para: Para = 'USD';
+  let zamanlayici: ReturnType<typeof setTimeout> | undefined;
+  let istekNo = 0;
+  const onbellek = new Map<string, Promise<{ tarih: string; kur: number }>>();
+
+  function kurAl(p: Para, tarih: string) {
+    const anahtar = `${p}:${tarih}`;
+    let istek = onbellek.get(anahtar);
+    if (!istek) {
+      istek = referansKur(p, tarih);
+      istek.catch(() => onbellek.delete(anahtar));
+      onbellek.set(anahtar, istek);
+    }
+    return istek;
+  }
+
+  const yaz = (id: string, metin: string) => {
+    const el = $(id);
+    if (el) el.textContent = metin;
+  };
+
+  const sayi = (deger: number, ondalik = 0) =>
+    deger.toLocaleString('tr-TR', { minimumFractionDigits: ondalik, maximumFractionDigits: ondalik });
+
+  async function hesapla(): Promise<void> {
+    if (!yilEl || !miktarEl) return;
+    const yil = Number(yilEl.value);
+    const no = ++istekNo;
+    yaz('zm-yil-cikti', String(yil));
+    yaz('zm-eski-etiket', `Ocak ${yil}`);
+
+    try {
+      const [eski, yeni] = await Promise.all([kurAl(para, `${yil}-01-15`), kurAl(para, 'latest')]);
+      if (no !== istekNo) return;
+
+      const kat = yeni.kur / eski.kur;
+      const miktar = Math.max(0, parseFloat(miktarEl.value) || 0);
+      const doviz = miktar / eski.kur;
+      const bugunTl = doviz * yeni.kur;
+      const bugunTarih = new Date(`${yeni.tarih}T12:00:00Z`).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+      yaz('zm-eski-kur', `${tlBicimle(eski.kur)} ₺`);
+      yaz('zm-yeni-kur', `${tlBicimle(yeni.kur)} ₺`);
+      yaz('zm-yeni-etiket', 'Bugün');
+      yaz('zm-kat', `×${sayi(kat, kat < 10 ? 1 : 0)}`);
+      yaz('zm-kat-metin', `Ocak ${yilEki(yil, 'den')} bu yana 1 ${PARA_ADI[para]}, ${sayi(kat, 1)} kat daha fazla lira ediyor.`);
+      yaz(
+        'zm-hikaye',
+        `Ocak ${yilEki(yil, 'de')} ${sayi(miktar)} ₺ ile yaklaşık ${sayi(doviz)} ${PARA_ADI[para]} alınabiliyordu. Aynı ${sayi(doviz)} ${PARA_ADI[para]}, ${bugunTarih} kuruyla ${sayi(bugunTl)} ₺ ediyor.`
+      );
+    } catch {
+      if (no !== istekNo) return;
+      yaz('zm-kat', '×—');
+      yaz('zm-kat-metin', 'Kur verisi şu an alınamadı, birazdan tekrar dene.');
+      yaz('zm-hikaye', ' ');
+    }
+  }
+
+  function ertele(): void {
+    yaz('zm-yil-cikti', yilEl?.value ?? '');
+    clearTimeout(zamanlayici);
+    zamanlayici = setTimeout(hesapla, 200);
+  }
+
+  document.getElementById('zm-form')?.addEventListener('submit', (e) => e.preventDefault());
+  yilEl?.addEventListener('input', ertele);
+  miktarEl?.addEventListener('input', ertele);
+  document.querySelectorAll<HTMLButtonElement>('[data-zm-para]').forEach((d) => {
+    d.addEventListener('click', () => {
+      para = d.dataset.zmPara as Para;
+      document.querySelectorAll('[data-zm-para]').forEach((x) => x.setAttribute('aria-pressed', String(x === d)));
+      const baslik = document.getElementById('zm-baslik');
+      if (baslik) baslik.textContent = `Geçmişte 1 ${PARA_ADI[para]} kaç lira ediyordu?`;
+      hesapla();
+    });
+  });
+
+  hesapla();
+</script>

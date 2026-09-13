@@ -3,13 +3,21 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PostCard from '../../components/PostCard.astro';
 import EkodektifLogo from '../../components/EkodektifLogo.astro';
+import GrafikStudyosu from '../../components/ekodektif/GrafikStudyosu.astro';
+import ZamanMakinesi from '../../components/ekodektif/ZamanMakinesi.astro';
+import EkonomiSozlugu from '../../components/ekodektif/EkonomiSozlugu.astro';
 
-// Ekodektif: sitenin ekonomi alanı. Üç parça:
-// 1. Canlı piyasa panosu — PiyasaSeridi ile aynı ücretsiz/anahtarsız kaynaklar
-//    (finans.truncgil.com + CoinGecko), istek ziyaretçinin tarayıcısından atılır.
-// 2. Çevirici — aynı verilerle TL/döviz/altın/Bitcoin arasında yaklaşık hesap.
-// 3. Ekodektif dosyaları — ajanların "ekonomi" kategorisinde ürettiği içerikler
-//    (zamansız konular: paranın tarihi, kavramlar, marka hikâyeleri; tavsiye yok).
+// Ekodektif: sitenin ekonomi alanı. Sırasıyla:
+// hero (günün üç büyük fiyatı) → canlı pano → grafik stüdyosu → zaman makinesi
+// → para çevirici + "Biliyor muydun?" → cep sözlüğü → Ekodektif dosyaları.
+// Tüm canlı veriler tarayıcıda çekilir (lib/piyasa.ts): finans.truncgil.com,
+// CoinGecko ve Frankfurter (Avrupa Merkez Bankası) — anahtarsız, maliyetsiz.
+
+const ONE_CIKANLAR = [
+  { anahtar: 'USD', ad: 'Dolar' },
+  { anahtar: 'gram-altin', ad: 'Gram Altın' },
+  { anahtar: 'bitcoin', ad: 'Bitcoin' },
+];
 
 const KALEMLER = [
   { anahtar: 'USD', ad: 'Dolar', emoji: '💵', grup: 'Döviz' },
@@ -35,37 +43,100 @@ const CEVIRICI_BIRIMLERI = [
   { anahtar: 'bitcoin', ad: 'Bitcoin' },
 ];
 
+// Yalnızca kolayca doğrulanabilen, zamansız bilgiler.
+const NOTLAR = [
+  'Çeyrek altın yaklaşık 1,75 gram ağırlığında, 22 ayar bir sikke. Adını, 7 gram civarındaki tam Cumhuriyet altınının dörtte biri olmasından alıyor.',
+  "1 Ocak 2005'te Türk lirasından altı sıfır atıldı: 1.000.000 eski lira, 1 Yeni Türk Lirası oldu.",
+  "₺ simgesi 2012'de kabul edildi. Çizimdeki iki eğik çizgi, yukarı doğru yükselen bir oku da andırıyor.",
+  'Kıymetli madenlerde kullanılan bir troy ons yaklaşık 31,1 gram. Dünya altın fiyatı bu yüzden gram değil ons başına açıklanıyor.',
+  "Bilinen ilk sikkeler, MÖ 7. yüzyılda Anadolu'daki Lidya Krallığı'nda altın-gümüş karışımı elektrumdan basıldı.",
+  "2010'da bir yazılımcı 10.000 Bitcoin karşılığında iki pizza aldı. Bu, Bitcoin'le yapılan ilk bilinen alışveriş olarak anılıyor.",
+  "22 ayar altının binde 916'sı saf altın. Bileziklerin üzerindeki \"916\" damgası bu yüzden.",
+];
+
 const yazilar = (await getCollection('posts', ({ data }) => !data.taslak && data.kategori === 'ekonomi')).sort(
   (a, b) => b.data.yayinTarihi.valueOf() - a.data.yayinTarihi.valueOf()
 );
 
 const secimSinifi =
   'rounded-xl border border-black/10 bg-zemin px-3 py-3 text-sm font-semibold text-murekkep focus:border-eko focus:outline-none focus:ring-2 focus:ring-eko/30';
+
+const BOLUMLER = [
+  { href: '#pano', etiket: 'Canlı pano' },
+  { href: '#grafik', etiket: 'Grafikler' },
+  { href: '#zaman-makinesi', etiket: 'Zaman makinesi' },
+  { href: '#cevirici-baslik', etiket: 'Çevirici' },
+  { href: '#sozluk', etiket: 'Sözlük' },
+];
 ---
 
 <Layout
-  title="Ekodektif: Canlı Piyasa ve Ekonominin Şaşırtıcı Hikâyeleri"
-  description="Dolar, euro, altın ve Bitcoin anlık fiyatları, pratik para çevirici ve paranın peşine düşen eğlenceli ekonomi içerikleri."
+  title="Ekodektif: Canlı Piyasa, Grafikler ve Ekonominin Şaşırtıcı Hikâyeleri"
+  description="Dolar, euro, altın ve Bitcoin anlık fiyatları; etkileşimli grafikler, 2005'ten bugüne kur zaman makinesi, para çevirici ve ekonomi sözlüğü."
 >
-  <div class="mx-auto max-w-6xl px-4 py-10">
-    <section class="rounded-3xl bg-murekkep px-6 py-8 text-white sm:px-10 sm:py-10">
-      <EkodektifLogo class="text-3xl !text-white sm:text-4xl" />
-      <h1 class="mt-4 max-w-2xl text-2xl font-extrabold leading-tight text-balance sm:text-3xl">
-        Paranın izini süren dedektif
-      </h1>
-      <p class="mt-2 max-w-2xl text-white/70">
-        Kur, altın ve kripto anlık olarak burada. Paranın tarihi, markaların kuruluş hikâyeleri ve ekonomi
-        kavramları ise eğlenceli dosyalarda.
-      </p>
+  <div class="mx-auto max-w-6xl px-4 py-8 sm:py-10">
+    <section class="relative isolate overflow-hidden rounded-3xl bg-murekkep text-white">
+      <div class="eko-doku pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
+      <span
+        class="pointer-events-none absolute -right-8 -top-20 -z-10 select-none text-[22rem] font-extrabold leading-none text-white/[0.03]"
+        aria-hidden="true">₺</span
+      >
+
+      <div class="grid gap-8 p-6 sm:p-10 lg:grid-cols-[1.1fr_1fr] lg:items-end lg:gap-12">
+        <div>
+          <div class="flex flex-wrap items-center gap-3">
+            <EkodektifLogo class="text-3xl !text-white sm:text-4xl" />
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-eko/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-300">
+              <span class="relative flex h-2 w-2" aria-hidden="true">
+                <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping"></span>
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+              </span>
+              Canlı
+            </span>
+          </div>
+          <h1 class="mt-6 text-3xl font-extrabold leading-[1.1] tracking-tight text-balance sm:text-5xl">
+            Paranın <span class="text-emerald-400">izini</span> süren dedektif
+          </h1>
+          <p class="mt-4 max-w-lg text-white/70 sm:text-lg">
+            Anlık fiyatlar, 20 yıllık kur geçmişi ve paranın bilinmeyen hikâyeleri. Rakamların arkasına birlikte bakalım.
+          </p>
+          <nav class="mt-6 flex flex-wrap gap-2" aria-label="Sayfa bölümleri">
+            {BOLUMLER.map((b) => (
+              <a href={b.href} class="rounded-full px-3.5 py-1.5 text-sm font-semibold text-white/80 ring-1 ring-white/15 transition hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-emerald-300">
+                {b.etiket}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        <div class="grid gap-2">
+          <p class="flex items-center justify-between text-[11px] font-semibold uppercase tracking-wider text-white/50">
+            <span>Şu an piyasada</span>
+            <span id="hero-durum" class="normal-case tracking-normal">yükleniyor…</span>
+          </p>
+          {ONE_CIKANLAR.map((k) => (
+            <div class="flex items-center justify-between gap-4 rounded-2xl bg-white/[0.06] px-5 py-4 ring-1 ring-white/10" data-kalem={k.anahtar} data-koyu>
+              <p class="text-sm font-semibold text-white/70">{k.ad}</p>
+              <div class="text-right">
+                <p class="text-2xl font-extrabold tabular-nums sm:text-3xl" data-alan="fiyat">—</p>
+                <p class="text-xs font-semibold tabular-nums text-white/40" data-alan="degisim">&nbsp;</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
 
-    <section class="mt-10" aria-labelledby="pano-baslik">
+    <section id="pano" class="mt-12 scroll-mt-28" aria-labelledby="pano-baslik">
       <div class="flex flex-wrap items-end justify-between gap-2">
-        <h2 id="pano-baslik" class="text-2xl font-extrabold text-murekkep">📈 Canlı Piyasa</h2>
+        <div>
+          <h2 id="pano-baslik" class="text-2xl font-extrabold text-murekkep">📈 Canlı Pano</h2>
+          <p class="mt-1 text-murekkep/60">Döviz, altın, gümüş ve kripto; satış fiyatları, günlük değişimle.</p>
+        </div>
         <p id="pano-durum" class="text-xs text-murekkep/50" aria-live="polite">Veriler yükleniyor…</p>
       </div>
 
-      <div class="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
+      <div class="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
         {KALEMLER.map((k) => (
           <article class="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5" data-kalem={k.anahtar}>
             <p class="flex items-center justify-between gap-2 text-[11px] font-semibold uppercase tracking-wider text-murekkep/45">
@@ -80,9 +151,13 @@ const secimSinifi =
       </div>
     </section>
 
-    <section class="mt-10 grid gap-6 lg:grid-cols-5" aria-labelledby="cevirici-baslik">
+    <GrafikStudyosu />
+
+    <ZamanMakinesi />
+
+    <section class="mt-14 grid gap-6 lg:grid-cols-5" aria-labelledby="cevirici-baslik">
       <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 lg:col-span-3">
-        <h2 id="cevirici-baslik" class="text-2xl font-extrabold text-murekkep">🔁 Para Çevirici</h2>
+        <h2 id="cevirici-baslik" class="scroll-mt-28 text-2xl font-extrabold text-murekkep">🔁 Para Çevirici</h2>
         <p class="mt-1 text-sm text-murekkep/60">Satış fiyatları üzerinden yaklaşık hesaplar.</p>
 
         <form id="cevirici" class="mt-5 grid gap-3 sm:grid-cols-[1fr_1.3fr_auto_1.3fr] sm:items-end">
@@ -125,17 +200,26 @@ const secimSinifi =
         </p>
       </div>
 
-      <aside class="flex flex-col justify-center gap-3 rounded-3xl bg-eko px-6 py-6 text-white lg:col-span-2">
-        <p class="text-xs font-bold uppercase tracking-wider text-white/75">Ekodektif notu</p>
-        <p class="text-lg font-bold leading-snug text-balance">
-          Çeyrek altın yaklaşık 1,75 gram ağırlığında, 22 ayar bir sikke. Adını, 7 gram civarındaki tam Cumhuriyet
-          altınının dörtte biri olmasından alıyor.
-        </p>
-        <p class="text-xs text-white/75">Panodaki fiyatlar bilgilendirme amaçlıdır, yatırım tavsiyesi değildir.</p>
+      <aside class="flex flex-col gap-4 rounded-3xl bg-eko px-6 py-6 text-white lg:col-span-2" aria-labelledby="not-baslik">
+        <div class="flex items-center justify-between gap-3">
+          <p id="not-baslik" class="text-xs font-bold uppercase tracking-wider text-white/80">💡 Biliyor muydun?</p>
+          <p class="text-xs font-semibold tabular-nums text-white/70" id="not-sayac">1 / {NOTLAR.length}</p>
+        </div>
+        <p class="flex-1 text-lg font-bold leading-snug text-balance" id="not-metin" aria-live="polite">{NOTLAR[0]}</p>
+        <button
+          type="button"
+          id="not-sonraki"
+          class="self-start rounded-full bg-white/15 px-4 py-2 text-sm font-bold text-white transition hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Başka bir bilgi ↻
+        </button>
+        <script type="application/json" is:inline id="not-verisi" set:html={JSON.stringify(NOTLAR)} />
       </aside>
     </section>
 
-    <section class="mt-12" aria-labelledby="dosyalar-baslik">
+    <EkonomiSozlugu />
+
+    <section class="mt-14" aria-labelledby="dosyalar-baslik">
       <h2 id="dosyalar-baslik" class="text-2xl font-extrabold text-murekkep">🕵️ Ekodektif Dosyaları</h2>
       <p class="mt-1 text-murekkep/60">Paranın, markaların ve ekonomi kavramlarının bilinmeyen yüzleri.</p>
       {yazilar.length === 0 ? (
@@ -149,9 +233,9 @@ const secimSinifi =
       )}
     </section>
 
-    <p class="mt-10 text-center text-xs text-murekkep/40">
-      Kaynak: finans.truncgil.com (döviz, altın) ve CoinGecko (kripto). Veriler gecikmeli olabilir. Bu sayfadaki hiçbir
-      bilgi yatırım tavsiyesi değildir.
+    <p class="mx-auto mt-12 max-w-3xl text-center text-xs leading-relaxed text-murekkep/40">
+      Kaynaklar: finans.truncgil.com (döviz, altın), CoinGecko (kripto, altın grafiği), Frankfurter / Avrupa Merkez
+      Bankası (kur geçmişi). Veriler gecikmeli olabilir. Bu sayfadaki hiçbir bilgi yatırım tavsiyesi değildir.
     </p>
   </div>
 </Layout>
@@ -168,13 +252,15 @@ const secimSinifi =
     document.querySelectorAll<HTMLElement>('[data-kalem]').forEach((kart) => {
       const f = fiyatlar.get(kart.dataset.kalem ?? '');
       if (!f) return;
+      const koyu = kart.hasAttribute('data-koyu');
       const fiyatEl = kart.querySelector<HTMLElement>('[data-alan="fiyat"]');
       const degisimEl = kart.querySelector<HTMLElement>('[data-alan="degisim"]');
       if (fiyatEl) fiyatEl.textContent = `${bicimle(f.tl)} ₺`;
       if (degisimEl) {
         const negatif = f.degisim < 0;
+        const renk = koyu ? (negatif ? 'text-rose-400' : 'text-emerald-400') : negatif ? 'text-red-600' : 'text-eko-koyu';
         degisimEl.textContent = yuzdeBicimle(f.degisim);
-        degisimEl.className = `mt-1 text-xs font-semibold tabular-nums ${negatif ? 'text-red-600' : 'text-eko-koyu'}`;
+        degisimEl.className = `${koyu ? '' : 'mt-1 '}text-xs font-semibold tabular-nums ${renk}`;
       }
     });
   }
@@ -210,19 +296,32 @@ const secimSinifi =
     cevir();
   });
 
+  // "Biliyor muydun?" notları sırayla döner.
+  const notlar = JSON.parse(document.getElementById('not-verisi')?.textContent ?? '[]') as string[];
+  let notSira = 0;
+  document.getElementById('not-sonraki')?.addEventListener('click', () => {
+    if (notlar.length === 0) return;
+    notSira = (notSira + 1) % notlar.length;
+    const metin = document.getElementById('not-metin');
+    const sayac = document.getElementById('not-sayac');
+    if (metin) metin.textContent = notlar[notSira];
+    if (sayac) sayac.textContent = `${notSira + 1} / ${notlar.length}`;
+  });
+
   async function guncelle(): Promise<void> {
     fiyatlar = await fiyatlariAl();
     const durumEl = document.getElementById('pano-durum');
+    const heroDurum = document.getElementById('hero-durum');
     if (fiyatlar.size < 2) {
       if (durumEl) durumEl.textContent = 'Piyasa verileri şu an alınamıyor, birazdan tekrar denenecek.';
+      if (heroDurum) heroDurum.textContent = 'veri alınamadı';
       return;
     }
     panoyuCiz();
     cevir();
-    if (durumEl) {
-      const saat = new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
-      durumEl.textContent = `Son güncelleme ${saat} · her dakika yenilenir`;
-    }
+    const saat = new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+    if (durumEl) durumEl.textContent = `Son güncelleme ${saat} · her dakika yenilenir`;
+    if (heroDurum) heroDurum.textContent = `${saat} itibarıyla`;
   }
 
   guncelle();
