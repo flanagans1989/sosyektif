@@ -14,10 +14,10 @@
         "sonDeneme": "2026-09-13T18:47:28.140Z"
       },
       "instagram": {
-        "durum": "hata",
-        "deneme": 1,
-        "sonDeneme": "2026-09-13T18:48:08.559Z",
-        "hata": "[instagram] yayınlanamadı: 400 {\"error\":{\"message\":\"Media ID is not available\",\"type\":\"OAuthException\",\"code\":9007,\"error_subcode\":2207027,\"is_transient\":false,\"error_user_title\":\"Cannot Publish\",\"error_user_msg\":\"The media is not ready for publishing, please wait for a moment\",\"fbtrace_id\":\"ApU9-71"
+        "durum": "ok",
+        "deneme": 2,
+        "sonDeneme": "2026-09-13T20:02:52.011Z",
+        "id": "18352344022222923"
       },
       "facebook": {
         "durum": "ok",
@@ -209,26 +209,26 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T19:14:38.901Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgckk36r62v"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgckk36r62v",
+        "sonDeneme": "2026-09-13T19:14:38.901Z"
       },
       "threads": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T19:14:51.173Z",
-        "id": "18120376726899724"
+        "id": "18120376726899724",
+        "sonDeneme": "2026-09-13T19:14:51.173Z"
       },
       "instagram": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T19:17:18.905Z",
-        "id": "17965887321155465"
+        "id": "17965887321155465",
+        "sonDeneme": "2026-09-13T19:17:18.905Z"
       },
       "facebook": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T19:17:35.700Z",
-        "id": "1243429762194033_122101903695474851"
+        "id": "1243429762194033_122101903695474851",
+        "sonDeneme": "2026-09-13T19:17:35.700Z"
       }
     },
     "reelIdleri": {}
