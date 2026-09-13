@@ -64,12 +64,15 @@
         "sonDeneme": "2026-09-13T18:53:50.148Z"
       },
       "reel": {
-        "durum": "onayda",
+        "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T18:55:59.880Z"
+        "sonDeneme": "2026-09-13T20:24:20.249Z"
       }
     },
-    "reelIdleri": {}
+    "reelIdleri": {
+      "instagram": "18155884807509986",
+      "facebook": "1842383030508741"
+    }
   },
   "piramitler-hakkinda-ezber-bozan-6-bilgilik-tarih-testi": {
     "eklendi": "2026-09-13T18:56:01.598Z",
