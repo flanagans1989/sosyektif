@@ -344,14 +344,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T21:30:44.794Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgk5vodwr23"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgk5vodwr23",
+        "sonDeneme": "2026-09-13T21:30:44.794Z"
       },
       "threads": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T21:30:55.138Z",
-        "id": "18119213329938177"
+        "id": "18119213329938177",
+        "sonDeneme": "2026-09-13T21:30:55.138Z"
       },
       "instagram": {
         "durum": "hata",
@@ -362,8 +362,20 @@
       "facebook": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T21:33:38.819Z",
-        "id": "1243429762194033_122101972227474851"
+        "id": "1243429762194033_122101972227474851",
+        "sonDeneme": "2026-09-13T21:33:38.819Z"
+      }
+    },
+    "reelIdleri": {}
+  },
+  "insan-beyni-hakkinda-duyunca-kulaklariniza-inanamayacaginiz-5-tuhaf-bilgi": {
+    "eklendi": "2026-09-13T21:43:59.895Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-13T21:44:00.838Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgkvmtp4b2i"
       }
     },
     "reelIdleri": {}
