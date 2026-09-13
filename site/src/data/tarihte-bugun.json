@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-09-12",
+  "tarih": "2026-09-13",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1885,
-      "baslik": "Arbroath - Bon Accord Maçı",
-      "metin": "İskoçya Kupası'nda Arbroath ile Bon Accord arasında oynanan maç 36-0 sona erdi. Bu skor, profesyonel futbol tarihindeki en farklı galibiyet olarak kırılması güç bir rekor bıraktı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/1885%E2%80%9386_Scottish_Cup"
+      "yil": 1647,
+      "baslik": "Evangelista Torricelli ve Barometre",
+      "metin": "İtalyan matematikçi ve fizikçi Evangelista Torricelli, hava basıncını ölçmeye yarayan barometreyi icat etti. Bu buluş, meteoroloji ve fizik dünyasında çığır açan adımlardan biri oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0talya"
     },
     {
-      "yil": 1933,
-      "baslik": "Nükleer Zincirleme Reaksiyon Fikri",
-      "metin": "Macar asıllı fizikçi Leo Szilard, Londra'da bir trafik ışığında beklerken nükleer zincirleme reaksiyon fikrini akletti. Bu ani ilham, nükleer fiziğin ve modern bilimin seyrini tamamen değiştirdi.",
+      "yil": 1848,
+      "baslik": "Phineas Gage'in Kazası",
+      "metin": "Demiryolu şefi Phineas Gage'in kafasından bir patlama sonucu demir çubuk geçti ancak mucizevi bir şekilde hayatta kaldı. Gage'in hayatta kalması ve iyileşme süreci, 19. yüzyıl psikoloji ve sinirbilim tartışmalarını derinden etkiledi.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Leo_Szilard"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Phineas_Gage"
     },
     {
-      "yil": 1940,
-      "baslik": "Lascaux Mağarası",
-      "metin": "Fransa'da dört genç tarafından keşfedilen Lascaux Mağarası, duvarlarında yer alan 17 bin yıllık büyüleyici resimlerle arkeoloji dünyasını sarstı. Tarih öncesi sanatın en muazzam örneklerinden biri olan mağara, insanlık tarihine ışık tuttu.",
+      "yil": 1898,
+      "baslik": "Hannibal Goodwin ve Selüloid Film",
+      "metin": "Hannibal Williston Goodwin, selüloitten şeffaf ve esnek rulo film yapım yönteminin patentini aldı. Bu buluş, Thomas Edison'un erken dönem hareketli görüntü izleme makinesi olan Kinetoscope'ta kullanıldı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Hannibal_Goodwin"
+    },
+    {
+      "yil": 1906,
+      "baslik": "Santos-Dumont 14-bis",
+      "metin": "Alberto Santos-Dumont'un tasarlayıp ürettiği 14-bis, kısa bir sıçrama yaparak Avrupa'da sabit kanatlı bir hava taşıtının gerçekleştirdiği ilk uçuşu kaydetti. Havacılık tarihinde dönüm noktası olan bu olay Paris yakınlarında gerçekleşti.",
       "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Fransa"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Santos-Dumont_14-bis"
     },
     {
-      "yil": 1958,
-      "baslik": "İlk Entegre Devre",
-      "metin": "Jack Kilby, Texas Instruments'ta çalışırken ilk çalışan entegre devre gösterimini başarıyla gerçekleştirdi. Bu devrim niteliğindeki buluş, modern elektronik dünyasının temelini attı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Jack_Kilby"
-    },
-    {
-      "yil": 1992,
-      "baslik": "Uzaya Giden İlk Siyah Kadın",
-      "metin": "Space Shuttle Endeavour görevinde yer alan Amerikalı Mae Jemison, uzaya seyahat eden ilk Siyah kadın olarak tarihe geçti. Bu ilham verici yolculuk, uzay tarihinde unutulmaz bir dönüm noktası oldu.",
+      "yil": 1959,
+      "baslik": "Luna 2",
+      "metin": "Sovyetlerin insansız uzay roketi Luna 2, Ay'a ulaşan ilk insan yapımı cisim olmayı başardı. Ancak roket, bu tarihi yolculuğun sonunda Ay'ın zeminine çakıldı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sovyetler_Birli%C4%9Fi"
     },
     {
-      "yil": 2003,
-      "baslik": "Steam'in Yayınlanması",
-      "metin": "Dijital oyun dağıtım platformu Steam, ilk kez bilgisayar kullanıcıları için indirilebilir hale getirildi. Valve tarafından geliştirilen bu platform, zamanla oyun dünyasının buluşma noktası haline geldi.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Steam_(service)"
+      "yil": 1985,
+      "baslik": "Super Mario Bros.",
+      "metin": "Tarihin en etkili ve en çok satan video oyunlarından biri olan Super Mario Bros., Japonya'da Nintendo Entertainment System için ilk kez piyasaya sürüldü. Shigeru Miyamoto'nun yönettiği ve ürettiği oyun, popüler kültürde silinmez bir iz bıraktı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Super_Mario_Bros."
     }
   ]
 }

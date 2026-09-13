@@ -1,66 +1,66 @@
 {
-  "tarih": "2026-09-12",
+  "tarih": "2026-09-13",
   "uretenProvider": "gemini",
   "burclar": {
     "koc": {
-      "yorum": "Bugün kafandaki projelere roket hızıyla başlamak isteyebilirsin ama sakin ol, kahven önce bir demlensin. İş tarafında tatlı bir heyecan yakalayabilir, aşkta ise spontane bir planla partnerini şaşırtabilirsin. Enerjini doğru yönlendirirsen günü gülümseyerek tamamlarsın.",
-      "sansliSayi": 17,
-      "sansliRenk": "Ateş Kırmızısı"
+      "yorum": "Sevgili Koç, bugün enerjini halı saha maçına değil, uzun zamandır ertelediğin o işe saklasan iyi olur. Aşk hayatında ise aceleci tavırların karşı tarafın kafasını karıştırabilir, biraz ağırdan al.",
+      "sansliSayi": 7,
+      "sansliRenk": "Kırmızı"
     },
     "boga": {
-      "yorum": "Huzurunu kaçırmaya niyetlenen ufak tefek pürüzleri bugün adeta duymazdan geliyorsun, harika bir taktik! Maddi konularda harcamalarına azıcık dikkat edip keyifli bir akşam yemeğiyle ruhunu besleyebilirsin. Aşk hayatında ise sakin ve güven veren adımlar öne çıkıyor.",
-      "sansliSayi": 24,
-      "sansliRenk": "Zümrüt Yeşili"
+      "yorum": "Kahvenin ve güzel bir kahvaltının tadını çıkarmak için harika bir gün, Boğa. İş yerinde ufak tefek aksaklıklar moralini bozmasın, nasıl olsa altından kalkarsın.",
+      "sansliSayi": 14,
+      "sansliRenk": "Yeşil"
     },
     "ikizler": {
-      "yorum": "Mesaj kutunun dolup taştığı, aynı anda beş kişiyle dedikodu yaptığın hareketli bir gün seni bekliyor. İş yerinde iletişim yeteneğin sayesinde kilit bir problemi tereyağından kıl çeker gibi çözebilirsin. Akşama doğru zihnini dinlendirmek için ekranları biraz kapatmak iyi gelebilir.",
-      "sansliSayi": 42,
-      "sansliRenk": "Güneş Sarısı"
+      "yorum": "Aynı anda kırk kişiye mesaj yazmaktan beynin yanabilir sevgili İkizler, bugün biraz dijital detoks yapmaya ne dersin? Kalbinin sesini dinlemek için telefondan uzaklaşma vakti.",
+      "sansliSayi": 23,
+      "sansliRenk": "Sarı"
     },
     "yengec": {
-      "yorum": "Bugün nostalji rüzgarları hafiften esebilir, eski bir dosttan gelecek tatlı bir mesajla yüzün gülebilir. Evinde ya da sevdiğin alanda vakit geçirmek enerjini tazelemek için birebir. İlişkilerde ise fazla alınganlık yapmadan hislerini açıkça söylemeyi deneyebilirsin.",
-      "sansliSayi": 7,
-      "sansliRenk": "İnci Beyazı"
+      "yorum": "Ev kuşu modunu doruklarda yaşayacağın bir gün seni bekliyor, Yengeç. Buzdolabının önünde kurduğun hayalleri gerçeğe dönüştürüp mutfakta harikalar yaratabilirsin.",
+      "sansliSayi": 4,
+      "sansliRenk": "Gümüş"
     },
     "aslan": {
-      "yorum": "Sahne ışıklarının seni aradığı bir gün; girdiğin ortamlarda neşen ve karizmanla dikkat çekebilirsin. İşte yeni fikirlerini sunmak için oldukça uygun bir hava var, sadece dinlemeyi de unutma. Aşk hayatında ise küçük bir jestle günün yıldızı sen olabilirsin.",
+      "yorum": "Işıklar senin üzerindeyken tarzını konuşturmamak olmaz, Aslan. Kariyerinde yaptığın havalı hamleler yöneticilerinin bile dikkatini çekecek, günün yıldızı sensin.",
       "sansliSayi": 1,
       "sansliRenk": "Altın Sarısı"
     },
     "basak": {
-      "yorum": "Toz zerresini bile hizaya sokma arzun bugün yine tavan yapabilir ama hayatı biraz akışına bırakmakta fayda var. Çalışma masandaki düzeni hallettikten sonra kendine küçük bir mola ödülü vermeyi ihmal etme. Romantik konularda detaylara boğulmak yerine anın tadını çıkarabilirsin.",
-      "sansliSayi": 53,
-      "sansliRenk": "Toprak Kahvesi"
+      "yorum": "Etraftaki dağınıklığı toplama obsession'ına bugün bir molver diyebilirsin, Başak. Kendine biraz kahve al ve sadece tembellik etmenin keyfini çıkar.",
+      "sansliSayi": 18,
+      "sansliRenk": "Lacivert"
     },
     "terazi": {
-      "yorum": "Denge arayışın bugün sosyal çevrende arabuluculuk yapmana yol açabilir, aman başkalarının yükünü sırtlanma. Tarzın ve estetik zevkinle dikkat çekebileceğin bir gündesin, gardırobundan favori parçanı seçebilirsin. Aşkta karşılıklı anlayış rüzgarları hafiften esiyor.",
-      "sansliSayi": 33,
-      "sansliRenk": "Pudra Pembesi"
+      "yorum": "Karar vermek yine ölüm gibi geldi değil mi sevgili Terazi? Alışverişte iki tişört arasında kalıp saatler harcamak yerine ilk gördüğünü al ve geç.",
+      "sansliSayi": 6,
+      "sansliRenk": "Pembe"
     },
     "akrep": {
-      "yorum": "Sezgilerin bugün radar gibi çalışıyor; kimin ne niyetle konuştuğunu tek bakışta anlayabilirsin. Gizemli havan iş görüşmelerinde veya flörtleşmelerde sana ayrı bir çekicilik katabilir. Sadece gereksiz şüpheleri kapının dışında bırakıp anın tadını çıkarmaya bak.",
-      "sansliSayi": 88,
-      "sansliRenk": "Mürdüm"
+      "yorum": "Gizemli hallerin yine çevrendekileri meraktan çatlatıyor, Akrep. İş hayatında sezgilerine güvenerek yapacağın stratejik hamleler seni bir adım öne taşıyacak.",
+      "sansliSayi": 9,
+      "sansliRenk": "Bordo"
     },
     "yay": {
-      "yorum": "İçindeki gezgin 'Hadi bir bilet alıp gidelim' diye fısıldayabilir ama günlük sorumluluklar seni bekliyor. İşlerini neşeyle halledip sonrasında arkadaşlarınla uzun sohbetli bir akşam planlayabilirsin. Aşkta ise açık sözlülüğün karşı tarafı hem güldürebilir hem de etkileyebilir.",
-      "sansliSayi": 19,
-      "sansliRenk": "Turkuaz"
+      "yorum": "Çantayı hazırladıysan kaçıyoruz sevgili Yay, çünkü macera seni çağırıyor. Günlük rutinden sıkıldıysan, aniden aldığın bir bilet tüm haftanın stresini silebilir.",
+      "sansliSayi": 33,
+      "sansliRenk": "Mor"
     },
     "oglak": {
-      "yorum": "Ajandan yine tıkır tıkır işliyor ve hedeflerine doğru kararlı adımlarla ilerliyorsun. Kariyer odaklı düşünceler zihnini meşgul etse de akşam saatlerini dinlenmeye ve sevdiklerine ayırmak ruhunu canlandırabilir. Fazla kasmadan, küçük başarılarını kutlamayı unutma.",
+      "yorum": "Pazar günü bile 'acaba şu maili yanıtlasam mı' diye düşünüyorsan dur, Oğlak! Ciddi iş insanı maskeni biraz indirip, sadece dinlenmeye odaklanmalısın.",
       "sansliSayi": 10,
-      "sansliRenk": "Gece Mavisi"
+      "sansliRenk": "Gri"
     },
     "kova": {
-      "yorum": "Kafanda beliren sıra dışı fikirler çevrendekileri biraz şaşırtabilir ama yaratıcılığın bugün üst seviyede. Grup projelerinde veya arkadaş buluşmalarında harika sohbetler başlatabilirsin. Aşka biraz daha oyunbaz ve arkadaşça yaklaşmak aradaki bağı güçlendirebilir.",
-      "sansliSayi": 64,
-      "sansliRenk": "Elektrik Mavisi"
+      "yorum": "Geleceğin planlarını yaparken bugünü kaçırıyorsun, hayalperest Kova. Arkadaşlarınla yapacağın sıradışı bir sohbet aklına harika projeler getirebilir.",
+      "sansliSayi": 11,
+      "sansliRenk": "Turkuaz"
     },
     "balik": {
-      "yorum": "Hayal gücün bugün adeta denizler aşıyor; sanatsal ve yaratıcı uğraşlar için oldukça verimli bir gün olabilir. İlişkilerde biraz fazla fedakar davranma eğiliminde olabilirsin, kendi sınırlarını korumayı unutma. Dinlendirici bir müzik eşliğinde günü huzurla tamamlayabilirsin.",
+      "yorum": "Gerçek dünyadan kopup kendi hayal denizinde yüzmeye pek meyllisin bugün, Balık. Aşkta ise romantik bir sürpriz kalbini yeniden pır pır ettirebilir.",
       "sansliSayi": 12,
-      "sansliRenk": "Deniz Köpüğü Yeşili"
+      "sansliRenk": "Deniz Mavisi"
     }
   }
 }
