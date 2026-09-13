@@ -9,9 +9,17 @@ interface Props {
   description?: string;
   image?: string;
   noindex?: boolean;
+  /** Üstteki kayan piyasa şeridi. Ana sayfa hariç varsayılan olarak açık. */
+  piyasaSeridi?: boolean;
 }
 
-const { title, description = 'sosyektif — gündemi, ilginç bilgileri ve eğlenceli listeleri bir araya getiren içerik platformu.', image, noindex = false } = Astro.props;
+const {
+  title,
+  description = 'sosyektif — gündemi, ilginç bilgileri ve eğlenceli listeleri bir araya getiren içerik platformu.',
+  image,
+  noindex = false,
+  piyasaSeridi = true,
+} = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = image ? new URL(image, Astro.site).toString() : new URL('/og-default.svg', Astro.site).toString();
@@ -51,7 +59,7 @@ const ogImage = image ? new URL(image, Astro.site).toString() : new URL('/og-def
     <link rel="alternate" type="application/rss+xml" title="sosyektif RSS" href="/rss.xml" />
   </head>
   <body class="flex min-h-screen flex-col font-sans">
-    <PiyasaSeridi />
+    {piyasaSeridi && <PiyasaSeridi />}
     <Header />
     <main class="flex-1" data-pagefind-body>
       <slot />
