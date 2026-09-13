@@ -175,12 +175,15 @@
         "sonDeneme": "2026-09-13T19:07:54.332Z"
       },
       "reel": {
-        "durum": "onayda",
+        "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T19:10:16.187Z"
+        "sonDeneme": "2026-09-13T20:24:33.282Z"
       }
     },
-    "reelIdleri": {}
+    "reelIdleri": {
+      "instagram": "17991404808022188",
+      "facebook": "2861493157563798"
+    }
   },
   "antik-cagdan-gunumuze-olimpiyat-oyunlari-hakkinda-sasirtici-5-gercek": {
     "eklendi": "2026-09-13T19:10:17.967Z",
