@@ -30,7 +30,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Silk Road
     url: https://en.wikipedia.org/wiki/Silk_Road
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by iv image.ng on Pexels
 moderasyon:
   skor: 1
