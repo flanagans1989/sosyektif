@@ -32,7 +32,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Kaşif Kozinoğlu
     url: https://en.wikipedia.org/wiki/Ka%C5%9Fif_Kozino%C4%9Flu
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Mathias Reding on Pexels
 moderasyon:
   skor: 1
