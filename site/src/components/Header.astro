@@ -2,60 +2,185 @@
 import { KATEGORILER } from '../lib/kategoriler';
 import Logo from './Logo.astro';
 
-const kategoriGirdileri = Object.entries(KATEGORILER);
+// İki katmanlı başlık:
+//  1. satır: logo · öne çıkan bölümler (masaüstü) · arama · mobil menü düğmesi
+//  2. satır: kategori sekmeleri (bulunulan kategori alt çizgiyle işaretli,
+//     taşarsa yana kayar)
+// Mobilde öne çıkan bölümler menü panelinde kart olarak durur.
+
+const yol = Astro.url.pathname;
+
 const kesifLinkleri = [
-  { href: '/gunun-sorusu/', etiket: 'Günün Sorusu', emoji: '🎯' },
-  { href: '/tarihte-bugun/', etiket: 'Tarihte Bugün', emoji: '📅' },
-  { href: '/burc/', etiket: 'Günlük Burç', emoji: '🔮' },
-  { href: '/ekodektif/', etiket: 'Ekodektif', emoji: '📈' },
-];
-const pillSinifi =
-  'shrink-0 whitespace-nowrap rounded-full bg-marka/10 px-3 py-1.5 text-sm font-semibold text-marka transition hover:bg-marka/20';
+  { href: '/gunun-sorusu/', etiket: 'Günün Sorusu', aciklama: 'Her gün yeni bir soru', emoji: '🎯', ton: 'marka' },
+  { href: '/tarihte-bugun/', etiket: 'Tarihte Bugün', aciklama: 'Geçmişte bugün ne oldu?', emoji: '📅', ton: 'marka' },
+  { href: '/burc/', etiket: 'Günlük Burç', aciklama: '12 burcun günlük yorumu', emoji: '🔮', ton: 'marka' },
+  { href: '/ekodektif/', etiket: 'Ekodektif', aciklama: 'Canlı piyasa ve ekonomi', emoji: '📈', ton: 'eko' },
+] as const;
+
+const kategoriler = Object.entries(KATEGORILER).map(([anahtar, bilgi]) => ({
+  href: `/kategori/${anahtar}/`,
+  ...bilgi,
+}));
+
+const aktifMi = (href: string) => yol.startsWith(href);
 ---
 
-<!-- İki satır da aynı max-w-6xl kutusunda: logo, öne çıkan linkler ve
-     kategoriler aynı sol/sağ kenara hizalanır. Masaüstünde öne çıkan linkler
-     üst satırın sağında; mobilde yer açmak için kategori şeridinin başına
-     geçer. Şerit taşarsa satır kırmak yerine yana kayar. -->
-<header class="sticky top-0 z-40 border-b border-black/5 bg-zemin/90 backdrop-blur">
+<header id="site-basligi" class="group/baslik sticky top-0 z-40 border-b border-murekkep/[0.07] bg-zemin/85 backdrop-blur-xl transition-shadow data-[kaydi]:shadow-[0_8px_24px_-12px_rgba(32,26,28,0.18)]">
   <div class="mx-auto max-w-6xl px-4">
-    <div class="flex h-16 items-center justify-between gap-4">
-      <a href="/" class="shrink-0">
-        <Logo class="text-2xl" />
+    <div class="flex h-16 items-center gap-6">
+      <a href="/" class="shrink-0 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-marka" aria-label="sosyektif ana sayfa">
+        <Logo class="text-[1.6rem]" />
       </a>
 
-      <div class="flex items-center gap-2">
-        <nav class="hidden items-center gap-2 md:flex" aria-label="Öne çıkanlar">
-          {kesifLinkleri.map(({ href, etiket, emoji }) => (
-            <a href={href} class={pillSinifi}>{emoji} {etiket}</a>
-          ))}
-        </nav>
+      <nav class="ml-auto hidden items-center gap-1 lg:flex" aria-label="Öne çıkanlar">
+        {kesifLinkleri.map(({ href, etiket, emoji, ton }) => (
+          <a
+            href={href}
+            aria-current={aktifMi(href) ? 'page' : undefined}
+            class="group flex items-center gap-2 rounded-xl px-2.5 py-1.5 text-[13px] font-semibold text-murekkep/75 transition hover:bg-murekkep/[0.04] hover:text-murekkep focus-visible:outline-2 focus-visible:outline-marka aria-[current=page]:text-murekkep"
+          >
+            <span
+              class={`flex h-7 w-7 items-center justify-center rounded-lg text-[15px] leading-none transition ${
+                ton === 'eko' ? 'bg-eko/10 group-hover:bg-eko/20' : 'bg-marka/10 group-hover:bg-marka/20'
+              }`}
+              aria-hidden="true"
+            >
+              {emoji}
+            </span>
+            {etiket}
+          </a>
+        ))}
+      </nav>
+
+      <div class="ml-auto flex items-center gap-2 lg:ml-0">
         <a
           href="/ara/"
-          aria-label="Ara"
-          class="flex h-9 w-9 items-center justify-center rounded-full text-murekkep/70 transition hover:bg-black/5 hover:text-marka"
+          class="group flex h-10 items-center gap-2.5 rounded-full border border-murekkep/10 bg-white/80 pl-3.5 pr-2 text-sm text-murekkep/50 shadow-[0_1px_2px_rgba(32,26,28,0.04)] transition hover:border-murekkep/20 hover:text-murekkep/70 focus-visible:outline-2 focus-visible:outline-marka sm:w-56 lg:w-44"
+          aria-label="Sitede ara"
         >
-          🔍
+          <svg class="h-[18px] w-[18px] shrink-0 text-murekkep/60 group-hover:text-marka" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 4.5 4.5"></path>
+          </svg>
+          <span class="hidden flex-1 sm:inline">Ara…</span>
+          <kbd class="hidden rounded-md border border-murekkep/10 bg-zemin px-1.5 py-0.5 font-sans text-[11px] font-semibold text-murekkep/45 sm:inline">/</kbd>
         </a>
+
+        <button
+          type="button"
+          id="menu-dugmesi"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-murekkep/10 bg-white/80 text-murekkep transition hover:border-murekkep/20 focus-visible:outline-2 focus-visible:outline-marka lg:hidden"
+          aria-expanded="false"
+          aria-controls="mobil-menu"
+          aria-label="Menüyü aç"
+        >
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <path data-menu-ikon="ac" d="M4 7h16M4 12h16M4 17h10"></path>
+            <path data-menu-ikon="kapat" class="hidden" d="M6 6l12 12M18 6 6 18"></path>
+          </svg>
+        </button>
       </div>
     </div>
 
     <nav
-      class="-mx-4 flex items-center gap-1 overflow-x-auto px-4 pb-3 [scrollbar-width:none] md:mx-0 md:-ml-3 md:px-0 [&::-webkit-scrollbar]:hidden"
+      class="relative -mx-4 [mask-image:linear-gradient(to_right,black_calc(100%-40px),transparent)] sm:mx-0 sm:[mask-image:none]"
       aria-label="Kategoriler"
     >
-      {kesifLinkleri.map(({ href, etiket, emoji }) => (
-        <a href={href} class={`${pillSinifi} md:hidden`}>{emoji} {etiket}</a>
-      ))}
-      <span class="mx-1 h-5 w-px shrink-0 bg-black/10 md:hidden" aria-hidden="true"></span>
-      {kategoriGirdileri.map(([anahtar, { etiket }]) => (
-        <a
-          href={`/kategori/${anahtar}/`}
-          class="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-murekkep/70 transition hover:bg-black/5 hover:text-marka"
-        >
-          {etiket}
-        </a>
-      ))}
+      <ul class="flex items-center gap-1 overflow-x-auto px-4 [scrollbar-width:none] sm:-ml-3 sm:px-0 [&::-webkit-scrollbar]:hidden">
+        {kategoriler.map(({ href, etiket }) => (
+          <li class="shrink-0">
+            <a
+              href={href}
+              aria-current={aktifMi(href) ? 'page' : undefined}
+              class="relative block whitespace-nowrap px-3 pb-3 pt-1.5 text-[13.5px] font-semibold text-murekkep/55 transition after:absolute after:inset-x-3 after:bottom-0 after:h-[2.5px] after:origin-left after:scale-x-0 after:rounded-full after:bg-marka after:transition-transform hover:text-murekkep hover:after:scale-x-100 focus-visible:outline-2 focus-visible:outline-marka aria-[current=page]:text-murekkep aria-[current=page]:after:scale-x-100"
+            >
+              {etiket}
+            </a>
+          </li>
+        ))}
+      </ul>
     </nav>
   </div>
+
+  <div id="mobil-menu" class="absolute inset-x-0 top-full hidden lg:hidden">
+    <div id="menu-perde" class="absolute inset-x-0 top-0 h-[100dvh] bg-murekkep/30" aria-hidden="true"></div>
+    <div class="relative max-h-[calc(100dvh-7rem)] overflow-y-auto border-b border-murekkep/[0.07] bg-zemin shadow-[0_24px_48px_-24px_rgba(32,26,28,0.35)]">
+    <div class="mx-auto max-w-6xl px-4 pb-6 pt-4">
+      <p class="text-[11px] font-bold uppercase tracking-[0.12em] text-murekkep/40">Öne çıkanlar</p>
+      <div class="mt-3 grid grid-cols-2 gap-2.5">
+        {kesifLinkleri.map(({ href, etiket, aciklama, emoji, ton }) => (
+          <a
+            href={href}
+            class="flex flex-col gap-2 rounded-2xl border border-murekkep/[0.07] bg-white p-3.5 transition hover:border-murekkep/15 focus-visible:outline-2 focus-visible:outline-marka"
+          >
+            <span
+              class={`flex h-9 w-9 items-center justify-center rounded-xl text-lg leading-none ${ton === 'eko' ? 'bg-eko/10' : 'bg-marka/10'}`}
+              aria-hidden="true"
+            >
+              {emoji}
+            </span>
+            <span>
+              <span class="block text-sm font-bold text-murekkep">{etiket}</span>
+              <span class="mt-0.5 block text-xs leading-snug text-murekkep/55">{aciklama}</span>
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <p class="mt-6 text-[11px] font-bold uppercase tracking-[0.12em] text-murekkep/40">Kategoriler</p>
+      <ul class="mt-2 grid grid-cols-2 gap-x-2.5">
+        {kategoriler.map(({ href, etiket, emoji }) => (
+          <li>
+            <a
+              href={href}
+              aria-current={aktifMi(href) ? 'page' : undefined}
+              class="flex items-center gap-2.5 border-b border-murekkep/[0.06] py-3 text-[15px] font-semibold text-murekkep/80 transition hover:text-marka aria-[current=page]:text-marka"
+            >
+              <span class="text-base leading-none" aria-hidden="true">{emoji}</span>
+              {etiket}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    </div>
+  </div>
 </header>
+
+<script>
+  const baslik = document.getElementById('site-basligi');
+  const dugme = document.getElementById('menu-dugmesi');
+  const menu = document.getElementById('mobil-menu');
+
+  // Kaydırınca hafif gölge.
+  const kaydirmaKontrol = () => baslik?.toggleAttribute('data-kaydi', window.scrollY > 4);
+  kaydirmaKontrol();
+  window.addEventListener('scroll', kaydirmaKontrol, { passive: true });
+
+  function menuyuAyarla(acik: boolean): void {
+    if (!dugme || !menu) return;
+    menu.classList.toggle('hidden', !acik);
+    dugme.setAttribute('aria-expanded', String(acik));
+    dugme.setAttribute('aria-label', acik ? 'Menüyü kapat' : 'Menüyü aç');
+    dugme.querySelector('[data-menu-ikon="ac"]')?.classList.toggle('hidden', acik);
+    dugme.querySelector('[data-menu-ikon="kapat"]')?.classList.toggle('hidden', !acik);
+    document.documentElement.classList.toggle('overflow-hidden', acik);
+  }
+
+  dugme?.addEventListener('click', () => menuyuAyarla(menu?.classList.contains('hidden') ?? false));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') menuyuAyarla(false);
+    // "/" ile aramaya git (bir alana yazı yazılmıyorsa).
+    const hedef = e.target as HTMLElement | null;
+    if (e.key === '/' && !e.metaKey && !e.ctrlKey && !hedef?.closest('input, textarea, [contenteditable]')) {
+      e.preventDefault();
+      window.location.href = '/ara/';
+    }
+  });
+  document.getElementById('menu-perde')?.addEventListener('click', () => menuyuAyarla(false));
+  document.addEventListener('click', (e) => {
+    if (!menu || menu.classList.contains('hidden')) return;
+    if (!baslik?.contains(e.target as Node)) menuyuAyarla(false);
+  });
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', (m) => m.matches && menuyuAyarla(false));
+</script>
