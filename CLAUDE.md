@@ -32,6 +32,7 @@ tamamını okumadan önce `grep -n "^#" PLAN.md` ile ilgili bölümü bul, sadec
 ## Komutlar
 - Ajanlar: `cd agents && npm run pipeline` / `dagit` / `saglik-denetimi` / `youtube-yetkilendir` / `daily-report` / `weekly-analytics` / `sosyal-performans` / `burc` / `typecheck`
 - Görsel önizleme (paylaşmaz): `npm run slayt-onizle -- <slug>` (carousel), `npm run reel-onizle -- <slug> [--kareler]` (Reels)
+- Marka görselleri: `npm run marka-gorselleri` (IG/Threads/FB profil+kapak), `npm run youtube-gorselleri` (YouTube profil+banner) — ikisi de elle üretilip elle yüklenir, API ile değiştirilemiyor
 - Site: `cd site && npm run dev` (arkaplanda: `astro dev --background`, durum: `astro dev status`) / `npm run build` (Astro + Pagefind) / `npm run check`
 - Worker: `cd worker/telegram-onay && npm run dev` / `npm run deploy` (wrangler)
 

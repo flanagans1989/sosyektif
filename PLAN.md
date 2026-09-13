@@ -2,10 +2,17 @@
 
 **Hedef:** onedio.com formatında (liste, "bunu bilmiyordun", quiz) içerik sitesini, minimum insan müdahalesiyle ajanlar tarafından üretip yayınlamak.
 **Ana kısıt:** Zorunlu giderler hariç sıfır maliyet. Zorunlu olan ödenir (şu an sadece domain); "kolaylık" için ücretli servis kullanılmaz.
-**Durum:** Site ve ajan zinciri çalışıyor (Faz 1c). Site özellikleri (Bölüm 10) büyük ölçüde tamamlandı. Faz 3'ün sosyal medya ayağı (Bölüm 11.2) erken kuruldu: her canlı içerik dağıtım kuyruğuyla Bluesky, Threads, Instagram ve Facebook'a paylaşılıyor (13 Eylül akşamına kadar sessiz arızalar yüzünden fiilen paylaşılmıyordu — Bölüm 3.6); Reels Telegram onayıyla IG/FB/YouTube Shorts'a. Gözetim ajanı 6 saatte bir tüm sistemi denetleyip bilinen arızaları onarıyor (Bölüm 11.8). Yayınlanan içerik: 14 (kapı ~150).
-**Son güncelleme:** 2026-09-13
+**Durum:** Site ve ajan zinciri çalışıyor (Faz 1c). Site özellikleri (Bölüm 10) büyük ölçüde tamamlandı. Faz 3'ün sosyal medya ayağı (Bölüm 11.2) canlı: her yayınlanan içerik dağıtım kuyruğuyla Bluesky, Threads, Instagram ve Facebook'a paylaşılıyor; Reels Telegram onayıyla IG/FB/YouTube Shorts'a (Bölüm 11.9, YouTube 14 Eylül'de kuruldu). Gözetim ajanı 6 saatte bir tüm sistemi denetleyip bilinen arızaları onarıyor (Bölüm 11.8, son çalışma: 47 kontrol, 0 hata). Yayınlanan içerik: 16 (kapı ~150).
+**Son güncelleme:** 2026-09-14
 
-### Son değişiklikler — 2026-09-13
+### Son değişiklikler — 2026-09-14
+- **YouTube Shorts kuruldu:** Google Cloud OAuth consent screen (`sosyektif` projesi), `youtube.upload`/`youtube.readonly` scope'ları, Production'a alındı (doğrulama bekliyor — sensitive scope, sadece kanal sahibi kullandığı için "unverified app" uyarısını geçerek çalışıyor). Desktop OAuth client + `npm run youtube-yetkilendir` ile refresh token alındı, üç secret GitHub'a eklendi. `sosyektif@gmail.com` hesabında **@sosyektif** kanalı açıldı (önceden hiç kanal yoktu). `agents/src/lib/youtube.ts`: resumable upload, `postShortToYouTube`. Kanal profil fotoğrafı ve banner'ı `npm run youtube-gorselleri` ile üretildi, kullanıcıya teslim edildi (elle yüklenecek — YouTube API ile değiştirilemiyor).
+- **Cloudflare Worker dashboard-paste.js elle deploy edildi** (tarayıcı otomasyonuyla, Quick Edit): onay sonrası `dagitim.yml` tetikleme, zamanlayıcıya `dagitim.yml` + `saglik-denetimi.yml` eklendi, `/gecici-dosya` + `/gecici/<ad>` (Reels video barındırma). Worker sürüm kontrolü sağlık denetimine eklendi.
+- **Instagram carousel/fotoğraf yayınlama hatası düzeltildi:** container işlenmeden `media_publish` çağrılıyordu ("Media ID is not available") — video'daki gibi FINISHED bekleme eklendi (`containerHazirOlanaKadarBekle`).
+- **Header yeniden tasarlandı:** ikon kutucuklu öne çıkan linkler, gerçek arama kutusu görünümü (+ `/` kısayolu), kategori sekmelerinde aktif alt çizgi, mobilde kart ızgaralı menü + karartma perdesi.
+- **Bilinen geçici durum:** Instagram'da Meta'nın saatlik "Application request limit" sınırına takıldı (bugün biriken içerik hızlı paylaşılınca) — kuyruğun artan bekemeli (1-2-3 saat) tekrar deneme mekanizması kendiliğinden temizleyecek, işlem gerekmiyor.
+
+### 2026-09-13 (önceki oturum)
 - **Facebook Sayfası paylaşımı** devreye alındı (Bölüm 11.2): adaptör, Pages API kullanım durumu, süresiz Page Access Token, Worker'da `meta_token:facebook`. Gerçek Sayfa ID'si `1243429762194033`.
 - **`AGENT_PAYLASIM_ANAHTARI` rotasyonu:** GitHub Secrets + Cloudflare Worker'da yeni değer.
 - **Kritik bug:** `pipeline.yml` commit adımı ~8 saat boyunca çöküyordu (eksik `site/public/images/social/` klasörü) — düzeltildi, doğrulandı (Bölüm 11.8).
