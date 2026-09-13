@@ -295,8 +295,8 @@
       },
       "instagram": {
         "durum": "hata",
-        "deneme": 1,
-        "sonDeneme": "2026-09-13T21:04:11.789Z",
+        "deneme": 2,
+        "sonDeneme": "2026-09-13T22:19:15.799Z",
         "hata": "[instagram] yayınlanamadı: 403 {\"error\":{\"message\":\"Application request limit reached\",\"type\":\"OAuthException\",\"is_transient\":false,\"code\":4,\"error_subcode\":2207051,\"error_user_title\":\"action is blocked\",\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think we"
       },
       "facebook": {
@@ -404,14 +404,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T22:01:30.318Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgluvpr3x23"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgluvpr3x23",
+        "sonDeneme": "2026-09-13T22:01:30.318Z"
       },
       "threads": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T22:01:42.882Z",
-        "id": "18080899724333391"
+        "id": "18080899724333391",
+        "sonDeneme": "2026-09-13T22:01:42.882Z"
       },
       "instagram": {
         "durum": "hata",
@@ -422,8 +422,8 @@
       "facebook": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T22:04:29.887Z",
-        "id": "1243429762194033_122101994727474851"
+        "id": "1243429762194033_122101994727474851",
+        "sonDeneme": "2026-09-13T22:04:29.887Z"
       }
     },
     "reelIdleri": {}
