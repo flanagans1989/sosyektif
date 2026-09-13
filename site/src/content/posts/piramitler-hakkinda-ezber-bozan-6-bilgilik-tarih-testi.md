@@ -69,7 +69,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Pyramid
     url: https://en.wikipedia.org/wiki/Pyramid
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Michelle Chadwick on Pexels
 moderasyon:
   skor: 1
