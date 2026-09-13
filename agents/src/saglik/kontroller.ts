@@ -321,6 +321,20 @@ export async function anahtarKontrolleri(): Promise<KontrolSonucu[]> {
     dene("worker", "Worker", "Telegram onay Worker'ı", null, () => fetch(WORKER_URL, t)),
   ]);
 
+  // Worker sürümü: Cloudflare'deki Worker, repodaki dashboard-paste.js'in
+  // gerisinde mi? (wrangler bu hesaba bağlı değil, deploy elle yapılıyor —
+  // unutulması kolay.) Yeni sürüm /gecici/<ad> için 404 döner, eskisi "ok".
+  try {
+    const res = await fetch(`${WORKER_URL}/gecici/saglik-kontrol.mp4`, { signal: AbortSignal.timeout(20_000) });
+    sonuclar.push(
+      res.status === 404
+        ? ok("worker-surum", "Worker", "Cloudflare'deki Worker güncel")
+        : uyari("worker-surum", "Worker", "Cloudflare'deki Worker repodaki sürümün gerisinde (onay sonrası dağıtım, geçici video barındırma eksik).", "worker/telegram-onay/dashboard-paste.js'i Cloudflare panelinde Quick Edit'e yapıştırıp Deploy'a bas.")
+    );
+  } catch (err) {
+    sonuclar.push(hata("worker-surum", "Worker", `Worker sürüm kontrolü: ${hataMetni(err)}`));
+  }
+
   // Cloudflare Analytics — mevcut modül hataları yutup [] döndüğü için doğrudan dene.
   const cfToken = optionalEnv("CLOUDFLARE_API_TOKEN");
   const zone = optionalEnv("CLOUDFLARE_ZONE_ID");

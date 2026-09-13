@@ -229,6 +229,41 @@ async function metaTokenGetir(request, env) {
         return new Response("bulunamadı", { status: 404 });
     return new Response(mevcut, { status: 200, headers: { "Content-Type": "application/json" } });
 }
+/**
+ * Geçici video barındırma (PLAN.md Bölüm 11.9). Instagram Reels ve Facebook
+ * videoyu herkese açık bir URL'den çekiyor. Önceden ~12MB'lık her Reels bu
+ * yüzden git'e commit'lenip Cloudflare Pages'ten sunuluyordu — silinse bile
+ * git geçmişinde kalıyor, repo birkaç haftada GitHub'ın 1GB sınırına
+ * yaklaşacaktı. Artık video 3 günlüğüne KV'ye konup buradan sunuluyor
+ * (KV değer sınırı 25MB, süre dolunca kendiliğinden silinir).
+ */
+const GECICI_DOSYA_TTL_SN = 3 * 24 * 60 * 60;
+const GECICI_DOSYA_AD = /^[a-z0-9-]{1,180}\.mp4$/;
+async function geciciDosyaYaz(request, env) {
+    const url = new URL(request.url);
+    if (url.searchParams.get("anahtar") !== env.AGENT_PAYLASIM_ANAHTARI) {
+        return new Response("forbidden", { status: 403 });
+    }
+    const ad = url.searchParams.get("ad") ?? "";
+    if (!GECICI_DOSYA_AD.test(ad))
+        return new Response("geçersiz dosya adı", { status: 400 });
+    const icerik = await request.arrayBuffer();
+    if (icerik.byteLength === 0 || icerik.byteLength > 25 * 1024 * 1024) {
+        return new Response("dosya boş ya da 25MB'tan büyük", { status: 413 });
+    }
+    await env.METRIKLER.put(`gecici:${ad}`, icerik, { expirationTtl: GECICI_DOSYA_TTL_SN });
+    return Response.json({ url: `${url.origin}/gecici/${ad}` });
+}
+async function geciciDosyaGetir(ad, env) {
+    if (!GECICI_DOSYA_AD.test(ad))
+        return new Response("bulunamadı", { status: 404 });
+    const icerik = await env.METRIKLER.get(`gecici:${ad}`, "arrayBuffer");
+    if (!icerik)
+        return new Response("bulunamadı", { status: 404 });
+    return new Response(icerik, {
+        headers: { "Content-Type": "video/mp4", "Content-Length": String(icerik.byteLength), "Cache-Control": "public, max-age=3600" },
+    });
+}
 async function metaTokenYaz(request, env) {
     const url = new URL(request.url);
     if (url.searchParams.get("anahtar") !== env.AGENT_PAYLASIM_ANAHTARI) {
@@ -431,6 +466,11 @@ export default {
             if (request.method === "POST")
                 return tepkiVer(request, env);
             return new Response("method not allowed", { status: 405, headers: corsHeaders() });
+        }
+        if (url.pathname === "/gecici-dosya" && request.method === "PUT")
+            return geciciDosyaYaz(request, env);
+        if (url.pathname.startsWith("/gecici/") && (request.method === "GET" || request.method === "HEAD")) {
+            return geciciDosyaGetir(url.pathname.slice("/gecici/".length), env);
         }
         if (url.pathname === "/meta-token") {
             if (request.method === "GET")

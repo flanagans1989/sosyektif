@@ -24,6 +24,7 @@ import { postReelToInstagram } from "../lib/instagram.js";
 import { postVideoToFacebook } from "../lib/facebook.js";
 import { escapeHtml, notifyAdmin, sendVideoToAdmin } from "../lib/telegram.js";
 import { postShortToYouTube } from "../lib/youtube.js";
+import { geciciVideoYukle } from "../lib/geciciDosya.js";
 import { DAGITIM_DOSYASI, bosKayit, readDagitimDurumu, writeDagitimDurumu } from "../lib/dagitimDurumu.js";
 import { POSTS_DIR } from "../lib/paths.js";
 import { FORMAT_EMOJI, KATEGORI_EMOJI } from "../lib/formatLabels.js";
@@ -85,12 +86,21 @@ export async function reeliPaylas(slug: string): Promise<void> {
 
   const muzik = await muzikSec(slug);
   const { video } = await reelUret(frontmatter, muzik?.dosya ?? null);
-  const dosya = await writeReelVideo(slug, video);
-  if (!dosyalariHemenYayinla([dosya.dosyaYolu], `Reels videosu: ${slug}`)) {
-    throw new Error("video push edilemedi");
-  }
-  if (!(await canliyaCikanaKadarBekle([dosya.url]))) {
-    throw new Error("video zaman aşımında canlıya çıkmadı (Cloudflare Pages build gecikti?)");
+  // Önce Worker'ın geçici deposu (git geçmişini şişirmez); desteklenmiyorsa
+  // eski yöntem: siteye commit'le, Cloudflare Pages build'ini bekle.
+  let dosya: { url: string };
+  const geciciUrl = await geciciVideoYukle(`${slug}-reel.mp4`, video);
+  if (geciciUrl) {
+    dosya = { url: geciciUrl };
+  } else {
+    const yazilan = await writeReelVideo(slug, video);
+    if (!dosyalariHemenYayinla([yazilan.dosyaYolu], `Reels videosu: ${slug}`)) {
+      throw new Error("video push edilemedi");
+    }
+    if (!(await canliyaCikanaKadarBekle([yazilan.url]))) {
+      throw new Error("video zaman aşımında canlıya çıkmadı (Cloudflare Pages build gecikti?)");
+    }
+    dosya = yazilan;
   }
 
   const hatalar: string[] = [];
