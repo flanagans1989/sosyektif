@@ -29,7 +29,7 @@ const SOCIAL_DIR = path.join(SITE_DIR, "public", "images", "social");
 const MAKS_SLAYT = 10; // Instagram carousel sınırı
 
 /** site/src/lib/kategoriler.ts ile aynı etiketler. */
-const KATEGORI_ETIKETLERI: Record<string, string> = {
+export const KATEGORI_ETIKETLERI: Record<string, string> = {
   eglence: "Eğlence",
   "pop-kultur": "Pop Kültür",
   bilim: "Bilim",

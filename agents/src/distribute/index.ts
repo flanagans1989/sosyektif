@@ -1,11 +1,11 @@
 import { postToPublicChannel } from "../lib/telegram.js";
 import { postSkeet } from "../lib/bluesky.js";
 import { postToThreads } from "../lib/threads.js";
-import { postToInstagram, postReelToInstagram } from "../lib/instagram.js";
-import { postToFacebook, postVideoToFacebook } from "../lib/facebook.js";
-import { FORMAT_ETIKETLERI_TR, FORMAT_EMOJI, KATEGORI_EMOJI } from "../lib/formatLabels.js";
-import { generateCarouselSlides, writeCarouselSlides, writeReelVideo } from "../image/social.js";
-import { slaytlardanReelUret } from "../image/reelRender.js";
+import { postToInstagram } from "../lib/instagram.js";
+import { postToFacebook } from "../lib/facebook.js";
+import { FORMAT_ETIKETLERI_TR, FORMAT_EMOJI } from "../lib/formatLabels.js";
+import { generateCarouselSlides, writeCarouselSlides } from "../image/social.js";
+import { reeliOnayaGonder, sosyalMetinler } from "./reel.js";
 import { dosyalariHemenYayinla, canliyaCikanaKadarBekle } from "../lib/gitYayinla.js";
 import type { Post } from "../lib/schemas.js";
 
@@ -26,8 +26,8 @@ export interface DistributeResult {
  * görsellerini yeniden kullanır (bkz. aşağıdaki IIFE).
  *
  * @param reelsAktif config.json'daki aynı adlı bayrak — açıksa Instagram/
- *   Facebook'a carousel yerine ffmpeg ile üretilen kısa dikey video
- *   (Reels/video) gönderilir (bkz. image/reelRender.ts). Varsayılan kapalı.
+ *   Facebook'a carousel gitmez; Reels videosu onay butonlarıyla admin
+ *   Telegram'ına gönderilir (bkz. distribute/reel.ts). Varsayılan kapalı.
  */
 export async function distributeContent(params: {
   frontmatter: Post;
@@ -38,14 +38,11 @@ export async function distributeContent(params: {
   const { frontmatter, slug, publicUrl, reelsAktif } = params;
   const etiket = FORMAT_ETIKETLERI_TR[frontmatter.format];
   const formatEmoji = FORMAT_EMOJI[frontmatter.format];
-  const kategoriEmoji = KATEGORI_EMOJI[frontmatter.kategori] ?? "🔍";
 
   const telegramMetni = `${formatEmoji} <b>${etiket}</b>\n\n${frontmatter.baslik}\n\n${frontmatter.metaAciklama}\n\n👉 ${publicUrl}`;
   const blueskyMetni = `${formatEmoji} ${frontmatter.baslik}\n\n${frontmatter.metaAciklama}`;
   const threadsMetni = `${formatEmoji} ${frontmatter.baslik}\n\n${frontmatter.metaAciklama}`;
-  const instagramMetni = `${formatEmoji} ${frontmatter.baslik}\n\n${frontmatter.metaAciklama}\n\n👆 Detaylar ve devamı bio'daki linkte\n\n${kategoriEmoji} #sosyektif #${frontmatter.kategori} #${frontmatter.format}`;
-  // Facebook, Instagram'dan farklı olarak tıklanabilir link destekliyor.
-  const facebookMetni = `${formatEmoji} ${frontmatter.baslik}\n\n${frontmatter.metaAciklama}\n\n👉 ${publicUrl}\n\n${kategoriEmoji} #sosyektif #${frontmatter.kategori} #${frontmatter.format}`;
+    const metinler = sosyalMetinler(frontmatter, publicUrl);
 
   const basarisizlar: string[] = [];
   const sosyalPaylasimlar: DistributeResult["sosyalPaylasimlar"] = {};
@@ -62,15 +59,17 @@ export async function distributeContent(params: {
       return null;
     }),
     (async () => {
+      // Reels açıksa carousel yerine Reels videosu üretilip ONAY için admin
+      // Telegram'ına gönderilir; Instagram/Facebook paylaşımı ✅ butonuna
+      // basılınca reel-paylas.yml'de yapılır (bkz. distribute/reel.ts).
+      if (reelsAktif) {
+        await reeliOnayaGonder(frontmatter, slug).catch((err) => {
+          basarisizlar.push(`reels onayı: ${err instanceof Error ? err.message : err}`.slice(0, 200));
+        });
+        return;
+      }
       try {
-        const slaytlar = await generateCarouselSlides(frontmatter);
-
-        // Reels açıksa carousel yerine tek bir video üretilip yüklenir —
-        // aynı içeriği iki farklı biçimde art arda paylaşmak yerine, Reels'in
-        // çok daha yüksek erişim aldığı biçimi tercih ediyoruz.
-        const dosyalar: { url: string; dosyaYolu: string }[] = reelsAktif
-          ? [await writeReelVideo(slug, await slaytlardanReelUret(slaytlar))]
-          : await writeCarouselSlides(slug, slaytlar);
+        const dosyalar = await writeCarouselSlides(slug, await generateCarouselSlides(frontmatter));
 
         // Kritik: bu dosyalar normalde pipeline SONUNDA commit'lenir, ama
         // Instagram'ın çekeceği URL'in paylaşım anında zaten canlı olması
@@ -78,31 +77,24 @@ export async function distributeContent(params: {
         // başlık yorumu, 2026-09-13'te gerçek paylaşımda tespit edildi).
         const pushEdildi = dosyalariHemenYayinla(
           dosyalar.map((d) => d.dosyaYolu),
-          `Sosyal medya ${reelsAktif ? "reel'i" : "görselleri"}: ${slug}`
+          `Sosyal medya görselleri: ${slug} (${dosyalar.length} slayt)`
         );
         if (!pushEdildi) {
-          basarisizlar.push("instagram+facebook: görsel/video push edilemedi");
+          basarisizlar.push("instagram+facebook: görseller push edilemedi");
           return;
         }
         const urls = dosyalar.map((d) => d.url);
-        const canli = await canliyaCikanaKadarBekle(urls);
-        if (!canli) {
-          basarisizlar.push("instagram+facebook: görsel/video zaman aşımına uğradı (Cloudflare Pages build gecikti?)");
+        if (!(await canliyaCikanaKadarBekle(urls))) {
+          basarisizlar.push("instagram+facebook: görseller zaman aşımına uğradı (Cloudflare Pages build gecikti?)");
           return;
         }
 
         const [igId, fbId] = await Promise.all([
-          (reelsAktif
-            ? postReelToInstagram(instagramMetni, urls[0]!)
-            : postToInstagram(instagramMetni, urls)
-          ).catch((err) => {
+          postToInstagram(metinler.instagram, urls).catch((err) => {
             basarisizlar.push(`instagram: ${err instanceof Error ? err.message : err}`.slice(0, 200));
             return null;
           }),
-          (reelsAktif
-            ? postVideoToFacebook(facebookMetni, urls[0]!)
-            : postToFacebook(facebookMetni, urls)
-          ).catch((err) => {
+          postToFacebook(metinler.facebook, urls).catch((err) => {
             basarisizlar.push(`facebook: ${err instanceof Error ? err.message : err}`.slice(0, 200));
             return null;
           }),
@@ -111,7 +103,7 @@ export async function distributeContent(params: {
         if (fbId) sosyalPaylasimlar.facebook = fbId;
       } catch (err) {
         basarisizlar.push(
-          `instagram+facebook: görsel/video üretim hatası: ${err instanceof Error ? err.message : err}`.slice(0, 200)
+          `instagram+facebook: görsel üretim hatası: ${err instanceof Error ? err.message : err}`.slice(0, 200)
         );
       }
     })(),

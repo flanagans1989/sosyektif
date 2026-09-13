@@ -42,7 +42,7 @@ export function fontFaceCss(): string {
  * Sığmayan metni küçültür: `data-sigdir="min"` taşıyan her kutu, içeriği
  * kutunun yüksekliğine sığana kadar 2px adımlarla küçülür (min değerde durur).
  */
-const SIGDIR_BETIGI = `
+export const SIGDIR_BETIGI = `
   for (const el of document.querySelectorAll("[data-sigdir]")) {
     const min = Number(el.dataset.sigdir) || 20;
     let boyut = parseFloat(getComputedStyle(el).fontSize);
@@ -57,7 +57,7 @@ const SIGDIR_BETIGI = `
   }
 `;
 
-async function tarayiciAc(): Promise<Browser> {
+export async function tarayiciAc(): Promise<Browser> {
   try {
     return await chromium.launch();
   } catch (err) {

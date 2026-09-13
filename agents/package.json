@@ -18,10 +18,12 @@
     "slayt-onizle": "tsx scripts/slayt-onizle.ts",
     "reel-onizle": "tsx scripts/reel-onizle.ts",
     "reel-onizle-telegram": "tsx scripts/reel-onizle-telegram.ts",
+    "reel-paylas": "tsx scripts/reel-paylas.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@atproto/api": "^0.13.35",
+    "ffmpeg-static": "^5.3.0",
     "js-yaml": "^4.1.0",
     "playwright-core": "^1.63.0",
     "rss-parser": "^3.13.0",

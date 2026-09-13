@@ -415,6 +415,17 @@ function editMessage(env: Env, chatId: number, messageId: number, text: string):
   });
 }
 
+/** Video mesajlarında metin değil açıklama (caption) düzenlenir — editMessageText hata verir. */
+function editCaption(env: Env, chatId: number, messageId: number, caption: string): Promise<void> {
+  return tgCall(env, "editMessageCaption", {
+    chat_id: chatId,
+    message_id: messageId,
+    caption,
+    parse_mode: "HTML",
+    reply_markup: { inline_keyboard: [] },
+  });
+}
+
 /**
  * Saatlik tetikleme (Cloudflare cron VE/YA DA dışarıdan cron-job.org ile
  * GET /tetikle çağrısı — bkz. wrangler.toml) → UTC saatine göre hangi
@@ -432,13 +443,13 @@ const ZAMANLAMA: { workflow: string; saatler: number[] | "hepsi"; sadecePazartes
   { workflow: "weekly-analytics.yml", saatler: [5], sadecePazartesi: true },
 ];
 
-async function workflowBaslat(env: Env, workflow: string): Promise<void> {
+async function workflowBaslat(env: Env, workflow: string, inputs?: Record<string, string>): Promise<void> {
   const res = await fetch(
     `https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/${workflow}/dispatches`,
     {
       method: "POST",
       headers: { ...ghHeaders(env), "Content-Type": "application/json" },
-      body: JSON.stringify({ ref: "main" }),
+      body: JSON.stringify(inputs ? { ref: "main", inputs } : { ref: "main" }),
     }
   );
   if (!res.ok) throw new Error(`${workflow} başlatılamadı: ${res.status} ${await res.text()}`);
@@ -546,8 +557,38 @@ export default {
     }
 
     const [aksiyon, id] = (cq.data ?? "").split(":");
-    if (!id || (aksiyon !== "approve" && aksiyon !== "reject")) {
+    if (!id || !["approve", "reject", "reel_ok", "reel_no"].includes(aksiyon ?? "")) {
       await answerCallback(env, cq.id, "Geçersiz istek.");
+      return new Response("ok");
+    }
+
+    // Reels onayı (PLAN.md Bölüm 11.9, agents/src/distribute/reel.ts): video
+    // mesajının altındaki butonlar. Paylaşımın kendisi (video üretimi,
+    // siteye yükleme, Instagram/Facebook) dakikalar sürdüğü için worker'da
+    // değil GitHub Actions'ta (reel-paylas.yml) yapılır — worker sadece başlatır.
+    if (aksiyon === "reel_ok" || aksiyon === "reel_no") {
+      const chatId = cq.message.chat.id;
+      const mesajId = cq.message.message_id;
+      if (aksiyon === "reel_no") {
+        await answerCallback(env, cq.id, "Paylaşılmayacak.");
+        await editCaption(env, chatId, mesajId, "❌ <b>Reels paylaşılmadı</b>");
+        return new Response("ok");
+      }
+      await answerCallback(env, cq.id, "Paylaşım başlatılıyor…");
+      try {
+        const slug = await resolveSlug(env, id);
+        await workflowBaslat(env, "reel-paylas.yml", { slug });
+        await editCaption(
+          env,
+          chatId,
+          mesajId,
+          `✅ <b>Onaylandı</b> — Reels hazırlanıp paylaşılıyor (~5 dk), bitince haber gelecek.\n${slug}`
+        );
+      } catch (err) {
+        console.error(err);
+        const mesaj = err instanceof Error ? err.message : String(err);
+        await editCaption(env, chatId, mesajId, `⚠️ <b>Paylaşım başlatılamadı</b>\n${mesaj.slice(0, 300)}`);
+      }
       return new Response("ok");
     }
 

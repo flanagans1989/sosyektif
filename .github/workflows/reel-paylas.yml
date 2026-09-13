@@ -1,26 +1,28 @@
-name: Reel Önizleme (Telegram'a Gönder)
+name: Reels Paylaş (Telegram onayı sonrası)
 
-# Kullanıcı "genelde dışarıda oluyorum, Telegram'dan izleyip onay versem"
-# dediği için (PLAN.md Bölüm 11.9): bir slug girip Actions sekmesinden ya da
-# GitHub mobil uygulamasından tetiklenince, o içeriğin Reels videosu
-# "✅ Reels olarak paylaş / ❌ Paylaşma" butonlarıyla admin Telegram
-# sohbetine düşer. Bu iş kendisi paylaşım yapmaz — ✅'e basılınca worker
-# reel-paylas.yml'i başlatır.
+# Telegram'daki "✅ Reels olarak paylaş" butonuna basılınca worker
+# (worker/telegram-onay, reel_ok) bu işi başlatır (PLAN.md Bölüm 11.9):
+# video üretilip siteye yüklenir, canlıya çıkınca Instagram Reels + Facebook
+# video olarak paylaşılır, sonuç Telegram'a bildirilir.
 on:
   workflow_dispatch:
     inputs:
       slug:
-        description: "Önizlenecek içeriğin slug'ı (site/src/content/posts/<slug>.md)"
+        description: "Paylaşılacak içeriğin slug'ı"
         required: true
         type: string
 
+concurrency:
+  group: sosyektif-reel-paylas-${{ inputs.slug }}
+  cancel-in-progress: false
+
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  reel-onizle:
+  reel-paylas:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -39,8 +41,6 @@ jobs:
           path: ~/.cache/ms-playwright
           key: playwright-chromium-${{ hashFiles('agents/package-lock.json') }}
 
-      # Chromium + renkli emoji fontu (yoksa emoji'ler kutu çıkıyor) + ffmpeg
-      # (ffmpeg-static paketinin ikili dosyası inmezse yedek).
       - name: Render bağımlılıkları
         working-directory: agents
         run: |
@@ -50,6 +50,7 @@ jobs:
 
       - working-directory: agents
         env:
+          AGENT_PAYLASIM_ANAHTARI: ${{ secrets.AGENT_PAYLASIM_ANAHTARI }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
-        run: npm run reel-onizle-telegram -- "${{ inputs.slug }}"
+        run: npm run reel-paylas -- "${{ inputs.slug }}"

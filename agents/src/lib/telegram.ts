@@ -98,7 +98,17 @@ export async function postToPublicChannel(text: string): Promise<void> {
  * doğrudan telefona (Telegram) gönderiyor. Telegram bot API'si video için
  * multipart/form-data bekliyor, JSON değil (sendMessage'dan farklı).
  */
-export async function sendVideoToAdmin(video: Buffer, caption: string): Promise<void> {
+export async function sendVideoToAdmin(
+  video: Buffer,
+  caption: string,
+  secenekler: {
+    /** Verilirse videonun altına "✅ Paylaş / ❌ Paylaşma" butonları eklenir (bkz. worker reel_ok/reel_no). */
+    onaySlug?: string;
+    genislik?: number;
+    yukseklik?: number;
+    sureSn?: number;
+  } = {}
+): Promise<void> {
   const token = botToken();
   const chatId = optionalEnv("TELEGRAM_ADMIN_CHAT_ID");
   if (!token || !chatId) {
@@ -110,6 +120,25 @@ export async function sendVideoToAdmin(video: Buffer, caption: string): Promise<
   form.append("chat_id", chatId);
   form.append("caption", caption);
   form.append("parse_mode", "HTML");
+  // Boyut verilmezse Telegram dikey videoyu kare/yanlış oranlı önizleme ile gösteriyor.
+  if (secenekler.genislik) form.append("width", String(secenekler.genislik));
+  if (secenekler.yukseklik) form.append("height", String(secenekler.yukseklik));
+  if (secenekler.sureSn) form.append("duration", String(Math.round(secenekler.sureSn)));
+  form.append("supports_streaming", "true");
+  if (secenekler.onaySlug) {
+    const id = onayKisaId(secenekler.onaySlug);
+    form.append(
+      "reply_markup",
+      JSON.stringify({
+        inline_keyboard: [
+          [
+            { text: "✅ Reels olarak paylaş", callback_data: `reel_ok:${id}` },
+            { text: "❌ Paylaşma", callback_data: `reel_no:${id}` },
+          ],
+        ],
+      })
+    );
+  }
   form.append("video", new Blob([video], { type: "video/mp4" }), "reel.mp4");
 
   const res = await fetch(`https://api.telegram.org/bot${token}/sendVideo`, {
