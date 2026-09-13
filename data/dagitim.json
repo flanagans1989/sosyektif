@@ -137,5 +137,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "kasif-kozinoglunun-istihbarat-gecmisi-hakkinda-duyunca-sasiracaginiz-6-bilgi": {
+    "eklendi": "2026-09-13T19:04:36.409Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-13T19:04:37.039Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgbym4bdk2w"
+      }
+    },
+    "reelIdleri": {}
   }
 }
