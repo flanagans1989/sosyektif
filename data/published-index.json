@@ -115,5 +115,14 @@
     "format": "trivia",
     "yayinTarihi": "2026-09-13T08:18:05.115Z",
     "otomatikYayinlandi": true
+  },
+  {
+    "slug": "piramitler-hakkinda-ezber-bozan-6-bilgilik-tarih-testi",
+    "baslik": "Piramitler Hakkında Ezber Bozan 6 Bilgilik Tarih Testi",
+    "konuParmakIzi": "piramitler",
+    "kategori": "tarih",
+    "format": "quiz",
+    "yayinTarihi": "2026-09-13T11:59:27.122Z",
+    "otomatikYayinlandi": false
   }
 ]
