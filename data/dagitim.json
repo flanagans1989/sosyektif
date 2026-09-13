@@ -284,14 +284,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T21:01:47.152Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgik4k43u2r"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgik4k43u2r",
+        "sonDeneme": "2026-09-13T21:01:47.152Z"
       },
       "threads": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T21:01:58.519Z",
-        "id": "18124535461894449"
+        "id": "18124535461894449",
+        "sonDeneme": "2026-09-13T21:01:58.519Z"
       },
       "instagram": {
         "durum": "hata",
@@ -302,8 +302,20 @@
       "facebook": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T21:04:28.329Z",
-        "id": "1243429762194033_122101954185474851"
+        "id": "1243429762194033_122101954185474851",
+        "sonDeneme": "2026-09-13T21:04:28.329Z"
+      }
+    },
+    "reelIdleri": {}
+  },
+  "yapay-zeka-hakkindaki-bilgini-test-et-ne-kadar-sey-biliyorsun": {
+    "eklendi": "2026-09-13T21:18:46.298Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-13T21:18:46.693Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgjiiudq72v"
       }
     },
     "reelIdleri": {}
