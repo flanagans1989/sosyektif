@@ -292,6 +292,12 @@
         "deneme": 1,
         "sonDeneme": "2026-09-13T21:01:58.519Z",
         "id": "18124535461894449"
+      },
+      "instagram": {
+        "durum": "hata",
+        "deneme": 1,
+        "sonDeneme": "2026-09-13T21:04:11.789Z",
+        "hata": "[instagram] yayınlanamadı: 403 {\"error\":{\"message\":\"Application request limit reached\",\"type\":\"OAuthException\",\"is_transient\":false,\"code\":4,\"error_subcode\":2207051,\"error_user_title\":\"action is blocked\",\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think we"
       }
     },
     "reelIdleri": {}
