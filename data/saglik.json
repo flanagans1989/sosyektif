@@ -1,19 +1,12 @@
 {
-  "sonDenetim": "2026-09-13T19:14:01.911Z",
-  "toplamKontrol": 47,
+  "sonDenetim": "2026-09-13T21:30:08.195Z",
+  "toplamKontrol": 46,
   "sorunlar": {
     "gorsel-unsplash": {
       "alan": "Görsel",
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "worker-surum": {
-      "alan": "Worker",
-      "durum": "uyari",
-      "detay": "Cloudflare'deki Worker repodaki sürümün gerisinde (onay sonrası dağıtım, geçici video barındırma eksik).",
-      "cozum": "worker/telegram-onay/dashboard-paste.js'i Cloudflare panelinde Quick Edit'e yapıştırıp Deploy'a bas.",
-      "ilkGorulme": "2026-09-13T19:14:01.911Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
@@ -24,9 +17,9 @@
     },
     "kanal-youtube": {
       "alan": "Sosyal kanallar",
-      "durum": "uyari",
-      "detay": "YouTube yüklemesi yapılandırılmamış — Shorts paylaşılmıyor.",
-      "cozum": "YouTube OAuth kurulumu gerekiyor (npm run youtube-yetkilendir, PLAN.md 11.9).",
+      "durum": "hata",
+      "detay": "YouTube: [youtube] bu hesaba bağlı bir YouTube kanalı yok",
+      "cozum": "YouTube yetkisini yenile (npm run youtube-yetkilendir).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
     },
     "bekleyen-telegram": {
