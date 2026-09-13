@@ -232,5 +232,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "internetin-gizli-tarihi-ve-bilinmeyen-6-ilki-hakkinda-ne-kadar-bilgilisin": {
+    "eklendi": "2026-09-13T20:04:14.110Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-13T20:04:14.928Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgfdaawws2c"
+      }
+    },
+    "reelIdleri": {}
   }
 }
