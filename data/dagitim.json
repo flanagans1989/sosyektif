@@ -67,5 +67,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "piramitler-hakkinda-ezber-bozan-6-bilgilik-tarih-testi": {
+    "eklendi": "2026-09-13T18:56:01.598Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-13T18:56:02.109Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgbjaztpd2i"
+      }
+    },
+    "reelIdleri": {}
   }
 }
