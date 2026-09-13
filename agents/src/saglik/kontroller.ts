@@ -17,7 +17,7 @@ import yaml from "js-yaml";
 import { AtpAgent } from "@atproto/api";
 import { optionalEnv } from "../lib/env.js";
 import { getMetaToken } from "../lib/metaToken.js";
-import { POSTS_DIR } from "../lib/paths.js";
+import { POSTS_DIR, SITE_DIR } from "../lib/paths.js";
 import {
   readBlocklist,
   readCategoryWeights,
@@ -266,6 +266,36 @@ export async function githubKontrolleri(onarimYap: boolean): Promise<KontrolSonu
     }
     sonuclar.push(k);
   }
+  // Günlük site verileri (burç, tarihte bugün) bugünün mü? TR 06:00'dan sonra
+  // hâlâ dünkü veri varsa burc.yml çalışmamış demektir — yeniden başlat.
+  const trSimdi = new Date(Date.now() + 3 * SAAT_MS);
+  const trBugun = trSimdi.toISOString().slice(0, 10);
+  if (trSimdi.getUTCHours() >= 6) {
+    const bayat: string[] = [];
+    for (const dosya of ["gunluk-burc.json", "tarihte-bugun.json"]) {
+      try {
+        const veri = JSON.parse(await readFile(path.join(SITE_DIR, "src", "data", dosya), "utf-8")) as { tarih?: string };
+        if (veri.tarih !== trBugun) bayat.push(`${dosya} (${veri.tarih ?? "tarih yok"})`);
+      } catch {
+        bayat.push(`${dosya} (okunamadı)`);
+      }
+    }
+    if (bayat.length > 0) {
+      const k = hata("gunluk-veri", "Günlük içerik", `Bugünün verisi yok: ${bayat.join(", ")}`, "burc.yml loglarına bak.");
+      if (onarimYap) {
+        const d = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/burc.yml/dispatches`, {
+          method: "POST",
+          headers: { ...ghHeaders(), "Content-Type": "application/json" },
+          body: JSON.stringify({ ref: "main" }),
+        });
+        k.onarim = d.ok ? "Burç + Tarihte Bugün işi yeniden başlatıldı." : `burc.yml başlatılamadı: ${d.status}`;
+      }
+      sonuclar.push(k);
+    } else {
+      sonuclar.push(ok("gunluk-veri", "Günlük içerik", "Burç ve Tarihte Bugün bugünün verisiyle güncel"));
+    }
+  }
+
   if (basarisizlar.length === 0) {
     sonuclar.push(ok("workflow-hatalari", "Zamanlayıcı", `Son 24 saatte ${enSon.size} workflow'un son çalışması başarılı.`));
   }
