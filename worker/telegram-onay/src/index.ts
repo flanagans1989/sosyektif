@@ -19,8 +19,8 @@ export interface Env {
   TELEGRAM_ADMIN_CHAT_ID: string;
   /** GET /tetikle uç noktasını korur — bkz. dosyanın altındaki fetch handler'ı. */
   TETIKLE_ANAHTARI: string;
-  /** /meta-token uç noktalarını korur (agents'ın Threads/Instagram token
-   * okuması için) — TETIKLE_ANAHTARI'dan ayrı tutulur (bkz. Bölüm 11.2). */
+  /** /meta-token uç noktalarını korur (agents'ın Threads/Instagram/Facebook
+   * token okuması için) — TETIKLE_ANAHTARI'dan ayrı tutulur (bkz. Bölüm 11.2). */
   AGENT_PAYLASIM_ANAHTARI: string;
   /** Tepki barı sayaçları (PLAN.md Bölüm 10 / S2). Cloudflare dashboard'da
    * "sosyektif_metrikler" KV namespace'ine bağlı — bkz. wrangler.toml notu. */
@@ -242,7 +242,7 @@ async function tepkiSonucGetir(request: Request, env: Env): Promise<Response> {
   });
 }
 
-type MetaPlatform = "threads" | "instagram";
+type MetaPlatform = "threads" | "instagram" | "facebook";
 
 interface MetaToken {
   access_token: string;
@@ -250,6 +250,8 @@ interface MetaToken {
   expires_at: number;
   /** Yalnızca Instagram için: Graph API çağrılarında kullanılan hesap ID'si. */
   ig_user_id?: string;
+  /** Yalnızca Facebook için: Sayfa ID'si (Page Access Token, kullanıcı token'ından ayrı). */
+  page_id?: string;
 }
 
 function metaTokenAnahtari(platform: MetaPlatform): string {
@@ -270,7 +272,7 @@ async function metaTokenGetir(request: Request, env: Env): Promise<Response> {
     return new Response("forbidden", { status: 403 });
   }
   const platform = url.searchParams.get("platform");
-  if (platform !== "threads" && platform !== "instagram") {
+  if (platform !== "threads" && platform !== "instagram" && platform !== "facebook") {
     return new Response("geçersiz platform", { status: 400 });
   }
   const mevcut = await env.METRIKLER.get(metaTokenAnahtari(platform));
@@ -283,14 +285,20 @@ async function metaTokenYaz(request: Request, env: Env): Promise<Response> {
   if (url.searchParams.get("anahtar") !== env.AGENT_PAYLASIM_ANAHTARI) {
     return new Response("forbidden", { status: 403 });
   }
-  let govde: { platform?: string; access_token?: string; expires_at?: number; ig_user_id?: string };
+  let govde: {
+    platform?: string;
+    access_token?: string;
+    expires_at?: number;
+    ig_user_id?: string;
+    page_id?: string;
+  };
   try {
     govde = await request.json();
   } catch {
     return new Response("geçersiz istek", { status: 400 });
   }
   if (
-    (govde.platform !== "threads" && govde.platform !== "instagram") ||
+    (govde.platform !== "threads" && govde.platform !== "instagram" && govde.platform !== "facebook") ||
     !govde.access_token ||
     typeof govde.expires_at !== "number"
   ) {
@@ -300,6 +308,7 @@ async function metaTokenYaz(request: Request, env: Env): Promise<Response> {
     access_token: govde.access_token,
     expires_at: govde.expires_at,
     ig_user_id: govde.ig_user_id,
+    page_id: govde.page_id,
   };
   await env.METRIKLER.put(metaTokenAnahtari(govde.platform), JSON.stringify(token));
   return new Response("ok");
@@ -313,12 +322,19 @@ async function metaTokenYaz(request: Request, env: Env): Promise<Response> {
  * sonraki bootstrap'a kadar o platformun paylaşımı sessizce atlanmaya
  * devam eder (agents/src/lib/threads.ts ve instagram.ts token yoksa/eskiyse
  * paylaşımı atlar).
+ *
+ * Facebook bu döngüde YOK: Sayfa (Page) Access Token'ların Threads/
+ * Instagram'daki gibi basit bir "refresh_access_token" ucu yok — uzun ömürlü
+ * bir kullanıcı token'ından türetildiği için kullanıcı token'ı geçerli
+ * kaldıkça pratikte süresiz sayılır (bootstrap'ta expires_at uzak bir
+ * tarihe ayarlanır). Süresi dolarsa yeniden bootstrap gerekir.
  */
 async function metaTokenlariYenile(env: Env): Promise<void> {
   const BES_GUN_MS = 5 * 24 * 60 * 60 * 1000;
   const now = Date.now();
 
-  const yenilemeUclari: Record<MetaPlatform, string> = {
+  // Facebook burada yok (bkz. yukarıdaki yorum) — döngü de yalnızca bu ikisini gezer.
+  const yenilemeUclari: Record<"threads" | "instagram", string> = {
     threads: "https://graph.threads.net/refresh_access_token?grant_type=th_refresh_token&access_token=",
     instagram: "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=",
   };

@@ -12,9 +12,11 @@ export interface MetaToken {
   access_token: string;
   expires_at: number;
   ig_user_id?: string;
+  /** Yalnızca Facebook için: Sayfa (Page) ID'si. */
+  page_id?: string;
 }
 
-export async function getMetaToken(platform: "threads" | "instagram"): Promise<MetaToken | null> {
+export async function getMetaToken(platform: "threads" | "instagram" | "facebook"): Promise<MetaToken | null> {
   const anahtar = optionalEnv("AGENT_PAYLASIM_ANAHTARI");
   if (!anahtar) {
     console.warn("[meta-token] AGENT_PAYLASIM_ANAHTARI yok, token okunamadı");

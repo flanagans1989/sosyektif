@@ -221,7 +221,7 @@ async function metaTokenGetir(request, env) {
         return new Response("forbidden", { status: 403 });
     }
     const platform = url.searchParams.get("platform");
-    if (platform !== "threads" && platform !== "instagram") {
+    if (platform !== "threads" && platform !== "instagram" && platform !== "facebook") {
         return new Response("geçersiz platform", { status: 400 });
     }
     const mevcut = await env.METRIKLER.get(metaTokenAnahtari(platform));
@@ -241,7 +241,7 @@ async function metaTokenYaz(request, env) {
     catch {
         return new Response("geçersiz istek", { status: 400 });
     }
-    if ((govde.platform !== "threads" && govde.platform !== "instagram") ||
+    if ((govde.platform !== "threads" && govde.platform !== "instagram" && govde.platform !== "facebook") ||
         !govde.access_token ||
         typeof govde.expires_at !== "number") {
         return new Response("geçersiz alanlar", { status: 400 });
@@ -250,6 +250,7 @@ async function metaTokenYaz(request, env) {
         access_token: govde.access_token,
         expires_at: govde.expires_at,
         ig_user_id: govde.ig_user_id,
+        page_id: govde.page_id,
     };
     await env.METRIKLER.put(metaTokenAnahtari(govde.platform), JSON.stringify(token));
     return new Response("ok");
@@ -262,10 +263,17 @@ async function metaTokenYaz(request, env) {
  * sonraki bootstrap'a kadar o platformun paylaşımı sessizce atlanmaya
  * devam eder (agents/src/lib/threads.ts ve instagram.ts token yoksa/eskiyse
  * paylaşımı atlar).
+ *
+ * Facebook bu döngüde YOK: Sayfa (Page) Access Token'ların Threads/
+ * Instagram'daki gibi basit bir "refresh_access_token" ucu yok — uzun ömürlü
+ * bir kullanıcı token'ından türetildiği için kullanıcı token'ı geçerli
+ * kaldıkça pratikte süresiz sayılır (bootstrap'ta expires_at uzak bir
+ * tarihe ayarlanır). Süresi dolarsa yeniden bootstrap gerekir.
  */
 async function metaTokenlariYenile(env) {
     const BES_GUN_MS = 5 * 24 * 60 * 60 * 1000;
     const now = Date.now();
+    // Facebook burada yok (bkz. yukarıdaki yorum) — döngü de yalnızca bu ikisini gezer.
     const yenilemeUclari = {
         threads: "https://graph.threads.net/refresh_access_token?grant_type=th_refresh_token&access_token=",
         instagram: "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=",
