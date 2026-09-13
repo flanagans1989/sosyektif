@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-13T21:30:08.195Z",
-  "toplamKontrol": 46,
+  "sonDenetim": "2026-09-13T21:32:59.697Z",
+  "toplamKontrol": 47,
   "sorunlar": {
     "gorsel-unsplash": {
       "alan": "Görsel",
@@ -13,13 +13,6 @@
       "durum": "uyari",
       "detay": "Telegram herkese açık kanal tanımlı değil — bu kanala paylaşım yapılmıyor.",
       "cozum": "Telegram'da kanal aç, botu yönetici yap, kanal kimliğini TELEGRAM_PUBLIC_CHANNEL_ID secret'ı olarak ekle.",
-      "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "kanal-youtube": {
-      "alan": "Sosyal kanallar",
-      "durum": "hata",
-      "detay": "YouTube: [youtube] bu hesaba bağlı bir YouTube kanalı yok",
-      "cozum": "YouTube yetkisini yenile (npm run youtube-yetkilendir).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
     },
     "bekleyen-telegram": {
