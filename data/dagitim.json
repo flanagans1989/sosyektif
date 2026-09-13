@@ -140,12 +140,15 @@
         "sonDeneme": "2026-09-13T19:02:12.629Z"
       },
       "reel": {
-        "durum": "onayda",
+        "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T19:04:34.453Z"
+        "sonDeneme": "2026-09-13T20:25:44.613Z"
       }
     },
-    "reelIdleri": {}
+    "reelIdleri": {
+      "instagram": "18081188798336620",
+      "facebook": "1394797882780185"
+    }
   },
   "kasif-kozinoglunun-istihbarat-gecmisi-hakkinda-duyunca-sasiracaginiz-6-bilgi": {
     "eklendi": "2026-09-13T19:04:36.409Z",
