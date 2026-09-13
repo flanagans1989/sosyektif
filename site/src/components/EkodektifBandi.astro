@@ -1,0 +1,166 @@
+---
+import EkodektifLogo from './EkodektifLogo.astro';
+
+// Ana sayfadaki Ekodektif vitrini: solda alanın tanıtımı ve iki giriş linki,
+// sağda canlı fiyat kutucukları ile Bitcoin'in gerçek 7 günlük grafiği.
+// Veriler tarayıcıda çekilir (lib/piyasa.ts); gelene kadar "—" görünür, kutu
+// ölçüleri sabit olduğu için sayfa kaymaz.
+
+const KUTUCUKLAR = [
+  { anahtar: 'USD', ad: 'Dolar' },
+  { anahtar: 'EUR', ad: 'Euro' },
+  { anahtar: 'gram-altin', ad: 'Gram Altın' },
+];
+---
+
+<section class="mx-auto max-w-6xl px-4 pt-8" aria-labelledby="eko-bant-baslik">
+  <div class="eko-bant relative isolate overflow-hidden rounded-3xl bg-murekkep text-white">
+    <div class="eko-bant-doku pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
+    <span
+      class="pointer-events-none absolute -bottom-16 -left-6 -z-10 select-none text-[16rem] font-extrabold leading-none text-white/[0.04]"
+      aria-hidden="true">₺</span
+    >
+
+    <div class="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-10">
+      <div>
+        <div class="flex flex-wrap items-center gap-3">
+          <EkodektifLogo class="text-2xl !text-white" />
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-eko/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-300">
+            <span class="relative flex h-2 w-2" aria-hidden="true">
+              <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+            </span>
+            Canlı
+          </span>
+        </div>
+
+        <h2 id="eko-bant-baslik" class="mt-5 text-3xl font-extrabold leading-tight text-balance sm:text-4xl">
+          Paranın <span class="text-emerald-400">izini</span> sür
+        </h2>
+        <p class="mt-3 max-w-md text-white/70">
+          Dolar, euro, altın ve Bitcoin anlık fiyatları, pratik para çevirici ve ekonominin şaşırtıcı hikâyeleri tek yerde.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a
+            href="/ekodektif/"
+            class="group inline-flex items-center gap-2 rounded-full bg-eko px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-eko/30 transition hover:bg-emerald-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+          >
+            Canlı piyasaya git
+            <span aria-hidden="true" class="transition group-hover:translate-x-0.5">→</span>
+          </a>
+          <a
+            href="/ekodektif/#cevirici-baslik"
+            class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+          >
+            Para çevir
+          </a>
+        </div>
+      </div>
+
+      <a
+        href="/ekodektif/"
+        class="block rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-300"
+        aria-label="Ekodektif canlı piyasa panosuna git"
+      >
+        <div class="grid grid-cols-3 gap-2 sm:gap-3">
+          {KUTUCUKLAR.map((k) => (
+            <div class="rounded-2xl bg-white/[0.06] p-3 ring-1 ring-white/10 transition hover:bg-white/10 sm:p-4" data-bant-kalem={k.anahtar}>
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-white/50">{k.ad}</p>
+              <p class="mt-1.5 truncate text-base font-extrabold tabular-nums sm:text-xl" data-alan="fiyat">—</p>
+              <p class="mt-0.5 text-xs font-semibold tabular-nums text-white/40" data-alan="degisim">&nbsp;</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-2 flex items-center gap-4 rounded-2xl bg-white/[0.06] p-4 ring-1 ring-white/10 transition hover:bg-white/10 sm:mt-3">
+          <div class="shrink-0" data-bant-kalem="bitcoin">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-white/50">Bitcoin</p>
+            <p class="mt-1.5 text-xl font-extrabold tabular-nums" data-alan="fiyat">—</p>
+            <p class="mt-0.5 text-xs font-semibold tabular-nums text-white/40" data-alan="degisim">&nbsp;</p>
+          </div>
+          <div class="min-w-0 flex-1">
+            <svg id="eko-bant-grafik" class="h-16 w-full overflow-visible" viewBox="0 0 300 64" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="eko-bant-dolgu" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="currentColor" stop-opacity="0.35"></stop>
+                  <stop offset="100%" stop-color="currentColor" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+              <path data-grafik="alan" d="" fill="url(#eko-bant-dolgu)"></path>
+              <path data-grafik="cizgi" d="" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+            </svg>
+            <p class="mt-1 text-right text-[11px] font-semibold text-white/40" id="eko-bant-grafik-etiket">Son 7 gün</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Sağ üstte para yeşili bir ışıma + çok silik bir grafik kağıdı ızgarası. */
+  .eko-bant-doku {
+    background-image:
+      radial-gradient(38rem 22rem at 100% 0%, rgb(14 159 110 / 0.35), transparent 65%),
+      linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    background-size:
+      auto,
+      32px 32px,
+      32px 32px;
+  }
+</style>
+
+<script>
+  import { bitcoinHaftalik, fiyatlariAl, tlBicimle, yuzdeBicimle } from '../lib/piyasa';
+
+  const YENILEME_MS = 60_000;
+
+  async function fiyatlariCiz(): Promise<void> {
+    const fiyatlar = await fiyatlariAl();
+    document.querySelectorAll<HTMLElement>('[data-bant-kalem]').forEach((kutu) => {
+      const f = fiyatlar.get(kutu.dataset.bantKalem ?? '');
+      if (!f) return;
+      const fiyatEl = kutu.querySelector<HTMLElement>('[data-alan="fiyat"]');
+      const degisimEl = kutu.querySelector<HTMLElement>('[data-alan="degisim"]');
+      if (fiyatEl) fiyatEl.textContent = `${tlBicimle(f.tl)} ₺`;
+      if (degisimEl) {
+        degisimEl.textContent = yuzdeBicimle(f.degisim);
+        degisimEl.classList.remove('text-white/40', 'text-emerald-400', 'text-rose-400');
+        degisimEl.classList.add(f.degisim < 0 ? 'text-rose-400' : 'text-emerald-400');
+      }
+    });
+  }
+
+  async function grafigiCiz(): Promise<void> {
+    const svg = document.getElementById('eko-bant-grafik');
+    if (!svg) return;
+    const fiyatlar = await bitcoinHaftalik();
+    if (fiyatlar.length < 2) return;
+
+    const en = 300;
+    const boy = 64;
+    const kenar = 4;
+    const min = Math.min(...fiyatlar);
+    const max = Math.max(...fiyatlar);
+    const aralik = max - min || 1;
+    const noktalar = fiyatlar.map((f, i) => {
+      const x = (i / (fiyatlar.length - 1)) * en;
+      const y = kenar + (1 - (f - min) / aralik) * (boy - kenar * 2);
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    });
+    const cizgi = `M${noktalar.join(' L')}`;
+    svg.querySelector('[data-grafik="cizgi"]')?.setAttribute('d', cizgi);
+    svg.querySelector('[data-grafik="alan"]')?.setAttribute('d', `${cizgi} L${en},${boy} L0,${boy} Z`);
+
+    const haftalik = ((fiyatlar[fiyatlar.length - 1] - fiyatlar[0]) / fiyatlar[0]) * 100;
+    svg.classList.add(haftalik < 0 ? 'text-rose-400' : 'text-emerald-400');
+    const etiket = document.getElementById('eko-bant-grafik-etiket');
+    if (etiket) etiket.textContent = `Son 7 gün ${yuzdeBicimle(haftalik)}`;
+  }
+
+  fiyatlariCiz().catch(() => {});
+  grafigiCiz().catch(() => {});
+  setInterval(() => fiyatlariCiz().catch(() => {}), YENILEME_MS);
+</script>

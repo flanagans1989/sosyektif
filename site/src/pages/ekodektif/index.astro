@@ -157,50 +157,12 @@ const secimSinifi =
 </Layout>
 
 <script>
-  interface TruncgilVeri {
-    Satış: string;
-    Değişim: string;
-  }
+  import { fiyatlariAl, tlBicimle as bicimle, yuzdeBicimle, type Fiyat } from '../../lib/piyasa';
 
-  const TRUNCGIL_URL = 'https://finans.truncgil.com/today.json';
-  const COINGECKO_URL =
-    'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=try&include_24hr_change=true';
   const YENILEME_MS = 60_000;
 
   /** Birim başına TL fiyatı ve yüzde değişim. */
-  const fiyatlar = new Map<string, { tl: number; degisim: number }>([['TRY', { tl: 1, degisim: 0 }]]);
-
-  // truncgil sayıları Türkçe biçimde gönderiyor: "6.784,88", "%-0,30".
-  const trSayi = (metin: string): number =>
-    parseFloat(metin.replace(/[%$\s]/g, '').replace(/\./g, '').replace(',', '.'));
-
-  function bicimle(deger: number): string {
-    const ondalik = deger >= 1000 ? 0 : deger >= 1 ? 2 : 6;
-    return deger.toLocaleString('tr-TR', { minimumFractionDigits: Math.min(ondalik, 2), maximumFractionDigits: ondalik });
-  }
-
-  async function truncgilCek(): Promise<void> {
-    const res = await fetch(TRUNCGIL_URL);
-    if (!res.ok) throw new Error(`truncgil ${res.status}`);
-    const veri = (await res.json()) as Record<string, TruncgilVeri | string>;
-    for (const [anahtar, oge] of Object.entries(veri)) {
-      if (typeof oge !== 'object' || !oge.Satış) continue;
-      const tl = trSayi(oge.Satış);
-      // "ons" dolar cinsinden geliyor; TL hesaplarına karışmasın.
-      if (Number.isFinite(tl) && !oge.Satış.includes('$')) {
-        fiyatlar.set(anahtar, { tl, degisim: trSayi(oge.Değişim) || 0 });
-      }
-    }
-  }
-
-  async function coingeckoCek(): Promise<void> {
-    const res = await fetch(COINGECKO_URL);
-    if (!res.ok) throw new Error(`coingecko ${res.status}`);
-    const veri = (await res.json()) as Record<string, { try: number; try_24h_change?: number }>;
-    for (const [anahtar, oge] of Object.entries(veri)) {
-      fiyatlar.set(anahtar, { tl: oge.try, degisim: oge.try_24h_change ?? 0 });
-    }
-  }
+  let fiyatlar = new Map<string, Fiyat>();
 
   function panoyuCiz(): void {
     document.querySelectorAll<HTMLElement>('[data-kalem]').forEach((kart) => {
@@ -211,7 +173,7 @@ const secimSinifi =
       if (fiyatEl) fiyatEl.textContent = `${bicimle(f.tl)} ₺`;
       if (degisimEl) {
         const negatif = f.degisim < 0;
-        degisimEl.textContent = `${negatif ? '▼' : '▲'} %${Math.abs(f.degisim).toFixed(2).replace('.', ',')}`;
+        degisimEl.textContent = yuzdeBicimle(f.degisim);
         degisimEl.className = `mt-1 text-xs font-semibold tabular-nums ${negatif ? 'text-red-600' : 'text-eko-koyu'}`;
       }
     });
@@ -249,9 +211,9 @@ const secimSinifi =
   });
 
   async function guncelle(): Promise<void> {
-    const sonuclar = await Promise.allSettled([truncgilCek(), coingeckoCek()]);
+    fiyatlar = await fiyatlariAl();
     const durumEl = document.getElementById('pano-durum');
-    if (sonuclar.every((s) => s.status === 'rejected')) {
+    if (fiyatlar.size < 2) {
       if (durumEl) durumEl.textContent = 'Piyasa verileri şu an alınamıyor, birazdan tekrar denenecek.';
       return;
     }
