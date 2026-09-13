@@ -181,6 +181,12 @@
         "deneme": 1,
         "sonDeneme": "2026-09-13T19:10:18.440Z",
         "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgccroykg2r"
+      },
+      "threads": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-13T19:10:31.492Z",
+        "id": "18340525180248822"
       }
     },
     "reelIdleri": {}
