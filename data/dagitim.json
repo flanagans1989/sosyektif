@@ -314,14 +314,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T21:18:46.693Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgjiiudq72v"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgjiiudq72v",
+        "sonDeneme": "2026-09-13T21:18:46.693Z"
       },
       "threads": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T21:19:00.071Z",
-        "id": "17989319346047162"
+        "id": "17989319346047162",
+        "sonDeneme": "2026-09-13T21:19:00.071Z"
       },
       "instagram": {
         "durum": "hata",
@@ -332,8 +332,20 @@
       "facebook": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-13T21:21:19.418Z",
-        "id": "1243429762194033_122101964883474851"
+        "id": "1243429762194033_122101964883474851",
+        "sonDeneme": "2026-09-13T21:21:19.418Z"
+      }
+    },
+    "reelIdleri": {}
+  },
+  "dna-hakkinda-bilgilerinizi-test-edecek-5-zorlu-soru": {
+    "eklendi": "2026-09-13T21:30:44.042Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-13T21:30:44.794Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgk5vodwr23"
       }
     },
     "reelIdleri": {}
