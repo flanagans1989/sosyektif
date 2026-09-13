@@ -117,6 +117,12 @@
         "deneme": 1,
         "sonDeneme": "2026-09-13T19:01:21.485Z",
         "id": "18024669368885969"
+      },
+      "instagram": {
+        "durum": "hata",
+        "deneme": 1,
+        "sonDeneme": "2026-09-13T19:01:56.250Z",
+        "hata": "[instagram] yayınlanamadı: 400 {\"error\":{\"message\":\"Media ID is not available\",\"type\":\"OAuthException\",\"code\":9007,\"error_subcode\":2207027,\"is_transient\":false,\"error_user_title\":\"Cannot Publish\",\"error_user_msg\":\"The media is not ready for publishing, please wait for a moment\",\"fbtrace_id\":\"AgRUrta"
       }
     },
     "reelIdleri": {}
