@@ -80,7 +80,17 @@ jobs:
         run: |
           git config user.name "sosyektif-bot"
           git config user.email "deraksizolasyon@gmail.com"
-          git add data/ site/src/content/posts/ site/public/images/posts/ site/public/images/social/
+          # Her yol tek tek eklenir: site/public/images/social/ bu içerik hiç
+          # Instagram/Facebook görseli üretmediyse (ör. paylaşım atlandıysa)
+          # checkout'ta hiç var olmuyor — tek bir "git add" çağrısında bu,
+          # pathspec hatasıyla TÜM adımı (data/ ve gönderiler dahil) iptal
+          # ediyordu (2026-09-13, ~8 saat boyunca hiçbir içerik commit'lenmedi,
+          # sessizce fark edilmeden). Eksik yol artık sadece atlanır.
+          for yol in data/ site/src/content/posts/ site/public/images/posts/ site/public/images/social/; do
+            if [ -d "$yol" ]; then
+              git add "$yol"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "Değişiklik yok, commit atlanıyor."
           else
