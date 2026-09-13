@@ -91,6 +91,36 @@ export async function postToPublicChannel(text: string): Promise<void> {
   await sendMessage(chatId, text);
 }
 
+/**
+ * Yöneticiye video gönderir (ör. Reels önizlemesi, bkz. scripts/reel-onizle-telegram.ts).
+ * Kullanıcı "dışarıdayken de Telegram'dan izleyip karar versem" dediği için
+ * eklendi — reel-onizle script'i dosyayı bilgisayara yazıyordu, bu ise
+ * doğrudan telefona (Telegram) gönderiyor. Telegram bot API'si video için
+ * multipart/form-data bekliyor, JSON değil (sendMessage'dan farklı).
+ */
+export async function sendVideoToAdmin(video: Buffer, caption: string): Promise<void> {
+  const token = botToken();
+  const chatId = optionalEnv("TELEGRAM_ADMIN_CHAT_ID");
+  if (!token || !chatId) {
+    console.warn("[telegram] TELEGRAM_BOT_TOKEN/TELEGRAM_ADMIN_CHAT_ID yok, video gönderilmedi");
+    return;
+  }
+
+  const form = new FormData();
+  form.append("chat_id", chatId);
+  form.append("caption", caption);
+  form.append("parse_mode", "HTML");
+  form.append("video", new Blob([video], { type: "video/mp4" }), "reel.mp4");
+
+  const res = await fetch(`https://api.telegram.org/bot${token}/sendVideo`, {
+    method: "POST",
+    body: form,
+  });
+  if (!res.ok) {
+    console.error("[telegram] video gönderimi başarısız:", res.status, await res.text());
+  }
+}
+
 export function isTelegramConfigured(): boolean {
   return botToken() !== undefined;
 }

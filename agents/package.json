@@ -17,6 +17,7 @@
     "marka-gorselleri": "tsx scripts/marka-gorselleri.ts",
     "slayt-onizle": "tsx scripts/slayt-onizle.ts",
     "reel-onizle": "tsx scripts/reel-onizle.ts",
+    "reel-onizle-telegram": "tsx scripts/reel-onizle-telegram.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

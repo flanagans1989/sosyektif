@@ -1,0 +1,39 @@
+name: Reel Önizleme (Telegram'a Gönder)
+
+# Kullanıcı "genelde dışarıda oluyorum, Telegram'dan izleyip onay versem"
+# dediği için (PLAN.md Bölüm 11.9): bir slug girip Actions sekmesinden ya da
+# GitHub mobil uygulamasından tetikleyince, o içeriğin Reel önizlemesi
+# doğrudan admin Telegram sohbetine video olarak düşer. Paylaşım yapmaz,
+# commit etmez — tamamen zararsız, istediğin kadar deneyebilirsin.
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Önizlenecek içeriğin slug'ı (site/src/content/posts/<slug>.md)"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  reel-onizle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: agents/package-lock.json
+
+      - working-directory: agents
+        run: npm ci
+
+      - working-directory: agents
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+        run: npm run reel-onizle-telegram -- "${{ inputs.slug }}"
