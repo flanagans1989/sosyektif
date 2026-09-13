@@ -5,20 +5,29 @@
  * dediği için eklendi. Kendisi paylaşım yapmaz — ✅'e basılınca worker
  * reel-paylas.yml'i başlatır.
  *
- * Asıl kullanım GitHub Actions üzerinden: .github/workflows/reel-onizle-telegram.yml
- * (workflow_dispatch, `slug` girdisi — Actions sekmesinden ya da GitHub mobil
- * uygulamasından tetiklenebilir).
+ * `--muzik-karsilastir`: aynı videoyu kütüphanedeki her müzikle ayrı ayrı
+ * gönderir (butonsuz) — hangi parçaların kalacağına kullanıcı karar verir.
  *
- * Kullanım: npm run reel-onizle-telegram -- <slug>
+ * Asıl kullanım GitHub Actions üzerinden: .github/workflows/reel-onizle-telegram.yml
+ * (workflow_dispatch — Actions sekmesinden ya da GitHub mobil uygulamasından).
+ *
+ * Kullanım: npm run reel-onizle-telegram -- <slug> [--muzik-karsilastir]
  */
-import { icerigiOku, reeliOnayaGonder } from "../src/distribute/reel.js";
+import { icerigiOku, muzikKarsilastirmasiGonder, reeliOnayaGonder } from "../src/distribute/reel.js";
 
 const slug = process.argv[2];
-if (!slug) {
-  console.error("Kullanım: npm run reel-onizle-telegram -- <slug>");
+if (!slug || slug.startsWith("--")) {
+  console.error("Kullanım: npm run reel-onizle-telegram -- <slug> [--muzik-karsilastir]");
   process.exit(1);
 }
 
-console.log("Reels üretiliyor...");
-await reeliOnayaGonder(await icerigiOku(slug), slug);
-console.log("Telegram'a onay butonlarıyla gönderildi.");
+const icerik = await icerigiOku(slug);
+if (process.argv.includes("--muzik-karsilastir")) {
+  console.log("Müzik karşılaştırması hazırlanıyor...");
+  await muzikKarsilastirmasiGonder(icerik);
+  console.log("Tüm müzik seçenekleri gönderildi.");
+} else {
+  console.log("Reels üretiliyor...");
+  await reeliOnayaGonder(icerik, slug);
+  console.log("Telegram'a onay butonlarıyla gönderildi.");
+}

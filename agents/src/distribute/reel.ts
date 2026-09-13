@@ -16,7 +16,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import yaml from "js-yaml";
-import { reelUret } from "../image/reelRender.js";
+import { muzikEkle, muzikKutuphanesi, muzikSec, reelUret } from "../image/reelRender.js";
 import { REEL_GENISLIK, REEL_YUKSEKLIK } from "../image/reelSablon.js";
 import { writeReelVideo } from "../image/social.js";
 import { canliyaCikanaKadarBekle, dosyalariHemenYayinla } from "../lib/gitYayinla.js";
@@ -46,11 +46,33 @@ export async function icerigiOku(slug: string): Promise<Post> {
 
 /** Reels'i üretip onay butonlarıyla admin Telegram'ına gönderir — paylaşım yapmaz. */
 export async function reeliOnayaGonder(frontmatter: Post, slug: string): Promise<void> {
-  const { video, sureMs } = await reelUret(frontmatter);
+  const muzik = await muzikSec(slug);
+  const { video, sureMs } = await reelUret(frontmatter, muzik?.dosya ?? null);
   await sendVideoToAdmin(
     video,
-    `🎬 <b>Reels onayı</b>\n${escapeHtml(frontmatter.baslik)}\n\n✅ basarsan Instagram Reels + Facebook'ta paylaşılır (~5 dk).`,
+    `🎬 <b>Reels onayı</b>\n${escapeHtml(frontmatter.baslik)}\n${muzik ? `🎵 ${escapeHtml(muzik.ruhHali)}\n` : ""}\n✅ basarsan Instagram Reels + Facebook'ta paylaşılır (~5 dk).`,
     { onaySlug: slug, genislik: REEL_GENISLIK, yukseklik: REEL_YUKSEKLIK, sureSn: sureMs / 1000 }
+  );
+}
+
+/**
+ * Müzik seçimi için: aynı videoyu kütüphanedeki her parçayla ayrı ayrı
+ * admin Telegram'ına gönderir (butonsuz). Sesi kullanıcı değerlendiriyor —
+ * video bir kez render edilir, müzik ekleme saniyeler sürer.
+ */
+export async function muzikKarsilastirmasiGonder(frontmatter: Post): Promise<void> {
+  const liste = await muzikKutuphanesi();
+  const { video: sessiz, sureMs } = await reelUret(frontmatter);
+  for (const [i, parca] of liste.entries()) {
+    const video = await muzikEkle(sessiz, sureMs, parca.dosya);
+    await sendVideoToAdmin(
+      video,
+      `🎵 <b>Müzik ${i + 1}/${liste.length}</b> — ${escapeHtml(parca.ruhHali)}\n<i>${escapeHtml(parca.ad)}</i>`,
+      { genislik: REEL_GENISLIK, yukseklik: REEL_YUKSEKLIK, sureSn: sureMs / 1000 }
+    );
+  }
+  await notifyAdmin(
+    `🎧 ${liste.length} müzik seçeneği gönderildi. Beğendiklerinin numarasını yaz (ör. "1 ve 3") — o parçalar kullanılacak, beğenmediklerin çıkarılacak.`
   );
 }
 
@@ -60,7 +82,8 @@ export async function reeliPaylas(slug: string): Promise<void> {
   const publicUrl = `https://sosyektif.com/${slug}/`;
   const metinler = sosyalMetinler(frontmatter, publicUrl);
 
-  const { video } = await reelUret(frontmatter);
+  const muzik = await muzikSec(slug);
+  const { video } = await reelUret(frontmatter, muzik?.dosya ?? null);
   const dosya = await writeReelVideo(slug, video);
   if (!dosyalariHemenYayinla([dosya.dosyaYolu], `Reels videosu: ${slug}`)) {
     throw new Error("video push edilemedi");

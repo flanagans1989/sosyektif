@@ -13,6 +13,10 @@ on:
         description: "Önizlenecek içeriğin slug'ı (site/src/content/posts/<slug>.md)"
         required: true
         type: string
+      muzik_karsilastir:
+        description: "Aynı videoyu her müzikle ayrı ayrı gönder (müzik seçmek için, butonsuz)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -52,4 +56,4 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
-        run: npm run reel-onizle-telegram -- "${{ inputs.slug }}"
+        run: npm run reel-onizle-telegram -- "${{ inputs.slug }}" ${{ inputs.muzik_karsilastir && '--muzik-karsilastir' || '' }}

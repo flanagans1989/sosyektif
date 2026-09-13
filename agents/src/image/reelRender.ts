@@ -15,11 +15,11 @@
 import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
 import { createRequire } from "node:module";
-import { mkdtemp, readFile, rm } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import sharp from "sharp";
-import { SITE_DIR } from "../lib/paths.js";
+import { REPO_ROOT, SITE_DIR } from "../lib/paths.js";
 import { FORMAT_EMOJI, FORMAT_ETIKETLERI_TR, KATEGORI_EMOJI } from "../lib/formatLabels.js";
 import type { Post } from "../lib/schemas.js";
 import { SIGDIR_BETIGI, tarayiciAc } from "./htmlRender.js";
@@ -103,8 +103,11 @@ export async function reelBaglami(post: Post): Promise<ReelBaglami> {
   };
 }
 
-/** Reels videosunu (1080×1920, 30fps, H.264) üretir. */
-export async function reelUret(post: Post): Promise<{ video: Buffer; sureMs: number }> {
+/**
+ * Reels videosunu (1080×1920, 30fps, H.264) üretir.
+ * @param muzik Verilirse (muzik.json dosya adı) videoya gömülür; `null` sessiz.
+ */
+export async function reelUret(post: Post, muzik: string | null = null): Promise<{ video: Buffer; sureMs: number }> {
   const { html, sureMs } = reelBelgesi(await reelBaglami(post), post);
   const gecici = await mkdtemp(path.join(os.tmpdir(), "sosyektif-reel-"));
   const cikti = path.join(gecici, "reel.mp4");
@@ -164,9 +167,87 @@ export async function reelUret(post: Post): Promise<{ video: Buffer; sureMs: num
     }
     ffmpeg.stdin.end();
     await bitti;
-    return { video: await readFile(cikti), sureMs };
+    const sessiz = await readFile(cikti);
+    return { video: muzik ? await muzikEkle(sessiz, sureMs, muzik) : sessiz, sureMs };
   } finally {
     await tarayici.close();
+    await rm(gecici, { recursive: true, force: true });
+  }
+}
+
+// ------------------------------------------------------------------ Müzik
+
+const MUZIK_DIR = path.join(REPO_ROOT, "agents", "assets", "muzik");
+
+export interface MuzikParcasi {
+  dosya: string;
+  ad: string;
+  sanatci: string;
+  ruhHali: string;
+  lisans: string;
+  kaynak: string;
+}
+
+/**
+ * Müzik kütüphanesi (agents/assets/muzik/muzik.json). Instagram'ın kendi
+ * müzik kütüphanesi API ile eklenemediği için müzik videoya gömülüyor;
+ * telifli parça sesin kapatılmasına/gönderinin kaldırılmasına yol açacağı
+ * için yalnızca CC0 (kamu malı, atıf gerektirmeyen) parçalar kullanılıyor —
+ * her parçanın kaynağı ve lisansı muzik.json'da.
+ */
+export async function muzikKutuphanesi(): Promise<MuzikParcasi[]> {
+  return JSON.parse(await readFile(path.join(MUZIK_DIR, "muzik.json"), "utf8")) as MuzikParcasi[];
+}
+
+/** Aynı içerik her render'da aynı parçayı alır (onaylanan video = paylaşılan video). */
+export async function muzikSec(slug: string): Promise<MuzikParcasi | null> {
+  const liste = await muzikKutuphanesi().catch(() => []);
+  if (!liste.length) return null;
+  let h = 0;
+  for (const c of slug) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return liste[h % liste.length]!;
+}
+
+/**
+ * Sessiz videoya müzik ekler: parça videodan kısaysa döngüye alınır, başta
+ * yumuşak giriş, sonda 1.8sn'lik çıkış, ses seviyesi sosyal medya
+ * standardına (-16 LUFS) normalize edilir. Video yeniden kodlanmaz (hızlı).
+ */
+export async function muzikEkle(video: Buffer, sureMs: number, muzikDosyasi: string): Promise<Buffer> {
+  const gecici = await mkdtemp(path.join(os.tmpdir(), "sosyektif-muzik-"));
+  try {
+    const giris = path.join(gecici, "sessiz.mp4");
+    const cikti = path.join(gecici, "muzikli.mp4");
+    await writeFile(giris, video);
+    const sn = sureMs / 1000;
+    await new Promise<void>((resolve, reject) => {
+      const p = spawn(ffmpegYolu(), [
+        "-y",
+        "-i", giris,
+        "-stream_loop", "-1",
+        "-i", path.join(MUZIK_DIR, muzikDosyasi),
+        "-filter_complex",
+        `[1:a]atrim=0:${sn.toFixed(3)},asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.6,` +
+          `afade=t=out:st=${Math.max(0, sn - 1.8).toFixed(3)}:d=1.8,loudnorm=I=-16:TP=-1.5:LRA=11[a]`,
+        "-map", "0:v:0",
+        "-map", "[a]",
+        "-c:v", "copy",
+        "-c:a", "aac",
+        "-b:a", "160k",
+        "-ar", "44100",
+        "-shortest",
+        "-movflags", "+faststart",
+        cikti,
+      ]);
+      let stderr = "";
+      p.stderr.on("data", (v) => (stderr += v.toString()));
+      p.on("error", reject);
+      p.on("close", (kod) =>
+        kod === 0 ? resolve() : reject(new Error(`[reel] müzik eklenemedi (kod ${kod}):\n${stderr.slice(-1200)}`))
+      );
+    });
+    return await readFile(cikti);
+  } finally {
     await rm(gecici, { recursive: true, force: true });
   }
 }
