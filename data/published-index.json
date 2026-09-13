@@ -133,5 +133,17 @@
     "format": "trivia",
     "yayinTarihi": "2026-09-13T15:02:00.788Z",
     "otomatikYayinlandi": false
+  },
+  {
+    "slug": "ne-kadar-romalisin-roma-imparatorlugu-hakkinda-6-soruluk-tarih-testi",
+    "baslik": "Ne Kadar Romalısın? Roma İmparatorluğu Hakkında 6 Soruluk Tarih Testi",
+    "konuParmakIzi": "roma i̇mparatorluğu",
+    "kategori": "tarih",
+    "format": "quiz",
+    "yayinTarihi": "2026-09-13T18:18:12.885Z",
+    "otomatikYayinlandi": true,
+    "sosyalPaylasimlar": {
+      "threads": "18112534913033809"
+    }
   }
 ]
