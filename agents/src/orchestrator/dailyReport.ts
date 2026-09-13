@@ -28,7 +28,7 @@ async function main() {
 
   if (sonCalisma) {
     satirlar.push(
-      `Son çalışma (${sonCalisma.tarih}): ` +
+      `Son üretim denemesi (${sonCalisma.tarih}): ` +
         `${sonCalisma.uretilenIcerikSayisi} üretildi ` +
         `(${sonCalisma.otomatikYayinlanan} otomatik, ${sonCalisma.onayaDusen} onay bekliyor, ${sonCalisma.reddedilen} reddedildi)`
     );

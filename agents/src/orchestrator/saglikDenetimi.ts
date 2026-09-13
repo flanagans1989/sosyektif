@@ -26,6 +26,8 @@ import { DATA_DIR } from "../lib/paths.js";
 import { optionalEnv } from "../lib/env.js";
 import { escapeHtml, notifyAdmin } from "../lib/telegram.js";
 import { dosyalariHemenYayinla } from "../lib/gitYayinla.js";
+import { readConfig, writeConfig } from "../lib/state.js";
+import { PATHS } from "../lib/paths.js";
 import {
   anahtarKontrolleri,
   dagitimKontrolleri,
@@ -101,10 +103,33 @@ async function main(): Promise<void> {
     tum.push({ id: "dagitim-tetik", alan: "Dağıtım", durum: "ok", detay: `Paylaşım bekleyen içerik var — ${sonuc}` });
   }
 
-  const sorunlar = tum.filter((k) => k.durum !== "ok");
-  const onarilanlar = tum.filter((k) => k.onarim);
   const onceki = await oncekiKayit();
   const oncekiSorunlar = onceki?.sorunlar ?? {};
+
+  // Otomatik duraklatma onarımı: pipeline "ardışık başarısız çalışma" yüzünden
+  // kendini kilitlediyse (geçici LLM kotası/kaynak sorunu) ve kilit 6 saattir
+  // sürüyorsa, yapay zekâ anahtarları şu an çalışıyorsa kilidi bir kez aç.
+  // Elle konmuş duraklatmalara (başka sebep) dokunulmaz.
+  const duraklatma = tum.find((k) => k.id === "pipeline-duraklatildi");
+  if (onarimYap && duraklatma) {
+    const config = await readConfig();
+    const ilk = oncekiSorunlar["pipeline-duraklatildi"]?.ilkGorulme;
+    const altiSaat = ilk ? Date.now() - new Date(ilk).getTime() > 6 * 60 * 60 * 1000 : false;
+    const llmCalisiyor = tum.some((k) => k.id.startsWith("llm-") && k.durum === "ok");
+    if (config.paused && /ardışık başarısız/.test(config.pausedReason ?? "") && altiSaat && llmCalisiyor) {
+      config.paused = false;
+      config.pausedReason = undefined;
+      config.ardisikBasarisizCalisma = 0;
+      await writeConfig(config);
+      duraklatma.onarim = dosyalariHemenYayinla([PATHS.config], "Sağlık denetimi: otomatik duraklatma kaldırıldı")
+        ? "Yapay zekâ anahtarları çalıştığı için duraklatma kaldırıldı; pipeline tekrar deneyecek."
+        : "Duraklatma kaldırılamadı (push başarısız).";
+      if (duraklatma.onarim.startsWith("Yapay")) duraklatma.durum = "ok";
+    }
+  }
+
+  const sorunlar = tum.filter((k) => k.durum !== "ok");
+  const onarilanlar = tum.filter((k) => k.onarim);
 
   const yeni = sorunlar.filter((k) => !oncekiSorunlar[k.id]);
   const cozulen = Object.entries(oncekiSorunlar).filter(([id]) => !sorunlar.some((k) => k.id === id));
