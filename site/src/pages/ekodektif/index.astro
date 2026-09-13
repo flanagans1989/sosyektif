@@ -1,0 +1,268 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PostCard from '../../components/PostCard.astro';
+import EkodektifLogo from '../../components/EkodektifLogo.astro';
+
+// Ekodektif: sitenin ekonomi alanı. Üç parça:
+// 1. Canlı piyasa panosu — PiyasaSeridi ile aynı ücretsiz/anahtarsız kaynaklar
+//    (finans.truncgil.com + CoinGecko), istek ziyaretçinin tarayıcısından atılır.
+// 2. Çevirici — aynı verilerle TL/döviz/altın/Bitcoin arasında yaklaşık hesap.
+// 3. Ekodektif dosyaları — ajanların "ekonomi" kategorisinde ürettiği içerikler
+//    (zamansız konular: paranın tarihi, kavramlar, marka hikâyeleri; tavsiye yok).
+
+const KALEMLER = [
+  { anahtar: 'USD', ad: 'Dolar', emoji: '💵', grup: 'Döviz' },
+  { anahtar: 'EUR', ad: 'Euro', emoji: '💶', grup: 'Döviz' },
+  { anahtar: 'GBP', ad: 'Sterlin', emoji: '💷', grup: 'Döviz' },
+  { anahtar: 'CHF', ad: 'İsviçre Frangı', emoji: '🏔️', grup: 'Döviz' },
+  { anahtar: 'gram-altin', ad: 'Gram Altın', emoji: '🪙', grup: 'Altın' },
+  { anahtar: 'ceyrek-altin', ad: 'Çeyrek Altın', emoji: '🥇', grup: 'Altın' },
+  { anahtar: 'cumhuriyet-altini', ad: 'Cumhuriyet Altını', emoji: '🏅', grup: 'Altın' },
+  { anahtar: 'gumus', ad: 'Gram Gümüş', emoji: '🥈', grup: 'Gümüş' },
+  { anahtar: 'bitcoin', ad: 'Bitcoin', emoji: '₿', grup: 'Kripto' },
+  { anahtar: 'ethereum', ad: 'Ethereum', emoji: 'Ξ', grup: 'Kripto' },
+];
+
+const CEVIRICI_BIRIMLERI = [
+  { anahtar: 'TRY', ad: 'Türk Lirası (₺)' },
+  { anahtar: 'USD', ad: 'Dolar ($)' },
+  { anahtar: 'EUR', ad: 'Euro (€)' },
+  { anahtar: 'GBP', ad: 'Sterlin (£)' },
+  { anahtar: 'gram-altin', ad: 'Gram Altın' },
+  { anahtar: 'ceyrek-altin', ad: 'Çeyrek Altın' },
+  { anahtar: 'gumus', ad: 'Gram Gümüş' },
+  { anahtar: 'bitcoin', ad: 'Bitcoin' },
+];
+
+const yazilar = (await getCollection('posts', ({ data }) => !data.taslak && data.kategori === 'ekonomi')).sort(
+  (a, b) => b.data.yayinTarihi.valueOf() - a.data.yayinTarihi.valueOf()
+);
+
+const secimSinifi =
+  'rounded-xl border border-black/10 bg-zemin px-3 py-3 text-sm font-semibold text-murekkep focus:border-eko focus:outline-none focus:ring-2 focus:ring-eko/30';
+---
+
+<Layout
+  title="Ekodektif: Canlı Piyasa ve Ekonominin Şaşırtıcı Hikâyeleri"
+  description="Dolar, euro, altın ve Bitcoin anlık fiyatları, pratik para çevirici ve paranın peşine düşen eğlenceli ekonomi içerikleri."
+>
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <section class="rounded-3xl bg-murekkep px-6 py-8 text-white sm:px-10 sm:py-10">
+      <EkodektifLogo class="text-3xl !text-white sm:text-4xl" />
+      <h1 class="mt-4 max-w-2xl text-2xl font-extrabold leading-tight text-balance sm:text-3xl">
+        Paranın izini süren dedektif
+      </h1>
+      <p class="mt-2 max-w-2xl text-white/70">
+        Kur, altın ve kripto anlık olarak burada. Paranın tarihi, markaların kuruluş hikâyeleri ve ekonomi
+        kavramları ise eğlenceli dosyalarda.
+      </p>
+    </section>
+
+    <section class="mt-10" aria-labelledby="pano-baslik">
+      <div class="flex flex-wrap items-end justify-between gap-2">
+        <h2 id="pano-baslik" class="text-2xl font-extrabold text-murekkep">📈 Canlı Piyasa</h2>
+        <p id="pano-durum" class="text-xs text-murekkep/50" aria-live="polite">Veriler yükleniyor…</p>
+      </div>
+
+      <div class="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
+        {KALEMLER.map((k) => (
+          <article class="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5" data-kalem={k.anahtar}>
+            <p class="flex items-center justify-between gap-2 text-[11px] font-semibold uppercase tracking-wider text-murekkep/45">
+              <span>{k.grup}</span>
+              <span class="text-base leading-none" aria-hidden="true">{k.emoji}</span>
+            </p>
+            <h3 class="mt-1 text-sm font-bold text-murekkep">{k.ad}</h3>
+            <p class="mt-2 break-words text-lg font-extrabold tabular-nums text-murekkep sm:text-xl" data-alan="fiyat">—</p>
+            <p class="mt-1 text-xs font-semibold tabular-nums text-murekkep/50" data-alan="degisim">&nbsp;</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-10 grid gap-6 lg:grid-cols-5" aria-labelledby="cevirici-baslik">
+      <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 lg:col-span-3">
+        <h2 id="cevirici-baslik" class="text-2xl font-extrabold text-murekkep">🔁 Para Çevirici</h2>
+        <p class="mt-1 text-sm text-murekkep/60">Satış fiyatları üzerinden yaklaşık hesaplar.</p>
+
+        <form id="cevirici" class="mt-5 grid gap-3 sm:grid-cols-[1fr_1.3fr_auto_1.3fr] sm:items-end">
+          <label class="flex flex-col gap-1 text-xs font-semibold text-murekkep/60" for="cevirici-miktar">
+            Miktar
+            <input
+              id="cevirici-miktar"
+              type="number"
+              inputmode="decimal"
+              min="0"
+              step="any"
+              value="100"
+              class="rounded-xl border border-black/10 bg-zemin px-3 py-2.5 text-base font-bold tabular-nums text-murekkep focus:border-eko focus:outline-none focus:ring-2 focus:ring-eko/30"
+            />
+          </label>
+          <label class="flex flex-col gap-1 text-xs font-semibold text-murekkep/60" for="cevirici-kaynak">
+            Bu birimden
+            <select id="cevirici-kaynak" class={secimSinifi}>
+              {CEVIRICI_BIRIMLERI.map((b) => <option value={b.anahtar} selected={b.anahtar === 'USD'}>{b.ad}</option>)}
+            </select>
+          </label>
+          <button
+            id="cevirici-degistir"
+            type="button"
+            aria-label="Birimlerin yerini değiştir"
+            class="flex h-11 w-11 items-center justify-center self-center rounded-full bg-eko/10 text-lg font-bold text-eko-koyu transition hover:bg-eko/20 focus-visible:outline-2 focus-visible:outline-eko sm:self-end"
+          >
+            ⇄
+          </button>
+          <label class="flex flex-col gap-1 text-xs font-semibold text-murekkep/60" for="cevirici-hedef">
+            Bu birime
+            <select id="cevirici-hedef" class={secimSinifi}>
+              {CEVIRICI_BIRIMLERI.map((b) => <option value={b.anahtar} selected={b.anahtar === 'TRY'}>{b.ad}</option>)}
+            </select>
+          </label>
+        </form>
+
+        <p id="cevirici-sonuc" class="mt-5 rounded-2xl bg-eko/10 px-4 py-3 text-lg font-extrabold tabular-nums text-eko-koyu" aria-live="polite">
+          Fiyatlar gelince hesaplanacak…
+        </p>
+      </div>
+
+      <aside class="flex flex-col justify-center gap-3 rounded-3xl bg-eko px-6 py-6 text-white lg:col-span-2">
+        <p class="text-xs font-bold uppercase tracking-wider text-white/75">Ekodektif notu</p>
+        <p class="text-lg font-bold leading-snug text-balance">
+          Çeyrek altın yaklaşık 1,75 gram ağırlığında, 22 ayar bir sikke. Adını, 7 gram civarındaki tam Cumhuriyet
+          altınının dörtte biri olmasından alıyor.
+        </p>
+        <p class="text-xs text-white/75">Panodaki fiyatlar bilgilendirme amaçlıdır, yatırım tavsiyesi değildir.</p>
+      </aside>
+    </section>
+
+    <section class="mt-12" aria-labelledby="dosyalar-baslik">
+      <h2 id="dosyalar-baslik" class="text-2xl font-extrabold text-murekkep">🕵️ Ekodektif Dosyaları</h2>
+      <p class="mt-1 text-murekkep/60">Paranın, markaların ve ekonomi kavramlarının bilinmeyen yüzleri.</p>
+      {yazilar.length === 0 ? (
+        <p class="mt-6 rounded-2xl bg-black/5 p-6 text-center text-murekkep/60">
+          İlk dosyalar hazırlanıyor. Ajanlarımız paranın izini sürüyor, çok yakında burada! 🔍
+        </p>
+      ) : (
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {yazilar.map((yazi) => <PostCard post={yazi} />)}
+        </div>
+      )}
+    </section>
+
+    <p class="mt-10 text-center text-xs text-murekkep/40">
+      Kaynak: finans.truncgil.com (döviz, altın) ve CoinGecko (kripto). Veriler gecikmeli olabilir. Bu sayfadaki hiçbir
+      bilgi yatırım tavsiyesi değildir.
+    </p>
+  </div>
+</Layout>
+
+<script>
+  interface TruncgilVeri {
+    Satış: string;
+    Değişim: string;
+  }
+
+  const TRUNCGIL_URL = 'https://finans.truncgil.com/today.json';
+  const COINGECKO_URL =
+    'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=try&include_24hr_change=true';
+  const YENILEME_MS = 60_000;
+
+  /** Birim başına TL fiyatı ve yüzde değişim. */
+  const fiyatlar = new Map<string, { tl: number; degisim: number }>([['TRY', { tl: 1, degisim: 0 }]]);
+
+  // truncgil sayıları Türkçe biçimde gönderiyor: "6.784,88", "%-0,30".
+  const trSayi = (metin: string): number =>
+    parseFloat(metin.replace(/[%$\s]/g, '').replace(/\./g, '').replace(',', '.'));
+
+  function bicimle(deger: number): string {
+    const ondalik = deger >= 1000 ? 0 : deger >= 1 ? 2 : 6;
+    return deger.toLocaleString('tr-TR', { minimumFractionDigits: Math.min(ondalik, 2), maximumFractionDigits: ondalik });
+  }
+
+  async function truncgilCek(): Promise<void> {
+    const res = await fetch(TRUNCGIL_URL);
+    if (!res.ok) throw new Error(`truncgil ${res.status}`);
+    const veri = (await res.json()) as Record<string, TruncgilVeri | string>;
+    for (const [anahtar, oge] of Object.entries(veri)) {
+      if (typeof oge !== 'object' || !oge.Satış) continue;
+      const tl = trSayi(oge.Satış);
+      // "ons" dolar cinsinden geliyor; TL hesaplarına karışmasın.
+      if (Number.isFinite(tl) && !oge.Satış.includes('$')) {
+        fiyatlar.set(anahtar, { tl, degisim: trSayi(oge.Değişim) || 0 });
+      }
+    }
+  }
+
+  async function coingeckoCek(): Promise<void> {
+    const res = await fetch(COINGECKO_URL);
+    if (!res.ok) throw new Error(`coingecko ${res.status}`);
+    const veri = (await res.json()) as Record<string, { try: number; try_24h_change?: number }>;
+    for (const [anahtar, oge] of Object.entries(veri)) {
+      fiyatlar.set(anahtar, { tl: oge.try, degisim: oge.try_24h_change ?? 0 });
+    }
+  }
+
+  function panoyuCiz(): void {
+    document.querySelectorAll<HTMLElement>('[data-kalem]').forEach((kart) => {
+      const f = fiyatlar.get(kart.dataset.kalem ?? '');
+      if (!f) return;
+      const fiyatEl = kart.querySelector<HTMLElement>('[data-alan="fiyat"]');
+      const degisimEl = kart.querySelector<HTMLElement>('[data-alan="degisim"]');
+      if (fiyatEl) fiyatEl.textContent = `${bicimle(f.tl)} ₺`;
+      if (degisimEl) {
+        const negatif = f.degisim < 0;
+        degisimEl.textContent = `${negatif ? '▼' : '▲'} %${Math.abs(f.degisim).toFixed(2).replace('.', ',')}`;
+        degisimEl.className = `mt-1 text-xs font-semibold tabular-nums ${negatif ? 'text-red-600' : 'text-eko-koyu'}`;
+      }
+    });
+  }
+
+  const miktarEl = document.getElementById('cevirici-miktar') as HTMLInputElement | null;
+  const kaynakEl = document.getElementById('cevirici-kaynak') as HTMLSelectElement | null;
+  const hedefEl = document.getElementById('cevirici-hedef') as HTMLSelectElement | null;
+  const sonucEl = document.getElementById('cevirici-sonuc');
+
+  function cevir(): void {
+    if (!miktarEl || !kaynakEl || !hedefEl || !sonucEl) return;
+    const kaynak = fiyatlar.get(kaynakEl.value);
+    const hedef = fiyatlar.get(hedefEl.value);
+    if (!kaynak || !hedef || fiyatlar.size < 2) {
+      sonucEl.textContent = 'Fiyatlar gelince hesaplanacak…';
+      return;
+    }
+    const miktar = parseFloat(miktarEl.value);
+    if (!Number.isFinite(miktar) || miktar < 0) {
+      sonucEl.textContent = 'Geçerli bir miktar yaz.';
+      return;
+    }
+    const ad = (el: HTMLSelectElement) => el.selectedOptions[0]?.textContent?.trim() ?? el.value;
+    const sonuc = (miktar * kaynak.tl) / hedef.tl;
+    sonucEl.textContent = `${miktar.toLocaleString('tr-TR')} ${ad(kaynakEl)} ≈ ${bicimle(sonuc)} ${ad(hedefEl)}`;
+  }
+
+  document.getElementById('cevirici')?.addEventListener('submit', (e) => e.preventDefault());
+  [miktarEl, kaynakEl, hedefEl].forEach((el) => el?.addEventListener('input', cevir));
+  document.getElementById('cevirici-degistir')?.addEventListener('click', () => {
+    if (!kaynakEl || !hedefEl) return;
+    [kaynakEl.value, hedefEl.value] = [hedefEl.value, kaynakEl.value];
+    cevir();
+  });
+
+  async function guncelle(): Promise<void> {
+    const sonuclar = await Promise.allSettled([truncgilCek(), coingeckoCek()]);
+    const durumEl = document.getElementById('pano-durum');
+    if (sonuclar.every((s) => s.status === 'rejected')) {
+      if (durumEl) durumEl.textContent = 'Piyasa verileri şu an alınamıyor, birazdan tekrar denenecek.';
+      return;
+    }
+    panoyuCiz();
+    cevir();
+    if (durumEl) {
+      const saat = new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+      durumEl.textContent = `Son güncelleme ${saat} · her dakika yenilenir`;
+    }
+  }
+
+  guncelle();
+  setInterval(guncelle, YENILEME_MS);
+</script>

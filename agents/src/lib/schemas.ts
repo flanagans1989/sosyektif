@@ -12,6 +12,7 @@ export const KATEGORILER = [
   "spor",
   "yasam",
   "tarih",
+  "ekonomi",
 ] as const;
 
 export const kategoriSchema = z.enum(KATEGORILER);

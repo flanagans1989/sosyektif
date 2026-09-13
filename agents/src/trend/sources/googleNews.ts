@@ -14,6 +14,7 @@ const KATEGORI_SORGULARI: Record<string, string> = {
   bilim: "bilim",
   teknoloji: "teknoloji",
   spor: "spor",
+  ekonomi: "ekonomi",
 };
 
 export async function fetchGoogleNews(kategori?: string): Promise<TrendCandidate[]> {

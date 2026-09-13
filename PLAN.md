@@ -13,6 +13,7 @@
 - **Üç yeni ajan:** Gözetim (token süresi + sessiz kanal hataları, Bölüm 11.8), Sosyal Performans (haftalık etkileşim → kategori ağırlıkları, Bölüm 11.6), Reels/Video (Bölüm 11.9).
 - **Reels:** sinematik 9:16 video şablonu, CC0 müzik (kullanıcının seçtiği "Sinematik elektronik"), Telegram'a "✅ Reels olarak paylaş / ❌ Paylaşma" butonlarıyla onay, onayda Instagram Reels + Facebook video. `reelsAktif` henüz **kapalı** — açılırsa yeni içeriklerin Instagram/Facebook paylaşımı carousel yerine Reels onayına düşer.
 - **Bekleyen kullanıcı kararları:** `reelsAktif`'i açmak; müzik kütüphanesine yeni parça eklemek (şu an tek parça); Telegram herkese açık kanalı (Bölüm 11.1); isteğe bağlı App Secret sıfırlama (bootstrap sırasında sohbete yapıştırıldı).
+- **Yeni kategori — "Ekodektif" (ekonomi):** `kategori` şemasına `ekonomi` eklendi (site + ajanlar, `KATEGORILER`/`kategoriSchema`). `/ekodektif/` sayfası: canlı piyasa panosu + para çevirici (truncgil/CoinGecko, client-side, anahtarsız) ve "ekonomi" kategorisindeki içerikler bir arada. İçerik prompt'una ekonomi odağı yönergesi eklendi: paranın/bankacılığın tarihi, kavramlar, marka hikâyeleri — güncel kur/faiz tahmini ve yatırım tavsiyesi UYGUN DEĞİL. Header/Footer'a link eklendi, kendi rengi (`--color-eko`) ve logosu (`EkodektifLogo.astro`) var. Henüz "ekonomi" kategorisinde yayınlanmış içerik yok — ilk üretim ajan zincirinin bu kategoriyi seçmesini bekliyor.
 
 ---
 

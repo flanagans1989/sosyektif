@@ -1,0 +1,19 @@
+---
+// ekodektif = ekonomi + dedektif. sosyektif logosunun kardeşi: aynı büyüteç,
+// pembe yerine para yeşili kare ve camın içinde ₺ işareti.
+interface Props {
+  class?: string;
+}
+
+const { class: className = 'text-2xl' } = Astro.props;
+---
+
+<span class={`inline-flex items-center gap-[0.32em] font-extrabold tracking-tight text-murekkep ${className}`}>
+  <svg class="h-[1.25em] w-[1.25em] shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+    <rect width="48" height="48" rx="11" fill="#0e9f6e"></rect>
+    <circle cx="21" cy="21" r="9.5" fill="none" stroke="#ffffff" stroke-width="4.5"></circle>
+    <text x="21" y="25.6" text-anchor="middle" font-size="12.5" font-weight="800" fill="#ffffff" font-family="Poppins, sans-serif">₺</text>
+    <line x1="28.2" y1="28.2" x2="36.5" y2="36.5" stroke="#ffffff" stroke-width="5" stroke-linecap="round"></line>
+  </svg>
+  <span>eko<span class="text-eko">dektif</span></span>
+</span>

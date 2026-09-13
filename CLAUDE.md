@@ -5,6 +5,9 @@ tamamını okumadan önce `grep -n "^#" PLAN.md` ile ilgili bölümü bul, sadec
 
 ## Dizinler
 - `site/` — Astro statik site (Cloudflare Pages'e deploy edilir). Kendi `CLAUDE.md`'si var (dev sunucu, Astro dokümanları).
+  `/ekodektif/` sitenin ekonomi alanı: canlı piyasa panosu + para çevirici (client-side, truncgil/CoinGecko —
+  `PiyasaSeridi.astro` ile aynı anahtarsız kaynaklar) ve "ekonomi" kategorisindeki içerikler. Kendi logosu
+  `EkodektifLogo.astro`, rengi `--color-eko` (global.css).
 - `agents/src/` — üretim zinciri: `trend/` (konu bulma), `content/` (yazı üretimi + `prompts.ts`),
   `moderation/` (kalite/hakem kapısı), `image/` (kapak; `social.ts`+`socialSablon.ts` Instagram carousel,
   `reelSablon.ts`+`reelRender.ts` Reels videosu — HTML/CSS Chromium'da render, ffmpeg), `publish/`,

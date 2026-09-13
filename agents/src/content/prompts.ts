@@ -27,6 +27,8 @@ UYGUN DEĞİL (uygun: false) SAYILACAK DURUMLAR:
 
 Bunların dışında CÖMERT ol: konu hakkında okura ilginç gelecek 5 veya daha fazla bilgi çıkarılabiliyorsa uygundur. Bilim, doğa, tarih, coğrafya, teknoloji, spor, sinema, oyun ve gündelik yaşam konuları sitenin ana malzemesidir.
 
+EKONOMİ ("ekonomi" kategorisi, sitedeki adı Ekodektif): Ekonomi haberlerinin arkasındaki ZAMANSIZ konuyu seç — paranın ve banknotların tarihi, altın, borsa ve bankacılığın ortaya çıkışı, ekonomi kavramları (enflasyon, faiz, kripto para, arz-talep), ünlü markaların ve şirketlerin kuruluş hikâyeleri, tarihî ekonomik olaylar (Lale Çılgınlığı, 1929 Buhranı). Güncel kur/faiz/borsa hareketleri, hükümet ve merkez bankası kararları, "şimdi al/sat" türü yönlendirmeler ve tahminler UYGUN DEĞİL; ama "Dolar rekor kırdı" gibi bir başlıktan "Doların tarihi" gibi zamansız bir odak çıkarabiliyorsan onu seç.
+
 FORMAT SEÇİMİ:
 - "liste": zengin, çok yönlü konular (hayvanlar, yerler, eserler, tarih).
 - "trivia": dar ama birkaç şaşırtıcı bilgisi olan konular.
@@ -48,7 +50,7 @@ JSON şeması:
   "redSebebi": string | null,
   "konuOdagi": string,
   "aci": string,
-  "kategori": "eglence" | "pop-kultur" | "bilim" | "teknoloji" | "spor" | "yasam" | "tarih",
+  "kategori": "eglence" | "pop-kultur" | "bilim" | "teknoloji" | "spor" | "yasam" | "tarih" | "ekonomi",
   "formatOnerisi": "liste" | "trivia" | "quiz",
   "kisilikTestiUygun": boolean,
   "kisiMi": boolean,

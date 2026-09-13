@@ -38,7 +38,7 @@ async function safeGather(
  * içermiyor. Bu yüzden genel akış HİÇ kullanılmıyor; sadece güvenli,
  * kategori bazlı sorgular çekiliyor (PLAN.md R3, R6).
  */
-const GUVENLI_HABER_KATEGORILERI = ["eglence", "bilim", "teknoloji", "spor"] as const;
+const GUVENLI_HABER_KATEGORILERI = ["eglence", "bilim", "teknoloji", "spor", "ekonomi"] as const;
 
 export async function gatherTrendCandidates(): Promise<TrendCandidate[]> {
   const [google, wikipedia, newsPerKategori, youtube, reddit, ozelGunler] = await Promise.all([

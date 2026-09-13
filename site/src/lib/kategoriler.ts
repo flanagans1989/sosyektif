@@ -6,6 +6,7 @@ export const KATEGORILER = {
   'spor': { etiket: 'Spor', emoji: '⚽' },
   'yasam': { etiket: 'Yaşam', emoji: '🌿' },
   'tarih': { etiket: 'Tarih', emoji: '🏛️' },
+  'ekonomi': { etiket: 'Ekonomi', emoji: '💰' },
 } as const;
 
 export type KategoriAnahtari = keyof typeof KATEGORILER;

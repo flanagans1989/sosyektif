@@ -37,6 +37,7 @@ export const KATEGORI_ETIKETLERI: Record<string, string> = {
   spor: "Spor",
   yasam: "Yaşam",
   tarih: "Tarih",
+  ekonomi: "Ekonomi",
 };
 
 /**

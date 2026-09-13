@@ -7,6 +7,9 @@
   --color-marka-koyu: #d63a4d;
   --color-zemin: #fffaf7;
   --color-murekkep: #201a1c;
+  /* Ekodektif (ekonomi alanı) — markanın pembesinin yerine para yeşili */
+  --color-eko: #0e9f6e;
+  --color-eko-koyu: #0a7753;
 }
 
 body {

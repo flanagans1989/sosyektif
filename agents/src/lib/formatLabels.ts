@@ -25,4 +25,5 @@ export const KATEGORI_EMOJI: Record<string, string> = {
   spor: "⚽",
   yasam: "🌿",
   tarih: "🏛️",
+  ekonomi: "💰",
 };

@@ -12,6 +12,7 @@ const kategori = z.enum([
   'spor',
   'yasam',
   'tarih',
+  'ekonomi',
 ]);
 
 const kaynak = z.object({

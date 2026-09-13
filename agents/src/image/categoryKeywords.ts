@@ -15,4 +15,5 @@ export const KATEGORI_ARAMA_KELIMELERI: Record<Kategori, string> = {
   spor: "sports stadium action",
   yasam: "lifestyle nature calm",
   tarih: "ancient history architecture",
+  ekonomi: "coins money finance",
 };
