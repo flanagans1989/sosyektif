@@ -43,12 +43,13 @@ function bekle(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-/** Video (Reels) container'ı arka planda işleniyor — threads.ts'teki aynı
- * desen. Fotoğraf container'ları genelde anında hazır, video ise dakikalar
- * sürebilir; FINISHED olmadan yayınlamak hata veriyor. */
-async function videoHazirOlanaKadarBekle(containerId: string, accessToken: string): Promise<void> {
+/** Container'lar arka planda işleniyor — threads.ts'teki aynı desen. FINISHED
+ * olmadan yayınlamak hata veriyor. Video dakikalar sürebilir; fotoğraf/carousel
+ * genelde saniyeler içinde hazır ama "anında" değil: 2026-09-13'te ilk gerçek
+ * carousel paylaşımı "Media ID is not available" hatası verdi. */
+async function containerHazirOlanaKadarBekle(containerId: string, accessToken: string, aralikMs = 5000): Promise<void> {
   for (let deneme = 0; deneme < 20; deneme++) {
-    await bekle(5000);
+    await bekle(aralikMs);
     const res = await fetch(
       `${GRAPH_BASE}/${containerId}?` +
         new URLSearchParams({ fields: "status_code", access_token: accessToken })
@@ -56,9 +57,9 @@ async function videoHazirOlanaKadarBekle(containerId: string, accessToken: strin
     if (!res.ok) continue;
     const { status_code } = (await res.json()) as { status_code?: string };
     if (status_code === "FINISHED") return;
-    if (status_code === "ERROR") throw new Error("[instagram] video container işlenirken hata oluştu");
+    if (status_code === "ERROR") throw new Error("[instagram] container işlenirken hata oluştu");
   }
-  // Zaman aşımı (~100sn) — yine de yayınlamayı dene.
+  // Zaman aşımı — yine de yayınlamayı dene.
 }
 
 /**
@@ -87,6 +88,7 @@ export async function postToInstagram(caption: string, imageUrls: string[]): Pro
       image_url: imageUrls[0]!,
       caption,
     });
+    await containerHazirOlanaKadarBekle(containerId, access_token, 2000);
     return yayinla(ig_user_id, access_token, containerId);
   }
 
@@ -105,6 +107,7 @@ export async function postToInstagram(caption: string, imageUrls: string[]): Pro
     children: altOgeIdleri.join(","),
     caption,
   });
+  await containerHazirOlanaKadarBekle(carouselId, access_token, 2000);
   return yayinla(ig_user_id, access_token, carouselId);
 }
 
@@ -112,7 +115,7 @@ export async function postToInstagram(caption: string, imageUrls: string[]): Pro
  * Reels (dikey video) paylaşımı — carousel'e göre çok daha yüksek erişim
  * alıyor (Instagram algoritması feed carousel'i geriye itiyor). Video
  * container'ı fotoğraftan farklı olarak arka planda işleniyor, bu yüzden
- * FINISHED olana kadar poll ediliyor (bkz. videoHazirOlanaKadarBekle).
+ * FINISHED olana kadar poll ediliyor (bkz. containerHazirOlanaKadarBekle).
  * @param videoUrl Herkese açık .mp4 URL'i (agents/src/image/reelRender.ts).
  * @returns Yayınlanan Reels'in media ID'si — token/kurulum eksikse `null`.
  */
@@ -130,6 +133,6 @@ export async function postReelToInstagram(caption: string, videoUrl: string): Pr
     video_url: videoUrl,
     caption,
   });
-  await videoHazirOlanaKadarBekle(containerId, access_token);
+  await containerHazirOlanaKadarBekle(containerId, access_token);
   return yayinla(ig_user_id, access_token, containerId);
 }
