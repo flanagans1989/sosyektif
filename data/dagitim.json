@@ -277,5 +277,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "turk-rock-muziginin-ozgun-sesi-nev-hakkinda-5-ilginc-bilgi": {
+    "eklendi": "2026-09-13T21:01:46.407Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-13T21:01:47.152Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgik4k43u2r"
+      }
+    },
+    "reelIdleri": {}
   }
 }
