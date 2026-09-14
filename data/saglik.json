@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-09-14T13:02:20.183Z",
+  "sonDenetim": "2026-09-14T18:01:06.123Z",
   "toplamKontrol": 47,
   "sorunlar": {
     "gorsel-unsplash": {
@@ -31,7 +31,7 @@
     "bekleyen-instagram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "instagram çalışmadığı için 2 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "instagram çalışmadığı için 1 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-14T05:07:42.288Z"
     }
   }
