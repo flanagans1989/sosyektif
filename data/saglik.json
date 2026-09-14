@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-14T18:18:18.148Z",
-  "toplamKontrol": 47,
+  "sonDenetim": "2026-09-14T21:54:50.208Z",
+  "toplamKontrol": 45,
   "sorunlar": {
     "gorsel-unsplash": {
       "alan": "Görsel",
@@ -27,12 +27,6 @@
       "durum": "uyari",
       "detay": "telegram çalışmadığı için 16 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "bekleyen-instagram": {
-      "alan": "Dağıtım",
-      "durum": "uyari",
-      "detay": "instagram çalışmadığı için 1 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
-      "ilkGorulme": "2026-09-14T05:07:42.288Z"
     }
   }
 }
