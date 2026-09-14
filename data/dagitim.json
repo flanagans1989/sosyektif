@@ -457,5 +457,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "uykunun-biyolojisi-hakkinda-duyunca-sasiracaginiz-5-gercek": {
+    "eklendi": "2026-09-14T08:20:47.919Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-14T08:20:48.360Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvhoiceug52c"
+      }
+    },
+    "reelIdleri": {}
   }
 }
