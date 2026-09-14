@@ -464,14 +464,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-14T08:20:48.360Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvhoiceug52c"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvhoiceug52c",
+        "sonDeneme": "2026-09-14T08:20:48.360Z"
       },
       "threads": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-14T08:21:00.044Z",
-        "id": "18117006968293984"
+        "id": "18117006968293984",
+        "sonDeneme": "2026-09-14T08:21:00.044Z"
       },
       "instagram": {
         "durum": "hata",
@@ -482,8 +482,8 @@
       "facebook": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-14T08:22:49.809Z",
-        "id": "1243429762194033_122102282631474851"
+        "id": "1243429762194033_122102282631474851",
+        "sonDeneme": "2026-09-14T08:22:49.809Z"
       },
       "reel": {
         "durum": "onayda",
