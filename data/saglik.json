@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-09-14T00:18:15.126Z",
+  "sonDenetim": "2026-09-14T05:07:42.288Z",
   "toplamKontrol": 47,
   "sorunlar": {
     "gorsel-unsplash": {
@@ -15,11 +15,24 @@
       "cozum": "Telegram'da kanal aç, botu yönetici yap, kanal kimliğini TELEGRAM_PUBLIC_CHANNEL_ID secret'ı olarak ekle.",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
     },
+    "kanal-instagram": {
+      "alan": "Sosyal kanallar",
+      "durum": "hata",
+      "detay": "Instagram API: Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+      "cozum": "Instagram token'ını yeniden bootstrap et.",
+      "ilkGorulme": "2026-09-14T05:07:42.288Z"
+    },
     "bekleyen-telegram": {
       "alan": "Dağıtım",
       "durum": "uyari",
       "detay": "telegram çalışmadığı için 14 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "bekleyen-instagram": {
+      "alan": "Dağıtım",
+      "durum": "uyari",
+      "detay": "instagram çalışmadığı için 4 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "ilkGorulme": "2026-09-14T05:07:42.288Z"
     }
   }
 }
