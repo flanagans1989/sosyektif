@@ -486,11 +486,19 @@
         "sonDeneme": "2026-09-14T08:22:49.809Z"
       },
       "reel": {
-        "durum": "onayda",
+        "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-14T08:24:58.485Z"
+        "sonDeneme": "2026-09-14T12:03:08.950Z"
+      },
+      "youtube": {
+        "durum": "ok",
+        "deneme": 1,
+        "id": "S_m17pk1sa8",
+        "sonDeneme": "2026-09-14T12:03:08.950Z"
       }
     },
-    "reelIdleri": {}
+    "reelIdleri": {
+      "facebook": "1376616330856889"
+    }
   }
 }
