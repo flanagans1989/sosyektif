@@ -500,5 +500,17 @@
     "reelIdleri": {
       "facebook": "1376616330856889"
     }
+  },
+  "hangi-ghibli-filmi-ruh-esinsin-ghibli-dunyasindaki-karakterini-acikliyoruz": {
+    "eklendi": "2026-09-14T12:18:51.949Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-14T12:18:52.603Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvi3ryvswj23"
+      }
+    },
+    "reelIdleri": {}
   }
 }
