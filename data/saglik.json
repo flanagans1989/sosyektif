@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-09-14T06:18:18.753Z",
+  "sonDenetim": "2026-09-14T12:01:13.960Z",
   "toplamKontrol": 47,
   "sorunlar": {
     "gorsel-unsplash": {
@@ -25,13 +25,13 @@
     "bekleyen-telegram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "telegram çalışmadığı için 14 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "telegram çalışmadığı için 15 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
     },
     "bekleyen-instagram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "instagram çalışmadığı için 3 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "instagram çalışmadığı için 1 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-14T05:07:42.288Z"
     }
   }
