@@ -1,49 +1,42 @@
 {
-  "tarih": "2026-09-13",
+  "tarih": "2026-09-14",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1647,
-      "baslik": "Evangelista Torricelli ve Barometre",
-      "metin": "İtalyan matematikçi ve fizikçi Evangelista Torricelli, hava basıncını ölçmeye yarayan barometreyi icat etti. Bu buluş, meteoroloji ve fizik dünyasında çığır açan adımlardan biri oldu.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0talya"
+      "yil": 1752,
+      "baslik": "İngiliz İmparatorluğu'nda Gregoryen Takvim'e Geçiş",
+      "metin": "1750 Tarihli Takvim Yasası uyarınca İngiliz İmparatorluğu Gregoryen takvimi kabul etti ve ayın 11 gününü atladı. Bu değişimle birlikte zaman algısı tamamen yenilendi.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Calendar_(New_Style)_Act_1750"
     },
     {
-      "yil": 1848,
-      "baslik": "Phineas Gage'in Kazası",
-      "metin": "Demiryolu şefi Phineas Gage'in kafasından bir patlama sonucu demir çubuk geçti ancak mucizevi bir şekilde hayatta kaldı. Gage'in hayatta kalması ve iyileşme süreci, 19. yüzyıl psikoloji ve sinirbilim tartışmalarını derinden etkiledi.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Phineas_Gage"
-    },
-    {
-      "yil": 1898,
-      "baslik": "Hannibal Goodwin ve Selüloid Film",
-      "metin": "Hannibal Williston Goodwin, selüloitten şeffaf ve esnek rulo film yapım yönteminin patentini aldı. Bu buluş, Thomas Edison'un erken dönem hareketli görüntü izleme makinesi olan Kinetoscope'ta kullanıldı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Hannibal_Goodwin"
-    },
-    {
-      "yil": 1906,
-      "baslik": "Santos-Dumont 14-bis",
-      "metin": "Alberto Santos-Dumont'un tasarlayıp ürettiği 14-bis, kısa bir sıçrama yaparak Avrupa'da sabit kanatlı bir hava taşıtının gerçekleştirdiği ilk uçuşu kaydetti. Havacılık tarihinde dönüm noktası olan bu olay Paris yakınlarında gerçekleşti.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Santos-Dumont_14-bis"
-    },
-    {
-      "yil": 1959,
-      "baslik": "Luna 2",
-      "metin": "Sovyetlerin insansız uzay roketi Luna 2, Ay'a ulaşan ilk insan yapımı cisim olmayı başardı. Ancak roket, bu tarihi yolculuğun sonunda Ay'ın zeminine çakıldı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sovyetler_Birli%C4%9Fi"
-    },
-    {
-      "yil": 1985,
-      "baslik": "Super Mario Bros.",
-      "metin": "Tarihin en etkili ve en çok satan video oyunlarından biri olan Super Mario Bros., Japonya'da Nintendo Entertainment System için ilk kez piyasaya sürüldü. Shigeru Miyamoto'nun yönettiği ve ürettiği oyun, popüler kültürde silinmez bir iz bıraktı.",
+      "yil": 1867,
+      "baslik": "Karl Marx'ın Eseri Kapital'in İlk Cildi Yayımlandı",
+      "metin": "Karl Marx'ın kaleme aldığı Kapital'in ilk cildi yayımlandı. Yirminci yüzyılın düşünce dünyasını kökten sarsacak bu dev eser, iktisadi ve beşerî konularda yepyeni bir çığır açtı.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Super_Mario_Bros."
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Karl_Marx"
+    },
+    {
+      "yil": 1879,
+      "baslik": "Doğum Kontrol Aktivisti Margaret Sanger",
+      "metin": "Amerika'nın ilk doğum kontrol kliniğini açan ve Planned Parenthood'u kuran hemşire ve aktivist Margaret Sanger doğdu. Kadın sağlığı ve cinsiyet eğitimi alanında çığır açan çalışmalara imza attı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Margaret_Sanger"
+    },
+    {
+      "yil": 1914,
+      "baslik": "Avustralya Kraliyet Donanması'nın İlk Denizaltısı Kayboldu",
+      "metin": "Avustralya Kraliyet Donanması'nın ilk denizaltısı olan HMAS AE1 denizde kayboldu ve enkazına ancak 2017 yılında ulaşılabildi. Mürettebatıyla birlikte iz bırakmadan kaybolan denizaltı donanma tarihinin en büyük gizemlerinden biri oldu.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/HMAS_AE1"
+    },
+    {
+      "yil": 1936,
+      "baslik": "Millî Eğitim Bakanlığı'ndan Yeni Alfabe Onayı",
+      "metin": "Türkiye Cumhuriyeti Millî Eğitim Bakanlığı, ilkokullarda okutulacak yeni 'Alfabe' kitabını kabul etti. Murat Özgün ve İlhan Gökçe'nin kaleme aldığı eser eğitim alanında önemli bir adım oldu.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Mill%C3%AE_E%C4%9Fitim_Bakanl%C4%B1%C4%9F%C4%B1_(T%C3%BCrkiye)"
     }
   ]
 }
