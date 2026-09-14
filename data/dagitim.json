@@ -427,5 +427,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "anadolu-selcuklu-devletinin-altin-cagini-yasatan-i-alaeddin-keykubad-hakkinda-6-bilgi": {
+    "eklendi": "2026-09-14T01:18:35.160Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-14T01:18:35.717Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvgwvdbrg72l"
+      }
+    },
+    "reelIdleri": {}
   }
 }
