@@ -1,7 +1,14 @@
 {
-  "sonDenetim": "2026-09-15T00:18:20.366Z",
-  "toplamKontrol": 45,
+  "sonDenetim": "2026-09-15T05:02:25.359Z",
+  "toplamKontrol": 47,
   "sorunlar": {
+    "onay-bekleyen": {
+      "alan": "İçerik üretimi",
+      "durum": "uyari",
+      "detay": "1 taslak 24 saatten uzun süredir onay bekliyor.",
+      "cozum": "Telegram'daki onay mesajlarına bak (✅/❌).",
+      "ilkGorulme": "2026-09-15T05:02:25.359Z"
+    },
     "gorsel-unsplash": {
       "alan": "Görsel",
       "durum": "uyari",
