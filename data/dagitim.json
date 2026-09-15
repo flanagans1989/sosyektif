@@ -578,5 +578,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "turkiye-hakkinda-duymadiginiz-5-sasirtici-detay": {
+    "eklendi": "2026-09-15T19:03:25.681Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-15T19:03:26.061Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvlcuddvgd2r"
+      }
+    },
+    "reelIdleri": {}
   }
 }
