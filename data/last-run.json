@@ -1,16 +1,9 @@
 {
-  "tarih": "2026-09-15T15:22:08.759Z",
+  "tarih": "2026-09-15T19:02:33.966Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 0,
-  "onayaDusen": 1,
-  "reddedilen": 6,
-  "hatalar": [
-    "Kuzey Vargın: \"Türk sineması\" daha önce işlendi",
-    "Kerim Çalhanoğlu: uygun değil: Konu odağı yaşayan bir gerçek kişidir (futbolcu Kerim Çalhanoğlu). Sitemizin kurallarına göre yaşayan gerçek kişilerin kendisi konu olarak seçilemez.",
-    "Hasan Atilla Uğur: uygun değil: Yaşayan veya yakın siyasi/yakın tarih tartışmalarının odağında yer alan bir gerçek kişi olduğu için sosyektif içerik kriterlerine uygun değildir.",
-    "Orhan Ak: uygun değil: Konu odağı yaşayan bir gerçek kişidir ve site kuralları gereği yaşayan kişilerin profilleri içerik için uygun değildir.",
-    "Raci Şaşmaz: uygun değil: Yaşayan gerçek bir kişi olduğu için içerik politikamıza uygun değildir.",
-    "Hamdi Akın: uygun değil: Yaşayan gerçek bir kişi (iş insanı) konu odaklıdır ve sitemizin canlı kişi politikasına uymamaktadır."
-  ]
+  "otomatikYayinlanan": 1,
+  "onayaDusen": 0,
+  "reddedilen": 0,
+  "hatalar": []
 }

@@ -226,5 +226,14 @@
     "format": "quiz",
     "yayinTarihi": "2026-09-15T15:22:08.127Z",
     "otomatikYayinlandi": false
+  },
+  {
+    "slug": "turkiye-hakkinda-duymadiginiz-5-sasirtici-detay",
+    "baslik": "Türkiye Hakkında Duymadığınız 5 Şaşırtıcı Detay",
+    "konuParmakIzi": "türkiye",
+    "kategori": "tarih",
+    "format": "trivia",
+    "yayinTarihi": "2026-09-15T19:02:32.787Z",
+    "otomatikYayinlandi": true
   }
 ]
