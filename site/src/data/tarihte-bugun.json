@@ -1,42 +1,56 @@
 {
-  "tarih": "2026-09-14",
+  "tarih": "2026-09-15",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1752,
-      "baslik": "İngiliz İmparatorluğu'nda Gregoryen Takvim'e Geçiş",
-      "metin": "1750 Tarihli Takvim Yasası uyarınca İngiliz İmparatorluğu Gregoryen takvimi kabul etti ve ayın 11 gününü atladı. Bu değişimle birlikte zaman algısı tamamen yenilendi.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Calendar_(New_Style)_Act_1750"
+      "yil": 1830,
+      "baslik": "Liverpool ve Manchester Demiryolu Hizmete Girdi",
+      "metin": "İki büyük şehri buharlı lokomotiflerle birbirine bağlayan ilk demiryolu hattı olan Liverpool ve Manchester Demiryolu açıldı. İngiltere'de sanayi devriminin kalbi Manchester ile Liverpool Limanı'nı buluşturan bu hat, modern şehirlerarası demiryolu taşımacılığının öncüsü oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Liverpool_and_Manchester_Railway"
     },
     {
-      "yil": 1867,
-      "baslik": "Karl Marx'ın Eseri Kapital'in İlk Cildi Yayımlandı",
-      "metin": "Karl Marx'ın kaleme aldığı Kapital'in ilk cildi yayımlandı. Yirminci yüzyılın düşünce dünyasını kökten sarsacak bu dev eser, iktisadi ve beşerî konularda yepyeni bir çığır açtı.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Karl_Marx"
+      "yil": 1835,
+      "baslik": "HMS Beagle ve Charles Darwin Galápagos Adaları'na Ulaştı",
+      "metin": "Ünlü doğa bilimci Charles Darwin'i taşıyan Kraliyet Donanması gemisi HMS Beagle, Galápagos Takımadaları'nın doğusundaki San Cristobal'e ulaştı. Darwin'in bu izole adalarda karşılaştığı benzersiz türler üzerinde yaptığı gözlemler, evrim teorisini geliştirmesinde en önemli kıvılcımı yaktı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/HMS_Beagle"
     },
     {
-      "yil": 1879,
-      "baslik": "Doğum Kontrol Aktivisti Margaret Sanger",
-      "metin": "Amerika'nın ilk doğum kontrol kliniğini açan ve Planned Parenthood'u kuran hemşire ve aktivist Margaret Sanger doğdu. Kadın sağlığı ve cinsiyet eğitimi alanında çığır açan çalışmalara imza attı.",
+      "yil": 1890,
+      "baslik": "Polisiye Edebiyatının Kraliçesi Agatha Christie Doğdu",
+      "metin": "Dünya edebiyatında polisiye türünün tartışmasız en büyük isimlerinden Agatha Christie İngiltere'de dünyaya geldi. Yarattığı efsanevi dedektifler Hercule Poirot ve Miss Marple ile kaleme aldığı 66 roman, onu tüm zamanların en çok okunan yazarlarından biri yaptı.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Margaret_Sanger"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Agatha_Christie"
     },
     {
-      "yil": 1914,
-      "baslik": "Avustralya Kraliyet Donanması'nın İlk Denizaltısı Kayboldu",
-      "metin": "Avustralya Kraliyet Donanması'nın ilk denizaltısı olan HMAS AE1 denizde kayboldu ve enkazına ancak 2017 yılında ulaşılabildi. Mürettebatıyla birlikte iz bırakmadan kaybolan denizaltı donanma tarihinin en büyük gizemlerinden biri oldu.",
+      "yil": 1923,
+      "baslik": "Türkiye'de İlk Resmî Yüzme Yarışı Büyükada'da Yapıldı",
+      "metin": "Türkiye'de organize edilen ilk yüzme yarışı, Galatasaray Kulübü tarafından İstanbul Büyükada açıklarında gerçekleştirildi. Bu etkinlik, Türkiye'de su sporlarının profesyonel bir yapıya kavuşmasında ve yaygınlaşmasında tarihî bir kilometre taşı oldu.",
+      "kategori": "spor",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye"
+    },
+    {
+      "yil": 1954,
+      "baslik": "Marilyn Monroe'nun İkonik Metro Izgarası Sahnesi Çekildi",
+      "metin": "Yönetmen Billy Wilder, 'The Seven Year Itch' filminin çekimleri sırasında Marilyn Monroe'nun havalanan beyaz elbisesiyle metro ızgarası üzerinde durduğu unutulmaz sahneyi kaydetti. Bu an, sinema tarihinin en ikonik ve dünya çapında en çok hatırlanan sahnelerinden biri haline geldi.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Seven_Year_Itch"
+    },
+    {
+      "yil": 1968,
+      "baslik": "Sovyet Uzay Aracı Zond 5 Ay'ın Çevresini Dolaştı",
+      "metin": "Sovyetler Birliği tarafından uzaya fırlatılan Zond 5, Ay'ın etrafında tam bir tur atıp Dünya atmosferine hasarsız dönen ilk uzay aracı oldu. Bu başarılı görev, Ay'a insanlı iniş hazırlıkları yürüten bilim dünyası ve uzay yarışı için dönüm noktalarından biri sayıldı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/HMAS_AE1"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Soviet_Union"
     },
     {
-      "yil": 1936,
-      "baslik": "Millî Eğitim Bakanlığı'ndan Yeni Alfabe Onayı",
-      "metin": "Türkiye Cumhuriyeti Millî Eğitim Bakanlığı, ilkokullarda okutulacak yeni 'Alfabe' kitabını kabul etti. Murat Özgün ve İlhan Gökçe'nin kaleme aldığı eser eğitim alanında önemli bir adım oldu.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Mill%C3%AE_E%C4%9Fitim_Bakanl%C4%B1%C4%9F%C4%B1_(T%C3%BCrkiye)"
+      "yil": 1975,
+      "baslik": "Pink Floyd'un \"Wish You Were Here\" Albümü Yayımlandı",
+      "metin": "İngiliz progresif rock topluluğu Pink Floyd, müzik tarihinin başyapıtlarından biri olarak kabul edilen 'Wish You Were Here' albümünü müzikseverlerle buluşturdu. Grubun kurucu üyesi Syd Barrett'a ithaf edilen parça ve albümün felsefi temaları, grubu dünya çapında muazzam bir başarıya ulaştırdı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Pink_Floyd"
     }
   ]
 }
