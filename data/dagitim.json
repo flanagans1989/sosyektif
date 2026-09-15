@@ -561,9 +561,9 @@
       },
       "instagram": {
         "durum": "hata",
-        "deneme": 1,
-        "sonDeneme": "2026-09-15T08:21:30.588Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AT2nTgW"
+        "deneme": 2,
+        "sonDeneme": "2026-09-15T10:01:38.841Z",
+        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AOzXCvt"
       },
       "facebook": {
         "durum": "ok",
