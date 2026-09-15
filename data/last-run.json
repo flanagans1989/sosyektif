@@ -1,11 +1,12 @@
 {
-  "tarih": "2026-09-15T08:19:07.332Z",
+  "tarih": "2026-09-15T12:03:46.281Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 1,
-  "onayaDusen": 0,
-  "reddedilen": 1,
+  "otomatikYayinlanan": 0,
+  "onayaDusen": 1,
+  "reddedilen": 2,
   "hatalar": [
-    "Seks ve Genç Kız (film): uygun değil: Cinsellik, +18 içerik barındıran veya bu temaya sahip konular sitemizin yayın politikasına uygun değildir."
+    "Kenan Evren: uygun değil: Yaşayan veya yakın tarihimizde yaşamış tartışmalı siyasi figürlerin kendisi (Kenan Evren) politik, hassas ve güncel tartışmalara açık olduğu için doğrudan site yayın ilkelerimize uygun değildir.",
+    "Zekeriya Öz: uygun değil: Güncel siyaset, adli olaylar ve tartışmalı yaşayan veya yakın döneme ait siyasi/hukuki figürler sitenin yayın politikasına ve kurallarına uygun değildir."
   ]
 }

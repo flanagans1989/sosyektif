@@ -208,5 +208,14 @@
     "format": "quiz",
     "yayinTarihi": "2026-09-15T08:19:06.057Z",
     "otomatikYayinlandi": true
+  },
+  {
+    "slug": "turk-sinemasi-ve-yesilcam-hakkinda-duyunca-sasiracaginiz-4-bilgi",
+    "baslik": "Türk Sineması ve Yeşilçam Hakkında Duyunca Şaşıracağınız 4 Bilgi",
+    "konuParmakIzi": "türk sineması",
+    "kategori": "pop-kultur",
+    "format": "trivia",
+    "yayinTarihi": "2026-09-15T12:03:45.791Z",
+    "otomatikYayinlandi": false
   }
 ]
