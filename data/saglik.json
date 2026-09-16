@@ -1,11 +1,11 @@
 {
-  "sonDenetim": "2026-09-16T12:18:19.496Z",
-  "toplamKontrol": 48,
+  "sonDenetim": "2026-09-16T17:08:06.398Z",
+  "toplamKontrol": 47,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
       "durum": "uyari",
-      "detay": "5 taslak 24 saatten uzun süredir onay bekliyor.",
+      "detay": "6 taslak 24 saatten uzun süredir onay bekliyor.",
       "cozum": "Telegram'daki onay mesajlarına bak (✅/❌).",
       "ilkGorulme": "2026-09-15T05:02:25.359Z"
     },
@@ -34,12 +34,6 @@
       "durum": "uyari",
       "detay": "telegram çalışmadığı için 19 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "bekleyen-instagram": {
-      "alan": "Dağıtım",
-      "durum": "uyari",
-      "detay": "instagram çalışmadığı için 1 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
-      "ilkGorulme": "2026-09-16T11:48:57.076Z"
     }
   }
 }
