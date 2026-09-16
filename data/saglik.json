@@ -1,11 +1,11 @@
 {
-  "sonDenetim": "2026-09-16T12:01:15.140Z",
+  "sonDenetim": "2026-09-16T12:18:19.496Z",
   "toplamKontrol": 48,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
       "durum": "uyari",
-      "detay": "4 taslak 24 saatten uzun süredir onay bekliyor.",
+      "detay": "5 taslak 24 saatten uzun süredir onay bekliyor.",
       "cozum": "Telegram'daki onay mesajlarına bak (✅/❌).",
       "ilkGorulme": "2026-09-15T05:02:25.359Z"
     },
@@ -14,12 +14,6 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "site-veri-truncgil": {
-      "alan": "Ekodektif verileri",
-      "durum": "hata",
-      "detay": "finans.truncgil.com: fetch failed",
-      "ilkGorulme": "2026-09-16T11:48:57.076Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
