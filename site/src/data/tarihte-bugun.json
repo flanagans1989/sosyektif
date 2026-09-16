@@ -1,56 +1,49 @@
 {
-  "tarih": "2026-09-15",
+  "tarih": "2026-09-16",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1830,
-      "baslik": "Liverpool ve Manchester Demiryolu Hizmete Girdi",
-      "metin": "İki büyük şehri buharlı lokomotiflerle birbirine bağlayan ilk demiryolu hattı olan Liverpool ve Manchester Demiryolu açıldı. İngiltere'de sanayi devriminin kalbi Manchester ile Liverpool Limanı'nı buluşturan bu hat, modern şehirlerarası demiryolu taşımacılığının öncüsü oldu.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Liverpool_and_Manchester_Railway"
+      "yil": 1822,
+      "baslik": "Augustin-Jean Fresnel Fotoelastisite Deneyini Bilim Dünyasına Sundu",
+      "metin": "Fransız fizikçi Augustin-Jean Fresnel, Bilimler Akademisi'ne sunduğu kırılma deneyiyle David Brewster'ın fotoelastisiteye dair hipotezini doğruladığını açıkladı. Fresnel'in optik alanındaki bu araştırmaları, ışığın dalga teorisinin Newton'ın parçacık kuramının yerine almasında kilit rol oynadı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Augustin-Jean_Fresnel"
     },
     {
-      "yil": 1835,
-      "baslik": "HMS Beagle ve Charles Darwin Galápagos Adaları'na Ulaştı",
-      "metin": "Ünlü doğa bilimci Charles Darwin'i taşıyan Kraliyet Donanması gemisi HMS Beagle, Galápagos Takımadaları'nın doğusundaki San Cristobal'e ulaştı. Darwin'in bu izole adalarda karşılaştığı benzersiz türler üzerinde yaptığı gözlemler, evrim teorisini geliştirmesinde en önemli kıvılcımı yaktı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/HMS_Beagle"
+      "yil": 1863,
+      "baslik": "Robert Kolej İstanbul'da Kuruldu",
+      "metin": "Amerikalı hayırsever Christopher Robert tarafından kurulan Robert Kolej, Amerika Birleşik Devletleri sınırları dışındaki ilk Amerikan eğitim kurumu olarak İstanbul'da faaliyete geçti. Okul, kuruluşundan bu yana ABD dışındaki kesintisiz eğitim veren en eski Amerikan eğitim kurumu olma özelliğini koruyor.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Robert_College"
     },
     {
-      "yil": 1890,
-      "baslik": "Polisiye Edebiyatının Kraliçesi Agatha Christie Doğdu",
-      "metin": "Dünya edebiyatında polisiye türünün tartışmasız en büyük isimlerinden Agatha Christie İngiltere'de dünyaya geldi. Yarattığı efsanevi dedektifler Hercule Poirot ve Miss Marple ile kaleme aldığı 66 roman, onu tüm zamanların en çok okunan yazarlarından biri yaptı.",
+      "yil": 1893,
+      "baslik": "C Vitaminini İzole Eden Biyokimyager Albert Szent-Györgyi Doğdu",
+      "metin": "C vitaminini ilk kez izole eden Macar asıllı Amerikalı biyokimyager Albert Szent-Györgyi dünyaya geldi. Hücresel solunum ve biyolojik yanma süreçleri üzerine yaptığı çığır açıcı çalışmalar, bilim insanına 1937 yılında Nobel Fizyoloji veya Tıp Ödülü'nü getirdi.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Agatha_Christie"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Albert_Szent-Gy%C3%B6rgyi"
     },
     {
-      "yil": 1923,
-      "baslik": "Türkiye'de İlk Resmî Yüzme Yarışı Büyükada'da Yapıldı",
-      "metin": "Türkiye'de organize edilen ilk yüzme yarışı, Galatasaray Kulübü tarafından İstanbul Büyükada açıklarında gerçekleştirildi. Bu etkinlik, Türkiye'de su sporlarının profesyonel bir yapıya kavuşmasında ve yaygınlaşmasında tarihî bir kilometre taşı oldu.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye"
-    },
-    {
-      "yil": 1954,
-      "baslik": "Marilyn Monroe'nun İkonik Metro Izgarası Sahnesi Çekildi",
-      "metin": "Yönetmen Billy Wilder, 'The Seven Year Itch' filminin çekimleri sırasında Marilyn Monroe'nun havalanan beyaz elbisesiyle metro ızgarası üzerinde durduğu unutulmaz sahneyi kaydetti. Bu an, sinema tarihinin en ikonik ve dünya çapında en çok hatırlanan sahnelerinden biri haline geldi.",
+      "yil": 1953,
+      "baslik": "İlk Sinemaskop Film Gösterimi New York'ta Yapıldı",
+      "metin": "Sinema perdesini genişleterek seyir deneyimini baştan aşağı değiştiren Sinemaskop formatındaki ilk film gösterimi New York'ta gerçekleştirildi. Geliştirilen bu geniş perde formatı, 1950'ler ve 1960'lar boyunca sinema salonlarının çehresini belirleyen standartlardan biri oldu.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Seven_Year_Itch"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sinemaskop"
     },
     {
-      "yil": 1968,
-      "baslik": "Sovyet Uzay Aracı Zond 5 Ay'ın Çevresini Dolaştı",
-      "metin": "Sovyetler Birliği tarafından uzaya fırlatılan Zond 5, Ay'ın etrafında tam bir tur atıp Dünya atmosferine hasarsız dönen ilk uzay aracı oldu. Bu başarılı görev, Ay'a insanlı iniş hazırlıkları yürüten bilim dünyası ve uzay yarışı için dönüm noktalarından biri sayıldı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Soviet_Union"
+      "yil": 1959,
+      "baslik": "İlk Başarılı Düz Kâğıt Fotokopi Makinesi Xerox 914 Tanıtıldı",
+      "metin": "Haloid/Xerox şirketi, ilk başarılı ticari düz kâğıt fotokopi makinesi olan Xerox 914 modelini New York'tan yapılan canlı bir televizyon yayınıyla dünyaya tanıttı. Mucit Chester Carlson'ın uzun yıllar süren çalışmalarının doruk noktası olan bu cihaz, belge kopyalama sektöründe bir devrim başlattı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Xerox_914"
     },
     {
-      "yil": 1975,
-      "baslik": "Pink Floyd'un \"Wish You Were Here\" Albümü Yayımlandı",
-      "metin": "İngiliz progresif rock topluluğu Pink Floyd, müzik tarihinin başyapıtlarından biri olarak kabul edilen 'Wish You Were Here' albümünü müzikseverlerle buluşturdu. Grubun kurucu üyesi Syd Barrett'a ithaf edilen parça ve albümün felsefi temaları, grubu dünya çapında muazzam bir başarıya ulaştırdı.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Pink_Floyd"
+      "yil": 1987,
+      "baslik": "Ozon Tabakasını Korumayı Amaçlayan Montreal Protokolü İmzalandı",
+      "metin": "Dünyayı zararlı ışınlardan koruyan ozon tabakasının incelmesini durdurmak için tasarlanan uluslararası çevre anlaşması Montreal Protokolü imzalandı. Anlaşma, ozon tabakasını tüketen kimyasal maddelerin üretimini ve kullanımını aşamalı olarak sonlandırmayı hedefliyordu.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Montreal_Protocol"
     }
   ]
 }
