@@ -1,9 +1,11 @@
 {
-  "tarih": "2026-09-16T15:02:31.341Z",
+  "tarih": "2026-09-16T18:19:57.077Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 0,
   "onayaDusen": 1,
-  "reddedilen": 0,
-  "hatalar": []
+  "reddedilen": 1,
+  "hatalar": [
+    "II. Mehmed: Düşük skor (0.45) — Şu iddiaları kaynağa uygun düzelt ya da çıkar: Tahttan indirildiğinde henüz 14 yaşındaydı ifadesi kaynakta 12 yaş olarak belirtilmiştir. 1. maddeyi \"Tahttan indirildiğinde henüz 12 yaşındaydı\" şeklinde düzeltin; böylece kaynakla uyumlu olur."
+  ]
 }
