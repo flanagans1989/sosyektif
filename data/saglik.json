@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-16T06:18:20.485Z",
-  "toplamKontrol": 47,
+  "sonDenetim": "2026-09-16T11:48:57.076Z",
+  "toplamKontrol": 48,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -14,6 +14,12 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "site-veri-truncgil": {
+      "alan": "Ekodektif verileri",
+      "durum": "hata",
+      "detay": "finans.truncgil.com: fetch failed",
+      "ilkGorulme": "2026-09-16T11:48:57.076Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
@@ -32,8 +38,14 @@
     "bekleyen-telegram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "telegram çalışmadığı için 18 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "telegram çalışmadığı için 19 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "bekleyen-instagram": {
+      "alan": "Dağıtım",
+      "durum": "uyari",
+      "detay": "instagram çalışmadığı için 1 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "ilkGorulme": "2026-09-16T11:48:57.076Z"
     }
   }
 }
