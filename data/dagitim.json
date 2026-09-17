@@ -710,6 +710,11 @@
         "deneme": 1,
         "sonDeneme": "2026-09-17T08:22:44.255Z",
         "hata": "[facebook] fotoğraf yüklenemedi: 400 {\"error\":{\"message\":\"Missing or invalid image file\",\"type\":\"OAuthException\",\"code\":324,\"error_subcode\":2069019,\"is_transient\":true,\"error_user_title\":\"G\\u00f6rsel Gerekiyor\",\"error_user_msg\":\"Sayfa g\\u00f6nderinin reklamda kullan\\u0131labilecek bir g\\u00f6rsel i\\"
+      },
+      "reel": {
+        "durum": "onayda",
+        "deneme": 1,
+        "sonDeneme": "2026-09-17T08:25:08.365Z"
       }
     },
     "reelIdleri": {}
