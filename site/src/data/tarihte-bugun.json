@@ -1,49 +1,63 @@
 {
-  "tarih": "2026-09-16",
+  "tarih": "2026-09-17",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1822,
-      "baslik": "Augustin-Jean Fresnel Fotoelastisite Deneyini Bilim Dünyasına Sundu",
-      "metin": "Fransız fizikçi Augustin-Jean Fresnel, Bilimler Akademisi'ne sunduğu kırılma deneyiyle David Brewster'ın fotoelastisiteye dair hipotezini doğruladığını açıkladı. Fresnel'in optik alanındaki bu araştırmaları, ışığın dalga teorisinin Newton'ın parçacık kuramının yerine almasında kilit rol oynadı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Augustin-Jean_Fresnel"
+      "yil": 1683,
+      "baslik": "Antonie van Leeuwenhoek'un Mikroorganizma Keşfi",
+      "metin": "Hollandalı mikroskop uzmanı Antonie van Leeuwenhoek, Londra'daki Kraliyet Cemiyeti'ne yazdığı mektupta protozoa olarak bilinecek tek hücreli mikroorganizmaları tarif etti. Kendi geliştirdiği özel merceklerle suda yaşayan mikroskobik canlıları ilk kez gözlemleyen Leeuwenhoek, bu adımıyla mikrobiyolojinin temellerini attı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Antonie_van_Leeuwenhoek"
     },
     {
-      "yil": 1863,
-      "baslik": "Robert Kolej İstanbul'da Kuruldu",
-      "metin": "Amerikalı hayırsever Christopher Robert tarafından kurulan Robert Kolej, Amerika Birleşik Devletleri sınırları dışındaki ilk Amerikan eğitim kurumu olarak İstanbul'da faaliyete geçti. Okul, kuruluşundan bu yana ABD dışındaki kesintisiz eğitim veren en eski Amerikan eğitim kurumu olma özelliğini koruyor.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Robert_College"
-    },
-    {
-      "yil": 1893,
-      "baslik": "C Vitaminini İzole Eden Biyokimyager Albert Szent-Györgyi Doğdu",
-      "metin": "C vitaminini ilk kez izole eden Macar asıllı Amerikalı biyokimyager Albert Szent-Györgyi dünyaya geldi. Hücresel solunum ve biyolojik yanma süreçleri üzerine yaptığı çığır açıcı çalışmalar, bilim insanına 1937 yılında Nobel Fizyoloji veya Tıp Ödülü'nü getirdi.",
+      "yil": 1857,
+      "baslik": "Roket Biliminin Öncüsü Konstantin Tsiolkovsky Doğdu",
+      "metin": "Modern roket biliminin ve astronotiğin kurucularından kabul edilen Rus bilim insanı Konstantin Tsiolkovsky dünyaya geldi. İnsanlığın Dünya atmosferi dışına çıkabileceğini kuramsal hesaplamalarla ilk kez ortaya koyan Tsiolkovsky, uzay çağının kapısını aralayan en önemli teorisyenlerden biri oldu.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Albert_Szent-Gy%C3%B6rgyi"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Konstantin_Tsiolkovsky"
     },
     {
-      "yil": 1953,
-      "baslik": "İlk Sinemaskop Film Gösterimi New York'ta Yapıldı",
-      "metin": "Sinema perdesini genişleterek seyir deneyimini baştan aşağı değiştiren Sinemaskop formatındaki ilk film gösterimi New York'ta gerçekleştirildi. Geliştirilen bu geniş perde formatı, 1950'ler ve 1960'lar boyunca sinema salonlarının çehresini belirleyen standartlardan biri oldu.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sinemaskop"
-    },
-    {
-      "yil": 1959,
-      "baslik": "İlk Başarılı Düz Kâğıt Fotokopi Makinesi Xerox 914 Tanıtıldı",
-      "metin": "Haloid/Xerox şirketi, ilk başarılı ticari düz kâğıt fotokopi makinesi olan Xerox 914 modelini New York'tan yapılan canlı bir televizyon yayınıyla dünyaya tanıttı. Mucit Chester Carlson'ın uzun yıllar süren çalışmalarının doruk noktası olan bu cihaz, belge kopyalama sektöründe bir devrim başlattı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Xerox_914"
-    },
-    {
-      "yil": 1987,
-      "baslik": "Ozon Tabakasını Korumayı Amaçlayan Montreal Protokolü İmzalandı",
-      "metin": "Dünyayı zararlı ışınlardan koruyan ozon tabakasının incelmesini durdurmak için tasarlanan uluslararası çevre anlaşması Montreal Protokolü imzalandı. Anlaşma, ozon tabakasını tüketen kimyasal maddelerin üretimini ve kullanımını aşamalı olarak sonlandırmayı hedefliyordu.",
+      "yil": 1943,
+      "baslik": "Ankara Üniversitesi Fen Fakültesi Kuruldu",
+      "metin": "Türkiye'de Cumhuriyet döneminin ilk kurulan fakültelerinden olan Ankara Üniversitesi Fen Fakültesi kapılarını açtı. Fakülte, temel bilimler ve mühendislik alanındaki araştırmalarıyla Türkiye'de modern bilimin gelişmesinde öncü bir rol üstlendi.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Montreal_Protocol"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ankara_%C3%9Cniversitesi_Fen_Fak%C3%BCltesi"
+    },
+    {
+      "yil": 1958,
+      "baslik": "Hergé'nin Gözbebeği 'Tintin Tibet'te' Tefrika Edilmeye Başlandı",
+      "metin": "Belçikalı çizer Hergé'nin ünlü çizgi roman serisi Tintin'in yirminci macerası olan 'Tintin Tibet'te', haftalık Tintin dergisinde yayımlanmaya başladı. Himalayalar'da kaybolan bir dostun izini süren bu klasik albüm, çizeri Hergé tarafından da serinin en sevdiği eseri olarak nitelendirilmişti.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Tintin_in_Tibet"
+    },
+    {
+      "yil": 1961,
+      "baslik": "Dünyanın İlk Açılır Kapanır Çatılı Stadyumu Civic Arena Açıldı",
+      "metin": "Pensilvanya eyaletinin Pittsburgh kentinde inşa edilen çok amaçlı spor tesisi Civic Arena hizmete girdi. Dünyanın ilk açılır kapanır kubbe çatısına sahip olan bu ikonik yapı, modern stadyum mimarisinde yeni bir çığır açtı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Civic_Arena_(Pittsburgh)"
+    },
+    {
+      "yil": 1976,
+      "baslik": "NASA İlk Uzay Mekiği Enterprise'ı Tanıttı",
+      "metin": "NASA, Uzay Mekiği programı kapsamında üretilen ilk yörünge test aracı olan Enterprise'ı kamuoyunun beğenisine sundu. Uzaya fırlatılmamış olsa da kritik iniş ve süzülme testlerinde kullanılan mekik, gelecekteki insanlı uzay görevlerinin güvenliğini şekillendirdi.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Space_Shuttle_Enterprise"
+    },
+    {
+      "yil": 1991,
+      "baslik": "Linux Çekirdeğinin İlk Sürümü İnternette Yayımlandı",
+      "metin": "Linus Torvalds tarafından geliştirilen açık kaynaklı Unix benzeri işletim sistemi çekirdeği Linux'un ilk versiyonu (0.01) internette kullanıma sunuldu. Küçük bir merak projesi olarak doğan bu çekirdek, bugün küresel internet sunucularından akıllı cihazlara kadar uzanan devasa bir açık kaynak devrimine dönüştü.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Linux"
+    },
+    {
+      "yil": 2014,
+      "baslik": "Microsoft, Minecraft'ın Geliştiricisi Mojang'ı Satın Aldı",
+      "metin": "Markus 'Notch' Persson tarafından geliştirilen dünyaca ünlü piksel tabanlı sandbox oyunu Minecraft'ın yapımcısı Mojang Studios, Microsoft bünyesine katıldı. 2,5 milyar dolarlık bu anlaşma, video oyun endüstrisi tarihinin en büyük satın alımlarından biri olarak kayıtlara geçti.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Minecraft"
     }
   ]
 }
