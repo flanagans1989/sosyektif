@@ -1,12 +1,9 @@
 {
-  "tarih": "2026-09-17T05:02:23.387Z",
+  "tarih": "2026-09-17T08:20:27.614Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 1,
   "onayaDusen": 0,
-  "reddedilen": 2,
-  "hatalar": [
-    "Husiler: uygun değil: Siyaset ve güncel çatışma konuları sitenin yayın politikasına ve güvenlik kurallarına uygun değildir.",
-    "Murat Ünalmış: uygun değil: Yaşayan gerçek bir kişi olduğu için konu odaklı zamansız içerik üretimine uygun değildir."
-  ]
+  "reddedilen": 0,
+  "hatalar": []
 }
