@@ -648,5 +648,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "trabzondan-irana-uzanan-siyasi-bir-efsane-despina-hatun-quizi": {
+    "eklendi": "2026-09-17T05:03:13.811Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-17T05:03:14.607Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvouts5vlf2q"
+      }
+    },
+    "reelIdleri": {}
   }
 }
