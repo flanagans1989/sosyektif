@@ -690,14 +690,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-17T08:21:08.751Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvp7vo7eyg2u"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvp7vo7eyg2u",
+        "sonDeneme": "2026-09-17T08:21:08.751Z"
       },
       "threads": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-17T08:21:20.405Z",
-        "id": "17998294514811758"
+        "id": "17998294514811758",
+        "sonDeneme": "2026-09-17T08:21:20.405Z"
       },
       "instagram": {
         "durum": "hata",
