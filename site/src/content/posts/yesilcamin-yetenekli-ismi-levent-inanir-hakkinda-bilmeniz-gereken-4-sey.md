@@ -25,7 +25,7 @@ kaynaklar:
   - baslik: Vikipedi — Levent İnanır
     url: https://tr.wikipedia.org/wiki/Levent_%C4%B0nan%C4%B1r
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Sami TÜRK on Pexels
 moderasyon:
   skor: 0.9
