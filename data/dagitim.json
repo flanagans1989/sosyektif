@@ -983,5 +983,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "vincenzo-italiano-hakkinda-duyunca-sasiracaginiz-6-gercek": {
+    "eklendi": "2026-09-18T14:43:14.401Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-18T14:43:14.963Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvsfptslk723"
+      }
+    },
+    "reelIdleri": {}
   }
 }
