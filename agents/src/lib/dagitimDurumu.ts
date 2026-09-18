@@ -14,8 +14,9 @@ export type Kanal = (typeof KANALLAR)[number];
 const kanalDurumuSchema = z.object({
   /** ok: paylaşıldı · hata: tekrar denenecek · vazgecildi: çok kez başarısız
    * (kanal düzelince sağlık denetimi geri alır) · bekliyor: henüz denenmedi ·
-   * onayda: Reels videosu Telegram onayında */
-  durum: z.enum(["bekliyor", "ok", "hata", "vazgecildi", "onayda"]),
+   * onayda: Reels videosu Telegram onayında · iptal: elle temizlendi, bir daha
+   * denenmez ve sağlık denetimi geri almaz (birikmiş işleri silmek için) */
+  durum: z.enum(["bekliyor", "ok", "hata", "vazgecildi", "onayda", "iptal"]),
   deneme: z.number().int().default(0),
   id: z.string().optional(),
   sonDeneme: z.string().optional(),

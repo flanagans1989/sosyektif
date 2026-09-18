@@ -80,6 +80,14 @@ export async function muzikKarsilastirmasiGonder(frontmatter: Post): Promise<voi
 
 /** Onaylanan Reels'i siteye yükleyip Instagram + Facebook'ta paylaşır (reel-paylas.yml). */
 export async function reeliPaylas(slug: string): Promise<void> {
+  // Elle iptal edilmiş (birikim temizliği) bir Reels'in Telegram'daki eski ✅ düğmesine
+  // sonradan basılırsa paylaşılmaz.
+  const oncekiDurum = (await readDagitimDurumu())[slug]?.kanallar.reel?.durum;
+  if (oncekiDurum === "iptal") {
+    await notifyAdmin(`⛔ <b>Reels paylaşılmadı</b> — bu video daha önce iptal edilmişti.
+${escapeHtml(slug)}`);
+    throw new Error(`${slug}: Reels iptal edilmişti, paylaşılmadı`);
+  }
   const frontmatter = await icerigiOku(slug);
   const publicUrl = `https://sosyektif.com/${slug}/`;
   const metinler = sosyalMetinler(frontmatter, publicUrl);

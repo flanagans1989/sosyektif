@@ -1,11 +1,13 @@
 {
   "paused": false,
   "provaModu": false,
-  "gunlukHedefIcerikSayisi": 5,
+  "gunlukHedefIcerikSayisi": 1,
   "otomatikYayinEsigi": 0.65,
   "onayaDusEsigi": 0.55,
   "ardisikBasarisizCalismaLimiti": 6,
   "ardisikBasarisizCalisma": 0,
   "reelsAktif": true,
-  "kapaliKanallar": ["threads"]
+  "kapaliKanallar": [
+    "threads"
+  ]
 }
