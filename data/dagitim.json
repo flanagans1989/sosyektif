@@ -893,5 +893,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "osmanlinin-zirvesindeki-bizans-soylusu-has-murad-pasa-hakkinda-bilmeniz-gereken-6-carpici-gercek": {
+    "eklendi": "2026-09-18T10:35:00.671Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-18T10:35:01.036Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvrxtxuqmz2f"
+      }
+    },
+    "reelIdleri": {}
   }
 }
