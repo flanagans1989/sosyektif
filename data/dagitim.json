@@ -1033,6 +1033,12 @@
         "deneme": 1,
         "sonDeneme": "2026-09-18T18:50:01.648Z",
         "id": "18158114932503265"
+      },
+      "instagram": {
+        "durum": "hata",
+        "deneme": 1,
+        "sonDeneme": "2026-09-18T18:52:00.495Z",
+        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AOLO3rn"
       }
     },
     "reelIdleri": {}
