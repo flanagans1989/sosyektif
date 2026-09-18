@@ -61,10 +61,13 @@ const GECMIS_ICERIK_SINIRI = 1;
 const TAZE_ICERIK_SAAT = 24;
 const SAAT_MS = 60 * 60 * 1000;
 
-/** Durumu kaydedip hemen push'lar — iş yarıda kesilirse çift paylaşım olmasın. */
-async function kaydetVeYayinla(durum: DagitimDurumu, mesaj: string): Promise<void> {
+/** Durumu kaydedip hemen push'lar — iş yarıda kesilirse çift paylaşım olmasın.
+ * Push başarısız olursa false döner: durum yalnızca runner'da kalır ve çalışma
+ * bitince kaybolur (sonraki çalışma aynı içeriği yeniden paylaşırdı). */
+async function kaydetVeYayinla(durum: DagitimDurumu, mesaj: string): Promise<boolean> {
   await writeDagitimDurumu(durum);
-  dosyalariHemenYayinla([DAGITIM_DOSYASI], mesaj);
+  const yerelCalisma = !process.env.GITHUB_ACTIONS; // yerelde push yapılmaz; başarısızlık sayılmaz
+  return dosyalariHemenYayinla([DAGITIM_DOSYASI], mesaj) || yerelCalisma;
 }
 
 interface CanliIcerik {
@@ -190,8 +193,9 @@ export async function dagitimKuyrugunuIsle(): Promise<KuyrukRaporu> {
   const buTur = [...taze, ...gecmis];
   rapor.kalanIcerik = islenecekler.length - buTur.length;
 
+  let durumKaydedilemedi = false;
   for (const icerik of buTur) {
-    const url = `https://sosyektif.com/${icerik.slug}/`;
+    const url =`https://sosyektif.com/${icerik.slug}/`;
     // Link canlı değilse (Cloudflare build sürüyor) paylaşma — kırık link gider.
     if (!(await canliyaCikanaKadarBekle([url], { timeoutMs: 300_000 }))) {
       console.warn(`[dagitim] ${icerik.slug} henüz canlı değil, sonraki tura kaldı`);
@@ -240,12 +244,23 @@ export async function dagitimKuyrugunuIsle(): Promise<KuyrukRaporu> {
         (vazgec ? rapor.vazgecilen : rapor.hatalar).push(`${kanal} (${icerik.slug}, deneme ${deneme}): ${mesaj}`);
         console.error(`[dagitim] ✗ ${kanal} ← ${icerik.slug}: ${mesaj}`);
       }
-      await kaydetVeYayinla(durum, `Dağıtım durumu: ${icerik.slug} → ${kanal}`);
+      if (!(await kaydetVeYayinla(durum, `Dağıtım durumu: ${icerik.slug} → ${kanal}`))) {
+        // Durum push edilemiyor: daha fazla paylaşırsak hepsi bir sonraki çalışmada
+        // tekrarlanır. Dur; aşağıdaki son kayıt bir kez daha dener.
+        durumKaydedilemedi = true;
+        break;
+      }
     }
+    if (durumKaydedilemedi) break;
   }
 
   // Hiç kullanılabilir kanal yoksa bile yeni eklenen kayıtları (eski ID'ler) sakla.
-  await kaydetVeYayinla(durum, "Dağıtım durumu güncellendi");
+  if (!(await kaydetVeYayinla(durum, "Dağıtım durumu güncellendi"))) {
+    await notifyAdmin(
+      "🚨 <b>Dağıtım durumu git'e yazılamadı</b>\nSon paylaşımların kaydı kaybolabilir; sonraki çalışma aynı içerikleri tekrar paylaşabilir. dagitim.yml logunu kontrol edin."
+    );
+    throw new Error("dağıtım durumu push edilemedi");
+  }
 
   if (rapor.paylasilan.length || rapor.hatalar.length || rapor.vazgecilen.length) {
     const satirlar = ["📣 <b>Dağıtım</b>"];

@@ -48,6 +48,8 @@ export interface KontrolSonucu {
 const SITE = "https://sosyektif.com";
 const WORKER_URL = "https://sosyektif-telegram-onay.deraks-rental.workers.dev";
 const SAAT_MS = 60 * 60 * 1000;
+/** worker/telegram-onay/src/index.ts'teki WORKER_SURUMU ile aynı tutulur (Worker kodu değişince ikisini de artır). */
+const BEKLENEN_WORKER_SURUMU = 2;
 
 function ok(id: string, alan: string, detay: string): KontrolSonucu {
   return { id, alan, durum: "ok", detay };
@@ -353,13 +355,15 @@ export async function anahtarKontrolleri(): Promise<KontrolSonucu[]> {
 
   // Worker sürümü: Cloudflare'deki Worker, repodaki dashboard-paste.js'in
   // gerisinde mi? (wrangler bu hesaba bağlı değil, deploy elle yapılıyor —
-  // unutulması kolay.) Yeni sürüm /gecici/<ad> için 404 döner, eskisi "ok".
+  // unutulması kolay.) GET /surum { surum } BEKLENEN_WORKER_SURUMU'ndan küçükse
+  // ya da uç nokta yoksa (sürüm 1'den eski kod) Worker geridedir.
   try {
-    const res = await fetch(`${WORKER_URL}/gecici/saglik-kontrol.mp4`, { signal: AbortSignal.timeout(20_000) });
+    const { status, body } = await getJson<{ surum?: number }>(`${WORKER_URL}/surum`);
+    const surum = status === 200 ? (body?.surum ?? 0) : 0;
     sonuclar.push(
-      res.status === 404
-        ? ok("worker-surum", "Worker", "Cloudflare'deki Worker güncel")
-        : uyari("worker-surum", "Worker", "Cloudflare'deki Worker repodaki sürümün gerisinde (onay sonrası dağıtım, geçici video barındırma eksik).", "worker/telegram-onay/dashboard-paste.js'i Cloudflare panelinde Quick Edit'e yapıştırıp Deploy'a bas.")
+      surum >= BEKLENEN_WORKER_SURUMU
+        ? ok("worker-surum", "Worker", `Cloudflare'deki Worker güncel (sürüm ${surum})`)
+        : uyari("worker-surum", "Worker", `Cloudflare'deki Worker repodaki sürümün gerisinde (canlı: ${surum || "eski"}, repo: ${BEKLENEN_WORKER_SURUMU}).`, "worker/telegram-onay/dashboard-paste.js'i Cloudflare panelinde Quick Edit'e yapıştırıp Deploy'a bas.")
     );
   } catch (err) {
     sonuclar.push(hata("worker-surum", "Worker", `Worker sürüm kontrolü: ${hataMetni(err)}`));

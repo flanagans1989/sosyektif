@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { guvenliJson } from '../../lib/html';
 import PostCard from '../../components/PostCard.astro';
 import EkodektifLogo from '../../components/EkodektifLogo.astro';
 import GrafikStudyosu from '../../components/ekodektif/GrafikStudyosu.astro';
@@ -213,7 +214,7 @@ const BOLUMLER = [
         >
           Başka bir bilgi ↻
         </button>
-        <script type="application/json" is:inline id="not-verisi" set:html={JSON.stringify(NOTLAR)} />
+        <script type="application/json" is:inline id="not-verisi" set:html={guvenliJson(NOTLAR)} />
       </aside>
     </section>
 

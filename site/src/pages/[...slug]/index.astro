@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { guvenliJson } from '../../lib/html';
 import ListeIcerik from '../../components/ListeIcerik.astro';
 import TriviaIcerik from '../../components/TriviaIcerik.astro';
 import QuizIcerik from '../../components/QuizIcerik.astro';
@@ -76,7 +77,7 @@ const sonrakiTest = digerQuizler[0] ?? null;
 ---
 
 <Layout title={seoBaslik} description={metaAciklama} image={kapakGorseli}>
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  <script type="application/ld+json" is:inline set:html={guvenliJson(jsonLd)} />
 
   <div id="okuma-ilerleme" class="fixed left-0 top-0 z-50 h-1 w-0 bg-marka transition-[width]"></div>
 

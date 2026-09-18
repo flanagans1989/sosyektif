@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { guvenliJson } from '../../lib/html';
 import { BURCLAR, BURC_ANAHTARLARI, type BurcAnahtari } from '../../lib/burclar';
 import gunlukBurc from '../../data/gunluk-burc.json';
 
@@ -17,7 +18,7 @@ const jsonLd = {
 ---
 
 <Layout title="Günlük Burç Yorumları" description="12 burç için her gün güncellenen günlük burç yorumu, şanslı sayı ve şanslı renk.">
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  <script type="application/ld+json" is:inline set:html={guvenliJson(jsonLd)} />
 
   <div class="mx-auto max-w-3xl px-4 py-10">
     <h1 class="text-3xl font-extrabold text-murekkep">🔮 Günlük Burç Yorumları</h1>
@@ -80,10 +81,11 @@ const jsonLd = {
     </p>
   </div>
 
-  <script type="application/json" id="burc-verisi" set:html={JSON.stringify({ tarih: gunlukBurc.tarih, burclar: burclarVerisi })} />
-  <script type="application/json" id="burc-bilgi" set:html={JSON.stringify(BURCLAR)} />
+  <script type="application/json" id="burc-verisi" set:html={guvenliJson({ tarih: gunlukBurc.tarih, burclar: burclarVerisi })} />
+  <script type="application/json" id="burc-bilgi" set:html={guvenliJson(BURCLAR)} />
 
   <script>
+    import { kacis } from '../../lib/html';
     const DEPO_ANAHTARI = 'sosyektif-burc';
 
     interface BurcVeri {
@@ -134,15 +136,15 @@ const jsonLd = {
         <div class="rounded-2xl bg-marka px-6 py-6 text-white shadow-sm">
           <p class="text-sm font-semibold text-white/70">Bugünün yorumu</p>
           <div class="mt-1 flex items-center gap-2">
-            <span class="text-4xl">${info.emoji}</span>
-            <h2 class="text-2xl font-extrabold">${info.isim}</h2>
+            <span class="text-4xl">${kacis(info.emoji)}</span>
+            <h2 class="text-2xl font-extrabold">${kacis(info.isim)}</h2>
           </div>
-          <p class="mt-3 leading-relaxed">${b.yorum}</p>
-          <p class="mt-3 text-sm font-semibold text-white/90">🍀 Şanslı sayı: ${b.sansliSayi} · Şanslı renk: ${b.sansliRenk}</p>
+          <p class="mt-3 leading-relaxed">${kacis(b.yorum)}</p>
+          <p class="mt-3 text-sm font-semibold text-white/90">🍀 Şanslı sayı: ${kacis(b.sansliSayi)} · Şanslı renk: ${kacis(b.sansliRenk)}</p>
           <a href="${paylasimUrl}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1 rounded-full bg-white px-5 py-2 text-sm font-bold text-marka transition hover:bg-white/90">
             WhatsApp'ta Paylaş
           </a>
-          <a href="/burc/${anahtar}/" class="mt-4 ml-1 inline-flex items-center gap-1 rounded-full border-2 border-white px-5 py-1.5 text-sm font-bold text-white transition hover:bg-white/10">
+          <a href="/burc/${encodeURIComponent(anahtar)}/" class="mt-4 ml-1 inline-flex items-center gap-1 rounded-full border-2 border-white px-5 py-1.5 text-sm font-bold text-white transition hover:bg-white/10">
             Haftalık yorum ve uyum →
           </a>
         </div>

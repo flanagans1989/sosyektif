@@ -131,6 +131,10 @@ function yapiKontrolu(draft: PostDraft): { skor: number; notlar: string[] } {
   return { skor: Math.max(0, skor), notlar };
 }
 
+/** Etiket (script, iframe…), satır içi olay işleyici (onerror=…) ya da javascript:/data:text/html URL'si. */
+const TEHLIKELI_HTML =
+  /<\s*\/?\s*(?:script|iframe|object|embed|style|link|meta|form|svg|img|base)\b|\bon[a-z]{3,}\s*=|javascript\s*:|data\s*:\s*text\/html/i;
+
 export interface ModerateParams {
   draft: PostDraft;
   kaynakMetni: string;
@@ -163,6 +167,16 @@ export async function moderateDraft(params: ModerateParams): Promise<ModerationR
     redSebebi: sebep,
     detaylar: { ...bosDetay, ...ek },
   });
+
+  // 0. Çalıştırılabilir HTML: içerik siteye ham gömülüyor (Astro markdown'da ham
+  //    HTML'e izin verir; jsonLd/innerHTML de bu metinleri kullanır). LLM çıktısı
+  //    ya da kaynaktan sızan enjeksiyon script/iframe/olay işleyici taşıyamaz.
+  const tehlikeliHtml = TEHLIKELI_HTML.exec(
+    `${tamMetin}\n${draft.frontmatter.seoBaslik}\n${draft.frontmatter.metaAciklama}`
+  );
+  if (tehlikeliHtml) {
+    return sertRed(`Çalıştırılabilir HTML/script içeriyor: ${tehlikeliHtml[0].slice(0, 40)}`, {});
+  }
 
   // 1. Kara liste: konu listesi yalnızca başlıkta; gövdede yalnızca kesin
   //    yasak kelimeler. (Gövdede "saldırı", "ölüm" gibi kelimeler bir hayvanın

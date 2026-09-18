@@ -18,7 +18,7 @@
 import { execFileSync } from "node:child_process";
 
 const GIT_KULLANICI_ADI = "sosyektif-bot";
-const GIT_KULLANICI_EPOSTA = "deraksizolasyon@gmail.com";
+const GIT_KULLANICI_EPOSTA = "41898282+github-actions[bot]@users.noreply.github.com";
 
 function git(args: string[]): void {
   execFileSync("git", args, { stdio: "pipe" });
@@ -59,6 +59,14 @@ export function dosyalariHemenYayinla(dosyalar: string[], commitMesaji: string):
     return true;
   } catch (err) {
     console.error("[git-yayinla] commit/push başarısız:", err);
+    // Çakışan bir rebase yarıda kalırsa sonraki tüm git çağrıları ("rebase in
+    // progress") başarısız olur; çalışma alanını temiz duruma döndür. Yerel
+    // commit kalır, bir sonraki çağrı yeniden pull --rebase + push dener.
+    try {
+      git(["rebase", "--abort"]);
+    } catch {
+      // yarıda kalan rebase yoktu — normal
+    }
     return false;
   }
 }
@@ -76,7 +84,7 @@ export async function canliyaCikanaKadarBekle(
   while (Date.now() - baslangic < timeoutMs) {
     try {
       const sonuclar = await Promise.all(
-        urls.map((url) => fetch(url, { method: "HEAD" }).then((res) => res.ok))
+        urls.map((url) => fetch(url, { method: "HEAD", signal: AbortSignal.timeout(10_000) }).then((res) => res.ok))
       );
       if (sonuclar.every(Boolean)) return true;
     } catch {

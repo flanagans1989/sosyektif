@@ -18,6 +18,9 @@
  *
  * Kurulum notları wrangler.toml içinde.
  */
+/** Deploy edilen kodun sürümü; agents/src/saglik/kontroller.ts'teki
+ * BEKLENEN_WORKER_SURUMU ile aynı tutulur (GET /surum). Worker kodu değişince artır. */
+const WORKER_SURUMU = 2;
 const POSTS_DIR = "site/src/content/posts";
 // IndexNow: açık, hesap gerektirmeyen protokol. Key, site/public/<key>.txt
 // dosyasıyla eşleşmeli (bkz. agents/src/lib/indexnow.ts — aynı key).
@@ -54,14 +57,17 @@ async function kisaId(slug) {
  * üreten dosya bulunarak gerçek slug'a geri dönülüyor.
  */
 async function resolveSlug(env, id) {
-    const res = await fetch(`https://api.github.com/repos/${env.GITHUB_REPO}/contents/${encodeURIComponent(POSTS_DIR)}`, { headers: ghHeaders(env) });
+    // Git Trees API: Contents API klasör listesini 1000 dosyada keser, bu sınır yok.
+    const res = await fetch(`https://api.github.com/repos/${env.GITHUB_REPO}/git/trees/main:${POSTS_DIR}`, {
+        headers: ghHeaders(env),
+    });
     if (!res.ok)
         throw new Error(`GitHub GET ${POSTS_DIR} başarısız: ${res.status} ${await res.text()}`);
-    const girdiler = (await res.json());
+    const girdiler = (await res.json()).tree;
     for (const girdi of girdiler) {
-        if (!girdi.name.endsWith(".md"))
+        if (girdi.type !== "blob" || !girdi.path.endsWith(".md"))
             continue;
-        const aday = girdi.name.slice(0, -3);
+        const aday = girdi.path.slice(0, -3);
         if ((await kisaId(aday)) === id)
             return aday;
     }
@@ -77,10 +83,13 @@ async function getFile(env, path) {
 async function approvePost(env, slug) {
     const path = `${POSTS_DIR}/${slug}.md`;
     const { sha, content } = await getFile(env, path);
-    if (!/taslak:\s*true/.test(content)) {
+    // Yalnızca frontmatter'da (ilk iki --- arası) değiştir; gövdedeki metin "taslak: true" içerse de dokunulmaz.
+    const fmEslesme = /^---\r?\n[\s\S]*?\r?\n---/.exec(content);
+    if (!fmEslesme || !/^taslak:\s*true\s*$/m.test(fmEslesme[0])) {
         throw new Error(`"${slug}" dosyasında "taslak: true" bulunamadı (zaten onaylanmış olabilir).`);
     }
-    const yeniIcerik = content.replace(/taslak:\s*true/, "taslak: false");
+    const yeniFm = fmEslesme[0].replace(/^taslak:\s*true\s*$/m, "taslak: false");
+    const yeniIcerik = yeniFm + content.slice(fmEslesme[0].length);
     const res = await fetch(`https://api.github.com/repos/${env.GITHUB_REPO}/contents/${encodeURIComponent(path)}`, {
         method: "PUT",
         headers: { ...ghHeaders(env), "Content-Type": "application/json" },
@@ -150,6 +159,57 @@ function corsHeaders() {
 function escapeHtml(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
+/**
+ * Sır karşılaştırması: sabit zamanlı (iki tarafın SHA-256 özeti karşılaştırılır)
+ * ve beklenen sır tanımsız/boşsa HİÇBİR girdiyi kabul etmez (boş `?anahtar=`
+ * boş bir secret ile eşleşip kapıyı açmasın).
+ */
+async function sirEsit(gelen, beklenen) {
+    if (!gelen || !beklenen)
+        return false;
+    const kodla = new TextEncoder();
+    const [a, b] = await Promise.all([
+        crypto.subtle.digest("SHA-256", kodla.encode(gelen)),
+        crypto.subtle.digest("SHA-256", kodla.encode(beklenen)),
+    ]);
+    const x = new Uint8Array(a);
+    const y = new Uint8Array(b);
+    let fark = 0;
+    for (let i = 0; i < x.length; i++)
+        fark |= x[i] ^ y[i];
+    return fark === 0;
+}
+/**
+ * Basit hız sınırı (istemci IP'si + uç nokta başına). Sayaç bellekte, yani
+ * yalnızca o Worker örneği (isolate) için geçerli — kaba ama ücretsiz bir
+ * ilk savunma. Asıl koruma için Cloudflare panelinde /tepki ve /bildir'e bir
+ * WAF "Rate limiting rule" eklenmesi önerilir (bkz. wrangler.toml).
+ * true = izin verildi.
+ */
+const hizSayaclari = new Map();
+function hizSiniri(anahtar, maks, pencereMs) {
+    const simdi = Date.now();
+    if (hizSayaclari.size > 5000) {
+        for (const [k, v] of hizSayaclari)
+            if (v.bitis < simdi)
+                hizSayaclari.delete(k);
+    }
+    const kayit = hizSayaclari.get(anahtar);
+    if (!kayit || kayit.bitis < simdi) {
+        hizSayaclari.set(anahtar, { sayi: 1, bitis: simdi + pencereMs });
+        return true;
+    }
+    kayit.sayi += 1;
+    return kayit.sayi <= maks;
+}
+function istemciIp(request) {
+    return request.headers.get("CF-Connecting-IP") ?? "bilinmiyor";
+}
+/** Tarayıcıdan gelen çapraz-kaynak POST'ları her zaman Origin taşır; CORS tek
+ * başına sunucuyu korumaz, bu yüzden başka kaynaktan gelenleri burada reddet. */
+function originGecerli(request) {
+    return request.headers.get("Origin") === SITE_ORIGIN;
+}
 const TEPKI_TURLERI = ["sasirdim", "guldum", "inanmadim", "bilgilendim"];
 function bosTepkiSayaclari() {
     return { sasirdim: 0, guldum: 0, inanmadim: 0, bilgilendim: 0 };
@@ -159,6 +219,24 @@ function bosTepkiSayaclari() {
 function slugTemizle(slug) {
     const temiz = slug.trim().toLowerCase().slice(0, 200);
     return /^[a-z0-9-]+$/.test(temiz) ? temiz : null;
+}
+/** Tepki sayaçlarının KV'si: ayrı TEPKI namespace'i bağlıysa o, değilse METRIKLER. */
+function tepkiKV(env) {
+    return env.TEPKI ?? env.METRIKLER;
+}
+/** Slug gerçek bir yazıya mı ait? Sitede HEAD isteği (kenarda önbelleğe alınır:
+ * var olan yazı 1 saat, olmayan 5 dk) — rastgele slug'larla KV anahtarı üretilemesin. */
+async function yaziVarMi(slug) {
+    try {
+        const res = await fetch(`${SITE_ORIGIN}/${slug}/`, {
+            method: "HEAD",
+            cf: { cacheEverything: true, cacheTtlByStatus: { "200-299": 3600, "404": 300, "500-599": 0 } },
+        });
+        return res.ok;
+    }
+    catch {
+        return false;
+    }
 }
 /**
  * Tepki barı (PLAN.md Bölüm 10 / S2). Sitedeki her içeriğin altında dört
@@ -182,11 +260,22 @@ async function tepkiVer(request, env) {
     if (!slug || !tepki || !TEPKI_TURLERI.includes(tepki)) {
         return new Response("geçersiz slug/tepki", { status: 400, headers: corsHeaders() });
     }
+    // Herkese açık ve kimliksiz uç nokta: KV yazma kotası (ücretsiz katmanda günde
+    // 1000) burada tüketilebilir. Yalnızca site kaynaklı, IP başına sınırlı ve
+    // gerçekten var olan bir yazı için yaz.
+    if (!originGecerli(request))
+        return new Response("forbidden", { status: 403, headers: corsHeaders() });
+    if (!hizSiniri(`tepki:${istemciIp(request)}`, 10, 60_000)) {
+        return new Response("çok fazla istek", { status: 429, headers: corsHeaders() });
+    }
+    if (!(await yaziVarMi(slug)))
+        return new Response("bilinmeyen yazı", { status: 404, headers: corsHeaders() });
+    const kv = tepkiKV(env);
     const anahtar = `tepki:${slug}`;
-    const mevcut = await env.METRIKLER.get(anahtar);
+    const mevcut = (await kv.get(anahtar)) ?? (kv !== env.METRIKLER ? await env.METRIKLER.get(anahtar) : null);
     const sayaclar = mevcut ? JSON.parse(mevcut) : bosTepkiSayaclari();
     sayaclar[tepki] += 1;
-    await env.METRIKLER.put(anahtar, JSON.stringify(sayaclar));
+    await kv.put(anahtar, JSON.stringify(sayaclar));
     return new Response(JSON.stringify(sayaclar), {
         status: 200,
         headers: { ...corsHeaders(), "Content-Type": "application/json" },
@@ -197,7 +286,8 @@ async function tepkiSonucGetir(request, env) {
     const slug = slugTemizle(url.searchParams.get("slug") ?? "");
     if (!slug)
         return new Response("geçersiz slug", { status: 400, headers: corsHeaders() });
-    const mevcut = await env.METRIKLER.get(`tepki:${slug}`);
+    const kv = tepkiKV(env);
+    const mevcut = (await kv.get(`tepki:${slug}`)) ?? (kv !== env.METRIKLER ? await env.METRIKLER.get(`tepki:${slug}`) : null);
     const sayaclar = mevcut ? JSON.parse(mevcut) : bosTepkiSayaclari();
     return new Response(JSON.stringify(sayaclar), {
         status: 200,
@@ -217,7 +307,7 @@ function metaTokenAnahtari(platform) {
  */
 async function metaTokenGetir(request, env) {
     const url = new URL(request.url);
-    if (url.searchParams.get("anahtar") !== env.AGENT_PAYLASIM_ANAHTARI) {
+    if (!(await sirEsit(url.searchParams.get("anahtar"), env.AGENT_PAYLASIM_ANAHTARI))) {
         return new Response("forbidden", { status: 403 });
     }
     const platform = url.searchParams.get("platform");
@@ -241,7 +331,7 @@ const GECICI_DOSYA_TTL_SN = 3 * 24 * 60 * 60;
 const GECICI_DOSYA_AD = /^[a-z0-9-]{1,180}\.mp4$/;
 async function geciciDosyaYaz(request, env) {
     const url = new URL(request.url);
-    if (url.searchParams.get("anahtar") !== env.AGENT_PAYLASIM_ANAHTARI) {
+    if (!(await sirEsit(url.searchParams.get("anahtar"), env.AGENT_PAYLASIM_ANAHTARI))) {
         return new Response("forbidden", { status: 403 });
     }
     const ad = url.searchParams.get("ad") ?? "";
@@ -266,7 +356,7 @@ async function geciciDosyaGetir(ad, env) {
 }
 async function metaTokenYaz(request, env) {
     const url = new URL(request.url);
-    if (url.searchParams.get("anahtar") !== env.AGENT_PAYLASIM_ANAHTARI) {
+    if (!(await sirEsit(url.searchParams.get("anahtar"), env.AGENT_PAYLASIM_ANAHTARI))) {
         return new Response("forbidden", { status: 403 });
     }
     let govde;
@@ -360,6 +450,13 @@ async function bildirimGonder(request, env) {
     // Honeypot: gizli alan doluysa sessizce "başarılı" dön, bot'u oyalama.
     if (gövde.web_sitesi) {
         return new Response("ok", { status: 200, headers: corsHeaders() });
+    }
+    // Kimliksiz uç nokta admin sohbetine yazıyor: sel olursa aynı bot üzerinden
+    // gelen onay mesajları da Telegram'ın sohbet başına hız sınırına takılır.
+    if (!originGecerli(request))
+        return new Response("forbidden", { status: 403, headers: corsHeaders() });
+    if (!hizSiniri(`bildir:${istemciIp(request)}`, 3, 10 * 60_000) || !hizSiniri("bildir:genel", 20, 60 * 60_000)) {
+        return new Response("çok fazla istek, lütfen daha sonra tekrar deneyin", { status: 429, headers: corsHeaders() });
     }
     const mesaj = (gövde.mesaj ?? "").trim().slice(0, 2000);
     const eposta = (gövde.eposta ?? "").trim().slice(0, 200);
@@ -467,6 +564,9 @@ export default {
                 return tepkiVer(request, env);
             return new Response("method not allowed", { status: 405, headers: corsHeaders() });
         }
+        // Sağlık denetimi: Cloudflare'deki kod repodaki sürümün gerisinde mi? (deploy elle yapılıyor)
+        if (url.pathname === "/surum" && request.method === "GET")
+            return Response.json({ surum: WORKER_SURUMU });
         if (url.pathname === "/gecici-dosya" && request.method === "PUT")
             return geciciDosyaYaz(request, env);
         if (url.pathname.startsWith("/gecici/") && (request.method === "GET" || request.method === "HEAD")) {
@@ -494,7 +594,7 @@ export default {
         // parametresi yalnızca bu isteğin yetkili olduğunu doğrular; GitHub ya da
         // Telegram token'larına erişim vermez.
         if (request.method === "GET" && url.pathname === "/tetikle") {
-            if (url.searchParams.get("anahtar") !== env.TETIKLE_ANAHTARI) {
+            if (!(await sirEsit(url.searchParams.get("anahtar"), env.TETIKLE_ANAHTARI))) {
                 return new Response("forbidden", { status: 403 });
             }
             const zaman = new Date();
@@ -505,7 +605,7 @@ export default {
         if (request.method !== "POST")
             return new Response("ok");
         const secret = request.headers.get("X-Telegram-Bot-Api-Secret-Token");
-        if (secret !== env.TELEGRAM_WEBHOOK_SECRET)
+        if (!(await sirEsit(secret, env.TELEGRAM_WEBHOOK_SECRET)))
             return new Response("forbidden", { status: 403 });
         const update = (await request.json());
         const cq = update.callback_query;

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import { guvenliJson } from '../lib/html';
 import PostCard from '../components/PostCard.astro';
 import EkodektifBandi from '../components/EkodektifBandi.astro';
 import enCokOkunanVerisi from '../data/en-cok-okunan.json';
@@ -46,7 +47,7 @@ const jsonLd = {
 ---
 
 <Layout title="Anasayfa" piyasaSeridi={false}>
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  <script type="application/ld+json" is:inline set:html={guvenliJson(jsonLd)} />
   <section class="border-b border-black/5 bg-gradient-to-br from-marka/10 via-zemin to-zemin">
     <div class="mx-auto max-w-6xl px-4 py-14 text-center">
       <h1 class="text-4xl font-extrabold tracking-tight text-murekkep sm:text-5xl">

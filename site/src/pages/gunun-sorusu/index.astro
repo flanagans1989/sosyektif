@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { guvenliJson } from '../../lib/html';
 
 // Havuz: tüm yayınlanmış quiz yazılarındaki sorular tek bir listede birleşir.
 // Hangi sorunun "bugünün sorusu" olacağı istemci tarafında, Türkiye gününe
@@ -38,9 +39,10 @@ const havuz = quizYazilari.flatMap((yazi) =>
     )}
   </div>
 
-  <script type="application/json" id="soru-havuzu" set:html={JSON.stringify(havuz)} />
+  <script type="application/json" id="soru-havuzu" set:html={guvenliJson(havuz)} />
 
   <script>
+    import { kacis } from '../../lib/html';
     interface HavuzSorusu {
       postSlug: string;
       postBaslik: string;
@@ -134,7 +136,7 @@ const havuz = quizYazilari.flatMap((yazi) =>
         const paylasimUrl = `https://wa.me/?text=${encodeURIComponent(`${paylasimMetni} ${location.origin}/gunun-sorusu/`)}`;
         alan!.innerHTML = `
           <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
-            <p class="text-lg font-bold text-murekkep">${soru.soru}</p>
+            <p class="text-lg font-bold text-murekkep">${kacis(soru.soru)}</p>
             <div class="mt-4 flex flex-col gap-2">
               ${soru.secenekler
                 .map((s, i) => {
@@ -145,16 +147,16 @@ const havuz = quizYazilari.flatMap((yazi) =>
                     : secili
                       ? 'bg-red-100 border-red-400'
                       : 'border-black/10';
-                  return `<div class="rounded-xl border px-4 py-2 ${renk}">${s}</div>`;
+                  return `<div class="rounded-xl border px-4 py-2 ${renk}">${kacis(s)}</div>`;
                 })
                 .join('')}
             </div>
-            ${soru.aciklama ? `<p class="mt-3 rounded-lg bg-marka/5 p-3 text-sm text-murekkep/80">${soru.aciklama}</p>` : ''}
+            ${soru.aciklama ? `<p class="mt-3 rounded-lg bg-marka/5 p-3 text-sm text-murekkep/80">${kacis(soru.aciklama)}</p>` : ''}
             <p class="mt-4 text-center text-lg font-bold ${dogruMu ? 'text-emerald-600' : 'text-red-500'}">
               ${dogruMu ? '✅ Doğru bildin!' : '❌ Bu sefer olmadı.'}
             </p>
-            <a href="/${soru.postSlug}/" class="mt-3 block text-center text-sm font-semibold text-marka underline">
-              Kaynağı gör: ${soru.postBaslik}
+            <a href="/${encodeURIComponent(soru.postSlug)}/" class="mt-3 block text-center text-sm font-semibold text-marka underline">
+              Kaynağı gör: ${kacis(soru.postBaslik)}
             </a>
             <a
               href="${paylasimUrl}"
@@ -176,12 +178,12 @@ const havuz = quizYazilari.flatMap((yazi) =>
 
       alan.innerHTML = `
         <fieldset class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
-          <legend class="text-lg font-bold text-murekkep">${soru.soru}</legend>
+          <legend class="text-lg font-bold text-murekkep">${kacis(soru.soru)}</legend>
           <div class="mt-4 flex flex-col gap-2" id="gunun-secenekleri">
             ${soru.secenekler
               .map(
                 (s, i) =>
-                  `<button type="button" data-index="${i}" class="gunun-secenek rounded-xl border border-black/10 px-4 py-2 text-left transition hover:border-marka">${s}</button>`
+                  `<button type="button" data-index="${i}" class="gunun-secenek rounded-xl border border-black/10 px-4 py-2 text-left transition hover:border-marka">${kacis(s)}</button>`
               )
               .join('')}
           </div>

@@ -1,0 +1,13 @@
+# Cloudflare Pages güvenlik başlıkları.
+# CSP bilerek YOK: giscus (iframe + script), Astro satır içi script'leri ve
+# ekodektif piyasa API'leri (truncgil/CoinGecko) canlıda denenmeden kısıtlanırsa
+# siteyi bozar. Eklenecekse önce `Content-Security-Policy-Report-Only` ile dene.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+
+# Üretilmiş, içeriği hash'li statik varlıklar
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

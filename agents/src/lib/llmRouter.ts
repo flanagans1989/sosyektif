@@ -36,6 +36,9 @@ interface ProviderAdapter {
   call(params: ChatCompleteParams): Promise<string>;
 }
 
+/** Takılan bir sağlayıcı tüm işi (25 dk'lık job limiti) bekletmesin; zaman aşımı hata sayılır, zincirde sıradaki denenir. */
+const LLM_ZAMAN_ASIMI_MS = 90_000;
+
 async function openAiCompatibleCall(
   baseUrl: string,
   apiKey: string,
@@ -57,6 +60,7 @@ async function openAiCompatibleCall(
       temperature: params.temperature ?? 0.7,
       ...(params.jsonMode ? { response_format: { type: "json_object" } } : {}),
     }),
+    signal: AbortSignal.timeout(LLM_ZAMAN_ASIMI_MS),
   });
 
   if (!res.ok) {
@@ -93,6 +97,7 @@ async function geminiModelCall(apiKey: string, model: string, params: ChatComple
           ...(params.jsonMode ? { responseMimeType: "application/json" } : {}),
         },
       }),
+      signal: AbortSignal.timeout(LLM_ZAMAN_ASIMI_MS),
     }
   );
 
