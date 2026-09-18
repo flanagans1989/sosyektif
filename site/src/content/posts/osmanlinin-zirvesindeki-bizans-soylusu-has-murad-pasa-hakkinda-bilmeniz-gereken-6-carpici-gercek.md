@@ -32,7 +32,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Hass Murad Pasha
     url: https://en.wikipedia.org/wiki/Hass_Murad_Pasha
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Mathias Reding on Pexels
 moderasyon:
   skor: 1
