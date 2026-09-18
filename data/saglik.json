@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-18T12:18:19.759Z",
-  "toplamKontrol": 49,
+  "sonDenetim": "2026-09-18T16:33:13.236Z",
+  "toplamKontrol": 48,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -32,7 +32,7 @@
     "bekleyen-telegram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "telegram çalışmadığı için 29 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "telegram çalışmadığı için 30 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
     },
     "bekleyen-instagram": {
