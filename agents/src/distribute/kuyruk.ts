@@ -58,6 +58,13 @@ const MAKS_DENEME = 4;
  * hesaplara tek seferde yığılmasın, saatlere yayılsın. Son 24 saatin
  * içerikleri bu sınıra takılmaz. */
 const GECMIS_ICERIK_SINIRI = 1;
+/** Kanal başına tek çalışmada en fazla kaç içerik. Instagram carousel'i içerik başına
+ * onlarca Graph API çağrısı yapar (8-10 alt öğe + carousel + yayın + durum yoklaması);
+ * uygulama başına saatlik çağrı sınırı ("Application request limit reached") aşılınca
+ * kalan paylaşımlar da düşer. Birikim saatlere yayılır. */
+const TUR_SINIRI: Partial<Record<string, number>> = { instagram: 2, facebook: 3 };
+/** Kanalın API'si "çağrı sınırı doldu" dediyse bu, içeriğin hatası değil bekleme sebebidir. */
+const HIZ_SINIRI_HATASI = /request limit reached|too many (calls|requests)|rate.?limit|"code":s*(4|17|32|613)/i;
 const TAZE_ICERIK_SAAT = 24;
 const SAAT_MS = 60 * 60 * 1000;
 
@@ -108,7 +115,8 @@ function denenmeli(k: KanalDurumu | undefined): boolean {
   if (k.durum !== "hata") return false;
   // Artan bekleme: 1., 2., 3. denemeden sonra 1, 2, 3 saat.
   const son = k.sonDeneme ? new Date(k.sonDeneme).getTime() : 0;
-  return Date.now() - son >= k.deneme * SAAT_MS;
+  // deneme 0 olabilir (hız sınırı hatası deneme hakkı yemez): en az 1 saat bekle.
+  return Date.now() - son >= Math.max(1, k.deneme) * SAAT_MS;
 }
 
 /** Telegram ve kısa metin (Bluesky/Threads); Instagram/Facebook metinleri reel.ts'teki sosyalMetinler'den. */
@@ -194,6 +202,8 @@ export async function dagitimKuyrugunuIsle(): Promise<KuyrukRaporu> {
   rapor.kalanIcerik = islenecekler.length - buTur.length;
 
   let durumKaydedilemedi = false;
+  const hizSinirliKanallar = new Set<string>();
+  const turSayaci: Record<string, number> = {};
   for (const icerik of buTur) {
     const url =`https://sosyektif.com/${icerik.slug}/`;
     // Link canlı değilse (Cloudflare build sürüyor) paylaşma — kırık link gider.
@@ -228,6 +238,13 @@ export async function dagitimKuyrugunuIsle(): Promise<KuyrukRaporu> {
     ];
 
     for (const { ad: kanal, calistir, basariDurumu } of adimlar) {
+      // Bu çalışmada kanal hız sınırına çarptıysa ya da tur kotası dolduysa dokunma (deneme hakkı yakılmaz).
+      if (hizSinirliKanallar.has(kanal)) continue;
+      if ((turSayaci[kanal] ?? 0) >= (TUR_SINIRI[kanal] ?? Infinity)) {
+        rapor.kalanIcerik++;
+        continue;
+      }
+      turSayaci[kanal] = (turSayaci[kanal] ?? 0) + 1;
       const onceki = kayit.kanallar[kanal];
       const deneme = (onceki?.durum === "hata" ? onceki.deneme : 0) + 1;
       try {
@@ -239,10 +256,18 @@ export async function dagitimKuyrugunuIsle(): Promise<KuyrukRaporu> {
         console.log(`[dagitim] ✓ ${kanal} ← ${icerik.slug}`);
       } catch (err) {
         const mesaj = (err instanceof Error ? err.message : String(err)).slice(0, 300);
-        const vazgec = deneme >= MAKS_DENEME;
-        kayit.kanallar[kanal] = { durum: vazgec ? "vazgecildi" : "hata", deneme, sonDeneme: new Date().toISOString(), hata: mesaj };
-        (vazgec ? rapor.vazgecilen : rapor.hatalar).push(`${kanal} (${icerik.slug}, deneme ${deneme}): ${mesaj}`);
-        console.error(`[dagitim] ✗ ${kanal} ← ${icerik.slug}: ${mesaj}`);
+        if (HIZ_SINIRI_HATASI.test(mesaj)) {
+          // Geçici kota: deneme hakkı düşülmez, kanal bu çalışmada bırakılır, ≥1 saat sonra yeniden denenir.
+          hizSinirliKanallar.add(kanal);
+          kayit.kanallar[kanal] = { durum: "hata", deneme: deneme - 1, sonDeneme: new Date().toISOString(), hata: mesaj };
+          rapor.hatalar.push(`${kanal} (${icerik.slug}): API çağrı sınırı doldu, ≥1 saat sonra yeniden denenecek`);
+          console.warn(`[dagitim] ⏸ ${kanal} hız sınırına çarptı, bu çalışmada bırakıldı: ${mesaj}`);
+        } else {
+          const vazgec = deneme >= MAKS_DENEME;
+          kayit.kanallar[kanal] = { durum: vazgec ? "vazgecildi" : "hata", deneme, sonDeneme: new Date().toISOString(), hata: mesaj };
+          (vazgec ? rapor.vazgecilen : rapor.hatalar).push(`${kanal} (${icerik.slug}, deneme ${deneme}): ${mesaj}`);
+          console.error(`[dagitim] ✗ ${kanal} ← ${icerik.slug}: ${mesaj}`);
+        }
       }
       if (!(await kaydetVeYayinla(durum, `Dağıtım durumu: ${icerik.slug} → ${kanal}`))) {
         // Durum push edilemiyor: daha fazla paylaşırsak hepsi bir sonraki çalışmada
