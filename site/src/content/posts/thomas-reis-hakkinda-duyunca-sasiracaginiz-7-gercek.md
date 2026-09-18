@@ -34,7 +34,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Thomas Reis
     url: https://en.wikipedia.org/wiki/Thomas_Reis
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Franco Monsalvo on Pexels
 moderasyon:
   skor: 1
