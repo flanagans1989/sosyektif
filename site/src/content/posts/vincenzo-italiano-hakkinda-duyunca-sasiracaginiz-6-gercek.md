@@ -33,7 +33,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Vincenzo Italiano
     url: https://en.wikipedia.org/wiki/Vincenzo_Italiano
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Pexels User on Pexels
 moderasyon:
   skor: 1
