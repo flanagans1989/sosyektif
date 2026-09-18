@@ -718,5 +718,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "yesilcamin-yetenekli-ismi-levent-inanir-hakkinda-bilmeniz-gereken-4-sey": {
+    "eklendi": "2026-09-18T10:01:31.337Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-18T10:01:31.742Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvrvy3ntxu2q"
+      }
+    },
+    "reelIdleri": {}
   }
 }
