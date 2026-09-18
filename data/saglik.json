@@ -1,7 +1,14 @@
 {
-  "sonDenetim": "2026-09-18T18:18:22.841Z",
-  "toplamKontrol": 48,
+  "sonDenetim": "2026-09-18T18:33:33.915Z",
+  "toplamKontrol": 49,
   "sorunlar": {
+    "site-son-icerik": {
+      "alan": "Site",
+      "durum": "hata",
+      "detay": "https://sosyektif.com/nobel-odullu-bilim-insanimiz-aziz-sancar-hakkinda-bilmeniz-gereken-7-sasirtici-gercek/ → 404",
+      "cozum": "Cloudflare Pages son build'ini kontrol et.",
+      "ilkGorulme": "2026-09-18T18:33:33.915Z"
+    },
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
       "durum": "uyari",
@@ -14,6 +21,13 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "worker-surum": {
+      "alan": "Worker",
+      "durum": "uyari",
+      "detay": "Cloudflare'deki Worker repodaki sürümün gerisinde (canlı: eski, repo: 2).",
+      "cozum": "worker/telegram-onay/dashboard-paste.js'i Cloudflare panelinde Quick Edit'e yapıştırıp Deploy'a bas.",
+      "ilkGorulme": "2026-09-18T18:33:33.915Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
@@ -32,13 +46,13 @@
     "bekleyen-telegram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "telegram çalışmadığı için 30 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "telegram çalışmadığı için 31 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
     },
     "bekleyen-instagram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "instagram çalışmadığı için 4 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "instagram çalışmadığı için 3 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-18T11:28:22.019Z"
     }
   }
