@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-09-18T18:01:12.065Z",
+  "sonDenetim": "2026-09-18T18:18:22.841Z",
   "toplamKontrol": 48,
   "sorunlar": {
     "onay-bekleyen": {
@@ -38,7 +38,7 @@
     "bekleyen-instagram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "instagram çalışmadığı için 5 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "instagram çalışmadığı için 4 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-18T11:28:22.019Z"
     }
   }
