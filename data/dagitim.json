@@ -725,14 +725,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-18T10:01:31.742Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvrvy3ntxu2q"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvrvy3ntxu2q",
+        "sonDeneme": "2026-09-18T10:01:31.742Z"
       },
       "threads": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-18T10:01:43.623Z",
-        "id": "17934952818389382"
+        "id": "17934952818389382",
+        "sonDeneme": "2026-09-18T10:01:43.623Z"
       },
       "instagram": {
         "durum": "hata",
@@ -743,13 +743,25 @@
       "facebook": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-18T10:03:25.237Z",
-        "id": "1243429762194033_122106585453474851"
+        "id": "1243429762194033_122106585453474851",
+        "sonDeneme": "2026-09-18T10:03:25.237Z"
       },
       "reel": {
         "durum": "onayda",
         "deneme": 1,
         "sonDeneme": "2026-09-18T10:05:16.706Z"
+      }
+    },
+    "reelIdleri": {}
+  },
+  "avrupa-futbolunun-kalbi-uefa-ulke-puani-sistemi-hakkinda-ne-biliyorsun": {
+    "eklendi": "2026-09-18T10:19:01.744Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-18T10:19:02.575Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvrwxffp3p2q"
       }
     },
     "reelIdleri": {}
