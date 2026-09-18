@@ -677,12 +677,20 @@
         "sonDeneme": "2026-09-17T05:05:27.503Z"
       },
       "reel": {
-        "durum": "onayda",
+        "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-17T05:07:34.656Z"
+        "sonDeneme": "2026-09-18T10:04:22.074Z"
+      },
+      "youtube": {
+        "durum": "ok",
+        "deneme": 1,
+        "id": "Utvxje1UneE",
+        "sonDeneme": "2026-09-18T10:04:22.074Z"
       }
     },
-    "reelIdleri": {}
+    "reelIdleri": {
+      "facebook": "1999125190749636"
+    }
   },
   "osmanli-sarayinin-guclu-kadini-gevherhan-hatun-hakkinda-bilmeniz-gereken-5-sey": {
     "eklendi": "2026-09-17T08:21:08.278Z",
