@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-09-18T18:48:54.470Z",
+  "sonDenetim": "2026-09-18T19:08:39.591Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -22,12 +22,12 @@
       "cozum": "Telegram'da kanal aç, botu yönetici yap, kanal kimliğini TELEGRAM_PUBLIC_CHANNEL_ID secret'ı olarak ekle.",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
     },
-    "kanal-instagram": {
+    "kanal-threads": {
       "alan": "Sosyal kanallar",
       "durum": "hata",
-      "detay": "Instagram API: Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
-      "cozum": "Instagram token'ını yeniden bootstrap et.",
-      "ilkGorulme": "2026-09-14T05:07:42.288Z"
+      "detay": "Threads API: Error validating access token: You cannot access the app till you log in to www.threads.com and follow the instructions given.",
+      "cozum": "Threads token'ını yeniden bootstrap et.",
+      "ilkGorulme": "2026-09-18T19:08:39.591Z"
     },
     "bekleyen-telegram": {
       "alan": "Dağıtım",
@@ -35,11 +35,11 @@
       "detay": "telegram çalışmadığı için 31 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
     },
-    "bekleyen-instagram": {
+    "vazgecilen-instagram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "instagram çalışmadığı için 2 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
-      "ilkGorulme": "2026-09-18T11:28:22.019Z"
+      "detay": "instagram: 23 içeriğin paylaşımından tekrar tekrar başarısız olunca vazgeçilmişti.",
+      "ilkGorulme": "2026-09-18T19:08:39.591Z"
     }
   }
 }
