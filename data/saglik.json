@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-18T19:12:31.229Z",
-  "toplamKontrol": 49,
+  "sonDenetim": "2026-09-18T19:31:53.767Z",
+  "toplamKontrol": 48,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -24,9 +24,9 @@
     },
     "kanal-threads": {
       "alan": "Sosyal kanallar",
-      "durum": "hata",
-      "detay": "Threads API: Error validating access token: You cannot access the app till you log in to www.threads.com and follow the instructions given.",
-      "cozum": "Threads token'ını yeniden bootstrap et.",
+      "durum": "uyari",
+      "detay": "Threads bilerek kapalı (config.kapaliKanallar) — hesap incelemesi bitince listeden çıkar.",
+      "cozum": "data/config.json'da kapaliKanallar'dan \"threads\" değerini sil.",
       "ilkGorulme": "2026-09-18T19:08:39.591Z"
     },
     "bekleyen-telegram": {
@@ -34,12 +34,6 @@
       "durum": "uyari",
       "detay": "telegram çalışmadığı için 31 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "vazgecilen-instagram": {
-      "alan": "Dağıtım",
-      "durum": "uyari",
-      "detay": "instagram: 23 içeriğin paylaşımından tekrar tekrar başarısız olunca vazgeçilmişti.",
-      "ilkGorulme": "2026-09-18T19:08:39.591Z"
     }
   }
 }
