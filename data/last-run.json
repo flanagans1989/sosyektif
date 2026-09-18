@@ -1,9 +1,13 @@
 {
-  "tarih": "2026-09-17T19:02:48.215Z",
+  "tarih": "2026-09-18T05:02:23.502Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 0,
   "onayaDusen": 1,
-  "reddedilen": 0,
-  "hatalar": []
+  "reddedilen": 3,
+  "hatalar": [
+    "İlhan Fakılı: uygun değil: Canlı veya yakın dönemde yaşamış/hakkında ansiklopedik popüler içerik üretilemeyecek bir kişi/biyografi konusu.",
+    "Jülide Kural: uygun değil: Yaşayan gerçek kişilerin kendisi site kuralları gereği konu odağı olamaz.",
+    "Gülsen Tuncer: uygun değil: Yaşayan gerçek bir kişi olduğu için konu odaklı zamansız içerik üretimine uygun değildir."
+  ]
 }
