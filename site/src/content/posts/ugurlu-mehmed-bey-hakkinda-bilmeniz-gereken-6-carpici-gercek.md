@@ -32,7 +32,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Ughurlu Muhammad
     url: https://en.wikipedia.org/wiki/Ughurlu_Muhammad
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Yerzhan Kamalov on Pexels
 moderasyon:
   skor: 1
