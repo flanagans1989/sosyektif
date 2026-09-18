@@ -1,11 +1,9 @@
 {
-  "tarih": "2026-09-18T15:08:54.125Z",
+  "tarih": "2026-09-18T18:20:19.146Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 0,
-  "onayaDusen": 1,
-  "reddedilen": 1,
-  "hatalar": [
-    "Burak Özçivit: uygun değil: Konu odağı yaşayan bir gerçek kişidir (Burak Özçivit). Sitemizin kurallarına göre yaşayan gerçek kişilerin kendisi içerik odağı olamaz."
-  ]
+  "otomatikYayinlanan": 1,
+  "onayaDusen": 0,
+  "reddedilen": 0,
+  "hatalar": []
 }
