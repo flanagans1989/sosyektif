@@ -788,5 +788,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "osmanlinin-sofi-padisahi-ii-bayezid-hakkinda-duyunca-sasiracaginiz-5-gercek": {
+    "eklendi": "2026-09-18T10:22:49.545Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-18T10:22:49.911Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvrx66mjxs23"
+      }
+    },
+    "reelIdleri": {}
   }
 }
