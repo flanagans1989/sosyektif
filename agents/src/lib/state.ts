@@ -28,6 +28,13 @@ export const configSchema = z.object({
    * 2026-09-13'te açıldı (kullanıcı: "her içeriği paylaşalım", YouTube çalışmalı).
    */
   reelsAktif: z.boolean().default(false),
+  /**
+   * Elle kapatılan sosyal kanallar (ör. hesap Meta incelemesindeyken): dağıtım
+   * kuyruğu ve sağlık denetimi o kanalın API'sine HİÇ istek atmaz; paylaşımlar
+   * "bekliyor"da kalır ve kanal listeden çıkarılınca paylaşılır. Değerler:
+   * telegram | bluesky | threads | instagram | facebook | youtube.
+   */
+  kapaliKanallar: z.array(z.string()).default([]),
 });
 export type Config = z.infer<typeof configSchema>;
 

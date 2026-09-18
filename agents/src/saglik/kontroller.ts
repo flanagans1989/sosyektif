@@ -462,8 +462,13 @@ export async function kanalKontrolleri(): Promise<{ sonuclar: KontrolSonucu[]; s
   }
 
   // Threads
-  const threads = await getMetaToken("threads");
-  if (!threads) {
+  const kapaliKanallar = (await readConfig().catch(() => null))?.kapaliKanallar ?? [];
+  const threads = kapaliKanallar.includes("threads") ? null : await getMetaToken("threads");
+  if (kapaliKanallar.includes("threads")) {
+    // Hesap incelemedeyken API'ye hiç istek atma (data/config.json → kapaliKanallar).
+    sonuclar.push(uyari("kanal-threads", "Sosyal kanallar", "Threads bilerek kapalı (config.kapaliKanallar) — hesap incelemesi bitince listeden çıkar.", "data/config.json'da kapaliKanallar'dan \"threads\" değerini sil."));
+    kaydet("threads", false);
+  } else if (!threads) {
     sonuclar.push(hata("kanal-threads", "Sosyal kanallar", "Threads token'ı okunamadı/süresi dolmuş.", "Threads token'ını yeniden bootstrap et (PLAN.md 11.2)."));
     kaydet("threads", false);
   } else {

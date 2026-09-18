@@ -98,7 +98,7 @@ async function canliIcerikleriOku(): Promise<CanliIcerik[]> {
 
 /** Bu çalışmada hangi kanallar kullanılabilir? (Kimlik bilgisi yoksa kanal
  * "bekliyor"da kalır ama deneme hakkı yakılmaz — yapılandırılınca paylaşılır.) */
-async function kullanilabilirKanallar(): Promise<Set<OtomatikKanal>> {
+async function kullanilabilirKanallar(kapali: string[]): Promise<Set<OtomatikKanal>> {
   const set = new Set<OtomatikKanal>();
   if (optionalEnv("TELEGRAM_BOT_TOKEN") && optionalEnv("TELEGRAM_PUBLIC_CHANNEL_ID")) set.add("telegram");
   if (optionalEnv("BLUESKY_HANDLE") && optionalEnv("BLUESKY_APP_PASSWORD")) set.add("bluesky");
@@ -106,6 +106,7 @@ async function kullanilabilirKanallar(): Promise<Set<OtomatikKanal>> {
   if (threads) set.add("threads");
   if (ig?.ig_user_id) set.add("instagram");
   if (fb?.page_id) set.add("facebook");
+  for (const k of kapali) set.delete(k as OtomatikKanal); // config.kapaliKanallar: elle kapatılmış
   return set;
 }
 
@@ -176,7 +177,7 @@ export async function dagitimKuyrugunuIsle(): Promise<KuyrukRaporu> {
 
   const durum = await readDagitimDurumu();
   const icerikler = await canliIcerikleriOku();
-  const kanallar = await kullanilabilirKanallar();
+  const kanallar = await kullanilabilirKanallar(config.kapaliKanallar);
   console.log(`[dagitim] ${icerikler.length} canlı içerik, kullanılabilir kanallar: ${[...kanallar].join(", ") || "yok"}`);
 
   // İlk çalışmada: sosyal kimliği zaten published-index'te olan (eski

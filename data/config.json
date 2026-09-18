@@ -6,5 +6,6 @@
   "onayaDusEsigi": 0.55,
   "ardisikBasarisizCalismaLimiti": 6,
   "ardisikBasarisizCalisma": 0,
-  "reelsAktif": true
+  "reelsAktif": true,
+  "kapaliKanallar": ["threads"]
 }
