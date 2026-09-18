@@ -26,6 +26,7 @@ import { DATA_DIR } from "../lib/paths.js";
 import { optionalEnv } from "../lib/env.js";
 import { escapeHtml, notifyAdmin } from "../lib/telegram.js";
 import { dosyalariHemenYayinla } from "../lib/gitYayinla.js";
+import { DAGITIM_DOSYASI } from "../lib/dagitimDurumu.js";
 import { readConfig, writeConfig } from "../lib/state.js";
 import { PATHS } from "../lib/paths.js";
 import {
@@ -93,8 +94,20 @@ async function main(): Promise<void> {
     githubKontrolleri(onarimYap),
     anahtarKontrolleri(),
   ]);
-  const { sonuclar: dagitimSonuclari, bekleyenVar } = await dagitimKontrolleri(saglik, onarimYap);
+  const { sonuclar: dagitimSonuclari, bekleyenVar, degisti: dagitimDegisti } = await dagitimKontrolleri(saglik, onarimYap);
   const tum: KontrolSonucu[] = [...gruplar.flat(), ...kanalSonuclari, ...dagitimSonuclari];
+
+  // Onarım (vazgeçilen paylaşımları kuyruğa geri alma) data/dagitim.json'u değiştirir.
+  // Yalnızca yerelde kalırsa runner ile birlikte kaybolur; dağıtım workflow'u da
+  // (yeni checkout) değişikliği görmez — o yüzden kuyruğu tetiklemeden ÖNCE push'la.
+  if (dagitimDegisti) {
+    const yayinlandi = dosyalariHemenYayinla([DAGITIM_DOSYASI], "Sağlık denetimi: vazgeçilen paylaşımlar kuyruğa geri alındı");
+    if (!yayinlandi) {
+      for (const k of dagitimSonuclari.filter((s) => s.onarim)) {
+        k.onarim = "Kuyruğa geri alma yapıldı ama git'e yazılamadı (push başarısız); bir sonraki denetimde yeniden denenecek.";
+      }
+    }
+  }
 
   // Çalışan bir kanalda paylaşım bekleyen içerik varsa kuyruğu dürt (saatlik
   // zamanlayıcı gecikmişse bile ilerlesin). Rutin olduğu için bildirim üretmez.
