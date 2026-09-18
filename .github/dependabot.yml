@@ -1,4 +1,6 @@
-# Bağımlılık ve action güncellemeleri PR olarak gelir (pr-kontrol.yml doğrular).
+# Güncellemeler PR olarak gelir (pr-kontrol.yml doğrular). Ana sürüm (major) atlamaları
+# kapalı: sistem otomatik yayın yapıyor ve API adaptörlerini (Bluesky, Meta, Telegram)
+# canlı test etmeden major bump güvenli değil — gerektiğinde elle yükseltilir.
 version: 2
 updates:
   - package-ecosystem: github-actions
@@ -10,12 +12,21 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 3
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: npm
     directory: /site
     schedule:
       interval: weekly
     open-pull-requests-limit: 3
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: npm
     directory: /worker/telegram-onay
     schedule:
       interval: monthly
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
