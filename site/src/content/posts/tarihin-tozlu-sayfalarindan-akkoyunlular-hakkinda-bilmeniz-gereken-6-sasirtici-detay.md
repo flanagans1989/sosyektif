@@ -32,7 +32,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Aq Qoyunlu
     url: https://en.wikipedia.org/wiki/Aq_Qoyunlu
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Amim kashmiri on Pexels
 moderasyon:
   skor: 1
