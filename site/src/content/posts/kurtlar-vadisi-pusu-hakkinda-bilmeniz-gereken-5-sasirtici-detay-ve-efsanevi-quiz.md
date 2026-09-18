@@ -58,7 +58,7 @@ kaynaklar:
   - baslik: Vikipedi — Kurtlar Vadisi Pusu
     url: https://tr.wikipedia.org/wiki/Kurtlar_Vadisi_Pusu
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by z f on Pexels
 moderasyon:
   skor: 1
