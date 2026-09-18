@@ -1,13 +1,14 @@
 {
-  "tarih": "2026-09-18T05:02:23.502Z",
+  "tarih": "2026-09-18T08:20:00.623Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 0,
   "onayaDusen": 1,
-  "reddedilen": 3,
+  "reddedilen": 4,
   "hatalar": [
-    "İlhan Fakılı: uygun değil: Canlı veya yakın dönemde yaşamış/hakkında ansiklopedik popüler içerik üretilemeyecek bir kişi/biyografi konusu.",
-    "Jülide Kural: uygun değil: Yaşayan gerçek kişilerin kendisi site kuralları gereği konu odağı olamaz.",
-    "Gülsen Tuncer: uygun değil: Yaşayan gerçek bir kişi olduğu için konu odaklı zamansız içerik üretimine uygun değildir."
+    "2027 UEFA ülkeler sıralaması: \"UEFA ülkeler sıralaması\" daha önce işlendi",
+    "Kadir İnanır: uygun değil: Yaşayan gerçek bir kişi olduğu için konu odaklı içerik üretimine uygun değildir.",
+    "Neslihan Acar: uygun değil: Yaşayan bir gerçek kişi (oyuncu) olduğu için site politikalarına uymamaktadır.",
+    "Namık Gedik: Kara liste ihlali: intihar"
   ]
 }
