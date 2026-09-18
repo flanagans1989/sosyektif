@@ -953,5 +953,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "tarihin-tozlu-sayfalarindan-akkoyunlular-hakkinda-bilmeniz-gereken-6-sasirtici-detay": {
+    "eklendi": "2026-09-18T11:18:43.779Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-18T11:18:44.338Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvs2c5n33523"
+      }
+    },
+    "reelIdleri": {}
   }
 }
