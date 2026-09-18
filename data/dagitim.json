@@ -166,10 +166,8 @@
         "sonDeneme": "2026-09-13T19:04:50.862Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-14T02:18:42.367Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"ADxveHp"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -204,10 +202,8 @@
         "sonDeneme": "2026-09-13T19:10:31.492Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-14T02:18:44.263Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"APTAUKn"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -294,10 +290,8 @@
         "sonDeneme": "2026-09-13T21:01:58.519Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-14T04:01:46.180Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"APPOnKv"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -324,10 +318,8 @@
         "sonDeneme": "2026-09-13T21:19:00.071Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-14T05:02:58.879Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AIvXjsM"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -354,10 +346,8 @@
         "sonDeneme": "2026-09-13T21:30:55.138Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-14T06:01:37.156Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"A4JOab8"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -384,10 +374,8 @@
         "sonDeneme": "2026-09-13T21:44:16.968Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-14T07:01:38.859Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AdKxXrG"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -414,10 +402,8 @@
         "sonDeneme": "2026-09-13T22:01:42.882Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-14T08:01:42.961Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AbmrKiH"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -444,10 +430,8 @@
         "sonDeneme": "2026-09-14T01:18:45.485Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-14T10:19:01.344Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AgO98DG"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -474,10 +458,8 @@
         "sonDeneme": "2026-09-14T08:21:00.044Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-14T16:01:34.435Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AuHin-3"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -517,10 +499,8 @@
         "sonDeneme": "2026-09-14T12:19:03.774Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-14T19:19:37.437Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"ADHEw4z"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -560,10 +540,8 @@
         "sonDeneme": "2026-09-15T08:20:18.088Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-15T15:17:10.310Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AWPDnD_"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -595,10 +573,8 @@
         "sonDeneme": "2026-09-15T19:03:40.072Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-16T02:01:31.730Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AoP2Qhi"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -630,10 +606,8 @@
         "sonDeneme": "2026-09-16T08:20:23.137Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-16T15:18:43.306Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AbVvNap"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -665,10 +639,8 @@
         "sonDeneme": "2026-09-17T05:03:28.339Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-17T12:02:04.612Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"ApZkNVI"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -700,10 +672,8 @@
         "sonDeneme": "2026-09-17T08:21:20.405Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-17T15:19:27.406Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AzKmmhl"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -735,10 +705,8 @@
         "sonDeneme": "2026-09-18T10:01:43.623Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-18T16:18:59.257Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"Agt-9OU"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -770,10 +738,8 @@
         "sonDeneme": "2026-09-18T10:19:19.481Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-18T17:18:36.582Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"APMcCMv"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -805,10 +771,8 @@
         "sonDeneme": "2026-09-18T10:23:00.177Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-18T17:18:38.618Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AqpxtMP"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -840,10 +804,8 @@
         "sonDeneme": "2026-09-18T10:27:03.357Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-18T17:18:40.351Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"Ag65NTi"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -875,10 +837,8 @@
         "sonDeneme": "2026-09-18T10:31:00.642Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-18T18:01:23.996Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AkUO1de"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -910,10 +870,8 @@
         "sonDeneme": "2026-09-18T10:35:10.580Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-18T18:18:47.962Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AnweMeZ"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -940,10 +898,8 @@
         "sonDeneme": "2026-09-18T12:02:36.467Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-18T18:26:17.941Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"AXHty0a"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
@@ -970,10 +926,8 @@
         "sonDeneme": "2026-09-18T11:19:05.111Z"
       },
       "instagram": {
-        "durum": "vazgecildi",
-        "deneme": 4,
-        "sonDeneme": "2026-09-18T18:39:26.927Z",
-        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":0,\"fbtrace_id\":\"A8jNfmS"
+        "durum": "bekliyor",
+        "deneme": 0
       },
       "facebook": {
         "durum": "ok",
