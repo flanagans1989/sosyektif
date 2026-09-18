@@ -57,7 +57,7 @@ kaynaklar:
   - baslik: Vikipedi — UEFA ülkeler sıralaması
     url: https://tr.wikipedia.org/wiki/UEFA_%C3%BClkeler_s%C4%B1ralamas%C4%B1
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Almuntadhar  Faris on Pexels
 moderasyon:
   skor: 1
