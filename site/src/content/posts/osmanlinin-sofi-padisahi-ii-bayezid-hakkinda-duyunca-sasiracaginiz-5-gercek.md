@@ -30,7 +30,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Bayezid II
     url: https://en.wikipedia.org/wiki/Bayezid_II
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Buğra on Pexels
 moderasyon:
   skor: 0.85
