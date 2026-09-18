@@ -823,5 +823,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "ugurlu-mehmed-bey-hakkinda-bilmeniz-gereken-6-carpici-gercek": {
+    "eklendi": "2026-09-18T10:26:53.619Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-18T10:26:54.157Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvrxfhkg422i"
+      }
+    },
+    "reelIdleri": {}
   }
 }
