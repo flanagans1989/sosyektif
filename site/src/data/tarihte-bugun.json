@@ -1,63 +1,56 @@
 {
-  "tarih": "2026-09-17",
+  "tarih": "2026-09-18",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1683,
-      "baslik": "Antonie van Leeuwenhoek'un Mikroorganizma Keşfi",
-      "metin": "Hollandalı mikroskop uzmanı Antonie van Leeuwenhoek, Londra'daki Kraliyet Cemiyeti'ne yazdığı mektupta protozoa olarak bilinecek tek hücreli mikroorganizmaları tarif etti. Kendi geliştirdiği özel merceklerle suda yaşayan mikroskobik canlıları ilk kez gözlemleyen Leeuwenhoek, bu adımıyla mikrobiyolojinin temellerini attı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Antonie_van_Leeuwenhoek"
-    },
-    {
-      "yil": 1857,
-      "baslik": "Roket Biliminin Öncüsü Konstantin Tsiolkovsky Doğdu",
-      "metin": "Modern roket biliminin ve astronotiğin kurucularından kabul edilen Rus bilim insanı Konstantin Tsiolkovsky dünyaya geldi. İnsanlığın Dünya atmosferi dışına çıkabileceğini kuramsal hesaplamalarla ilk kez ortaya koyan Tsiolkovsky, uzay çağının kapısını aralayan en önemli teorisyenlerden biri oldu.",
+      "yil": 1819,
+      "baslik": "Fark Sarkaçını İcat Eden Fizikçi Léon Foucault Doğdu",
+      "metin": "Dünyanın kendi ekseni etrafındaki dönüşünü kanıtlayan Foucault sarkacını icat eden Fransız fizikçi Léon Foucault dünyaya geldi. Foucault aynı zamanda ışık hızının erken ölçümlerini yapan ve girdap akımlarını keşfeden bilim insanıdır.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Konstantin_Tsiolkovsky"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/L%C3%A9on_Foucault"
     },
     {
-      "yil": 1943,
-      "baslik": "Ankara Üniversitesi Fen Fakültesi Kuruldu",
-      "metin": "Türkiye'de Cumhuriyet döneminin ilk kurulan fakültelerinden olan Ankara Üniversitesi Fen Fakültesi kapılarını açtı. Fakülte, temel bilimler ve mühendislik alanındaki araştırmalarıyla Türkiye'de modern bilimin gelişmesinde öncü bir rol üstlendi.",
+      "yil": 1879,
+      "baslik": "Blackpool Işık Festivali Başlatıldı",
+      "metin": "İngiltere'nin sahil kasabası Blackpool'da geleneksel ışık festivali ilk kez bu tarihte aydınlatıldı. Yıllardır sonbahar sezonunda düzenlenen bu renkli etkinlik, kasabanın simgelerinden biri haline geldi.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Blackpool_Illuminations"
+    },
+    {
+      "yil": 1908,
+      "baslik": "Teorik Astrofiziğin Öncüsü Victor Ambartsumian Doğdu",
+      "metin": "Sovyet ve Ermeni astrofizisyen Victor Ambartsumian dünyaya geldi. Yirminci yüzyılın önde gelen gökbilimcilerinden olan Ambartsumian, teorik astrofiziğin kurucusu olarak kabul edilir.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Viktor_Ambartsumian"
+    },
+    {
+      "yil": 1928,
+      "baslik": "Juan de la Cierva'ndan Manş Denizi'ni Gyrocopter ile Geçiş",
+      "metin": "Havacılık mühendisi Juan de la Cierva, kendi icadı olan döner kanatlı hava taşıtı Autogyro ile Manş Denizi'ni geçen ilk kişi oldu. Bu cesur uçuş, havacılık tarihinde dönüm noktası olarak kabul edildi.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ankara_%C3%9Cniversitesi_Fen_Fak%C3%BCltesi"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Juan_de_la_Cierva"
     },
     {
       "yil": 1958,
-      "baslik": "Hergé'nin Gözbebeği 'Tintin Tibet'te' Tefrika Edilmeye Başlandı",
-      "metin": "Belçikalı çizer Hergé'nin ünlü çizgi roman serisi Tintin'in yirminci macerası olan 'Tintin Tibet'te', haftalık Tintin dergisinde yayımlanmaya başladı. Himalayalar'da kaybolan bir dostun izini süren bu klasik albüm, çizeri Hergé tarafından da serinin en sevdiği eseri olarak nitelendirilmişti.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Tintin_in_Tibet"
-    },
-    {
-      "yil": 1961,
-      "baslik": "Dünyanın İlk Açılır Kapanır Çatılı Stadyumu Civic Arena Açıldı",
-      "metin": "Pensilvanya eyaletinin Pittsburgh kentinde inşa edilen çok amaçlı spor tesisi Civic Arena hizmete girdi. Dünyanın ilk açılır kapanır kubbe çatısına sahip olan bu ikonik yapı, modern stadyum mimarisinde yeni bir çığır açtı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Civic_Arena_(Pittsburgh)"
-    },
-    {
-      "yil": 1976,
-      "baslik": "NASA İlk Uzay Mekiği Enterprise'ı Tanıttı",
-      "metin": "NASA, Uzay Mekiği programı kapsamında üretilen ilk yörünge test aracı olan Enterprise'ı kamuoyunun beğenisine sundu. Uzaya fırlatılmamış olsa da kritik iniş ve süzülme testlerinde kullanılan mekik, gelecekteki insanlı uzay görevlerinin güvenliğini şekillendirdi.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Space_Shuttle_Enterprise"
-    },
-    {
-      "yil": 1991,
-      "baslik": "Linux Çekirdeğinin İlk Sürümü İnternette Yayımlandı",
-      "metin": "Linus Torvalds tarafından geliştirilen açık kaynaklı Unix benzeri işletim sistemi çekirdeği Linux'un ilk versiyonu (0.01) internette kullanıma sunuldu. Küçük bir merak projesi olarak doğan bu çekirdek, bugün küresel internet sunucularından akıllı cihazlara kadar uzanan devasa bir açık kaynak devrimine dönüştü.",
+      "baslik": "Bank of America İlk Kredi Kartını Tanıttı",
+      "metin": "Bank of America, daha sonra VISA adını alacak olan ilk kredi kartı BankAmericard'ı Kaliforniya'nın Fresno County bölgesinde test piyasasına sürdü. Bu yenilik, küresel finans ve alışveriş alışkanlıklarını kökten değiştirdi.",
       "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Linux"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Bank_of_America"
     },
     {
-      "yil": 2014,
-      "baslik": "Microsoft, Minecraft'ın Geliştiricisi Mojang'ı Satın Aldı",
-      "metin": "Markus 'Notch' Persson tarafından geliştirilen dünyaca ünlü piksel tabanlı sandbox oyunu Minecraft'ın yapımcısı Mojang Studios, Microsoft bünyesine katıldı. 2,5 milyar dolarlık bu anlaşma, video oyun endüstrisi tarihinin en büyük satın alımlarından biri olarak kayıtlara geçti.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Minecraft"
+      "yil": 1977,
+      "baslik": "Voyager 1 Tarafından Çekilen İlk Dünya ve Ay Fotoğrafı",
+      "metin": "Uzay aracı Voyager 1, Dünya ve Ay'ın uzaydan çekilen ilk uzak fotoğrafını kaydetti. Bu kare, insanlığın evrendeki yerini gözler önüne seren tarihi bir an olarak kayıtlara geçti.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Voyager_1"
+    },
+    {
+      "yil": 2010,
+      "baslik": "Manş Denizi'ni Dört Uzuv Kaybıyla Yüzen İlk İsim",
+      "metin": "Fransız sporcu Philippe Croizon, dört uzvu da olmayan ilk kişi olarak Manş Denizi'ni yüzerek geçmeyi başardı. Bu inanılmaz azim örneği, spor tarihine adını altın harflerle yazdırdı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Philippe_Croizon"
     }
   ]
 }
