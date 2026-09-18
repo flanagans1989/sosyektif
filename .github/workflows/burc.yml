@@ -25,9 +25,9 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: "22"
           cache: "npm"
@@ -50,7 +50,7 @@ jobs:
       - name: Değişiklikleri commit'le ve gönder
         run: |
           git config user.name "sosyektif-bot"
-          git config user.email "deraksizolasyon@gmail.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add site/src/data/gunluk-burc.json site/src/data/haftalik-burc.json site/src/data/tarihte-bugun.json
           if git diff --cached --quiet; then
             echo "Değişiklik yok, commit atlanıyor."

@@ -1,0 +1,70 @@
+name: PR Kontrolü
+
+# Otomatik commit'ler main'e doğrudan gider; bu workflow insan/Dependabot PR'larını
+# ve elle yapılan main push'larını doğrular (tip hatası, site build'i, Worker derlemesi).
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - "agents/**"
+      - "site/src/**"
+      - "site/*.mjs"
+      - "site/package*.json"
+      - "worker/**"
+      - ".github/workflows/**"
+
+concurrency:
+  group: pr-kontrol-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  agents:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: agents/package-lock.json
+      - working-directory: agents
+        run: npm ci
+      - working-directory: agents
+        run: npm run typecheck
+
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: site/package-lock.json
+      - working-directory: site
+        run: npm ci
+      - working-directory: site
+        run: npm run check
+      - working-directory: site
+        run: npm run build
+
+  worker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: worker/telegram-onay/package-lock.json
+      - working-directory: worker/telegram-onay
+        run: npm ci
+      - working-directory: worker/telegram-onay
+        run: npx tsc --noEmit
