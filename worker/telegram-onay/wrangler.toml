@@ -28,15 +28,12 @@ crons = ["17 * * * *"]
 binding = "METRIKLER"
 id = "fdb4338b9f094a2083dcb827207c2d80" # sosyektif_metrikler (deraksizolasyon hesabı)
 
-# ÖNERİLEN (elle, dashboard): tepki sayaçları için ikinci bir KV namespace.
-# Herkese açık /tepki, METRIKLER'le (Meta token'ları + Reels videoları) aynı
-# günlük yazma kotasını paylaşıyordu. Kod artık "TEPKI" bağlaması varsa onu
-# kullanıyor (yoksa METRIKLER'e düşer; eski sayaçlar okunmaya devam eder):
-#   Workers & Pages > KV > Create namespace "sosyektif_tepki", sonra Worker >
-#   Settings > Bindings > KV Namespace: Variable name = TEPKI.
-# [[kv_namespaces]]
-# binding = "TEPKI"
-# id = "<dashboard'dan alınacak>"
+# Tepki sayaçları AYRI namespace'te (2026-09-18): herkese açık /tepki, METRIKLER'le
+# (Meta token'ları + Reels videoları) aynı günlük yazma kotasını paylaşmasın.
+# Kod "TEPKI" varsa onu kullanır; eski sayaçlar METRIKLER'den okunmaya devam eder.
+[[kv_namespaces]]
+binding = "TEPKI"
+id = "c62521dd264f47c0abc938e0804cca93" # sosyektif-telegram-onay-sosyektif_tepki
 #
 # Not: koddaki hız sınırı (hizSiniri) bellekte, yalnızca Worker örneği (isolate)
 # başına geçerli — kaba bir ilk savunma. Kalıcı/genel sınır için Durable Object
