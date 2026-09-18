@@ -21,13 +21,22 @@ tamamını okumadan önce `grep -n "^#" PLAN.md` ile ilgili bölümü bul, sadec
 - `worker/telegram-onay/` — Cloudflare Worker: Telegram onay butonları (içerik + Reels `reel_ok`/`reel_no`),
   Meta token KV'si (`/meta-token`, Threads/Instagram otomatik yenileme) + `data/config.json` acil durdurma.
   Asıl tetikleyici dış cron-job.org (bkz. `wrangler.toml` yorumları), GitHub/Cloudflare cron'larına güvenilmiyor.
-  **Deploy:** wrangler bu hesaba bağlı değil — `dashboard-paste.js` (tsc çıktısı) Cloudflare panelinde Quick Edit'e yapıştırılır.
+  **Deploy:** `cd worker/telegram-onay && npx wrangler deploy` (wrangler bu hesaba OAuth ile bağlı; secret'lara dokunmaz).
+  Claude Code üretim deploy'unu engeller → kullanıcı `!` önekiyle çalıştırır. Worker kodu değişince `WORKER_SURUMU`
+  (worker) + `BEKLENEN_WORKER_SURUMU` (`agents/src/saglik/kontroller.ts`) birlikte artırılır. Instagram token yenileme:
+  `node scripts/instagram-token-yaz.mjs` (aynı klasörde). `dashboard-paste.js` eski elle-yapıştırma yöntemi için kaldı.
 - `data/` — çalışma zamanı durumu: `config.json` (paused flag), `blocklist.json`, `category-weights.json`,
   `evergreen.json`, `published-index.json` (tekrar önleme), `rejected-topics.json`, `last-run.json`. **Üretilmiş/durum verisi — gözle incelemek gerekirse `grep`/`jq` ile ilgili anahtarı çek, tamamını okuma.**
 - `.github/workflows/` — `pipeline.yml` (ana cron), `dagitim.yml` (sosyal medya kuyruğu, saatlik + pipeline/onay sonrası),
   `saglik-denetimi.yml` (6 saatte bir audit + onarım), `daily-report.yml`, `weekly-analytics.yml` (+ sosyal performans),
   `burc.yml`, `burc-uyum.yml`, `reel-onizle-telegram.yml` (elle: Reels'i onay butonlarıyla Telegram'a gönderir),
   `reel-paylas.yml` (Worker'ın ✅ butonu başlatır).
+
+## Durum bayrakları (`data/config.json`, `data/dagitim.json`)
+- `kapaliKanallar: ["threads"]` — listedeki kanala dağıtım/sağlık denetimi istek atmaz (Threads Meta incelemesinde).
+- `gunlukHedefIcerikSayisi` (şu an 1), `reelsAktif`, `paused`.
+- `dagitim.json` kanal durumları: `bekliyor|hata|vazgecildi|onayda|ok|iptal`. `vazgecildi` kanal düzelince otomatik geri
+  alınır; `iptal` (elle temizlik) asla geri alınmaz. Meta hız sınırı hatası deneme hakkı yemez (`HIZ_SINIRI_HATASI`).
 
 ## Komutlar
 - Ajanlar: `cd agents && npm run pipeline` / `dagit` / `saglik-denetimi` / `youtube-yetkilendir` / `daily-report` / `weekly-analytics` / `sosyal-performans` / `burc` / `typecheck`
