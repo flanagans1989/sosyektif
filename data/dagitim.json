@@ -1243,5 +1243,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "turk-sinemasinin-efsane-isimli-yonetmeni-engin-ayca-hakkinda-ne-biliyorsun-5-soruluk-test": {
+    "eklendi": "2026-09-19T05:03:16.471Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-19T05:03:16.894Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mvtvrpawyy2v"
+      }
+    },
+    "reelIdleri": {}
   }
 }
