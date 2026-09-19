@@ -1,56 +1,56 @@
 {
-  "tarih": "2026-09-18",
+  "tarih": "2026-09-19",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1819,
-      "baslik": "Fark Sarkaçını İcat Eden Fizikçi Léon Foucault Doğdu",
-      "metin": "Dünyanın kendi ekseni etrafındaki dönüşünü kanıtlayan Foucault sarkacını icat eden Fransız fizikçi Léon Foucault dünyaya geldi. Foucault aynı zamanda ışık hızının erken ölçümlerini yapan ve girdap akımlarını keşfeden bilim insanıdır.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/L%C3%A9on_Foucault"
-    },
-    {
-      "yil": 1879,
-      "baslik": "Blackpool Işık Festivali Başlatıldı",
-      "metin": "İngiltere'nin sahil kasabası Blackpool'da geleneksel ışık festivali ilk kez bu tarihte aydınlatıldı. Yıllardır sonbahar sezonunda düzenlenen bu renkli etkinlik, kasabanın simgelerinden biri haline geldi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Blackpool_Illuminations"
-    },
-    {
-      "yil": 1908,
-      "baslik": "Teorik Astrofiziğin Öncüsü Victor Ambartsumian Doğdu",
-      "metin": "Sovyet ve Ermeni astrofizisyen Victor Ambartsumian dünyaya geldi. Yirminci yüzyılın önde gelen gökbilimcilerinden olan Ambartsumian, teorik astrofiziğin kurucusu olarak kabul edilir.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Viktor_Ambartsumian"
-    },
-    {
-      "yil": 1928,
-      "baslik": "Juan de la Cierva'ndan Manş Denizi'ni Gyrocopter ile Geçiş",
-      "metin": "Havacılık mühendisi Juan de la Cierva, kendi icadı olan döner kanatlı hava taşıtı Autogyro ile Manş Denizi'ni geçen ilk kişi oldu. Bu cesur uçuş, havacılık tarihinde dönüm noktası olarak kabul edildi.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Juan_de_la_Cierva"
-    },
-    {
-      "yil": 1958,
-      "baslik": "Bank of America İlk Kredi Kartını Tanıttı",
-      "metin": "Bank of America, daha sonra VISA adını alacak olan ilk kredi kartı BankAmericard'ı Kaliforniya'nın Fresno County bölgesinde test piyasasına sürdü. Bu yenilik, küresel finans ve alışveriş alışkanlıklarını kökten değiştirdi.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Bank_of_America"
-    },
-    {
-      "yil": 1977,
-      "baslik": "Voyager 1 Tarafından Çekilen İlk Dünya ve Ay Fotoğrafı",
-      "metin": "Uzay aracı Voyager 1, Dünya ve Ay'ın uzaydan çekilen ilk uzak fotoğrafını kaydetti. Bu kare, insanlığın evrendeki yerini gözler önüne seren tarihi bir an olarak kayıtlara geçti.",
+      "yil": 1575,
+      "baslik": "Takiyüddin Efendi Öncülüğünde İstanbul Rasathanesi Açıldı",
+      "metin": "Padişah III. Murat'ın görevlendirdiği Müneccimbaşı Takiyüddin Efendi'nin çalışmalarıyla İstanbul Rasathanesi faaliyete geçti. Galatasaray Lisesi civarında kurulduğu tahmin edilen bu önemli gözlemevi, çağının ötesindeki araştırmalarına rağmen yalnızca beş yıl sonra yıktırıldı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Voyager_1"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/III._Murad"
     },
     {
-      "yil": 2010,
-      "baslik": "Manş Denizi'ni Dört Uzuv Kaybıyla Yüzen İlk İsim",
-      "metin": "Fransız sporcu Philippe Croizon, dört uzvu da olmayan ilk kişi olarak Manş Denizi'ni yüzerek geçmeyi başardı. Bu inanılmaz azim örneği, spor tarihine adını altın harflerle yazdırdı.",
+      "yil": 1749,
+      "baslik": "Gökbilimci ve Matematikçi Jean Baptiste Delambre Doğdu",
+      "metin": "Fransız matematikçi, gökbilimci ve jeodezi uzmanı Jean Baptiste Joseph Delambre dünyaya geldi. Daha sonra Paris Gözlemevi'nin müdürlüğünü de yürüten Delambre, gökbilim tarihini derleyen temel yapıtları ve jeodezik ölçümleriyle modern bilime kalıcı izler bıraktı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Jean_Baptiste_Joseph_Delambre"
+    },
+    {
+      "yil": 1852,
+      "baslik": "Gökbilimci Annibale de Gasparis Massalia Asteroitini Keşfetti",
+      "metin": "İtalyan gökbilimci Annibale de Gasparis, Capodimonte Astronomi Gözlemevi'nin kuzey kubbesinden yaptığı gözlemler sırasında Massalia asteroitini keşfetti. Asteroit avcılığı ve teorik gökbilime yaptığı katkılarla tanınan De Gasparis, gökyüzü haritalarına yeni bir gök cismi eklemeyi başardı.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Annibale_de_Gasparis"
+    },
+    {
+      "yil": 1893,
+      "baslik": "Yeni Zelanda Kadınlara Oy Hakkı Tanıyan İlk Ulus Oldu",
+      "metin": "Kate Sheppard'ın 1866'da başlattığı mücadelenin ardından Yeni Zelanda Kolonisi, kadınlara genel oy hakkı tanıyan ilk ülke olarak tarihe geçti. Bu tarihi reform, dünya çapında evrensel oy hakkı ve kadın hakları hareketlerine ilham kaynağı oldu.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Yeni_Zelanda"
+    },
+    {
+      "yil": 1970,
+      "baslik": "İlk Glastonbury Festivali Michael Eavis'in Çiftliğinde Yapıldı",
+      "metin": "Efsanevi Glastonbury Çağdaş Sahne Sanatları Festivali, süt çiftçisi Michael Eavis'in İngiltere Pilton'daki arazisinde ilk kez düzenlendi. Çiftlik çayırlarında başlayan bu mütevazı buluşma, yıllar içinde dünyanın en büyük ve en prestijli açık hava müzik festivallerinden birine dönüştü.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Glastonbury_Festival"
+    },
+    {
+      "yil": 1982,
+      "baslik": "Scott Fahlman İlk Dijital Gülen Yüz Simgesini Paylaştı",
+      "metin": "Bilgisayar bilimcisi Scott Fahlman, Carnegie Mellon Üniversitesi'nin bülten panosunda ilk belgelenmiş gülen yüz :-) ve üzgün yüz :-( sembollerini paylaştı. İnternet ortamında şaka ile ciddiyeti ayırt etmek için önerilen bu basit işaretler, modern emojilerin ve dijital duygu ifadelerinin başlangıcı oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Scott_Fahlman"
+    },
+    {
+      "yil": 1987,
+      "baslik": "Türk Serbest Güreş Takımı Akdeniz Oyunları'nda Zirveye Çıktı",
+      "metin": "10. Akdeniz Oyunları'nda mindere çıkan Türk Serbest Güreş Millî Takımı, 6 altın ve 1 gümüş madalya kazanarak takım halinde şampiyon oldu. Sporcularımızın bu üstün performansı, Türkiye'nin güreşteki geleneksel gücünü Akdeniz arenasında bir kez daha kanıtladı.",
       "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Philippe_Croizon"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Akdeniz_Oyunlar%C4%B1"
     }
   ]
 }
