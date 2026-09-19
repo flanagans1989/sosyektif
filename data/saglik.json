@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-19T04:45:50.182Z",
-  "toplamKontrol": 45,
+  "sonDenetim": "2026-09-19T06:01:08.237Z",
+  "toplamKontrol": 48,
   "sorunlar": {
     "gorsel-unsplash": {
       "alan": "Görsel",
@@ -21,6 +21,18 @@
       "detay": "Threads bilerek kapalı (config.kapaliKanallar) — hesap incelemesi bitince listeden çıkar.",
       "cozum": "data/config.json'da kapaliKanallar'dan \"threads\" değerini sil.",
       "ilkGorulme": "2026-09-18T19:08:39.591Z"
+    },
+    "bekleyen-telegram": {
+      "alan": "Dağıtım",
+      "durum": "uyari",
+      "detay": "telegram çalışmadığı için 1 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "ilkGorulme": "2026-09-19T06:01:08.237Z"
+    },
+    "bekleyen-threads": {
+      "alan": "Dağıtım",
+      "durum": "uyari",
+      "detay": "threads çalışmadığı için 1 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "ilkGorulme": "2026-09-19T06:01:08.237Z"
     }
   }
 }
