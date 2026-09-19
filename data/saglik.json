@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-19T15:57:30.604Z",
-  "toplamKontrol": 48,
+  "sonDenetim": "2026-09-19T18:01:17.178Z",
+  "toplamKontrol": 49,
   "sorunlar": {
     "gorsel-unsplash": {
       "alan": "Görsel",
@@ -33,6 +33,13 @@
       "durum": "uyari",
       "detay": "threads çalışmadığı için 1 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-19T06:01:08.237Z"
+    },
+    "tutarlilik-facebook": {
+      "alan": "Dağıtım",
+      "durum": "hata",
+      "detay": "facebook: kayıtta 32 paylaşım var ama hesapta 19 gönderi görünüyor.",
+      "cozum": "Gönderiler silinmiş ya da paylaşım sessizce başarısız olmuş olabilir.",
+      "ilkGorulme": "2026-09-19T18:01:17.178Z"
     }
   }
 }
