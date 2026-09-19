@@ -16,7 +16,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import yaml from "js-yaml";
-import { muzikEkle, muzikKutuphanesi, muzikSec, reelUret } from "../image/reelRender.js";
+import { REEL_KAPAK_MS, muzikEkle, muzikKutuphanesi, muzikSec, reelUret } from "../image/reelRender.js";
 import { REEL_GENISLIK, REEL_YUKSEKLIK } from "../image/reelSablon.js";
 import { writeReelVideo } from "../image/social.js";
 import { canliyaCikanaKadarBekle, dosyalariHemenYayinla } from "../lib/gitYayinla.js";
@@ -117,7 +117,7 @@ ${escapeHtml(slug)}`);
     return null;
   };
   const [igId, fbId, yt] = await Promise.all([
-    postReelToInstagram(metinler.instagram, dosya.url).catch(hataYaz("instagram")),
+    postReelToInstagram(metinler.instagram, dosya.url, REEL_KAPAK_MS).catch(hataYaz("instagram")),
     postVideoToFacebook(metinler.facebook, dosya.url).catch(hataYaz("facebook")),
     postShortToYouTube({
       baslik: frontmatter.baslik,

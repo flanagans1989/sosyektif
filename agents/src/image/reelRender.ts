@@ -28,6 +28,11 @@ import { REEL_GENISLIK, REEL_YUKSEKLIK, reelBelgesi, type ReelBaglami } from "./
 
 export const REEL_FPS = 30;
 
+/** Instagram Reels kapağı için videodan alınacak an (ms). 0. kare siyah (arka plan animasyonla
+ * giriyor → Instagram'da kapak siyah görünüyordu); kapak sahnesi ~2400ms'de tam oturuyor
+ * (fotoğraf + kategori + başlık) ve 3450ms'de çıkışa başlıyor. */
+export const REEL_KAPAK_MS = 2600;
+
 /**
  * Metin sığdırma (data-sigdir) animasyonların BİTİŞ durumunda ölçülmeli:
  * başlangıçta kelimeler translateY ile aşağıda duruyor ve transform taşması

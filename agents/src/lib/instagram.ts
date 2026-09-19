@@ -161,9 +161,11 @@ export async function postToInstagram(caption: string, imageUrls: string[]): Pro
  * container'ı fotoğraftan farklı olarak arka planda işleniyor, bu yüzden
  * FINISHED olana kadar poll ediliyor (bkz. containerHazirOlanaKadarBekle).
  * @param videoUrl Herkese açık .mp4 URL'i (agents/src/image/reelRender.ts).
+ * @param kapakMs Kapak olarak kullanılacak videodaki an (`thumb_offset`). Verilmezse
+ *   Instagram ilk kareyi alır — bizim videolarda o kare siyah.
  * @returns Yayınlanan Reels'in media ID'si — token/kurulum eksikse `null`.
  */
-export async function postReelToInstagram(caption: string, videoUrl: string): Promise<string | null> {
+export async function postReelToInstagram(caption: string, videoUrl: string, kapakMs?: number): Promise<string | null> {
   const token = await getMetaToken("instagram");
   const ig_user_id = token?.ig_user_id;
   if (!token || !ig_user_id) {
@@ -176,6 +178,7 @@ export async function postReelToInstagram(caption: string, videoUrl: string): Pr
     media_type: "REELS",
     video_url: videoUrl,
     caption,
+    ...(kapakMs !== undefined ? { thumb_offset: String(Math.round(kapakMs)) } : {}),
   });
   await containerHazirOlanaKadarBekle(containerId, access_token);
   return yayinla(ig_user_id, access_token, containerId);
