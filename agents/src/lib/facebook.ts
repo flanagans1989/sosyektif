@@ -8,6 +8,52 @@ import { getMetaToken } from "./metaToken.js";
 
 const GRAPH_BASE = "https://graph.facebook.com/v21.0";
 
+/** Sayfanın son gönderilerinde aynı metinli olanı arar (`kaynak`: "posts" ya da "videos").
+ * Aynı içerik iki kez paylaşılmasın diye paylaşmadan önce ve hata sonrasında bakılır
+ * (2026-09-18, akkoyunlular: iki eşzamanlı dağıtım çalışması aynı içeriği iki kez attı).
+ * Bulunamazsa ya da liste okunamazsa `null` (okuma izni yoksa eski davranış). */
+async function ayniGonderiVarMi(
+  pageId: string,
+  accessToken: string,
+  metin: string,
+  kaynak: "posts" | "videos"
+): Promise<string | null> {
+  const alan = kaynak === "posts" ? "message" : "description";
+  try {
+    const res = await fetch(
+      `${GRAPH_BASE}/${pageId}/${kaynak}?` +
+        new URLSearchParams({ fields: `id,${alan}${kaynak === "posts" ? ",status_type" : ""}`, limit: "30", access_token: accessToken })
+    );
+    if (!res.ok) {
+      console.warn(`[facebook] son ${kaynak} okunamadı (${res.status}), yinelenen kontrolü atlandı`);
+      return null;
+    }
+    const { data } = (await res.json()) as { data?: Record<string, string>[] };
+    // Albüm/fotoğraf metni Reels videosununkiyle aynı: /posts'ta video gönderilerini sayma.
+    return data?.find((g) => g[alan]?.trim() === metin.trim() && g.status_type !== "added_video")?.id ?? null;
+  } catch (err) {
+    console.warn("[facebook] yinelenen kontrolü başarısız:", err);
+    return null;
+  }
+}
+
+/** Paylaşım hata dönerse gönderinin gerçekte çıkıp çıkmadığına bakar; çıktıysa hata yutulur. */
+async function hataSonrasiKontrol(
+  pageId: string,
+  accessToken: string,
+  metin: string,
+  kaynak: "posts" | "videos",
+  hata: unknown
+): Promise<string> {
+  await new Promise((r) => setTimeout(r, 5000));
+  const id = await ayniGonderiVarMi(pageId, accessToken, metin, kaynak);
+  if (id) {
+    console.warn(`[facebook] paylaşım hata döndü ama gönderi sayfada var (${id}), başarı sayıldı:`, hata);
+    return id;
+  }
+  throw hata;
+}
+
 /** Tek bir görseli Sayfa albümüne yayınlanmamış (published=false) olarak yükler. */
 async function fotoYukle(
   pageId: string,
@@ -42,6 +88,17 @@ export async function postToFacebook(message: string, imageUrls: string[]): Prom
   }
   const { access_token } = token;
 
+  const mevcut = await ayniGonderiVarMi(pageId, access_token, message, "posts");
+  if (mevcut) {
+    console.warn(`[facebook] aynı gönderi sayfada zaten var (${mevcut}), yeniden paylaşılmadı`);
+    return mevcut;
+  }
+  return gonderiAt(pageId, access_token, message, imageUrls).catch((err) =>
+    hataSonrasiKontrol(pageId, access_token, message, "posts", err)
+  );
+}
+
+async function gonderiAt(pageId: string, access_token: string, message: string, imageUrls: string[]): Promise<string> {
   if (imageUrls.length === 0) {
     // Görsel yoksa da düz metin+link gönderisi at (Facebook bunu destekliyor,
     // Instagram'dan farklı olarak).
@@ -111,6 +168,12 @@ export async function postVideoToFacebook(description: string, videoUrl: string)
     return null;
   }
   const { access_token } = token;
+
+  const mevcut = await ayniGonderiVarMi(pageId, access_token, description, "videos");
+  if (mevcut) {
+    console.warn(`[facebook] aynı video sayfada zaten var (${mevcut}), yeniden paylaşılmadı`);
+    return mevcut;
+  }
 
   const res = await fetch(
     `${GRAPH_BASE}/${pageId}/videos?` +

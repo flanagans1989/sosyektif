@@ -71,6 +71,24 @@ export function dosyalariHemenYayinla(dosyalar: string[], commitMesaji: string):
   }
 }
 
+/** Uzaktaki son durumu çeker (yalnızca GitHub Actions'ta). Başka bir çalışmanın
+ * data/dagitim.json'a yazdıkları böylece görülür. Başarısızsa false. */
+export function uzakDurumuCek(): boolean {
+  if (!process.env.GITHUB_ACTIONS) return false;
+  try {
+    git(["pull", "--rebase", "--autostash", "origin", "main"]);
+    return true;
+  } catch (err) {
+    console.error("[git-yayinla] pull başarısız:", err);
+    try {
+      git(["rebase", "--abort"]);
+    } catch {
+      // yarıda kalan rebase yoktu — normal
+    }
+    return false;
+  }
+}
+
 /**
  * URL'ler gerçekten canlıya çıkana (200 dönene) kadar kısa aralıklarla
  * yoklar. Cloudflare Pages build süresi değişken olduğu için makul bir

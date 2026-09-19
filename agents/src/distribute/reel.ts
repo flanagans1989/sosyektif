@@ -88,6 +88,13 @@ export async function reeliPaylas(slug: string): Promise<void> {
 ${escapeHtml(slug)}`);
     throw new Error(`${slug}: Reels iptal edilmişti, paylaşılmadı`);
   }
+  // Aynı slug için ✅ iki kez tetiklenirse (çift dokunuş, workflow yeniden çalıştırma) video
+  // Instagram/Facebook/YouTube'a ikinci kez gitmesin.
+  if (oncekiDurum === "ok") {
+    await notifyAdmin(`ℹ️ <b>Reels zaten paylaşılmış</b> — tekrar paylaşılmadı.\n${escapeHtml(slug)}`);
+    console.log(`[reel] ${slug} zaten paylaşılmış, atlandı`);
+    return;
+  }
   const frontmatter = await icerigiOku(slug);
   const publicUrl = `https://sosyektif.com/${slug}/`;
   const metinler = sosyalMetinler(frontmatter, publicUrl);

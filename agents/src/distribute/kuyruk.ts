@@ -40,7 +40,7 @@ import { getMetaToken } from "../lib/metaToken.js";
 import { FORMAT_ETIKETLERI_TR, FORMAT_EMOJI } from "../lib/formatLabels.js";
 import { generateCarouselSlides, writeCarouselSlides } from "../image/social.js";
 import { reeliOnayaGonder, sosyalMetinler } from "./reel.js";
-import { canliyaCikanaKadarBekle, dosyalariHemenYayinla } from "../lib/gitYayinla.js";
+import { canliyaCikanaKadarBekle, dosyalariHemenYayinla, uzakDurumuCek } from "../lib/gitYayinla.js";
 import type { Post } from "../lib/schemas.js";
 
 /** Kuyruğun kendisinin paylaştığı kanallar. YouTube Shorts ve Instagram
@@ -218,8 +218,8 @@ export async function dagitimKuyrugunuIsle(): Promise<KuyrukRaporu> {
       rapor.kalanIcerik++;
       continue;
     }
-    const kayit = (durum[icerik.slug] ??= bosKayit());
-    const m = { ...metinler(icerik.frontmatter, url), ...sosyalMetinler(icerik.frontmatter, url) };
+    let kayit = (durum[icerik.slug] ??= bosKayit());
+    const m ={ ...metinler(icerik.frontmatter, url), ...sosyalMetinler(icerik.frontmatter, url) };
 
     let carousel: Promise<string[]> | null = null;
     const gorseller = () => (carousel ??= carouselHazirla(icerik));
@@ -248,6 +248,17 @@ export async function dagitimKuyrugunuIsle(): Promise<KuyrukRaporu> {
       if (hizSinirliKanallar.has(kanal)) continue;
       if ((turSayaci[kanal] ?? 0) >= (TUR_SINIRI[kanal] ?? Infinity)) {
         rapor.kalanIcerik++;
+        continue;
+      }
+      // Durum çalışmanın başında bir kez okunuyor; bu sırada başka bir çalışma (pipeline/onay/saatlik
+      // tetikleyiciler üst üste binebiliyor) aynı kanala paylaşmış olabilir. Paylaşmadan hemen önce
+      // uzaktaki güncel durumu çek; kanal artık denenmemeli ise dokunma (çift paylaşım, 2026-09-18).
+      if (uzakDurumuCek()) {
+        Object.assign(durum, await readDagitimDurumu());
+        kayit = (durum[icerik.slug] ??= bosKayit());
+      }
+      if (!denenmeli(kayit.kanallar[kanal])) {
+        console.log(`[dagitim] ↷ ${kanal} ← ${icerik.slug}: başka bir çalışma paylaşmış, atlandı`);
         continue;
       }
       turSayaci[kanal] = (turSayaci[kanal] ?? 0) + 1;
