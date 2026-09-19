@@ -65,6 +65,10 @@ const GECMIS_ICERIK_SINIRI = 1;
 const TUR_SINIRI: Partial<Record<string, number>> = { instagram: 2, facebook: 3 };
 /** Kanalın API'si "çağrı sınırı doldu" dediyse bu, içeriğin hatası değil bekleme sebebidir. */
 const HIZ_SINIRI_HATASI = /request limit reached|too many (calls|requests)|rate.?limit|"code":s*(4|17|32|613)/i;
+/** Meta "action is blocked" (alt kod 2207051): geçici kota değil, hesaba konmuş spam/otomasyon
+ * kısıtı. Saatlik denemek (her seferinde onlarca container açmak) kısıtı uzatır → uzun bekle. */
+const ENGEL_HATASI = /2207051|action is blocked/i;
+const ENGEL_BEKLEME_SAAT = 6;
 const TAZE_ICERIK_SAAT = 24;
 const SAAT_MS = 60 * 60 * 1000;
 
@@ -117,7 +121,8 @@ function denenmeli(k: KanalDurumu | undefined): boolean {
   // Artan bekleme: 1., 2., 3. denemeden sonra 1, 2, 3 saat.
   const son = k.sonDeneme ? new Date(k.sonDeneme).getTime() : 0;
   // deneme 0 olabilir (hız sınırı hatası deneme hakkı yemez): en az 1 saat bekle.
-  return Date.now() - son >= Math.max(1, k.deneme) * SAAT_MS;
+  const beklemeSaat = ENGEL_HATASI.test(k.hata ?? "") ? ENGEL_BEKLEME_SAAT : Math.max(1, k.deneme);
+  return Date.now() - son >= beklemeSaat * SAAT_MS;
 }
 
 /** Telegram ve kısa metin (Bluesky/Threads); Instagram/Facebook metinleri reel.ts'teki sosyalMetinler'den. */
@@ -261,7 +266,11 @@ export async function dagitimKuyrugunuIsle(): Promise<KuyrukRaporu> {
           // Geçici kota: deneme hakkı düşülmez, kanal bu çalışmada bırakılır, ≥1 saat sonra yeniden denenir.
           hizSinirliKanallar.add(kanal);
           kayit.kanallar[kanal] = { durum: "hata", deneme: deneme - 1, sonDeneme: new Date().toISOString(), hata: mesaj };
-          rapor.hatalar.push(`${kanal} (${icerik.slug}): API çağrı sınırı doldu, ≥1 saat sonra yeniden denenecek`);
+          rapor.hatalar.push(
+            ENGEL_HATASI.test(mesaj)
+              ? `${kanal} (${icerik.slug}): Meta hesabı kısıtladı ("action is blocked"), ${ENGEL_BEKLEME_SAAT} saat sonra yeniden denenecek — Instagram uygulamasında hesap durumunu kontrol et`
+              : `${kanal} (${icerik.slug}): API çağrı sınırı doldu, ≥1 saat sonra yeniden denenecek`
+          );
           console.warn(`[dagitim] ⏸ ${kanal} hız sınırına çarptı, bu çalışmada bırakıldı: ${mesaj}`);
         } else {
           const vazgec = deneme >= MAKS_DENEME;

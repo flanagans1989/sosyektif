@@ -62,6 +62,39 @@ async function containerHazirOlanaKadarBekle(containerId: string, accessToken: s
   // Zaman aşımı — yine de yayınlamayı dene.
 }
 
+/** Hesabın son gönderilerinde aynı caption'lı gönderiyi arar. Graph API bazen
+ * `media_publish` için hata (403/zaman aşımı) dönerken gönderiyi yine de yayınlıyor;
+ * kuyruk hatayı görüp saatlik yeniden denediği için aynı içerik defalarca çıkıyordu
+ * (2026-09-19, Engin Ayça). Bulunamazsa ya da liste okunamazsa `null`. */
+async function ayniGonderiVarMi(igUserId: string, accessToken: string, caption: string): Promise<string | null> {
+  try {
+    const res = await fetch(
+      `${GRAPH_BASE}/${igUserId}/media?` +
+        new URLSearchParams({ fields: "id,caption", limit: "30", access_token: accessToken })
+    );
+    if (!res.ok) {
+      console.warn(`[instagram] son gönderiler okunamadı (${res.status}), yinelenen kontrolü atlandı`);
+      return null;
+    }
+    const { data } = (await res.json()) as { data?: { id: string; caption?: string }[] };
+    return data?.find((m) => m.caption?.trim() === caption.trim())?.id ?? null;
+  } catch (err) {
+    console.warn("[instagram] yinelenen kontrolü başarısız:", err);
+    return null;
+  }
+}
+
+/** Yayın hatasında gönderinin gerçekte çıkıp çıkmadığına bakar; çıktıysa hata yutulur. */
+async function hataSonrasiKontrol(igUserId: string, accessToken: string, caption: string, hata: unknown): Promise<string> {
+  await bekle(5000);
+  const id = await ayniGonderiVarMi(igUserId, accessToken, caption);
+  if (id) {
+    console.warn(`[instagram] yayın hata döndü ama gönderi hesapta var (${id}), başarı sayıldı:`, hata);
+    return id;
+  }
+  throw hata;
+}
+
 /**
  * @param imageUrls Herkese açık, sırayla gösterilecek görsel URL'leri
  *   (agents/src/image/social.ts -> writeCarouselSlides). Tek görselse
@@ -83,13 +116,22 @@ export async function postToInstagram(caption: string, imageUrls: string[]): Pro
 
   const { access_token } = token;
 
+  // Zaten yayınlanmışsa (önceki deneme hata dönse de çıkmış olabilir) tekrar paylaşma.
+  const mevcut = await ayniGonderiVarMi(ig_user_id, access_token, caption);
+  if (mevcut) {
+    console.warn(`[instagram] aynı gönderi hesapta zaten var (${mevcut}), yeniden paylaşılmadı`);
+    return mevcut;
+  }
+
   if (imageUrls.length === 1) {
     const containerId = await containerOlustur(ig_user_id, access_token, {
       image_url: imageUrls[0]!,
       caption,
     });
     await containerHazirOlanaKadarBekle(containerId, access_token, 2000);
-    return yayinla(ig_user_id, access_token, containerId);
+    return yayinla(ig_user_id, access_token, containerId).catch((err) =>
+      hataSonrasiKontrol(ig_user_id, access_token, caption, err)
+    );
   }
 
   // Carousel: en fazla 10 alt öğe (Instagram sınırı — image/social.ts zaten bu sınırı uyguluyor).
@@ -108,7 +150,9 @@ export async function postToInstagram(caption: string, imageUrls: string[]): Pro
     caption,
   });
   await containerHazirOlanaKadarBekle(carouselId, access_token, 2000);
-  return yayinla(ig_user_id, access_token, carouselId);
+  return yayinla(ig_user_id, access_token, carouselId).catch((err) =>
+    hataSonrasiKontrol(ig_user_id, access_token, caption, err)
+  );
 }
 
 /**
