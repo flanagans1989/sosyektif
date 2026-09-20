@@ -1,56 +1,42 @@
 {
-  "tarih": "2026-09-19",
+  "tarih": "2026-09-20",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1575,
-      "baslik": "Takiyüddin Efendi Öncülüğünde İstanbul Rasathanesi Açıldı",
-      "metin": "Padişah III. Murat'ın görevlendirdiği Müneccimbaşı Takiyüddin Efendi'nin çalışmalarıyla İstanbul Rasathanesi faaliyete geçti. Galatasaray Lisesi civarında kurulduğu tahmin edilen bu önemli gözlemevi, çağının ötesindeki araştırmalarına rağmen yalnızca beş yıl sonra yıktırıldı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/III._Murad"
-    },
-    {
-      "yil": 1749,
-      "baslik": "Gökbilimci ve Matematikçi Jean Baptiste Delambre Doğdu",
-      "metin": "Fransız matematikçi, gökbilimci ve jeodezi uzmanı Jean Baptiste Joseph Delambre dünyaya geldi. Daha sonra Paris Gözlemevi'nin müdürlüğünü de yürüten Delambre, gökbilim tarihini derleyen temel yapıtları ve jeodezik ölçümleriyle modern bilime kalıcı izler bıraktı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Jean_Baptiste_Joseph_Delambre"
-    },
-    {
-      "yil": 1852,
-      "baslik": "Gökbilimci Annibale de Gasparis Massalia Asteroitini Keşfetti",
-      "metin": "İtalyan gökbilimci Annibale de Gasparis, Capodimonte Astronomi Gözlemevi'nin kuzey kubbesinden yaptığı gözlemler sırasında Massalia asteroitini keşfetti. Asteroit avcılığı ve teorik gökbilime yaptığı katkılarla tanınan De Gasparis, gökyüzü haritalarına yeni bir gök cismi eklemeyi başardı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Annibale_de_Gasparis"
+      "yil": 1519,
+      "baslik": "Ferdinand Magellan'ın Dünya Turu Yolculuğu Başladı",
+      "metin": "Portekizli kâşif Ferdinand Magellan, 270 kişi ve 5 gemiyle İspanya'dan yola çıktı. Bu büyük keşif seferi, insanlık tarihinde kürenin ilk kez dolaşılmasıyla sonuçlandı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Portekizliler"
     },
     {
       "yil": 1893,
-      "baslik": "Yeni Zelanda Kadınlara Oy Hakkı Tanıyan İlk Ulus Oldu",
-      "metin": "Kate Sheppard'ın 1866'da başlattığı mücadelenin ardından Yeni Zelanda Kolonisi, kadınlara genel oy hakkı tanıyan ilk ülke olarak tarihe geçti. Bu tarihi reform, dünya çapında evrensel oy hakkı ve kadın hakları hareketlerine ilham kaynağı oldu.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Yeni_Zelanda"
+      "baslik": "Charles ve Kardeşinden Benzinli Otomobil Testi",
+      "metin": "Charles Duryea ve kardeşi, tamamen Amerikan yapımı ilk benzinli otomobilin yol testini gerçekleştirdi. Bu öncü deneme, ABD'de otomotiv sanayisinin doğuşunda kritik bir eşik oldu.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Charles_Duryea"
     },
     {
-      "yil": 1970,
-      "baslik": "İlk Glastonbury Festivali Michael Eavis'in Çiftliğinde Yapıldı",
-      "metin": "Efsanevi Glastonbury Çağdaş Sahne Sanatları Festivali, süt çiftçisi Michael Eavis'in İngiltere Pilton'daki arazisinde ilk kez düzenlendi. Çiftlik çayırlarında başlayan bu mütevazı buluşma, yıllar içinde dünyanın en büyük ve en prestijli açık hava müzik festivallerinden birine dönüştü.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Glastonbury_Festival"
-    },
-    {
-      "yil": 1982,
-      "baslik": "Scott Fahlman İlk Dijital Gülen Yüz Simgesini Paylaştı",
-      "metin": "Bilgisayar bilimcisi Scott Fahlman, Carnegie Mellon Üniversitesi'nin bülten panosunda ilk belgelenmiş gülen yüz :-) ve üzgün yüz :-( sembollerini paylaştı. İnternet ortamında şaka ile ciddiyeti ayırt etmek için önerilen bu basit işaretler, modern emojilerin ve dijital duygu ifadelerinin başlangıcı oldu.",
+      "yil": 1906,
+      "baslik": "RMS Mauretania Denize İndirildi",
+      "metin": "İngiltere'nin Tyneside kentinde inşa edilen RMS Mauretania okyanus astarı denize indirildi. Döneminin dünyadaki en büyük ve en hızlı gemisi olma unvanını kazandı.",
       "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Scott_Fahlman"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/RMS_Mauretania_(1906)"
     },
     {
-      "yil": 1987,
-      "baslik": "Türk Serbest Güreş Takımı Akdeniz Oyunları'nda Zirveye Çıktı",
-      "metin": "10. Akdeniz Oyunları'nda mindere çıkan Türk Serbest Güreş Millî Takımı, 6 altın ve 1 gümüş madalya kazanarak takım halinde şampiyon oldu. Sporcularımızın bu üstün performansı, Türkiye'nin güreşteki geleneksel gücünü Akdeniz arenasında bir kez daha kanıtladı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Akdeniz_Oyunlar%C4%B1"
+      "yil": 1910,
+      "baslik": "Matematikçi Dorothy Vaughan Dünyaya Geldi",
+      "metin": "NACA ve NASA'da çalışan öncü Amerikan matematikçi ve bilgisayar programcısı Dorothy Vaughan doğdu. Bilim dünyasındaki çalışmalarıyla kurumun en parlak dönemine katkı sağladı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Dorothy_Vaughan"
+    },
+    {
+      "yil": 1993,
+      "baslik": "CINE 5 Yayın Hayatına Başladı",
+      "metin": "Erol Aksoy tarafından kurulan Cine5 yayın hayatına başladı. Kanal, Türkiye'nin ilk ücretli ve şifreli televizyon kanalı olarak izleyicilerle buluştu ve yayın döneminde seçkin filmleri üyelerine aktardı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Cine5"
     }
   ]
 }
