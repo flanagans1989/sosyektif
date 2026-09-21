@@ -1,42 +1,56 @@
 {
-  "tarih": "2026-09-20",
+  "tarih": "2026-09-21",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1519,
-      "baslik": "Ferdinand Magellan'ın Dünya Turu Yolculuğu Başladı",
-      "metin": "Portekizli kâşif Ferdinand Magellan, 270 kişi ve 5 gemiyle İspanya'dan yola çıktı. Bu büyük keşif seferi, insanlık tarihinde kürenin ilk kez dolaşılmasıyla sonuçlandı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Portekizliler"
-    },
-    {
-      "yil": 1893,
-      "baslik": "Charles ve Kardeşinden Benzinli Otomobil Testi",
-      "metin": "Charles Duryea ve kardeşi, tamamen Amerikan yapımı ilk benzinli otomobilin yol testini gerçekleştirdi. Bu öncü deneme, ABD'de otomotiv sanayisinin doğuşunda kritik bir eşik oldu.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Charles_Duryea"
-    },
-    {
-      "yil": 1906,
-      "baslik": "RMS Mauretania Denize İndirildi",
-      "metin": "İngiltere'nin Tyneside kentinde inşa edilen RMS Mauretania okyanus astarı denize indirildi. Döneminin dünyadaki en büyük ve en hızlı gemisi olma unvanını kazandı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/RMS_Mauretania_(1906)"
-    },
-    {
-      "yil": 1910,
-      "baslik": "Matematikçi Dorothy Vaughan Dünyaya Geldi",
-      "metin": "NACA ve NASA'da çalışan öncü Amerikan matematikçi ve bilgisayar programcısı Dorothy Vaughan doğdu. Bilim dünyasındaki çalışmalarıyla kurumun en parlak dönemine katkı sağladı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Dorothy_Vaughan"
-    },
-    {
-      "yil": 1993,
-      "baslik": "CINE 5 Yayın Hayatına Başladı",
-      "metin": "Erol Aksoy tarafından kurulan Cine5 yayın hayatına başladı. Kanal, Türkiye'nin ilk ücretli ve şifreli televizyon kanalı olarak izleyicilerle buluştu ve yayın döneminde seçkin filmleri üyelerine aktardı.",
+      "yil": 1903,
+      "baslik": "Kit Carson Filmi",
+      "metin": "İlk kovboy filmi olma özelliği taşıyan \"Kit Carson\"un prömiyeri ABD'de gerçekleştirildi. Sinema tarihinin bu ilk halka açık sunumu büyük ilgi gördü.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Cine5"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Gala"
+    },
+    {
+      "yil": 1937,
+      "baslik": "The Hobbit Kitabı",
+      "metin": "J.R.R. Tolkien'in daha sonra Yüzüklerin Efendisi serisinin öncülü olacak çocuk fantastik romanı The Hobbit yayımlandı. Yazarın bu eserle yarattığı evren edebiyat dünyasında kalıcı bir iz bıraktı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/J._R._R._Tolkien"
+    },
+    {
+      "yil": 1943,
+      "baslik": "İnönü Ansiklopedisi",
+      "metin": "Türk Ansiklopedisi veya diğer adıyla İnönü Ansiklopedisi'nin ilk fasikülü yayımlandı. Millî Eğitim Bakanlığı tarafından hazırlanan bu dev eser, 1984 yılına kadar fasiküller halinde yayımlanmaya devam etti.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrk_Ansiklopedisi"
+    },
+    {
+      "yil": 1949,
+      "baslik": "Erzurum - Hasankale Demiryolu",
+      "metin": "Erzurum ile Hasankale arasındaki demiryolu hattı ulaşıma açıldı. Bu hat bölgedeki ulaşım ağının gelişmesinde önemli bir adım oldu.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Erzurum"
+    },
+    {
+      "yil": 1964,
+      "baslik": "XB-70 Valkyrie Uçağı",
+      "metin": "Dünyanın en hızlı bombardıman uçağı olarak tasarlanan North American XB-70 Valkyrie, Palmdale, Kaliforniya'dan ilk uçuşunu gerçekleştirdi. Bu devrim niteliğindeki prototip havacılık tarihine adını yazdırdı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/North_American_XB-70_Valkyrie"
+    },
+    {
+      "yil": 1968,
+      "baslik": "Zond 5 Uzay Aracı",
+      "metin": "Sovyetler Birliği'ne ait Zond 5 uzay aracı Hint Okyanusu'na iniş yaptı. Bu görev, Ay'ın etrafında bir tur attıktan sonra Dünya'ya güvenli bir şekilde dönebilen ilk uzay aracı olma başarısını kazandı.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Zond_5"
+    },
+    {
+      "yil": 1999,
+      "baslik": "Naruto Mangası",
+      "metin": "Japon manga serisi Naruto'nun ilk bölümü yayımlandı. Masashi Kishimoto'nun kaleme aldığı eser, ilerleyen süreçte tüm dünyada en çok satan manga serilerinden biri haline geldi.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Naruto"
     }
   ]
 }
