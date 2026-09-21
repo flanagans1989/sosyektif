@@ -29,7 +29,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Besnik Hasi
     url: https://en.wikipedia.org/wiki/Besnik_Hasi
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Franco Monsalvo on Pexels
 moderasyon:
   skor: 1
