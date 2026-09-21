@@ -1,9 +1,11 @@
 {
-  "tarih": "2026-09-20T05:02:00.410Z",
+  "tarih": "2026-09-21T05:02:20.582Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 1,
-  "onayaDusen": 0,
-  "reddedilen": 0,
-  "hatalar": []
+  "otomatikYayinlanan": 0,
+  "onayaDusen": 1,
+  "reddedilen": 1,
+  "hatalar": [
+    "Elif Eralp: uygun değil: Yaşayan gerçek bir kişi olduğu için içerik politikamıza uygun değil."
+  ]
 }
