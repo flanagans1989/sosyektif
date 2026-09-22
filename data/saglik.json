@@ -1,21 +1,7 @@
 {
-  "sonDenetim": "2026-09-22T05:09:22.973Z",
-  "toplamKontrol": 49,
+  "sonDenetim": "2026-09-22T06:01:05.537Z",
+  "toplamKontrol": 48,
   "sorunlar": {
-    "workflow-pipeline.yml": {
-      "alan": "Zamanlayıcı",
-      "durum": "hata",
-      "detay": "İçerik Pipeline'ı son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/35689051794",
-      "cozum": "Logu incele.",
-      "ilkGorulme": "2026-09-22T05:09:22.973Z"
-    },
-    "workflow-weekly-analytics.yml": {
-      "alan": "Zamanlayıcı",
-      "durum": "hata",
-      "detay": "Haftalık Analitik son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/35588395332",
-      "cozum": "Logu incele.",
-      "ilkGorulme": "2026-09-21T05:08:27.556Z"
-    },
     "gorsel-unsplash": {
       "alan": "Görsel",
       "durum": "uyari",
