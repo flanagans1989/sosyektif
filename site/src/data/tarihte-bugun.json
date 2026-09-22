@@ -1,56 +1,49 @@
 {
-  "tarih": "2026-09-21",
+  "tarih": "2026-09-22",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
+      "yil": 1869,
+      "baslik": "Wagner'in Das Rheingold Operası Münih'te Sahnelendi",
+      "metin": "Alman besteci Richard Wagner'in anıtsal Nibelung Yüzüğü dörtlüsünün ilk halkası olan 'Das Rheingold' operası, Münih Ulusal Tiyatrosu'nda prömiyerini yaptı. Eser, mitolojik anlatısı ve yenilikçi sahneleme teknikleriyle opera tarihinde yeni bir dönemin kapısını araladı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Das_Rheingold"
+    },
+    {
       "yil": 1903,
-      "baslik": "Kit Carson Filmi",
-      "metin": "İlk kovboy filmi olma özelliği taşıyan \"Kit Carson\"un prömiyeri ABD'de gerçekleştirildi. Sinema tarihinin bu ilk halka açık sunumu büyük ilgi gördü.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Gala"
+      "baslik": "Dondurma Külahı İçin İlk Patent Alındı",
+      "metin": "İtalyan asıllı dondurmacı Italo Marchioni, dondurma keyfini kaşık ve tabak zahmetinden kurtaran yenilebilir koni şeklindeki hamur külahının patentini aldı. Kornet dondurmanın önünü açan bu pratik buluş, sokak lezzetleri kültürünü tüm dünyada kökten değiştirdi.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Dondurma_k%C3%BClah%C4%B1"
     },
     {
-      "yil": 1937,
-      "baslik": "The Hobbit Kitabı",
-      "metin": "J.R.R. Tolkien'in daha sonra Yüzüklerin Efendisi serisinin öncülü olacak çocuk fantastik romanı The Hobbit yayımlandı. Yazarın bu eserle yarattığı evren edebiyat dünyasında kalıcı bir iz bıraktı.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/J._R._R._Tolkien"
+      "yil": 1953,
+      "baslik": "Dünyanın İlk Dört Katlı Kavşağı Los Angeles'ta Açıldı",
+      "metin": "Modern otoyol mühendisliğinin simgelerinden olan dünyanın ilk çok katlı yığın kavşağı 'Four Level Interchange', Los Angeles'ta tamamen trafiğe açıldı. Üst üste geçen dört farklı seviyedeki köprü sistemi, yoğun şehir trafiğini durmaksızın akıtma fikrinin ilk büyük örneği oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Four_Level_Interchange"
     },
     {
-      "yil": 1943,
-      "baslik": "İnönü Ansiklopedisi",
-      "metin": "Türk Ansiklopedisi veya diğer adıyla İnönü Ansiklopedisi'nin ilk fasikülü yayımlandı. Millî Eğitim Bakanlığı tarafından hazırlanan bu dev eser, 1984 yılına kadar fasiküller halinde yayımlanmaya devam etti.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrk_Ansiklopedisi"
+      "yil": 1991,
+      "baslik": "Ölü Deniz Parşömenleri İlk Kez Halka Açıldı",
+      "metin": "1940'lı yıllardan itibaren mağaralarda bulunan antik Ölü Deniz Parşömenleri, uzun süren kapalı akademik incelemelerin ardından ilk defa kamuoyunun erişimine sunuldu. İkinci Tapınak dönemine ait bu paha biçilmez el yazmaları, bilinen en eski kutsal metin kopyalarını içeriyor.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Dead_Sea_Scrolls"
     },
     {
-      "yil": 1949,
-      "baslik": "Erzurum - Hasankale Demiryolu",
-      "metin": "Erzurum ile Hasankale arasındaki demiryolu hattı ulaşıma açıldı. Bu hat bölgedeki ulaşım ağının gelişmesinde önemli bir adım oldu.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Erzurum"
-    },
-    {
-      "yil": 1964,
-      "baslik": "XB-70 Valkyrie Uçağı",
-      "metin": "Dünyanın en hızlı bombardıman uçağı olarak tasarlanan North American XB-70 Valkyrie, Palmdale, Kaliforniya'dan ilk uçuşunu gerçekleştirdi. Bu devrim niteliğindeki prototip havacılık tarihine adını yazdırdı.",
+      "yil": 2003,
+      "baslik": "GameCube Emülatörü Dolphin Kullanıma Sunuldu",
+      "metin": "Nintendo GameCube konsoluna ait ticari video oyunlarını bilgisayarlarda çalıştırabilen ilk emülatör olan Dolphin yayımlandı. Açık kaynak kodlu bu yazılım, konsol donanımını sanal ortamda yeniden var ederek video oyunu koruma ve arşivleme çalışmalarında bir dönüm noktası oldu.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/North_American_XB-70_Valkyrie"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Dolphin_(emulator)"
     },
     {
-      "yil": 1968,
-      "baslik": "Zond 5 Uzay Aracı",
-      "metin": "Sovyetler Birliği'ne ait Zond 5 uzay aracı Hint Okyanusu'na iniş yaptı. Bu görev, Ay'ın etrafında bir tur attıktan sonra Dünya'ya güvenli bir şekilde dönebilen ilk uzay aracı olma başarısını kazandı.",
+      "yil": 2014,
+      "baslik": "NASA'nın MAVEN Uzay Aracı Mars Yörüngesinde",
+      "metin": "NASA'nın gezegenler arası keşif aracı MAVEN, Mars'ın atmosferini yakından incelemek üzere kızıl gezegenin yörüngesine başarıyla girdi. Uzay aracı, Mars'ın geçmişte sahip olduğu su ve atmosferi zaman içinde uzaya nasıl kaybettiğini aydınlatmak için veri toplamaya başladı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Zond_5"
-    },
-    {
-      "yil": 1999,
-      "baslik": "Naruto Mangası",
-      "metin": "Japon manga serisi Naruto'nun ilk bölümü yayımlandı. Masashi Kishimoto'nun kaleme aldığı eser, ilerleyen süreçte tüm dünyada en çok satan manga serilerinden biri haline geldi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Naruto"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/NASA"
     }
   ]
 }
