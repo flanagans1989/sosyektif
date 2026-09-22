@@ -1333,11 +1333,20 @@
         "sonDeneme": "2026-09-21T13:15:07.694Z"
       },
       "reel": {
-        "durum": "onayda",
+        "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-21T13:17:06.934Z"
+        "sonDeneme": "2026-09-22T18:10:18.088Z"
+      },
+      "youtube": {
+        "durum": "ok",
+        "deneme": 1,
+        "id": "G0bJdNUj8ac",
+        "sonDeneme": "2026-09-22T18:10:18.088Z"
       }
     },
-    "reelIdleri": {}
+    "reelIdleri": {
+      "instagram": "18121920088898970",
+      "facebook": "1598866291733369"
+    }
   }
 }
