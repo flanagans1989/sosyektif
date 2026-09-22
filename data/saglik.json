@@ -1,7 +1,14 @@
 {
-  "sonDenetim": "2026-09-22T11:51:09.270Z",
+  "sonDenetim": "2026-09-22T12:01:17.058Z",
   "toplamKontrol": 48,
   "sorunlar": {
+    "zamanlayici": {
+      "alan": "Zamanlayıcı",
+      "durum": "hata",
+      "detay": "Pipeline 14.7 saattir hiç tetiklenmedi.",
+      "cozum": "cron-job.org'daki saatlik /tetikle görevini kontrol et.",
+      "ilkGorulme": "2026-09-22T12:01:17.058Z"
+    },
     "gorsel-unsplash": {
       "alan": "Görsel",
       "durum": "uyari",
