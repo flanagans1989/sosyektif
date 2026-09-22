@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-09-22T18:01:21.474Z",
+  "sonDenetim": "2026-09-22T18:18:15.912Z",
   "toplamKontrol": 48,
   "sorunlar": {
     "gorsel-unsplash": {
@@ -37,7 +37,7 @@
     "tutarlilik-facebook": {
       "alan": "Dağıtım",
       "durum": "hata",
-      "detay": "facebook: kayıtta 34 paylaşım var ama hesapta 21 gönderi görünüyor.",
+      "detay": "facebook: kayıtta 34 paylaşım var ama hesapta 22 gönderi görünüyor.",
       "cozum": "Gönderiler silinmiş ya da paylaşım sessizce başarısız olmuş olabilir.",
       "ilkGorulme": "2026-09-19T18:01:17.178Z"
     }
