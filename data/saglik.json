@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-23T00:01:12.576Z",
-  "toplamKontrol": 46,
+  "sonDenetim": "2026-09-23T00:18:17.768Z",
+  "toplamKontrol": 47,
   "sorunlar": {
     "gorsel-unsplash": {
       "alan": "Görsel",
@@ -14,13 +14,6 @@
       "detay": "Telegram herkese açık kanal tanımlı değil — bu kanala paylaşım yapılmıyor.",
       "cozum": "Telegram'da kanal aç, botu yönetici yap, kanal kimliğini TELEGRAM_PUBLIC_CHANNEL_ID secret'ı olarak ekle.",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "kanal-bluesky": {
-      "alan": "Sosyal kanallar",
-      "durum": "hata",
-      "detay": "Bluesky girişi başarısız: Upstream Failure",
-      "cozum": "Bluesky → Ayarlar → Uygulama şifreleri'nden yeni şifre oluşturup BLUESKY_APP_PASSWORD'ı güncelle.",
-      "ilkGorulme": "2026-09-23T00:01:12.576Z"
     },
     "kanal-threads": {
       "alan": "Sosyal kanallar",
