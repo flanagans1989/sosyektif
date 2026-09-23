@@ -1,49 +1,63 @@
 {
-  "tarih": "2026-09-22",
+  "tarih": "2026-09-23",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1869,
-      "baslik": "Wagner'in Das Rheingold Operası Münih'te Sahnelendi",
-      "metin": "Alman besteci Richard Wagner'in anıtsal Nibelung Yüzüğü dörtlüsünün ilk halkası olan 'Das Rheingold' operası, Münih Ulusal Tiyatrosu'nda prömiyerini yaptı. Eser, mitolojik anlatısı ve yenilikçi sahneleme teknikleriyle opera tarihinde yeni bir dönemin kapısını araladı.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Das_Rheingold"
+      "yil": 1819,
+      "baslik": "Işık Hızını Karada Ölçen Fizikçi Hippolyte Fizeau Doğdu",
+      "metin": "Fransız fizikçi Hippolyte Fizeau dünyaya geldi. Fizeau, ışık hızını yeryüzündeki bir deney düzeneğiyle yaklaşık yüzde 5 hassasiyetle ölçerek fizik ve optik alanında çığır açıcı bir başarıya imza attı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Hippolyte_Fizeau"
     },
     {
-      "yil": 1903,
-      "baslik": "Dondurma Külahı İçin İlk Patent Alındı",
-      "metin": "İtalyan asıllı dondurmacı Italo Marchioni, dondurma keyfini kaşık ve tabak zahmetinden kurtaran yenilebilir koni şeklindeki hamur külahının patentini aldı. Kornet dondurmanın önünü açan bu pratik buluş, sokak lezzetleri kültürünü tüm dünyada kökten değiştirdi.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Dondurma_k%C3%BClah%C4%B1"
-    },
-    {
-      "yil": 1953,
-      "baslik": "Dünyanın İlk Dört Katlı Kavşağı Los Angeles'ta Açıldı",
-      "metin": "Modern otoyol mühendisliğinin simgelerinden olan dünyanın ilk çok katlı yığın kavşağı 'Four Level Interchange', Los Angeles'ta tamamen trafiğe açıldı. Üst üste geçen dört farklı seviyedeki köprü sistemi, yoğun şehir trafiğini durmaksızın akıtma fikrinin ilk büyük örneği oldu.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Four_Level_Interchange"
-    },
-    {
-      "yil": 1991,
-      "baslik": "Ölü Deniz Parşömenleri İlk Kez Halka Açıldı",
-      "metin": "1940'lı yıllardan itibaren mağaralarda bulunan antik Ölü Deniz Parşömenleri, uzun süren kapalı akademik incelemelerin ardından ilk defa kamuoyunun erişimine sunuldu. İkinci Tapınak dönemine ait bu paha biçilmez el yazmaları, bilinen en eski kutsal metin kopyalarını içeriyor.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Dead_Sea_Scrolls"
-    },
-    {
-      "yil": 2003,
-      "baslik": "GameCube Emülatörü Dolphin Kullanıma Sunuldu",
-      "metin": "Nintendo GameCube konsoluna ait ticari video oyunlarını bilgisayarlarda çalıştırabilen ilk emülatör olan Dolphin yayımlandı. Açık kaynak kodlu bu yazılım, konsol donanımını sanal ortamda yeniden var ederek video oyunu koruma ve arşivleme çalışmalarında bir dönüm noktası oldu.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Dolphin_(emulator)"
-    },
-    {
-      "yil": 2014,
-      "baslik": "NASA'nın MAVEN Uzay Aracı Mars Yörüngesinde",
-      "metin": "NASA'nın gezegenler arası keşif aracı MAVEN, Mars'ın atmosferini yakından incelemek üzere kızıl gezegenin yörüngesine başarıyla girdi. Uzay aracı, Mars'ın geçmişte sahip olduğu su ve atmosferi zaman içinde uzaya nasıl kaybettiğini aydınlatmak için veri toplamaya başladı.",
+      "yil": 1846,
+      "baslik": "Johann Gottfried Galle Neptün Gezegenini Keşfetti",
+      "metin": "Alman gökbilimci Johann Gottfried Galle, Güneş Sistemi'nin sekizinci gezegeni olan Neptün'ü teleskopla gözlemleyerek keşfetti. Matematiksel hesaplamalar ve gökbilimcilerin çalışmaları doğrultusunda yeri önceden tahmin edilen gezegenin bulunması, bilim tarihinin en büyük zaferlerinden biri oldu.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/NASA"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Astronom"
+    },
+    {
+      "yil": 1856,
+      "baslik": "İzmir-Aydın Demiryolu Hattı İmtiyazı İngiliz Şirketine Verildi",
+      "metin": "Osmanlı topraklarında inşa edilecek 612 kilometrelik İzmir-Aydın demiryolu hattının işletme imtiyazı bir İngiliz şirketine devredildi. 1866'da hizmete giren bu kritik hat, Cumhuriyet idaresi tarafından 1935 yılında satın alınarak millileştirildi.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0zmir"
+    },
+    {
+      "yil": 1861,
+      "baslik": "Alman Mühendis ve Girişimci Robert Bosch Dünyaya Geldi",
+      "metin": "Küresel endüstri devi Bosch'un kurucusu olan Alman mühendis ve mucit Robert Bosch doğdu. Otomotiv ve mekanik alanında yaptığı mühendislik yenilikleri, modern sanayi teknolojilerinin gelişiminde kalıcı bir iz bıraktı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Robert_Bosch"
+    },
+    {
+      "yil": 1884,
+      "baslik": "Virgenes Burnu'nda Batan Gemiyi Kurtarırken Altın Bulundu",
+      "metin": "Fransız buharlı gemisi Arctique, Arjantin'in güneyindeki Virgenes Burnu kıyılarında karaya oturdu. Kurtarma çalışmaları sırasında sahilde tesadüfen altının bulunması, bölgede büyük bir hareketliliğe yol açarak meşhur Tierra del Fuego Altına Hücum dönemini başlattı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Cape_Virgenes"
+    },
+    {
+      "yil": 1944,
+      "baslik": "Fransız Futbol Kulübü Lille OSC Kuruldu",
+      "metin": "Fransa'nın köklü spor temsilcilerinden biri olan futbol kulübü Lille OSC resmen kuruldu. Kuzey Fransa ekibi, zaman içinde Fransız futbolunun en rekabetçi ve bilinen kulüpleri arasına girdi.",
+      "kategori": "spor",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Fransa"
+    },
+    {
+      "yil": 1993,
+      "baslik": "Popun Kralı Michael Jackson Türkiye'de Konser Verdi",
+      "metin": "Dünyaca ünlü Amerikalı şarkıcı ve dansçı Michael Jackson, dünya turnesi kapsamında İstanbul'da sahne aldı. On binlerce hayranını büyüleyen bu dev performans, Türkiye tarihinin en unutulmaz stadyum konserleri arasına girdi.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Michael_Jackson"
+    },
+    {
+      "yil": 2002,
+      "baslik": "Mozilla'nın İnternet Tarayıcısı Firefox İlk Kez Yayınlandı",
+      "metin": "Mozilla Organizasyonu, açık kaynak kodlu web tarayıcısı Firefox'un ilk sürümünü kullanıcılarla buluşturdu. Gecko görüntüleme motorunu kullanan tarayıcı, internet dünyasında alternatif ve özgür bir gezinme çağının öncüsü oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Firefox"
     }
   ]
 }
