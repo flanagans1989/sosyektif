@@ -1,9 +1,12 @@
 {
-  "tarih": "2026-09-22T05:02:21.913Z",
+  "tarih": "2026-09-23T05:02:56.890Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 0,
-  "onayaDusen": 1,
-  "reddedilen": 0,
-  "hatalar": []
+  "otomatikYayinlanan": 1,
+  "onayaDusen": 0,
+  "reddedilen": 2,
+  "hatalar": [
+    "Enver Altaylı: uygun değil: Yaşayan veya yakın dönem siyasi ve adli olaylarla anılan bir kişi olduğu için sitemizin güncel/siyasi politika kısıtlamalarına takılmaktadır.",
+    "Türkiye'deki okul saldırıları listesi: uygun değil: Suç, şiddet, adli olaylar ve felaketler içerik politikamız gereği uygun değildir."
+  ]
 }
