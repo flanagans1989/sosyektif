@@ -1,12 +1,11 @@
 {
-  "tarih": "2026-09-23T05:02:56.890Z",
+  "tarih": "2026-09-24T05:02:23.417Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 1,
-  "onayaDusen": 0,
-  "reddedilen": 2,
+  "otomatikYayinlanan": 0,
+  "onayaDusen": 1,
+  "reddedilen": 1,
   "hatalar": [
-    "Enver Altaylı: uygun değil: Yaşayan veya yakın dönem siyasi ve adli olaylarla anılan bir kişi olduğu için sitemizin güncel/siyasi politika kısıtlamalarına takılmaktadır.",
-    "Türkiye'deki okul saldırıları listesi: uygun değil: Suç, şiddet, adli olaylar ve felaketler içerik politikamız gereği uygun değildir."
+    "Mansur Yavaş: uygun değil: Yaşayan gerçek bir siyasetçi ve kişi odaklı olduğu için site politikalarına uygun değil."
   ]
 }

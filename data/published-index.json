@@ -415,5 +415,14 @@
     "format": "quiz",
     "yayinTarihi": "2026-09-23T05:02:55.120Z",
     "otomatikYayinlandi": true
+  },
+  {
+    "slug": "fatih-sultan-mehmet-hakkinda-duyunca-sasiracaginiz-5-bilgi",
+    "baslik": "Fatih Sultan Mehmet Hakkında Duyunca Şaşıracağınız 5 Bilgi",
+    "konuParmakIzi": "ii. mehmed",
+    "kategori": "tarih",
+    "format": "trivia",
+    "yayinTarihi": "2026-09-24T05:02:22.863Z",
+    "otomatikYayinlandi": false
   }
 ]
