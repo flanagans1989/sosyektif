@@ -1,63 +1,49 @@
 {
-  "tarih": "2026-09-23",
+  "tarih": "2026-09-24",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1819,
-      "baslik": "Işık Hızını Karada Ölçen Fizikçi Hippolyte Fizeau Doğdu",
-      "metin": "Fransız fizikçi Hippolyte Fizeau dünyaya geldi. Fizeau, ışık hızını yeryüzündeki bir deney düzeneğiyle yaklaşık yüzde 5 hassasiyetle ölçerek fizik ve optik alanında çığır açıcı bir başarıya imza attı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Hippolyte_Fizeau"
-    },
-    {
-      "yil": 1846,
-      "baslik": "Johann Gottfried Galle Neptün Gezegenini Keşfetti",
-      "metin": "Alman gökbilimci Johann Gottfried Galle, Güneş Sistemi'nin sekizinci gezegeni olan Neptün'ü teleskopla gözlemleyerek keşfetti. Matematiksel hesaplamalar ve gökbilimcilerin çalışmaları doğrultusunda yeri önceden tahmin edilen gezegenin bulunması, bilim tarihinin en büyük zaferlerinden biri oldu.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Astronom"
-    },
-    {
-      "yil": 1856,
-      "baslik": "İzmir-Aydın Demiryolu Hattı İmtiyazı İngiliz Şirketine Verildi",
-      "metin": "Osmanlı topraklarında inşa edilecek 612 kilometrelik İzmir-Aydın demiryolu hattının işletme imtiyazı bir İngiliz şirketine devredildi. 1866'da hizmete giren bu kritik hat, Cumhuriyet idaresi tarafından 1935 yılında satın alınarak millileştirildi.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0zmir"
-    },
-    {
-      "yil": 1861,
-      "baslik": "Alman Mühendis ve Girişimci Robert Bosch Dünyaya Geldi",
-      "metin": "Küresel endüstri devi Bosch'un kurucusu olan Alman mühendis ve mucit Robert Bosch doğdu. Otomotiv ve mekanik alanında yaptığı mühendislik yenilikleri, modern sanayi teknolojilerinin gelişiminde kalıcı bir iz bıraktı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Robert_Bosch"
-    },
-    {
-      "yil": 1884,
-      "baslik": "Virgenes Burnu'nda Batan Gemiyi Kurtarırken Altın Bulundu",
-      "metin": "Fransız buharlı gemisi Arctique, Arjantin'in güneyindeki Virgenes Burnu kıyılarında karaya oturdu. Kurtarma çalışmaları sırasında sahilde tesadüfen altının bulunması, bölgede büyük bir hareketliliğe yol açarak meşhur Tierra del Fuego Altına Hücum dönemini başlattı.",
+      "yil": 1852,
+      "baslik": "Henri Giffard ve Zeplin",
+      "metin": "Fransız Henri Giffard, tarihinde ilk kez motorlu ve yönlendirilebilir bir zeplinle uçmayı başardı. Geliştirdiği bu araçla Paris'ten hareket ederek gökyüzünde unutulmaz bir yolculuk gerçekleştirdi.",
       "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Cape_Virgenes"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Frans%C4%B1zlar"
     },
     {
-      "yil": 1944,
-      "baslik": "Fransız Futbol Kulübü Lille OSC Kuruldu",
-      "metin": "Fransa'nın köklü spor temsilcilerinden biri olan futbol kulübü Lille OSC resmen kuruldu. Kuzey Fransa ekibi, zaman içinde Fransız futbolunun en rekabetçi ve bilinen kulüpleri arasına girdi.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Fransa"
+      "yil": 1906,
+      "baslik": "Devils Tower",
+      "metin": "ABD'nin Wyoming eyaletindeki görkemli kaya oluşumu Devils Tower, Başkan Theodore Roosevelt tarafından ülkenin ilk Ulusal Anıtı ilan edildi. Bu sıra dışı doğa harikası koruma altına alındı.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
     },
     {
-      "yil": 1993,
-      "baslik": "Popun Kralı Michael Jackson Türkiye'de Konser Verdi",
-      "metin": "Dünyaca ünlü Amerikalı şarkıcı ve dansçı Michael Jackson, dünya turnesi kapsamında İstanbul'da sahne aldı. On binlerce hayranını büyüleyen bu dev performans, Türkiye tarihinin en unutulmaz stadyum konserleri arasına girdi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Michael_Jackson"
-    },
-    {
-      "yil": 2002,
-      "baslik": "Mozilla'nın İnternet Tarayıcısı Firefox İlk Kez Yayınlandı",
-      "metin": "Mozilla Organizasyonu, açık kaynak kodlu web tarayıcısı Firefox'un ilk sürümünü kullanıcılarla buluşturdu. Gecko görüntüleme motorunu kullanan tarayıcı, internet dünyasında alternatif ve özgür bir gezinme çağının öncüsü oldu.",
+      "yil": 1948,
+      "baslik": "Honda Motor Company",
+      "metin": "Honda Motor Company Japonya'da kuruldu. Küresel bir dev haline gelecek olan şirket, kısa sürede otomotiv ve motosiklet sektörünün öncülerinden biri oldu.",
       "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Firefox"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Honda"
+    },
+    {
+      "yil": 1954,
+      "baslik": "AEC Routemaster",
+      "metin": "Londra'nın simgeleşmiş iki katlı otobüsü AEC Routemaster tanıtıldı. Şehrin kimliğiyle bütünleşen bu ikonik tasarım, toplu taşıma tarihindeki yerini aldı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/AEC_Routemaster"
+    },
+    {
+      "yil": 1960,
+      "baslik": "USS Enterprise",
+      "metin": "Dünyanın ilk nükleer enerjili uçak gemisi USS Enterprise suya indirildi. Bu devasa gemi, Amerika Birleşik Devletleri Donanması'na katılarak denizcilik ve nükleer teknolojide yeni bir çığır açtı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/USS_Enterprise_(CVN-65)"
+    },
+    {
+      "yil": 2014,
+      "baslik": "Mars Orbiter Mission",
+      "metin": "Mars Orbiter Mission, Hindistan'ı Mars yörüngesine ulaşan ilk Asya ulusu ve dünyada bu başarıyı ilk denemesinde başaran ilk ülke yaptı. Mangalyaan adıyla da bilinen bu uzay sondası, ülkenin uzay tarihindeki en büyük dönüm noktalarından biri oldu.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission"
     }
   ]
 }
