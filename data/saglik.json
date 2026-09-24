@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-09-24T12:18:22.314Z",
+  "sonDenetim": "2026-09-24T17:20:27.728Z",
   "toplamKontrol": 48,
   "sorunlar": {
     "gorsel-unsplash": {
@@ -7,12 +7,6 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "site-veri-truncgil": {
-      "alan": "Ekodektif verileri",
-      "durum": "hata",
-      "detay": "finans.truncgil.com: fetch failed",
-      "ilkGorulme": "2026-09-24T12:01:14.038Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
