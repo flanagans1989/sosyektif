@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-09-24",
+  "tarih": "2026-09-25",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1852,
-      "baslik": "Henri Giffard ve Zeplin",
-      "metin": "Fransız Henri Giffard, tarihinde ilk kez motorlu ve yönlendirilebilir bir zeplinle uçmayı başardı. Geliştirdiği bu araçla Paris'ten hareket ederek gökyüzünde unutulmaz bir yolculuk gerçekleştirdi.",
+      "yil": 1513,
+      "baslik": "Vasco Núñez de Balboa'nın Büyük Okyanus Keşfi",
+      "metin": "İspanyol kaşif Vasco Núñez de Balboa, Panama Kıstağı'nı aşarak Pasifik Okyanusu'na ulaştı. Bu tarihi başarıyla Balboa, Avrupa'dan yola çıkıp Büyük Okyanus'u gören ilk Avrupalı kaşif unvanını kazandı.",
       "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Frans%C4%B1zlar"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Vasco_N%C3%BA%C3%B1ez_de_Balboa"
+    },
+    {
+      "yil": 1890,
+      "baslik": "Sequoia Ulusal Parkı Kuruldu",
+      "metin": "Kaliforniya'daki dev sekoya ağaçlarını koruma altına almak amacıyla Sequoia Ulusal Parkı resmen kuruldu. Bölgedeki ormansızlaşma tehlikesine karşı hayata geçirilen bu park, bugün binlerce dönümlük ormanlık dağ arazisini koruyor.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Sequoia_National_Park"
     },
     {
       "yil": 1906,
-      "baslik": "Devils Tower",
-      "metin": "ABD'nin Wyoming eyaletindeki görkemli kaya oluşumu Devils Tower, Başkan Theodore Roosevelt tarafından ülkenin ilk Ulusal Anıtı ilan edildi. Bu sıra dışı doğa harikası koruma altına alındı.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
-    },
-    {
-      "yil": 1948,
-      "baslik": "Honda Motor Company",
-      "metin": "Honda Motor Company Japonya'da kuruldu. Küresel bir dev haline gelecek olan şirket, kısa sürede otomotiv ve motosiklet sektörünün öncülerinden biri oldu.",
+      "baslik": "Telekino ile İlk Kablosuz Uzaktan Kumanda",
+      "metin": "Mühendis Leonardo Torres Quevedo, İspanya'daki Bilbao Körfezi'nde insanlı elektrikli bir tekneyi kıyıdan kablosuz olarak yönetti. 'Telekino' adı verilen bu sistem, modern kablosuz uzaktan kumanda teknolojisinin temeli olarak kabul ediliyor.",
       "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Honda"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Leonardo_Torres_Quevedo"
     },
     {
-      "yil": 1954,
-      "baslik": "AEC Routemaster",
-      "metin": "Londra'nın simgeleşmiş iki katlı otobüsü AEC Routemaster tanıtıldı. Şehrin kimliğiyle bütünleşen bu ikonik tasarım, toplu taşıma tarihindeki yerini aldı.",
+      "yil": 1956,
+      "baslik": "İlk Transatlantik Telefon Kablosu",
+      "metin": "İskoçya ile Newfoundland arasında döşenen dünyanın ilk deniz altı transatlantik telefon kablosu sistemi TAT-1 hizmete girdi. Karşılıklı iki yönlü iletişimi sağlayan bu devasa mühendislik projesi, kıtalar arası iletişimin çehresini tamamen değiştirdi.",
       "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/AEC_Routemaster"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/TAT-1"
     },
     {
-      "yil": 1960,
-      "baslik": "USS Enterprise",
-      "metin": "Dünyanın ilk nükleer enerjili uçak gemisi USS Enterprise suya indirildi. Bu devasa gemi, Amerika Birleşik Devletleri Donanması'na katılarak denizcilik ve nükleer teknolojide yeni bir çığır açtı.",
+      "yil": 1974,
+      "baslik": "İlk Dirsek Bağı Cerrahisi",
+      "metin": "Ortopedist Dr. Frank Jobe, beyzbol oyuncusu Tommy John üzerinde tarihin ilk ulnar kollateral ligament replasman cerrahisini gerçekleştirdi. Sonradan 'Tommy John ameliyatı' olarak anılacak bu çığır açıcı operasyon, spor tıp tarihinde bir dönüm noktası oldu.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/USS_Enterprise_(CVN-65)"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Frank_Jobe"
     },
     {
-      "yil": 2014,
-      "baslik": "Mars Orbiter Mission",
-      "metin": "Mars Orbiter Mission, Hindistan'ı Mars yörüngesine ulaşan ilk Asya ulusu ve dünyada bu başarıyı ilk denemesinde başaran ilk ülke yaptı. Mangalyaan adıyla da bilinen bu uzay sondası, ülkenin uzay tarihindeki en büyük dönüm noktalarından biri oldu.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission"
+      "yil": 1993,
+      "baslik": "Karun Hazinesi'nin Türkiye'ye Dönüşü",
+      "metin": "Anadolu'nun en değerli miraslarından biri olan Karun Hazinesi, Amerika Birleşik Devletleri'nden alınarak ülkesine geri getirildi. Çoğu MÖ 560-546 yılları arasında Lidya Kralı Kroisos dönemine ait olan bu eşsiz eserler, Uşak yakınlarındaki tümülüslerden çıkmıştı.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Karun_Hazinesi"
     }
   ]
 }
