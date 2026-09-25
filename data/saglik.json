@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-09-25T06:18:15.880Z",
+  "sonDenetim": "2026-09-25T11:59:35.028Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -14,6 +14,12 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "trend-wikipedia": {
+      "alan": "Trend kaynakları",
+      "durum": "hata",
+      "detay": "Wikipedia en çok okunanlar: 429 You are making too many requests to the API.\nPlease follow the best practices at <https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits>.\nIf you are unsure ",
+      "ilkGorulme": "2026-09-25T11:59:35.028Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
