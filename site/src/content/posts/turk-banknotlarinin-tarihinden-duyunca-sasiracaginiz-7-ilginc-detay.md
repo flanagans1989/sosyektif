@@ -34,7 +34,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Banknotes of Turkey
     url: https://en.wikipedia.org/wiki/Banknotes_of_Turkey
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Valentin Ivantsov on Pexels
 moderasyon:
   skor: 1
