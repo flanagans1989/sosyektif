@@ -1393,8 +1393,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-25T21:34:41.058Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mwepxyjfwm25"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mwepxyjfwm25",
+        "sonDeneme": "2026-09-25T21:34:41.058Z"
+      },
+      "instagram": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-25T21:36:56.585Z",
+        "id": "18149018377536756"
       }
     },
     "reelIdleri": {}
