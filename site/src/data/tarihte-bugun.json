@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-09-25",
+  "tarih": "2026-09-26",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1513,
-      "baslik": "Vasco Núñez de Balboa'nın Büyük Okyanus Keşfi",
-      "metin": "İspanyol kaşif Vasco Núñez de Balboa, Panama Kıstağı'nı aşarak Pasifik Okyanusu'na ulaştı. Bu tarihi başarıyla Balboa, Avrupa'dan yola çıkıp Büyük Okyanus'u gören ilk Avrupalı kaşif unvanını kazandı.",
+      "yil": 1580,
+      "baslik": "Francis Drake Golden Hind İle Dünya Turunu Tamamladı",
+      "metin": "İngiliz kâşif Francis Drake, kalyonu Golden Hind ile Plymouth Limanı'na yanaşarak dünyanın çevresini dolaştığı seferini tamamladı. Tek bir seferde dünya turunu bitiren Drake, denizcilik tarihinin en ünlü keşif yolculuklarından birini başarıyla noktaladı.",
       "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Vasco_N%C3%BA%C3%B1ez_de_Balboa"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Francis_Drake"
     },
     {
-      "yil": 1890,
-      "baslik": "Sequoia Ulusal Parkı Kuruldu",
-      "metin": "Kaliforniya'daki dev sekoya ağaçlarını koruma altına almak amacıyla Sequoia Ulusal Parkı resmen kuruldu. Bölgedeki ormansızlaşma tehlikesine karşı hayata geçirilen bu park, bugün binlerce dönümlük ormanlık dağ arazisini koruyor.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Sequoia_National_Park"
-    },
-    {
-      "yil": 1906,
-      "baslik": "Telekino ile İlk Kablosuz Uzaktan Kumanda",
-      "metin": "Mühendis Leonardo Torres Quevedo, İspanya'daki Bilbao Körfezi'nde insanlı elektrikli bir tekneyi kıyıdan kablosuz olarak yönetti. 'Telekino' adı verilen bu sistem, modern kablosuz uzaktan kumanda teknolojisinin temeli olarak kabul ediliyor.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Leonardo_Torres_Quevedo"
-    },
-    {
-      "yil": 1956,
-      "baslik": "İlk Transatlantik Telefon Kablosu",
-      "metin": "İskoçya ile Newfoundland arasında döşenen dünyanın ilk deniz altı transatlantik telefon kablosu sistemi TAT-1 hizmete girdi. Karşılıklı iki yönlü iletişimi sağlayan bu devasa mühendislik projesi, kıtalar arası iletişimin çehresini tamamen değiştirdi.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/TAT-1"
-    },
-    {
-      "yil": 1974,
-      "baslik": "İlk Dirsek Bağı Cerrahisi",
-      "metin": "Ortopedist Dr. Frank Jobe, beyzbol oyuncusu Tommy John üzerinde tarihin ilk ulnar kollateral ligament replasman cerrahisini gerçekleştirdi. Sonradan 'Tommy John ameliyatı' olarak anılacak bu çığır açıcı operasyon, spor tıp tarihinde bir dönüm noktası oldu.",
+      "yil": 1905,
+      "baslik": "Albert Einstein Özel Görelilik Kuramını Yayımladı",
+      "metin": "Albert Einstein, mucize yılı olarak bilinen dönemdeki üçüncü büyük makalesini yayımlayarak özel görelilik kuramını dünyaya sundu. Fizik dünyasını kökten sarsan bu çalışma, kütle-enerji eşdeğerliğini ifade eden ünlü formülün ve modern evren anlayışının kapısını araladı.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Frank_Jobe"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Albert_Einstein"
     },
     {
-      "yil": 1993,
-      "baslik": "Karun Hazinesi'nin Türkiye'ye Dönüşü",
-      "metin": "Anadolu'nun en değerli miraslarından biri olan Karun Hazinesi, Amerika Birleşik Devletleri'nden alınarak ülkesine geri getirildi. Çoğu MÖ 560-546 yılları arasında Lidya Kralı Kroisos dönemine ait olan bu eşsiz eserler, Uşak yakınlarındaki tümülüslerden çıkmıştı.",
+      "yil": 1932,
+      "baslik": "I. Türk Dili Kurultayı Toplandı ve Dil Bayramı Kutlandı",
+      "metin": "Türk Dil Kurumu tarafından düzenlenen Birinci Türk Dili Kurultayı toplandı ve bu özel gün ilk kez Dil Bayramı olarak kutlandı. Türkçenin köklerini ve zenginliğini ortaya koymayı amaçlayan kurultay, dil çalışmalarında yeni bir dönemin başlangıcı oldu.",
       "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Karun_Hazinesi"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/I._T%C3%BCrk_Dili_Kurultay%C4%B1"
+    },
+    {
+      "yil": 1968,
+      "baslik": "The Beatles \"Happiness Is a Warm Gun\" Kaydını Tamamladı",
+      "metin": "Dünyaca ünlü müzik grubu The Beatles, John Lennon'ın bestelediği \"Happiness Is a Warm Gun\" şarkısının stüdyo kayıtlarını tamamladı. Şarkı, gruptaki tüm üyelerin The Beatles albümündeki ortak favorisi olarak öne çıktı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Beatles"
+    },
+    {
+      "yil": 1983,
+      "baslik": "Australia II Yatı America's Cup'taki 132 Yıllık Seriyi Bitirdi",
+      "metin": "Kaptan John Bertrand yönetimindeki Australia II yarış yatı, prestijli America's Cup yarışını kazanarak tarihi bir başarıya ulaştı. Avustralya ekibi bu zaferle, kupayı tam 132 yıldır aralıksız koruyan New York Yacht Club efsanesine son verdi.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Yacht_racing"
+    },
+    {
+      "yil": 2008,
+      "baslik": "Yves Rossy Jet Motorlu Kanadıyla Manş Denizi'ni Geçti",
+      "metin": "İsviçreli pilot ve mucit Yves Rossy, sırtına bağladığı jet motorlu karbon fiber kanat takımıyla Manş Denizi'ni uçarak geçti. Kendi geliştirdiği deneysel uçuş sistemiyle gökyüzünde süzülen Rossy, bireysel havacılıkta çığır açan bir gösteriye imza attı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Yves_Rossy"
     }
   ]
 }
