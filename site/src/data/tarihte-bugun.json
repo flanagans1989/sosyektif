@@ -1,49 +1,63 @@
 {
-  "tarih": "2026-09-26",
+  "tarih": "2026-09-27",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1580,
-      "baslik": "Francis Drake Golden Hind İle Dünya Turunu Tamamladı",
-      "metin": "İngiliz kâşif Francis Drake, kalyonu Golden Hind ile Plymouth Limanı'na yanaşarak dünyanın çevresini dolaştığı seferini tamamladı. Tek bir seferde dünya turunu bitiren Drake, denizcilik tarihinin en ünlü keşif yolculuklarından birini başarıyla noktaladı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Francis_Drake"
-    },
-    {
-      "yil": 1905,
-      "baslik": "Albert Einstein Özel Görelilik Kuramını Yayımladı",
-      "metin": "Albert Einstein, mucize yılı olarak bilinen dönemdeki üçüncü büyük makalesini yayımlayarak özel görelilik kuramını dünyaya sundu. Fizik dünyasını kökten sarsan bu çalışma, kütle-enerji eşdeğerliğini ifade eden ünlü formülün ve modern evren anlayışının kapısını araladı.",
+      "yil": 1822,
+      "baslik": "Rosetta Taşı'nın Çözülmesi",
+      "metin": "Jean-François Champollion, Paris'teki Académie des Inscriptions et Belles-Lettres'e gönderdiği mektupla Rosetta Taşı üzerindeki Mısır hiyerogliflerini çözmedeki ilk başarılarını duyurdu. Bu gelişme, antik Mısır çalışmalarının temelini oluşturan olay olarak kabul edilir.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Albert_Einstein"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Lettre_%C3%A0_M._Dacier"
     },
     {
-      "yil": 1932,
-      "baslik": "I. Türk Dili Kurultayı Toplandı ve Dil Bayramı Kutlandı",
-      "metin": "Türk Dil Kurumu tarafından düzenlenen Birinci Türk Dili Kurultayı toplandı ve bu özel gün ilk kez Dil Bayramı olarak kutlandı. Türkçenin köklerini ve zenginliğini ortaya koymayı amaçlayan kurultay, dil çalışmalarında yeni bir dönemin başlangıcı oldu.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/I._T%C3%BCrk_Dili_Kurultay%C4%B1"
+      "yil": 1825,
+      "baslik": "Stockton ve Darlington Demiryolu",
+      "metin": "Lokomotiv No. 1 isimli buharlı lokomotif, dünyada buharlı lokomotif kullanan ilk halka açık demiryolu olan Stockton ve Darlington Demiryolu'nun açılış trenini çekti.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Locomotion_No._1"
     },
     {
-      "yil": 1968,
-      "baslik": "The Beatles \"Happiness Is a Warm Gun\" Kaydını Tamamladı",
-      "metin": "Dünyaca ünlü müzik grubu The Beatles, John Lennon'ın bestelediği \"Happiness Is a Warm Gun\" şarkısının stüdyo kayıtlarını tamamladı. Şarkı, gruptaki tüm üyelerin The Beatles albümündeki ortak favorisi olarak öne çıktı.",
+      "yil": 1908,
+      "baslik": "Ford Model T",
+      "metin": "İlk seri üretim Ford Model T, Detroit'teki Ford Piquette Avenue Fabrikası'nda tamamlandı. Bu otomobil, Amerika Birleşik Devletleri'nde otomobillerin kitleler tarafından yaygın olarak kullanılmasını başlatan araç olarak tarihe geçti.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Ford_Model_T"
+    },
+    {
+      "yil": 1917,
+      "baslik": "Benjamin Rubin'in Doğumu",
+      "metin": "Çiçek hastalığının kökünün kazınmasında hayati bir rol oynayan çatallı aşı iğnesini icat eden Amerikalı mikrobiyolog Benjamin Rubin dünyaya geldi. Bu küçük buluş, tıp tarihinde devrim yarattı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Benjamin_Rubin"
+    },
+    {
+      "yil": 1918,
+      "baslik": "Martin Ryle'ın Doğumu",
+      "metin": "İngiliz radyo astronom ve yazar Martin Ryle dünyaya geldi. Geliştirdiği devrim niteliğindeki radyo teleskop sistemleriyle zayıf radyo kaynaklarının hassas görüntülenmesini sağlayan Ryle, Nobel Ödülü'ne layık görülmüştür.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Martin_Ryle"
+    },
+    {
+      "yil": 1962,
+      "baslik": "Sessiz Bahar Kitabı",
+      "metin": "Rachel Carson'ın kaleme aldığı Sessiz Bahar yayımlandı ve büyük bir çevre hareketine ilham oldu. Kitap, tarımda yaygın olarak kullanılan pestisitlerin yarattığı çevresel zararları gözler önüne sererek çığır açtı.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Beatles"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Silent_Spring"
     },
     {
-      "yil": 1983,
-      "baslik": "Australia II Yatı America's Cup'taki 132 Yıllık Seriyi Bitirdi",
-      "metin": "Kaptan John Bertrand yönetimindeki Australia II yarış yatı, prestijli America's Cup yarışını kazanarak tarihi bir başarıya ulaştı. Avustralya ekibi bu zaferle, kupayı tam 132 yıldır aralıksız koruyan New York Yacht Club efsanesine son verdi.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Yacht_racing"
+      "yil": 1998,
+      "baslik": "Google Arama Motoru",
+      "metin": "Google web sitesi internet dünyasına adım attı. Günümüzde en popüler arama motoru olan sistem, her gün devasa boyutlarda, tam 20 bin terabyte'lık veri işlemektedir.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Google_Arama"
     },
     {
       "yil": 2008,
-      "baslik": "Yves Rossy Jet Motorlu Kanadıyla Manş Denizi'ni Geçti",
-      "metin": "İsviçreli pilot ve mucit Yves Rossy, sırtına bağladığı jet motorlu karbon fiber kanat takımıyla Manş Denizi'ni uçarak geçti. Kendi geliştirdiği deneysel uçuş sistemiyle gökyüzünde süzülen Rossy, bireysel havacılıkta çığır açan bir gösteriye imza attı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Yves_Rossy"
+      "baslik": "Zhai Zhigang'ın Uzay Yürüyüşü",
+      "metin": "CNSA astronotu Zhai Zhigang, uzay yürüyüşü gerçekleştiren ilk Çinli insan oldu. Shenzhou 7 görevi kapsamında tarihi bir ilke imza attı.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Zhai_Zhigang"
     }
   ]
 }
