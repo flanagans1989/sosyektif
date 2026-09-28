@@ -1,14 +1,9 @@
 {
-  "tarih": "2026-09-27T05:02:50.433Z",
+  "tarih": "2026-09-28T05:02:42.814Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 1,
   "onayaDusen": 0,
-  "reddedilen": 4,
-  "hatalar": [
-    "Fatma Betül Sayan Kaya: uygun değil: Yaşayan siyasetçiler ve güncel politik figürler site politikamız gereği içerik odağı olamaz.",
-    "Sarallar: uygun değil: Suç, şiddet, adli olaylar ve örgütler sosyektif içerik politikalarına uygun değildir.",
-    "Sedat Şahin: uygun değil: Yaşayan bir gerçek kişi (suç/adli bağlamda anılan isim) olması nedeniyle site politikalarına ve kural setine uygun değildir.",
-    "Sarallar-Şahinler çatışması: uygun değil: Suç, şiddet, adli olaylar ve çete çatışmaları sitenin yayın politikasına ve kurallarına kesinlikle aykırıdır."
-  ]
+  "reddedilen": 0,
+  "hatalar": []
 }
