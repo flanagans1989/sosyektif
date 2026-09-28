@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-28T06:18:27.786Z",
-  "toplamKontrol": 49,
+  "sonDenetim": "2026-09-28T12:01:53.839Z",
+  "toplamKontrol": 50,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -9,10 +9,17 @@
       "cozum": "Telegram'daki onay mesajlarına bak (✅/❌).",
       "ilkGorulme": "2026-09-25T05:06:15.135Z"
     },
+    "workflow-dagitim.yml": {
+      "alan": "Zamanlayıcı",
+      "durum": "hata",
+      "detay": "Dağıtım Kuyruğu son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/36419110924",
+      "cozum": "Logu incele.",
+      "ilkGorulme": "2026-09-28T12:01:53.839Z"
+    },
     "workflow-weekly-analytics.yml": {
       "alan": "Zamanlayıcı",
       "durum": "hata",
-      "detay": "Haftalık Analitik son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/36381306244",
+      "detay": "Haftalık Analitik son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/36415449710",
       "cozum": "Logu incele.",
       "ilkGorulme": "2026-09-28T05:35:03.466Z"
     },
@@ -21,6 +28,12 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "trend-wikipedia": {
+      "alan": "Trend kaynakları",
+      "durum": "hata",
+      "detay": "Wikipedia en çok okunanlar: 404 {\"detail\":\"The date(s) you used are valid, but we either do not have data for those date(s), or the project you asked for is not loaded yet. Please check docume",
+      "ilkGorulme": "2026-09-28T12:01:53.839Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
