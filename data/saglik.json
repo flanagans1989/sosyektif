@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-28T18:01:48.635Z",
-  "toplamKontrol": 48,
+  "sonDenetim": "2026-09-28T18:18:28.766Z",
+  "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -28,13 +28,6 @@
       "detay": "Telegram herkese açık kanal tanımlı değil — bu kanala paylaşım yapılmıyor.",
       "cozum": "Telegram'da kanal aç, botu yönetici yap, kanal kimliğini TELEGRAM_PUBLIC_CHANNEL_ID secret'ı olarak ekle.",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "kanal-bluesky": {
-      "alan": "Sosyal kanallar",
-      "durum": "hata",
-      "detay": "Bluesky girişi başarısız: Upstream service unreachable",
-      "cozum": "Bluesky → Ayarlar → Uygulama şifreleri'nden yeni şifre oluşturup BLUESKY_APP_PASSWORD'ı güncelle.",
-      "ilkGorulme": "2026-09-28T18:01:48.635Z"
     },
     "kanal-threads": {
       "alan": "Sosyal kanallar",
