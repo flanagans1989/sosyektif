@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-28T18:18:28.766Z",
-  "toplamKontrol": 49,
+  "sonDenetim": "2026-09-28T23:22:53.361Z",
+  "toplamKontrol": 48,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -51,7 +51,7 @@
     "tutarlilik-facebook": {
       "alan": "Dağıtım",
       "durum": "hata",
-      "detay": "facebook: kayıtta 39 paylaşım var ama hesapta 31 gönderi görünüyor.",
+      "detay": "facebook: kayıtta 39 paylaşım var ama hesapta 32 gönderi görünüyor.",
       "cozum": "Gönderiler silinmiş ya da paylaşım sessizce başarısız olmuş olabilir.",
       "ilkGorulme": "2026-09-19T18:01:17.178Z"
     }
