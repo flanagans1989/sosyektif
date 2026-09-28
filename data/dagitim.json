@@ -1523,11 +1523,20 @@
         "sonDeneme": "2026-09-28T05:05:37.538Z"
       },
       "reel": {
-        "durum": "onayda",
+        "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-28T05:07:36.108Z"
+        "sonDeneme": "2026-09-28T20:18:15.893Z"
+      },
+      "youtube": {
+        "durum": "ok",
+        "deneme": 1,
+        "id": "tM7w3vh8vB8",
+        "sonDeneme": "2026-09-28T20:18:15.893Z"
       }
     },
-    "reelIdleri": {}
+    "reelIdleri": {
+      "instagram": "18108024167524032",
+      "facebook": "1120140287636609"
+    }
   }
 }
