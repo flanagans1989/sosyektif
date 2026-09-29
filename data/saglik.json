@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-09-29T12:01:12.831Z",
+  "sonDenetim": "2026-09-29T12:18:27.487Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -19,12 +19,6 @@
       "alan": "Ekodektif verileri",
       "durum": "hata",
       "detay": "CoinGecko: 403 <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML><HEAD><META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text",
-      "ilkGorulme": "2026-09-29T12:01:12.831Z"
-    },
-    "site-veri-truncgil": {
-      "alan": "Ekodektif verileri",
-      "durum": "hata",
-      "detay": "finans.truncgil.com: fetch failed",
       "ilkGorulme": "2026-09-29T12:01:12.831Z"
     },
     "kanal-telegram": {
