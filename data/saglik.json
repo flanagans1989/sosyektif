@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-09-29T05:52:51.616Z",
+  "sonDenetim": "2026-09-29T06:01:10.088Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -15,13 +15,6 @@
       "detay": "Haftalık Analitik son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/36415449710",
       "cozum": "Logu incele.",
       "ilkGorulme": "2026-09-28T05:35:03.466Z"
-    },
-    "gunluk-veri": {
-      "alan": "Günlük içerik",
-      "durum": "hata",
-      "detay": "Bugünün verisi yok: tarihte-bugun.json (2026-09-28)",
-      "cozum": "burc.yml loglarına bak.",
-      "ilkGorulme": "2026-09-29T05:52:51.616Z"
     },
     "gorsel-unsplash": {
       "alan": "Görsel",
