@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-09-28",
+  "tarih": "2026-09-29",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1841,
-      "baslik": "Georges Clemenceau'nun Doğumu",
-      "metin": "Fransız siyasetçi ve gazeteci Georges Clemenceau dünyaya geldi. Üçüncü Cumhuriyet döneminde kritik siyasi roller üstlenen Clemenceau, kariyeri boyunca hem hekimlik hem de gazetecilik yaptı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Georges_Clemenceau"
+      "yil": 1760,
+      "baslik": "Williamsburg Bray Okulu'nun Açılışı",
+      "metin": "Amerika Birleşik Devletleri'nde Siyah çocukların eğitimine adanmış ve günümüze ulaşabilen en eski okul binası olan Williamsburg Bray Okulu açıldı. Benjamin Franklin'in önerisiyle kurulan okul, yüzlerce öğrenciye eğitim verdi.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Williamsburg_Bray_School"
     },
     {
-      "yil": 1889,
-      "baslik": "Metrik Sistemin Temellerinin Atılması",
-      "metin": "Fransa'da düzenlenen I. Ağırlıklar ve Ölçümler Genel Konferansı'nda kilogram ve metre metrik sistemin temel birimleri olarak tanımlandı. Alınan bu kararla birlikte uluslararası alanda ölçü birimlerinde standartlaşmaya gidildi.",
+      "yil": 1829,
+      "baslik": "Londra Metropolitan Polisi'nin Kuruluşu",
+      "metin": "Greater London bölgesinde suç önleme ve yasa uygulama faaliyetlerinden sorumlu olan Londra Metropolitan Polisi (Met) kuruldu. Bu teşkilat, modern polis teşkilatlarının gelişiminde öncü bir rol oynadı.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Metropolitan_Police"
+    },
+    {
+      "yil": 1885,
+      "baslik": "Dünyanın İlk Elektrikli Tramvay Hattı",
+      "metin": "Birleşik Krallık'ın Londra kentinde dünyanın ilk elektrikli tramvay hattı faaliyete geçti. Bu gelişme, şehir içi toplu ulaşım tarihinde raylı sistemlerin elektrik gücüne geçişinin ilk adımı oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Tramvay"
+    },
+    {
+      "yil": 1954,
+      "baslik": "CERN Sözleşmesinin İmzalanması",
+      "metin": "Dünyanın en büyük parçacık fiziği laboratuvarını işleten Avrupa Nükleer Araştırma Organizasyonu'nu (CERN) kuran sözleşme imzalandı. Bu kuruluş, evrenin en küçük yapı taşlarını incelemek üzere uluslararası bilim insanlarını bir araya getirdi.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Metrik_sistem"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/CERN"
     },
     {
-      "yil": 1928,
-      "baslik": "Alexander Fleming'in Penisilini Keşfi",
-      "metin": "İskoç bakteriyolog Alexander Fleming, Penicillium Notatum isimli bir küfün antibiyotik özellikler taşıdığını fark ederek penisilini buldu. Bu tesadüfi keşif, tıp dünyasında çığır açarak milyonlarca hayat kurtaran antibiyotik çağını başlattı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Alexander_Fleming"
-    },
-    {
-      "yil": 1963,
-      "baslik": "Roy Lichtenstein'ın Whaam! Eseri",
-      "metin": "Amerikalı sanatçı Roy Lichtenstein'ın en önemli çalışmalarından biri kabul edilen Whaam! tablosu, New York'taki Leo Castelli Galerisi'nde sergilenerek sanatseverlerle buluştu. Eser, pop art akımının ikonik örnekleri arasında yerini aldı.",
+      "yil": 1964,
+      "baslik": "Quino'nun Mafalda Çizgi Romanı",
+      "metin": "Quino tarafından yaratılan popüler çizgi roman Mafalda, Arjantin'deki gazetelerde ilk kez yayımlandı. Altı yaşındaki bu karakter, insanlık ve dünya meseleleri üzerine duyarlılığıyla kısa sürede geniş bir hayran kitlesine ulaştı.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Whaam!"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Mafalda"
     },
     {
-      "yil": 2003,
-      "baslik": "Türkiye Kadın Millî Voleybol Takımı'nın Tarihi Başarısı",
-      "metin": "Türkiye kadın millî voleybol takımı, Avrupa şampiyonasında tarihinde ilk kez ikincilik elde etti. Bu büyük derece, Türk voleybolunun uluslararası alandaki yükselişinin en önemli kilometre taşlarından biri oldu.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye_kad%C4%B1n_mill%C3%AE_voleybol_tak%C4%B1m%C4%B1"
-    },
-    {
-      "yil": 2008,
-      "baslik": "Falcon 1 ile Uzayda Bir İlk",
-      "metin": "SpaceX tarafından geliştirilen Falcon 1, özel olarak üretilen ve sıvı yakıtla çalışan yer tabanlı ilk roket olarak başarıyla yörüngeye yük taşıdı. Bu tarihi görevle birlikte uzay havacılığında özel sektörün önü açıldı.",
+      "yil": 2004,
+      "baslik": "Ansari SpaceShipOne Uzay Uçuşu",
+      "metin": "Burt Rutan'ın tasarımı olan Ansari SpaceShipOne, Ansari X Prize ödülünü kazanmak için gereken iki başarılı uzay uçuşundan ilkini gerçekleştirdi. Bu yenilikçi araç, uzay turizminin ve ticari uzay uçuşlarının önünü açan tarihi bir başarıya imza attı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Falcon_1"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Burt_Rutan"
     }
   ]
 }
