@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-29T00:18:21.650Z",
-  "toplamKontrol": 48,
+  "sonDenetim": "2026-09-29T05:52:51.616Z",
+  "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -15,6 +15,13 @@
       "detay": "Haftalık Analitik son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/36415449710",
       "cozum": "Logu incele.",
       "ilkGorulme": "2026-09-28T05:35:03.466Z"
+    },
+    "gunluk-veri": {
+      "alan": "Günlük içerik",
+      "durum": "hata",
+      "detay": "Bugünün verisi yok: tarihte-bugun.json (2026-09-28)",
+      "cozum": "burc.yml loglarına bak.",
+      "ilkGorulme": "2026-09-29T05:52:51.616Z"
     },
     "gorsel-unsplash": {
       "alan": "Görsel",
@@ -39,19 +46,19 @@
     "bekleyen-telegram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "telegram çalışmadığı için 8 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "telegram çalışmadığı için 9 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-19T06:01:08.237Z"
     },
     "bekleyen-threads": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "threads çalışmadığı için 8 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "threads çalışmadığı için 9 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-19T06:01:08.237Z"
     },
     "tutarlilik-facebook": {
       "alan": "Dağıtım",
       "durum": "hata",
-      "detay": "facebook: kayıtta 39 paylaşım var ama hesapta 32 gönderi görünüyor.",
+      "detay": "facebook: kayıtta 40 paylaşım var ama hesapta 33 gönderi görünüyor.",
       "cozum": "Gönderiler silinmiş ya da paylaşım sessizce başarısız olmuş olabilir.",
       "ilkGorulme": "2026-09-19T18:01:17.178Z"
     }
