@@ -1538,5 +1538,17 @@
       "instagram": "18108024167524032",
       "facebook": "1120140287636609"
     }
+  },
+  "nuhun-gemisi-hakkinda-ne-biliyorsun-5-soruluk-test": {
+    "eklendi": "2026-09-29T05:02:43.419Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-29T05:02:44.268Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mwn2fwqvgu23"
+      }
+    },
+    "reelIdleri": {}
   }
 }
