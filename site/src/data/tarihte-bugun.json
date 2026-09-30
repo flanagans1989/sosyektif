@@ -1,49 +1,63 @@
 {
-  "tarih": "2026-09-29",
+  "tarih": "2026-09-30",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1760,
-      "baslik": "Williamsburg Bray Okulu'nun Açılışı",
-      "metin": "Amerika Birleşik Devletleri'nde Siyah çocukların eğitimine adanmış ve günümüze ulaşabilen en eski okul binası olan Williamsburg Bray Okulu açıldı. Benjamin Franklin'in önerisiyle kurulan okul, yüzlerce öğrenciye eğitim verdi.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Williamsburg_Bray_School"
+      "yil": 1207,
+      "baslik": "Rumi Dünyaya Geldi",
+      "metin": "Tasavvuf dünyasının en büyük figürlerinden biri olan Sufi mazi ve şair Rumi dünyaya geldi. Hayatı ve öğretileriyle Mevlevi Tarikatı'nı kuran Rumi, aradan geçen yüzyıllara rağmen evrensel felsefesiyle insanlığı etkilemeye devam ediyor.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Rumi"
     },
     {
-      "yil": 1829,
-      "baslik": "Londra Metropolitan Polisi'nin Kuruluşu",
-      "metin": "Greater London bölgesinde suç önleme ve yasa uygulama faaliyetlerinden sorumlu olan Londra Metropolitan Polisi (Met) kuruldu. Bu teşkilat, modern polis teşkilatlarının gelişiminde öncü bir rol oynadı.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Metropolitan_Police"
+      "yil": 1791,
+      "baslik": "Mozart'ın Son Operası Sihirli Flüt Sahnelendi",
+      "metin": "Wolfgang Amadeus Mozart'ın son operası Sihirli Flüt, Viyana'da izleyiciyle buluştu. Eser, bestecinin ölümünden sadece iki ay önce sahnelenen unutulmaz bir başyapıt olarak tarihe geçti.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart"
     },
     {
-      "yil": 1885,
-      "baslik": "Dünyanın İlk Elektrikli Tramvay Hattı",
-      "metin": "Birleşik Krallık'ın Londra kentinde dünyanın ilk elektrikli tramvay hattı faaliyete geçti. Bu gelişme, şehir içi toplu ulaşım tarihinde raylı sistemlerin elektrik gücüne geçişinin ilk adımı oldu.",
+      "yil": 1882,
+      "baslik": "Kuzey Amerika'nın İlk Hidroelektrik Santrali",
+      "metin": "Wisconsin eyaletinin Appleton şehrindeki Vulcan Street Santrali elektrik üretmeye başladı. Bu tesis, Kuzey Amerika'da özel ve ticari müşterilere hizmet veren ilk Edison hidroelektrik merkezi oldu.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Vulcan_Street_Plant"
+    },
+    {
+      "yil": 1882,
+      "baslik": "Hans Geiger Doğdu",
+      "metin": "Radyasyon tespiti için kullanılan Geiger sayacını icat eden Alman fizikçi Hans Geiger dünyaya geldi. Bilim insanı ayrıca ünlü Rutherford saçılma deneylerini gerçekleştiren isimler arasında yer aldı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Hans_Geiger"
+    },
+    {
+      "yil": 1930,
+      "baslik": "Vecihi Bey Kendi Yapımı Uçağıyla Uçtu",
+      "metin": "İlk Türk sivil pilotlardan Vecihi Bey, kendi ürettiği uçağıyla Göztepe'den Yeşilköy'e uçtu. Bu tarihi başarı, Türkiye'nin havacılık tarihindeki en önemli öncü adımlarından biri olarak kayıtlara geçti.",
       "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Tramvay"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Vecihi_H%C3%BCrku%C5%9F"
     },
     {
       "yil": 1954,
-      "baslik": "CERN Sözleşmesinin İmzalanması",
-      "metin": "Dünyanın en büyük parçacık fiziği laboratuvarını işleten Avrupa Nükleer Araştırma Organizasyonu'nu (CERN) kuran sözleşme imzalandı. Bu kuruluş, evrenin en küçük yapı taşlarını incelemek üzere uluslararası bilim insanlarını bir araya getirdi.",
+      "baslik": "Dünyanın İlk Nükleer Denizaltısı Hizmete Girdi",
+      "metin": "Amerikan Donanması'na ait USS Nautilus denizaltısı, dünyanın nükleer enerjili ilk deniz taşıtı olarak hizmete girdi. Bu devrim niteliğindeki araç, daha sonra Kuzey Kutbu'nu su altında tamamen geçen ilk denizaltı olma unvanını da kazandı.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/CERN"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/USS_Nautilus_(SSN-571)"
     },
     {
-      "yil": 1964,
-      "baslik": "Quino'nun Mafalda Çizgi Romanı",
-      "metin": "Quino tarafından yaratılan popüler çizgi roman Mafalda, Arjantin'deki gazetelerde ilk kez yayımlandı. Altı yaşındaki bu karakter, insanlık ve dünya meseleleri üzerine duyarlılığıyla kısa sürede geniş bir hayran kitlesine ulaştı.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Mafalda"
-    },
-    {
-      "yil": 2004,
-      "baslik": "Ansari SpaceShipOne Uzay Uçuşu",
-      "metin": "Burt Rutan'ın tasarımı olan Ansari SpaceShipOne, Ansari X Prize ödülünü kazanmak için gereken iki başarılı uzay uçuşundan ilkini gerçekleştirdi. Bu yenilikçi araç, uzay turizminin ve ticari uzay uçuşlarının önünü açan tarihi bir başarıya imza attı.",
+      "yil": 1968,
+      "baslik": "Boeing 747 İlk Kez Halkın Karşısına Çıktı",
+      "metin": "Geniş gövdeli yolcu uçağı Boeing 747, halka tanıtılarak ilk kez kamuoyuyla buluştu. Bu devasa uçak, havacılık sektöründe uzun mesafeli yolculuk anlayışını tamamen değiştirdi.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Burt_Rutan"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Boeing_747"
+    },
+    {
+      "yil": 1998,
+      "baslik": "ICANN Kuruldu",
+      "metin": "İnternet alan adlarını ve IP adreslerini yöneten kâr amacı gütmeyen kuruluş ICANN kuruldu. Bu yapı, küresel internet ağının koordinasyonunu ve yönetim standartlarını belirleyen en önemli kurumlardan biri haline geldi.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/ICANN"
     }
   ]
 }
