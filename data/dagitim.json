@@ -1567,5 +1567,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "turk-futbolunun-en-cok-konusulan-kurumu-hakkinda-az-bilinen-4-gercek": {
+    "eklendi": "2026-09-30T05:03:29.937Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-09-30T05:03:30.714Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mwpkwaj3yo2f"
+      }
+    },
+    "reelIdleri": {}
   }
 }
