@@ -1,9 +1,12 @@
 {
-  "tarih": "2026-09-29T05:01:43.884Z",
+  "tarih": "2026-09-30T05:02:27.743Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 1,
   "onayaDusen": 0,
-  "reddedilen": 0,
-  "hatalar": []
+  "reddedilen": 2,
+  "hatalar": [
+    "Kavak Yelleri (dizi, 2007): \"Kavak Yelleri\" için yeterli Vikipedi kaynağı yok",
+    "Dağhan Külegeç: uygun değil: Yaşayan gerçek bir kişi olduğu için içerik politikamıza uygun değildir."
+  ]
 }
