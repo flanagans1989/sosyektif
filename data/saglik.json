@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-09-30T00:18:19.540Z",
-  "toplamKontrol": 48,
+  "sonDenetim": "2026-09-30T05:43:18.320Z",
+  "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -14,12 +14,6 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "site-veri-coingecko": {
-      "alan": "Ekodektif verileri",
-      "durum": "hata",
-      "detay": "CoinGecko: 403 <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML><HEAD><META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text",
-      "ilkGorulme": "2026-09-29T12:01:12.831Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
@@ -38,19 +32,19 @@
     "bekleyen-telegram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "telegram çalışmadığı için 9 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "telegram çalışmadığı için 10 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-19T06:01:08.237Z"
     },
     "bekleyen-threads": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "threads çalışmadığı için 9 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "threads çalışmadığı için 10 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-19T06:01:08.237Z"
     },
     "tutarlilik-facebook": {
       "alan": "Dağıtım",
       "durum": "hata",
-      "detay": "facebook: kayıtta 40 paylaşım var ama hesapta 33 gönderi görünüyor.",
+      "detay": "facebook: kayıtta 41 paylaşım var ama hesapta 34 gönderi görünüyor.",
       "cozum": "Gönderiler silinmiş ya da paylaşım sessizce başarısız olmuş olabilir.",
       "ilkGorulme": "2026-09-19T18:01:17.178Z"
     }
