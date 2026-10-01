@@ -1,65 +1,65 @@
 {
-  "tarih": "2026-09-30",
+  "tarih": "2026-10-01",
   "uretenProvider": "gemini",
   "burclar": {
     "koc": {
-      "yorum": "Sevgili Koç, bugün enerjin öyle yüksek ki, önüne çıkanı sandviç yapıp yiyecek gibisin! Aşk hayatında ise ani bir sürpriz kapını çalabilir, hazır ol.",
+      "yorum": "Sevgili Koç, bugün enerjin öyle yüksek ki adeta yerinde duramıyorsun; iş yerindeki projelerine hız katarken kahveni tazelemeyi unutma. Akşam saatlerinde ani bir kahve daveti kapını çalabilir, git gitsen iyi gelir.",
       "sansliSayi": 7,
       "sansliRenk": "Kırmızı"
     },
     "boga": {
-      "yorum": "Güzelim Boğa, kahveni alıp konfor alanından çıkmama günündesin ama iş yerinde seni bekleyen ufak bir tatlı telaş var. Akşama doğru sevdiğin birinden alacağın haber yüzünü güldürecek.",
+      "yorum": "Huzur meftunu Boğa, bugün konfor alanından biraz çıkıp esnek olman gerekebilir. İş hayatında küçük sürprizler planlarını değiştirse de öğleden sonra mideye indireceğin lezzetli bir tatlı her şeyi unutturur.",
       "sansliSayi": 12,
       "sansliRenk": "Yeşil"
     },
     "ikizler": {
-      "yorum": "Aheste İkizler, kafandaki kırk tilki aynı anda kuyruk sallarken odaklanmak biraz zor olabilir. Neyse ki sosyal rüzgarlar seni yine en popüler ortamlara taşıyor.",
-      "sansliSayi": 3,
+      "yorum": "Aynı anda beş farklı şeyle ilgilenme rekorunu yine kırmaya niyetlisin İkizler. Mesaj kutun tıka basa doluyken sevgilinle ya da hoşlandığın kişiyle yapacağın esprili sohbet günün en eğlenceli anı olacak.",
+      "sansliSayi": 23,
       "sansliRenk": "Sarı"
     },
     "yengec": {
-      "yorum": "Hassas Yengeç, bugün iç sesin sana 'battaniyeye sarıl ve dünyayı sessize al' diyor olabilir. İşleri biraz ağırdan alarak hem ruhunu hem de enerjini koruyabilirsin.",
+      "yorum": "İç sesinin pek bir gürültülü olduğu hassas bir gün seni bekliyor Yengeç burcu. Evde yapacağın ufak bir düzenleme ruhuna iyi gelirken, iş yerinde kalbini kıranlara tatlı ama mesafeli bir gülümseme yollayabilirsin.",
       "sansliSayi": 4,
       "sansliRenk": "Gümüş"
     },
     "aslan": {
-      "yorum": "İhtişamlı Aslan, sahne senin ama bu kez ışıklar biraz da iş projelerine parlıyor. Kalbini çalan o kişiye küçük bir jest yapmanın tam zamanı.",
+      "yorum": "Işıkların üzerine çevrildiği o görkemli günlerden biri Aslan! İş projelerinde liderliği eline alırken, aşk hayatında da partnerine biraz sahneyi bırakmak aranızdaki bağı tatlı bir şekilde güçlendirecektir.",
       "sansliSayi": 1,
       "sansliRenk": "Altın Sarısı"
     },
     "basak": {
-      "yorum": "Titiz Başak, masandaki o son detayı da düzeltmeden rahat etmeyeceksin biliyoruz. Biraz mola verip kahveye ortak arasan fena olmaz mi?",
-      "sansliSayi": 15,
+      "yorum": "Detayları gözden kaçırmayan titiz Başak, bugün masandaki en ufak dağınıklığı bile temizlemek isteyebilirsin. Aşkta ise mantıkla hareket etmeyi bırakıp biraz akışına bırakırsan, işlerin çok daha tatlı ilerlediğini göreceksin.",
+      "sansliSayi": 19,
       "sansliRenk": "Lacivert"
     },
     "terazi": {
-      "yorum": "Dengeli Terazi, kararsızlık katsayısı bugün tavan yapsa da estetik zevkinle her şeyi yoluna koyacaksın. Aşkta ise tatlı dille çözemeyeceğin hiçbir düğüm yok.",
+      "yorum": "Karar vermenin yine ölümcül bir çileye dönüştüğü o gün geldi mi Terazi? Kıyafet seçerken bile yarım saat harcayabilirsin, ama günün sonunda çevrene yaydığın estetik aura bütün o kararsızlıkları unutturacak.",
       "sansliSayi": 6,
       "sansliRenk": "Pembe"
     },
     "akrep": {
-      "yorum": "Gizemli Akrep, sezgilerin bugün adeta radar gibi çalışıyor, kimin ne dediğinden çok ne demek istemediğini fark ediyorsun. Bu derinliği iş hayatındaki stratejik hamlelerine yansıt.",
-      "sansliSayi": 9,
+      "yorum": "Gizemli dedektif Akrep, bugün etrafında dönen dolapları radarınla hemen fark edeceksin. İş yerinde stratejik hamleler yaparken, aşk hayatında tutkulu ve derin bir konuşma aranızdaki buzları eritebilir.",
+      "sansliSayi": 8,
       "sansliRenk": "Bordo"
     },
     "yay": {
-      "yorum": "Gezgin Yay, ayakların seni yine yeni ufuklara doğru taşıma niyetinde ama günlük sorumluluklar 'bir dakika' diyor. Akşama doğru planlayacağın kısa bir kaçamak tüm motivasyonunu yerine getirecek.",
-      "sansliSayi": 11,
+      "yorum": "Macera ruhlu Yay, yerinde saymak sana göre değil; bugün aklında hep seyahat planları var. Günlük işleri hızla bitirip yeni bir şeyler öğrenmek için harika bir enerjiye sahipsin, akşam da dostlarla bol kahkahalı bir masa seni bekliyor.",
+      "sansliSayi": 33,
       "sansliRenk": "Mor"
     },
     "oglak": {
-      "yorum": "Disiplinli Oğlak, bugün yapılacaklar listen adeta destan gibi uzuyor ama sen altından kalkarsın. Kariyerinde uzun zamandır beklediğin o yeşil ışık yavaşça yanıyor.",
-      "sansliSayi": 8,
+      "yorum": "Ciddi ve çalışkan Oğlak, bugün iş listeni bitirmeden koltuğa oturmayacaksın gibi duruyor. Fakat akşam üstü kendini ödüllendirmeyi ihmal etme, belki uzun zamandır almak istediğin o şeyin siparişini verme zamanı gelmiştir.",
+      "sansliSayi": 10,
       "sansliRenk": "Gri"
     },
     "kova": {
-      "yorum": "Fütüristik Kova, aklına gelen o deli fikirle çevrendekileri şaşırtmaya hazırsın. Sosyal çevrende yeni ve sıra dışı insanlarla yapacağın sohbetler ilhamını katlayacak.",
+      "yorum": "Geleceğin projelerini bugünden tasarlayan vizyoner Kova, sıradışı fikirlerinle toplantılara damga vurabilirsin. Aşkta ise kafanı karıştıran o orijinal insanla aranızdaki zihinsel çekim seni epey meşgul edecek.",
       "sansliSayi": 17,
       "sansliRenk": "Turkuaz"
     },
     "balik": {
-      "yorum": "Hayalperest Balık, bulutların üzerindeki seyahatine ara verip gerçek dünyaya iniş yapma vakti. Yaratıcı projelerde ve sanatsal konularda günün en şanslı kişisi sensin.",
-      "sansliSayi": 2,
+      "yorum": "Hayal dünyasının sınırlarında sörf yapan hassas Balık, bugün sanatsal işler ve yaratıcılık için biçilmiş kaftan. Günlük hayatın koşturmacası biraz yorarsa kulaklığını takıp müziğe sığınmak sana en iyi terapi olacak.",
+      "sansliSayi": 9,
       "sansliRenk": "Deniz Mavisi"
     }
   }

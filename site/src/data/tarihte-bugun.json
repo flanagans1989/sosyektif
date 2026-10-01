@@ -1,63 +1,56 @@
 {
-  "tarih": "2026-09-30",
+  "tarih": "2026-10-01",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1207,
-      "baslik": "Rumi Dünyaya Geldi",
-      "metin": "Tasavvuf dünyasının en büyük figürlerinden biri olan Sufi mazi ve şair Rumi dünyaya geldi. Hayatı ve öğretileriyle Mevlevi Tarikatı'nı kuran Rumi, aradan geçen yüzyıllara rağmen evrensel felsefesiyle insanlığı etkilemeye devam ediyor.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Rumi"
-    },
-    {
-      "yil": 1791,
-      "baslik": "Mozart'ın Son Operası Sihirli Flüt Sahnelendi",
-      "metin": "Wolfgang Amadeus Mozart'ın son operası Sihirli Flüt, Viyana'da izleyiciyle buluştu. Eser, bestecinin ölümünden sadece iki ay önce sahnelenen unutulmaz bir başyapıt olarak tarihe geçti.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart"
-    },
-    {
-      "yil": 1882,
-      "baslik": "Kuzey Amerika'nın İlk Hidroelektrik Santrali",
-      "metin": "Wisconsin eyaletinin Appleton şehrindeki Vulcan Street Santrali elektrik üretmeye başladı. Bu tesis, Kuzey Amerika'da özel ve ticari müşterilere hizmet veren ilk Edison hidroelektrik merkezi oldu.",
+      "yil": 1869,
+      "baslik": "Dünyanın İlk Kartpostalı Avusturya'da Basıldı",
+      "metin": "Zarf olmadan yazma ve postalama için tasarlanan dünyanın ilk kartpostalı Avusturya'da basıldı. Bir yüzü resimli, diğer yüzüne ise yazı yazılabilen bu dikdörtgen kalın kağıt, kısa sürede tüm dünyada popülerleşen yeni bir iletişim aracı haline geldi.",
       "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Vulcan_Street_Plant"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Kartpostal"
     },
     {
-      "yil": 1882,
-      "baslik": "Hans Geiger Doğdu",
-      "metin": "Radyasyon tespiti için kullanılan Geiger sayacını icat eden Alman fizikçi Hans Geiger dünyaya geldi. Bilim insanı ayrıca ünlü Rutherford saçılma deneylerini gerçekleştiren isimler arasında yer aldı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Hans_Geiger"
-    },
-    {
-      "yil": 1930,
-      "baslik": "Vecihi Bey Kendi Yapımı Uçağıyla Uçtu",
-      "metin": "İlk Türk sivil pilotlardan Vecihi Bey, kendi ürettiği uçağıyla Göztepe'den Yeşilköy'e uçtu. Bu tarihi başarı, Türkiye'nin havacılık tarihindeki en önemli öncü adımlarından biri olarak kayıtlara geçti.",
+      "yil": 1880,
+      "baslik": "Thomas Edison İlk Elektrikli Ampul Fabrikasını Açtı",
+      "metin": "Thomas Edison tarafından açılan bu tesis, elektrik akımıyla temas ettiğinde akkor durumuna gelerek ışık yayan ampullerin üretildiği ilk elektrikli ampul fabrikası oldu. İçinde argon gazı bulunan ve armut biçimli bu cam şişeler, aydınlatma teknolojisinde çığır açtı.",
       "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Vecihi_H%C3%BCrku%C5%9F"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ampul"
     },
     {
-      "yil": 1954,
-      "baslik": "Dünyanın İlk Nükleer Denizaltısı Hizmete Girdi",
-      "metin": "Amerikan Donanması'na ait USS Nautilus denizaltısı, dünyanın nükleer enerjili ilk deniz taşıtı olarak hizmete girdi. Bu devrim niteliğindeki araç, daha sonra Kuzey Kutbu'nu su altında tamamen geçen ilk denizaltı olma unvanını da kazandı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/USS_Nautilus_(SSN-571)"
+      "yil": 1903,
+      "baslik": "Piyanist Vladimir Horowitz Dünyaya Geldi",
+      "metin": "Tüm zamanların en büyük piyanistlerinden biri olarak kabul edilen Rus asıllı Amerikalı sanatçı Vladimir Horowitz doğdu. Virtüöz tekniği, benzersiz timbresi ve sahnedeki büyüleyici performanslarıyla klasik müzik dünyasında silinmez izler bıraktı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Vladimir_Horowitz"
     },
     {
-      "yil": 1968,
-      "baslik": "Boeing 747 İlk Kez Halkın Karşısına Çıktı",
-      "metin": "Geniş gövdeli yolcu uçağı Boeing 747, halka tanıtılarak ilk kez kamuoyuyla buluştu. Bu devasa uçak, havacılık sektöründe uzun mesafeli yolculuk anlayışını tamamen değiştirdi.",
+      "yil": 1964,
+      "baslik": "Japonya'da Şinkansen Yüksek Hızlı Tren Seferleri Başladı",
+      "metin": "Halk arasında 'mızrak tren' olarak bilinen Japon Shinkansen trenleri, Tokyo ile Osaka arasında yüksek hızlı demiryolu hizmetine başladı. Ülkenin farklı bölgelerini birbirine bağlamak için geliştirilen bu devrim niteliğindeki ağ, demiryolu taşımacılığında yeni bir standart belirledi.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Shinkansen"
+    },
+    {
+      "yil": 1969,
+      "baslik": "Concorde Ses Duvarını Aştı",
+      "metin": "Sud Aviation ve British Aircraft Corporation ortaklığıyla geliştirilen Concorde, ses bariyerini ilk kez aşarak havacılık tarihine adını yazdırdı. Anglo-Fransız ortak yapımı bu süpersonik yolcu uçağı, havacılık mühendisliğinde çığır açan bir başarıya imza attı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Boeing_747"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Concorde"
     },
     {
-      "yil": 1998,
-      "baslik": "ICANN Kuruldu",
-      "metin": "İnternet alan adlarını ve IP adreslerini yöneten kâr amacı gütmeyen kuruluş ICANN kuruldu. Bu yapı, küresel internet ağının koordinasyonunu ve yönetim standartlarını belirleyen en önemli kurumlardan biri haline geldi.",
+      "yil": 1971,
+      "baslik": "İlk Pratik Bilgisayarlı Tomografi Cihazı Kullanıldı",
+      "metin": "Tıp tarihinde bir dönüm noktası olan ilk pratik CT tarayıcı, bir hastanın teşhisinde başarıyla kullanıldı. X-ışını radyasyonunun tıbbi teşhislerdeki yerini bambaşka bir boyuta taşıyan bu teknoloji, modern tıbbın en önemli tanı araçlarından biri haline geldi.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/ICANN"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/History_of_computed_tomography"
+    },
+    {
+      "yil": 1982,
+      "baslik": "Sony İlk CD Çalarını Piyasaya Sürdü",
+      "metin": "Sony, son kullanıcıya yönelik ilk CD çaları piyasaya sürerek müzik dünyasında yeni bir dijital çağ başlattı. Philips ve Sony tarafından ortaklaşa geliştirilen bu dijital optik disk veri saklama formatı, ses kayıtlarını saklama ve dinleme alışkanlıklarını tamamen değiştirdi.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sony"
     }
   ]
 }
