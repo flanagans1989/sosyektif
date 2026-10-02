@@ -1,15 +1,12 @@
 {
-  "tarih": "2026-10-01T05:02:41.483Z",
+  "tarih": "2026-10-02T05:02:25.565Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 0,
   "onayaDusen": 1,
-  "reddedilen": 5,
+  "reddedilen": 2,
   "hatalar": [
-    "Cemil Tugay: uygun değil: Yaşayan bir siyasetçi ve gerçek kişi olması nedeniyle içerik politikalarımıza uymamaktadır.",
-    "Seks ve Genç Kız (film): uygun değil: Cinsellik, +18 içerik barındıran veya bu yönde algılanabilecek konular sosyektif yayın ilkelerine uygun değildir.",
-    "Sezgin Baran Korkmaz: uygun değil: Yaşayan bir gerçek kişi ve adli/güncel olaylar kapsamına girdiği için site politikalarımıza uygun değildir.",
-    "Theodore Kaczynski: uygun değil: Suç, şiddet ve terör olaylarıyla bağlantılı kişileri ve konuları barındıran içerikler politikamız gereği uygun değildir.",
-    "Serenay Sarıkaya: uygun değil: Yaşayan gerçek bir kişinin kendisi doğrudan konu odağı olarak seçilemez."
+    "Hayati Yazıcı: uygun değil: Yaşayan siyasetçi ve politikacılar site kuralları gereği içerik odağı olamaz.",
+    "2013 Reyhanlı bombalı saldırıları: uygun değil: Suç, şiddet, adli olaylar, savaş ve terör haberleri sitesi yayın politikası gereği uygun değildir."
   ]
 }
