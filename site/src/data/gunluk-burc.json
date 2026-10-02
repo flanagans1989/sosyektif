@@ -1,65 +1,65 @@
 {
-  "tarih": "2026-10-01",
+  "tarih": "2026-10-02",
   "uretenProvider": "gemini",
   "burclar": {
     "koc": {
-      "yorum": "Sevgili Koç, bugün enerjin öyle yüksek ki adeta yerinde duramıyorsun; iş yerindeki projelerine hız katarken kahveni tazelemeyi unutma. Akşam saatlerinde ani bir kahve daveti kapını çalabilir, git gitsen iyi gelir.",
+      "yorum": "Bugün enerjin tavan yapmış durumda, adeta durdurulamaz bir füze gibisin sevgili Koç. İş yerinde önüne çıkan engelleri sabırla değil, o meşhur hızınla aşmak isteyebilirsin ama arada derin bir nefes almayı unutma.",
       "sansliSayi": 7,
       "sansliRenk": "Kırmızı"
     },
     "boga": {
-      "yorum": "Huzur meftunu Boğa, bugün konfor alanından biraz çıkıp esnek olman gerekebilir. İş hayatında küçük sürprizler planlarını değiştirse de öğleden sonra mideye indireceğin lezzetli bir tatlı her şeyi unutturur.",
+      "yorum": "Konfor alanından çıkmak bugün gözünü biraz korkutabilir ama kahveni alıp sakince düşündüğünde değişimin o kadar da fena olmadığını fark edeceksin. Akşama doğru sevdiğin birinden alacağın tatlı bir haber tüm yorgunluğunu unutturur.",
       "sansliSayi": 12,
       "sansliRenk": "Yeşil"
     },
     "ikizler": {
-      "yorum": "Aynı anda beş farklı şeyle ilgilenme rekorunu yine kırmaya niyetlisin İkizler. Mesaj kutun tıka basa doluyken sevgilinle ya da hoşlandığın kişiyle yapacağın esprili sohbet günün en eğlenceli anı olacak.",
+      "yorum": "Aklında yine kırk tane tilki dolaşıyor ve bu sevimli kurnazlık gün boyunca işine yarayacak. İletişim trafiğin o kadar yoğun ki, akşam eve gittiğinde telefonunu kapatıp sadece sessizliği dinlemek isteyebilirsin.",
       "sansliSayi": 23,
       "sansliRenk": "Sarı"
     },
     "yengec": {
-      "yorum": "İç sesinin pek bir gürültülü olduğu hassas bir gün seni bekliyor Yengeç burcu. Evde yapacağın ufak bir düzenleme ruhuna iyi gelirken, iş yerinde kalbini kıranlara tatlı ama mesafeli bir gülümseme yollayabilirsin.",
+      "yorum": "Duygu seline kapılmak için harika bir gün, evinin huzurlu köşesi bugün senin sığınağın olacak. Aşk hayatında ise ufak bir nostalji rüzgarı esebilir, eski bir hatıra yüzünü güldürebilir.",
       "sansliSayi": 4,
       "sansliRenk": "Gümüş"
     },
     "aslan": {
-      "yorum": "Işıkların üzerine çevrildiği o görkemli günlerden biri Aslan! İş projelerinde liderliği eline alırken, aşk hayatında da partnerine biraz sahneyi bırakmak aranızdaki bağı tatlı bir şekilde güçlendirecektir.",
+      "yorum": "Sahne senin sevgili Aslan, kim tutar seni! İş ortamında liderliğini konuştururken etrafındakilere biraz alan tanımak popülariteni ikiye katlayabilir. Akşam saatlerinde harika bir sosyal aktivite kapıda.",
       "sansliSayi": 1,
       "sansliRenk": "Altın Sarısı"
     },
     "basak": {
-      "yorum": "Detayları gözden kaçırmayan titiz Başak, bugün masandaki en ufak dağınıklığı bile temizlemek isteyebilirsin. Aşkta ise mantıkla hareket etmeyi bırakıp biraz akışına bırakırsan, işlerin çok daha tatlı ilerlediğini göreceksin.",
-      "sansliSayi": 19,
+      "yorum": "Detaylarda kaybolma festivaline hoş geldin! Dosyaları düzenlemek veya evi tanzim etmek ruhuna adeta terapi gibi gelecek. Kusursuzluk peşinde koşarken kendi kahve molalarını da planlamayı unutma.",
+      "sansliSayi": 5,
       "sansliRenk": "Lacivert"
     },
     "terazi": {
-      "yorum": "Karar vermenin yine ölümcül bir çileye dönüştüğü o gün geldi mi Terazi? Kıyafet seçerken bile yarım saat harcayabilirsin, ama günün sonunda çevrene yaydığın estetik aura bütün o kararsızlıkları unutturacak.",
+      "yorum": "Kararsızlık terazin yine dengesizleşti; kahvemi alayım yoksa çay mı, derken gün bitecek neredeyse. İlişkilerde dengeyi bulmak adına yapacağın tatlı bir konuşma, tüm buzları eritmeye yetecek güçte.",
       "sansliSayi": 6,
       "sansliRenk": "Pembe"
     },
     "akrep": {
-      "yorum": "Gizemli dedektif Akrep, bugün etrafında dönen dolapları radarınla hemen fark edeceksin. İş yerinde stratejik hamleler yaparken, aşk hayatında tutkulu ve derin bir konuşma aranızdaki buzları eritebilir.",
-      "sansliSayi": 8,
+      "yorum": "Gizemli havan bugün yine üstünde, kimse ne düşündüğünü tam olarak çözemeyecek. İş veya özel hayatında sezgilerine güvenmek seni en doğru yola götürecek; iç sesin ne diyorsa kulak ver.",
+      "sansliSayi": 9,
       "sansliRenk": "Bordo"
     },
     "yay": {
-      "yorum": "Macera ruhlu Yay, yerinde saymak sana göre değil; bugün aklında hep seyahat planları var. Günlük işleri hızla bitirip yeni bir şeyler öğrenmek için harika bir enerjiye sahipsin, akşam da dostlarla bol kahkahalı bir masa seni bekliyor.",
-      "sansliSayi": 33,
+      "yorum": "Seyahat planları veya yeni hobiler zihnini meşgul ederken macera ruhun yine uyanıyor. Rutin işler sana dar gelebilir, bu yüzden öğle aralarını birazcık keşif yaparak değerlendirebilirsin.",
+      "sansliSayi": 3,
       "sansliRenk": "Mor"
     },
     "oglak": {
-      "yorum": "Ciddi ve çalışkan Oğlak, bugün iş listeni bitirmeden koltuğa oturmayacaksın gibi duruyor. Fakat akşam üstü kendini ödüllendirmeyi ihmal etme, belki uzun zamandır almak istediğin o şeyin siparişini verme zamanı gelmiştir.",
-      "sansliSayi": 10,
-      "sansliRenk": "Gri"
+      "yorum": "Disiplin kelimesi bugün senin ikinci adın olacak, işler dağ gibi birikse bile altından kalkarsın. Ancak akşam kendini ödüllendirmeyi ihmal etme, çünkü o mola senin de hakkın.",
+      "sansliSayi": 8,
+      "sansliRenk": "Kahverengi"
     },
     "kova": {
-      "yorum": "Geleceğin projelerini bugünden tasarlayan vizyoner Kova, sıradışı fikirlerinle toplantılara damga vurabilirsin. Aşkta ise kafanı karıştıran o orijinal insanla aranızdaki zihinsel çekim seni epey meşgul edecek.",
-      "sansliSayi": 17,
-      "sansliRenk": "Turkuaz"
+      "yorum": "Geleceğe dair çılgın fikirlerin yine etrafındakileri şaşırtacak, yenilikçi enerjin çok yüksek. Teknolojik aletlerle ilgili ufak tefek aksilikler yaşanabilir ama pratik zekanla hemen çözersin.",
+      "sansliSayi": 11,
+      "sansliRenk": "Mavi"
     },
     "balik": {
-      "yorum": "Hayal dünyasının sınırlarında sörf yapan hassas Balık, bugün sanatsal işler ve yaratıcılık için biçilmiş kaftan. Günlük hayatın koşturmacası biraz yorarsa kulaklığını takıp müziğe sığınmak sana en iyi terapi olacak.",
-      "sansliSayi": 9,
+      "yorum": "Hayal dünyasında yüzmek için harika bir gün, yaratıcı işlerle uğraşanlar için ilham perileri etrafta uçuşuyor. Aşkta ise romantik ve rüya gibi anlar kapıda, gözlerini kalbine aç.",
+      "sansliSayi": 77,
       "sansliRenk": "Deniz Mavisi"
     }
   }

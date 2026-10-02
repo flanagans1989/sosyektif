@@ -1,56 +1,63 @@
 {
-  "tarih": "2026-10-01",
+  "tarih": "2026-10-02",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1869,
-      "baslik": "Dünyanın İlk Kartpostalı Avusturya'da Basıldı",
-      "metin": "Zarf olmadan yazma ve postalama için tasarlanan dünyanın ilk kartpostalı Avusturya'da basıldı. Bir yüzü resimli, diğer yüzüne ise yazı yazılabilen bu dikdörtgen kalın kağıt, kısa sürede tüm dünyada popülerleşen yeni bir iletişim aracı haline geldi.",
+      "yil": 1608,
+      "baslik": "Hans Lippershey Modern Teleskobun İlk Prototipini Yaptı",
+      "metin": "Hollandalı gözlük üreticisi Hans Lippershey, uzaktaki nesneleri yakınlaştıran modern teleskobun ilk prototipini üretti. Lippershey'nin 1608'deki bu icadı, sadece bir yıl sonra Galileo Galilei'nin geliştireceği astronomik teleskopların ve uzay gözlemlerinin önünü açtı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Teleskop"
+    },
+    {
+      "yil": 1836,
+      "baslik": "Charles Darwin Beş Yıllık Beagle Seferini Tamamladı",
+      "metin": "Doğa bilimci Charles Darwin, HMS Beagle gemisiyle Brezilya, Galapagos Adaları ve Yeni Zelanda'yı kapsayan beş yıllık seyahatini tamamlayarak İngiltere'ye döndü. Bu yolculuk boyunca yaptığı zengin gözlemler, 1859'da yayımlayacağı evrim teorisinin başyapıtı Türlerin Kökeni kitabının temelini oluşturdu.",
       "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Kartpostal"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Charles_Darwin"
     },
     {
-      "yil": 1880,
-      "baslik": "Thomas Edison İlk Elektrikli Ampul Fabrikasını Açtı",
-      "metin": "Thomas Edison tarafından açılan bu tesis, elektrik akımıyla temas ettiğinde akkor durumuna gelerek ışık yayan ampullerin üretildiği ilk elektrikli ampul fabrikası oldu. İçinde argon gazı bulunan ve armut biçimli bu cam şişeler, aydınlatma teknolojisinde çığır açtı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ampul"
-    },
-    {
-      "yil": 1903,
-      "baslik": "Piyanist Vladimir Horowitz Dünyaya Geldi",
-      "metin": "Tüm zamanların en büyük piyanistlerinden biri olarak kabul edilen Rus asıllı Amerikalı sanatçı Vladimir Horowitz doğdu. Virtüöz tekniği, benzersiz timbresi ve sahnedeki büyüleyici performanslarıyla klasik müzik dünyasında silinmez izler bıraktı.",
+      "yil": 1852,
+      "baslik": "Soy Gazları Keşfeden Kimyager William Ramsay Doğdu",
+      "metin": "Kimya dünyasında devrim yaratan İskoç bilim insanı William Ramsay doğdu. Havadaki asal gazları keşfederek periyodik tablonun eksik parçalarını tamamlayan Ramsay, bu çığır açıcı çalışmalarıyla 1904 Nobel Kimya Ödülü'ne layık görüldü.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Vladimir_Horowitz"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/William_Ramsay"
     },
     {
-      "yil": 1964,
-      "baslik": "Japonya'da Şinkansen Yüksek Hızlı Tren Seferleri Başladı",
-      "metin": "Halk arasında 'mızrak tren' olarak bilinen Japon Shinkansen trenleri, Tokyo ile Osaka arasında yüksek hızlı demiryolu hizmetine başladı. Ülkenin farklı bölgelerini birbirine bağlamak için geliştirilen bu devrim niteliğindeki ağ, demiryolu taşımacılığında yeni bir standart belirledi.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Shinkansen"
+      "yil": 1890,
+      "baslik": "Komedi Efsanesi Groucho Marx Dünyaya Geldi",
+      "metin": "Amerikan mizahının en büyük ustalarından biri kabul edilen aktör ve komedyen Groucho Marx doğdu. Hazırcevaplığı ve sivri dilli tek cümlelik esprileriyle tanınan Marx, vaudeville'den sinemaya ve televizyona uzanan kariyeriyle komedi türünde silinmez bir iz bıraktı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Groucho_Marx"
     },
     {
-      "yil": 1969,
-      "baslik": "Concorde Ses Duvarını Aştı",
-      "metin": "Sud Aviation ve British Aircraft Corporation ortaklığıyla geliştirilen Concorde, ses bariyerini ilk kez aşarak havacılık tarihine adını yazdırdı. Anglo-Fransız ortak yapımı bu süpersonik yolcu uçağı, havacılık mühendisliğinde çığır açan bir başarıya imza attı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Concorde"
+      "yil": 1913,
+      "baslik": "Shubert Tiyatrosu Broadway'de Hamlet Oyunuyla Açıldı",
+      "metin": "New York'un tiyatro kalbi Broadway'de inşa edilen Shubert Tiyatrosu, William Shakespeare'in Hamlet prodüksiyonuyla kapılarını açtı. Mimar Henry Beaumont Herts tarafından tasarlanan bu görkemli yapı, Broadway tarihinin en prestijli sahnelerinden biri oldu.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Shubert_Theatre_(Broadway)"
     },
     {
-      "yil": 1971,
-      "baslik": "İlk Pratik Bilgisayarlı Tomografi Cihazı Kullanıldı",
-      "metin": "Tıp tarihinde bir dönüm noktası olan ilk pratik CT tarayıcı, bir hastanın teşhisinde başarıyla kullanıldı. X-ışını radyasyonunun tıbbi teşhislerdeki yerini bambaşka bir boyuta taşıyan bu teknoloji, modern tıbbın en önemli tanı araçlarından biri haline geldi.",
+      "yil": 1950,
+      "baslik": "Charles M. Schulz'un Peanuts Çizgi Bandı Yayımlanmaya Başladı",
+      "metin": "Amerikalı çizer Charles M. Schulz'un yarattığı dünyaca ünlü Peanuts karikatür serisi ilk kez yayımlandı. Çizgi bant; sevimli köpek Snoopy ve sahibi Charlie Brown gibi popüler kültürün en tanınan karakterlerini milyonlarca okurla buluşturdu.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Charles_M._Schulz"
+    },
+    {
+      "yil": 1957,
+      "baslik": "Orta Doğu Teknik Üniversitesi'nin Temeli Atıldı",
+      "metin": "Ankara'da kurulan Orta Doğu Teknik Üniversitesi'nin (ODTÜ) temelleri resmen atıldı. Adnan Menderes, Vecdi Diker ve bir grup akademisyenin öncülüğünde hayata geçen üniversite, Türkiye'nin en köklü bilim ve teknik eğitim yuvalarından biri hâline geldi.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/History_of_computed_tomography"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Orta_Do%C4%9Fu_Teknik_%C3%9Cniversitesi"
     },
     {
-      "yil": 1982,
-      "baslik": "Sony İlk CD Çalarını Piyasaya Sürdü",
-      "metin": "Sony, son kullanıcıya yönelik ilk CD çaları piyasaya sürerek müzik dünyasında yeni bir dijital çağ başlattı. Philips ve Sony tarafından ortaklaşa geliştirilen bu dijital optik disk veri saklama formatı, ses kayıtlarını saklama ve dinleme alışkanlıklarını tamamen değiştirdi.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sony"
+      "yil": 2004,
+      "baslik": "Londra'da İlk Parkrun Koşusu Düzenlendi",
+      "metin": "Dünyanın dört bir yanına yayılan kitlesel koşu hareketi Parkrun, Londra'daki Bushy Park'ta yapılan 5 kilometrelik zaman denemesiyle ilk kez düzenlendi. Bu mütevazı başlangıç, yıllar içinde 5 kıtada ve 2 binden fazla noktada her hafta sonu yapılan küresel bir spor etkinliğine dönüştü.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Parkrun"
     }
   ]
 }
