@@ -1596,5 +1596,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "osmanlinin-kaderini-degistiren-yavuz-sultan-selim-hakkinda-sasirtici-5-gercek": {
+    "eklendi": "2026-10-03T16:28:29.915Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-03T16:28:30.908Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mwyclv3i4m2l"
+      }
+    },
+    "reelIdleri": {}
   }
 }
