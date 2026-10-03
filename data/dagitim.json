@@ -1605,6 +1605,18 @@
     },
     "reelIdleri": {}
   },
+  "gibi-dizisi-hakkinda-mutlaka-bilmeniz-gereken-4-detay": {
+    "eklendi": "2026-10-03T16:31:48.212Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-03T16:31:49.345Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mwycrscp4n25"
+      }
+    },
+    "reelIdleri": {}
+  },
   "osmanlinin-kaderini-degistiren-yavuz-sultan-selim-hakkinda-sasirtici-5-gercek": {
     "eklendi": "2026-10-03T16:28:29.915Z",
     "kanallar": {
@@ -1623,8 +1635,8 @@
       "facebook": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-10-03T16:30:47.448Z",
-        "id": "1243429762194033_122118360771474851"
+        "id": "1243429762194033_122118360771474851",
+        "sonDeneme": "2026-10-03T16:30:47.448Z"
       }
     },
     "reelIdleri": {}
