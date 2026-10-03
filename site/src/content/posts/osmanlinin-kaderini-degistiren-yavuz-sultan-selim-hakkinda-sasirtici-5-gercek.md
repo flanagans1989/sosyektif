@@ -31,7 +31,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Selim I
     url: https://en.wikipedia.org/wiki/Selim_I
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Çiğdem İŞERİ on Pexels
 moderasyon:
   skor: 1
