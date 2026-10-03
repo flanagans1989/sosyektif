@@ -1664,8 +1664,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-10-03T16:36:26.710Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mwyd22t6vw25"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mwyd22t6vw25",
+        "sonDeneme": "2026-10-03T16:36:26.710Z"
+      },
+      "instagram": {
+        "durum": "hata",
+        "deneme": 1,
+        "sonDeneme": "2026-10-03T16:38:03.741Z",
+        "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Only photo or video can be accepted as media type.\",\"type\":\"OAuthException\",\"code\":9004,\"error_subcode\":2207052,\"is_transient\":false,\"error_user_title\":\"Media download has failed. The media URI doesn't meet our requirements.\",\"error_user"
       }
     },
     "reelIdleri": {}
