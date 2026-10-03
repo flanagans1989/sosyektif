@@ -1672,6 +1672,12 @@
         "deneme": 1,
         "sonDeneme": "2026-10-03T16:38:03.741Z",
         "hata": "[instagram] container oluşturulamadı: 400 {\"error\":{\"message\":\"Only photo or video can be accepted as media type.\",\"type\":\"OAuthException\",\"code\":9004,\"error_subcode\":2207052,\"is_transient\":false,\"error_user_title\":\"Media download has failed. The media URI doesn't meet our requirements.\",\"error_user"
+      },
+      "facebook": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-03T16:38:23.377Z",
+        "id": "1243429762194033_122118364575474851"
       }
     },
     "reelIdleri": {}
