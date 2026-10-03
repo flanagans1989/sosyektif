@@ -1561,12 +1561,20 @@
         "sonDeneme": "2026-09-29T05:04:56.092Z"
       },
       "reel": {
-        "durum": "onayda",
+        "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-09-29T05:06:34.529Z"
+        "sonDeneme": "2026-10-03T16:30:15.923Z"
+      },
+      "youtube": {
+        "durum": "ok",
+        "deneme": 1,
+        "id": "lU8unUgAj3w",
+        "sonDeneme": "2026-10-03T16:30:15.923Z"
       }
     },
-    "reelIdleri": {}
+    "reelIdleri": {
+      "instagram": "18396716983204568"
+    }
   },
   "turk-futbolunun-en-cok-konusulan-kurumu-hakkinda-az-bilinen-4-gercek": {
     "eklendi": "2026-09-30T05:03:29.937Z",
