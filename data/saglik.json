@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-10-03T16:31:34.628Z",
-  "toplamKontrol": 50,
+  "sonDenetim": "2026-10-03T18:01:32.218Z",
+  "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -14,6 +14,12 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "site-veri-truncgil": {
+      "alan": "Ekodektif verileri",
+      "durum": "hata",
+      "detay": "finans.truncgil.com: fetch failed",
+      "ilkGorulme": "2026-10-03T18:01:32.218Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
@@ -44,7 +50,7 @@
     "tutarlilik-facebook": {
       "alan": "Dağıtım",
       "durum": "hata",
-      "detay": "facebook: kayıtta 42 paylaşım var ama hesapta 36 gönderi görünüyor.",
+      "detay": "facebook: kayıtta 44 paylaşım var ama hesapta 39 gönderi görünüyor.",
       "cozum": "Gönderiler silinmiş ya da paylaşım sessizce başarısız olmuş olabilir.",
       "ilkGorulme": "2026-09-19T18:01:17.178Z"
     }
