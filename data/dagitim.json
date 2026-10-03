@@ -1605,6 +1605,30 @@
     },
     "reelIdleri": {}
   },
+  "osmanlinin-kaderini-degistiren-yavuz-sultan-selim-hakkinda-sasirtici-5-gercek": {
+    "eklendi": "2026-10-03T16:28:29.915Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mwyclv3i4m2l",
+        "sonDeneme": "2026-10-03T16:28:30.908Z"
+      },
+      "instagram": {
+        "durum": "ok",
+        "deneme": 1,
+        "id": "18089372795222108",
+        "sonDeneme": "2026-10-03T16:30:26.791Z"
+      },
+      "facebook": {
+        "durum": "ok",
+        "deneme": 1,
+        "id": "1243429762194033_122118360771474851",
+        "sonDeneme": "2026-10-03T16:30:47.448Z"
+      }
+    },
+    "reelIdleri": {}
+  },
   "gibi-dizisi-hakkinda-mutlaka-bilmeniz-gereken-4-detay": {
     "eklendi": "2026-10-03T16:31:48.212Z",
     "kanallar": {
@@ -1634,30 +1658,6 @@
     },
     "reelIdleri": {}
   },
-  "osmanlinin-kaderini-degistiren-yavuz-sultan-selim-hakkinda-sasirtici-5-gercek": {
-    "eklendi": "2026-10-03T16:28:29.915Z",
-    "kanallar": {
-      "bluesky": {
-        "durum": "ok",
-        "deneme": 1,
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mwyclv3i4m2l",
-        "sonDeneme": "2026-10-03T16:28:30.908Z"
-      },
-      "instagram": {
-        "durum": "ok",
-        "deneme": 1,
-        "id": "18089372795222108",
-        "sonDeneme": "2026-10-03T16:30:26.791Z"
-      },
-      "facebook": {
-        "durum": "ok",
-        "deneme": 1,
-        "id": "1243429762194033_122118360771474851",
-        "sonDeneme": "2026-10-03T16:30:47.448Z"
-      }
-    },
-    "reelIdleri": {}
-  },
   "osmanlinin-yildizini-parlatan-ali-kuscu-hakkinda-6-bilgi-ve-quiz": {
     "eklendi": "2026-10-03T16:36:26.106Z",
     "kanallar": {
@@ -1676,8 +1676,8 @@
       "facebook": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-10-03T16:38:23.377Z",
-        "id": "1243429762194033_122118364575474851"
+        "id": "1243429762194033_122118364575474851",
+        "sonDeneme": "2026-10-03T16:38:23.377Z"
       }
     },
     "reelIdleri": {}
