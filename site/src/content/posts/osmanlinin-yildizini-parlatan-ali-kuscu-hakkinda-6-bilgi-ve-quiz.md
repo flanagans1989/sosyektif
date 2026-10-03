@@ -69,7 +69,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Ali Qushji
     url: https://en.wikipedia.org/wiki/Ali_Qushji
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Jan van der Wolf on Pexels
 moderasyon:
   skor: 1
