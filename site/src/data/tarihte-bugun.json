@@ -1,63 +1,63 @@
 {
-  "tarih": "2026-10-02",
+  "tarih": "2026-10-03",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1608,
-      "baslik": "Hans Lippershey Modern Teleskobun İlk Prototipini Yaptı",
-      "metin": "Hollandalı gözlük üreticisi Hans Lippershey, uzaktaki nesneleri yakınlaştıran modern teleskobun ilk prototipini üretti. Lippershey'nin 1608'deki bu icadı, sadece bir yıl sonra Galileo Galilei'nin geliştireceği astronomik teleskopların ve uzay gözlemlerinin önünü açtı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Teleskop"
+      "yil": 1849,
+      "baslik": "Edgar Allan Poe Baltimore Sokaklarında Gizemli Şekilde Bulundu",
+      "metin": "Korku ve gizem edebiyatının usta kalemi Edgar Allan Poe, Baltimore sokaklarında yarı baygın ve perişan halde bulundu. Hastaneye kaldırılan yazarın bu son sokak görüntüsü, ölümünün ardındaki gizem perdesini günümüze kadar taşıyan büyük bir edebiyat muamması bıraktı.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Edgar_Allan_Poe"
     },
     {
-      "yil": 1836,
-      "baslik": "Charles Darwin Beş Yıllık Beagle Seferini Tamamladı",
-      "metin": "Doğa bilimci Charles Darwin, HMS Beagle gemisiyle Brezilya, Galapagos Adaları ve Yeni Zelanda'yı kapsayan beş yıllık seyahatini tamamlayarak İngiltere'ye döndü. Bu yolculuk boyunca yaptığı zengin gözlemler, 1859'da yayımlayacağı evrim teorisinin başyapıtı Türlerin Kökeni kitabının temelini oluşturdu.",
+      "yil": 1926,
+      "baslik": "Türkiye'nin İlk Atatürk Heykeli Sarayburnu'nda Açıldı",
+      "metin": "Cumhuriyet döneminde Mustafa Kemal Atatürk adına yaptırılan ilk anıt heykel, İstanbul Sarayburnu'nda açıldı. Türk heykel sanatı için tarihi bir eşik niteliğindeki bu anıt, kısa sürede şehrin en bilinen simgelerinden birine dönüştü.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
+    },
+    {
+      "yil": 1949,
+      "baslik": "Siyahi Girişimcilere Ait İlk Radyo İstasyonu WERD Açıldı",
+      "metin": "Amerika Birleşik Devletleri'nde siyahi Amerikalıların mülkiyetinde kurulan ilk radyo istasyonu olan WERD, Atlanta'da yayına başladı. 860 AM frekansından sesini duyuran istasyon, yayıncılık dünyasında kültürel bir dönüm noktası oluşturdu.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/WERD_(Atlanta)"
+    },
+    {
+      "yil": 1973,
+      "baslik": "Trakya Bölgesindeki İlk Petrol Lüleburgaz'da Keşfedildi",
+      "metin": "Yaklaşık 75 yıldır petrol aranan Trakya topraklarında beklenen keşif Lüleburgaz yakınlarında gerçekleşti. Türkiye Petrolleri Anonim Ortaklığı (TPAO) tarafından yürütülen sondaj çalışmalarıyla bölgedeki ilk yer altı ham petrol rezervi gün yüzüne çıkarıldı.",
       "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Charles_Darwin"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Petrol"
     },
     {
-      "yil": 1852,
-      "baslik": "Soy Gazları Keşfeden Kimyager William Ramsay Doğdu",
-      "metin": "Kimya dünyasında devrim yaratan İskoç bilim insanı William Ramsay doğdu. Havadaki asal gazları keşfederek periyodik tablonun eksik parçalarını tamamlayan Ramsay, bu çığır açıcı çalışmalarıyla 1904 Nobel Kimya Ödülü'ne layık görüldü.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/William_Ramsay"
+      "yil": 1985,
+      "baslik": "Uzay Mekiği Atlantis İlk Görev Uçuşuna Çıktı",
+      "metin": "NASA'nın dördüncü operasyonel mekik aracı olan Atlantis, Florida'daki üssünden fırlatılarak ilk uzay görevine resmen başladı. STS-51-J misyonu kapsamında yörüngeye çıkan mekik, iki kritik savunma iletişim uydusunu başarıyla konuşlandırdı.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis"
     },
     {
-      "yil": 1890,
-      "baslik": "Komedi Efsanesi Groucho Marx Dünyaya Geldi",
-      "metin": "Amerikan mizahının en büyük ustalarından biri kabul edilen aktör ve komedyen Groucho Marx doğdu. Hazırcevaplığı ve sivri dilli tek cümlelik esprileriyle tanınan Marx, vaudeville'den sinemaya ve televizyona uzanan kariyeriyle komedi türünde silinmez bir iz bıraktı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Groucho_Marx"
-    },
-    {
-      "yil": 1913,
-      "baslik": "Shubert Tiyatrosu Broadway'de Hamlet Oyunuyla Açıldı",
-      "metin": "New York'un tiyatro kalbi Broadway'de inşa edilen Shubert Tiyatrosu, William Shakespeare'in Hamlet prodüksiyonuyla kapılarını açtı. Mimar Henry Beaumont Herts tarafından tasarlanan bu görkemli yapı, Broadway tarihinin en prestijli sahnelerinden biri oldu.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Shubert_Theatre_(Broadway)"
-    },
-    {
-      "yil": 1950,
-      "baslik": "Charles M. Schulz'un Peanuts Çizgi Bandı Yayımlanmaya Başladı",
-      "metin": "Amerikalı çizer Charles M. Schulz'un yarattığı dünyaca ünlü Peanuts karikatür serisi ilk kez yayımlandı. Çizgi bant; sevimli köpek Snoopy ve sahibi Charlie Brown gibi popüler kültürün en tanınan karakterlerini milyonlarca okurla buluşturdu.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Charles_M._Schulz"
-    },
-    {
-      "yil": 1957,
-      "baslik": "Orta Doğu Teknik Üniversitesi'nin Temeli Atıldı",
-      "metin": "Ankara'da kurulan Orta Doğu Teknik Üniversitesi'nin (ODTÜ) temelleri resmen atıldı. Adnan Menderes, Vecdi Diker ve bir grup akademisyenin öncülüğünde hayata geçen üniversite, Türkiye'nin en köklü bilim ve teknik eğitim yuvalarından biri hâline geldi.",
+      "yil": 1986,
+      "baslik": "Süperiletken Parçacık Hızlandırıcısı TASCC Hizmete Girdi",
+      "metin": "Kanada'daki Chalk River Laboratuvarları'nda inşa edilen süperiletken siklotron TASCC resmen açıldı. Dünyanın ilk tandem hızlandırıcısı unvanını taşıyan bu dev tesis, nükleer parçacık araştırmalarında çığır açan bir merkez hâline geldi.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Orta_Do%C4%9Fu_Teknik_%C3%9Cniversitesi"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Tandem_Accelerator_Superconducting_Cyclotron"
     },
     {
-      "yil": 2004,
-      "baslik": "Londra'da İlk Parkrun Koşusu Düzenlendi",
-      "metin": "Dünyanın dört bir yanına yayılan kitlesel koşu hareketi Parkrun, Londra'daki Bushy Park'ta yapılan 5 kilometrelik zaman denemesiyle ilk kez düzenlendi. Bu mütevazı başlangıç, yıllar içinde 5 kıtada ve 2 binden fazla noktada her hafta sonu yapılan küresel bir spor etkinliğine dönüştü.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Parkrun"
+      "yil": 1991,
+      "baslik": "Nadine Gordimer Nobel Edebiyat Ödülü'nü Kazandı",
+      "metin": "Güney Afrikalı yazar ve aktivist Nadine Gordimer, Nobel Edebiyat Ödülü'nü kazanan ilk Güney Afrikalı oldu. Eserlerindeki görkemli epik anlatımıyla ödüle değer görülen Gordimer, dünya edebiyatında unutulmaz bir yer edindi.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Nadine_Gordimer"
+    },
+    {
+      "yil": 2022,
+      "baslik": "Svante Pääbo'ya Neandertal Genomuyla Nobel Tıp Ödülü",
+      "metin": "İsveçli genetikçi Svante Pääbo, soyu tükenmiş homininlerin genomları ve insan evrimine dair keşifleri nedeniyle Nobel Fizyoloji veya Tıp Ödülü'ne layık görüldü. Paleogenetiğin öncülerinden olan bilim insanı, Neandertal genomu üzerine yaptığı çalışmalarla insanın evrimsel geçmişine yepyeni bir kapı araladı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Svante_P%C3%A4%C3%A4bo"
     }
   ]
 }
