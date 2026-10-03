@@ -25,7 +25,7 @@ kaynaklar:
   - baslik: Vikipedi — Gibi
     url: https://tr.wikipedia.org/wiki/Gibi
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by beyzz on Pexels
 moderasyon:
   skor: 1
