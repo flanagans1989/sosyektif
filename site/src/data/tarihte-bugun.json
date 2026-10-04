@@ -1,63 +1,49 @@
 {
-  "tarih": "2026-10-03",
+  "tarih": "2026-10-04",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1849,
-      "baslik": "Edgar Allan Poe Baltimore Sokaklarında Gizemli Şekilde Bulundu",
-      "metin": "Korku ve gizem edebiyatının usta kalemi Edgar Allan Poe, Baltimore sokaklarında yarı baygın ve perişan halde bulundu. Hastaneye kaldırılan yazarın bu son sokak görüntüsü, ölümünün ardındaki gizem perdesini günümüze kadar taşıyan büyük bir edebiyat muamması bıraktı.",
+      "yil": 1582,
+      "baslik": "Gregoryen Takvimiyle 10 Günün Silinmesi",
+      "metin": "Papa XIII. Gregorius, Jülyen takvimindeki mevsimsel kaymaları düzeltmek amacıyla Gregoryen takvimini resmen kabul etti. Eski takvime 10 gün eklenmesi gerektiği için 4 Ekim'in ertesi günü doğrudan 15 Ekim 1582 olarak kayıtlara geçti.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/XIII._Gregorius"
+    },
+    {
+      "yil": 1675,
+      "baslik": "Christiaan Huygens'ın Cep Saati Patenti",
+      "metin": "Hollandalı ünlü bilim insanı Christiaan Huygens, zaman ölçümünü taşınabilir hale getiren cep saatinin patentini aldı. Bu mekanik buluş, zamanın cepte taşınabilecek kadar hassas ve pratik şekilde ölçülmesinin yolunu açtı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Hollanda"
+    },
+    {
+      "yil": 1883,
+      "baslik": "Orient Express'in Paris-İstanbul Seferine Çıkması",
+      "metin": "Doğu ile Batı'yı demir raylar üzerinde birbirine bağlayan lüks yolcu treni Orient Express, ilk seferine başladı. Paris'ten yola çıkıp İstanbul'a kadar uzanan bu efsanevi hat, modern seyahat kültürünün en önemli simgelerinden birine dönüştü.",
       "kategori": "tarih",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Edgar_Allan_Poe"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0stanbul"
     },
     {
-      "yil": 1926,
-      "baslik": "Türkiye'nin İlk Atatürk Heykeli Sarayburnu'nda Açıldı",
-      "metin": "Cumhuriyet döneminde Mustafa Kemal Atatürk adına yaptırılan ilk anıt heykel, İstanbul Sarayburnu'nda açıldı. Türk heykel sanatı için tarihi bir eşik niteliğindeki bu anıt, kısa sürede şehrin en bilinen simgelerinden birine dönüştü.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
-    },
-    {
-      "yil": 1949,
-      "baslik": "Siyahi Girişimcilere Ait İlk Radyo İstasyonu WERD Açıldı",
-      "metin": "Amerika Birleşik Devletleri'nde siyahi Amerikalıların mülkiyetinde kurulan ilk radyo istasyonu olan WERD, Atlanta'da yayına başladı. 860 AM frekansından sesini duyuran istasyon, yayıncılık dünyasında kültürel bir dönüm noktası oluşturdu.",
+      "yil": 1922,
+      "baslik": "Türkiye'nin İlk Hayvanları Koruma Derneğinin Kurulması",
+      "metin": "İstanbul'da hayvanları koruma gayesiyle Himaye-i Hayvanat Cemiyeti adında bir topluluk kuruldu. Bu girişim, Türkiye'de hayvan hakları ve onların refahını gözetmek adına atılmış ilk kurumsal adım oldu.",
       "kategori": "tarih",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/WERD_(Atlanta)"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Himaye-i_Hayvanat_Cemiyeti"
     },
     {
-      "yil": 1973,
-      "baslik": "Trakya Bölgesindeki İlk Petrol Lüleburgaz'da Keşfedildi",
-      "metin": "Yaklaşık 75 yıldır petrol aranan Trakya topraklarında beklenen keşif Lüleburgaz yakınlarında gerçekleşti. Türkiye Petrolleri Anonim Ortaklığı (TPAO) tarafından yürütülen sondaj çalışmalarıyla bölgedeki ilk yer altı ham petrol rezervi gün yüzüne çıkarıldı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Petrol"
-    },
-    {
-      "yil": 1985,
-      "baslik": "Uzay Mekiği Atlantis İlk Görev Uçuşuna Çıktı",
-      "metin": "NASA'nın dördüncü operasyonel mekik aracı olan Atlantis, Florida'daki üssünden fırlatılarak ilk uzay görevine resmen başladı. STS-51-J misyonu kapsamında yörüngeye çıkan mekik, iki kritik savunma iletişim uydusunu başarıyla konuşlandırdı.",
+      "yil": 1957,
+      "baslik": "Sputnik 1 ile Uzay Çağının Başlaması",
+      "metin": "Sovyetler Birliği, Dünya'nın ilk yapay uydusu olan Sputnik 1'i başarıyla fırlatarak yörüngeye oturttu. İnsanlığın uzay çağına adım atmasını sağlayan bu tarihi hamle, aynı zamanda ABD ile Sovyetler arasındaki kıyasıya uzay yarışını başlattı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sovyetler_Birli%C4%9Fi"
     },
     {
-      "yil": 1986,
-      "baslik": "Süperiletken Parçacık Hızlandırıcısı TASCC Hizmete Girdi",
-      "metin": "Kanada'daki Chalk River Laboratuvarları'nda inşa edilen süperiletken siklotron TASCC resmen açıldı. Dünyanın ilk tandem hızlandırıcısı unvanını taşıyan bu dev tesis, nükleer parçacık araştırmalarında çığır açan bir merkez hâline geldi.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Tandem_Accelerator_Superconducting_Cyclotron"
-    },
-    {
-      "yil": 1991,
-      "baslik": "Nadine Gordimer Nobel Edebiyat Ödülü'nü Kazandı",
-      "metin": "Güney Afrikalı yazar ve aktivist Nadine Gordimer, Nobel Edebiyat Ödülü'nü kazanan ilk Güney Afrikalı oldu. Eserlerindeki görkemli epik anlatımıyla ödüle değer görülen Gordimer, dünya edebiyatında unutulmaz bir yer edindi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Nadine_Gordimer"
-    },
-    {
-      "yil": 2022,
-      "baslik": "Svante Pääbo'ya Neandertal Genomuyla Nobel Tıp Ödülü",
-      "metin": "İsveçli genetikçi Svante Pääbo, soyu tükenmiş homininlerin genomları ve insan evrimine dair keşifleri nedeniyle Nobel Fizyoloji veya Tıp Ödülü'ne layık görüldü. Paleogenetiğin öncülerinden olan bilim insanı, Neandertal genomu üzerine yaptığı çalışmalarla insanın evrimsel geçmişine yepyeni bir kapı araladı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Svante_P%C3%A4%C3%A4bo"
+      "yil": 1983,
+      "baslik": "Richard Noble'dan Saatte 1.019 Kilometrelik Kara Hız Rekoru",
+      "metin": "Richard Noble, Nevada'daki Black Rock Çölü'nde saatte 1.019 kilometre hıza ulaşarak yeni bir dünya kara hız rekoruna imza attı. İskoç girişimcinin kırdığı bu sınırları zorlayan rekor, tam 14 yıl boyunca kırılamadı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Richard_Noble"
     }
   ]
 }
