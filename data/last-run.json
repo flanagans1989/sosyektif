@@ -1,11 +1,9 @@
 {
-  "tarih": "2026-10-03T05:02:48.380Z",
+  "tarih": "2026-10-04T05:02:28.650Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 0,
-  "onayaDusen": 1,
-  "reddedilen": 1,
-  "hatalar": [
-    "Ferhat Gündoğdu: uygun değil: Yaşayan bir gerçek kişinin kendisi konu odağı olduğu için uygun değil."
-  ]
+  "otomatikYayinlanan": 1,
+  "onayaDusen": 0,
+  "reddedilen": 0,
+  "hatalar": []
 }
