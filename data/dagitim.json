@@ -1690,5 +1690,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "ioanna-kucuradi-hakkinda-duyunca-felsefe-dunyasina-farkli-bakmanizi-saglayacak-7-bilgi": {
+    "eklendi": "2026-10-04T05:03:54.661Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-04T05:03:55.721Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mwzmso6smk25"
+      }
+    },
+    "reelIdleri": {}
   }
 }
