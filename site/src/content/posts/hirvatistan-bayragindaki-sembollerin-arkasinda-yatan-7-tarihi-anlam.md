@@ -35,7 +35,7 @@ kaynaklar:
   - baslik: Wikipedia (EN) — Flag of Croatia
     url: https://en.wikipedia.org/wiki/Flag_of_Croatia
     atif: CC BY-SA 4.0
-taslak: true
+taslak: false
 gorselKredisi: Photo by Hert Niks on Pexels
 moderasyon:
   skor: 1
