@@ -1,9 +1,11 @@
 {
-  "tarih": "2026-10-04T05:02:28.650Z",
+  "tarih": "2026-10-05T05:02:16.311Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 1,
-  "onayaDusen": 0,
-  "reddedilen": 0,
-  "hatalar": []
+  "otomatikYayinlanan": 0,
+  "onayaDusen": 1,
+  "reddedilen": 1,
+  "hatalar": [
+    "Fatma Betül Sayan Kaya: uygun değil: Siyasetçiler ve yaşayan gerçek kişiler site politikası gereği içerik odağı olamaz."
+  ]
 }
