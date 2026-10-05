@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-10-05T06:18:02.138Z",
+  "sonDenetim": "2026-10-05T12:01:14.227Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -12,7 +12,7 @@
     "workflow-weekly-analytics.yml": {
       "alan": "Zamanlayıcı",
       "durum": "hata",
-      "detay": "Haftalık Analitik son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/37267132833",
+      "detay": "Haftalık Analitik son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/37306565191",
       "cozum": "Logu incele.",
       "ilkGorulme": "2026-10-05T05:54:03.249Z"
     },
