@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-10-05",
+  "tarih": "2026-10-06",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1896,
-      "baslik": "Wilhelm Roentgen ve X Işınlarının Keşfi",
-      "metin": "Alman fizikçi Wilhelm Roentgen'in yeni bir radyasyon çeşidi bulduğu açıklandı. Bugün x ray olarak bilinen bu önemli radyasyon çeşidi, bilim dünyasında devrim niteliğinde bir gelişmeydi.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Wilhelm_R%C3%B6ntgen"
-    },
-    {
-      "yil": 1905,
-      "baslik": "Wright Kardeşlerin Uçuş Rekoru",
-      "metin": "Wright kardeşler, Wright Flyer III ile 24 millik yeni bir dünya rekoru uçuşuna imza attılar. Havacılık öncüleri olan Orville ve Wilbur Wright, bu uçuşu 39 dakikada tamamladılar.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Wright_brothers"
-    },
-    {
-      "yil": 1925,
-      "baslik": "İlk Cumhuriyet Altını İstanbul Darphanesi'nde Basıldı",
-      "metin": "İlk Cumhuriyet Altını İstanbul Darphanesi'nde basıldı ve Mustafa Kemal Paşa'ya gönderildi. Türkiye Büyük Millet Meclisi Kararı ile standartları belirlenen bu altın, ülkeyi temsil eden önemli bir simge haline geldi.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Cumhuriyet_alt%C4%B1n%C4%B1"
-    },
-    {
-      "yil": 1962,
-      "baslik": "The Beatles'ın İlk Hit Şarkısı Love Me Do",
-      "metin": "The Beatles'ın ilk hit şarkısı Love me do piyasaya çıktı. 1960 yılında Birleşik Krallık'ın Liverpool kentinde kurulan efsanevi rock grubunun bu çıkış parçası büyük ilgi gördü.",
+      "yil": 1600,
+      "baslik": "Euridice Operası",
+      "metin": "Jacopo Peri'nin kaleme aldığı ve günümüze ulaşan en eski opera olan Euridice ilk kez sahnelendi. Bu eser, Batı müziğinde yeni bir dönemin, Barok döneminin resmi başlangıcı kabul edildi.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/The_Beatles"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Euridice_(Peri)"
     },
     {
-      "yil": 1984,
-      "baslik": "Uzaya Giden İlk Kanadalı Marc Garneau",
-      "metin": "Marc Garneau uzaya giden ilk Kanadalı unvanını aldı. Kariyerine deniz subayı olarak başlayan Garneau, 1983 yılında NRC Grubu'nun bir astronotu olarak seçilmişti.",
+      "yil": 1790,
+      "baslik": "Schweppes Markasının Doğuşu",
+      "metin": "İsviçreli bilim insanı Johann Jacob Schweppe, Londra'da daha sonra 'Schweppes' markasını oluşturacak ilk soda üretimini gerçekleştirdi. Bu buluş, gazlı içecek endüstrisinin temellerini atarak tüm dünyada tüketime sunuldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Londra"
+    },
+    {
+      "yil": 1907,
+      "baslik": "İstanbul'da İlk Otomobil",
+      "metin": "İstanbul'da ilk otomobil Beyoğlu'nun kalabalık sokaklarında görüldü. Bu olay, Osmanlı başkentinin sokak kültüründe motorlu taşıtların devrini başlatan ilk merak uyandırıcı adımlardan biri oldu.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0stanbul"
+    },
+    {
+      "yil": 1923,
+      "baslik": "Andromeda Galaksisi",
+      "metin": "Amerikalı astronom Edwin Hubble, Andromeda Galaksisi'ni keşfetti. Bu devrim niteliğindeki gözlem, evrenin sadece Samanyolu'ndan ibaret olmadığını ve milyarlarca başka galaksi barındırdığını kanıtladı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Marc_Garneau"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
     },
     {
-      "yil": 1991,
-      "baslik": "Linus Torvalds Tarafından Duyurulan Linux",
-      "metin": "İlk resmi Linux sürümü olan 0.02, Linus Torvalds tarafından duyuruldu. Açık kaynak kodlu ve Unix benzeri bir işletim sistemi ailesi olan Linux çekirdeğine dayanan bu proje, yazılım dünyasının gidişatını değiştirdi.",
+      "yil": 1927,
+      "baslik": "The Jazz Singer",
+      "metin": "Senkronize sesli müzik skoruna sahip ilk uzun metrajlı sesli film The Jazz Singer, ABD'de gösterime girdi. Bu yapım, sinema tarihini tamamen değiştirerek sessiz film döneminin kapanıp sesli sinema devrinin başlamasına öncülük etti.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Uzun_metraj"
+    },
+    {
+      "yil": 1995,
+      "baslik": "51 Pegasi b Ötegezegeni",
+      "metin": "Astronomlar Michel Mayor ve Didier Queloz, Güneş benzeri ana kol yıldızı yörüngesinde dönen ilk ötegezegen olan 51 Pegasi b'yi keşfettiklerini duyurdu. Bu buluş, Güneş Sistemi dışındaki dünyaların araştırılmasında yepyeni bir çığır açtı.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Linux"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Michel_Mayor"
     }
   ]
 }
