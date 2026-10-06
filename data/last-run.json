@@ -1,11 +1,15 @@
 {
-  "tarih": "2026-10-05T05:02:16.311Z",
+  "tarih": "2026-10-06T05:07:04.966Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 0,
   "onayaDusen": 1,
-  "reddedilen": 1,
+  "reddedilen": 5,
   "hatalar": [
-    "Fatma Betül Sayan Kaya: uygun değil: Siyasetçiler ve yaşayan gerçek kişiler site politikası gereği içerik odağı olamaz."
+    "Göksel Arsoy: sınıflandırma hatası: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"null\",\n    \"path\": [\n      \"konuOdagi\"\n    ],\n    \"message\": \"Expected string, received null\"\n  },\n  {\n    \"code\": \"invalid",
+    "Aral Şimşir: uygun değil: Yaşayan bir gerçek kişi (Aral Şimşir) olduğu için site politikaları gereği uygun değildir.",
+    "Meryem Cabbaroğlu: uygun değil: Yaşayan gerçek kişi",
+    "anasayfa: uygun değil: Navigasyon araması veya anlam çıkarılamayan başlık.",
+    "Yasin Kol: uygun değil: Konu odağı yaşayan bir gerçek kişidir (futbol hakemi Yasin Kol) ve sitemizin yaşayan kişilerin kendisini konu alarak içerik üretme politikasına uymamaktadır."
   ]
 }
