@@ -1,65 +1,65 @@
 {
-  "tarih": "2026-10-06",
+  "tarih": "2026-10-07",
   "uretenProvider": "gemini",
   "burclar": {
     "koc": {
-      "yorum": "Bugün kafandaki projelere hızlı bir başlangıç yapmak isteyebilirsin, ancak işleri bir tık ağırdan almak detayları kaçırmanı önler. İkili ilişkilerde sabırsız tavırlar yerine dinlemeyi seçersen sürpriz bir iltifat seni bekliyor. Enerjin yüksek, sadece yönünü doğru seç.",
+      "yorum": "Bugün enerjin oldukça yüksek ama aceleci kararlar almak yerine stratejik adımlar atmak seni öne çıkarabilir. İş yerinde sabırlı bir tutum sergilersen günün kazananı sen olabilirsin. Akşam saatlerini sakin bir yürüyüşe ayırarak zihnini dinlendirebilirsin.",
       "sansliSayi": 9,
-      "sansliRenk": "Ateş Kırmızısı"
+      "sansliRenk": "Kiremit Kırmızısı"
     },
     "boga": {
-      "yorum": "Konfor alanından bir adım dışarı çıkmak bugün sana hiç fena gelmeyebilir. İş yerinde ya da günlük koşturmacada pratik çözümlerinle takdir toplayacağın bir gündesin. Akşam saatlerinde sevdiğin bir tatlı eşliğinde keyifli bir sohbet tüm yorgunluğunu unutturabilir.",
+      "yorum": "Konfor alanından bir adım dışarı çıkmak bugün sana beklemediğin kapılar açabilir. Özellikle ikili ilişkilerde ertelediğin o samimi konuşmayı yapmak için harika bir enerji var. Sezgilerine güven ve günün keyfini çıkar.",
       "sansliSayi": 24,
       "sansliRenk": "Zümrüt Yeşili"
     },
     "ikizler": {
-      "yorum": "Telefonun bildirimlerle susmak bilmeyebilir, iletişim trafiğin tavan yapıyor. Kafanda uçuşan fikirleri hemen hayata geçirmek istesen de önce öncelik sırası yapmanda fayda var. Aşk hayatında ise eğlenceli ve esprili bir mesajlaşma gününü neşelendirebilir.",
-      "sansliSayi": 15,
-      "sansliRenk": "Güneş Sarısı"
+      "yorum": "Kafanda onlarca fikir aynı anda uçuşuyor ve iletişim trafiğin epey hareketli görünüyor. Önemli mesajları göndermeden önce iki kez kontrol etmek olası karışıklıkları önleyebilir. Aşk hayatında ise eğlenceli ve esprili sohbetler seni bekliyor.",
+      "sansliSayi": 17,
+      "sansliRenk": "Limon Sarısı"
     },
     "yengec": {
-      "yorum": "Kendi kabuğuna çekilip dinlenmek ile sevdiklerine vakit ayırmak arasında tatlı bir denge kurabilirsin. Ev ve aile odaklı meselelerde hislerine güvenmek sana doğru yolu gösterecektir. İş ortamında sınırlarını koruman enerjini gereksiz tükenmekten kurtarır.",
-      "sansliSayi": 42,
-      "sansliRenk": "İnci Beyazı"
+      "yorum": "Duygusal sezgilerin bugün tavan yapmış durumda, etrafındakilerin hislerini tek bakışta çözebilirsin. İşle ilgili küçük aksilikleri kişiselleştirmemeye özen gösterirsen günü çok daha huzurlu tamamlarsın. Akşamı sevdiklerinle ev konforunda geçirmek iyi gelecektir.",
+      "sansliSayi": 3,
+      "sansliRenk": "Gümüş Grisi"
     },
     "aslan": {
-      "yorum": "Işığınla girdiğin ortamı aydınlatmaya hazırsın ama sahneyi biraz da başkalarıyla paylaşmak bağları güçlendirir. İş tarafında liderlik vasıfların öne çıkabilir, sadece fikir ayrılıklarını kişiselleştirmemeye bak. Kalbini kıpırdatacak küçük bir jest moralini yükseltebilir.",
-      "sansliSayi": 1,
+      "yorum": "Yaratıcı enerjin ve karizman bugün çevrendekilerin dikkatini rahatlıkla üzerine çekebilir. İş ortamında fikirlerini paylaşırken takım arkadaşlarına da alan tanımak başarını katlayacaktır. Günün yorgunluğunu hak ettiğin küçük bir ödülle taçlandırabilirsin.",
+      "sansliSayi": 55,
       "sansliRenk": "Altın Sarısı"
     },
     "basak": {
-      "yorum": "Düzen takıntın bugün hayat kurtarıcı olabilir ama her şeyin mükemmel olması gerekmediğini kendine hatırlat. Yarım kalan işleri toparlamak için harika bir enerji var, akşamı ise kendine ödül vererek geçirmelisin. Zihinsel yorgunluğunu kısa bir yürüyüşle hafifletebilirsin.",
-      "sansliSayi": 33,
+      "yorum": "Detaylara takılıp büyük resmi gözden kaçırmamaya çalışırsan bugün işlerin tıkır tıkır ilerleyebilir. Planlarında ufak tefek esneklikler yapmak seni stresten uzak tutacaktır. Sağlığına ve dinlenmeye biraz daha vakit ayırmayı ihmal etme.",
+      "sansliSayi": 42,
       "sansliRenk": "Toprak Tonu"
     },
     "terazi": {
-      "yorum": "Kararsızlık rüzgarları hafiften esse de iç sesini dinlediğinde ne istediğini gayet iyi biliyorsun. Sosyal çevrende arabulucu rolü üstlenebilir, tatlı dilinle pürüzleri kolayca çözebilirsin. Gardırobunda yapacağın ufak bir yenilik modunu hemen yukarı taşıyabilir.",
-      "sansliSayi": 7,
+      "yorum": "Kararsızlıkların seni tatlı bir telaşa sürükleyebilir; ikilemde kaldığında mantığın kadar iç sesine de güven. Sosyal çevrenden gelecek beklenmedik bir davet moralini yükseltebilir. İletişimde dengeli kalmak ilişkilerinde yeni bir uyum yakalamanı sağlayabilir.",
+      "sansliSayi": 12,
       "sansliRenk": "Pudra Pembesi"
     },
     "akrep": {
-      "yorum": "Bugün sezgilerin adeta dedektif gibi çalışıyor, gözden kaçan detayları ilk sen fark edebilirsin. İş hayatında sessizce ilerleyip stratejik hamleler yapmak sana avantaj sağlayacaktır. Romantik konularda ise duvarları biraz indirip duygularını açıkça paylaşmayı deneyebilirsin.",
+      "yorum": "Odaklanma yeteneğin bugün oldukça keskin, derin araştırma gerektiren işleri kolayca çözebilirsin. Gereksiz şüphelerle kendi enerjini düşürmek yerine hedeflerine konsantre olmalısın. Özel hayatında ise net ve dürüst tavırlar takınmak sana kazandırır.",
       "sansliSayi": 88,
-      "sansliRenk": "Mürdüm"
+      "sansliRenk": "Bordo"
     },
     "yay": {
-      "yorum": "Rutin işler biraz canını sıksa da günün ikinci yarısında seni heyecanlandıracak yeni bir haber alabilirsin. Farklı fikirler keşfetmek ve yeni planlar yapmak enerjini hızla yükseltecektir. Partnerinle veya bir dostunla spontane bir plan yapmak günün en güzel anı olabilir.",
-      "sansliSayi": 51,
-      "sansliRenk": "Gece Mavisi"
-    },
-    "oglak": {
-      "yorum": "Disiplinli duruşun ve hedefe kilitlenmen sayesinde ertelenen bir görevi başarıyla tamamlayabilirsin. Kariyer odaklı adımlarında sabırlı olmak uzun vadede meyvesini verecektir. Gün sonunda işleri bir kenara bırakıp biraz zihnini dinlendirmeyi ihmal etme.",
-      "sansliSayi": 10,
-      "sansliRenk": "Antrasit"
-    },
-    "kova": {
-      "yorum": "Yaratıcı zekan tıkır tıkır işliyor, alışılmışın dışındaki fikirlerinle çevrendekileri şaşırtabilirsin. Ortak projelerde ekip ruhuna uyum sağlamak sana beklenmedik kolaylıklar getirebilir. Eski bir arkadaşınla yapacağın kahve sohbeti eski güzel günleri neşeyle yad ettirebilir.",
-      "sansliSayi": 73,
+      "yorum": "Özgürlük arayışın ve keşfetme arzun gün içinde rutin işleri biraz sıkıcı kılabilir. Günün ortasında vereceğin küçük bir kahve molası veya yeni bir hobiye göz atmak motivasyonunu tazeleyebilir. Aşkta ise spontane gelişmelere açık olmalısın.",
+      "sansliSayi": 7,
       "sansliRenk": "Turkuaz"
     },
+    "oglak": {
+      "yorum": "Kariyer hedeflerine odaklanmış disiplinli yapın bugün çevrendekilerden takdir toplayabilir. Ancak iş temposuna o kadar kaptırıp sevdiklerini ihmal etmemeye dikkat etmelisin. Kısa bir telefon görüşmesi bile hem sana hem karşı tarafa çok iyi gelecektir.",
+      "sansliSayi": 31,
+      "sansliRenk": "Koyu Lacivert"
+    },
+    "kova": {
+      "yorum": "Sıra dışı fikirlerin ve yaratıcı bakış açın sayesinde karmaşık bir problemi kolayca çözebilirsin. Ekip çalışmalarında liderlik enerjin öne çıkabilir. Aşk hayatında açık ve net bir iletişim dili kurmak gereksiz yanlış anlamaların önüne geçer.",
+      "sansliSayi": 11,
+      "sansliRenk": "Elektrik Mavisi"
+    },
     "balik": {
-      "yorum": "Hayal gücünle gerçek dünya arasında köprü kurman gereken, ilham dolu bir gün seni bekliyor. Duygusal dalgalanmalar hissettiğinde sanatsal ya da yaratıcı uğraşlara yönelmek sana çok iyi gelecektir. Aşkta karşılıklı anlayış ve şefkat kapıları ardına kadar açabilir.",
-      "sansliSayi": 18,
+      "yorum": "Hayal gücünün sınır tanımadığı, sanatsal yönünün parlayabileceği bir gündesin. Başkalarının sorunlarını kendi derdin gibi üstlenmekten kaçınırsan iç huzurunu koruyabilirsin. Akşam saatlerinde meditasyon veya müzik ruhunu dinlendirecektir.",
+      "sansliSayi": 63,
       "sansliRenk": "Deniz Yeşili"
     }
   }
