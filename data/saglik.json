@@ -1,11 +1,11 @@
 {
-  "sonDenetim": "2026-10-07T00:17:58.836Z",
-  "toplamKontrol": 48,
+  "sonDenetim": "2026-10-07T06:01:40.544Z",
+  "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
       "durum": "uyari",
-      "detay": "1 taslak 24 saatten uzun süredir onay bekliyor.",
+      "detay": "2 taslak 24 saatten uzun süredir onay bekliyor.",
       "cozum": "Telegram'daki onay mesajlarına bak (✅/❌).",
       "ilkGorulme": "2026-09-25T05:06:15.135Z"
     },
@@ -14,6 +14,12 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "site-veri-frankfurter": {
+      "alan": "Ekodektif verileri",
+      "durum": "hata",
+      "detay": "Frankfurter (ECB): The operation was aborted due to timeout",
+      "ilkGorulme": "2026-10-07T06:01:40.544Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
@@ -32,19 +38,19 @@
     "bekleyen-telegram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "telegram çalışmadığı için 15 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "telegram çalışmadığı için 16 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-19T06:01:08.237Z"
     },
     "bekleyen-threads": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "threads çalışmadığı için 15 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "threads çalışmadığı için 16 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-19T06:01:08.237Z"
     },
     "tutarlilik-facebook": {
       "alan": "Dağıtım",
       "durum": "hata",
-      "detay": "facebook: kayıtta 46 paylaşım var ama hesapta 42 gönderi görünüyor.",
+      "detay": "facebook: kayıtta 47 paylaşım var ama hesapta 43 gönderi görünüyor.",
       "cozum": "Gönderiler silinmiş ya da paylaşım sessizce başarısız olmuş olabilir.",
       "ilkGorulme": "2026-09-19T18:01:17.178Z"
     }
