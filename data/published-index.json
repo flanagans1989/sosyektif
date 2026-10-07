@@ -532,5 +532,14 @@
     "format": "liste",
     "yayinTarihi": "2026-10-06T05:07:04.382Z",
     "otomatikYayinlandi": false
+  },
+  {
+    "slug": "rum-mehmed-pasa-hakkinda-ne-biliyorsun-5-soruluk-test",
+    "baslik": "Rum Mehmed Paşa Hakkında Ne Biliyorsun? 5 Soruluk Test",
+    "konuParmakIzi": "rum mehmed paşa",
+    "kategori": "tarih",
+    "format": "quiz",
+    "yayinTarihi": "2026-10-07T05:02:39.516Z",
+    "otomatikYayinlandi": true
   }
 ]
