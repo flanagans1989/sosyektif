@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-10-06",
+  "tarih": "2026-10-07",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1600,
-      "baslik": "Euridice Operası",
-      "metin": "Jacopo Peri'nin kaleme aldığı ve günümüze ulaşan en eski opera olan Euridice ilk kez sahnelendi. Bu eser, Batı müziğinde yeni bir dönemin, Barok döneminin resmi başlangıcı kabul edildi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Euridice_(Peri)"
-    },
-    {
-      "yil": 1790,
-      "baslik": "Schweppes Markasının Doğuşu",
-      "metin": "İsviçreli bilim insanı Johann Jacob Schweppe, Londra'da daha sonra 'Schweppes' markasını oluşturacak ilk soda üretimini gerçekleştirdi. Bu buluş, gazlı içecek endüstrisinin temellerini atarak tüm dünyada tüketime sunuldu.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Londra"
-    },
-    {
-      "yil": 1907,
-      "baslik": "İstanbul'da İlk Otomobil",
-      "metin": "İstanbul'da ilk otomobil Beyoğlu'nun kalabalık sokaklarında görüldü. Bu olay, Osmanlı başkentinin sokak kültüründe motorlu taşıtların devrini başlatan ilk merak uyandırıcı adımlardan biri oldu.",
+      "yil": 1769,
+      "baslik": "Kaptan Cook",
+      "metin": "İngiliz kâşif Kaptan Cook, Yeni Zelanda'yı keşfetti. Bu keşif, Büyük Okyanus'taki coğrafi bilgi birikimini kökten değiştirdi.",
       "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0stanbul"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0ngiltere"
     },
     {
-      "yil": 1923,
-      "baslik": "Andromeda Galaksisi",
-      "metin": "Amerikalı astronom Edwin Hubble, Andromeda Galaksisi'ni keşfetti. Bu devrim niteliğindeki gözlem, evrenin sadece Samanyolu'ndan ibaret olmadığını ve milyarlarca başka galaksi barındırdığını kanıtladı.",
+      "yil": 1806,
+      "baslik": "Karbon Kağıdı",
+      "metin": "Kopyalama teknolojisinin öncüsü olan karbon kağıdının patenti Birleşik Krallık'ta alındı. Evrende bolluk bakımından altıncı sırada yer alan karbon elementinin adı bu pratik buluşla da anıldı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Karbon"
+    },
+    {
+      "yil": 1952,
+      "baslik": "Barkod",
+      "metin": "Günlük hayatımızın vazgeçilmezi olan barkodun patenti alındı. Bu buluş, verilerin görsel özellikli makineler tarafından okunabilmesini sağladı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Barkod"
+    },
+    {
+      "yil": 1959,
+      "baslik": "Luna-3",
+      "metin": "Sovyet uzay roketi Luna-3, Ay'ın görünmeyen yüzünün ilk fotoğraflarını çekti. Bu tarihi görev, uzay araştırmalarında yeni bir dönüm noktası oldu.",
       "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sovyet_halk%C4%B1"
     },
     {
-      "yil": 1927,
-      "baslik": "The Jazz Singer",
-      "metin": "Senkronize sesli müzik skoruna sahip ilk uzun metrajlı sesli film The Jazz Singer, ABD'de gösterime girdi. Bu yapım, sinema tarihini tamamen değiştirerek sessiz film döneminin kapanıp sesli sinema devrinin başlamasına öncülük etti.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Uzun_metraj"
+      "yil": 2008,
+      "baslik": "2008 TC3 Asteroiti",
+      "metin": "2008 TC3 asteroiti Sudan'daki Nübye Çölü üzerinde patladı. Bu olay, atmosferik girişi önceden tahmin edilen ilk asteroit çarpılması olarak tarihe geçti.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/2008_TC3"
     },
     {
-      "yil": 1995,
-      "baslik": "51 Pegasi b Ötegezegeni",
-      "metin": "Astronomlar Michel Mayor ve Didier Queloz, Güneş benzeri ana kol yıldızı yörüngesinde dönen ilk ötegezegen olan 51 Pegasi b'yi keşfettiklerini duyurdu. Bu buluş, Güneş Sistemi dışındaki dünyaların araştırılmasında yepyeni bir çığır açtı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Michel_Mayor"
+      "yil": 2015,
+      "baslik": "Aziz Sancar",
+      "metin": "Aziz Sancar, Nobel Kimya Ödülü'nü kazanan ilk Türk oldu. Bilim insanı bu ödülü Tomas Lindahl ve Paul L. Modrich ile birlikte DNA onarımına ilişkin çalışmaları nedeniyle kazandı.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Aziz_Sancar"
     }
   ]
 }
