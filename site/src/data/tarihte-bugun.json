@@ -1,49 +1,56 @@
 {
-  "tarih": "2026-10-07",
+  "tarih": "2026-10-08",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1769,
-      "baslik": "Kaptan Cook",
-      "metin": "İngiliz kâşif Kaptan Cook, Yeni Zelanda'yı keşfetti. Bu keşif, Büyük Okyanus'taki coğrafi bilgi birikimini kökten değiştirdi.",
+      "yil": 1829,
+      "baslik": "Stephenson's Rocket'ın Zaferi",
+      "metin": "Erken dönem buharlı lokomotifi Stephenson's Rocket, Liverpool and Manchester Railway tarafından düzenlenen Rainhill Denemeleri'ni kazandı. Bu başarı, demiryolu taşımacılığının geleceğini şekillendiren en önemli dönüm noktalarından biri oldu.",
       "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0ngiltere"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Stephenson's_Rocket"
     },
     {
-      "yil": 1806,
-      "baslik": "Karbon Kağıdı",
-      "metin": "Kopyalama teknolojisinin öncüsü olan karbon kağıdının patenti Birleşik Krallık'ta alındı. Evrende bolluk bakımından altıncı sırada yer alan karbon elementinin adı bu pratik buluşla da anıldı.",
+      "yil": 1873,
+      "baslik": "Ejnar Hertzsprung Doğdu",
+      "metin": "Danimarkalı kimyager ve astronom Ejnar Hertzsprung dünyaya geldi. Kendisi, yıldızların evrimini anlamamızı sağlayan Hertzsprung-Russell diyagramını geliştirerek astronomi tarihine adını yazdırdı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Ejnar_Hertzsprung"
+    },
+    {
+      "yil": 1918,
+      "baslik": "Jens Christian Skou Doğdu",
+      "metin": "Danimarkalı biyokimyager ve fizyolog Jens Christian Skou dünyaya geldi. Bilim insanı, hücre zarındaki sodyum-potasyum pompasını keşfiyle Nobel Ödülü'ne layık görüldü.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Jens_Christian_Skou"
+    },
+    {
+      "yil": 1921,
+      "baslik": "Forbes Field'dan Canlı Radyo Yayını",
+      "metin": "Pittsburgh'daki Forbes Field'da, KDKA radyosu aracılığıyla bir futbol maçının tarihteki ilk canlı radyo yayını gerçekleştirildi. Bu yayın, spor medyasında yepyeni bir dönemin kapılarını araladı.",
       "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Karbon"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/KDKA_(AM)"
     },
     {
-      "yil": 1952,
-      "baslik": "Barkod",
-      "metin": "Günlük hayatımızın vazgeçilmezi olan barkodun patenti alındı. Bu buluş, verilerin görsel özellikli makineler tarafından okunabilmesini sağladı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Barkod"
+      "yil": 1933,
+      "baslik": "D Grubu'nun İlk Sergisi",
+      "metin": "Zeki Faik İzer, Nurullah Berk, Elif Naci, Cemal Tollu ve Abidin Dino'nun bir araya gelerek oluşturduğu D Grubu sanat hareketi ilk sergisini açtı. Bu grup, Türk resim sanatında yenilikçi akımların öncülerinden biri olarak tarihe geçti.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Zeki_Faik_%C4%B0zer"
     },
     {
-      "yil": 1959,
-      "baslik": "Luna-3",
-      "metin": "Sovyet uzay roketi Luna-3, Ay'ın görünmeyen yüzünün ilk fotoğraflarını çekti. Bu tarihi görev, uzay araştırmalarında yeni bir dönüm noktası oldu.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sovyet_halk%C4%B1"
+      "yil": 1956,
+      "baslik": "Don Larsen'in Kusursuz Maçı",
+      "metin": "Major League Baseball pitcher Don Larsen, World Series tarihinde tek olan 'kusursuz maç' performansına imza attı. Hiçbir vurucunun birinci kaleye bile ulaşmasına izin vermediği bu efsanevi oyun beyzbol tarihe kazındı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Major_League_Baseball"
     },
     {
-      "yil": 2008,
-      "baslik": "2008 TC3 Asteroiti",
-      "metin": "2008 TC3 asteroiti Sudan'daki Nübye Çölü üzerinde patladı. Bu olay, atmosferik girişi önceden tahmin edilen ilk asteroit çarpılması olarak tarihe geçti.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/2008_TC3"
-    },
-    {
-      "yil": 2015,
-      "baslik": "Aziz Sancar",
-      "metin": "Aziz Sancar, Nobel Kimya Ödülü'nü kazanan ilk Türk oldu. Bilim insanı bu ödülü Tomas Lindahl ve Paul L. Modrich ile birlikte DNA onarımına ilişkin çalışmaları nedeniyle kazandı.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Aziz_Sancar"
+      "yil": 1978,
+      "baslik": "Ken Warby'den Su Üstünde Rekor Hız",
+      "metin": "Avustralyalı motorboat yarışçısı Ken Warby, Blowering Barajı'nda günümüzdeki su üstü hız rekorunu kırdı. Warby, ulaştığı 275.97 knot'lık bu inanılmaz hızla kırılamayan bir rekora imza attı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Ken_Warby"
     }
   ]
 }
