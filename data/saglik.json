@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-10-08T18:18:12.353Z",
-  "toplamKontrol": 49,
+  "sonDenetim": "2026-10-08T23:27:13.714Z",
+  "toplamKontrol": 48,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -14,6 +14,12 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "trend-wikipedia": {
+      "alan": "Trend kaynakları",
+      "durum": "hata",
+      "detay": "Wikipedia en çok okunanlar: 404 {\"detail\":\"The date(s) you used are valid, but we either do not have data for those date(s), or the project you asked for is not loaded yet. Please check docume",
+      "ilkGorulme": "2026-10-08T23:27:13.714Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
