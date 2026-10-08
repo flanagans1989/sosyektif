@@ -1777,5 +1777,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "izmirin-binlerce-yillik-tarihini-ne-kadar-biliyorsun-test-et": {
+    "eklendi": "2026-10-08T05:06:32.478Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-08T05:06:33.068Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mxdot23dp426"
+      }
+    },
+    "reelIdleri": {}
   }
 }
