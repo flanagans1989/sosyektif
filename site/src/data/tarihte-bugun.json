@@ -1,56 +1,49 @@
 {
-  "tarih": "2026-10-08",
+  "tarih": "2026-10-09",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1829,
-      "baslik": "Stephenson's Rocket'ın Zaferi",
-      "metin": "Erken dönem buharlı lokomotifi Stephenson's Rocket, Liverpool and Manchester Railway tarafından düzenlenen Rainhill Denemeleri'ni kazandı. Bu başarı, demiryolu taşımacılığının geleceğini şekillendiren en önemli dönüm noktalarından biri oldu.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Stephenson's_Rocket"
-    },
-    {
-      "yil": 1873,
-      "baslik": "Ejnar Hertzsprung Doğdu",
-      "metin": "Danimarkalı kimyager ve astronom Ejnar Hertzsprung dünyaya geldi. Kendisi, yıldızların evrimini anlamamızı sağlayan Hertzsprung-Russell diyagramını geliştirerek astronomi tarihine adını yazdırdı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Ejnar_Hertzsprung"
-    },
-    {
-      "yil": 1918,
-      "baslik": "Jens Christian Skou Doğdu",
-      "metin": "Danimarkalı biyokimyager ve fizyolog Jens Christian Skou dünyaya geldi. Bilim insanı, hücre zarındaki sodyum-potasyum pompasını keşfiyle Nobel Ödülü'ne layık görüldü.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Jens_Christian_Skou"
-    },
-    {
-      "yil": 1921,
-      "baslik": "Forbes Field'dan Canlı Radyo Yayını",
-      "metin": "Pittsburgh'daki Forbes Field'da, KDKA radyosu aracılığıyla bir futbol maçının tarihteki ilk canlı radyo yayını gerçekleştirildi. Bu yayın, spor medyasında yepyeni bir dönemin kapılarını araladı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/KDKA_(AM)"
-    },
-    {
-      "yil": 1933,
-      "baslik": "D Grubu'nun İlk Sergisi",
-      "metin": "Zeki Faik İzer, Nurullah Berk, Elif Naci, Cemal Tollu ve Abidin Dino'nun bir araya gelerek oluşturduğu D Grubu sanat hareketi ilk sergisini açtı. Bu grup, Türk resim sanatında yenilikçi akımların öncülerinden biri olarak tarihe geçti.",
+      "yil": 1446,
+      "baslik": "Kore'de Hangul Alfabesi Yayımlandı",
+      "metin": "Kore'de özgün Hangul alfabesi resmen yayımlandı. Doğu Asya'daki bu köklü dil gelişimi, bölgenin kültürel tarihinde dönüm noktalarından biri oldu.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Zeki_Faik_%C4%B0zer"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Kore"
     },
     {
-      "yil": 1956,
-      "baslik": "Don Larsen'in Kusursuz Maçı",
-      "metin": "Major League Baseball pitcher Don Larsen, World Series tarihinde tek olan 'kusursuz maç' performansına imza attı. Hiçbir vurucunun birinci kaleye bile ulaşmasına izin vermediği bu efsanevi oyun beyzbol tarihe kazındı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Major_League_Baseball"
+      "yil": 1604,
+      "baslik": "Kepler Süpernovası Samanyolu'nda Gözlemlendi",
+      "metin": "Samanyolu galaksisinde gerçekleşen en son süpernova olan Kepler Süpernovası gökyüzünde belirdi. Ophiuchus takımyıldızındaki bu devasa patlama gökbilimcilerin büyük ilgisini çekti.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Kepler's_Supernova"
     },
     {
-      "yil": 1978,
-      "baslik": "Ken Warby'den Su Üstünde Rekor Hız",
-      "metin": "Avustralyalı motorboat yarışçısı Ken Warby, Blowering Barajı'nda günümüzdeki su üstü hız rekorunu kırdı. Warby, ulaştığı 275.97 knot'lık bu inanılmaz hızla kırılamayan bir rekora imza attı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Ken_Warby"
+      "yil": 1676,
+      "baslik": "Antonie van Leeuwenhoek'tan İlk Protozoa Tanımı",
+      "metin": "Antonie van Leeuwenhoek, Royal Society'ye yazdığı mektupta \"animalcules\" olarak adlandırdığı canlıları anlattı. Bu çalışma, protozoaların bilinen ilk resmi açıklaması olarak mikrobiyoloji tarihine geçti.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Antonie_van_Leeuwenhoek"
+    },
+    {
+      "yil": 1829,
+      "baslik": "Ağrı Dağı'nın Zirvesine İlk Kez Tırmanıldı",
+      "metin": "Friedrich Parrot ile beraberindeki ekip, Ağrı Dağı'nın zirvesine tırmanmayı başaran ilk kişi oldu. Bu tarihi tırmanış Alman doğa bilimci ve gezgin Parrot ile Haçatur Abovyan'ın öncülüğünde gerçekleştirildi.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Friedrich_Parrot"
+    },
+    {
+      "yil": 1835,
+      "baslik": "Camille Saint-Saëns Dünyaya Geldi",
+      "metin": "Romantik dönemin önde gelen Fransız besteci, orgcu ve piyanisti Camille Saint-Saëns dünyaya geldi. Sanatçı kariyeri boyunca Introduction and Rondo Capriccioso ve Second Piano Concerto gibi unutulmaz eserlere imza attı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Camille_Saint-Sa%C3%ABns"
+    },
+    {
+      "yil": 2007,
+      "baslik": "Albert Fert ve Peter Grünberg Nobel Fizik Ödülü'nü Aldı",
+      "metin": "Albert Fert ve Peter Grünberg, harddisk teknolojisinde çığır açan dev manyetik direnci bulmaları sayesinde Nobel Fizik Ödülü'ne layık görüldü. Bu önemli buluş, kendilerinden bağımsız olarak aynı döneme denk gelen çalışmalarıyla hayata geçti.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Albert_Fert"
     }
   ]
 }
