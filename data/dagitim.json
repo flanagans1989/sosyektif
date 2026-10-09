@@ -1813,8 +1813,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-10-09T05:05:15.867Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mxg77nwt4l2n"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mxg77nwt4l2n",
+        "sonDeneme": "2026-10-09T05:05:15.867Z"
+      },
+      "instagram": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-09T05:07:41.712Z",
+        "id": "18110984996599724"
       }
     },
     "reelIdleri": {}
