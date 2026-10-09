@@ -1806,5 +1806,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "dunya-uzay-haftasi-hakkinda-bilmeniz-gereken-4-sasirtici-detay": {
+    "eklendi": "2026-10-09T05:05:15.137Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-09T05:05:15.867Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mxg77nwt4l2n"
+      }
+    },
+    "reelIdleri": {}
   }
 }
