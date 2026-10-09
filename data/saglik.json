@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-10-09T00:18:45.449Z",
-  "toplamKontrol": 48,
+  "sonDenetim": "2026-10-09T06:01:18.484Z",
+  "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -32,19 +32,19 @@
     "bekleyen-telegram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "telegram çalışmadığı için 17 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "telegram çalışmadığı için 18 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-19T06:01:08.237Z"
     },
     "bekleyen-threads": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "threads çalışmadığı için 17 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "threads çalışmadığı için 18 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-19T06:01:08.237Z"
     },
     "tutarlilik-facebook": {
       "alan": "Dağıtım",
       "durum": "hata",
-      "detay": "facebook: kayıtta 48 paylaşım var ama hesapta 44 gönderi görünüyor.",
+      "detay": "facebook: kayıtta 49 paylaşım var ama hesapta 45 gönderi görünüyor.",
       "cozum": "Gönderiler silinmiş ya da paylaşım sessizce başarısız olmuş olabilir.",
       "ilkGorulme": "2026-09-19T18:01:17.178Z"
     }
