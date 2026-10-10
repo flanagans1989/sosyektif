@@ -1,49 +1,56 @@
 {
-  "tarih": "2026-10-09",
+  "tarih": "2026-10-10",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1446,
-      "baslik": "Kore'de Hangul Alfabesi Yayımlandı",
-      "metin": "Kore'de özgün Hangul alfabesi resmen yayımlandı. Doğu Asya'daki bu köklü dil gelişimi, bölgenin kültürel tarihinde dönüm noktalarından biri oldu.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Kore"
-    },
-    {
-      "yil": 1604,
-      "baslik": "Kepler Süpernovası Samanyolu'nda Gözlemlendi",
-      "metin": "Samanyolu galaksisinde gerçekleşen en son süpernova olan Kepler Süpernovası gökyüzünde belirdi. Ophiuchus takımyıldızındaki bu devasa patlama gökbilimcilerin büyük ilgisini çekti.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Kepler's_Supernova"
-    },
-    {
-      "yil": 1676,
-      "baslik": "Antonie van Leeuwenhoek'tan İlk Protozoa Tanımı",
-      "metin": "Antonie van Leeuwenhoek, Royal Society'ye yazdığı mektupta \"animalcules\" olarak adlandırdığı canlıları anlattı. Bu çalışma, protozoaların bilinen ilk resmi açıklaması olarak mikrobiyoloji tarihine geçti.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Antonie_van_Leeuwenhoek"
-    },
-    {
-      "yil": 1829,
-      "baslik": "Ağrı Dağı'nın Zirvesine İlk Kez Tırmanıldı",
-      "metin": "Friedrich Parrot ile beraberindeki ekip, Ağrı Dağı'nın zirvesine tırmanmayı başaran ilk kişi oldu. Bu tarihi tırmanış Alman doğa bilimci ve gezgin Parrot ile Haçatur Abovyan'ın öncülüğünde gerçekleştirildi.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Friedrich_Parrot"
-    },
-    {
-      "yil": 1835,
-      "baslik": "Camille Saint-Saëns Dünyaya Geldi",
-      "metin": "Romantik dönemin önde gelen Fransız besteci, orgcu ve piyanisti Camille Saint-Saëns dünyaya geldi. Sanatçı kariyeri boyunca Introduction and Rondo Capriccioso ve Second Piano Concerto gibi unutulmaz eserlere imza attı.",
+      "yil": 1731,
+      "baslik": "Hidrojeni Keşfeden Fizikçi Henry Cavendish Doğdu",
+      "metin": "Hidrojen gazını keşfederek ona 'yanıcı hava' adını veren İngiliz kimyager ve fizikçi Henry Cavendish dünyaya geldi. Gerçekleştirdiği hassas deneyler ve gaz yoğunluğu araştırmalarıyla tanınan bilim insanı, modern kimya ve fiziğin temellerini attı.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Camille_Saint-Sa%C3%ABns"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Henry_Cavendish"
+    },
+    {
+      "yil": 1813,
+      "baslik": "İtalyan Opera Devi Giuseppe Verdi Dünyaya Geldi",
+      "metin": "Operaya kazandırdığı ölümsüz başyapıtlarla klasik müzik tarihine adını altın harflerle yazdıran İtalyan besteci Giuseppe Verdi doğdu. Mütevazı bir ailede yetişip dünya sahnelerini fetheden usta besteci, sahne sanatlarında kalıcı bir iz bıraktı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Giuseppe_Verdi"
+    },
+    {
+      "yil": 1846,
+      "baslik": "İngiliz Gökbilimci William Lassell Triton'u Keşfetti",
+      "metin": "İngiliz astronom William Lassell, Neptün gezegeninin en büyük uydusu olan Triton'u keşfetmeyi başardı. Geliştirdiği yansıtmalı teleskoplarla gökyüzünü inceleyen Lassell'in bu başarısı, Güneş Sistemi'nin sınırlarını anlama yolunda astronomi tarihine geçti.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/William_Lassell"
+    },
+    {
+      "yil": 1847,
+      "baslik": "İstanbul Semalarında Güneş Tutulması İzlendi",
+      "metin": "İstanbul semaları nadir görülen gök olaylarından birine sahne oldu ve şehirde güneş tutulması gözlemlendi. Gökyüzündeki bu etkileyici anlar, dönemin İstanbul sakinleri tarafından büyük bir ilgiyle takip edildi.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0stanbul"
+    },
+    {
+      "yil": 1964,
+      "baslik": "Tokyo Olimpiyatları Canlı Uydu Yayınıyla Bir İlke İmza Attı",
+      "metin": "Tokyo'da düzenlenen 18. Yaz Olimpiyatları'nın açılış töreni, uydular aracılığıyla canlı yayınlanan tarihteki ilk olimpiyat oldu. Bu teknolojik hamle, uluslararası dev spor organizasyonunun dünya genelindeki izleyicilerle anında buluşmasını sağladı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/1964_Summer_Olympics"
+    },
+    {
+      "yil": 1967,
+      "baslik": "Dış Uzay Antlaşması Resmen Yürürlüğe Girdi",
+      "metin": "Ay ve diğer gök cisimleri dahil olmak üzere uzayın keşfedilmesi ve kullanılmasını düzenleyen uluslararası Dış Uzay Antlaşması yürürlüğe girdi. Bu çok taraflı tarihi anlaşma, uzay çalışmalarının hukuki çerçevesini belirleyen temel metin oldu.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Outer_Space_Treaty"
     },
     {
       "yil": 2007,
-      "baslik": "Albert Fert ve Peter Grünberg Nobel Fizik Ödülü'nü Aldı",
-      "metin": "Albert Fert ve Peter Grünberg, harddisk teknolojisinde çığır açan dev manyetik direnci bulmaları sayesinde Nobel Fizik Ödülü'ne layık görüldü. Bu önemli buluş, kendilerinden bağımsız olarak aynı döneme denk gelen çalışmalarıyla hayata geçti.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Albert_Fert"
+      "baslik": "Radiohead'in 'In Rainbows' Albümü İnternette Satışa Çıktı",
+      "metin": "İngiliz rock grubu Radiohead, internet üzerinden indirilebilen ilk albüm olan In Rainbows'u kendi web sitesinde piyasaya sürdü. Grubun müziği doğrudan dijital ortamda dinleyicilerle buluşturması, müzik endüstrisinin geleneksel dağıtım kalıplarını kökünden değiştirdi.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/M%C3%BCzik_indirme"
     }
   ]
 }
