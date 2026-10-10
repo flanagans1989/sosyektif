@@ -1835,5 +1835,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "kahkahanin-efendisi-nejat-uygur-hakkinda-muhtemelen-bilmediginiz-5-gercek": {
+    "eklendi": "2026-10-10T05:06:31.903Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-10T05:06:32.568Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mxipqujmny24"
+      }
+    },
+    "reelIdleri": {}
   }
 }
