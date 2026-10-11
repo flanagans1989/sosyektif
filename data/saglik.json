@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-10-10T21:52:06.001Z",
+  "sonDenetim": "2026-10-11T00:01:39.244Z",
   "toplamKontrol": 48,
   "sorunlar": {
     "onay-bekleyen": {
@@ -15,11 +15,11 @@
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
     },
-    "site-veri-coingecko": {
+    "site-veri-frankfurter": {
       "alan": "Ekodektif verileri",
       "durum": "hata",
-      "detay": "CoinGecko: 429 {\"status\":{\"error_code\":429,\"error_message\":\"You've exceeded the Rate Limit. Please visit https://www.coingecko.com/en/api/pricing to subscribe to our API plans",
-      "ilkGorulme": "2026-10-10T21:52:06.001Z"
+      "detay": "Frankfurter (ECB): The operation was aborted due to timeout",
+      "ilkGorulme": "2026-10-11T00:01:39.244Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
