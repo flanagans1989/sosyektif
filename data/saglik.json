@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-10-11T00:17:58.678Z",
-  "toplamKontrol": 48,
+  "sonDenetim": "2026-10-11T06:00:40.776Z",
+  "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -14,6 +14,12 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "trend-wikipedia": {
+      "alan": "Trend kaynakları",
+      "durum": "hata",
+      "detay": "Wikipedia en çok okunanlar: 429 You are making too many requests to the API.\nPlease follow the best practices at <https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits>.\nIf you are unsure ",
+      "ilkGorulme": "2026-10-11T06:00:40.776Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
@@ -32,19 +38,19 @@
     "bekleyen-telegram": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "telegram çalışmadığı için 19 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "telegram çalışmadığı için 20 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-19T06:01:08.237Z"
     },
     "bekleyen-threads": {
       "alan": "Dağıtım",
       "durum": "uyari",
-      "detay": "threads çalışmadığı için 19 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
+      "detay": "threads çalışmadığı için 20 içerik bu kanalda paylaşılmayı bekliyor (kanal düzelince otomatik paylaşılacak).",
       "ilkGorulme": "2026-09-19T06:01:08.237Z"
     },
     "tutarlilik-facebook": {
       "alan": "Dağıtım",
       "durum": "hata",
-      "detay": "facebook: kayıtta 50 paylaşım var ama hesapta 46 gönderi görünüyor.",
+      "detay": "facebook: kayıtta 51 paylaşım var ama hesapta 47 gönderi görünüyor.",
       "cozum": "Gönderiler silinmiş ya da paylaşım sessizce başarısız olmuş olabilir.",
       "ilkGorulme": "2026-09-19T18:01:17.178Z"
     }
