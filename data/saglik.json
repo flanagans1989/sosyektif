@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-10-11T06:18:04.325Z",
+  "sonDenetim": "2026-10-11T12:01:18.556Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -14,6 +14,12 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "site-veri-coingecko": {
+      "alan": "Ekodektif verileri",
+      "durum": "hata",
+      "detay": "CoinGecko: 429 {\"status\":{\"error_code\":429,\"error_message\":\"You've exceeded the Rate Limit. Please visit https://www.coingecko.com/en/api/pricing to subscribe to our API plans",
+      "ilkGorulme": "2026-10-11T12:01:18.556Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
