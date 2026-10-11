@@ -1,9 +1,15 @@
 {
-  "tarih": "2026-10-10T05:05:38.679Z",
+  "tarih": "2026-10-11T05:02:48.364Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 1,
   "onayaDusen": 0,
-  "reddedilen": 0,
-  "hatalar": []
+  "reddedilen": 5,
+  "hatalar": [
+    "Ankara Garı Saldırısı: uygun değil: Suç, şiddet, adli olaylar, terör ve felaket haberleri site politikamız gereği uygun değildir.",
+    "Seks ve Genç Kız (film): uygun değil: Cinsellik ve +18 içerik barındırdığı için site politikalarına uygun değildir.",
+    "Mehmet Ağar: uygun değil: Yaşayan gerçek bir kişi veya yakın dönemin siyasi/adli figürleri site politikası gereği içerik odağı olamaz.",
+    "İpek Tanrıyar: uygun değil: Yaşayan gerçek bir kişi olduğu için içerik politikamıza uygun değildir.",
+    "Gibi bölümleri listesi: \"Gibi\" daha önce işlendi"
+  ]
 }
