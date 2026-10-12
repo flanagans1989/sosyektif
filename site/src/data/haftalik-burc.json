@@ -1,66 +1,66 @@
 {
-  "hafta": "2026-10-05",
+  "hafta": "2026-10-12",
   "uretenProvider": "gemini",
   "burclar": {
     "koc": {
-      "genel": "Bu hafta enerjin tavan yapabilir ama fren mekanizmasını da yanında taşımanda fayda var. Acele kararlar almak yerine olayları biraz akışına bırakmayı denemek seni haftanın sonunda çok daha huzurlu kılabilir. Çevrendekiler senin hızına yetişmekte zorlanırsa onlara biraz tolerans göstermek iyi bir fikir olabilir.",
-      "ask": "Kalbindeki heyecanı paylaşırken karşı tarafı dinlemeyi de ihmal etme; küçük bir jest partnerinin yüzünü güldürebilir.",
-      "kariyer": "Başladığın işleri bitirmek için harika bir ivme yakalayabilirsin, fakat acele ederken detayları gözden kaçırmamaya dikkat et."
+      "genel": "Sevgili Koç, bu hafta adeta yerinde duramayacaksın, enerjin tavan! Kafana koyduğun birşeyi yapmak için sabırsızlanıyorsun ama biraz sakinleşip strateji yapmakta fayda var. Acele işe şeytan karışır, bilirsin.",
+      "ask": "Aşk hayatında fevri çıkışlardan kaçın, karşısındakini dinlemek bu hafta süper güç olabilir. Bekar Koçlar, ani gelişen sürpriz bir sohbete şaşırabilir.",
+      "kariyer": "Projeleri hızla tamamlama isteğin iş yerinde dikkat çekecek. Sadece ekip arkadaşlarına biraz ayak uydurma şansı tanı."
     },
     "boga": {
-      "genel": "Konfor alanın bu hafta sana her zamankinden tatlı gelebilir, ancak küçük adımlarla dışarı çıkmak yeni kapılar aralayabilir. Sakinliğini koruyarak çevrendeki telaşlı ortamı dengeleyen kişi sen olabilirsin. Kendine kaliteli vakit ayırmayı ve dinlenmeyi erteleme.",
-      "ask": "Güven ve samimiyet arayışın ön planda; açık sözlü ve sıcak bir sohbet aranızdaki bağı güçlendirebilir.",
-      "kariyer": "Rutin işleri toparlamak ve bir süredir ertelediğin düzenlemeleri tamamlamak adına oldukça verimli bir hafta geçirebilirsin."
+      "genel": "Hey Boğa, bu hafta konfor alanından biraz çıkman gerekebilir ama korkma, sonu güzel olacak. Evde battaniye keyfi yapmak istesen de dış dünya seni çağırıyor. Kahveni al ve akışa bırak.",
+      "ask": "İlişkilerde huzur ve tatlı bir güven hakim. Küçük sürprizler aradaki bağı güçlendirebilir.",
+      "kariyer": "İşler biraz yavaş ilerliyor gibi görünse de detaylardaki dikkatini herkes takdir edecek. Acele etmeden sağlam adımlar atıyorsun."
     },
     "ikizler": {
-      "genel": "Zihnin yine onlarca sekme açmış bir tarayıcı gibi hızlı çalışıyor. Sosyal çevrenden gelecek haberler ve davetler haftanı renklendirebilir, ancak her şeye aynı anda yetişmeye çalışırken yorulabilirsin. Seçici olmak ve enerjini doğru konulara odaklamak haftanın anahtarı gibi görünüyor.",
-      "ask": "Esprili ve akıcı iletişiminle dikkatleri üzerine çekebilir, partnerinle tatlı ve eğlenceli anlar paylaşabilirsin.",
-      "kariyer": "Yeni fikirler üretmek konusunda parlayabilirsin; bu fikirleri somut bir takvime bağlamak işlerini kolaylaştırır."
+      "genel": "Telefonun susmuyor, aklın beş karış havada; tam sana göre bir hafta! Bir konudan diğerine atlarken önemli detayları kaçırmamaya dikkat et yeter. Sosyalleşmekten keyif alacaksın.",
+      "ask": "Flörtöz enerjiler dorukta, kalbin pır pır edebilir. İlişkisi olanlar ise partnerleriyle bolca gülmeli.",
+      "kariyer": "İletişim trafiğin yoğun, toplantılarda fikirlerinle öne çıkıyorsun. Dağınık notlarını bir araya getirmek iyi olabilir."
     },
     "yengec": {
-      "genel": "Bu hafta kabuğun sana güvenli bir sığınak gibi hissettirebilir, fakat dış dünyayla bağını koparmamakta yarar var. Duygusal dengeni korumak adına sevdiklerinle yapacağın içten paylaşımlar sana çok iyi gelecektir. İç sesine kulak verirken mantığın fısıltısını da yabana atma.",
-      "ask": "Duygularını açıkça ifade etmekten çekinme; karşılıklı anlayış aranızdaki ufak kırgınlıkları hızla dağıtabilir.",
-      "kariyer": "Takım çalışmalarında empati yeteneğinle öne çıkabilir, gergin anlarda yapıcı çözümler sunarak ortamı rahatlatabilirsin."
+      "genel": "İç sesinin pek bir gürültülü olduğu, nostaljik bir haftaya merhaba Yengeç. Kendi kabuğuna çekilmek isteyebilirsin ama sevdiklerin seni yalnız bırakmayacak. Duygularını ifade etmekten çekinme.",
+      "ask": "Romantizm ve derin sohbetler kapıda. Karşılıklı hisleri paylaşmak aradaki buzları eritir.",
+      "kariyer": "Ofis ortamında ufak tefek hassasiyetler yaşanabilir ama sezgilerinle her durumu toparlayabileceksin. Listelerine sadık kal."
     },
     "aslan": {
-      "genel": "Sahne ışıklarını bu hafta biraz daha fazla hissetmek isteyebilirsin ve bunda hiçbir sakınca yok. Yine de liderlik ederken başkalarının fikirlerine alan açmak seni çok daha sempatik kılacaktır. Haftanın ortasında yaratıcılığın belirgin şekilde artabilir, bunu hobilerine yansıtabilirsin.",
-      "ask": "İlgi odağı olmayı sevdiğin kadar karşındakini de şımartmayı denersen, aşk hayatında tatlı kıvılcımlar parlayabilir.",
-      "kariyer": "Sunumlar, toplantılar veya önemli sorumluluklarda kendini göstermek adına güzel fırsatlarla karşılaşabilirsin."
+      "genel": "Işıklar üzerindeyse şaşırma sevgili Aslan, bu hafta sahnede sen varsın. Karizmanla herkesi etkilemekle kalmıyor, yaratıcı projelerde de harikalar yaratıyorsun. Birazcık mütevazı olmak da fena durmaz hani.",
+      "ask": "İlgi odağı olacaksın, aşk hayatında hareketli ve tutkulu günler seni bekliyor. Karşındaki kişiye de biraz alan tanımayı unutma.",
+      "kariyer": "Yaratıcı fikirlerinle yöneticilerinin dikkatini çekeceksin. Takım çalışmasında liderliği ele almak sana çok yakışıyor."
     },
     "basak": {
-      "genel": "Liste yapma sevdan bu hafta hayat kurtarabilir çünkü gündeminde birden fazla konu aynı anda belirebilir. Kusursuzluk arayışını bir kenara bırakıp 'yeterince iyi' olana odaklanmak stresini ciddi şekilde azaltır. Bedenine kulak vermeyi ve gün içinde minik molalar almayı ihmal etme.",
-      "ask": "Detaylara ve ufak pürüzlere takılmak yerine büyük resme odaklanmak ilişkinize ferah bir nefes aldırabilir.",
-      "kariyer": "Analitik bakış açın sayesinde karmaşık görünen sorumlulukları kolayca organize edip yoluna koyabilirsin."
+      "genel": "Her şeyi organize etme isteğin bu hafta zirve yapıyor. Çevrendeki dağınıklığı toplamakla uğraşırken kendi enerjini tüketme. Biraz akışına bırakmak da bir rahatlama yöntemidir.",
+      "ask": "Partnerinle ufak detaylara takılmak yerine anın tadını çıkarın. Bekar Başaklar, mantıktan ziyade kalbinin sesini dinlemeli.",
+      "kariyer": "Planlama ve düzenleme becerilerin sayesinde işler yağ gibi gidecek. Kusursuz olma baskısını biraz azaltırsan çok daha rahat edersin."
     },
     "terazi": {
-      "genel": "Dengeyi bulmak senin uzmanlık alanın olsa da bu hafta bazı kararsızlıklar peşini bırakmayabilir. Seçim yaparken herkesi aynı anda mutlu etmeye çalışmak yerine kendi önceliklerine odaklanmayı deneyebilirsin. Sosyal ortamlar ve keyifli sohbetler haftana neşe katmaya aday.",
-      "ask": "Romantik anlar ve hoş iltifatlar gündemde; kalbini yumuşatacak samimi bir yaklaşıma hazır ol.",
-      "kariyer": "Ortaklaşa yürütülen işlerde uzlaştırıcı tavrınla takdir toplayabilir, çalışma ortamında ahengi sağlayabilirsin."
+      "genel": "Karar vermenin en zor olduğu haftalardan birindesin ama endişelenme, dengeyi bulacaksın. Estetik konular, sanat ve sosyal etkinlikler ruhuna çok iyi gelecek. Güzellikleri fark et.",
+      "ask": "Romantik bir denge arayışındasın; tatlı dille çözülemeyecek sorun yok. İlişkilerde uyum ön planda.",
+      "kariyer": "Ortaklı işlerde ve müzakerelerde diplomatik yönünle parlayacaksın. Kararsızlık anlarında içgüdüven güven."
     },
     "akrep": {
-      "genel": "Sezgilerin bu hafta oldukça keskin çalışıyor, çevrende olup bitenleri hızla fark edebilirsin. Ancak şüpheciliğin dozunu artırıp kendini gereksiz yere yormamaya dikkat etmelisin. Enerjini derinleşmek istediğin projelere veya kişisel ilgi alanlarına yönlendirmek harika sonuçlar verebilir.",
-      "ask": "Tutkulu ve derin hisler ön planda; partnerine iç dünyanı biraz daha açmak aranızdaki bağı pekiştirebilir.",
-      "kariyer": "Odaklanma gerektiren zorlu görevlerin üstesinden kararlılıkla gelebilir, hedeflerinde sessizce ilerleyebilirsin."
+      "genel": "Gizemli ve odaklanmış bir haftadasın sevgili Akrep. Arkada dönen dolapları hemen seziyorsun, kimse seni kandıramaz. Bu enerjiyi kendi hedeflerine odaklamak için harika bir fırsat.",
+      "ask": "Tutku ve yoğunluk tavan yapmış durumda. Derin ve anlamlı bağlar kurmak için ideal bir zaman.",
+      "kariyer": "Stratejik planların ve kararlılığın iş yerinde başarıyı getirecek. Bildiklerini hemen herkesle paylaşmak zorunda değilsin."
     },
     "yay": {
-      "genel": "İçindeki keşif arzusu ve yeni şeyler öğrenme isteği bu hafta belirgin şekilde yükselebilir. Rutinlerin getirdiği tekdüzelikten uzaklaşmak için günlük planlarında küçük değişiklikler yapabilirsin. Neşeli ve umut dolu tavrın çevrendekilere de moral kaynağı olabilir.",
-      "ask": "Birlikte eğlenebileceğiniz ve yeni yerler görebileceğiniz planlar ilişkinize taze bir canlılık getirebilir.",
-      "kariyer": "Geleceğe dair planlarını gözden geçirebilir, yeni eğitim veya kendin geliştirme fırsatlarını değerlendirebilirsin."
+      "genel": "Macera ruhun uyandı, yeni yerler görme veya yeni şeyler öğrenme isteğiyle dolusun. Rutin olan her şey sana dar gelmeye başladı. Vizyonunu genişletecek sohbetler yapabilirsin.",
+      "ask": "Heyecan verici ve eğlenceli bir hafta. Partnerinle spontane bir şeyler planlamak rutini kıracaktır.",
+      "kariyer": "Yeni fikirler ve büyük resme odaklanmak seni motive ediyor. Detayları bir uzmana bırakıp sen vizyona odaklan."
     },
     "oglak": {
-      "genel": "Disiplinli doğan bu hafta sana büyük avantaj sağlayacak, dağınık durumları ustalıkla toparlayabilirsin. Yine de kendine fazla yüklenmemeye ve her sorumluluğu tek başına sırtlamamaya özen göstermelisin. Hafta sonuna doğru gevşemeyi ve dinlenmeyi ajandana eklemek iyi gelir.",
-      "ask": "Ciddiyet ile eğlence arasındaki tatlı dengeyi kurduğunda, partnerinle çok daha huzurlu paylaşımlar yaşayabilirsin.",
-      "kariyer": "Uzun vadeli hedeflerine doğru sabırla ilerlerken, güvenilir duruşun ekip arkadaşlarının takdirini kazanabilir."
+      "genel": "Disiplin ve sorumluluklar ön planda olsa da, bu hafta biraz da eğlenceye yer açmalısın. Her şeyi tek başına sırtlanma, yardım istemek zayıflık değil güç göstergesidir.",
+      "ask": "İlişkilerde net ve güven veren bir duruşun var. Partnerin senin bu kaya gibi sağlam yapına hayran.",
+      "kariyer": "İş yükün yoğun olabilir ama pratik zekanla üstesinden geleceksin. Uzun vadeli hedefler için sağlam temeller atıyorsun."
     },
     "kova": {
-      "genel": "Orijinal fikirlerin ve sıradışı çözümlerinle bu hafta dikkatleri üzerine çekebilirsin. Arkadaş gruplarınla bir araya gelmek ya da ortak bir amaç için üretmek sana enerji verecektir. Kendi bağımsız alanını korurken sevdiklerine de vakit ayırmayı dengede tutmaya çalışmalısın.",
-      "ask": "Zihinsel uyum bu hafta ilişkinin en tatlı yönü olabilir; fikir paylaşımları ve entelektüel sohbetler yakınlığı artırabilir.",
-      "kariyer": "Alışılmışın dışındaki bakış açın sayesinde tıkanmış süreçlere yenilikçi ve pratik çözümler getirebilirsin."
+      "genel": "Fütüristik fikirlerin ve sıradışı enerjinle çevreni şaşırtmaya devam ediyorsun sevgili Kova. Arkadaş gruplarınla yapılacak planlar haftanın en keyifli kısmı olacak. Farklı olmak güzeldir.",
+      "ask": "Arkadaşlıktan aşka evrilen durumlar veya sıra dışı tanışmalar gündeme gelebilir. Özgürlüğüne düşkünlüğün sürecek.",
+      "kariyer": "Yenilikçi projeler ve teknolojik konularla ilgili işlerde çok başarılı adımlar atabilirsin. Ekip çalışmalarında özgün fikirlerin öne çıkacak."
     },
     "balik": {
-      "genel": "Hayal gücün bu hafta son derece zengin, yaratıcı uğraşlar için zihninde adeta yeni kapılar aralanıyor. Gerçeklikten bütünüyle kopmadan sezgilerine güvenmek sana doğru adımları attırabilir. Kendine sakin ve huzurlu zaman dilimleri yaratmak ruhunu tazeleyecektir.",
-      "ask": "Şefkat dolu ve romantik bir hava hakim; duygusal beklentilerini açıkça paylaşmak seni mutlu edebilir.",
-      "kariyer": "İş veya okul ortamında empati yeteneğinle gerginlikleri yumuşatabilir, bireysel görevlerinde ilhamla ilerleyebilirsin."
+      "genel": "Rüyalar, sezgiler ve ilham dolu bir hafta seni bekliyor Balık. Sanatsal faaliyetlerle uğraşmak ya da sadece kendi dünyanda hayal kurmak ruhunu dinlendirecek. Ayaklarını ara sıra yere basmayı unutma.",
+      "ask": "Romantizmde sınır tanımayan hallerdesin. Duygusal bağların derinleştiği, masalsı anlar yaşayabilirsin.",
+      "kariyer": "Yaratıcı yönünü işine yansıtmak için harika bir dönem. Dağınık zihnini toparlamak için kısa molalar vermeyi ihmal etme."
     }
   }
 }

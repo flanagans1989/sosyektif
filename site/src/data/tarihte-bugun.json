@@ -1,62 +1,42 @@
 {
-  "tarih": "2026-10-11",
+  "tarih": "2026-10-12",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1811,
-      "baslik": "İlk Buharlı Feribot Juliana Seferlerine Başladı",
-      "metin": "Tarihin ilk buharlı feribotu olan Juliana, New York ile New Jersey arasındaki seferlerine resmen başladı. Buhar motorunun deniz taşıtlarına uyarlanması, şehirler arası yolcu ve yük taşımacılığında yepyeni ve hızlı bir devrin kapısını araladı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Feribot"
+      "yil": 1799,
+      "baslik": "Jeanne Geneviève Garnerin",
+      "metin": "Jeanne Geneviève Garnerin, sıcak hava balonunun sepetinden 900 metre yükseklikten atlayarak paraşütle alçalmayı başaran ilk kadın oldu. Gösterdiği bu cesaret, havacılık tarihinde unutulmaz bir yer edindi.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Jeanne_Genevi%C3%A8ve_Garnerin"
     },
     {
-      "yil": 1881,
-      "baslik": "David Houston Kameralar İçin Rulo Filmin Patentini Aldı",
-      "metin": "Mucit David Houston, fotoğraf makinelerinde kullanılmak üzere tasarladığı rulo film sisteminin patentini aldı. Bu yenilik, taşınması ve kullanımı zahmetli olan cam plakaların yerini alarak fotoğrafçılığın pratikleşmesine zemin hazırladı.",
-      "kategori": "icat"
-    },
-    {
-      "yil": 1910,
-      "baslik": "Theodore Roosevelt Uçakla Uçan İlk ABD Başkanı Oldu",
-      "metin": "Wright Kardeşler'in inşa ettiği uçakla Missouri semalarında dört dakika boyunca uçan Theodore Roosevelt, bir uçakla seyahat eden ilk ABD başkanı unvanını kazandı. O dönem henüz emekleme aşamasında olan havacılık dünyası için bir liderin uçağa binmesi büyük bir cesaret örneği olarak görüldü.",
+      "yil": 1847,
+      "baslik": "Siemens AG",
+      "metin": "Alman sanayici Werner von Siemens, bugünkü dev teknoloji ve mühendislik şirketi Siemens AG'yi kurdu. Bu hamle, küresel sanayi ve mühendislik dünyasının şekillenmesinde kilit bir rol oynadı.",
       "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Wright_Karde%C5%9Fler"
-    },
-    {
-      "yil": 1910,
-      "baslik": "Türk Matematiğinin Öncüsü Cahit Arf Dünyaya Geldi",
-      "metin": "Kendi adıyla anılan 'Arf değişmezi' ve 'Hasse-Arf teoremi' gibi buluşlarla dünya matematik literatürüne giren Cahit Arf doğdu. Cebir ve topoloji alanlarında çığır açan çalışmaları, Türkiye'de temel bilimlerin uluslararası düzeyde tanınmasına büyük katkı sağladı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Cahit_Arf"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Almanlar"
     },
     {
       "yil": 1928,
-      "baslik": "Graf Zeppelin İlk Kıtalararası Yolculuğuna Başladı",
-      "metin": "LZ-127 Graf Zeppelin adlı dev hava gemisi, ilk kıtalararası uçuşunu gerçekleştirmek üzere Almanya'dan New Jersey'e doğru yola çıktı. Motor gücüyle yönlendirilen devasa yapısıyla bu zeplin, havacılıkta okyanus aşırı ulaşımın önemli simgelerinden biri oldu.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Hava_gemisi"
+      "baslik": "Suni Solunum Cihazı",
+      "metin": "Suni solunum cihazı, tarihte ilk kez Boston'daki bir çocuk hastanesinde kullanıldı. Bu hayat kurtaran teknolojik gelişme, tıp dünyasında çığır açan bir dönüm noktası oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Boston"
     },
     {
-      "yil": 1971,
-      "baslik": "John Lennon'ın Efsanevi Şarkısı Imagine Yayımlandı",
-      "metin": "The Beatles'ın efsanevi üyesi John Lennon'ın solo kariyerinin simgesi haline gelen 'Imagine' adlı şarkısı dinleyicilerle buluştu. Şarkı, sınırların ve ayrılıkların olmadığı bir dünya hayaliyle müzik tarihinin en çok bilinen barış marşlarından birine dönüştü.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/John_Lennon"
-    },
-    {
-      "yil": 1977,
-      "baslik": "Kaptan Cousteau Araştırma Gemisi Calypso ile İstanbul'a Geldi",
-      "metin": "Dünyaca ünlü Fransız okyanus uzmanı ve kâşif Kaptan Jacques-Yves Cousteau, efsanevi araştırma gemisi Calypso ile İstanbul'a ulaştı. Denizlerin gizemlerini su altı belgeselleriyle tüm dünyaya tanıtan kâşifin ziyareti büyük ilgiyle karşılandı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Jacques-Yves_Cousteau"
-    },
-    {
-      "yil": 1984,
-      "baslik": "Kathryn D. Sullivan Uzayda Yürüyen İlk Amerikalı Kadın Oldu",
-      "metin": "Challenger uzay mekiğiyle göreve çıkan astronot Kathryn D. Sullivan, uzay yürüyüşü gerçekleştiren ilk Amerikalı kadın olarak tarihe geçti. Sullivan'ın bu adımı, uzay araştırmalarında kadın astronotların rolü adına önemli bir dönüm noktası oluşturdu.",
+      "yil": 2005,
+      "baslik": "Shenzhou 6",
+      "metin": "Çin'in ikinci insanlı uzay aracı olan Shenzhou 6 fırlatıldı ve uzayta 5 gün boyunca yörüngede kaldı. Bu önemli görev, ülkenin uzay programındaki ilerleyişini gözler önüne serdi.",
       "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Challenger_Uzay_Meki%C4%9Fi"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C3%87in"
+    },
+    {
+      "yil": 2019,
+      "baslik": "Eliud Kipchoge",
+      "metin": "Kenya'dan Eliud Kipchoge, Viyana'da koştuğu 1:59:40'lık derecesiyle bir maratonu iki saatin altında tamamlayan ilk insan oldu. Bu olağanüstü performans insan iradesinin sınırlarını yeniden çizdi.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Eliud_Kipchoge"
     }
   ]
 }
