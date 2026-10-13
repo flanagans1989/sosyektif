@@ -1,42 +1,42 @@
 {
-  "tarih": "2026-10-12",
+  "tarih": "2026-10-13",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1799,
-      "baslik": "Jeanne Geneviève Garnerin",
-      "metin": "Jeanne Geneviève Garnerin, sıcak hava balonunun sepetinden 900 metre yükseklikten atlayarak paraşütle alçalmayı başaran ilk kadın oldu. Gösterdiği bu cesaret, havacılık tarihinde unutulmaz bir yer edindi.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Jeanne_Genevi%C3%A8ve_Garnerin"
-    },
-    {
-      "yil": 1847,
-      "baslik": "Siemens AG",
-      "metin": "Alman sanayici Werner von Siemens, bugünkü dev teknoloji ve mühendislik şirketi Siemens AG'yi kurdu. Bu hamle, küresel sanayi ve mühendislik dünyasının şekillenmesinde kilit bir rol oynadı.",
+      "yil": 1881,
+      "baslik": "Eliezer Ben-Yehuda ile Modern İbranicenin Canlanması",
+      "metin": "Eliezer Ben-Yehuda ve arkadaşları, modern İbranice dilindeki ilk bilinen sohbeti gerçekleştirdiler. Yüzyıllardır yalnızca kutsal metinlerde kullanılan bir dilin günlük hayata dönerek yeniden canlanma süreci bu sohbetle ivme kazandı.",
       "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Almanlar"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Revival_of_the_Hebrew_language"
     },
     {
-      "yil": 1928,
-      "baslik": "Suni Solunum Cihazı",
-      "metin": "Suni solunum cihazı, tarihte ilk kez Boston'daki bir çocuk hastanesinde kullanıldı. Bu hayat kurtaran teknolojik gelişme, tıp dünyasında çığır açan bir dönüm noktası oldu.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Boston"
+      "yil": 1886,
+      "baslik": "John Stith Pemberton'ın Coca-Cola Formülü",
+      "metin": "Amerikalı eczacı John Stith Pemberton, bugün dünyanın en bilinen içeceklerinden biri olan Coca-Cola'nın formülünü buldu. Başlangıçta bir ilaç olarak üretilen bu özel şurup, küçük değişikliklerle küresel bir tüketici kitlesine ulaştı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/John_S._Pemberton"
     },
     {
-      "yil": 2005,
-      "baslik": "Shenzhou 6",
-      "metin": "Çin'in ikinci insanlı uzay aracı olan Shenzhou 6 fırlatıldı ve uzayta 5 gün boyunca yörüngede kaldı. Bu önemli görev, ülkenin uzay programındaki ilerleyişini gözler önüne serdi.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C3%87in"
+      "yil": 1892,
+      "baslik": "Edward Emerson Barnard'ın Fotoğrafla Kuyruklu Yıldız Keşfi",
+      "metin": "Edward Emerson Barnard, tarihte ilk kez fotoğrafik yöntemler kullanarak bir kuyruklu yıldız keşfetti. Bu yenilikçi yöntem, gökbilimcilere uzayı keşfetmede tamamen yeni bir pencere açtı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/206P%2FBarnard%E2%80%93Boattini"
     },
     {
-      "yil": 2019,
-      "baslik": "Eliud Kipchoge",
-      "metin": "Kenya'dan Eliud Kipchoge, Viyana'da koştuğu 1:59:40'lık derecesiyle bir maratonu iki saatin altında tamamlayan ilk insan oldu. Bu olağanüstü performans insan iradesinin sınırlarını yeniden çizdi.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Eliud_Kipchoge"
+      "yil": 1900,
+      "baslik": "Sigmund Freud ve Düşlerin Yorumu",
+      "metin": "Avusturyalı nörolog Sigmund Freud, psikanaliz biliminin temellerini atan ünlü kitabı Düşlerin Yorumu'nu yayınladı. İnsan psikolojisine ve bilinçaltına yepyeni bir bakış açısı getiren bu eser, psikoloji tarihini kökten değiştirdi.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sigmund_Freud"
+    },
+    {
+      "yil": 1976,
+      "baslik": "Ebola Virüsünün İlk Elektron Mikrografı",
+      "metin": "Hastalık Kontrol ve Korunma Merkezleri'nde Dr. F. A. Murphy tarafından Ebola virüsünün ilk elektron mikrografı çekildi. Mikroskop aracılığıyla yakalanan bu görüntü, virüsün yapısının anlaşılmasında devrim niteliğinde bir adım oldu.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Micrograph"
     }
   ]
 }
