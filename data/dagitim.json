@@ -1893,5 +1893,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "osmanlinin-kaderini-degistiren-trajik-sehzade-hakkinda-bilmeniz-gereken-7-sasirtici-gercek": {
+    "eklendi": "2026-10-14T05:02:59.224Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-14T05:03:00.107Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mxsrg7r6222n"
+      }
+    },
+    "reelIdleri": {}
   }
 }
