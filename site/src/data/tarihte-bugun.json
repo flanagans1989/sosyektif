@@ -1,42 +1,49 @@
 {
-  "tarih": "2026-10-13",
+  "tarih": "2026-10-14",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1881,
-      "baslik": "Eliezer Ben-Yehuda ile Modern İbranicenin Canlanması",
-      "metin": "Eliezer Ben-Yehuda ve arkadaşları, modern İbranice dilindeki ilk bilinen sohbeti gerçekleştirdiler. Yüzyıllardır yalnızca kutsal metinlerde kullanılan bir dilin günlük hayata dönerek yeniden canlanma süreci bu sohbetle ivme kazandı.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Revival_of_the_Hebrew_language"
+      "yil": 1888,
+      "baslik": "Louis Le Prince'in İlk Hareketli Filmi",
+      "metin": "Fransız mucit Louis Le Prince, İngiltere'nin Leeds kentinde günümüze ulaşabilen en eski hareketli film olan Roundhay Garden Scene'i kameraya kaydetti. Bu çalışma, sinema tarihinin bilinen ilk hareketli görüntü çekimi olarak kayıtlara geçti.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Louis_Le_Prince"
     },
     {
-      "yil": 1886,
-      "baslik": "John Stith Pemberton'ın Coca-Cola Formülü",
-      "metin": "Amerikalı eczacı John Stith Pemberton, bugün dünyanın en bilinen içeceklerinden biri olan Coca-Cola'nın formülünü buldu. Başlangıçta bir ilaç olarak üretilen bu özel şurup, küçük değişikliklerle küresel bir tüketici kitlesine ulaştı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/John_S._Pemberton"
+      "yil": 1925,
+      "baslik": "Türkiye'nin İlk Betonarme Köprüsü",
+      "metin": "Türkiye'deki ilk betonarme köprü Büyük Menderes nehri üzerinde inşa edildi. Batı Anadolu'nun en büyük nehrinde hayata geçirilen bu yapı, dönemin mühendislik çalışmaları açısından büyük bir ilkti.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/B%C3%BCy%C3%BCk_Menderes"
     },
     {
-      "yil": 1892,
-      "baslik": "Edward Emerson Barnard'ın Fotoğrafla Kuyruklu Yıldız Keşfi",
-      "metin": "Edward Emerson Barnard, tarihte ilk kez fotoğrafik yöntemler kullanarak bir kuyruklu yıldız keşfetti. Bu yenilikçi yöntem, gökbilimcilere uzayı keşfetmede tamamen yeni bir pencere açtı.",
+      "yil": 1947,
+      "baslik": "Chuck Yeager'ın Ses Duvarını Aşması",
+      "metin": "Amerikalı test pilotu Chuck Yeager, roket motorlu uçağıyla uçarak ses duvarını aşan ilk insan oldu. Deniz seviyesindeki ses hızını aşarak havacılık tarihinde yepyeni bir sayfa açtı.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/206P%2FBarnard%E2%80%93Boattini"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerikal%C4%B1lar"
     },
     {
-      "yil": 1900,
-      "baslik": "Sigmund Freud ve Düşlerin Yorumu",
-      "metin": "Avusturyalı nörolog Sigmund Freud, psikanaliz biliminin temellerini atan ünlü kitabı Düşlerin Yorumu'nu yayınladı. İnsan psikolojisine ve bilinçaltına yepyeni bir bakış açısı getiren bu eser, psikoloji tarihini kökten değiştirdi.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sigmund_Freud"
+      "yil": 1968,
+      "baslik": "Apollo 7 Ekibinden Canlı TV Yayını",
+      "metin": "Amerikalı astronotlar, yörüngedeki ilk canlı televizyon yayınını Apollo 7 ekibi vasıtasıyla gerçekleştirdi. Bu tarihi yayın, uzay çalışmalarının kitleler tarafından anbean takip edilmesinde yeni bir çağ başlattı.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Astronot"
     },
     {
-      "yil": 1976,
-      "baslik": "Ebola Virüsünün İlk Elektron Mikrografı",
-      "metin": "Hastalık Kontrol ve Korunma Merkezleri'nde Dr. F. A. Murphy tarafından Ebola virüsünün ilk elektron mikrografı çekildi. Mikroskop aracılığıyla yakalanan bu görüntü, virüsün yapısının anlaşılmasında devrim niteliğinde bir adım oldu.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Micrograph"
+      "yil": 1968,
+      "baslik": "Jim Hines'ın 10 Saniye Barajını Aşması",
+      "metin": "Amerikalı atlet Jim Hines, Meksiko'da düzenlenen Olimpiyat Oyunları'nda 100 metreyi 10 saniyenin altında koşarak tarihe geçti. 9.95 saniyelik bu derecesiyle unvanını uzun yıllar boyunca korumayı başardı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerikal%C4%B1lar"
+    },
+    {
+      "yil": 2012,
+      "baslik": "Felix Baumgartner'in Stratosfer Atlayışı",
+      "metin": "Avusturyalı base jumper Felix Baumgartner, stratosferdeki bir balondan Dünya'ya başarıyla atladı. Bu tehlikeli uzay atlayışında 39.000 metre yükseklikten serbest düşüşe geçen sporcu, saatte 1.342 kilometre hıza ulaşmayı başardı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Felix_Baumgartner"
     }
   ]
 }
