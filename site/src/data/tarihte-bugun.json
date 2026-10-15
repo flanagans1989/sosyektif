@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-10-14",
+  "tarih": "2026-10-15",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1888,
-      "baslik": "Louis Le Prince'in İlk Hareketli Filmi",
-      "metin": "Fransız mucit Louis Le Prince, İngiltere'nin Leeds kentinde günümüze ulaşabilen en eski hareketli film olan Roundhay Garden Scene'i kameraya kaydetti. Bu çalışma, sinema tarihinin bilinen ilk hareketli görüntü çekimi olarak kayıtlara geçti.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Louis_Le_Prince"
+      "yil": 1928,
+      "baslik": "Graf Zeppelin'in Transatlantik Uçuşu",
+      "metin": "Almanya'dan hareket eden dünyanın en büyük hava gemisi Graf Zeppelin Amerika'daki New Jersey'e ulaştı. Tarihi uçuş tam 111 saat sürdü.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Almanya"
     },
     {
-      "yil": 1925,
-      "baslik": "Türkiye'nin İlk Betonarme Köprüsü",
-      "metin": "Türkiye'deki ilk betonarme köprü Büyük Menderes nehri üzerinde inşa edildi. Batı Anadolu'nun en büyük nehrinde hayata geçirilen bu yapı, dönemin mühendislik çalışmaları açısından büyük bir ilkti.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/B%C3%BCy%C3%BCk_Menderes"
+      "yil": 1937,
+      "baslik": "Yeni Harfli İlk Kâğıt Paralar",
+      "metin": "Yeni harflerle basılan ilk kâğıt paralar bu tarihte tedavüle çıktı. Üzerinde Atatürk'ün resmi bulunan 100 liralık banknotlar daha sonra 1942'de tedavülden kaldırıldı.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Para"
     },
     {
-      "yil": 1947,
-      "baslik": "Chuck Yeager'ın Ses Duvarını Aşması",
-      "metin": "Amerikalı test pilotu Chuck Yeager, roket motorlu uçağıyla uçarak ses duvarını aşan ilk insan oldu. Deniz seviyesindeki ses hızını aşarak havacılık tarihinde yepyeni bir sayfa açtı.",
+      "yil": 1951,
+      "baslik": "Noretisteron Sentezi",
+      "metin": "Meksikalı kimyager Luis E. Miramontes, erken dönem bir oral kontraseptifin temelini oluşturan noretisteronun sentezini tamamladı. Bu buluş tıp ve eczacılık alanında çığır açtı.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerikal%C4%B1lar"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Luis_E._Miramontes"
     },
     {
-      "yil": 1968,
-      "baslik": "Apollo 7 Ekibinden Canlı TV Yayını",
-      "metin": "Amerikalı astronotlar, yörüngedeki ilk canlı televizyon yayınını Apollo 7 ekibi vasıtasıyla gerçekleştirdi. Bu tarihi yayın, uzay çalışmalarının kitleler tarafından anbean takip edilmesinde yeni bir çağ başlattı.",
+      "yil": 1956,
+      "baslik": "FORTRAN Programlama Dili",
+      "metin": "Sayısal hesaplama ve bilimsel bilişim için tasarlanan ilk modern bilgisayar dili FORTRAN, ilk kez kodlama topluluğuyla paylaşıldı. Bu gelişme yazılım dünyasında yeni bir dönemin kapısını araladı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Fortran"
+    },
+    {
+      "yil": 1991,
+      "baslik": "'Oh-My-God Parçacığı'nın Keşfi",
+      "metin": "Utah Üniversitesi'ndeki gözlemevinde, bir parçacık hızlandırıcıda üretilen en yüksek enerjili protonların 40 milyon katı enerjisine sahip ultra yüksek enerjili bir kozmik ışın gözlemlendi. Fizikçiler bu olağanüstü ışını 'Oh-My-God parçacığı' olarak adlandırdı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Oh-My-God_particle"
+    },
+    {
+      "yil": 2003,
+      "baslik": "Çin'in İlk İnsanlı Uzay Görevi",
+      "metin": "Çin uzay programının ilk insanlı uzay uçuşu olan Shenzhou 5 uzaya fırlatıldı. Bu görev, ülkenin uzay tarihindeki ilk insanlı uçuşu olarak kayıtlara geçti.",
       "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Astronot"
-    },
-    {
-      "yil": 1968,
-      "baslik": "Jim Hines'ın 10 Saniye Barajını Aşması",
-      "metin": "Amerikalı atlet Jim Hines, Meksiko'da düzenlenen Olimpiyat Oyunları'nda 100 metreyi 10 saniyenin altında koşarak tarihe geçti. 9.95 saniyelik bu derecesiyle unvanını uzun yıllar boyunca korumayı başardı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerikal%C4%B1lar"
-    },
-    {
-      "yil": 2012,
-      "baslik": "Felix Baumgartner'in Stratosfer Atlayışı",
-      "metin": "Avusturyalı base jumper Felix Baumgartner, stratosferdeki bir balondan Dünya'ya başarıyla atladı. Bu tehlikeli uzay atlayışında 39.000 metre yükseklikten serbest düşüşe geçen sporcu, saatte 1.342 kilometre hıza ulaşmayı başardı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Felix_Baumgartner"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Shenzhou_5"
     }
   ]
 }
