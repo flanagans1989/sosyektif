@@ -1,11 +1,9 @@
 {
-  "tarih": "2026-10-14T05:02:10.677Z",
+  "tarih": "2026-10-15T05:02:06.190Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 1,
-  "onayaDusen": 0,
-  "reddedilen": 1,
-  "hatalar": [
-    "RJ Mitte: \"Breaking Bad\" daha önce işlendi"
-  ]
+  "otomatikYayinlanan": 0,
+  "onayaDusen": 1,
+  "reddedilen": 0,
+  "hatalar": []
 }
