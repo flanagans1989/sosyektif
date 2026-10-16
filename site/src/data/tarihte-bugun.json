@@ -1,49 +1,42 @@
 {
-  "tarih": "2026-10-15",
+  "tarih": "2026-10-16",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1928,
-      "baslik": "Graf Zeppelin'in Transatlantik Uçuşu",
-      "metin": "Almanya'dan hareket eden dünyanın en büyük hava gemisi Graf Zeppelin Amerika'daki New Jersey'e ulaştı. Tarihi uçuş tam 111 saat sürdü.",
+      "yil": 1846,
+      "baslik": "William T. G. Morton",
+      "metin": "Amerikalı diş hekimi William T. G. Morton, cerrahi bir operasyon sırasında eter anestezisini ilk kez halka açık olarak uyguladı. Bu çığır açan gösteri, cerrahi anestezinin tüm tıp dünyası tarafından kabul edilmesini sağladı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/William_T._G._Morton"
+    },
+    {
+      "yil": 1916,
+      "baslik": "Margaret Sanger",
+      "metin": "Amerikalı doğum kontrolü savunucusu ve hemşire Margaret Sanger, ülkesindeki ilk doğum kontrolü kliniğini New York'ta açtı. Bu önemli adım, ilerleyen yıllarda Planned Parenthood'un kurulmasına ve ilk doğum kontrol hapının geliştirilmesine öncülük etti.",
       "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Almanya"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Margaret_Sanger"
     },
     {
-      "yil": 1937,
-      "baslik": "Yeni Harfli İlk Kâğıt Paralar",
-      "metin": "Yeni harflerle basılan ilk kâğıt paralar bu tarihte tedavüle çıktı. Üzerinde Atatürk'ün resmi bulunan 100 liralık banknotlar daha sonra 1942'de tedavülden kaldırıldı.",
+      "yil": 1924,
+      "baslik": "Topkapı Sarayı",
+      "metin": "Osmanlı İmparatorluğu'nun idare merkezi ve padişahların yaşadığı Topkapı Sarayı, müze olarak ziyarete açıldı. Bir zamanlar içinde binlerce kişinin yaşadığı bu tarihi mekân, kapılarını bu kez kültür ve tarih meraklılarına araladı.",
       "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Para"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Topkap%C4%B1_Saray%C4%B1"
     },
     {
-      "yil": 1951,
-      "baslik": "Noretisteron Sentezi",
-      "metin": "Meksikalı kimyager Luis E. Miramontes, erken dönem bir oral kontraseptifin temelini oluşturan noretisteronun sentezini tamamladı. Bu buluş tıp ve eczacılık alanında çığır açtı.",
+      "yil": 1950,
+      "baslik": "Aslan, Cadı ve Gardırop",
+      "metin": "C. S. Lewis'in kaleme aldığı ve Narnia Günlükleri serisinin ilk kitabı olan Aslan, Cadı ve Gardırop Birleşik Krallık'ta yayımlandı. Yedi romandan oluşan bu fantastik seri, kısa sürede edebiyat dünyasının unutulmazları arasına girdi.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Chronicles_of_Narnia"
+    },
+    {
+      "yil": 1964,
+      "baslik": "Çin'in İlk Atom Bombası",
+      "metin": "Çin, ilk atom bombasını başarıyla patlatarak nükleer deneme gerçekleştirdi ve dünyanın dördüncü nükleer gücü hâline geldi. Bu gelişmeyle birlikte ülkenin askerî ve teknolojik alandaki küresel konumu kökten değişti.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Luis_E._Miramontes"
-    },
-    {
-      "yil": 1956,
-      "baslik": "FORTRAN Programlama Dili",
-      "metin": "Sayısal hesaplama ve bilimsel bilişim için tasarlanan ilk modern bilgisayar dili FORTRAN, ilk kez kodlama topluluğuyla paylaşıldı. Bu gelişme yazılım dünyasında yeni bir dönemin kapısını araladı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Fortran"
-    },
-    {
-      "yil": 1991,
-      "baslik": "'Oh-My-God Parçacığı'nın Keşfi",
-      "metin": "Utah Üniversitesi'ndeki gözlemevinde, bir parçacık hızlandırıcıda üretilen en yüksek enerjili protonların 40 milyon katı enerjisine sahip ultra yüksek enerjili bir kozmik ışın gözlemlendi. Fizikçiler bu olağanüstü ışını 'Oh-My-God parçacığı' olarak adlandırdı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Oh-My-God_particle"
-    },
-    {
-      "yil": 2003,
-      "baslik": "Çin'in İlk İnsanlı Uzay Görevi",
-      "metin": "Çin uzay programının ilk insanlı uzay uçuşu olan Shenzhou 5 uzaya fırlatıldı. Bu görev, ülkenin uzay tarihindeki ilk insanlı uçuşu olarak kayıtlara geçti.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Shenzhou_5"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C3%87in"
     }
   ]
 }
