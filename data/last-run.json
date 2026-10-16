@@ -1,9 +1,12 @@
 {
-  "tarih": "2026-10-15T05:02:06.190Z",
+  "tarih": "2026-10-16T05:04:02.730Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 0,
-  "onayaDusen": 1,
-  "reddedilen": 0,
-  "hatalar": []
+  "otomatikYayinlanan": 1,
+  "onayaDusen": 0,
+  "reddedilen": 2,
+  "hatalar": [
+    "Mihraç Ural: uygun değil: Güncel, siyasi ve tartışmalı bir figür olması nedeniyle sitenin içerik politikasına ve zamansız içerik anlayışına uygun değildir.",
+    "2027 UEFA ülkeler sıralaması: \"UEFA ülkeler sıralaması\" daha önce işlendi"
+  ]
 }
