@@ -1922,5 +1922,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "koy-takimindan-bundesligaya-hoffenheim-hakkinda-test-et-bakalim-kendini-6-soruda": {
+    "eklendi": "2026-10-16T05:04:57.497Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-16T05:04:58.276Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mxxshlf7hk2n"
+      }
+    },
+    "reelIdleri": {}
   }
 }
