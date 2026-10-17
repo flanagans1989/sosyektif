@@ -1,42 +1,63 @@
 {
-  "tarih": "2026-10-16",
+  "tarih": "2026-10-17",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1846,
-      "baslik": "William T. G. Morton",
-      "metin": "Amerikalı diş hekimi William T. G. Morton, cerrahi bir operasyon sırasında eter anestezisini ilk kez halka açık olarak uyguladı. Bu çığır açan gösteri, cerrahi anestezinin tüm tıp dünyası tarafından kabul edilmesini sağladı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/William_T._G._Morton"
+      "yil": 1604,
+      "baslik": "Johannes Kepler Kendi Adıyla Anılacak Süpernovayı Gözlemledi",
+      "metin": "Alman gökbilimci Johannes Kepler, Yılancı Takımyıldızı'nda aniden parlayan olağanüstü parlaklıktaki gök cismini gözlemlemeye başladı. Günümüzde Kepler Süpernovası olarak bilinen bu patlama, Samanyolu Galaksisi'nde çıplak gözle görülen son süpernova oldu.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Johannes_Kepler"
     },
     {
-      "yil": 1916,
-      "baslik": "Margaret Sanger",
-      "metin": "Amerikalı doğum kontrolü savunucusu ve hemşire Margaret Sanger, ülkesindeki ilk doğum kontrolü kliniğini New York'ta açtı. Bu önemli adım, ilerleyen yıllarda Planned Parenthood'un kurulmasına ve ilk doğum kontrol hapının geliştirilmesine öncülük etti.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Margaret_Sanger"
-    },
-    {
-      "yil": 1924,
-      "baslik": "Topkapı Sarayı",
-      "metin": "Osmanlı İmparatorluğu'nun idare merkezi ve padişahların yaşadığı Topkapı Sarayı, müze olarak ziyarete açıldı. Bir zamanlar içinde binlerce kişinin yaşadığı bu tarihi mekân, kapılarını bu kez kültür ve tarih meraklılarına araladı.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Topkap%C4%B1_Saray%C4%B1"
-    },
-    {
-      "yil": 1950,
-      "baslik": "Aslan, Cadı ve Gardırop",
-      "metin": "C. S. Lewis'in kaleme aldığı ve Narnia Günlükleri serisinin ilk kitabı olan Aslan, Cadı ve Gardırop Birleşik Krallık'ta yayımlandı. Yedi romandan oluşan bu fantastik seri, kısa sürede edebiyat dünyasının unutulmazları arasına girdi.",
+      "yil": 1771,
+      "baslik": "Mozart'ın 15 Yaşında Bestelediği Ascanio in Alba Sahnelendi",
+      "metin": "Wolfgang Amadeus Mozart'ın henüz 15 yaşındayken Giuseppe Parini'nin libretosu üzerine bestelediği Ascanio in Alba operası, Milano'da prömiyer yaptı. Bu pastoral eser, İmparatoriçe Maria Theresa tarafından oğlunun düğün kutlamaları için özel olarak sipariş edilmişti.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Chronicles_of_Narnia"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Ascanio_in_Alba"
     },
     {
-      "yil": 1964,
-      "baslik": "Çin'in İlk Atom Bombası",
-      "metin": "Çin, ilk atom bombasını başarıyla patlatarak nükleer deneme gerçekleştirdi ve dünyanın dördüncü nükleer gücü hâline geldi. Bu gelişmeyle birlikte ülkenin askerî ve teknolojik alandaki küresel konumu kökten değişti.",
+      "yil": 1860,
+      "baslik": "Golf Tarihinin En Eski Büyük Turnuvası The Open Başladı",
+      "metin": "Erkekler golfünün en eski ve en prestijli büyük turnuvası kabul edilen The Open Championship, İskoçya'daki Prestwick Golf Kulübü'nde ilk kez sahne aldı. 1860'ta başlayan bu turnuva, modern golf sporunun kökleşmesinde büyük rol oynadı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Open_Championship"
+    },
+    {
+      "yil": 1907,
+      "baslik": "Marconi İlk Ticari Transatlantik Telsiz Servisini Başlattı",
+      "metin": "İtalyan mucit Guglielmo Marconi'nin kurduğu şirket, Kuzey Amerika ile Avrupa arasında ilk ticari kablosuz telgraf servisini faaliyete geçirdi. Uzun mesafeli telsiz haberleşmesinin önünü açan bu girişim, küresel iletişimde tel hatlarına olan bağımlılığı kırmaya başladı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Marconi_Company"
+    },
+    {
+      "yil": 1914,
+      "baslik": "Superman'in Ortak Yaratıcısı Jerry Siegel Doğdu",
+      "metin": "Popüler kültürün en tanınmış çizgi roman kahramanlarından Superman'in ortak yaratıcısı Jerry Siegel dünyaya geldi. Siegel, çizer arkadaşı Joe Shuster ile birlikte DC Comics bünyesinde yarattığı bu kahramanla çizgi roman dünyasında devrim yarattı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Jerry_Siegel"
+    },
+    {
+      "yil": 1956,
+      "baslik": "Dünyanın İlk Ticari Nükleer Santrali Sellafield'da Açıldı",
+      "metin": "İngiltere'nin Sellafield kıyısında kurulan dünyanın ilk ticari nükleer enerji santrali, Kraliçe II. Elizabeth tarafından resmen açıldı. Tesis, atom enerjisinin ticari elektrik şebekesine aktarılmasında tarihe geçen bir dönüm noktası oluşturdu.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C3%87in"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Sellafield"
+    },
+    {
+      "yil": 1957,
+      "baslik": "Albert Camus Nobel Edebiyat Ödülü'ne Layık Görüldü",
+      "metin": "Fransız yazar ve filozof Albert Camus, edebiyat alanında Nobel Ödülü'ne değer görüldü. İnsan vicdanının varoluşsal sorunlarını cesurca ele alan eserleriyle Camus, dünya edebiyatında unutulmaz bir yer edindi.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Albert_Camus"
+    },
+    {
+      "yil": 2003,
+      "baslik": "Taipei 101 Dünyanın En Yüksek Binası Unvanını Kazandı",
+      "metin": "Tayvan'ın başkenti Taipei'de inşa edilen 101 katlı gökdelen, Kuala Lumpur'daki Petronas İkiz Kuleleri'ni 50 metre geride bırakarak zirveye yerleşti. İleri mühendislik teknolojileriyle donatılan yapı, dönemin en yüksek gökdeleni unvanını resmen aldı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Taipei"
     }
   ]
 }
