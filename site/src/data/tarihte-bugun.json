@@ -1,63 +1,63 @@
 {
-  "tarih": "2026-10-17",
+  "tarih": "2026-10-18",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1604,
-      "baslik": "Johannes Kepler Kendi Adıyla Anılacak Süpernovayı Gözlemledi",
-      "metin": "Alman gökbilimci Johannes Kepler, Yılancı Takımyıldızı'nda aniden parlayan olağanüstü parlaklıktaki gök cismini gözlemlemeye başladı. Günümüzde Kepler Süpernovası olarak bilinen bu patlama, Samanyolu Galaksisi'nde çıplak gözle görülen son süpernova oldu.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Johannes_Kepler"
-    },
-    {
-      "yil": 1771,
-      "baslik": "Mozart'ın 15 Yaşında Bestelediği Ascanio in Alba Sahnelendi",
-      "metin": "Wolfgang Amadeus Mozart'ın henüz 15 yaşındayken Giuseppe Parini'nin libretosu üzerine bestelediği Ascanio in Alba operası, Milano'da prömiyer yaptı. Bu pastoral eser, İmparatoriçe Maria Theresa tarafından oğlunun düğün kutlamaları için özel olarak sipariş edilmişti.",
+      "yil": 1851,
+      "baslik": "Herman Melville'in Moby Dick Romanı İlk Kez Yayımlandı",
+      "metin": "Amerikalı yazar Herman Melville'in başyapıtı Moby Dick, ABD'deki basımından bir ay önce İngiltere'de 'The Whale' (Balina) adıyla yayımlandı. Kaptan Ahab ve beyaz balina arasındaki amansız takibi anlatan eser, dünya edebiyatının en büyük klasikleri arasına girdi.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Ascanio_in_Alba"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Moby_Dick"
     },
     {
-      "yil": 1860,
-      "baslik": "Golf Tarihinin En Eski Büyük Turnuvası The Open Başladı",
-      "metin": "Erkekler golfünün en eski ve en prestijli büyük turnuvası kabul edilen The Open Championship, İskoçya'daki Prestwick Golf Kulübü'nde ilk kez sahne aldı. 1860'ta başlayan bu turnuva, modern golf sporunun kökleşmesinde büyük rol oynadı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Open_Championship"
-    },
-    {
-      "yil": 1907,
-      "baslik": "Marconi İlk Ticari Transatlantik Telsiz Servisini Başlattı",
-      "metin": "İtalyan mucit Guglielmo Marconi'nin kurduğu şirket, Kuzey Amerika ile Avrupa arasında ilk ticari kablosuz telgraf servisini faaliyete geçirdi. Uzun mesafeli telsiz haberleşmesinin önünü açan bu girişim, küresel iletişimde tel hatlarına olan bağımlılığı kırmaya başladı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Marconi_Company"
-    },
-    {
-      "yil": 1914,
-      "baslik": "Superman'in Ortak Yaratıcısı Jerry Siegel Doğdu",
-      "metin": "Popüler kültürün en tanınmış çizgi roman kahramanlarından Superman'in ortak yaratıcısı Jerry Siegel dünyaya geldi. Siegel, çizer arkadaşı Joe Shuster ile birlikte DC Comics bünyesinde yarattığı bu kahramanla çizgi roman dünyasında devrim yarattı.",
+      "yil": 1859,
+      "baslik": "Nobel Edebiyat Ödüllü Ünlü Filozof Henri Bergson Doğdu",
+      "metin": "Zaman, bilinç ve sezgi üzerine getirdiği özgün yaklaşımlarla 20. yüzyıl felsefesine yön veren Fransız düşünür Henri Bergson dünyaya geldi. Hem kıta felsefesini hem de analitik geleneği derinden etkileyen düşünür, parlak üslubu sayesinde Nobel Edebiyat Ödülü'nün de sahibi oldu.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Jerry_Siegel"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Henri_Bergson"
     },
     {
-      "yil": 1956,
-      "baslik": "Dünyanın İlk Ticari Nükleer Santrali Sellafield'da Açıldı",
-      "metin": "İngiltere'nin Sellafield kıyısında kurulan dünyanın ilk ticari nükleer enerji santrali, Kraliçe II. Elizabeth tarafından resmen açıldı. Tesis, atom enerjisinin ticari elektrik şebekesine aktarılmasında tarihe geçen bir dönüm noktası oluşturdu.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Sellafield"
-    },
-    {
-      "yil": 1957,
-      "baslik": "Albert Camus Nobel Edebiyat Ödülü'ne Layık Görüldü",
-      "metin": "Fransız yazar ve filozof Albert Camus, edebiyat alanında Nobel Ödülü'ne değer görüldü. İnsan vicdanının varoluşsal sorunlarını cesurca ele alan eserleriyle Camus, dünya edebiyatında unutulmaz bir yer edindi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Albert_Camus"
-    },
-    {
-      "yil": 2003,
-      "baslik": "Taipei 101 Dünyanın En Yüksek Binası Unvanını Kazandı",
-      "metin": "Tayvan'ın başkenti Taipei'de inşa edilen 101 katlı gökdelen, Kuala Lumpur'daki Petronas İkiz Kuleleri'ni 50 metre geride bırakarak zirveye yerleşti. İleri mühendislik teknolojileriyle donatılan yapı, dönemin en yüksek gökdeleni unvanını resmen aldı.",
+      "yil": 1892,
+      "baslik": "Chicago ve New York Arasında İlk Uzun Telefon Hattı Açıldı",
+      "metin": "Amerika Birleşik Devletleri'nin iki büyük şehri Chicago ve New York arasında kurulan ilk uzun mesafe telefon hattı hizmete girdi. Bu teknolojik atılım, dönemin uzak mesafeli sesli iletişiminde yepyeni bir çağın kapılarını araladı.",
       "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Taipei"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Chicago"
+    },
+    {
+      "yil": 1943,
+      "baslik": "Besteciler Ulvi Cemal Erkin ve Necil Kazım Akses'in Berlin Konseri",
+      "metin": "Cumhuriyet dönemi Türk müziğinin öncü bestecilerinden Ulvi Cemal Erkin ve Necil Kazım Akses, Berlin'de dinleyicilerle buluştu. İki ustanın sergilediği başarılı konser, Türk klasik müziğinin uluslararası sahnede takdir toplamasını sağladı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ulvi_Cemal_Erkin"
+    },
+    {
+      "yil": 1954,
+      "baslik": "İlk Seri Üretim Transistörlü Radyo Regency TR-1 Tanıtıldı",
+      "metin": "Texas Instruments iş birliğiyle üretilen Regency TR-1, ticari olarak seri üretimi yapılan ilk transistörlü radyo olarak tanıtıldı. Küçük boyutu ve taşınabilirliği sayesinde büyük ilgi gören bu cihaz, daha önce yalnızca askeri alanda kullanılan transistörleri gündelik yaşama taşıdı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Regency_TR-1"
+    },
+    {
+      "yil": 1963,
+      "baslik": "Uzaya Gönderilen İlk Kedi Félicette'in Tarihî Uçuşu",
+      "metin": "Fransa'nın uzay programı kapsamında Véronique roketiyle fırlatılan Félicette, uzaya çıkan ilk kedi oldu. Uçuş için eğitilen 14 dişi kedi arasından seçilen Parisli Félicette'in beyin sinyalleri, yerleştirilen elektrotlar sayesinde görev boyunca başarıyla kaydedildi.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/F%C3%A9licette"
+    },
+    {
+      "yil": 1967,
+      "baslik": "Venera 4 Başka Bir Gezegenin Atmosferini İnceleyen İlk Araç Oldu",
+      "metin": "Sovyetler Birliği tarafından fırlatılan Venera 4 uzay aracı Venüs'e ulaşarak bilim tarihine geçti. Araç, Dünya dışında başka bir gezegenin atmosferine doğrudan girip ortam analizi yapan ve gezegenler arası ilk yayını gerçekleştiren uzay aracı oldu.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sovyetler_Birli%C4%9Fi"
+    },
+    {
+      "yil": 1968,
+      "baslik": "Bob Beamon'dan 23 Yıl Kırılamayan Efsanevi Uzun Atlama Rekoru",
+      "metin": "1968 Meksika Olimpiyatları'nda Amerikalı atlet Bob Beamon, uzun atlamada 8,90 metrelik akılalmaz bir derece elde etti. Spor tarihine damga vuran bu dünya rekoru, tam 23 yıl boyunca hiçbir sporcu tarafından aşılamadı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/1968_Summer_Olympics"
     }
   ]
 }
