@@ -1,41 +1,5 @@
 [
   {
-    "parmakIzi": "murat ünalmış",
-    "baslik": "Murat Ünalmış",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odaklı zamansız içerik üretimine uygun değildir.",
-    "tarih": "2026-09-17T05:01:48.845Z"
-  },
-  {
-    "parmakIzi": "kurtlar vadisi (dizi)",
-    "baslik": "Kurtlar Vadisi (dizi)",
-    "sebep": "Kara liste ihlali: terör",
-    "tarih": "2026-09-17T15:19:06.808Z"
-  },
-  {
-    "parmakIzi": "abdullah öcalan",
-    "baslik": "Abdullah Öcalan",
-    "sebep": "uygun değil: Siyaset ve terör olayları ile bağlantılı yaşayan veya yakın tarihli politik figürler site politikalarına aykırıdır.",
-    "tarih": "2026-09-17T15:19:07.777Z"
-  },
-  {
-    "parmakIzi": "i̇lhan fakılı",
-    "baslik": "İlhan Fakılı",
-    "sebep": "uygun değil: Canlı veya yakın dönemde yaşamış/hakkında ansiklopedik popüler içerik üretilemeyecek bir kişi/biyografi konusu.",
-    "tarih": "2026-09-18T05:01:41.145Z"
-  },
-  {
-    "parmakIzi": "jülide kural",
-    "baslik": "Jülide Kural",
-    "sebep": "uygun değil: Yaşayan gerçek kişilerin kendisi site kuralları gereği konu odağı olamaz.",
-    "tarih": "2026-09-18T05:01:47.831Z"
-  },
-  {
-    "parmakIzi": "gülsen tuncer",
-    "baslik": "Gülsen Tuncer",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odaklı zamansız içerik üretimine uygun değildir.",
-    "tarih": "2026-09-18T05:01:48.637Z"
-  },
-  {
     "parmakIzi": "2027 uefa ülkeler sıralaması",
     "baslik": "2027 UEFA ülkeler sıralaması",
     "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
@@ -310,5 +274,41 @@
     "baslik": "2026 UEFA ülkeler sıralaması",
     "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
     "tarih": "2026-10-17T05:01:47.976Z"
+  },
+  {
+    "parmakIzi": "2013 reyhanlı bombalı saldırıları",
+    "baslik": "2013 Reyhanlı bombalı saldırıları",
+    "sebep": "uygun değil: Suç, şiddet, adli olaylar, terör ve savaş haberleri sitenin yayın ilkelerine ve konu odağına uygun değildir.",
+    "tarih": "2026-10-18T05:01:49.453Z"
+  },
+  {
+    "parmakIzi": "alpay (şarkıcı)",
+    "baslik": "Alpay (şarkıcı)",
+    "sebep": "\"Alpay\" daha önce işlendi",
+    "tarih": "2026-10-18T05:01:50.329Z"
+  },
+  {
+    "parmakIzi": "abdullah çatlı",
+    "baslik": "Abdullah Çatlı",
+    "sebep": "uygun değil: Suç, şiddet, adli olaylar ve yakın tarihli tartışmalı siyasi/suç figürleri site yayın ilkelerine uygun değildir.",
+    "tarih": "2026-10-18T05:01:51.159Z"
+  },
+  {
+    "parmakIzi": "ozan kabak",
+    "baslik": "Ozan Kabak",
+    "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir ve sitenin kuralları gereği yaşayan kişilerin kendisi içerik odağı olamaz.",
+    "tarih": "2026-10-18T05:01:51.953Z"
+  },
+  {
+    "parmakIzi": "sinem dedetaş",
+    "baslik": "Sinem Dedetaş",
+    "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir (Sinem Dedetaş) ve site kuralları gereği yaşayan kişiler doğrudan içerik odağı olamaz.",
+    "tarih": "2026-10-18T05:01:52.732Z"
+  },
+  {
+    "parmakIzi": "türkiye halk kurtuluş partisi-cephesi (acilciler)",
+    "baslik": "Türkiye Halk Kurtuluş Partisi-Cephesi (Acilciler)",
+    "sebep": "uygun değil: Siyasi örgütler, partiler ve yakın dönem siyasi tarih/eylem grupları site yayın politikası gereği uygun değildir.",
+    "tarih": "2026-10-18T05:01:53.700Z"
   }
 ]
