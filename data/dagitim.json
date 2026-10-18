@@ -1980,5 +1980,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "urla-hakkinda-muhtemelen-ilk-kez-duyacaginiz-5-sasirtici-bilgi": {
+    "eklendi": "2026-10-18T05:03:01.508Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-18T05:03:02.698Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3my4tbxuk3j25"
+      }
+    },
+    "reelIdleri": {}
   }
 }
