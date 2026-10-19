@@ -1,47 +1,5 @@
 [
   {
-    "parmakIzi": "2027 uefa ülkeler sıralaması",
-    "baslik": "2027 UEFA ülkeler sıralaması",
-    "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
-    "tarih": "2026-09-18T08:18:48.864Z"
-  },
-  {
-    "parmakIzi": "kadir i̇nanır",
-    "baslik": "Kadir İnanır",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odaklı içerik üretimine uygun değildir.",
-    "tarih": "2026-09-18T08:18:49.748Z"
-  },
-  {
-    "parmakIzi": "neslihan acar",
-    "baslik": "Neslihan Acar",
-    "sebep": "uygun değil: Yaşayan bir gerçek kişi (oyuncu) olduğu için site politikalarına uymamaktadır.",
-    "tarih": "2026-09-18T08:18:50.590Z"
-  },
-  {
-    "parmakIzi": "namık gedik",
-    "baslik": "Namık Gedik",
-    "sebep": "Kara liste ihlali: intihar",
-    "tarih": "2026-09-18T08:19:16.481Z"
-  },
-  {
-    "parmakIzi": "2026 uefa ülkeler sıralaması",
-    "baslik": "2026 UEFA ülkeler sıralaması",
-    "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
-    "tarih": "2026-09-18T11:20:21.538Z"
-  },
-  {
-    "parmakIzi": "bir sonraki türkiye genel seçimleri",
-    "baslik": "Bir sonraki Türkiye genel seçimleri",
-    "sebep": "uygun değil: Siyaset, partiler ve seçimler ile ilgili konular site politikası gereği uygun değildir.",
-    "tarih": "2026-09-18T11:20:22.450Z"
-  },
-  {
-    "parmakIzi": "burak özçivit",
-    "baslik": "Burak Özçivit",
-    "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir (Burak Özçivit). Sitemizin kurallarına göre yaşayan gerçek kişilerin kendisi içerik odağı olamaz.",
-    "tarih": "2026-09-18T15:02:29.320Z"
-  },
-  {
     "parmakIzi": "elif eralp",
     "baslik": "Elif Eralp",
     "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için içerik politikamıza uygun değil.",
@@ -310,5 +268,23 @@
     "baslik": "Türkiye Halk Kurtuluş Partisi-Cephesi (Acilciler)",
     "sebep": "uygun değil: Siyasi örgütler, partiler ve yakın dönem siyasi tarih/eylem grupları site yayın politikası gereği uygun değildir.",
     "tarih": "2026-10-18T05:01:53.700Z"
+  },
+  {
+    "parmakIzi": "araçla gelip eğlence mekanına kurşun yağdırdılar",
+    "baslik": "Araçla gelip eğlence mekanına kurşun yağdırdılar",
+    "sebep": "uygun değil: Suç, şiddet, adli olaylar ve güvenlik konuları site yayın politikasına uygun değildir.",
+    "tarih": "2026-10-19T05:01:53.636Z"
+  },
+  {
+    "parmakIzi": "bursa'da eğlence mekanına otomobilden ateş açıldı, polis şüphelileri arıyor",
+    "baslik": "Bursa'da eğlence mekanına otomobilden ateş açıldı, polis şüphelileri arıyor",
+    "sebep": "uygun değil: Suç, şiddet, adli olaylar ve güncel güvenlik haberleri site politikamız gereği uygun değildir.",
+    "tarih": "2026-10-19T05:01:54.624Z"
+  },
+  {
+    "parmakIzi": "gündeş konseri tartışma yarattı: eğlence sürerken can kurtarma çabası... 27 sonra ilk",
+    "baslik": "Gündeş konseri tartışma yarattı: Eğlence sürerken can kurtarma çabası... 27 sonra ilk",
+    "sebep": "uygun değil: Güncel bir konser olayını ve magazinel/adli tartışmayı içerdiği için sosyektif.com'un zamansız içerik politikasına uygun değildir.",
+    "tarih": "2026-10-19T05:01:55.532Z"
   }
 ]

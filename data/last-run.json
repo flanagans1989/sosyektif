@@ -1,17 +1,13 @@
 {
-  "tarih": "2026-10-18T05:02:17.893Z",
+  "tarih": "2026-10-19T05:02:46.138Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 1,
   "onayaDusen": 0,
-  "reddedilen": 7,
+  "reddedilen": 3,
   "hatalar": [
-    "2013 Reyhanlı bombalı saldırıları: uygun değil: Suç, şiddet, adli olaylar, terör ve savaş haberleri sitenin yayın ilkelerine ve konu odağına uygun değildir.",
-    "Alpay (şarkıcı): \"Alpay\" daha önce işlendi",
-    "Abdullah Çatlı: uygun değil: Suç, şiddet, adli olaylar ve yakın tarihli tartışmalı siyasi/suç figürleri site yayın ilkelerine uygun değildir.",
-    "Ozan Kabak: uygun değil: Konu odağı yaşayan bir gerçek kişidir ve sitenin kuralları gereği yaşayan kişilerin kendisi içerik odağı olamaz.",
-    "Sinem Dedetaş: uygun değil: Konu odağı yaşayan bir gerçek kişidir (Sinem Dedetaş) ve site kuralları gereği yaşayan kişiler doğrudan içerik odağı olamaz.",
-    "Türkiye Halk Kurtuluş Partisi-Cephesi (Acilciler): uygun değil: Siyasi örgütler, partiler ve yakın dönem siyasi tarih/eylem grupları site yayın politikası gereği uygun değildir.",
-    "ALTINÖZÜ FESTİVALİ’NDE ZEYTİN, LEZZET VE EĞLENCE BİR ARADA: sınıflandırma hatası: Expected ':' after property name in JSON at position 162 (line 5 column 98)"
+    "Araçla gelip eğlence mekanına kurşun yağdırdılar: uygun değil: Suç, şiddet, adli olaylar ve güvenlik konuları site yayın politikasına uygun değildir.",
+    "Bursa'da eğlence mekanına otomobilden ateş açıldı, polis şüphelileri arıyor: uygun değil: Suç, şiddet, adli olaylar ve güncel güvenlik haberleri site politikamız gereği uygun değildir.",
+    "Gündeş konseri tartışma yarattı: Eğlence sürerken can kurtarma çabası... 27 sonra ilk: uygun değil: Güncel bir konser olayını ve magazinel/adli tartışmayı içerdiği için sosyektif.com'un zamansız içerik politikasına uygun değildir."
   ]
 }
