@@ -1,63 +1,56 @@
 {
-  "tarih": "2026-10-18",
+  "tarih": "2026-10-19",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1851,
-      "baslik": "Herman Melville'in Moby Dick Romanı İlk Kez Yayımlandı",
-      "metin": "Amerikalı yazar Herman Melville'in başyapıtı Moby Dick, ABD'deki basımından bir ay önce İngiltere'de 'The Whale' (Balina) adıyla yayımlandı. Kaptan Ahab ve beyaz balina arasındaki amansız takibi anlatan eser, dünya edebiyatının en büyük klasikleri arasına girdi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Moby_Dick"
+      "yil": 1752,
+      "baslik": "Benjamin Franklin'in Meşhur Uçurtma Deneyi Yayımlandı",
+      "metin": "The Pennsylvania Gazette gazetesi, Benjamin Franklin'in yıldırımın elektriksel doğasını kanıtlamak için gerçekleştirdiği uçurtma deneyinin açıklamasını yayımladı. Franklin'in bu tehlikeli deneyi, fırtınalardaki şimşeklerin dev elektrik boşalmaları olduğunu kesinleştirdi.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Pennsylvania_Gazette"
     },
     {
-      "yil": 1859,
-      "baslik": "Nobel Edebiyat Ödüllü Ünlü Filozof Henri Bergson Doğdu",
-      "metin": "Zaman, bilinç ve sezgi üzerine getirdiği özgün yaklaşımlarla 20. yüzyıl felsefesine yön veren Fransız düşünür Henri Bergson dünyaya geldi. Hem kıta felsefesini hem de analitik geleneği derinden etkileyen düşünür, parlak üslubu sayesinde Nobel Edebiyat Ödülü'nün de sahibi oldu.",
+      "yil": 1862,
+      "baslik": "Sinematografın Mucitlerinden Auguste Lumière Doğdu",
+      "metin": "Kardeşi Louis ile birlikte hareketli görüntüleri kaydedip perdeye yansıtan sinematografı icat eden Auguste Lumière dünyaya geldi. Lumière kardeşlerin bu buluşu, sinema sanatının doğmasını sağlayarak dünya kültür ve eğlence tarihini baştan yazdı.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Henri_Bergson"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Auguste_Lumi%C3%A8re"
     },
     {
-      "yil": 1892,
-      "baslik": "Chicago ve New York Arasında İlk Uzun Telefon Hattı Açıldı",
-      "metin": "Amerika Birleşik Devletleri'nin iki büyük şehri Chicago ve New York arasında kurulan ilk uzun mesafe telefon hattı hizmete girdi. Bu teknolojik atılım, dönemin uzak mesafeli sesli iletişiminde yepyeni bir çağın kapılarını araladı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Chicago"
+      "yil": 1872,
+      "baslik": "Avustralya'da 215 Kilogramlık Dev Altın Külçesi Bulundu",
+      "metin": "Avustralya'nın New South Wales bölgesinde, tam 215 kilogram ağırlığında dünyanın en büyük altın külçesi keşfedildi. Yerin derinliklerinden çıkarılan bu olağanüstü külçe, madencilik tarihinin en görkemli buluntularından biri oldu.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Avustralya"
+    },
+    {
+      "yil": 1900,
+      "baslik": "Max Planck Siyah Cisim Işıması Yasasını Keşfetti",
+      "metin": "Alman teorik fizikçi Max Planck, kendi adıyla anılacak olan siyah cisim ışıması yasasını keşfetti. Planck'ın bu devrimsel adımı, modern kuantum teorisinin doğuşuna zemin hazırlayarak 20. yüzyıl fiziğinin yönünü değiştirdi.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Max_Planck"
     },
     {
       "yil": 1943,
-      "baslik": "Besteciler Ulvi Cemal Erkin ve Necil Kazım Akses'in Berlin Konseri",
-      "metin": "Cumhuriyet dönemi Türk müziğinin öncü bestecilerinden Ulvi Cemal Erkin ve Necil Kazım Akses, Berlin'de dinleyicilerle buluştu. İki ustanın sergilediği başarılı konser, Türk klasik müziğinin uluslararası sahnede takdir toplamasını sağladı.",
+      "baslik": "Tüberkülozun İlk Antibiyotiği Streptomisin İzole Edildi",
+      "metin": "Rutgers Üniversitesi araştırmacıları, tüberküloz tedavisinde ilk antibiyotik çare olan streptomisin başarıyla izole etti. Bu buluş; veba, bruselloz ve tüberküloz gibi ölümcül bakteriyel enfeksiyonlarla mücadelede tıpta çığır açtı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Streptomycin"
+    },
+    {
+      "yil": 1955,
+      "baslik": "Eurovision Şarkı Yarışması İçin Tarihî Onay Verildi",
+      "metin": "Avrupa Yayın Birliği Genel Kurulu, ülkeleri müzik yoluyla bir araya getirecek olan ilk Eurovision Şarkı Yarışması'nın düzenlenmesini resmen onayladı. Alınan bu karar, ertesi yıl başlayıp dünya çapında bir fenomene dönüşecek olan dev televizyon organizasyonunun ilk adımı oldu.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ulvi_Cemal_Erkin"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/History_of_the_Eurovision_Song_Contest"
     },
     {
-      "yil": 1954,
-      "baslik": "İlk Seri Üretim Transistörlü Radyo Regency TR-1 Tanıtıldı",
-      "metin": "Texas Instruments iş birliğiyle üretilen Regency TR-1, ticari olarak seri üretimi yapılan ilk transistörlü radyo olarak tanıtıldı. Küçük boyutu ve taşınabilirliği sayesinde büyük ilgi gören bu cihaz, daha önce yalnızca askeri alanda kullanılan transistörleri gündelik yaşama taşıdı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Regency_TR-1"
-    },
-    {
-      "yil": 1963,
-      "baslik": "Uzaya Gönderilen İlk Kedi Félicette'in Tarihî Uçuşu",
-      "metin": "Fransa'nın uzay programı kapsamında Véronique roketiyle fırlatılan Félicette, uzaya çıkan ilk kedi oldu. Uçuş için eğitilen 14 dişi kedi arasından seçilen Parisli Félicette'in beyin sinyalleri, yerleştirilen elektrotlar sayesinde görev boyunca başarıyla kaydedildi.",
+      "yil": 2017,
+      "baslik": "Robert Weryk İlk Yıldızlararası Cisim ʻOumuamua'yı Keşfetti",
+      "metin": "Kanadalı gökbilimci Robert Weryk, Güneş Sistemi'nden geçtiği tespit edilen ilk bilinen yıldızlararası nesne olan ʻOumuamua'yı keşfetti. Başka bir yıldız sisteminden kopup gelen bu gizemli gök cismi, astronomi dünyasında büyük yankı uyandırdı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/F%C3%A9licette"
-    },
-    {
-      "yil": 1967,
-      "baslik": "Venera 4 Başka Bir Gezegenin Atmosferini İnceleyen İlk Araç Oldu",
-      "metin": "Sovyetler Birliği tarafından fırlatılan Venera 4 uzay aracı Venüs'e ulaşarak bilim tarihine geçti. Araç, Dünya dışında başka bir gezegenin atmosferine doğrudan girip ortam analizi yapan ve gezegenler arası ilk yayını gerçekleştiren uzay aracı oldu.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sovyetler_Birli%C4%9Fi"
-    },
-    {
-      "yil": 1968,
-      "baslik": "Bob Beamon'dan 23 Yıl Kırılamayan Efsanevi Uzun Atlama Rekoru",
-      "metin": "1968 Meksika Olimpiyatları'nda Amerikalı atlet Bob Beamon, uzun atlamada 8,90 metrelik akılalmaz bir derece elde etti. Spor tarihine damga vuran bu dünya rekoru, tam 23 yıl boyunca hiçbir sporcu tarafından aşılamadı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/1968_Summer_Olympics"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Robert_Weryk"
     }
   ]
 }
