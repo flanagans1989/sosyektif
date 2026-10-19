@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-10-19T06:17:39.492Z",
+  "sonDenetim": "2026-10-19T12:01:23.415Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -12,7 +12,7 @@
     "workflow-weekly-analytics.yml": {
       "alan": "Zamanlayıcı",
       "durum": "hata",
-      "detay": "Haftalık Analitik son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/39203756710",
+      "detay": "Haftalık Analitik son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/39237686274",
       "cozum": "Logu incele.",
       "ilkGorulme": "2026-10-19T06:01:23.346Z"
     },
@@ -21,12 +21,6 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "trend-wikipedia": {
-      "alan": "Trend kaynakları",
-      "durum": "hata",
-      "detay": "Wikipedia en çok okunanlar: 404 {\"detail\":\"The date(s) you used are valid, but we either do not have data for those date(s), or the project you asked for is not loaded yet. Please check docume",
-      "ilkGorulme": "2026-10-18T00:01:25.230Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
