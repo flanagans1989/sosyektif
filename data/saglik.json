@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-10-18T20:54:14.701Z",
+  "sonDenetim": "2026-10-19T00:01:20.316Z",
   "toplamKontrol": 48,
   "sorunlar": {
     "onay-bekleyen": {
@@ -34,13 +34,6 @@
       "detay": "Threads bilerek kapalı (config.kapaliKanallar) — hesap incelemesi bitince listeden çıkar.",
       "cozum": "data/config.json'da kapaliKanallar'dan \"threads\" değerini sil.",
       "ilkGorulme": "2026-09-18T19:08:39.591Z"
-    },
-    "kanal-youtube": {
-      "alan": "Sosyal kanallar",
-      "durum": "hata",
-      "detay": "YouTube: fetch failed",
-      "cozum": "YouTube yetkisini yenile (npm run youtube-yetkilendir).",
-      "ilkGorulme": "2026-10-18T20:54:14.701Z"
     },
     "bekleyen-telegram": {
       "alan": "Dağıtım",
