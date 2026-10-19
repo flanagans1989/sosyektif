@@ -2016,8 +2016,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-10-19T05:03:47.246Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3my7dsa2ejo25"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3my7dsa2ejo25",
+        "sonDeneme": "2026-10-19T05:03:47.246Z"
+      },
+      "instagram": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-19T05:05:32.003Z",
+        "id": "18648251866051126"
       }
     },
     "reelIdleri": {}
