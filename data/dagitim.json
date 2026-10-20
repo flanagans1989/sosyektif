@@ -2038,5 +2038,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "canli-yayin-dunyasini-altust-eden-justintv-hakkinda-ne-kadar-bilgilisin": {
+    "eklendi": "2026-10-20T05:06:03.420Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-20T05:06:04.232Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mybufa5iqi2i"
+      }
+    },
+    "reelIdleri": {}
   }
 }
