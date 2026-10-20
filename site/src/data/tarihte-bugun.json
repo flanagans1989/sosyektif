@@ -1,56 +1,56 @@
 {
-  "tarih": "2026-10-19",
+  "tarih": "2026-10-20",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1752,
-      "baslik": "Benjamin Franklin'in Meşhur Uçurtma Deneyi Yayımlandı",
-      "metin": "The Pennsylvania Gazette gazetesi, Benjamin Franklin'in yıldırımın elektriksel doğasını kanıtlamak için gerçekleştirdiği uçurtma deneyinin açıklamasını yayımladı. Franklin'in bu tehlikeli deneyi, fırtınalardaki şimşeklerin dev elektrik boşalmaları olduğunu kesinleştirdi.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Pennsylvania_Gazette"
-    },
-    {
-      "yil": 1862,
-      "baslik": "Sinematografın Mucitlerinden Auguste Lumière Doğdu",
-      "metin": "Kardeşi Louis ile birlikte hareketli görüntüleri kaydedip perdeye yansıtan sinematografı icat eden Auguste Lumière dünyaya geldi. Lumière kardeşlerin bu buluşu, sinema sanatının doğmasını sağlayarak dünya kültür ve eğlence tarihini baştan yazdı.",
+      "yil": 1859,
+      "baslik": "Filozof ve Psikolog John Dewey Doğdu",
+      "metin": "Yirminci yüzyılın ilk yarısında Amerika'nın en önde gelen akademisyenlerinden biri olan filozof, psikolog ve eğitim reformcusu John Dewey doğdu. Dewey, hem felsefe hem de eğitim alanındaki yenilikçi fikirleriyle dünya çapında iz bıraktı.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Auguste_Lumi%C3%A8re"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/John_Dewey"
     },
     {
-      "yil": 1872,
-      "baslik": "Avustralya'da 215 Kilogramlık Dev Altın Külçesi Bulundu",
-      "metin": "Avustralya'nın New South Wales bölgesinde, tam 215 kilogram ağırlığında dünyanın en büyük altın külçesi keşfedildi. Yerin derinliklerinden çıkarılan bu olağanüstü külçe, madencilik tarihinin en görkemli buluntularından biri oldu.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Avustralya"
+      "yil": 1891,
+      "baslik": "Fizikçi James Chadwick Doğdu",
+      "metin": "Nötronu keşfiyle 1935 yılında Nobel Fizik Ödülü'ne layık görülen İngiliz deneysel fizikçi James Chadwick dünyaya geldi. Chadwick, ilerleyen yıllarda nükleer araştırmalara yön veren önemli bilimsel raporların da hazırlanmasında rol oynadı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/James_Chadwick"
     },
     {
-      "yil": 1900,
-      "baslik": "Max Planck Siyah Cisim Işıması Yasasını Keşfetti",
-      "metin": "Alman teorik fizikçi Max Planck, kendi adıyla anılacak olan siyah cisim ışıması yasasını keşfetti. Planck'ın bu devrimsel adımı, modern kuantum teorisinin doğuşuna zemin hazırlayarak 20. yüzyıl fiziğinin yönünü değiştirdi.",
+      "yil": 1910,
+      "baslik": "RMS Olympic Okyanus Vapuru Suya İndirildi",
+      "metin": "İngiliz okyanus vapuru RMS Olympic görkemli bir törenle suya indirildi. Deniz aşırı yolcu taşımacılığında çığır açan bu dev gemi, dönemin mühendislik harikaları arasında yer alıyordu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Ocean_liner"
+    },
+    {
+      "yil": 1969,
+      "baslik": "Stanford Linear Accelerator Center'da Kuark Kanıtı",
+      "metin": "Stanford Linear Accelerator Center'daki deneysel sonuçlar, protonların daha küçük parçacıklardan oluştuğunu ortaya koydu. Bu bulgu, fizikte kuarkların varlığına dair elde edilen ilk kanıt olma özelliğini taşıyor.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Max_Planck"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/SLAC_National_Accelerator_Laboratory"
     },
     {
-      "yil": 1943,
-      "baslik": "Tüberkülozun İlk Antibiyotiği Streptomisin İzole Edildi",
-      "metin": "Rutgers Üniversitesi araştırmacıları, tüberküloz tedavisinde ilk antibiyotik çare olan streptomisin başarıyla izole etti. Bu buluş; veba, bruselloz ve tüberküloz gibi ölümcül bakteriyel enfeksiyonlarla mücadelede tıpta çığır açtı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Streptomycin"
-    },
-    {
-      "yil": 1955,
-      "baslik": "Eurovision Şarkı Yarışması İçin Tarihî Onay Verildi",
-      "metin": "Avrupa Yayın Birliği Genel Kurulu, ülkeleri müzik yoluyla bir araya getirecek olan ilk Eurovision Şarkı Yarışması'nın düzenlenmesini resmen onayladı. Alınan bu karar, ertesi yıl başlayıp dünya çapında bir fenomene dönüşecek olan dev televizyon organizasyonunun ilk adımı oldu.",
+      "yil": 1973,
+      "baslik": "Sydney Opera Evi Açıldı",
+      "metin": "Sydney Limanı kıyısında yer alan Sydney Opera Evi, 14 süren inşaat çalışmalarının ardından II. Elizabeth tarafından açıldı. Bu yapı günümüzde dünyanın en ünlü ve kendine özgü sahne sanatları merkezlerinden biri olarak kabul ediliyor.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/History_of_the_Eurovision_Song_Contest"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Sydney_Opera_House"
     },
     {
-      "yil": 2017,
-      "baslik": "Robert Weryk İlk Yıldızlararası Cisim ʻOumuamua'yı Keşfetti",
-      "metin": "Kanadalı gökbilimci Robert Weryk, Güneş Sistemi'nden geçtiği tespit edilen ilk bilinen yıldızlararası nesne olan ʻOumuamua'yı keşfetti. Başka bir yıldız sisteminden kopup gelen bu gizemli gök cismi, astronomi dünyasında büyük yankı uyandırdı.",
+      "yil": 2003,
+      "baslik": "Princeton Üniversitesi'nde Sloan Büyük Duvarı Keşfi",
+      "metin": "Princeton Üniversitesi'ndeki öğrenciler tarafından devasa bir galaksi duvarından oluşan Sloan Büyük Duvarı keşfedildi. Bu yapı, keşfedildiği dönemde insanlığın bildiği en büyük kozmik yapı konumundaydı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Sloan_Great_Wall"
+    },
+    {
+      "yil": 2018,
+      "baslik": "BepiColombo Uzay Aracı Merkür'e Gönderildi",
+      "metin": "BepiColombo uzay aracı, Merkür'ü incelemek amacıyla bir Ariane 5 roketiyle fırlatıldı. Bu görev, Avrupa Uzay Ajansı ve Japonya Uzay Araştırma Ajansı'nın ortaklaşa yürüttüğü tarihi bir uzay hamlesidir.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Robert_Weryk"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/BepiColombo"
     }
   ]
 }
