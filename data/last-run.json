@@ -1,11 +1,9 @@
 {
-  "tarih": "2026-10-20T05:05:02.634Z",
+  "tarih": "2026-10-21T05:02:07.574Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 1,
-  "onayaDusen": 0,
-  "reddedilen": 1,
-  "hatalar": [
-    "Can Bonomo: uygun değil: Konu odağı yaşayan bir gerçek kişidir."
-  ]
+  "otomatikYayinlanan": 0,
+  "onayaDusen": 1,
+  "reddedilen": 0,
+  "hatalar": []
 }

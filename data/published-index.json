@@ -658,5 +658,14 @@
     "format": "quiz",
     "yayinTarihi": "2026-10-20T05:05:01.301Z",
     "otomatikYayinlandi": true
+  },
+  {
+    "slug": "youtube-hakkinda-muhtemelen-duymadiginiz-5-sasirtici-gercek",
+    "baslik": "YouTube Hakkında Muhtemelen Duymadığınız 5 Şaşırtıcı Gerçek",
+    "konuParmakIzi": "youtube",
+    "kategori": "teknoloji",
+    "format": "trivia",
+    "yayinTarihi": "2026-10-21T05:02:07.191Z",
+    "otomatikYayinlandi": false
   }
 ]
