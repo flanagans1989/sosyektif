@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-10-21T18:17:43.764Z",
-  "toplamKontrol": 49,
+  "sonDenetim": "2026-10-21T21:50:18.345Z",
+  "toplamKontrol": 48,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -14,13 +14,6 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "telegram-bot": {
-      "alan": "Telegram",
-      "durum": "hata",
-      "detay": "Bot: erişilemedi",
-      "cozum": "TELEGRAM_BOT_TOKEN'ı kontrol et.",
-      "ilkGorulme": "2026-10-21T18:17:43.764Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
