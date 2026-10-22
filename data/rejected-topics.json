@@ -1,11 +1,5 @@
 [
   {
-    "parmakIzi": "elif eralp",
-    "baslik": "Elif Eralp",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için içerik politikamıza uygun değil.",
-    "tarih": "2026-09-21T05:01:42.200Z"
-  },
-  {
     "parmakIzi": "enver altaylı",
     "baslik": "Enver Altaylı",
     "sebep": "uygun değil: Yaşayan veya yakın dönem siyasi ve adli olaylarla anılan bir kişi olduğu için sitemizin güncel/siyasi politika kısıtlamalarına takılmaktadır.",
@@ -292,5 +286,23 @@
     "baslik": "Can Bonomo",
     "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir.",
     "tarih": "2026-10-20T05:01:52.514Z"
+  },
+  {
+    "parmakIzi": "berke özer",
+    "baslik": "Berke Özer",
+    "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir (Berke Özer). Canlı sporcular veya yaşayan kişiler site politikaları gereği doğrudan içerik odağı olamaz.",
+    "tarih": "2026-10-22T05:01:59.793Z"
+  },
+  {
+    "parmakIzi": "ahmet eşref fakıbaba",
+    "baslik": "Ahmet Eşref Fakıbaba",
+    "sebep": "uygun değil: Yaşayan bir siyasetçi ve eski devlet görevlisi olması nedeniyle site politika kurallarına (siyaset ve yaşayan kişi yasağı) aykırıdır.",
+    "tarih": "2026-10-22T05:02:00.897Z"
+  },
+  {
+    "parmakIzi": "victor osimhen",
+    "baslik": "Victor Osimhen",
+    "sebep": "uygun değil: Yaşayan gerçek bir kişi (sporcu) odakta olduğu için site yayın politikasına uygun değildir.",
+    "tarih": "2026-10-22T05:02:01.774Z"
   }
 ]
