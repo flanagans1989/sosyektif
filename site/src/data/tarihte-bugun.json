@@ -1,63 +1,49 @@
 {
-  "tarih": "2026-10-21",
+  "tarih": "2026-10-22",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1520,
-      "baslik": "Ferdinand Magellan Kendi Adını Taşıyan Boğazı Keşfetti",
-      "metin": "Portekizli denizci Ferdinand Magellan, Güney Amerika'nın en güney ucunda yer alan ve daha sonra kendi adıyla anılacak boğazı keşfetti. Dünyanın çevresini dolaşan ilk seferin lideri olan Magellan'ın bulduğu bu geçit, okyanuslar arası deniz ticaretinde yeni bir çağ başlattı.",
+      "yil": 1797,
+      "baslik": "André-Jacques Garnerin'in Paraşüt Atlayışı",
+      "metin": "Fransız baloncu André-Jacques Garnerin, Paris üzerinde 1.000 metre yükseklikten tarihe geçen ilk çerçevesiz paraşüt atlayışını gerçekleştirdi. Bu cesur deney, havacılık tarihi için dönüm noktası oldu.",
       "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ferdinand_Macellan"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Andr%C3%A9-Jacques_Garnerin"
     },
     {
-      "yil": 1833,
-      "baslik": "Dinamitin Mucidi Alfred Nobel Dünyaya Geldi",
-      "metin": "İsveçli kimyager, mühendis ve mucit Alfred Nobel dünyaya geldi. Dinamiti geliştirerek sanayi ve inşaat alanında büyük dönüşüm yaratan Nobel, tüm servetini insanlığa hizmet eden başarıları ödüllendirmek amacıyla Nobel Ödülleri'ne miras bıraktı.",
+      "yil": 1811,
+      "baslik": "Franz Liszt Doğdu",
+      "metin": "Romantik dönemin dahi bestecisi ve virtuöz piyanisti Franz Liszt dünyaya geldi. Altı yılı aşkın kariyeri boyunca ürettiği devasa eser havuzuyla klasik müzik tarihine damgasını vurdu.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Alfred_Nobel"
-    },
-    {
-      "yil": 1860,
-      "baslik": "İlk Özel Gazete Tercüman-ı Ahvâl Yayına Başladı",
-      "metin": "Osmanlı Devleti'nde yayımlanan ilk özel gazete olan Tercüman-ı Ahvâl, İstanbul'da Çapanoğlu Âgâh Efendi tarafından çıkarılmaya başlandı. Gazete, Türk basın tarihinde sivil gazeteciliğin ve bağımsız fikir yayıncılığının öncüsü oldu.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Terc%C3%BCm%C3%A2n-%C4%B1_Ahv%C3%A2l"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Franz_Liszt"
     },
     {
       "yil": 1879,
-      "baslik": "Thomas Edison Karbon Filamanlı Elektrik Ampulünü İcat Etti",
-      "metin": "Amerikalı mucit Thomas Edison, karbon filamanlı elektrik ampulünü geliştirmeyi başardı. Uzun süre ışık veren bu güvenilir aydınlatma aracı, elektrik enerjisinin günlük yaşamda yaygınlaşmasını sağlayarak modern çağın kapılarını araladı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Thomas_Edison"
-    },
-    {
-      "yil": 1959,
-      "baslik": "Frank Lloyd Wright Tasarımı Guggenheim Müzesi Açıldı",
-      "metin": "Amerikalı efsane mimar Frank Lloyd Wright tarafından tasarlanan Solomon R. Guggenheim Müzesi, New York'ta ziyarete açıldı. Müzenin kendine has spiral rampalı mimarisi ve radikal sergileme konsepti, 20. yüzyıl mimarlığının başyapıtlarından biri oldu.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Solomon_R._Guggenheim_Museum"
-    },
-    {
-      "yil": 1965,
-      "baslik": "İkeya-Seki Kuyruklu Yıldızı Güneş'in Çok Yakınından Geçti",
-      "metin": "Japon amatör astronom Kaoru İkeya tarafından keşfedilen İkeya-Seki kuyruklu yıldızı, Güneş'in sadece 450.000 kilometre yakınından geçti. Güneş'e bu denli yaklaşan gök cismi, gündüz vakti bile gökyüzünde parlak bir şekilde gözlemlenebildi.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0keya_seki_kuyruklu_y%C4%B1ld%C4%B1z%C4%B1"
-    },
-    {
-      "yil": 1971,
-      "baslik": "Pablo Neruda Nobel Edebiyat Ödülü'nü Kazandı",
-      "metin": "Şilili büyük şair ve diplomat Pablo Neruda, 1971 yılı Nobel Edebiyat Ödülü'ne layık görüldü. Tutkulu aşk şiirleri ve güçlü edebi üslubuyla tanınan şair, 20. yüzyıl dünya edebiyatının en saygın seslerinden biri olarak tarihe geçti.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Pablo_Neruda"
-    },
-    {
-      "yil": 1983,
-      "baslik": "Metre Uzunluk Ölçüsü Işık Hızı Üzerinden Yeniden Tanımlandı",
-      "metin": "Uluslararası uzunluk birimi olan metre, evrensel bir sabit olan ışık hızı temel alınarak yeniden tanımlandı. Alınan kararla birlikte bir metre, ışığın boşlukta saniyenin 299.792.458'de birinde katettiği mesafe olarak kesinlik kazandı.",
+      "baslik": "Thomas Edison'un Elektrikli Ampul Testi",
+      "metin": "Thomas Edison, karbonize iplik flamanı kullanarak ilk pratik elektrikli akkor ampulü test etti. Yaklaşık 13,5 saat boyunca yanmayı başaran bu prototip, günümüz aydınlatma teknolojisinin temelini attı.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Metre"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Thomas_Edison"
+    },
+    {
+      "yil": 1938,
+      "baslik": "Chester Carlson Fotokopiyi İcat Etti",
+      "metin": "Amerikalı fizikçi Chester Carlson, elektrostatik kuru basım yöntemi olan kserografiyi yani fotokopiyi icat etti. Bu buluş, ofis dünyasında ve belge çoğaltma teknolojisinde devrim yarattı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Chester_Carlson"
+    },
+    {
+      "yil": 1988,
+      "baslik": "Barış Manço'nun 7'den 77'ye Programı Başladı",
+      "metin": "Türk rock müziğinin öncülerinden Barış Manço'nun unutulmaz televizyon programı 7'den 77'ye TRT ekranlarında yayınlanmaya başladı. Program, Türk televizyon tarihinin en uzun soluklu ve sevilen yapımlarından biri haline geldi.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Bar%C4%B1%C5%9F_Man%C3%A7o"
+    },
+    {
+      "yil": 2009,
+      "baslik": "Windows 7 Piyasaya Çıktı",
+      "metin": "Microsoft tarafından geliştirilen popüler işletim sistemi Windows 7 genel kullanıma sunuldu. Bu önemli sürüm, milyonlarca bilgisayar kullanıcı deneyimini kökten değiştirdi.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Windows_7"
     }
   ]
 }
