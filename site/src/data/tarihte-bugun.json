@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-10-22",
+  "tarih": "2026-10-23",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1797,
-      "baslik": "André-Jacques Garnerin'in Paraşüt Atlayışı",
-      "metin": "Fransız baloncu André-Jacques Garnerin, Paris üzerinde 1.000 metre yükseklikten tarihe geçen ilk çerçevesiz paraşüt atlayışını gerçekleştirdi. Bu cesur deney, havacılık tarihi için dönüm noktası oldu.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Andr%C3%A9-Jacques_Garnerin"
-    },
-    {
-      "yil": 1811,
-      "baslik": "Franz Liszt Doğdu",
-      "metin": "Romantik dönemin dahi bestecisi ve virtuöz piyanisti Franz Liszt dünyaya geldi. Altı yılı aşkın kariyeri boyunca ürettiği devasa eser havuzuyla klasik müzik tarihine damgasını vurdu.",
+      "yil": 1905,
+      "baslik": "Fizikçi Felix Bloch'un Doğumu",
+      "metin": "Nükleer manyetik rezonans alanındaki öncü yöntemleri ve keşifleriyle 1952 Nobel Fizik Ödülü'nü paylaşan İsviçre asıllı fizikçi Felix Bloch doğdu. Geliştirdiği hassas ölçüm metotları modern tıbbi görüntülemenin de önünü açtı.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Franz_Liszt"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Felix_Bloch"
     },
     {
-      "yil": 1879,
-      "baslik": "Thomas Edison'un Elektrikli Ampul Testi",
-      "metin": "Thomas Edison, karbonize iplik flamanı kullanarak ilk pratik elektrikli akkor ampulü test etti. Yaklaşık 13,5 saat boyunca yanmayı başaran bu prototip, günümüz aydınlatma teknolojisinin temelini attı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Thomas_Edison"
+      "yil": 1908,
+      "baslik": "Fizikçi Ilya Frank'ın Doğumu",
+      "metin": "Çavrenkov ışımasını açıklayan çalışmalarıyla 1958 Nobel Fizik Ödülü'ne layık görülen Sovyet fizikçi Ilya Frank dünyaya geldi. Yaptığı bilimsel araştırmalar nükleer fizik alanına önemli katkılar sağladı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Ilya_Frank"
     },
     {
-      "yil": 1938,
-      "baslik": "Chester Carlson Fotokopiyi İcat Etti",
-      "metin": "Amerikalı fizikçi Chester Carlson, elektrostatik kuru basım yöntemi olan kserografiyi yani fotokopiyi icat etti. Bu buluş, ofis dünyasında ve belge çoğaltma teknolojisinde devrim yarattı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Chester_Carlson"
+      "yil": 1934,
+      "baslik": "Stratosfere Uçan İlk Kadın: Jeannette Piccard",
+      "metin": "Jeannette Piccard, sıcak hava balonunu 57.579 fit yüksekliğe çıkararak stratosfere uçan ilk kadın olmayı başardı. Bu önemli uçuşla elde ettiği kadınlar irtifa rekorunu neredeyse otuz yıl boyunca korudu.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Jeannette_Piccard"
     },
     {
-      "yil": 1988,
-      "baslik": "Barış Manço'nun 7'den 77'ye Programı Başladı",
-      "metin": "Türk rock müziğinin öncülerinden Barış Manço'nun unutulmaz televizyon programı 7'den 77'ye TRT ekranlarında yayınlanmaya başladı. Program, Türk televizyon tarihinin en uzun soluklu ve sevilen yapımlarından biri haline geldi.",
+      "yil": 1958,
+      "baslik": "Şirinler İlk Kez Spirou Dergisinde",
+      "metin": "Belçikalı çizer Peyo'nun yarattığı dünyaca ünlü çizgi roman karakterleri Şirinler, ilk kez Spirou dergisinde okuyucularla buluştu. Mavi küçük yaratıkların yer aldığı bu maceralar kısa sürede büyük bir popülarite kazandı.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Bar%C4%B1%C5%9F_Man%C3%A7o"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Belgium"
     },
     {
-      "yil": 2009,
-      "baslik": "Windows 7 Piyasaya Çıktı",
-      "metin": "Microsoft tarafından geliştirilen popüler işletim sistemi Windows 7 genel kullanıma sunuldu. Bu önemli sürüm, milyonlarca bilgisayar kullanıcı deneyimini kökten değiştirdi.",
+      "yil": 1970,
+      "baslik": "Blue Flame ile Kara Hız Rekoru",
+      "metin": "Gary Gabelich, doğal gazla çalışan roket motorlu otomobili Blue Flame ile yeni bir kara hız rekoru kırdı. Bonneville Tuz Çölleri'nde gerçekleştirilen bu deneme otomobil sporları tarihine geçti.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Gary_Gabelich"
+    },
+    {
+      "yil": 2001,
+      "baslik": "Apple'ın Dijital Müzik Çalar Dönemi",
+      "metin": "Apple Computer, müzik dünyasını kökten değiştirecek olan taşınsal medya oynatıcısı iPod'u piyasaya sürdü. Bu yenilikçi cihaz, dijital müzik depolama ve dinleme alışkanlıklarını tamamen dönüştürdü.",
       "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Windows_7"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Apple_Inc."
     }
   ]
 }
