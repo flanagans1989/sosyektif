@@ -1,13 +1,9 @@
 {
-  "tarih": "2026-10-22T05:04:29.211Z",
+  "tarih": "2026-10-23T05:07:37.277Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 1,
   "onayaDusen": 0,
-  "reddedilen": 3,
-  "hatalar": [
-    "Berke Özer: uygun değil: Konu odağı yaşayan bir gerçek kişidir (Berke Özer). Canlı sporcular veya yaşayan kişiler site politikaları gereği doğrudan içerik odağı olamaz.",
-    "Ahmet Eşref Fakıbaba: uygun değil: Yaşayan bir siyasetçi ve eski devlet görevlisi olması nedeniyle site politika kurallarına (siyaset ve yaşayan kişi yasağı) aykırıdır.",
-    "Victor Osimhen: uygun değil: Yaşayan gerçek bir kişi (sporcu) odakta olduğu için site yayın politikasına uygun değildir."
-  ]
+  "reddedilen": 0,
+  "hatalar": []
 }
