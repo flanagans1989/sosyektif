@@ -2096,5 +2096,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "cumhuriyet-bayrami-hakkinda-farkli-ulkelerden-8-ilginc-detay": {
+    "eklendi": "2026-10-23T05:32:53.581Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-23T05:32:54.476Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3myjhby5ep52i"
+      }
+    },
+    "reelIdleri": {}
   }
 }
