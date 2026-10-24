@@ -1,17 +1,5 @@
 [
   {
-    "parmakIzi": "enver altaylı",
-    "baslik": "Enver Altaylı",
-    "sebep": "uygun değil: Yaşayan veya yakın dönem siyasi ve adli olaylarla anılan bir kişi olduğu için sitemizin güncel/siyasi politika kısıtlamalarına takılmaktadır.",
-    "tarih": "2026-09-23T05:01:53.808Z"
-  },
-  {
-    "parmakIzi": "türkiye'deki okul saldırıları listesi",
-    "baslik": "Türkiye'deki okul saldırıları listesi",
-    "sebep": "uygun değil: Suç, şiddet, adli olaylar ve felaketler içerik politikamız gereği uygun değildir.",
-    "tarih": "2026-09-23T05:01:54.629Z"
-  },
-  {
     "parmakIzi": "mansur yavaş",
     "baslik": "Mansur Yavaş",
     "sebep": "uygun değil: Yaşayan gerçek bir siyasetçi ve kişi odaklı olduğu için site politikalarına uygun değil.",
@@ -304,5 +292,11 @@
     "baslik": "Victor Osimhen",
     "sebep": "uygun değil: Yaşayan gerçek bir kişi (sporcu) odakta olduğu için site yayın politikasına uygun değildir.",
     "tarih": "2026-10-22T05:02:01.774Z"
+  },
+  {
+    "parmakIzi": "2027 uefa ülkeler sıralaması",
+    "baslik": "2027 UEFA ülkeler sıralaması",
+    "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
+    "tarih": "2026-10-24T05:01:41.043Z"
   }
 ]

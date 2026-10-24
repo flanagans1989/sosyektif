@@ -1,9 +1,12 @@
 {
-  "tarih": "2026-10-23T05:07:37.277Z",
+  "tarih": "2026-10-24T05:02:20.761Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 1,
   "onayaDusen": 0,
-  "reddedilen": 0,
-  "hatalar": []
+  "reddedilen": 2,
+  "hatalar": [
+    "29 Ekim Cumhuriyet Bayramı (2026): \"29 Ekim Cumhuriyet Bayramı\" (2026) için içerik zaten üretildi",
+    "2027 UEFA ülkeler sıralaması: \"UEFA ülkeler sıralaması\" daha önce işlendi"
+  ]
 }
