@@ -2125,5 +2125,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "umman-hakkinda-duyunca-sasiracaginiz-6-ilginc-gercek": {
+    "eklendi": "2026-10-24T05:03:10.759Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-24T05:03:11.753Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mylw3rhppn2z"
+      }
+    },
+    "reelIdleri": {}
   }
 }
