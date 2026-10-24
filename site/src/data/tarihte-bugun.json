@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-10-23",
+  "tarih": "2026-10-24",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1905,
-      "baslik": "Fizikçi Felix Bloch'un Doğumu",
-      "metin": "Nükleer manyetik rezonans alanındaki öncü yöntemleri ve keşifleriyle 1952 Nobel Fizik Ödülü'nü paylaşan İsviçre asıllı fizikçi Felix Bloch doğdu. Geliştirdiği hassas ölçüm metotları modern tıbbi görüntülemenin de önünü açtı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Felix_Bloch"
-    },
-    {
-      "yil": 1908,
-      "baslik": "Fizikçi Ilya Frank'ın Doğumu",
-      "metin": "Çavrenkov ışımasını açıklayan çalışmalarıyla 1958 Nobel Fizik Ödülü'ne layık görülen Sovyet fizikçi Ilya Frank dünyaya geldi. Yaptığı bilimsel araştırmalar nükleer fizik alanına önemli katkılar sağladı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Ilya_Frank"
-    },
-    {
-      "yil": 1934,
-      "baslik": "Stratosfere Uçan İlk Kadın: Jeannette Piccard",
-      "metin": "Jeannette Piccard, sıcak hava balonunu 57.579 fit yüksekliğe çıkararak stratosfere uçan ilk kadın olmayı başardı. Bu önemli uçuşla elde ettiği kadınlar irtifa rekorunu neredeyse otuz yıl boyunca korudu.",
+      "yil": 1851,
+      "baslik": "Uranüs'ün Uyduları Umbriel ve Ariel'in Keşfi",
+      "metin": "William Lassell, Uranüs gezegeninin üçüncü ve dördüncü en büyük uyduları olan Umbriel ve Ariel'i keşfetti. Bu gök cisimleri adlarını Alexander Pope'un ünlü şiirindeki karakterlerden aldı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Jeannette_Piccard"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Umbriel"
     },
     {
-      "yil": 1958,
-      "baslik": "Şirinler İlk Kez Spirou Dergisinde",
-      "metin": "Belçikalı çizer Peyo'nun yarattığı dünyaca ünlü çizgi roman karakterleri Şirinler, ilk kez Spirou dergisinde okuyucularla buluştu. Mavi küçük yaratıkların yer aldığı bu maceralar kısa sürede büyük bir popülarite kazandı.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Belgium"
+      "yil": 1857,
+      "baslik": "Dünyanın İlk Futbol Kulübü Sheffield FC Kuruldu",
+      "metin": "Futbol dünyasının en köklü ve hâlâ faaliyette olan ilk kulübü Sheffield FC İngiltere'de kuruldu. Bu adım, modern futbolun temellerinin atılmasını sağladı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Futbol"
     },
     {
-      "yil": 1970,
-      "baslik": "Blue Flame ile Kara Hız Rekoru",
-      "metin": "Gary Gabelich, doğal gazla çalışan roket motorlu otomobili Blue Flame ile yeni bir kara hız rekoru kırdı. Bonneville Tuz Çölleri'nde gerçekleştirilen bu deneme otomobil sporları tarihine geçti.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Gary_Gabelich"
+      "yil": 1882,
+      "baslik": "Robert Koch'un Verem Mikrobunu Keşfi",
+      "metin": "Alman bilim insanı Robert Koch, tıp tarihini değiştiren bir başarıya imza atarak verem mikrobunu keşfetti. Bu kritik buluş, o döneme kadar çaresiz görünen hastalıkla mücadelede dönüm noktası oldu.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Almanya"
     },
     {
-      "yil": 2001,
-      "baslik": "Apple'ın Dijital Müzik Çalar Dönemi",
-      "metin": "Apple Computer, müzik dünyasını kökten değiştirecek olan taşınsal medya oynatıcısı iPod'u piyasaya sürdü. Bu yenilikçi cihaz, dijital müzik depolama ve dinleme alışkanlıklarını tamamen dönüştürdü.",
+      "yil": 1901,
+      "baslik": "Annie Edson Taylor'ın Niagara Şelalesi Maceraları",
+      "metin": "Amerikalı öğretmen Annie Edson Taylor, 63. doğum gününde bir fıçı ile Niagara Şelalesi'nden aşağı inen ilk insan olmayı başardı. Bu tehlikeli yolculuktan sağ kurtularak adını tarihe yazdırdı.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Annie_Edson_Taylor"
+    },
+    {
+      "yil": 1939,
+      "baslik": "Naylon Çorapların İlk Satışa Sunuluşu",
+      "metin": "Amerikalı şirket DuPont'un kimyageri Wallace Hume Carothers tarafından icat edilen poliamid bazlı sentetik lif ilk kez Wilmington'da satışa sunuldu. Renk, tasarım ve şeffaflık bakımından farklılık gösteren bu ürün kısa sürede büyük ilgi gördü.",
       "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Apple_Inc."
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Naylon_%C3%A7orap"
+    },
+    {
+      "yil": 1946,
+      "baslik": "V-2 Roketiyle Uzaydan İlk Dünya Fotoğrafı",
+      "metin": "V-2 No. 13 adlı modifiye roketin içine yerleştirilen kamera, uzaydan çekilen ilk Dünya fotoğrafını kaydetti. Bu tarihi kare, uzay araştırmalarında yepyeni bir dönemin kapısını araladı.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/V-2_No._13"
     }
   ]
 }
