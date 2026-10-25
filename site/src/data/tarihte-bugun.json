@@ -1,49 +1,42 @@
 {
-  "tarih": "2026-10-24",
+  "tarih": "2026-10-25",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1851,
-      "baslik": "Uranüs'ün Uyduları Umbriel ve Ariel'in Keşfi",
-      "metin": "William Lassell, Uranüs gezegeninin üçüncü ve dördüncü en büyük uyduları olan Umbriel ve Ariel'i keşfetti. Bu gök cisimleri adlarını Alexander Pope'un ünlü şiirindeki karakterlerden aldı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Umbriel"
-    },
-    {
-      "yil": 1857,
-      "baslik": "Dünyanın İlk Futbol Kulübü Sheffield FC Kuruldu",
-      "metin": "Futbol dünyasının en köklü ve hâlâ faaliyette olan ilk kulübü Sheffield FC İngiltere'de kuruldu. Bu adım, modern futbolun temellerinin atılmasını sağladı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Futbol"
-    },
-    {
-      "yil": 1882,
-      "baslik": "Robert Koch'un Verem Mikrobunu Keşfi",
-      "metin": "Alman bilim insanı Robert Koch, tıp tarihini değiştiren bir başarıya imza atarak verem mikrobunu keşfetti. Bu kritik buluş, o döneme kadar çaresiz görünen hastalıkla mücadelede dönüm noktası oldu.",
+      "yil": 1616,
+      "baslik": "Dirk Hartog'un Avustralya Kıyılarına Bıraktığı Tarihî Tabak",
+      "metin": "Hollandalı kâşif Dirk Hartog, Avustralya'nın Shark Bay bölgesindeki bir adaya ayak basarak buraya yazılı bir tabak bıraktı. Bu emanet, Avrupalıların Avustralya keşfinden günümüze kalan en eski fiziksel nesne olarak tarihe geçti.",
       "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Almanya"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Dirk_Hartog"
     },
     {
-      "yil": 1901,
-      "baslik": "Annie Edson Taylor'ın Niagara Şelalesi Maceraları",
-      "metin": "Amerikalı öğretmen Annie Edson Taylor, 63. doğum gününde bir fıçı ile Niagara Şelalesi'nden aşağı inen ilk insan olmayı başardı. Bu tehlikeli yolculuktan sağ kurtularak adını tarihe yazdırdı.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Annie_Edson_Taylor"
+      "yil": 1875,
+      "baslik": "Çaykovski'nin 1 No'lu Piyano Konçertosu İlk Kez Çalındı",
+      "metin": "Rus besteci Peter İlyiç Çaykovski'nin dünyaca ünlü 1 No'lu Piyano Konçertosu, Boston'da ilk kez dinleyiciyle buluştu. Eserin bu ilk icrasında sahnede solist olarak piyanist Hans von Bülow yer aldı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Pyotr_%C4%B0lyi%C3%A7_%C3%87aykovski"
     },
     {
-      "yil": 1939,
-      "baslik": "Naylon Çorapların İlk Satışa Sunuluşu",
-      "metin": "Amerikalı şirket DuPont'un kimyageri Wallace Hume Carothers tarafından icat edilen poliamid bazlı sentetik lif ilk kez Wilmington'da satışa sunuldu. Renk, tasarım ve şeffaflık bakımından farklılık gösteren bu ürün kısa sürede büyük ilgi gördü.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Naylon_%C3%A7orap"
+      "yil": 1894,
+      "baslik": "Büyük Halk Ozanı Âşık Veysel Dünyaya Geldi",
+      "metin": "Türk halk müziğinin ve edebiyatının usta ozanı Âşık Veysel Şatıroğlu, Sivas'ın Sivrialan köyünde dünyaya geldi. Çocuk yaşta görme yetisini kaybetmesine rağmen eline aldığı bağlaması ve söylediği derin türkülerle Anadolu kültürünün simgelerinden biri oldu.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/%C3%82%C5%9F%C4%B1k_Veysel"
     },
     {
-      "yil": 1946,
-      "baslik": "V-2 Roketiyle Uzaydan İlk Dünya Fotoğrafı",
-      "metin": "V-2 No. 13 adlı modifiye roketin içine yerleştirilen kamera, uzaydan çekilen ilk Dünya fotoğrafını kaydetti. Bu tarihi kare, uzay araştırmalarında yepyeni bir dönemin kapısını araladı.",
+      "yil": 1968,
+      "baslik": "Sovyetler Birliği İnsansız Soyuz 2 Uzay Aracını Fırlattı",
+      "metin": "Sovyet uzay programı kapsamında geliştirilen insansız uzay aracı Soyuz 2 uzaya fırlatıldı. Aracın ana hedefi, hemen ardından uzaya çıkacak insanlı Soyuz 3 kapsülüyle kenetlenme manevrasını gerçekleştirmek üzere yörüngede hedef teşkil etmekti.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/V-2_No._13"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Soyuz_2"
+    },
+    {
+      "yil": 2001,
+      "baslik": "Microsoft Efsane İşletim Sistemi Windows XP'yi Çıkardı",
+      "metin": "Microsoft, kişisel bilgisayar pazarında devrim yaratacak Windows XP işletim sistemini küresel ölçekte piyasaya sundu. Kullanıcı dostu arayüzü ve kararlılığıyla öne çıkan bu sürüm, dünya çapında en çok kullanılan işletim sistemlerinden birine dönüştü.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Microsoft"
     }
   ]
 }
