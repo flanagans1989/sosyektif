@@ -1,11 +1,5 @@
 [
   {
-    "parmakIzi": "mansur yavaş",
-    "baslik": "Mansur Yavaş",
-    "sebep": "uygun değil: Yaşayan gerçek bir siyasetçi ve kişi odaklı olduğu için site politikalarına uygun değil.",
-    "tarih": "2026-09-24T05:01:53.809Z"
-  },
-  {
     "parmakIzi": "fatma betül sayan kaya",
     "baslik": "Fatma Betül Sayan Kaya",
     "sebep": "uygun değil: Yaşayan siyasetçiler ve güncel politik figürler site politikamız gereği içerik odağı olamaz.",
@@ -298,5 +292,17 @@
     "baslik": "2027 UEFA ülkeler sıralaması",
     "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
     "tarih": "2026-10-24T05:01:41.043Z"
+  },
+  {
+    "parmakIzi": "ümit kocasakal",
+    "baslik": "Ümit Kocasakal",
+    "sebep": "uygun değil: Yaşayan bir gerçek kişi (siyasetçi/akademisyen) olduğu için içerik politikalarımıza uymuyor.",
+    "tarih": "2026-10-26T05:01:42.867Z"
+  },
+  {
+    "parmakIzi": "oktay saral",
+    "baslik": "Oktay Saral",
+    "sebep": "uygun değil: Yaşayan bir siyasi figür ve güncel kişiliktir; sitemizin yaşayan gerçek kişiler politikası ve siyaset yasağı kapsamına girmektedir.",
+    "tarih": "2026-10-26T05:01:44.182Z"
   }
 ]
