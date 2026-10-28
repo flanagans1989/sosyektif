@@ -1,42 +1,49 @@
 {
-  "tarih": "2026-10-27",
+  "tarih": "2026-10-28",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1726,
-      "baslik": "Johann Sebastian Bach Konseri",
-      "metin": "Johann Sebastian Bach, kendi eserleri arasında doğrudan kantat olarak adlandırdığı nadir eserlerden biri olan \"Ich will den Kreuzstab gerne tragen\"in ilk performansını yönetti. Bu eser, barok müziğin en önemli örnekleri arasında yer alıyor.",
+      "yil": 1636,
+      "baslik": "Harvard Üniversitesi",
+      "metin": "Kuzey Amerika'daki ilk yükseköğretim kurumu olan Harvard Üniversitesi kuruldu. Zamanla dünyanın en prestijli eğitim kurumlarından birine dönüşen üniversite, teolojik bir kolej olarak faaliyete başladı.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerikal%C4%B1lar"
+    },
+    {
+      "yil": 1886,
+      "baslik": "Özgürlük Heykeli",
+      "metin": "Dünyayı Aydınlatan Özgürlük Heykeli, Fransız halkının hediyesi olarak New York'a dikildi. Anıtsal yapı, inşa edildiği günden bu yana Amerika'nın en önemli simgelerinden biri haline geldi.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Johann_Sebastian_Bach"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C3%96zg%C3%BCrl%C3%BCk_Heykeli"
     },
     {
-      "yil": 1939,
-      "baslik": "DuPont Tarafından Naylonun Keşfi",
-      "metin": "DuPont şirketi, naylonun keşfedildiğini duyurdu. Bu buluş, tekstil ve malzeme dünyasında çığır açan bir dönüm noktası oldu.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/DuPont"
+      "yil": 1893,
+      "baslik": "Çaykovski'nin 6 No'lu Pathétique Senfonisi",
+      "metin": "Pyotr İlyiç Çaykovski'nin 6 No'lu Pathétique Senfonisinin galası Sankt-Peterburg'da yapıldı. Bu unutulmaz eser, bestecinin ölümünden sadece dokuz gün önce müzikseverlerle buluştu.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Pyotr_%C4%B0lyi%C3%A7_%C3%87aykovski"
     },
     {
-      "yil": 1961,
-      "baslik": "Saturn I Roketi",
-      "metin": "NASA, Saturn ailesinin ilk üyesi olan Saturn I roketini Saturn-Apollo 1 misyonu kapsamında test etti. Bu uçuş, Apollo programının ilk misyonu olarak uzay tarihine geçti.",
+      "yil": 1927,
+      "baslik": "Türkiye'de İlk Nüfus Sayımı",
+      "metin": "Türkiye'de Cumhuriyet dönemi nüfus sayımlarının ilki gerçekleştirildi. Bu sayım, ülkenin demografik yapısının resmi olarak kayıt altına alınmasında önemli bir dönüm noktası oldu.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye"
+    },
+    {
+      "yil": 1928,
+      "baslik": "Indonesia Raya Marşı",
+      "metin": "Endonezyalı besteci Wage Rudolf Supratman, ülkenin günümüzdeki ulusal marşı olan \"Indonesia Raya\"yı ilk kez tanıttı. Eser, kısa sürede ulusal kimliğin simgelerinden biri haline geldi.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Wage_Rudolf_Supratman"
+    },
+    {
+      "yil": 1971,
+      "baslik": "Prospero Uydusu",
+      "metin": "İngiliz yapımı bir roketle fırlatılan ilk Britanya uydusu Prospero uzaya gönderildi. Uydu, uzay ortamının iletişim uyduları üzerindeki etkilerini incelemek üzere bir dizi deney gerçekleştirdi.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Saturn_I_SA-1"
-    },
-    {
-      "yil": 1994,
-      "baslik": "Gliese 229B'nin Keşfi",
-      "metin": "Gliese 229B, kesin olarak tanımlanan ilk Yıldızaltı Kütle Cisimciği (kahverengi cüce) olarak kayıtlara geçti. Bu gök cismi Lepus takımyıldızında yer alıyor.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Gliese_229"
-    },
-    {
-      "yil": 2008,
-      "baslik": "Türksat 3A Uydusu",
-      "metin": "Türkiye'nin yeni nesil haberleşme uydusu Türksat 3A devreye girdi ve bu gelişmeyle birlikte uydu frekansları değişti. 42 derece doğu yörüngesinde görev yapan uydunun yapımı Thales Alenia Space şirketi tarafından üstlenildi.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrksat_3A"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Prospero_(spacecraft)"
     }
   ]
 }
