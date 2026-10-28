@@ -1,29 +1,5 @@
 [
   {
-    "parmakIzi": "fatma betül sayan kaya",
-    "baslik": "Fatma Betül Sayan Kaya",
-    "sebep": "uygun değil: Yaşayan siyasetçiler ve güncel politik figürler site politikamız gereği içerik odağı olamaz.",
-    "tarih": "2026-09-27T05:01:43.457Z"
-  },
-  {
-    "parmakIzi": "sarallar",
-    "baslik": "Sarallar",
-    "sebep": "uygun değil: Suç, şiddet, adli olaylar ve örgütler sosyektif içerik politikalarına uygun değildir.",
-    "tarih": "2026-09-27T05:01:44.254Z"
-  },
-  {
-    "parmakIzi": "sedat şahin",
-    "baslik": "Sedat Şahin",
-    "sebep": "uygun değil: Yaşayan bir gerçek kişi (suç/adli bağlamda anılan isim) olması nedeniyle site politikalarına ve kural setine uygun değildir.",
-    "tarih": "2026-09-27T05:01:45.313Z"
-  },
-  {
-    "parmakIzi": "sarallar-şahinler çatışması",
-    "baslik": "Sarallar-Şahinler çatışması",
-    "sebep": "uygun değil: Suç, şiddet, adli olaylar ve çete çatışmaları sitenin yayın politikasına ve kurallarına kesinlikle aykırıdır.",
-    "tarih": "2026-09-27T05:01:55.037Z"
-  },
-  {
     "parmakIzi": "kavak yelleri (dizi, 2007)",
     "baslik": "Kavak Yelleri (dizi, 2007)",
     "sebep": "\"Kavak Yelleri\" için yeterli Vikipedi kaynağı yok",
@@ -304,5 +280,11 @@
     "baslik": "Oktay Saral",
     "sebep": "uygun değil: Yaşayan bir siyasi figür ve güncel kişiliktir; sitemizin yaşayan gerçek kişiler politikası ve siyaset yasağı kapsamına girmektedir.",
     "tarih": "2026-10-26T05:01:44.182Z"
+  },
+  {
+    "parmakIzi": "2026 i̇srail yasama seçimi",
+    "baslik": "2026 İsrail yasama seçimi",
+    "sebep": "uygun değil: Siyaset ve seçimlerle ilgili konular site politikası gereği uygun değildir.",
+    "tarih": "2026-10-28T05:01:50.268Z"
   }
 ]
