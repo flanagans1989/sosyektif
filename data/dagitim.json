@@ -2212,5 +2212,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "deneysel-edebiyatin-usta-kalemi-cem-akasi-ne-kadar-iyi-taniyorsun-6-soruluk-edebiyat-testi": {
+    "eklendi": "2026-10-29T05:03:56.981Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-10-29T05:03:58.045Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3myyihqw43w2p"
+      }
+    },
+    "reelIdleri": {}
   }
 }
