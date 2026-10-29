@@ -1,49 +1,42 @@
 {
-  "tarih": "2026-10-28",
+  "tarih": "2026-10-29",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1636,
-      "baslik": "Harvard Üniversitesi",
-      "metin": "Kuzey Amerika'daki ilk yükseköğretim kurumu olan Harvard Üniversitesi kuruldu. Zamanla dünyanın en prestijli eğitim kurumlarından birine dönüşen üniversite, teolojik bir kolej olarak faaliyete başladı.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerikal%C4%B1lar"
+      "yil": 1675,
+      "baslik": "Leibniz tarafından integral sembolünün ilk kullanımı",
+      "metin": "Gottfried Wilhelm Leibniz, kalkülüs tarihindeki en önemli adımlardan birini atarak uzun s (∫) işaretini integral sembolü olarak ilk kez kullandı. Ünlü bilgin, Isaac Newton ile birlikte kalkülüsün mucidi olarak kabul edilmektedir.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz"
     },
     {
-      "yil": 1886,
-      "baslik": "Özgürlük Heykeli",
-      "metin": "Dünyayı Aydınlatan Özgürlük Heykeli, Fransız halkının hediyesi olarak New York'a dikildi. Anıtsal yapı, inşa edildiği günden bu yana Amerika'nın en önemli simgelerinden biri haline geldi.",
+      "yil": 1787,
+      "baslik": "Mozart'ın Don Giovanni operasının ilk sahnelenmesi",
+      "metin": "Klasik Batı Müziği'nin dehası Wolfgang Amadeus Mozart'ın unutulmaz eseri Don Giovanni operası, Prag Ulusal Tiyatro'da ilk kez sanatseverlerle buluştu. Eser, Klasik dönemin en etkili müzikal yapıtları arasında yerini aldı.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C3%96zg%C3%BCrl%C3%BCk_Heykeli"
-    },
-    {
-      "yil": 1893,
-      "baslik": "Çaykovski'nin 6 No'lu Pathétique Senfonisi",
-      "metin": "Pyotr İlyiç Çaykovski'nin 6 No'lu Pathétique Senfonisinin galası Sankt-Peterburg'da yapıldı. Bu unutulmaz eser, bestecinin ölümünden sadece dokuz gün önce müzikseverlerle buluştu.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Pyotr_%C4%B0lyi%C3%A7_%C3%87aykovski"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart"
     },
     {
       "yil": 1927,
-      "baslik": "Türkiye'de İlk Nüfus Sayımı",
-      "metin": "Türkiye'de Cumhuriyet dönemi nüfus sayımlarının ilki gerçekleştirildi. Bu sayım, ülkenin demografik yapısının resmi olarak kayıt altına alınmasında önemli bir dönüm noktası oldu.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye"
+      "baslik": "Ur kenti yakınlarında 5 bin yıllık molekül takımı",
+      "metin": "Irak'ta yapılan arkeolojik kazılarda, Ur kenti yakınlarında 5 bin yıl öncesine ait olduğu belirlenen gizemli bir molekül takımı bulundu. Mezopotamya'nın derinliklerinden gelen bu buluntu dönemin bilimsel mirasına ışık tuttu.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Irak"
     },
     {
-      "yil": 1928,
-      "baslik": "Indonesia Raya Marşı",
-      "metin": "Endonezyalı besteci Wage Rudolf Supratman, ülkenin günümüzdeki ulusal marşı olan \"Indonesia Raya\"yı ilk kez tanıttı. Eser, kısa sürede ulusal kimliğin simgelerinden biri haline geldi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Wage_Rudolf_Supratman"
+      "yil": 1969,
+      "baslik": "İki bilgisayar arasındaki ilk ARPANET bağlantısı",
+      "metin": "İnternet'in öncüsü olan ARPANET üzerinden, iki bilgisayar arasındaki ilk veri bağlantısı başarıyla gerçekleştirildi. Bu gelişme, günümüzdeki küresel elektronik iletişim ağının temellerini attı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0nternet"
     },
     {
-      "yil": 1971,
-      "baslik": "Prospero Uydusu",
-      "metin": "İngiliz yapımı bir roketle fırlatılan ilk Britanya uydusu Prospero uzaya gönderildi. Uydu, uzay ortamının iletişim uyduları üzerindeki etkilerini incelemek üzere bir dizi deney gerçekleştirdi.",
+      "yil": 1991,
+      "baslik": "Galileo uzay aracının Gaspra asteroid uçuşu",
+      "metin": "Galileo uzay aracı, bir asteroide yaklaşarak inceleme yapan ilk uzay aracı olma unvanını kazandı. Görevi sırasında Gaspra asteroidinin yakınından geçerek önemli veriler topladı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Prospero_(spacecraft)"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Galileo_(spacecraft)"
     }
   ]
 }
