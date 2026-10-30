@@ -739,5 +739,14 @@
     "format": "quiz",
     "yayinTarihi": "2026-10-29T05:03:07.732Z",
     "otomatikYayinlandi": true
+  },
+  {
+    "slug": "bir-cumhuriyet-sarkisi-ve-ozsoy-operasi-hakkinda-5-tarihi-gercek",
+    "baslik": "Bir Cumhuriyet Şarkısı ve Özsoy Operası Hakkında 5 Tarihi Gerçek",
+    "konuParmakIzi": "bir cumhuriyet şarkısı",
+    "kategori": "tarih",
+    "format": "trivia",
+    "yayinTarihi": "2026-10-30T05:03:42.487Z",
+    "otomatikYayinlandi": false
   }
 ]
