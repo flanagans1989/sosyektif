@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-10-30T13:11:33.749Z",
+  "sonDenetim": "2026-10-30T18:01:37.026Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -14,6 +14,12 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "site-veri-frankfurter": {
+      "alan": "Ekodektif verileri",
+      "durum": "hata",
+      "detay": "Frankfurter (ECB): The operation was aborted due to timeout",
+      "ilkGorulme": "2026-10-30T18:01:37.026Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
