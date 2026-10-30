@@ -1,66 +1,66 @@
 {
-  "tarih": "2026-10-29",
+  "tarih": "2026-10-30",
   "uretenProvider": "gemini",
   "burclar": {
     "koc": {
-      "yorum": "Sevgili Koç, bugün enerjin öyle yüksek ki adeta yerinde duramıyorsun, aman diyelim acele işe şeytan karışmasın. Aşk hayatında ise küçük bir kıvılcım büyük bir maceranın kapısını aralayabilir, hazır ol.",
+      "yorum": "Sevgili Koç, bugün enerjin öyle yüksek ki adeta 'ben buradayım' diye bağırıyorsun. İş yerinde önüne çıkan ufak tefek aksilikleri hızla çözüp akşamı kendine ödül vererek kapatabilirsin, aşkta ise aceleci olma.",
       "sansliSayi": 7,
       "sansliRenk": "Kırmızı"
     },
     "boga": {
-      "yorum": "Hey Boğa, bu aralar konfor alanından çıkmak sana zulüm gibi gelse de, bugün atacağın küçük adımlar uzun vadede yüzünü güldürecek. Kahveni kap, güzel bir müzik aç ve günün tadını çıkar.",
-      "sansliSayi": 14,
-      "sansliRenk": "Toprak Tonu"
+      "yorum": "Ey Boğa, bu ara konfor alanından çıkmak istemiyorsun ama gökyüzü sana 'ufak bir değişiklikten zarar gelmez' diyor. Kahveni al, keyfine bak ama kariyerindeki yeni teklifleri de tamamen elinin tersiyle itme.",
+      "sansliSayi": 4,
+      "sansliRenk": "Yeşil"
     },
     "ikizler": {
-      "yorum": "Aklında yine kırk tilki, kuyrukları birbirine değmeden dolaşıyor sevimli İkizler. İş yerinde hızına yetişen yok ama dikkat et, iki farklı konuya aynı anda odaklanayım derken anahtarı buzdolabında bulma.",
-      "sansliSayi": 23,
+      "yorum": "Sevgili İkizler, telefonun susmuyor, aklın beş karış havada; yine aynı anda kırk şeyi idare etmeye çalışıyorsun. Sosyal ortamlarda yapacağın eğlenceli sohbetler günün bütün stresini unutturacak.",
+      "sansliSayi": 3,
       "sansliRenk": "Sarı"
     },
     "yengec": {
-      "yorum": "İç sesin bugün adeta bir bilge gibi fısıldıyor, kulak ver ona Yengeç burcu. Evde vakit geçirmek, ruhunu dinlendirmek ve belki de sevdiğin biriyle uzun bir sohbete dalmak için harika bir gün.",
-      "sansliSayi": 4,
+      "yorum": "Yengeç kardeşim, iç sesin bugün biraz dramatik fısıldıyor olabilir, hemen battaniyeye sarılıp dünyaya küsmüyorsun! Evde yapacağın ufak düzenlemeler ve sevdiklerinle yapacağın samimi bir sohbet ruhuna çok iyi gelecek.",
+      "sansliSayi": 2,
       "sansliRenk": "Gümüş"
     },
     "aslan": {
-      "yorum": "Sahne senin, ışıklar senin üzerinde sevgili Aslan ama etrafındakilere de biraz konuşma hakkı tanısan fena olmaz hani. Kariyerinde parladığın bu gün, sosyal hayatında da rüzgar gibi eseceksin.",
+      "yorum": "Işıkların üzerine çevrildiği bir gün seni bekliyor Sevgili Aslan, malum sahne senin. İş hayatında yaratıcılığını konuştururken, aşk hayatında da partnerine biraz alan tanımayı ihmal etme.",
       "sansliSayi": 1,
       "sansliRenk": "Altın Sarısı"
     },
     "basak": {
-      "yorum": "Her şeyi kontrol etme isteğini biraz kenara bırakıp akışa bırakmaya ne dersin Başak? Detaylarda boğulmak yerine büyük resme bakarsan, hayatın ne kadar keyifli olduğunu fark edeceksin.",
-      "sansliSayi": 12,
+      "yorum": "Detaylara takılıp kalma uyarısı yapmasam olmazdı Başak burcu, her şeyi inceden inceye düşünmek seni yoruyor. Bırak ortalık biraz dağınık kalsın, akşamüstü gelecek tatlı bir haber tüm yorgunluğunu silecek.",
+      "sansliSayi": 5,
       "sansliRenk": "Lacivert"
     },
     "terazi": {
-      "yorum": "Kararsızlık terazin yine dengeden şaştı ama üzülme, günün ilerleyen saatlerinde taşlar yerine oturacak. Estetik zevkinin tavan yaptığı bu gün, alışveriş veya dekorasyon için biçilmiş kaftan.",
+      "yorum": "Dengeyi kurmaya çalışmaktan yorulduğunu biliyoruz Terazi, bugün artık karar verme sırası sende. Aşkta ise tatlı bir flört kapıyı çalabilir, estetik ve sanatsal konulara zaman ayırmak için harika bir gün.",
       "sansliSayi": 6,
       "sansliRenk": "Pembe"
     },
     "akrep": {
-      "yorum": "Gizemli bakışlarınla etrafındakileri büyülemeye devam ediyorsun sevgili Akrep. İş hayatındaki sezgilerin seni bu aralar hiç yanıltmıyor, içgüdülerine güvenerek adım atabilirsin.",
+      "yorum": "Gizemli Akrep, bugün içindeki sezgiler adeta radar gibi çalışıyor, kimin ne dediğinden çok ne demek istemediğini anlıyorsun. Finansal konularda temkinli adımlar atmak ve sezgilerine güvenmek kazandıracak.",
       "sansliSayi": 9,
       "sansliRenk": "Bordo"
     },
     "yay": {
-      "yorum": "Macera ruhun yine sırt çantasını hazırlamış bile, en azından kafada! Yeni bir şeyler öğrenmek veya seyahat planları yapmak için harika bir enerji var üzerinde, durma, keşfet.",
-      "sansliSayi": 11,
+      "yorum": "Maceracı Yay, ofiste oturmaktan sıkıldın ve seyahat planları yapmaya başladın bile. Yeni insanlarla tanışmak ve farklı fikirler duymak bugün en büyük enerjkaynağın olacak, tutabilene aşk olsun.",
+      "sansliSayi": 8,
       "sansliRenk": "Mor"
     },
     "oglak": {
-      "yorum": "Çalışmaktan izne çıkmayı unuttun sevgili Oğlak, bugün biraz mola verip kendine ödül verme vakti. Finansal konularda temkinli duruşun sürerken, aşkta biraz daha rahatlamaya ihtiyacın var.",
-      "sansliSayi": 8,
+      "yorum": "Çalışkan Oğlak, bugün işleri dağ gibi yığmış olsan da altından kalkamayacağın hiçbir şey yok. Akşam saatlerinde kendini ödüllendirmeyi unutma, yoksa o ciddiyetinle çevrendekileri de buz kestireceksin.",
+      "sansliSayi": 10,
       "sansliRenk": "Gri"
     },
     "kova": {
-      "yorum": "Geleceğin projelerini şimdiden kafanda tasarlıyorsun malum, fikirlerin yine rengarenk ve uçuk Kova. Sosyal çevrende sürpriz bir karşılaşma gününün seyrini tamamen değiştirebilir.",
-      "sansliSayi": 17,
-      "sansliRenk": "Elektrik Mavisi"
+      "yorum": "Fütüristik fikirlerinle bugün yine ortamların ilgi odağısın Kova. Teknolojik aletlerle ilgili yaşanabilecek ufak çaplı krizlere gül geç, arkadaş grubunla yapacağın sıra dışı bir plan kafanı dağıtacak.",
+      "sansliSayi": 11,
+      "sansliRenk": "Turkuaz"
     },
     "balik": {
-      "yorum": "Hayal dünyasından gerçek dünyaya kısa bir dönüş yapma vakti, yoksa öğle yemeğini unutabilirsin balık burcu. Yaratıcılığının zirvesindesin, bu enerjiyi sanatla veya içindeki coşkuyla buluştur.",
-      "sansliSayi": 3,
-      "sansliRenk": "Deniz Yeşili"
+      "yorum": "Hayalperest Balık, yine rüyalar alemindesin ama bugün ayakların biraz yere basmalı. Sanatsal faaliyetler, müzik ve meditasyon ruhunu beslerken, iş hayatında gözden kaçan detaylara dikkat etmende fayda var.",
+      "sansliSayi": 12,
+      "sansliRenk": "Deniz Mavisi"
     }
   }
 }

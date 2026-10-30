@@ -1,42 +1,49 @@
 {
-  "tarih": "2026-10-29",
+  "tarih": "2026-10-30",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1675,
-      "baslik": "Leibniz tarafından integral sembolünün ilk kullanımı",
-      "metin": "Gottfried Wilhelm Leibniz, kalkülüs tarihindeki en önemli adımlardan birini atarak uzun s (∫) işaretini integral sembolü olarak ilk kez kullandı. Ünlü bilgin, Isaac Newton ile birlikte kalkülüsün mucidi olarak kabul edilmektedir.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz"
+      "yil": 1905,
+      "baslik": "Aspirin İlk Kez Satışa Sunuldu",
+      "metin": "Ağrı, ateş ve iltihabı hafifletmek için kullanılan asetilsalisilik asit etken maddeli Aspirin, ticari olarak ilk kez raflardaki yerini aldı. Zamanla modern tıbbın en temel ve yaygın ilaçlarından biri haline gelen bu buluş, ağrı kesici tedavisinde yeni bir çığır açtı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Aspirin"
     },
     {
-      "yil": 1787,
-      "baslik": "Mozart'ın Don Giovanni operasının ilk sahnelenmesi",
-      "metin": "Klasik Batı Müziği'nin dehası Wolfgang Amadeus Mozart'ın unutulmaz eseri Don Giovanni operası, Prag Ulusal Tiyatro'da ilk kez sanatseverlerle buluştu. Eser, Klasik dönemin en etkili müzikal yapıtları arasında yerini aldı.",
+      "yil": 1938,
+      "baslik": "Orson Welles'in 'Dünyalar Savaşı' Yayını Ülkede Panik Yarattı",
+      "metin": "Orson Welles, H. G. Wells'in ünlü romanı 'Dünyalar Savaşı'nı CBS radyosunda gerçek bir canlı haber bülteni formatında dinleyicilere sundu. Yayını gerçek bir uzaylı istilası zanneden binlerce Amerikalı, kurgusal yayının etkisiyle ülke çapında büyük bir panik yaşadı.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Orson_Welles"
     },
     {
-      "yil": 1927,
-      "baslik": "Ur kenti yakınlarında 5 bin yıllık molekül takımı",
-      "metin": "Irak'ta yapılan arkeolojik kazılarda, Ur kenti yakınlarında 5 bin yıl öncesine ait olduğu belirlenen gizemli bir molekül takımı bulundu. Mezopotamya'nın derinliklerinden gelen bu buluntu dönemin bilimsel mirasına ışık tuttu.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Irak"
-    },
-    {
-      "yil": 1969,
-      "baslik": "İki bilgisayar arasındaki ilk ARPANET bağlantısı",
-      "metin": "İnternet'in öncüsü olan ARPANET üzerinden, iki bilgisayar arasındaki ilk veri bağlantısı başarıyla gerçekleştirildi. Bu gelişme, günümüzdeki küresel elektronik iletişim ağının temellerini attı.",
+      "yil": 1960,
+      "baslik": "Birleşik Krallık'ta İlk Başarılı Böbrek Nakli Yapıldı",
+      "metin": "Edinburgh Kraliyet Kliniği'nde cerrah Michael Woodruff, Birleşik Krallık'taki ilk başarılı böbrek nakli operasyonunu gerçekleştirdi. Bu tarihi müdahale, organ nakli cerrahisinde hem Britanya hem de dünya tıbbı için büyük bir dönüm noktası oldu.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0nternet"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Birle%C5%9Fik_Krall%C4%B1k"
     },
     {
-      "yil": 1991,
-      "baslik": "Galileo uzay aracının Gaspra asteroid uçuşu",
-      "metin": "Galileo uzay aracı, bir asteroide yaklaşarak inceleme yapan ilk uzay aracı olma unvanını kazandı. Görevi sırasında Gaspra asteroidinin yakınından geçerek önemli veriler topladı.",
+      "yil": 1974,
+      "baslik": "Muhammed Ali Yeniden Dünya Ağır Sıklet Boks Şampiyonu",
+      "metin": "Kinşasa'da ringe çıkan efsanevi boksör Muhammed Ali, güçlü rakibi George Foreman'ı yenerek unvanını geri aldı. 20. yüzyılın en önemli spor figürlerinden biri sayılan Ali, bu tarihi zaferle kariyerinin zirve noktalarından birine imza attı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Muhammed_Ali"
+    },
+    {
+      "yil": 1985,
+      "baslik": "Challenger Uzay Mekiği STS-61-A Görevine Başladı",
+      "metin": "NASA'nın uzay mekiği Challenger, STS-61-A görevi için fırlatma rampasından ayrılarak başarıyla yörüngeye yükseldi. Bu uçuş, uzay keşiflerinde kritik roller üstlenen mekiğin tarihindeki son başarılı görevi oldu.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Galileo_(spacecraft)"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Space_Shuttle_Challenger"
+    },
+    {
+      "yil": 2001,
+      "baslik": "Michael Jackson 'Invincible' Albümünü Piyasaya Sürdü",
+      "metin": "'Popun Kralı' olarak anılan Amerikalı efsane sanatçı Michael Jackson, 'Invincible' adlı albümünü dinleyicileriyle buluşturdu. Jackson, müzikal başarıları ve dans kültürüyle 20. yüzyılın en büyük kültürel ikonlarından biri olarak tarihe geçti.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Michael_Jackson"
     }
   ]
 }
