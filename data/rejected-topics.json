@@ -1,17 +1,5 @@
 [
   {
-    "parmakIzi": "kavak yelleri (dizi, 2007)",
-    "baslik": "Kavak Yelleri (dizi, 2007)",
-    "sebep": "\"Kavak Yelleri\" için yeterli Vikipedi kaynağı yok",
-    "tarih": "2026-09-30T05:01:51.775Z"
-  },
-  {
-    "parmakIzi": "dağhan külegeç",
-    "baslik": "Dağhan Külegeç",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için içerik politikamıza uygun değildir.",
-    "tarih": "2026-09-30T05:02:04.027Z"
-  },
-  {
     "parmakIzi": "cemil tugay",
     "baslik": "Cemil Tugay",
     "sebep": "uygun değil: Yaşayan bir siyasetçi ve gerçek kişi olması nedeniyle içerik politikalarımıza uymamaktadır.",
@@ -298,5 +286,41 @@
     "baslik": "Mustafa Sarıgül",
     "sebep": "uygun değil: Yaşayan gerçek bir siyasetçi ve kişi olması nedeniyle site yayın ilkelerine uygun değildir.",
     "tarih": "2026-10-30T05:01:35.765Z"
+  },
+  {
+    "parmakIzi": "sinem dedetaş",
+    "baslik": "Sinem Dedetaş",
+    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odağı olarak site politikalarına uymuyor.",
+    "tarih": "2026-10-31T05:01:33.643Z"
+  },
+  {
+    "parmakIzi": "xhamster",
+    "baslik": "XHamster",
+    "sebep": "uygun değil: Cinsellik ve +18 içerik barındırdığı için sitenin yayın politikasına uygundur değildir.",
+    "tarih": "2026-10-31T05:01:34.477Z"
+  },
+  {
+    "parmakIzi": "seks ve genç kız (film)",
+    "baslik": "Seks ve Genç Kız (film)",
+    "sebep": "uygun değil: Cinsellik, +18 içerik veya bu tür hassas/uygunsuz temalar barındıran konular sitemizin yayın politikasına uygun değildir.",
+    "tarih": "2026-10-31T05:01:35.764Z"
+  },
+  {
+    "parmakIzi": "abdullah çatlı",
+    "baslik": "Abdullah Çatlı",
+    "sebep": "uygun değil: Suç, şiddet, adli olaylar ve yakın tarihli tartışmalı siyasi/kriminal figürler sitenin yayın politikasına ve kurallarına uygun değildir.",
+    "tarih": "2026-10-31T05:01:36.600Z"
+  },
+  {
+    "parmakIzi": "aylin kotil",
+    "baslik": "Aylin Kotil",
+    "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir ve site kuralları gereği yaşayan kişilerin doğrudan içerik konusu yapılması uygun değildir.",
+    "tarih": "2026-10-31T05:01:37.514Z"
+  },
+  {
+    "parmakIzi": "patrick stewart",
+    "baslik": "Patrick Stewart",
+    "sebep": "uygun değil: Konu odağı yaşayan bir gercek kisidir.",
+    "tarih": "2026-10-31T05:01:38.348Z"
   }
 ]
