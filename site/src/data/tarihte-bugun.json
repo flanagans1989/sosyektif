@@ -1,49 +1,42 @@
 {
-  "tarih": "2026-10-30",
+  "tarih": "2026-10-31",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1905,
-      "baslik": "Aspirin İlk Kez Satışa Sunuldu",
-      "metin": "Ağrı, ateş ve iltihabı hafifletmek için kullanılan asetilsalisilik asit etken maddeli Aspirin, ticari olarak ilk kez raflardaki yerini aldı. Zamanla modern tıbbın en temel ve yaygın ilaçlarından biri haline gelen bu buluş, ağrı kesici tedavisinde yeni bir çığır açtı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Aspirin"
+      "yil": 1517,
+      "baslik": "Martin Luther ve 95 Tez",
+      "metin": "Martin Luther, Wittenberg'de 95 tezini kilise kapısına asarak Protestanlığı ilan etti. Alman keşişin attığı bu cesur adım, Batı ve Hristiyanlık tarihinin akışını kökten değiştiren Reform hareketinin başlangıcı oldu.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Martin_Luther"
     },
     {
-      "yil": 1938,
-      "baslik": "Orson Welles'in 'Dünyalar Savaşı' Yayını Ülkede Panik Yarattı",
-      "metin": "Orson Welles, H. G. Wells'in ünlü romanı 'Dünyalar Savaşı'nı CBS radyosunda gerçek bir canlı haber bülteni formatında dinleyicilere sundu. Yayını gerçek bir uzaylı istilası zanneden binlerce Amerikalı, kurgusal yayının etkisiyle ülke çapında büyük bir panik yaşadı.",
+      "yil": 1831,
+      "baslik": "Takvim-i Vekayi Yayına Başladı",
+      "metin": "Osmanlı İmparatorluğu sınırları içinde ilk Osmanlı Türk resmî gazetesi olan Takvim-i Vekayi yayımlanmaya başladı. Bu gazete, dönemin haber akışını ve toplumsal gelişmelerini belgeleyen en önemli kaynaklar arasında yerini aldı.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Takv%C3%AEm-i_Vek%C3%A2yi"
+    },
+    {
+      "yil": 1892,
+      "baslik": "Sherlock Holmes Macereları Okurla Buluştu",
+      "metin": "Sir Arthur Conan Doyle, unutulmaz kahraman Sherlock Holmes'un maceralarını yayınlamaya başladı. İskoç yazarın yarattığı bu suç hikâyeleri, edebiyat dünyasında yepyeni bir çığır açtı.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Orson_Welles"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Arthur_Conan_Doyle"
     },
     {
-      "yil": 1960,
-      "baslik": "Birleşik Krallık'ta İlk Başarılı Böbrek Nakli Yapıldı",
-      "metin": "Edinburgh Kraliyet Kliniği'nde cerrah Michael Woodruff, Birleşik Krallık'taki ilk başarılı böbrek nakli operasyonunu gerçekleştirdi. Bu tarihi müdahale, organ nakli cerrahisinde hem Britanya hem de dünya tıbbı için büyük bir dönüm noktası oldu.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Birle%C5%9Fik_Krall%C4%B1k"
-    },
-    {
-      "yil": 1974,
-      "baslik": "Muhammed Ali Yeniden Dünya Ağır Sıklet Boks Şampiyonu",
-      "metin": "Kinşasa'da ringe çıkan efsanevi boksör Muhammed Ali, güçlü rakibi George Foreman'ı yenerek unvanını geri aldı. 20. yüzyılın en önemli spor figürlerinden biri sayılan Ali, bu tarihi zaferle kariyerinin zirve noktalarından birine imza attı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Muhammed_Ali"
-    },
-    {
-      "yil": 1985,
-      "baslik": "Challenger Uzay Mekiği STS-61-A Görevine Başladı",
-      "metin": "NASA'nın uzay mekiği Challenger, STS-61-A görevi için fırlatma rampasından ayrılarak başarıyla yörüngeye yükseldi. Bu uçuş, uzay keşiflerinde kritik roller üstlenen mekiğin tarihindeki son başarılı görevi oldu.",
+      "yil": 2000,
+      "baslik": "Uluslararası Uzay İstasyonu'na İlk Mürettebat",
+      "metin": "Soyuz TM-31 uzay aracı, Uluslararası Uzay İstasyonu'na ilk yerleşik mürettebatı taşıyarak fırlatıldı. İstasyon, o günden bu yana kesintisiz olarak insanlı bir şekilde görev yapmaya devam ediyor.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Space_Shuttle_Challenger"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Soyuz_TM-31"
     },
     {
-      "yil": 2001,
-      "baslik": "Michael Jackson 'Invincible' Albümünü Piyasaya Sürdü",
-      "metin": "'Popun Kralı' olarak anılan Amerikalı efsane sanatçı Michael Jackson, 'Invincible' adlı albümünü dinleyicileriyle buluşturdu. Jackson, müzikal başarıları ve dans kültürüyle 20. yüzyılın en büyük kültürel ikonlarından biri olarak tarihe geçti.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Michael_Jackson"
+      "yil": 2005,
+      "baslik": "Plüton'un Nix ve Hydra Uydularının Keşfi",
+      "metin": "Hubble Uzay Teleskobu'nun yaklaşık beş ay önce çektiği fotoğraflara dayanarak Plüton'un Nix ve Hydra adlı uydularının keşfi duyuruldu. Bu keşif, Güneş Sistemi'nin en uzak köşesindeki gizemleri biraz daha araladı.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Moons_of_Pluto"
     }
   ]
 }
