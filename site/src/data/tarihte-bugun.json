@@ -1,42 +1,49 @@
 {
-  "tarih": "2026-10-31",
+  "tarih": "2026-11-01",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1517,
-      "baslik": "Martin Luther ve 95 Tez",
-      "metin": "Martin Luther, Wittenberg'de 95 tezini kilise kapısına asarak Protestanlığı ilan etti. Alman keşişin attığı bu cesur adım, Batı ve Hristiyanlık tarihinin akışını kökten değiştiren Reform hareketinin başlangıcı oldu.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Martin_Luther"
-    },
-    {
-      "yil": 1831,
-      "baslik": "Takvim-i Vekayi Yayına Başladı",
-      "metin": "Osmanlı İmparatorluğu sınırları içinde ilk Osmanlı Türk resmî gazetesi olan Takvim-i Vekayi yayımlanmaya başladı. Bu gazete, dönemin haber akışını ve toplumsal gelişmelerini belgeleyen en önemli kaynaklar arasında yerini aldı.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Takv%C3%AEm-i_Vek%C3%A2yi"
-    },
-    {
-      "yil": 1892,
-      "baslik": "Sherlock Holmes Macereları Okurla Buluştu",
-      "metin": "Sir Arthur Conan Doyle, unutulmaz kahraman Sherlock Holmes'un maceralarını yayınlamaya başladı. İskoç yazarın yarattığı bu suç hikâyeleri, edebiyat dünyasında yepyeni bir çığır açtı.",
+      "yil": 1604,
+      "baslik": "Shakespeare'in Othello Oyunu İlk Kez Sahnelendi",
+      "metin": "William Shakespeare'in kaleme aldığı ünlü Othello adlı eser ilk kez Londra'da izleyiciyle buluştu. Yazarın bu başyapıtı, dünya tiyatro edebiyatının en önemli klasikleri arasına girdi.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Arthur_Conan_Doyle"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/William_Shakespeare"
     },
     {
-      "yil": 2000,
-      "baslik": "Uluslararası Uzay İstasyonu'na İlk Mürettebat",
-      "metin": "Soyuz TM-31 uzay aracı, Uluslararası Uzay İstasyonu'na ilk yerleşik mürettebatı taşıyarak fırlatıldı. İstasyon, o günden bu yana kesintisiz olarak insanlı bir şekilde görev yapmaya devam ediyor.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Soyuz_TM-31"
+      "yil": 1938,
+      "baslik": "Seabiscuit ve War Admiral'in Yüzyılın Yarışı",
+      "metin": "Seabiscuit, 'yüzyılın maçı' olarak adlandırılan özel yarışta 1937 Triple Crown galibi War Admiral'i sürpriz bir şekilde mağlup etti. Bu unutulmaz zafer, ABD'de at yarışları tarihinin en büyük efsanelerinden birine dönüştü.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Seabiscuit"
     },
     {
-      "yil": 2005,
-      "baslik": "Plüton'un Nix ve Hydra Uydularının Keşfi",
-      "metin": "Hubble Uzay Teleskobu'nun yaklaşık beş ay önce çektiği fotoğraflara dayanarak Plüton'un Nix ve Hydra adlı uydularının keşfi duyuruldu. Bu keşif, Güneş Sistemi'nin en uzak köşesindeki gizemleri biraz daha araladı.",
+      "yil": 1939,
+      "baslik": "Suni Döllenme Yoluyla Dünyaya Gelen İlk Tavşan",
+      "metin": "Suni döllenme yöntemiyle dünyaya gelen ilk tavşan basına tanıtıldı. Bu olay, üreme biyolojisi alanında dönüm noktası niteliğinde yeni çalışmaların önünü açtı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Suni_tohumlama"
+    },
+    {
+      "yil": 1959,
+      "baslik": "Buz Hokeyinde Maske Devrini Başlatan Olay",
+      "metin": "Yüzüne hokey diski çarpan Jacques Plante, maçın geri kalanında yüz maskesi takarak oynamaya devam etti. Bu talihsiz kaza, buz hokeyi kalecileri için maskeyi zorunlu ekipman hâline getirdi.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Hockey_puck"
+    },
+    {
+      "yil": 1963,
+      "baslik": "Arecibo Gözlemevi Açıldı",
+      "metin": "Puerto Rico'daki Arecibo Gözlemevi, o dönem inşa edilen en büyük radyo teleskopla resmi olarak kapılarını açtı. Bu devasa tesis, uzay araştırmalarında çığır açan keşiflere ev sahipliği yaptı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Moons_of_Pluto"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Arecibo_Observatory"
+    },
+    {
+      "yil": 1987,
+      "baslik": "British Rail Class 43'ten Rekor Hız",
+      "metin": "British Rail Class 43 (HST) treni, elektrik motorları için dahili yakıt kullanan raylı taşıtlar arasında saatte 238 kilometre ile rekor bir hıza ulaştı. Bu yüksek hızlı tren tasarımı demir yolu ulaşımında yeni bir dönemin kapısını araladı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/British_Rail_Class_43_(HST)"
     }
   ]
 }

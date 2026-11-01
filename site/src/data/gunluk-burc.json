@@ -1,66 +1,66 @@
 {
-  "tarih": "2026-10-31",
+  "tarih": "2026-11-01",
   "uretenProvider": "gemini",
   "burclar": {
     "koc": {
-      "yorum": "Sevgili Koç, bugün enerjini yanlış yerlere akıtıp pilleri erkenden tüketme tehliken var, o yüzden yarış atı gibi koşturmayı bırakıp biraz nefes al. İş yerinde önüne çıkan ufak tefek aksilikleri dert etme, pratik zekanla hepsini halledersin.",
+      "yorum": "Bugün enerjini halının altına süpürülen tozları temizlemeye harcayabilirsin, benden söylemesi. Aşk hayatında ise aceleci tavırların karşı tarafın kafasını karıştırabilir, biraz yavaşlamakta fayda var.",
       "sansliSayi": 7,
       "sansliRenk": "Kırmızı"
     },
     "boga": {
-      "yorum": "Hey Boğa, bu aralar konfor alanından çıkmak sana eziyet gibi geliyor olabilir ama ufak bir değişiklik ruhuna çok iyi gelecektir. Akşam saatlerinde sevdiğin biriyle yapacağın uzun bir sohbet tüm yorgunluğunu silecek.",
+      "yorum": "Midenin sesini dinleyip en sevdiğin tatlıya kavuşmak için harika bir gün sevgili Boğa. İş yerinde ise konfor alanından çıkmak zor gelebilir ama ufak bir risk almak fena fikir sayılmaz.",
       "sansliSayi": 12,
       "sansliRenk": "Yeşil"
     },
     "ikizler": {
-      "yorum": "Aklında bin bir tane tilki dolaşıyor yine sevgili İkizler, ama bugün bu kuyrukların hiçbirini birbirine değdirmemeyi başarabilirsin. Sosyal ortamlarda parlayacağın, yeni insanlarla tatlı flörtlerin kapısını aralayabileceğin bir gün seni bekliyor.",
+      "yorum": "Aklında yine kırk tane tilki dolaşıyor ve kuyrukları birbirine değmiyor maalesef. Sosyal ortamlarda yapacağın esprili sohbetler günün stresini unutturacak, enerjini yüksek tut.",
       "sansliSayi": 23,
       "sansliRenk": "Sarı"
     },
     "yengec": {
-      "yorum": "İç sesin bugün biraz fazla yüksek perdeden konuşuyor olabilir, ona kulak ver ama evham yapıp kendini eve kapatma yengeççim. Kariyerinde uzun süredir beklediğin o minik takdir nihayet kapını çalabilir, keyfini çıkar.",
+      "yorum": "Evinin o huzurlu atmosferi bugün seni resmen mıknatıs gibi çekecek. Kalbini açtığın biriyle yapacağın derin bir konuşma, içindeki bazı buzları eritebilir.",
       "sansliSayi": 4,
       "sansliRenk": "Gümüş"
     },
     "aslan": {
-      "yorum": "Güneş gibi parlamak fıtratında var, bugün de gözler üzerinde olacak sevgili Aslan; ama egonu biraz geride bırakıp karşısındakini dinleyen taraf olursan puanları toplarsın. Aşk hayatında ise küçük bir sürpriz kalbinin yeniden pır pır etmesini sağlayabilir.",
+      "yorum": "Işıklar üzerindeyken hata yapmak bile havalı durabilir ama sen yine de porselenleri kırmamaya dikkat et. Kariyerinde parlamak için harika bir gün, egoyu biraz geride bırakırsan sırtın yere gelmez.",
       "sansliSayi": 1,
       "sansliRenk": "Altın Sarısı"
     },
     "basak": {
-      "yorum": "Her şeyi kusursuz yapma obsesyonunu bugün bir kenara bırakmaya ne dersin? Bırak da biraz işler kendi kendine aksasın, sen de kahveni alıp izlemenin tadını çıkar. Detaylarda boğulmak yerine büyük resme odaklandığında günün ne kadar keyifli geçtiğini fark edeceksin.",
+      "yorum": "Detaylarda boğulma, ortadaki büyük resmi kaçırıyorsun sevgili Başak. İş masanı toplamak ruhuna iyi gelebilir; akşamüstü kahveni yudumlarken ufak bir mola vermeyi unutma.",
       "sansliSayi": 15,
-      "sansliRenk": "Lacivert"
+      "sansliRenk": "Bej"
     },
     "terazi": {
-      "yorum": "Karar vermek yine ölüm gibi geliyor değil mi sevgili Terazi? İki seçenek arasında kalıp gri alanlarda kaybolmaktansa, bugün içinden gelen ilk sese güvenip bir adım atmalısın. Estetik ve sanatla ilgilenmek akşam ruhuna adeta bir masaj gibi gelecektir.",
+      "yorum": "Karar vermenin ölümden zor olduğu o günlerden biri daha, şaşırdık mı? Aşkta dengeyi bulacağım derken kendi isteklerini unutmaman gerektiğini hatırlatırım.",
       "sansliSayi": 6,
       "sansliRenk": "Pembe"
     },
     "akrep": {
-      "yorum": "Derin sularında yüzerken etraftakileri korkutuyorsun bazen sevgili Akrep, biraz gizemli olmak güzel ama duvarları örmek yerine kapı arala. Finansal konularda yüzünü güldürecek akıllıca bir hamle yapabilir, uzun zamandır kafanı kurcalayan bir borcu kapatabilirsin.",
+      "yorum": "Gizemli hallerin yine çevrendekilerin merakını doruklara çıkarıyor. İş hayatında sezgilerine güvenerek atacağın gizli adımlar, yakında meyvesini verebilir.",
       "sansliSayi": 9,
       "sansliRenk": "Bordo"
     },
     "yay": {
-      "yorum": "Macera ruhun yine sırt çantasını hazırlamış geziyor, belki fiziksel olarak değil ama zihnen çok uzaklardasın. İş yerinde rutin masabaşı işler seni daraltıyorsa, öğle arasında açık havada yapacağın kısa bir yürüyüş tüm frekansını sıfırlayabilir.",
+      "yorum": "Çantayı bi' kenara atıp uzaklara kaçma isteği yine tepene vurdu, değil mi? Günlük rutinler sıksa da, akşamüstü alacağın spontane bir haber yüzünü güldürebilir.",
       "sansliSayi": 19,
       "sansliRenk": "Mor"
     },
     "oglak": {
-      "yorum": "Çalışmaktan, üretmekten başka bir şey düşünmediğin o ciddiyet duvarlarını bugün biraz esnet lütfen. İş arkadaşlarınla yapacağın kahve molası dedikodudan öte, sana çok ilham verici yeni fikirler getirebilir, kaskatı durma.",
+      "yorum": "Pazar günü bile iş düşünmekten vazgeçmiyorsun, bravo valla sana! Biraz akışa bırakmayı denersen, hayatın sana ufak sürprizler hazırladığını fark edebilirsin.",
       "sansliSayi": 8,
       "sansliRenk": "Kahverengi"
     },
     "kova": {
-      "yorum": "Geleceğin planlarını yaparken bugünü kaçırıyorsun sevgili Kova, biraz şu anın tadını çıkarmaya bak. Arkadaş grubunla ilgili ani gelişen bir plan akşamına neşe katacak, teknolojik aletlerin azizliğine uğramamak için de yedekleme yapmayı unutma.",
+      "yorum": "Fütüristik fikirlerinle yine etrafındakileri şaşırtmaya hazırsın. Sosyal medyada karşına çıkacak ilginç bir makale veya video, yepyeni bir hobinin kıvılcımını yakabilir.",
       "sansliSayi": 11,
       "sansliRenk": "Mavi"
     },
     "balik": {
-      "yorum": "Hayal dünyasından gerçekler evrenine iniş yapma vakti geldi sevgili Balık, ama merak etme burası da fena sayılmaz. Duygularını yaratıcı projelere dönüştürmek için harika bir gün; yaz, çiz veya sadece hayal et ama enerjini yüksek tut.",
-      "sansliSayi": 3,
-      "sansliRenk": "Deniz Yeşili"
+      "yorum": "Gerçek dünyadan kopup hayal denizlerinde yüzmek için şahane bir gün. Sanatsal faaliyetlerle ilgilenmek veya sadece müzik dinleyip dalıp gitmek ruhuna en iyi gelecekteki ilaç.",
+      "sansliSayi": 18,
+      "sansliRenk": "Deniz Mavisi"
     }
   }
 }
