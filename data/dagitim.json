@@ -2241,5 +2241,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "uluslararasi-iliskilerin-kaderini-degistiren-gizli-diplomasi-ve-protokol-kurallari-hakkinda-6-carpici-gercek": {
+    "eklendi": "2026-11-01T05:02:42.488Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-11-01T05:02:43.218Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mz7zsbwyex2n"
+      }
+    },
+    "reelIdleri": {}
   }
 }
