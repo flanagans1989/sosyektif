@@ -1,16 +1,9 @@
 {
-  "tarih": "2026-10-31T05:05:29.760Z",
+  "tarih": "2026-11-01T05:01:50.523Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 0,
-  "onayaDusen": 1,
-  "reddedilen": 6,
-  "hatalar": [
-    "Sinem Dedetaş: uygun değil: Yaşayan gerçek bir kişi olduğu için konu odağı olarak site politikalarına uymuyor.",
-    "XHamster: uygun değil: Cinsellik ve +18 içerik barındırdığı için sitenin yayın politikasına uygundur değildir.",
-    "Seks ve Genç Kız (film): uygun değil: Cinsellik, +18 içerik veya bu tür hassas/uygunsuz temalar barındıran konular sitemizin yayın politikasına uygun değildir.",
-    "Abdullah Çatlı: uygun değil: Suç, şiddet, adli olaylar ve yakın tarihli tartışmalı siyasi/kriminal figürler sitenin yayın politikasına ve kurallarına uygun değildir.",
-    "Aylin Kotil: uygun değil: Konu odağı yaşayan bir gerçek kişidir ve site kuralları gereği yaşayan kişilerin doğrudan içerik konusu yapılması uygun değildir.",
-    "Patrick Stewart: uygun değil: Konu odağı yaşayan bir gercek kisidir."
-  ]
+  "otomatikYayinlanan": 1,
+  "onayaDusen": 0,
+  "reddedilen": 0,
+  "hatalar": []
 }
