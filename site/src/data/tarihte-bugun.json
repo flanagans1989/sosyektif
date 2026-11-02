@@ -1,49 +1,62 @@
 {
-  "tarih": "2026-11-01",
+  "tarih": "2026-11-02",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1604,
-      "baslik": "Shakespeare'in Othello Oyunu İlk Kez Sahnelendi",
-      "metin": "William Shakespeare'in kaleme aldığı ünlü Othello adlı eser ilk kez Londra'da izleyiciyle buluştu. Yazarın bu başyapıtı, dünya tiyatro edebiyatının en önemli klasikleri arasına girdi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/William_Shakespeare"
+      "yil": 1815,
+      "baslik": "Modern Bilgisayar Mantığının Öncüsü George Boole Doğdu",
+      "metin": "Mantığı felsefi bir dil çalışmasından çıkarıp ikili sistemli cebirsel denklemlere dönüştüren İngiliz matematikçi George Boole dünyaya geldi. Boole'un geliştirdiği matematiksel mantık, modern bilgisayar biliminin ve dijital teknolojilerin temelini oluşturdu.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/George_Boole"
     },
     {
-      "yil": 1938,
-      "baslik": "Seabiscuit ve War Admiral'in Yüzyılın Yarışı",
-      "metin": "Seabiscuit, 'yüzyılın maçı' olarak adlandırılan özel yarışta 1937 Triple Crown galibi War Admiral'i sürpriz bir şekilde mağlup etti. Bu unutulmaz zafer, ABD'de at yarışları tarihinin en büyük efsanelerinden birine dönüştü.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Seabiscuit"
+      "yil": 1936,
+      "baslik": "BBC Dünyanın İlk Düzenli Yüksek Çözünürlüklü Yayınını Başlattı",
+      "metin": "BBC Televizyon Servisi, o dönem 200 satır ve üzeri olarak tanımlanan ilk düzenli yüksek çözünürlüklü televizyon yayınlarına adım attı. Yayıncılık tarihinde çığır açan bu girişim, daha sonra BBC1 adını alarak günümüze kadar ulaştı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/BBC_Television"
     },
     {
-      "yil": 1939,
-      "baslik": "Suni Döllenme Yoluyla Dünyaya Gelen İlk Tavşan",
-      "metin": "Suni döllenme yöntemiyle dünyaya gelen ilk tavşan basına tanıtıldı. Bu olay, üreme biyolojisi alanında dönüm noktası niteliğinde yeni çalışmaların önünü açtı.",
+      "yil": 1947,
+      "baslik": "Howard Hughes Dev Uçak Spruce Goose ile Havalandı",
+      "metin": "Havacılık tutkunu iş insanı Howard Hughes, o tarihe kadar inşa edilmiş en büyük sabit kanatlı uçak olan Spruce Goose'u Kaliforniya'da havalandırdı. Ahşap gövdesiyle devasa bir mühendislik ürünü olan bu hava aracının ilk uçuşu, aynı zamanda son uçuşu oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Kaliforniya"
+    },
+    {
+      "yil": 1988,
+      "baslik": "İnternetin İlk Büyük Solucanı Morris MIT'den Salındı",
+      "metin": "Medyanın geniş çapta ilgisini çeken ilk internet solucanı olan Morris solucanı, MIT üzerinden ağa bırakıldı. Kendi kendini kopyalayan bu zararlı yazılım çok sayıda bilgisayarı etkileyerek dijital güvenliğin ciddiyetini tüm dünyaya gösterdi.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Suni_tohumlama"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Morris_worm"
     },
     {
-      "yil": 1959,
-      "baslik": "Buz Hokeyinde Maske Devrini Başlatan Olay",
-      "metin": "Yüzüne hokey diski çarpan Jacques Plante, maçın geri kalanında yüz maskesi takarak oynamaya devam etti. Bu talihsiz kaza, buz hokeyi kalecileri için maskeyi zorunlu ekipman hâline getirdi.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Hockey_puck"
+      "yil": 1989,
+      "baslik": "Türkiye'de Kadınlar Tacize Karşı Mor İğne Kampanyasını Başlattı",
+      "metin": "Kadınlar, cinsel tacize dikkat çekmek amacıyla 'Bedenimiz Bizimdir, Cinsel Tacize Hayır' kampanyasını hayata geçirdi. Vapurda yapılan basın açıklamasının ardından kadınlara dağıtılan iğneler, bu eylemin kamuoyunda 'Mor İğne' adıyla anılmasını sağladı.",
+      "kategori": "tarih"
     },
     {
-      "yil": 1963,
-      "baslik": "Arecibo Gözlemevi Açıldı",
-      "metin": "Puerto Rico'daki Arecibo Gözlemevi, o dönem inşa edilen en büyük radyo teleskopla resmi olarak kapılarını açtı. Bu devasa tesis, uzay araştırmalarında çığır açan keşiflere ev sahipliği yaptı.",
+      "yil": 2000,
+      "baslik": "Uluslararası Uzay İstasyonu'na İlk Mürettebat Ulaştı",
+      "metin": "Expedition 1 görevi kapsamında astronot William Shepherd ile kozmonotlar Sergei Krikalev ve Yuri Gidzenko, Uluslararası Uzay İstasyonu'na yerleşen ilk mürettebat oldu. İstasyonda 136 gün geçiren üç kişilik ekip, uzayda kesintisiz insan varlığının başlangıcına imza attı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Arecibo_Observatory"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Expedition_1"
     },
     {
-      "yil": 1987,
-      "baslik": "British Rail Class 43'ten Rekor Hız",
-      "metin": "British Rail Class 43 (HST) treni, elektrik motorları için dahili yakıt kullanan raylı taşıtlar arasında saatte 238 kilometre ile rekor bir hıza ulaştı. Bu yüksek hızlı tren tasarımı demir yolu ulaşımında yeni bir dönemin kapısını araladı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/British_Rail_Class_43_(HST)"
+      "yil": 2000,
+      "baslik": "Vladimir Kramnik Satranç Şampiyonu Garry Kasparov'u Yendi",
+      "metin": "Dünya Satranç Şampiyonası'nda Vladimir Kramnik, vatandaşı Garry Kasparov'u yenerek büyük bir zafere imza attı. Kramnik'in bu galibiyetiyle birlikte Kasparov'un tam 15 yıldır kesintisiz süren dünya şampiyonluğu unvanı resmen sona erdi.",
+      "kategori": "spor",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Satran%C3%A7"
+    },
+    {
+      "yil": 2008,
+      "baslik": "Lewis Hamilton Son Virajda Formula 1 Şampiyonu Oldu",
+      "metin": "Brezilya Grand Prix'sinin son virajlarında Timo Glock'u geçmeyi başaran Lewis Hamilton, sadece tek puan farkla Formula 1 Dünya Pilotlar Şampiyonluğu'na ulaştı. Yarışın son anlarına kadar süren bu nefes kesici mücadele, Hamilton'ın kariyerindeki ilk şampiyonluğu oldu.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
     }
   ]
 }

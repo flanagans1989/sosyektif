@@ -1,66 +1,66 @@
 {
-  "tarih": "2026-11-01",
+  "tarih": "2026-11-02",
   "uretenProvider": "gemini",
   "burclar": {
     "koc": {
-      "yorum": "Bugün enerjini halının altına süpürülen tozları temizlemeye harcayabilirsin, benden söylemesi. Aşk hayatında ise aceleci tavırların karşı tarafın kafasını karıştırabilir, biraz yavaşlamakta fayda var.",
+      "yorum": "Bugün enerjin tavan yapmış durumda, sanki kahveyi doğrudan damardan almış gibisin! İş yerinde hızına yetişemeyenler arkandan el sallamakla yetinebilir, aşk hayatında ise ufak bir spontane plan günü kurtarır.",
       "sansliSayi": 7,
       "sansliRenk": "Kırmızı"
     },
     "boga": {
-      "yorum": "Midenin sesini dinleyip en sevdiğin tatlıya kavuşmak için harika bir gün sevgili Boğa. İş yerinde ise konfor alanından çıkmak zor gelebilir ama ufak bir risk almak fena fikir sayılmaz.",
+      "yorum": "Sevgili Boğa, konfor alanından çıkmak bugün biraz zor gelebilir ama bu koşturmacada kendine küçük bir mola vermeyi hak ediyorsun. Akşamüstü atıştıracağın lezzetli bir şeyler tüm stresini silip süpürebilir.",
       "sansliSayi": 12,
       "sansliRenk": "Yeşil"
     },
     "ikizler": {
-      "yorum": "Aklında yine kırk tane tilki dolaşıyor ve kuyrukları birbirine değmiyor maalesef. Sosyal ortamlarda yapacağın esprili sohbetler günün stresini unutturacak, enerjini yüksek tut.",
+      "yorum": "Telefonun bugün susmak bilmeyebilir, maşallah dedikodunun ve haberin merkezi sensin! Aklındaki o parlak fikri hayata geçirmek için harika bir gün, sadece aynı anda kırk işe birden kalkışıp kafayı yakma.",
       "sansliSayi": 23,
       "sansliRenk": "Sarı"
     },
     "yengec": {
-      "yorum": "Evinin o huzurlu atmosferi bugün seni resmen mıknatıs gibi çekecek. Kalbini açtığın biriyle yapacağın derin bir konuşma, içindeki bazı buzları eritebilir.",
+      "yorum": "İç sesin bugün, 'evde oturup battaniye alt dizi izle' diye haykırıyor olabilir, duymazdan gelme derim. Kalbinin kapılarını çalacak tatlı bir mesaj, gününün neşesini aniden ikiye katlayabilir.",
       "sansliSayi": 4,
       "sansliRenk": "Gümüş"
     },
     "aslan": {
-      "yorum": "Işıklar üzerindeyken hata yapmak bile havalı durabilir ama sen yine de porselenleri kırmamaya dikkat et. Kariyerinde parlamak için harika bir gün, egoyu biraz geride bırakırsan sırtın yere gelmez.",
-      "sansliSayi": 1,
+      "yorum": "Sahne senin, ışıklar senin üzerindesin sevgili Aslan, yine her zamanki gibi ortalığı kasıp kavuruyorsun. İş projelerinde liderliği eline almak için biçilmiş kaftan bir gün, dikkat et de nazar değmesin.",
+      "sansliSayi": 19,
       "sansliRenk": "Altın Sarısı"
     },
     "basak": {
-      "yorum": "Detaylarda boğulma, ortadaki büyük resmi kaçırıyorsun sevgili Başak. İş masanı toplamak ruhuna iyi gelebilir; akşamüstü kahveni yudumlarken ufak bir mola vermeyi unutma.",
+      "yorum": "Yine her şeyi kusursuz yapma peşindesin ama madalyonun diğer yüzüne de bakmak lazım; biraz hata yapmak o kadar da korkunç değil. Detaylarda boğulmak yerine büyük resme odaklan, ruhun dinlensin.",
       "sansliSayi": 15,
-      "sansliRenk": "Bej"
+      "sansliRenk": "Lacivert"
     },
     "terazi": {
-      "yorum": "Karar vermenin ölümden zor olduğu o günlerden biri daha, şaşırdık mı? Aşkta dengeyi bulacağım derken kendi isteklerini unutmaman gerektiğini hatırlatırım.",
+      "yorum": "Kararsızlık terazin bugün yine bozuldu, hangi kıyafeti giyeceğinden hangi kahveyi alacağına kadar her şey bir kriz sebebi olabilir. Neyse ki caziben devrede de bu minik kararsızlıkları gülerek atlatıyorsun.",
       "sansliSayi": 6,
       "sansliRenk": "Pembe"
     },
     "akrep": {
-      "yorum": "Gizemli hallerin yine çevrendekilerin merakını doruklara çıkarıyor. İş hayatında sezgilerine güvenerek atacağın gizli adımlar, yakında meyvesini verebilir.",
-      "sansliSayi": 9,
+      "yorum": "Gizemli havan bugün zirvede, kimse ne düşündüğünü tam olarak çözemiyor ama bu durum senin hoşuna gidiyor gibi. Kariyerinde arkadan yürüyen işleri sezmek için altın altıncı hissin tam mesaide.",
+      "sansliSayi": 8,
       "sansliRenk": "Bordo"
     },
     "yay": {
-      "yorum": "Çantayı bi' kenara atıp uzaklara kaçma isteği yine tepene vurdu, değil mi? Günlük rutinler sıksa da, akşamüstü alacağın spontane bir haber yüzünü güldürebilir.",
-      "sansliSayi": 19,
+      "yorum": "Ayakların yerden kesilmiş gibi, yeni maceralar ve seyahat planları zihnini meşgul ediyor. Rutin işler gözüne biraz sıkıcı gelebilir ama akşam saatlerinde sürpriz bir buluşma tüm keyfini yerine getirecek.",
+      "sansliSayi": 21,
       "sansliRenk": "Mor"
     },
     "oglak": {
-      "yorum": "Pazar günü bile iş düşünmekten vazgeçmiyorsun, bravo valla sana! Biraz akışa bırakmayı denersen, hayatın sana ufak sürprizler hazırladığını fark edebilirsin.",
-      "sansliSayi": 8,
-      "sansliRenk": "Kahverengi"
+      "yorum": "Ciddiyetle örülü duvarlarını bugün biraz esnetmeye ne dersin? İşkolikliğe ara verip kendini ödüllendir, yoksa excel tabloları rüyalarına girmeye başlayacak.",
+      "sansliSayi": 10,
+      "sansliRenk": "Gri"
     },
     "kova": {
-      "yorum": "Fütüristik fikirlerinle yine etrafındakileri şaşırtmaya hazırsın. Sosyal medyada karşına çıkacak ilginç bir makale veya video, yepyeni bir hobinin kıvılcımını yakabilir.",
-      "sansliSayi": 11,
+      "yorum": "Fütüristik fikirlerinle yine çevrendekileri şaşırtıyorsun, kimsenin aklına gelmeyen çözümler senin cebinde. Sosyal ortamlarda yapacağın ilginç bir sohbet yepyeni kapılar aralayabilir.",
+      "sansliSayi": 17,
       "sansliRenk": "Mavi"
     },
     "balik": {
-      "yorum": "Gerçek dünyadan kopup hayal denizlerinde yüzmek için şahane bir gün. Sanatsal faaliyetlerle ilgilenmek veya sadece müzik dinleyip dalıp gitmek ruhuna en iyi gelecekteki ilaç.",
-      "sansliSayi": 18,
-      "sansliRenk": "Deniz Mavisi"
+      "yorum": "Hayal dünyan bugün o kadar zengin ki, gerçek dünyaya adapte olmakta zorlanabilirsin. Sanatsal işlerle uğraşmak ya da sadece müzik dinleyerek dalıp gitmek ruhuna en iyi gelecek reçete.",
+      "sansliSayi": 3,
+      "sansliRenk": "Deniz Yeşili"
     }
   }
 }
