@@ -1,62 +1,49 @@
 {
-  "tarih": "2026-11-02",
+  "tarih": "2026-11-03",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1815,
-      "baslik": "Modern Bilgisayar Mantığının Öncüsü George Boole Doğdu",
-      "metin": "Mantığı felsefi bir dil çalışmasından çıkarıp ikili sistemli cebirsel denklemlere dönüştüren İngiliz matematikçi George Boole dünyaya geldi. Boole'un geliştirdiği matematiksel mantık, modern bilgisayar biliminin ve dijital teknolojilerin temelini oluşturdu.",
+      "yil": 1749,
+      "baslik": "Daniel Rutherford'un Doğumu",
+      "metin": "Azotu izole eden İskoç hekim, kimyager ve botanikçi Daniel Rutherford dünyaya geldi. Bilim dünyasına yaptığı bu katkı, kimya tarihinde çığır açtı.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/George_Boole"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Daniel_Rutherford"
     },
     {
-      "yil": 1936,
-      "baslik": "BBC Dünyanın İlk Düzenli Yüksek Çözünürlüklü Yayınını Başlattı",
-      "metin": "BBC Televizyon Servisi, o dönem 200 satır ve üzeri olarak tanımlanan ilk düzenli yüksek çözünürlüklü televizyon yayınlarına adım attı. Yayıncılık tarihinde çığır açan bu girişim, daha sonra BBC1 adını alarak günümüze kadar ulaştı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/BBC_Television"
+      "yil": 1900,
+      "baslik": "Adolf Dassler'in Doğumu",
+      "metin": "Adidas şirketinin kurucusu olan Alman mucit ve iş insanı Adolf Dassler dünyaya geldi. Tasarladığı spor ayakkabılar ve patentini aldığı yenilikler, spor giyim endüstrisinin temellerini attı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Adolf_Dassler"
     },
     {
-      "yil": 1947,
-      "baslik": "Howard Hughes Dev Uçak Spruce Goose ile Havalandı",
-      "metin": "Havacılık tutkunu iş insanı Howard Hughes, o tarihe kadar inşa edilmiş en büyük sabit kanatlı uçak olan Spruce Goose'u Kaliforniya'da havalandırdı. Ahşap gövdesiyle devasa bir mühendislik ürünü olan bu hava aracının ilk uçuşu, aynı zamanda son uçuşu oldu.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Kaliforniya"
-    },
-    {
-      "yil": 1988,
-      "baslik": "İnternetin İlk Büyük Solucanı Morris MIT'den Salındı",
-      "metin": "Medyanın geniş çapta ilgisini çeken ilk internet solucanı olan Morris solucanı, MIT üzerinden ağa bırakıldı. Kendi kendini kopyalayan bu zararlı yazılım çok sayıda bilgisayarı etkileyerek dijital güvenliğin ciddiyetini tüm dünyaya gösterdi.",
+      "yil": 1906,
+      "baslik": "SOS Tehlike Sinyalinin Kabul Edilmesi",
+      "metin": "SOS tehlike sinyali, Berlin'deki Uluslararası Radyotelegraf Konvansiyonu tarafından resmen kabul edildi. Bu evrensel kod, deniz ve hava ulaşımında hayat kurtaran standartlardan biri haline geldi.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Morris_worm"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/SOS"
     },
     {
-      "yil": 1989,
-      "baslik": "Türkiye'de Kadınlar Tacize Karşı Mor İğne Kampanyasını Başlattı",
-      "metin": "Kadınlar, cinsel tacize dikkat çekmek amacıyla 'Bedenimiz Bizimdir, Cinsel Tacize Hayır' kampanyasını hayata geçirdi. Vapurda yapılan basın açıklamasının ardından kadınlara dağıtılan iğneler, bu eylemin kamuoyunda 'Mor İğne' adıyla anılmasını sağladı.",
-      "kategori": "tarih"
+      "yil": 1912,
+      "baslik": "Tamamı Metalden İlk Uçak",
+      "metin": "Tamamı metalden yapılmış ilk uçak, Fransa'da pilotlar Ponche ve Prinard tarafından uçuruldu. Havacılık tarihinde çığır açan bu deneme büyük yankı uyandırdı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Fransa"
     },
     {
-      "yil": 2000,
-      "baslik": "Uluslararası Uzay İstasyonu'na İlk Mürettebat Ulaştı",
-      "metin": "Expedition 1 görevi kapsamında astronot William Shepherd ile kozmonotlar Sergei Krikalev ve Yuri Gidzenko, Uluslararası Uzay İstasyonu'na yerleşen ilk mürettebat oldu. İstasyonda 136 gün geçiren üç kişilik ekip, uzayda kesintisiz insan varlığının başlangıcına imza attı.",
+      "yil": 1914,
+      "baslik": "Sütyen Patentinin Alınması",
+      "metin": "Amerikalı Caresse Crosby tarafından geliştirilen sütyenin patenti alındı. Bu icat, kadın giyim tarihinde dönüm noktalarından biri oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
+    },
+    {
+      "yil": 1957,
+      "baslik": "Sputnik 2 ve Layka'nın Uzay Yolculuğu",
+      "metin": "Sovyetler Birliği, uzaya giden ilk canlı olan Layka adlı köpeği taşıyan Sputnik 2'yi Dünya yörüngesine fırlattı. Bu tarihi uçuş, uzay araştırmalarında yeni bir dönemin kapılarını araladı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Expedition_1"
-    },
-    {
-      "yil": 2000,
-      "baslik": "Vladimir Kramnik Satranç Şampiyonu Garry Kasparov'u Yendi",
-      "metin": "Dünya Satranç Şampiyonası'nda Vladimir Kramnik, vatandaşı Garry Kasparov'u yenerek büyük bir zafere imza attı. Kramnik'in bu galibiyetiyle birlikte Kasparov'un tam 15 yıldır kesintisiz süren dünya şampiyonluğu unvanı resmen sona erdi.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Satran%C3%A7"
-    },
-    {
-      "yil": 2008,
-      "baslik": "Lewis Hamilton Son Virajda Formula 1 Şampiyonu Oldu",
-      "metin": "Brezilya Grand Prix'sinin son virajlarında Timo Glock'u geçmeyi başaran Lewis Hamilton, sadece tek puan farkla Formula 1 Dünya Pilotlar Şampiyonluğu'na ulaştı. Yarışın son anlarına kadar süren bu nefes kesici mücadele, Hamilton'ın kariyerindeki ilk şampiyonluğu oldu.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sovyetler_Birli%C4%9Fi"
     }
   ]
 }
