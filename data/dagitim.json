@@ -2270,5 +2270,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "sergio-conceicao-testi-portekizli-efsaneyi-ne-kadar-taniyorsun": {
+    "eklendi": "2026-11-03T05:05:51.935Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-11-03T05:05:52.763Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mzf2vrn4jb2a"
+      }
+    },
+    "reelIdleri": {}
   }
 }
