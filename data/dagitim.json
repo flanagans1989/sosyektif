@@ -2299,5 +2299,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "deniz-undav-hakkinda-ne-kadar-bilgilisin-6-soruluk-test": {
+    "eklendi": "2026-11-04T05:02:57.181Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-11-04T05:02:58.072Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mzhl7ijjjh2l"
+      }
+    },
+    "reelIdleri": {}
   }
 }
