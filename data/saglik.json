@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-11-04T06:42:10.626Z",
+  "sonDenetim": "2026-11-04T12:01:33.042Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -14,6 +14,12 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "site-veri-frankfurter": {
+      "alan": "Ekodektif verileri",
+      "durum": "hata",
+      "detay": "Frankfurter (ECB): 522 <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endi",
+      "ilkGorulme": "2026-11-04T12:01:33.042Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
