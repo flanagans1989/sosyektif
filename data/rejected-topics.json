@@ -1,53 +1,5 @@
 [
   {
-    "parmakIzi": "cemil tugay",
-    "baslik": "Cemil Tugay",
-    "sebep": "uygun değil: Yaşayan bir siyasetçi ve gerçek kişi olması nedeniyle içerik politikalarımıza uymamaktadır.",
-    "tarih": "2026-10-01T05:01:51.789Z"
-  },
-  {
-    "parmakIzi": "seks ve genç kız (film)",
-    "baslik": "Seks ve Genç Kız (film)",
-    "sebep": "uygun değil: Cinsellik, +18 içerik barındıran veya bu yönde algılanabilecek konular sosyektif yayın ilkelerine uygun değildir.",
-    "tarih": "2026-10-01T05:01:52.941Z"
-  },
-  {
-    "parmakIzi": "sezgin baran korkmaz",
-    "baslik": "Sezgin Baran Korkmaz",
-    "sebep": "uygun değil: Yaşayan bir gerçek kişi ve adli/güncel olaylar kapsamına girdiği için site politikalarımıza uygun değildir.",
-    "tarih": "2026-10-01T05:01:54.101Z"
-  },
-  {
-    "parmakIzi": "theodore kaczynski",
-    "baslik": "Theodore Kaczynski",
-    "sebep": "uygun değil: Suç, şiddet ve terör olaylarıyla bağlantılı kişileri ve konuları barındıran içerikler politikamız gereği uygun değildir.",
-    "tarih": "2026-10-01T05:01:55.040Z"
-  },
-  {
-    "parmakIzi": "serenay sarıkaya",
-    "baslik": "Serenay Sarıkaya",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişinin kendisi doğrudan konu odağı olarak seçilemez.",
-    "tarih": "2026-10-01T05:01:59.106Z"
-  },
-  {
-    "parmakIzi": "hayati yazıcı",
-    "baslik": "Hayati Yazıcı",
-    "sebep": "uygun değil: Yaşayan siyasetçi ve politikacılar site kuralları gereği içerik odağı olamaz.",
-    "tarih": "2026-10-02T05:01:40.574Z"
-  },
-  {
-    "parmakIzi": "2013 reyhanlı bombalı saldırıları",
-    "baslik": "2013 Reyhanlı bombalı saldırıları",
-    "sebep": "uygun değil: Suç, şiddet, adli olaylar, savaş ve terör haberleri sitesi yayın politikası gereği uygun değildir.",
-    "tarih": "2026-10-02T05:01:41.440Z"
-  },
-  {
-    "parmakIzi": "ferhat gündoğdu",
-    "baslik": "Ferhat Gündoğdu",
-    "sebep": "uygun değil: Yaşayan bir gerçek kişinin kendisi konu odağı olduğu için uygun değil.",
-    "tarih": "2026-10-03T05:01:46.757Z"
-  },
-  {
     "parmakIzi": "fatma betül sayan kaya",
     "baslik": "Fatma Betül Sayan Kaya",
     "sebep": "uygun değil: Siyasetçiler ve yaşayan gerçek kişiler site politikası gereği içerik odağı olamaz.",
@@ -322,5 +274,11 @@
     "baslik": "Patrick Stewart",
     "sebep": "uygun değil: Konu odağı yaşayan bir gercek kisidir.",
     "tarih": "2026-10-31T05:01:38.348Z"
+  },
+  {
+    "parmakIzi": "ahmet nazif zorlu",
+    "baslik": "Ahmet Nazif Zorlu",
+    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odak olarak uygun değildir.",
+    "tarih": "2026-11-04T05:01:36.969Z"
   }
 ]
