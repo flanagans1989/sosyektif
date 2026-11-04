@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-11-03",
+  "tarih": "2026-11-04",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1749,
-      "baslik": "Daniel Rutherford'un Doğumu",
-      "metin": "Azotu izole eden İskoç hekim, kimyager ve botanikçi Daniel Rutherford dünyaya geldi. Bilim dünyasına yaptığı bu katkı, kimya tarihinde çığır açtı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Daniel_Rutherford"
-    },
-    {
-      "yil": 1900,
-      "baslik": "Adolf Dassler'in Doğumu",
-      "metin": "Adidas şirketinin kurucusu olan Alman mucit ve iş insanı Adolf Dassler dünyaya geldi. Tasarladığı spor ayakkabılar ve patentini aldığı yenilikler, spor giyim endüstrisinin temellerini attı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Adolf_Dassler"
-    },
-    {
-      "yil": 1906,
-      "baslik": "SOS Tehlike Sinyalinin Kabul Edilmesi",
-      "metin": "SOS tehlike sinyali, Berlin'deki Uluslararası Radyotelegraf Konvansiyonu tarafından resmen kabul edildi. Bu evrensel kod, deniz ve hava ulaşımında hayat kurtaran standartlardan biri haline geldi.",
+      "yil": 1847,
+      "baslik": "Kloroformun Anestezik Özelliği",
+      "metin": "İskoç tıp doktoru Sir James Young Simpson, kloroformun insanlardaki anestezik özelliklerini keşfetti. Bu önemli buluş, tıp tarihine damga vurarak cerrahi operasyonlarda çığır açtı.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/SOS"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/James_Young_Simpson"
     },
     {
-      "yil": 1912,
-      "baslik": "Tamamı Metalden İlk Uçak",
-      "metin": "Tamamı metalden yapılmış ilk uçak, Fransa'da pilotlar Ponche ve Prinard tarafından uçuruldu. Havacılık tarihinde çığır açan bu deneme büyük yankı uyandırdı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Fransa"
-    },
-    {
-      "yil": 1914,
-      "baslik": "Sütyen Patentinin Alınması",
-      "metin": "Amerikalı Caresse Crosby tarafından geliştirilen sütyenin patenti alındı. Bu icat, kadın giyim tarihinde dönüm noktalarından biri oldu.",
+      "yil": 1879,
+      "baslik": "James J. Ritty Tarafından Geliştirilen Yazar Kasa",
+      "metin": "Amerikalı James J. Ritty, ticari işlemleri ve muhasebeyi kökten değiştiren yazar kasayı geliştirerek patentini aldı. Bu akıllı buluş kısa sürede dükkanların vazgeçilmez bir parçası haline geldi.",
       "kategori": "icat",
       "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
     },
     {
-      "yil": 1957,
-      "baslik": "Sputnik 2 ve Layka'nın Uzay Yolculuğu",
-      "metin": "Sovyetler Birliği, uzaya giden ilk canlı olan Layka adlı köpeği taşıyan Sputnik 2'yi Dünya yörüngesine fırlattı. Bu tarihi uçuş, uzay araştırmalarında yeni bir dönemin kapılarını araladı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sovyetler_Birli%C4%9Fi"
+      "yil": 1890,
+      "baslik": "Londra'nın İlk Derin Tüp Demiryolu",
+      "metin": "Dünyanın ilk başarılı derin tüp demiryolu olan City and South London Railway, King William Street ile Stockwell arasında hizmete girdi. Bu büyük hat, toplu taşımada elektrikli çekiş gücünü kullanan ilk büyük demiryolu sistemi oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/City_and_South_London_Railway"
+    },
+    {
+      "yil": 1909,
+      "baslik": "Haydarpaşa Garı'nın Açılışı",
+      "metin": "Bağdat Demiryolları projesi kapsamında inşa edilen ihtişamlı Haydarpaşa Garı, düzenlenen görkemli bir törenle kapılarını açtı. İstanbul'un simge yapıları arasına giren bu mimari şaheser, şehri demir ağlarla dünyaya bağladı.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ba%C4%9Fdat"
+    },
+    {
+      "yil": 1922,
+      "baslik": "Tutankamon'un Mezarının Keşfi",
+      "metin": "İngiliz arkeolog Howard Carter ve ekibi, Mısır'ın Luksor kentindeki Krallar Vadisi'nde genç firavun Tutankamon'un mezarını gün yüzüne çıkardı. Bu keşif, arkeoloji dünyasının en büyük ve en heyecan verici buluntularından biri oldu.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Howard_Carter"
+    },
+    {
+      "yil": 1960,
+      "baslik": "Jane Goodall ve Şempanzelerin Alet Yapımı",
+      "metin": "Tanzanya'daki Kasakela Şempanze Topluluğu'nda araştırmalar yapan Jane Goodall, şempanzelerin alet yarattığını gözlemledi. Bu gözlem, insan dışı hayvanlarda alet yapımının belgelendiği ilk an olarak tarihe geçti.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community"
     }
   ]
 }
