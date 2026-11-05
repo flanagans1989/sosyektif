@@ -1,11 +1,5 @@
 [
   {
-    "parmakIzi": "fatma betül sayan kaya",
-    "baslik": "Fatma Betül Sayan Kaya",
-    "sebep": "uygun değil: Siyasetçiler ve yaşayan gerçek kişiler site politikası gereği içerik odağı olamaz.",
-    "tarih": "2026-10-05T05:01:39.995Z"
-  },
-  {
     "parmakIzi": "aral şimşir",
     "baslik": "Aral Şimşir",
     "sebep": "uygun değil: Yaşayan bir gerçek kişi (Aral Şimşir) olduğu için site politikaları gereği uygun değildir.",
@@ -280,5 +274,17 @@
     "baslik": "Ahmet Nazif Zorlu",
     "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odak olarak uygun değildir.",
     "tarih": "2026-11-04T05:01:36.969Z"
+  },
+  {
+    "parmakIzi": "2027 uefa ülkeler sıralaması",
+    "baslik": "2027 UEFA ülkeler sıralaması",
+    "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
+    "tarih": "2026-11-05T05:01:35.110Z"
+  },
+  {
+    "parmakIzi": "emre belözoğlu",
+    "baslik": "Emre Belözoğlu",
+    "sebep": "uygun değil: Yaşayan gerçek kişi olduğu için içerik oluşturulamaz",
+    "tarih": "2026-11-05T05:01:38.426Z"
   }
 ]

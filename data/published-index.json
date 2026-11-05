@@ -793,5 +793,14 @@
     "format": "quiz",
     "yayinTarihi": "2026-11-04T05:02:04.435Z",
     "otomatikYayinlandi": true
+  },
+  {
+    "slug": "dirk-kuytun-az-bilinen-5-gercegi",
+    "baslik": "Dirk Kuyt'un Az Bilinen 5 Gerçeği",
+    "konuParmakIzi": "dirk kuyt",
+    "kategori": "spor",
+    "format": "trivia",
+    "yayinTarihi": "2026-11-05T05:02:22.861Z",
+    "otomatikYayinlandi": false
   }
 ]
