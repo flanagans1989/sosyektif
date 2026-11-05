@@ -1,49 +1,63 @@
 {
-  "tarih": "2026-11-04",
+  "tarih": "2026-11-05",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1847,
-      "baslik": "Kloroformun Anestezik Özelliği",
-      "metin": "İskoç tıp doktoru Sir James Young Simpson, kloroformun insanlardaki anestezik özelliklerini keşfetti. Bu önemli buluş, tıp tarihine damga vurarak cerrahi operasyonlarda çığır açtı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/James_Young_Simpson"
+      "yil": 1499,
+      "baslik": "Jehan Lagadeuc'un Eseri The Catholicon Yayınlandı",
+      "metin": "Jehan Lagadeuc tarafından Tréguier'de yazılan The Catholicon adlı eser yayımlandı. Bu eser, aynı zamanda ilk Bretonca sözlük ve ilk Fransızca sözlük olma özelliğini taşıyor.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Catholicon_(trilingual_dictionary)"
     },
     {
-      "yil": 1879,
-      "baslik": "James J. Ritty Tarafından Geliştirilen Yazar Kasa",
-      "metin": "Amerikalı James J. Ritty, ticari işlemleri ve muhasebeyi kökten değiştiren yazar kasayı geliştirerek patentini aldı. Bu akıllı buluş kısa sürede dükkanların vazgeçilmez bir parçası haline geldi.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
+      "yil": 1854,
+      "baslik": "Nobel Ödüllü Kimyager Paul Sabatier Doğdu",
+      "metin": "Organik bileşiklerin hidrojenasyonunu geliştirme çalışmalarıyla tanınan Fransız kimyager Paul Sabatier dünyaya geldi. Sabatier, bu alandaki öncü araştırmaları sayesinde 1912 yılında Nobel Kimya Ödülü'ne layık görülmüştür.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Paul_Sabatier_(chemist)"
     },
     {
-      "yil": 1890,
-      "baslik": "Londra'nın İlk Derin Tüp Demiryolu",
-      "metin": "Dünyanın ilk başarılı derin tüp demiryolu olan City and South London Railway, King William Street ile Stockwell arasında hizmete girdi. Bu büyük hat, toplu taşımada elektrikli çekiş gücünü kullanan ilk büyük demiryolu sistemi oldu.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/City_and_South_London_Railway"
+      "yil": 1892,
+      "baslik": "Evrimsel Biyolojinin Öncü İsmi J. B. S. Haldane Doğdu",
+      "metin": "Evrimsel biyolojinin modern sentezinde kurucu figürlerden biri olan İngiliz-Hint genetikçi ve biyolog J. B. S. Haldane dünyaya geldi. Bilim insanı, fizyoloji, genetik ve evrim teorisi alanındaki çalışmalarıyla tanınır.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/J._B._S._Haldane"
     },
     {
-      "yil": 1909,
-      "baslik": "Haydarpaşa Garı'nın Açılışı",
-      "metin": "Bağdat Demiryolları projesi kapsamında inşa edilen ihtişamlı Haydarpaşa Garı, düzenlenen görkemli bir törenle kapılarını açtı. İstanbul'un simge yapıları arasına giren bu mimari şaheser, şehri demir ağlarla dünyaya bağladı.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ba%C4%9Fdat"
-    },
-    {
-      "yil": 1922,
-      "baslik": "Tutankamon'un Mezarının Keşfi",
-      "metin": "İngiliz arkeolog Howard Carter ve ekibi, Mısır'ın Luksor kentindeki Krallar Vadisi'nde genç firavun Tutankamon'un mezarını gün yüzüne çıkardı. Bu keşif, arkeoloji dünyasının en büyük ve en heyecan verici buluntularından biri oldu.",
+      "yil": 1895,
+      "baslik": "George B. Selden Benzinli Otomobil Patentini Aldı",
+      "metin": "Rochester, New York'tan George B. Selden, benzinle çalışan otomobil için ilk ABD patentini aldı. Bu patent, ilerleyen yıllarda otomotiv endüstrisinin gelişiminde önemli bir dönüm noktası oldu.",
       "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Howard_Carter"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Rochester%2C_New_York"
     },
     {
-      "yil": 1960,
-      "baslik": "Jane Goodall ve Şempanzelerin Alet Yapımı",
-      "metin": "Tanzanya'daki Kasakela Şempanze Topluluğu'nda araştırmalar yapan Jane Goodall, şempanzelerin alet yarattığını gözlemledi. Bu gözlem, insan dışı hayvanlarda alet yapımının belgelendiği ilk an olarak tarihe geçti.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Kasakela_chimpanzee_community"
+      "yil": 1930,
+      "baslik": "Londra'da İlk Televizyon Reklamı Gösterildi",
+      "metin": "Televizyon, bir vericiden elektromanyetik dalga hâlinde yayımlanan görüntü ve seslerin elektronik alıcılar sayesinde yeniden görüntü ve sese çevrilmesini sağlayan bir haberleşme sistemidir. Bu tarihte Londra'da ilk televizyon reklamı gösterildi.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Televizyon"
+    },
+    {
+      "yil": 2007,
+      "baslik": "Çin'in İlk Ay Uydusu Chang'e 1 Yörüngeye Yerleşti",
+      "metin": "Çin'in ilk ay uydusu Chang'e 1, Ay etrafındaki yörüngesine yerleşti. Çin Ay Keşif Programı'nın ilk aşamasının bir parçası olan uzay aracı, adını Çin mitolojisindeki Ay tanrıçası Chang'e'den alıyor.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Chang'e_1"
+    },
+    {
+      "yil": 2007,
+      "baslik": "Google Tarafından Android Mobil İşletim Sistemi Tanıtıldı",
+      "metin": "Google tarafından geliştirilen Android mobil işletim sistemi ilk kez kamuoyuna tanıtıldı. Esas olarak akıllı telefonlar ve tabletler için tasarlanan sistem, günümüzde dünyanın en yaygın mobil işletim sistemlerinden biridir.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Android_(operating_system)"
+    },
+    {
+      "yil": 2013,
+      "baslik": "Hindistan'ın İlk Gezegenlerarası Uzay Sondası: Mars Orbiter Mission",
+      "metin": "Hindistan Uzay Araştırma Organizasyonu (ISRO), ülkenin ilk gezegenlerarası uzay sondası olan Mars Orbiter Mission'ı uzaya fırlattı. Mangalyaan olarak da bilinen araç, fırlatılışından bu yana uzay araştırmalarında önemli bir başarı olarak kayda geçti.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission"
     }
   ]
 }
