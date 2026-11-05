@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-11-05T18:01:16.236Z",
+  "sonDenetim": "2026-11-05T18:18:15.701Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -14,12 +14,6 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
-    },
-    "worker-surum": {
-      "alan": "Worker",
-      "durum": "hata",
-      "detay": "Worker sürüm kontrolü: fetch failed",
-      "ilkGorulme": "2026-11-05T18:01:16.236Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
