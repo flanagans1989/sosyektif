@@ -1,63 +1,42 @@
 {
-  "tarih": "2026-11-05",
+  "tarih": "2026-11-06",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1499,
-      "baslik": "Jehan Lagadeuc'un Eseri The Catholicon Yayınlandı",
-      "metin": "Jehan Lagadeuc tarafından Tréguier'de yazılan The Catholicon adlı eser yayımlandı. Bu eser, aynı zamanda ilk Bretonca sözlük ve ilk Fransızca sözlük olma özelliğini taşıyor.",
+      "yil": 1869,
+      "baslik": "İlk Üniversitelerarası Amerikan Futbolu Maçı",
+      "metin": "Rutgers College, Princeton University'yi 6-4 yenerek tarihteki ilk resmi üniversitelerarası Amerikan futbolu maçını kazandı. Bu karşılaşma, üniversite sporları dünyasında yepyeni bir dönemin başlangıcı oldu.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/New_Brunswick%2C_New_Jersey"
+    },
+    {
+      "yil": 1923,
+      "baslik": "Elektrikli Tıraş Makinesi",
+      "metin": "Amerikalı Jacob Schick, ilk elektrikli tıraş makinesinin patentini aldı. Bu buluş, kişisel bakım rutininin tarihindeki en önemli dönüm noktalarından biri oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
+    },
+    {
+      "yil": 1944,
+      "baslik": "Hanford Sahası'nda Plütonyum Üretimi",
+      "metin": "ABD'nin Hanford Sahası'nda plütonyum üretimi mümkün oldu. Bu tesisin ürettiği plütonyum daha sonra Japonya'nın Nagasaki şehrine atılacak olan Şişman Adam kod adlı atom bombasının yapımında kullanılacaktı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
+    },
+    {
+      "yil": 1947,
+      "baslik": "Meet the Press Televizyon Programı",
+      "metin": "Tarihin en uzun soluklu televizyon programı Meet the Press, NBC Television'da ilk kez yayımlandı. Program, Amerikan televizyon tarihinin en kalıcı yapımlarından biri hâline geldi.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Catholicon_(trilingual_dictionary)"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Meet_the_Press"
     },
     {
-      "yil": 1854,
-      "baslik": "Nobel Ödüllü Kimyager Paul Sabatier Doğdu",
-      "metin": "Organik bileşiklerin hidrojenasyonunu geliştirme çalışmalarıyla tanınan Fransız kimyager Paul Sabatier dünyaya geldi. Sabatier, bu alandaki öncü araştırmaları sayesinde 1912 yılında Nobel Kimya Ödülü'ne layık görülmüştür.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Paul_Sabatier_(chemist)"
-    },
-    {
-      "yil": 1892,
-      "baslik": "Evrimsel Biyolojinin Öncü İsmi J. B. S. Haldane Doğdu",
-      "metin": "Evrimsel biyolojinin modern sentezinde kurucu figürlerden biri olan İngiliz-Hint genetikçi ve biyolog J. B. S. Haldane dünyaya geldi. Bilim insanı, fizyoloji, genetik ve evrim teorisi alanındaki çalışmalarıyla tanınır.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/J._B._S._Haldane"
-    },
-    {
-      "yil": 1895,
-      "baslik": "George B. Selden Benzinli Otomobil Patentini Aldı",
-      "metin": "Rochester, New York'tan George B. Selden, benzinle çalışan otomobil için ilk ABD patentini aldı. Bu patent, ilerleyen yıllarda otomotiv endüstrisinin gelişiminde önemli bir dönüm noktası oldu.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Rochester%2C_New_York"
-    },
-    {
-      "yil": 1930,
-      "baslik": "Londra'da İlk Televizyon Reklamı Gösterildi",
-      "metin": "Televizyon, bir vericiden elektromanyetik dalga hâlinde yayımlanan görüntü ve seslerin elektronik alıcılar sayesinde yeniden görüntü ve sese çevrilmesini sağlayan bir haberleşme sistemidir. Bu tarihte Londra'da ilk televizyon reklamı gösterildi.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Televizyon"
-    },
-    {
-      "yil": 2007,
-      "baslik": "Çin'in İlk Ay Uydusu Chang'e 1 Yörüngeye Yerleşti",
-      "metin": "Çin'in ilk ay uydusu Chang'e 1, Ay etrafındaki yörüngesine yerleşti. Çin Ay Keşif Programı'nın ilk aşamasının bir parçası olan uzay aracı, adını Çin mitolojisindeki Ay tanrıçası Chang'e'den alıyor.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Chang'e_1"
-    },
-    {
-      "yil": 2007,
-      "baslik": "Google Tarafından Android Mobil İşletim Sistemi Tanıtıldı",
-      "metin": "Google tarafından geliştirilen Android mobil işletim sistemi ilk kez kamuoyuna tanıtıldı. Esas olarak akıllı telefonlar ve tabletler için tasarlanan sistem, günümüzde dünyanın en yaygın mobil işletim sistemlerinden biridir.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Android_(operating_system)"
-    },
-    {
-      "yil": 2013,
-      "baslik": "Hindistan'ın İlk Gezegenlerarası Uzay Sondası: Mars Orbiter Mission",
-      "metin": "Hindistan Uzay Araştırma Organizasyonu (ISRO), ülkenin ilk gezegenlerarası uzay sondası olan Mars Orbiter Mission'ı uzaya fırlattı. Mangalyaan olarak da bilinen araç, fırlatılışından bu yana uzay araştırmalarında önemli bir başarı olarak kayda geçti.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission"
+      "yil": 1971,
+      "baslik": "Cannikin Hidrojen Bombası Denemesi",
+      "metin": "ABD Atom Enerjisi Komisyonu, Alaska'nın Aleut takımadalarında bulunan Amchitka adasında Cannikin kod adı verilen ABD'nin en büyük yer altı hidrojen bombası denemesini gerçekleştirdi. Bu olay, dönemin nükleer teknolojisindeki en büyük testlerden biri olarak kayıtlara geçti.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri_Atom_Enerjisi_Komisyonu"
     }
   ]
 }
