@@ -811,5 +811,14 @@
     "format": "trivia",
     "yayinTarihi": "2026-11-06T05:04:27.837Z",
     "otomatikYayinlandi": false
+  },
+  {
+    "slug": "iki-kitanin-efendisi-istanbul-hakkinda-ne-kadar-bilgilisin-6-soruluk-test",
+    "baslik": "İki Kıtanın Efendisi İstanbul Hakkında Ne Kadar Bilgilisin? (6 Soruluk Test)",
+    "konuParmakIzi": "i̇stanbul",
+    "kategori": "tarih",
+    "format": "quiz",
+    "yayinTarihi": "2026-11-07T05:05:36.163Z",
+    "otomatikYayinlandi": true
   }
 ]

@@ -1,9 +1,12 @@
 {
-  "tarih": "2026-11-06T05:04:28.315Z",
+  "tarih": "2026-11-07T05:05:37.875Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 0,
-  "onayaDusen": 1,
-  "reddedilen": 0,
-  "hatalar": []
+  "otomatikYayinlanan": 1,
+  "onayaDusen": 0,
+  "reddedilen": 2,
+  "hatalar": [
+    "Mustafa Kemal Atatürk (2026): \"Mustafa Kemal Atatürk\" (2026) için içerik zaten üretildi",
+    "Fatma Betül Sayan Kaya: uygun değil: Yaşayan gerçek bir siyasetçi ve kişi odağı olduğu için site kurallarına uygun değil."
+  ]
 }
