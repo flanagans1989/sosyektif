@@ -2328,5 +2328,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "iki-kitanin-efendisi-istanbul-hakkinda-ne-kadar-bilgilisin-6-soruluk-test": {
+    "eklendi": "2026-11-07T05:06:44.651Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-11-07T05:06:45.282Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3mzp4szkcpu2s"
+      }
+    },
+    "reelIdleri": {}
   }
 }
