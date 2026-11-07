@@ -1,42 +1,49 @@
 {
-  "tarih": "2026-11-06",
+  "tarih": "2026-11-07",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1869,
-      "baslik": "İlk Üniversitelerarası Amerikan Futbolu Maçı",
-      "metin": "Rutgers College, Princeton University'yi 6-4 yenerek tarihteki ilk resmi üniversitelerarası Amerikan futbolu maçını kazandı. Bu karşılaşma, üniversite sporları dünyasında yepyeni bir dönemin başlangıcı oldu.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/New_Brunswick%2C_New_Jersey"
-    },
-    {
-      "yil": 1923,
-      "baslik": "Elektrikli Tıraş Makinesi",
-      "metin": "Amerikalı Jacob Schick, ilk elektrikli tıraş makinesinin patentini aldı. Bu buluş, kişisel bakım rutininin tarihindeki en önemli dönüm noktalarından biri oldu.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
-    },
-    {
-      "yil": 1944,
-      "baslik": "Hanford Sahası'nda Plütonyum Üretimi",
-      "metin": "ABD'nin Hanford Sahası'nda plütonyum üretimi mümkün oldu. Bu tesisin ürettiği plütonyum daha sonra Japonya'nın Nagasaki şehrine atılacak olan Şişman Adam kod adlı atom bombasının yapımında kullanılacaktı.",
+      "yil": 1492,
+      "baslik": "Ensisheim Göktaşı",
+      "metin": "Tarihi bilinen en eski göktaşı olan Ensisheim göktaşı, Fransa'nın Alsace bölgesindeki bir buğday tarlasına düştü. Bu taş hâlâ Ensisheim'daki müzede sergilenmektedir.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Ensisheim_meteorite"
     },
     {
-      "yil": 1947,
-      "baslik": "Meet the Press Televizyon Programı",
-      "metin": "Tarihin en uzun soluklu televizyon programı Meet the Press, NBC Television'da ilk kez yayımlandı. Program, Amerikan televizyon tarihinin en kalıcı yapımlarından biri hâline geldi.",
+      "yil": 1665,
+      "baslik": "The London Gazette",
+      "metin": "Yaşayan en uzun ömürlü gazete The London Gazette ilk kez yayımlandı. Gazete, Birleşik Krallık Hükümeti'nin resmi kayıt dergilerinden biridir.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Meet_the_Press"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Gazete"
     },
     {
-      "yil": 1971,
-      "baslik": "Cannikin Hidrojen Bombası Denemesi",
-      "metin": "ABD Atom Enerjisi Komisyonu, Alaska'nın Aleut takımadalarında bulunan Amchitka adasında Cannikin kod adı verilen ABD'nin en büyük yer altı hidrojen bombası denemesini gerçekleştirdi. Bu olay, dönemin nükleer teknolojisindeki en büyük testlerden biri olarak kayıtlara geçti.",
+      "yil": 1910,
+      "baslik": "İlk Hava Kargo Taşımacılığı",
+      "metin": "Wright kardeşler ve mağaza sahibi Max Morehouse tarafından Dayton, Ohio'dan Columbus, Ohio'ya ilk air freight yani hava kargo sevkiyatı gerçekleştirildi.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Air_cargo"
+    },
+    {
+      "yil": 1949,
+      "baslik": "Neft Daşları",
+      "metin": "Azerbaycan kıyılarında, Hazar Denizi'nde petrol keşfedildi ve bu gelişme dünyanın ilk açık deniz petrol platformu olan Neft Daşları'nın inşasına yol açtı. Hazar Denizi, dünyanın en büyük iç su kütlesidir.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Caspian_Sea"
+    },
+    {
+      "yil": 1994,
+      "baslik": "WXYC İnternet Radyo Yayını",
+      "metin": "Kuzey Carolina Üniversitesi Chapel Hill öğrenci radyo istasyonu WXYC, dünyanın ilk internet radyo yayınını başlattı. İstasyon, ticari olmayan bir kolej radyo formatında yayın yapmaktadır.",
       "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri_Atom_Enerjisi_Komisyonu"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/WXYC"
+    },
+    {
+      "yil": 1999,
+      "baslik": "Yasemin Dalkılıç",
+      "metin": "Türk sualtı dalış rekortmeni Yasemin Dalkılıç tüpsüz dalmada 68 metreye dalarak dünya rekoru kırdı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Yasemin_Dalk%C4%B1l%C4%B1%C3%A7"
     }
   ]
 }
