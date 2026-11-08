@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-11-07",
+  "tarih": "2026-11-08",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1492,
-      "baslik": "Ensisheim Göktaşı",
-      "metin": "Tarihi bilinen en eski göktaşı olan Ensisheim göktaşı, Fransa'nın Alsace bölgesindeki bir buğday tarlasına düştü. Bu taş hâlâ Ensisheim'daki müzede sergilenmektedir.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Ensisheim_meteorite"
-    },
-    {
-      "yil": 1665,
-      "baslik": "The London Gazette",
-      "metin": "Yaşayan en uzun ömürlü gazete The London Gazette ilk kez yayımlandı. Gazete, Birleşik Krallık Hükümeti'nin resmi kayıt dergilerinden biridir.",
+      "yil": 1793,
+      "baslik": "Paris'te Dünyaca Ünlü Louvre Müzesi'nin Açılması",
+      "metin": "Fransa'nın başkenti Paris'te Sen Nehri kıyısında yer alan tarihî Louvre Müzesi kapılarını ilk kez halka açtı. Eski bir kraliyet sarayından devasa bir kültür hazinesine dönüştürülen yapı, zamanla dünyanın en çok ziyaret edilen sanat merkezlerinden birine dönüştü.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Gazete"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Paris"
     },
     {
-      "yil": 1910,
-      "baslik": "İlk Hava Kargo Taşımacılığı",
-      "metin": "Wright kardeşler ve mağaza sahibi Max Morehouse tarafından Dayton, Ohio'dan Columbus, Ohio'ya ilk air freight yani hava kargo sevkiyatı gerçekleştirildi.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Air_cargo"
-    },
-    {
-      "yil": 1949,
-      "baslik": "Neft Daşları",
-      "metin": "Azerbaycan kıyılarında, Hazar Denizi'nde petrol keşfedildi ve bu gelişme dünyanın ilk açık deniz petrol platformu olan Neft Daşları'nın inşasına yol açtı. Hazar Denizi, dünyanın en büyük iç su kütlesidir.",
+      "yil": 1829,
+      "baslik": "Uzun Mehmet'in Karadeniz Ereğli'de Kömürü Bulması",
+      "metin": "Uzun Mehmet, Karadeniz Ereğlisi'ne bağlı Kestaneci köyünde taş kömürünü bularak Türkiye'nin sanayi tarihinde unutulmaz bir yer edindi. Zonguldak havzasının kaderini belirleyen bu keşif, ülkenin yer altı kaynaklarının üretime kazandırılmasında ilk büyük adım oldu.",
       "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Caspian_Sea"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Karadeniz_Ere%C4%9Fli"
     },
     {
-      "yil": 1994,
-      "baslik": "WXYC İnternet Radyo Yayını",
-      "metin": "Kuzey Carolina Üniversitesi Chapel Hill öğrenci radyo istasyonu WXYC, dünyanın ilk internet radyo yayınını başlattı. İstasyon, ticari olmayan bir kolej radyo formatında yayın yapmaktadır.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/WXYC"
+      "yil": 1887,
+      "baslik": "Emile Berliner'in Gramofon İçin Patent Alması",
+      "metin": "Alman kâşif ve bilim insanı Emile Berliner, kayıtlı sesleri mekanik olarak yeniden üreten gramofonun patentini aldı. Bu buluş, müziği taşınabilir ve çoğaltılabilir kılarak evlere taşıyan dev bir ses devriminin kapısını araladı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Gramofon"
     },
     {
-      "yil": 1999,
-      "baslik": "Yasemin Dalkılıç",
-      "metin": "Türk sualtı dalış rekortmeni Yasemin Dalkılıç tüpsüz dalmada 68 metreye dalarak dünya rekoru kırdı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Yasemin_Dalk%C4%B1l%C4%B1%C3%A7"
+      "yil": 1971,
+      "baslik": "Led Zeppelin'in Dördüncü Stüdyo Albümünün Çıkışı",
+      "metin": "İngiliz efsanesi Led Zeppelin, rock müziğin kaderini değiştiren dördüncü stüdyo albümünü piyasaya sürdü. İçinde grubun dillere pelesenk olan şaheseri 'Stairway to Heaven'ı barındıran albüm, dünya genelinde tüm zamanların en çok satan albümleri arasına adını yazdırdı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0ngiltere"
+    },
+    {
+      "yil": 1977,
+      "baslik": "Vergina'da Makedonya Kralı II. Filip'in Mezarının Keşfi",
+      "metin": "Yunan arkeolog ve profesör Manolis Andronikos, Vergina antik kentinde yürüttüğü kazılarda Makedonya Kralı II. Filip'in mezarını gün ışığına çıkardı. Antik Makedonya tarihine dair bildiklerimizi zenginleştiren bu buluntu, dönemin en heyecan verici arkeolojik keşiflerinden biri kabul edildi.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Manolis_Andronikos"
+    },
+    {
+      "yil": 2011,
+      "baslik": "2005 YU55 Asteroitinin Dünya'nın Çok Yakınından Geçişi",
+      "metin": "Tehlike potansiyeli bulunan 2005 YU55 adlı asteroit, Dünya'ya yaklaşık 324 bin kilometre mesafeden teğet geçti. Bu olay, benzer büyüklük ve parlaklıktaki bir gök cisminin 1976'dan bu yana gezegenimize yaptığı en yakın geçiş olarak kayıtlara geçti.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Potentially_hazardous_object"
     }
   ]
 }
