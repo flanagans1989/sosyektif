@@ -820,5 +820,14 @@
     "format": "quiz",
     "yayinTarihi": "2026-11-07T05:05:36.163Z",
     "otomatikYayinlandi": true
+  },
+  {
+    "slug": "yapay-zeka-hakkinda-duyunca-sasiracaginiz-5-gercek",
+    "baslik": "Yapay Zekâ Hakkında Duyunca Şaşıracağınız 5 Gerçek",
+    "konuParmakIzi": "yapay zekâ",
+    "kategori": "teknoloji",
+    "format": "trivia",
+    "yayinTarihi": "2026-11-08T05:04:57.221Z",
+    "otomatikYayinlandi": true
   }
 ]
