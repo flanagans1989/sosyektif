@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-11-08",
+  "tarih": "2026-11-09",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1793,
-      "baslik": "Paris'te Dünyaca Ünlü Louvre Müzesi'nin Açılması",
-      "metin": "Fransa'nın başkenti Paris'te Sen Nehri kıyısında yer alan tarihî Louvre Müzesi kapılarını ilk kez halka açtı. Eski bir kraliyet sarayından devasa bir kültür hazinesine dönüştürülen yapı, zamanla dünyanın en çok ziyaret edilen sanat merkezlerinden birine dönüştü.",
+      "yil": 1801,
+      "baslik": "Yoğunlaştırılmış Sütü İcat Eden İsim Gail Borden Doğdu",
+      "metin": "Gıda saklama yöntemlerinde devrim yaratan yoğunlaştırılmış sütü icat eden girişimci Gail Borden dünyaya geldi. Borden'ın geliştirdiği bu yöntem, özellikle uzun yolculuklarda sütün bozulmadan saklanmasını mümkün kıldı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Gail_Borden"
+    },
+    {
+      "yil": 1928,
+      "baslik": "Hac Yolculuğunu Konu Alan İlk Belgesel Film Gösterime Girdi",
+      "metin": "Hac ibadetini konu alan ilk belgesel niteliğindeki The Great Mecca Feast, Hollanda'da izleyiciyle buluştu. George Krugers imzasını taşıyan bu sessiz yapım, Güneydoğu Asya'dan yola çıkan Müslümanların kutsal topraklar yolculuğunu gözler önüne seriyordu.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Paris"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Great_Mecca_Feast"
     },
     {
-      "yil": 1829,
-      "baslik": "Uzun Mehmet'in Karadeniz Ereğli'de Kömürü Bulması",
-      "metin": "Uzun Mehmet, Karadeniz Ereğlisi'ne bağlı Kestaneci köyünde taş kömürünü bularak Türkiye'nin sanayi tarihinde unutulmaz bir yer edindi. Zonguldak havzasının kaderini belirleyen bu keşif, ülkenin yer altı kaynaklarının üretime kazandırılmasında ilk büyük adım oldu.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Karadeniz_Ere%C4%9Fli"
-    },
-    {
-      "yil": 1887,
-      "baslik": "Emile Berliner'in Gramofon İçin Patent Alması",
-      "metin": "Alman kâşif ve bilim insanı Emile Berliner, kayıtlı sesleri mekanik olarak yeniden üreten gramofonun patentini aldı. Bu buluş, müziği taşınabilir ve çoğaltılabilir kılarak evlere taşıyan dev bir ses devriminin kapısını araladı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Gramofon"
-    },
-    {
-      "yil": 1971,
-      "baslik": "Led Zeppelin'in Dördüncü Stüdyo Albümünün Çıkışı",
-      "metin": "İngiliz efsanesi Led Zeppelin, rock müziğin kaderini değiştiren dördüncü stüdyo albümünü piyasaya sürdü. İçinde grubun dillere pelesenk olan şaheseri 'Stairway to Heaven'ı barındıran albüm, dünya genelinde tüm zamanların en çok satan albümleri arasına adını yazdırdı.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0ngiltere"
-    },
-    {
-      "yil": 1977,
-      "baslik": "Vergina'da Makedonya Kralı II. Filip'in Mezarının Keşfi",
-      "metin": "Yunan arkeolog ve profesör Manolis Andronikos, Vergina antik kentinde yürüttüğü kazılarda Makedonya Kralı II. Filip'in mezarını gün ışığına çıkardı. Antik Makedonya tarihine dair bildiklerimizi zenginleştiren bu buluntu, dönemin en heyecan verici arkeolojik keşiflerinden biri kabul edildi.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Manolis_Andronikos"
-    },
-    {
-      "yil": 2011,
-      "baslik": "2005 YU55 Asteroitinin Dünya'nın Çok Yakınından Geçişi",
-      "metin": "Tehlike potansiyeli bulunan 2005 YU55 adlı asteroit, Dünya'ya yaklaşık 324 bin kilometre mesafeden teğet geçti. Bu olay, benzer büyüklük ve parlaklıktaki bir gök cisminin 1976'dan bu yana gezegenimize yaptığı en yakın geçiş olarak kayıtlara geçti.",
+      "yil": 1967,
+      "baslik": "Ay Yolculuğunun Kapısını Aralayan Saturn V Roketi Fırlatıldı",
+      "metin": "NASA'nın insanı Ay'a taşıma hedefli Apollo programı kapsamında, devasa Saturn V roketi ilk kez fırlatıldı. Florida'daki Cape Kennedy'den uzaya gönderilen insansız Apollo 4 test uzay aracı başarıyla görev yaptı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Potentially_hazardous_object"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Apollo_program"
+    },
+    {
+      "yil": 1994,
+      "baslik": "Periyodik Tabloya Yeni Bir Element Eklendi: Darmstadtium",
+      "metin": "Maddenin yapı taşlarından biri olan darmstadtium kimyasal elementi keşfedildi. Atom numarası ve proton yapısıyla periyodik tablodaki yerini alan bu element, bilim dünyasında heyecan yarattı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Chemical_element"
+    },
+    {
+      "yil": 2004,
+      "baslik": "Popüler İnternet Tarayıcısı Firefox Sürüm 1.0 Çıktı",
+      "metin": "Mozilla Vakfı tarafından geliştirilen açık kaynaklı web tarayıcısı Firefox 1.0 resmi olarak yayımlandı. İnternet dünyasında yeni bir dönem başlatan bu tarayıcı, kısa sürede milyonlarca kullanıcıya ulaştı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Firefox"
+    },
+    {
+      "yil": 2005,
+      "baslik": "Avrupa Uzay Ajansı'nın Venüs Keşif Misyonu Başlatıldı",
+      "metin": "Avrupa Uzay Ajansı'nın Venüs'ü keşfetmeyi amaçlayan ilk uzay aracı Venus Express, Kazakistan'daki Baykonur Uzay Üssü'nden fırlatıldı. Uzay aracı, fırlatılışından kısa süre sonra kızıl gezegene komşu gezegen hakkında bilimsel veriler göndermeye başladı.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Venus_Express"
     }
   ]
 }
