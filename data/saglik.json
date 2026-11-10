@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-11-10T18:17:51.245Z",
-  "toplamKontrol": 49,
+  "sonDenetim": "2026-11-10T19:52:08.953Z",
+  "toplamKontrol": 50,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -28,6 +28,13 @@
       "detay": "Threads bilerek kapalı (config.kapaliKanallar) — hesap incelemesi bitince listeden çıkar.",
       "cozum": "data/config.json'da kapaliKanallar'dan \"threads\" değerini sil.",
       "ilkGorulme": "2026-09-18T19:08:39.591Z"
+    },
+    "token-instagram": {
+      "alan": "Sosyal kanallar",
+      "durum": "uyari",
+      "detay": "instagram token'ının süresi 7 gün içinde doluyor.",
+      "cozum": "Worker saatlik yenilemeyi deniyor; dolarsa yeniden bootstrap gerekir.",
+      "ilkGorulme": "2026-11-10T19:52:08.953Z"
     },
     "bekleyen-telegram": {
       "alan": "Dağıtım",
