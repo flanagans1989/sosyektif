@@ -1,49 +1,42 @@
 {
-  "tarih": "2026-11-09",
+  "tarih": "2026-11-10",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1801,
-      "baslik": "Yoğunlaştırılmış Sütü İcat Eden İsim Gail Borden Doğdu",
-      "metin": "Gıda saklama yöntemlerinde devrim yaratan yoğunlaştırılmış sütü icat eden girişimci Gail Borden dünyaya geldi. Borden'ın geliştirdiği bu yöntem, özellikle uzun yolculuklarda sütün bozulmadan saklanmasını mümkün kıldı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Gail_Borden"
-    },
-    {
-      "yil": 1928,
-      "baslik": "Hac Yolculuğunu Konu Alan İlk Belgesel Film Gösterime Girdi",
-      "metin": "Hac ibadetini konu alan ilk belgesel niteliğindeki The Great Mecca Feast, Hollanda'da izleyiciyle buluştu. George Krugers imzasını taşıyan bu sessiz yapım, Güneydoğu Asya'dan yola çıkan Müslümanların kutsal topraklar yolculuğunu gözler önüne seriyordu.",
+      "yil": 1918,
+      "baslik": "Darülbedayi",
+      "metin": "Darülbedayi'ye Bedire, Memduha, Beyza, Refika ve Afife (Jale) adlı ilk kız öğrenciler alındı. Bu adım, Türk tiyatro tarihinde kadınların sahneye çıkışının önünü açan çok önemli bir dönüm noktası oldu.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Great_Mecca_Feast"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/D%C3%A2r%C3%BClbed%C3%A2yi"
     },
     {
-      "yil": 1967,
-      "baslik": "Ay Yolculuğunun Kapısını Aralayan Saturn V Roketi Fırlatıldı",
-      "metin": "NASA'nın insanı Ay'a taşıma hedefli Apollo programı kapsamında, devasa Saturn V roketi ilk kez fırlatıldı. Florida'daki Cape Kennedy'den uzaya gönderilen insansız Apollo 4 test uzay aracı başarıyla görev yaptı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Apollo_program"
-    },
-    {
-      "yil": 1994,
-      "baslik": "Periyodik Tabloya Yeni Bir Element Eklendi: Darmstadtium",
-      "metin": "Maddenin yapı taşlarından biri olan darmstadtium kimyasal elementi keşfedildi. Atom numarası ve proton yapısıyla periyodik tablodaki yerini alan bu element, bilim dünyasında heyecan yarattı.",
+      "yil": 1958,
+      "baslik": "Hope Elması",
+      "metin": "45.52 karatlık ünlü mavi Hope Elması, New Yorklu elmas tüccarı Harry Winston tarafından Smithsonian Enstitüsü'ne bağışlandı. Bu devasa ve büyüleyici elmas yüzyıllardır büyük bir üne sahip.",
       "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Chemical_element"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Hope_Diamond"
     },
     {
-      "yil": 2004,
-      "baslik": "Popüler İnternet Tarayıcısı Firefox Sürüm 1.0 Çıktı",
-      "metin": "Mozilla Vakfı tarafından geliştirilen açık kaynaklı web tarayıcısı Firefox 1.0 resmi olarak yayımlandı. İnternet dünyasında yeni bir dönem başlatan bu tarayıcı, kısa sürede milyonlarca kullanıcıya ulaştı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Firefox"
-    },
-    {
-      "yil": 2005,
-      "baslik": "Avrupa Uzay Ajansı'nın Venüs Keşif Misyonu Başlatıldı",
-      "metin": "Avrupa Uzay Ajansı'nın Venüs'ü keşfetmeyi amaçlayan ilk uzay aracı Venus Express, Kazakistan'daki Baykonur Uzay Üssü'nden fırlatıldı. Uzay aracı, fırlatılışından kısa süre sonra kızıl gezegene komşu gezegen hakkında bilimsel veriler göndermeye başladı.",
+      "yil": 1970,
+      "baslik": "Lunokhod 1",
+      "metin": "Sovyetler Birliği'ne ait Ay aracı Lunokhod 1 fırlatıldı. Bu araç, Dünya dışında bir zeminde uzaktan kumanda ile hareket ettirilen ilk robottu.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Venus_Express"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sovyetler_Birli%C4%9Fi"
+    },
+    {
+      "yil": 1983,
+      "baslik": "Windows 1.0",
+      "metin": "Bill Gates, Windows 1.0'ı resmi olarak tanıttı. Bu kişisel bilgisayar devriminin en önemli adımlarından biri oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Bill_Gates"
+    },
+    {
+      "yil": 2008,
+      "baslik": "Phoenix",
+      "metin": "Mars'a indikten beş aydan fazla sonra NASA, Phoenix misyonunun sona erdiğini açıkladı. Lander ile iletişim tamamen kesildi.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Mars"
     }
   ]
 }
