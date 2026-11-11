@@ -1,42 +1,49 @@
 {
-  "tarih": "2026-11-10",
+  "tarih": "2026-11-11",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1918,
-      "baslik": "Darülbedayi",
-      "metin": "Darülbedayi'ye Bedire, Memduha, Beyza, Refika ve Afife (Jale) adlı ilk kız öğrenciler alındı. Bu adım, Türk tiyatro tarihinde kadınların sahneye çıkışının önünü açan çok önemli bir dönüm noktası oldu.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/D%C3%A2r%C3%BClbed%C3%A2yi"
+      "yil": 1572,
+      "baslik": "Tycho Brahe ve SN 1572 Süpernovası",
+      "metin": "Danimarkalı astronom Tycho Brahe gökyüzünde yeni bir yıldız, yani SN 1572 süpernovasını gözlemledi. Bu çığır açıcı gözlem, o döneme kadar değişmez kabul edilen gökkürenin kusursuz ve sabit olduğu inancını sarstı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Tycho_Brahe"
     },
     {
-      "yil": 1958,
-      "baslik": "Hope Elması",
-      "metin": "45.52 karatlık ünlü mavi Hope Elması, New Yorklu elmas tüccarı Harry Winston tarafından Smithsonian Enstitüsü'ne bağışlandı. Bu devasa ve büyüleyici elmas yüzyıllardır büyük bir üne sahip.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Hope_Diamond"
+      "yil": 1675,
+      "baslik": "Gottfried Leibniz ve İntegral Hesabı",
+      "metin": "Gottfried Leibniz, bir fonksiyon grafiğinin altında kalan alanı bulmak için integral kalkülüsünü ilk kez gösterdi. Matematik tarihinin bu dönüm noktası, modern analiz ve kalkülüsün temellerini attı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz"
     },
     {
-      "yil": 1970,
-      "baslik": "Lunokhod 1",
-      "metin": "Sovyetler Birliği'ne ait Ay aracı Lunokhod 1 fırlatıldı. Bu araç, Dünya dışında bir zeminde uzaktan kumanda ile hareket ettirilen ilk robottu.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sovyetler_Birli%C4%9Fi"
+      "yil": 1926,
+      "baslik": "U.S. Route 66",
+      "metin": "Amerika'da ülkeyi boydan boya kateden ve şarkılara bile konu olan ünlü karayolu U.S. Route 66 açıldı. Bu efsanevi yol, Amerikan popüler kültürünün ve seyahat edebiyatının vazgeçilmez simgelerinden biri haline geldi.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
     },
     {
-      "yil": 1983,
-      "baslik": "Windows 1.0",
-      "metin": "Bill Gates, Windows 1.0'ı resmi olarak tanıttı. Bu kişisel bilgisayar devriminin en önemli adımlarından biri oldu.",
+      "yil": 1930,
+      "baslik": "Einstein Buzdolabı",
+      "metin": "Albert Einstein ve Leó Szilárd'ın birlikte geliştirdiği buzdolabı tasarımı patentlendi. Hareketli parça içermeyen ve dış güç kaynağına ihtiyaç duymayan bu yenilikçi soğutma sistemi, iki dâhinin fizikten mühendisliğe uzanan ortak çalışmasının ürünüydü.",
       "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Bill_Gates"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Patent"
     },
     {
-      "yil": 2008,
-      "baslik": "Phoenix",
-      "metin": "Mars'a indikten beş aydan fazla sonra NASA, Phoenix misyonunun sona erdiğini açıkladı. Lander ile iletişim tamamen kesildi.",
+      "yil": 1982,
+      "baslik": "Space Shuttle Columbia",
+      "metin": "Space Shuttle Columbia, Uzay Mekiği programının ilk operasyonel misyonu olan STS-5 için Kennedy Uzay Merkezi'nden fırlatıldı. Bu uçuş, uzay taşımacılığında yeniden kullanılabilir araçlar döneminin resmen başlamasını sağladı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Mars"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Space_Shuttle_Columbia"
+    },
+    {
+      "yil": 2002,
+      "baslik": "Grigori Perelman ve Poincaré Sanısı",
+      "metin": "Rus matematikçi Grigori Perelman, yüzyılın en büyük matematik bulmacalarından biri olan Poincaré sanısının çözümünü internette yayınladı. Bu karmaşık problemin tek çözümü olarak tarihe geçen bu çalışmayla Perelman, sonrasında hem ödülü hem de madalyayı reddetti.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Grigori_Perelman"
     }
   ]
 }
