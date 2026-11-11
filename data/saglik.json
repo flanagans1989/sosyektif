@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-11-11T06:47:06.762Z",
+  "sonDenetim": "2026-11-11T12:01:16.214Z",
   "toplamKontrol": 50,
   "sorunlar": {
     "onay-bekleyen": {
@@ -32,7 +32,7 @@
     "token-instagram": {
       "alan": "Sosyal kanallar",
       "durum": "uyari",
-      "detay": "instagram token'ının süresi 7 gün içinde doluyor.",
+      "detay": "instagram token'ının süresi 6 gün içinde doluyor.",
       "cozum": "Worker saatlik yenilemeyi deniyor; dolarsa yeniden bootstrap gerekir.",
       "ilkGorulme": "2026-11-10T19:52:08.953Z"
     },
