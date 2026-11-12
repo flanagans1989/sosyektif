@@ -1,49 +1,42 @@
 {
-  "tarih": "2026-11-11",
+  "tarih": "2026-11-12",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1572,
-      "baslik": "Tycho Brahe ve SN 1572 Süpernovası",
-      "metin": "Danimarkalı astronom Tycho Brahe gökyüzünde yeni bir yıldız, yani SN 1572 süpernovasını gözlemledi. Bu çığır açıcı gözlem, o döneme kadar değişmez kabul edilen gökkürenin kusursuz ve sabit olduğu inancını sarstı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Tycho_Brahe"
-    },
-    {
-      "yil": 1675,
-      "baslik": "Gottfried Leibniz ve İntegral Hesabı",
-      "metin": "Gottfried Leibniz, bir fonksiyon grafiğinin altında kalan alanı bulmak için integral kalkülüsünü ilk kez gösterdi. Matematik tarihinin bu dönüm noktası, modern analiz ve kalkülüsün temellerini attı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz"
-    },
-    {
-      "yil": 1926,
-      "baslik": "U.S. Route 66",
-      "metin": "Amerika'da ülkeyi boydan boya kateden ve şarkılara bile konu olan ünlü karayolu U.S. Route 66 açıldı. Bu efsanevi yol, Amerikan popüler kültürünün ve seyahat edebiyatının vazgeçilmez simgelerinden biri haline geldi.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri"
-    },
-    {
-      "yil": 1930,
-      "baslik": "Einstein Buzdolabı",
-      "metin": "Albert Einstein ve Leó Szilárd'ın birlikte geliştirdiği buzdolabı tasarımı patentlendi. Hareketli parça içermeyen ve dış güç kaynağına ihtiyaç duymayan bu yenilikçi soğutma sistemi, iki dâhinin fizikten mühendisliğe uzanan ortak çalışmasının ürünüydü.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Patent"
-    },
-    {
-      "yil": 1982,
-      "baslik": "Space Shuttle Columbia",
-      "metin": "Space Shuttle Columbia, Uzay Mekiği programının ilk operasyonel misyonu olan STS-5 için Kennedy Uzay Merkezi'nden fırlatıldı. Bu uçuş, uzay taşımacılığında yeniden kullanılabilir araçlar döneminin resmen başlamasını sağladı.",
+      "yil": 1981,
+      "baslik": "Columbia Uzay Mekiği'nin İkinci Fırlatılışı",
+      "metin": "Columbia Uzay Mekiği fırlatıldı ve böylece Dünya'dan iki kez fırlatılan ilk uzay aracı olma unvanını kazandı. Uzaya çıkan ilk uzay mekiği olan Columbia'nın bu görevi uzay tarihinde yeni bir dönüm noktası oldu.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Space_Shuttle_Columbia"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Columbia_(uzay_arac%C4%B1)"
     },
     {
-      "yil": 2002,
-      "baslik": "Grigori Perelman ve Poincaré Sanısı",
-      "metin": "Rus matematikçi Grigori Perelman, yüzyılın en büyük matematik bulmacalarından biri olan Poincaré sanısının çözümünü internette yayınladı. Bu karmaşık problemin tek çözümü olarak tarihe geçen bu çalışmayla Perelman, sonrasında hem ödülü hem de madalyayı reddetti.",
+      "yil": 1990,
+      "baslik": "Tim Berners-Lee ve World Wide Web Önerisi",
+      "metin": "Tim Berners-Lee, World Wide Web için resmî bir teklif yayınladı. Bilgisayar bilimci Berners-Lee'nin geliştirdiği bu sistem, bugünkü internet dünyasının temelini oluşturdu.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Grigori_Perelman"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Tim_Berners-Lee"
+    },
+    {
+      "yil": 2003,
+      "baslik": "BİLSAT Uydusunun Görüntü Göndermeye Başlaması",
+      "metin": "TÜBİTAK BİLTEN tarafından teknoloji transferi yöntemiyle üretilerek uzaya gönderilen BİLSAT uydusu görüntü göndermeye başladı. Uydu, Türkiye'nin uzay ve teknoloji alanındaki önemli adımlarından biri olarak kayıtlara geçti.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%9CB%C4%B0TAK"
+    },
+    {
+      "yil": 2003,
+      "baslik": "Shanghai Transrapid Hız Rekoru",
+      "metin": "Shanghai Transrapid, ticari demiryolu sistemleri için saatte 501 kilometre hıza ulaşarak yeni bir dünya rekoru kırdı. Bu oran, modifiye edilmemiş ticari raylı araçlar için güncelliğini koruyan en yüksek hız olma özelliğini taşıyor.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Shanghai_maglev_train"
+    },
+    {
+      "yil": 2014,
+      "baslik": "Philae Keşif Aracının Kuyruklu Yıldız İnişi",
+      "metin": "Rosetta uzay aracından ayrılan Philae keşif aracı, 67P adlı kuyruklu yıldıza iniş yaptı. Avrupa Uzay Ajansı tarafından fırlatılan Rosetta ve Philae, kuyruklu yıldızın ayrıntılı bir incelemesini gerçekleştirdi.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Rosetta_(uzay_arac%C4%B1)"
     }
   ]
 }

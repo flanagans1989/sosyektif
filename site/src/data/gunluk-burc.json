@@ -1,66 +1,66 @@
 {
-  "tarih": "2026-11-11",
-  "uretenProvider": "gemini",
+  "tarih": "2026-11-12",
+  "uretenProvider": "groq",
   "burclar": {
     "koc": {
-      "yorum": "Bugün enerjini halının altına süpürülen tozları temizlemeye harcayabilirsin sevgili Koç, madem ortalık toz duman, bari sen estir! Aşk hayatında ise ani bir itiraf kapıda, hazırlıklı ol.",
+      "yorum": "Bugün enerjin tavan yapıyor, yeni projelere atılmak için güzel bir gün. İş yerinde kısa bir sohbet, moralini yükseltebilir. Şanslı sayın 7, renk turuncu.",
       "sansliSayi": 7,
-      "sansliRenk": "Kırmızı"
+      "sansliRenk": "turuncu"
     },
     "boga": {
-      "yorum": "Buzdolabındaki son dilim pastayı kimin yediği meselesi senin için milli bir güvenlik sorununa dönüşebilir, sakin ol şampiyon. İş yerinde ise ezber bozacak fikirlerinle yöneticiyi şaşırtman an meselesi.",
-      "sansliSayi": 14,
-      "sansliRenk": "Yeşil"
+      "yorum": "Rutin işler biraz sıkıcı gelebilir ama sabırlı adımlarla ilerlemek fayda verir. Akşamüstü sevdiğin bir şeyle rahatlamak, stresini azaltır. Şanslı sayın 22, renk yeşil.",
+      "sansliSayi": 22,
+      "sansliRenk": "yeşil"
     },
     "ikizler": {
-      "yorum": "Aklında kırk tilki, kuyrukları birbirine değmeden dans ediyor yine; maşallah odaklanma sıfır ama eğlence tavan. Sosyal medyada kaybolmak yerine yaratıcı projelere yönelirsen günün kazananı sen olursun.",
-      "sansliSayi": 3,
-      "sansliRenk": "Sarı"
+      "yorum": "Merakın seni yeni bir hobinin peşine düşürebilir; iletişim kanalların açık. İş arkadaşlarınla paylaşacağın bir fikir, takdir toplar. Şanslı sayın 14, renk sarı.",
+      "sansliSayi": 14,
+      "sansliRenk": "sarı"
     },
     "yengec": {
-      "yorum": "İçindeki minik filozofu uyandıran nostaljik bir rüzgar esiyor, eski şarkılara sığınıp çay demleme isteğin tutabilir. Kariyerde ise sezgilerine güvenerek atacağın adım seni hak ettiğin yere taşıyacak.",
-      "sansliSayi": 22,
-      "sansliRenk": "Gümüş"
+      "yorum": "Duygusal dalgalanmalar olabilir; kendine zaman ayırıp bir yürüyüş yapmak rahatlatır. Aileyle vakit geçirmek, iç huzurunu pekiştirir. Şanslı sayın 31, renk mavi.",
+      "sansliSayi": 31,
+      "sansliRenk": "mavi"
     },
     "aslan": {
-      "yorum": "Sahne senin sevgilim Aslan, kim tutar seni! Günün enerjisi projelerini sergilemek ve parlamak için biçilmiş kaftan, yalnız kibrin mi yoksa karizmanın mı konuşturulacağına sen karar ver.",
-      "sansliSayi": 1,
-      "sansliRenk": "Altın Sarısı"
+      "yorum": "Kendine güvenin yüksek, bu yüzden liderlik gerektiren görevlerde parlayabilirsin. Romantik bir sürpriz, günün tatlı bir noktasını oluşturur. Şanslı sayın 5, renk kırmızı.",
+      "sansliSayi": 5,
+      "sansliRenk": "kırmızı"
     },
     "basak": {
-      "yorum": "Yine her şeyiüç kez kontrol etmeden masadan kalkmıyorsun, değil mi? Detaylardaki o boğucu mükemmeliyetçiliği biraz bir kenara bırakıp kahvenin tadını çıkarmanın tam vakti.",
-      "sansliSayi": 19,
-      "sansliRenk": "Lacivert"
+      "yorum": "Detaycı yapın, bugünkü işlerde hata yapma ihtimalin düşük. Sağlıklı bir kahvaltı, odaklanmanı güçlendirir. Şanslı sayın 48, renk lacivert.",
+      "sansliSayi": 48,
+      "sansliRenk": "lacivert"
     },
     "terazi": {
-      "yorum": "Karar vermek senin için her zamankinden zor olabilir, kahve mi çay mı ikileminden büyük aşk kararlarına kadar her şey askıda kalmasın. Estetik yönün bugün evini ya da masanı yeniden dekore etmen için seni dürtecek.",
-      "sansliSayi": 6,
-      "sansliRenk": "Pembe"
+      "yorum": "İçsel dengeyi bulmak için hafif bir yoga seansı işe yarar. İş yerinde adil bir karar alman, çevrendekilerin saygısını kazanır. Şanslı sayın 27, renk pembe.",
+      "sansliSayi": 27,
+      "sansliRenk": "pembe"
     },
     "akrep": {
-      "yorum": "Gizemli hallerin yine 10 numara 5 yıldız, kimse içinden geçenleri okuyamıyor ama sen herkesin planını çözmüş durumdasın. Finansal konularda ufak bir sürpriz yüzünü güldürebilir, keyfini çıkar.",
-      "sansliSayi": 8,
-      "sansliRenk": "Bordo"
+      "yorum": "Gizli bir proje ortaya çıkabilir; araştırmacı yönün devreye girer. Tutkulu bir sohbet, aşk hayatına hareket katabilir. Şanslı sayın 9, renk mor.",
+      "sansliSayi": 9,
+      "sansliRenk": "mor"
     },
     "yay": {
-      "yorum": "Valizini hazırlasan mı acaba? Uzaklardan gelen bir seyahat haberi ya da ani bir kaçamak planı tüm motivasyonunu uçurabilir. Aşkta ise sınır tanımayan sohbetler kalbini hızlandıracak.",
-      "sansliSayi": 11,
-      "sansliRenk": "Mor"
+      "yorum": "Macera arayışın, akşam saatlerinde yeni bir rotaya yönlendirebilir. İşte ufak bir risk, uzun vadede fayda sağlayabilir. Şanslı sayın 63, renk turkuaz.",
+      "sansliSayi": 63,
+      "sansliRenk": "turkuaz"
     },
     "oglak": {
-      "yorum": "Pazartesi sendromunu çoktan unutmuş, yapılacaklar listesinin yüzde seksenini bitirmişsindir bile, seni takdir etmemek elde değil. Akşamüstü kendine bir ödül ver ve o ciddi yüz ifadesini biraz olsun yumuşat.",
-      "sansliSayi": 10,
-      "sansliRenk": "Gri"
+      "yorum": "Disiplinin sayesinde birikmiş görevleri ertelemeye son verirsin. Kariyer hedeflerine bir adım daha yaklaşmak mümkün. Şanslı sayın 18, renk kahverengi.",
+      "sansliSayi": 18,
+      "sansliRenk": "kahverengi"
     },
     "kova": {
-      "yorum": "Dünyayı kurtarma planları yaparken kendi çorabının tekini bulamamak senin tarzın, biliyoruz. Arkadaş ortamında yapacağın sıra dışı bir fikir jimnastiği günün en keyifli anı olacak.",
-      "sansliSayi": 17,
-      "sansliRenk": "Turkuaz"
+      "yorum": "Yaratıcı fikirlerin akıyor; bir beyin fırtınası toplantısında öne çıkabilirsin. Arkadaşlarınla bir kahve molası, enerjini tazeler. Şanslı sayın 42, renk açık mavi.",
+      "sansliSayi": 42,
+      "sansliRenk": "açık mavi"
     },
     "balik": {
-      "yorum": "Gerçek dünyadan kopup kendi hayal denizinde yüzme katsayısı yüksek bir gün, telefon sesini duymak bile istemeyebilirsin. Sanatsal faaliyetler ve içsel huzur için rüya gibi bir zaman dilimindesin.",
-      "sansliSayi": 12,
-      "sansliRenk": "Deniz Mavisi"
+      "yorum": "Hayal gücün yüksek, sanatsal bir aktivite ruhunu dinlendirir. Sevdiklerinle duygusal bir paylaşım, bağları güçlendirir. Şanslı sayın 77, renk pastel pembe.",
+      "sansliSayi": 77,
+      "sansliRenk": "pastel pembe"
     }
   }
 }
