@@ -1,42 +1,49 @@
 {
-  "tarih": "2026-11-12",
+  "tarih": "2026-11-13",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1981,
-      "baslik": "Columbia Uzay Mekiği'nin İkinci Fırlatılışı",
-      "metin": "Columbia Uzay Mekiği fırlatıldı ve böylece Dünya'dan iki kez fırlatılan ilk uzay aracı olma unvanını kazandı. Uzaya çıkan ilk uzay mekiği olan Columbia'nın bu görevi uzay tarihinde yeni bir dönüm noktası oldu.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Columbia_(uzay_arac%C4%B1)"
+      "yil": 1715,
+      "baslik": "Dorothea Erxleben'in Doğumu",
+      "metin": "Almanya'nın ilk kadın tıp doktoru unvanını alan Dorothea Christiane Erxleben dünyaya geldi. Bilim dünyasında kadınların varlık gösterme mücadelesinde öncü bir rol oynayan Erxleben, tıp tarihindeki engelleri aşarak kariyer yaptı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Dorothea_Erxleben"
     },
     {
-      "yil": 1990,
-      "baslik": "Tim Berners-Lee ve World Wide Web Önerisi",
-      "metin": "Tim Berners-Lee, World Wide Web için resmî bir teklif yayınladı. Bilgisayar bilimci Berners-Lee'nin geliştirdiği bu sistem, bugünkü internet dünyasının temelini oluşturdu.",
+      "yil": 1841,
+      "baslik": "James Braid ve Hipnotizma Çalışmaları",
+      "metin": "İskoç cerrah James Braid, Charles Lafontaine'in hayvanî mıknatıs gösterisini izleyerek hipnotizma üzerine derinlemesine çalışmalarına başladı. Tıp tarihinde çığır açan bu gözlem, daha sonra hipnoz olarak adlandırılacak bilimsel incelemelerin temelini attı.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Tim_Berners-Lee"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/James_Braid_(surgeon)"
     },
     {
-      "yil": 2003,
-      "baslik": "BİLSAT Uydusunun Görüntü Göndermeye Başlaması",
-      "metin": "TÜBİTAK BİLTEN tarafından teknoloji transferi yöntemiyle üretilerek uzaya gönderilen BİLSAT uydusu görüntü göndermeye başladı. Uydu, Türkiye'nin uzay ve teknoloji alanındaki önemli adımlarından biri olarak kayıtlara geçti.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%9CB%C4%B0TAK"
+      "yil": 1850,
+      "baslik": "Robert Louis Stevenson'ın Doğumu",
+      "metin": "Hazine Adası ve Dr. Jekyll ve Mr. Hyde gibi dünya klasiklerinin yazarı İskoç romancı ve şair Robert Louis Stevenson dünyaya geldi. Edebiyat dünyasında bıraktığı derin izler, onu macera ve korku türlerinin en önemli kalemlerinden biri haline getirdi.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Robert_Louis_Stevenson"
     },
     {
-      "yil": 2003,
-      "baslik": "Shanghai Transrapid Hız Rekoru",
-      "metin": "Shanghai Transrapid, ticari demiryolu sistemleri için saatte 501 kilometre hıza ulaşarak yeni bir dünya rekoru kırdı. Bu oran, modifiye edilmemiş ticari raylı araçlar için güncelliğini koruyan en yüksek hız olma özelliğini taşıyor.",
+      "yil": 1940,
+      "baslik": "Fantasia Filmi ve Ses Teknolojisi",
+      "metin": "Walt Disney'in unutulmaz eseri Fantasia, New York'taki Broadway Theatre'da sinemaseverlerle buluştu. Bu yapım, stereofonik ses teknolojisiyle gösterime giren ilk ticari film olarak sinema tarihine adını yazdırdı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Walt_Disney"
+    },
+    {
+      "yil": 1947,
+      "baslik": "AK-47'nin Geliştirilmesi Tamamlandı",
+      "metin": "Sovyetler Birliği, tarihin ilk gerçek taarruz tüfeklerinden biri olan AK-47'nin geliştirme süreçlerini tamamladı. Geniş bir coğrafyaya yayılmış olan bu devlette tasarlanan silah, askeri teknoloji tarihinde dönüm noktası oldu.",
       "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Shanghai_maglev_train"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Soviet_Union"
     },
     {
-      "yil": 2014,
-      "baslik": "Philae Keşif Aracının Kuyruklu Yıldız İnişi",
-      "metin": "Rosetta uzay aracından ayrılan Philae keşif aracı, 67P adlı kuyruklu yıldıza iniş yaptı. Avrupa Uzay Ajansı tarafından fırlatılan Rosetta ve Philae, kuyruklu yıldızın ayrıntılı bir incelemesini gerçekleştirdi.",
+      "yil": 2009,
+      "baslik": "Ay'da Su Varlığı Kesinleşti",
+      "metin": "Su bulma umuduyla Ay'ın güney kutbunu bombalayan NASA, çarpma sonuçlarını açıkladığı basın toplantısında, Ay'da önemli miktarda su bulunduğunu duyurdu. Güneş Sistemi'nin beşinci büyük doğal uydusu olan Ay hakkındaki bu keşif, uzay araştırmalarında yeni bir dönüm noktası oldu.",
       "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Rosetta_(uzay_arac%C4%B1)"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ay"
     }
   ]
 }
