@@ -2415,5 +2415,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "yazinin-takvimin-ve-insanligin-kayit-tutma-cabasi-6-carpici-tarih-sorusu": {
+    "eklendi": "2026-11-13T05:03:41.227Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-11-13T05:03:42.023Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3n267h3kqua2o"
+      }
+    },
+    "reelIdleri": {}
   }
 }
