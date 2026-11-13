@@ -1,66 +1,66 @@
 {
-  "tarih": "2026-11-12",
-  "uretenProvider": "groq",
+  "tarih": "2026-11-13",
+  "uretenProvider": "gemini",
   "burclar": {
     "koc": {
-      "yorum": "Bugün enerjin tavan yapıyor, yeni projelere atılmak için güzel bir gün. İş yerinde kısa bir sohbet, moralini yükseltebilir. Şanslı sayın 7, renk turuncu.",
+      "yorum": "Sevgili Koç, bugün enerjini halı saha maçına değil de işine odaklasan iyi olur yoksa patronla ufak bir atışma yaşayabilirsin. Akşama doğru sevdiğin biriyle yapacağın kahve sohbeti tüm sinirini alıp götürecek.",
       "sansliSayi": 7,
-      "sansliRenk": "turuncu"
+      "sansliRenk": "Kırmızı"
     },
     "boga": {
-      "yorum": "Rutin işler biraz sıkıcı gelebilir ama sabırlı adımlarla ilerlemek fayda verir. Akşamüstü sevdiğin bir şeyle rahatlamak, stresini azaltır. Şanslı sayın 22, renk yeşil.",
-      "sansliSayi": 22,
-      "sansliRenk": "yeşil"
+      "yorum": "Ey Boğa, bu ara buzdolabıyla olan ilişkini biraz sınırlandırman gerekebilir, benden söylemesi! İş yerinde ise sabırlı duruşun sayesinde herkesin imrendiği o sakin kahraman sen olacaksın.",
+      "sansliSayi": 12,
+      "sansliRenk": "Yeşil"
     },
     "ikizler": {
-      "yorum": "Merakın seni yeni bir hobinin peşine düşürebilir; iletişim kanalların açık. İş arkadaşlarınla paylaşacağın bir fikir, takdir toplar. Şanslı sayın 14, renk sarı.",
-      "sansliSayi": 14,
-      "sansliRenk": "sarı"
+      "yorum": "Sevgili İkizler, aynı anda üç farklı konuyu düşünmekten beynin bugün biraz error verebilir. Neyse ki kıvrak zekanla işin içinden sıyrılmayı başarıp, akşam sosyal ortamlarda yine parlayacaksın.",
+      "sansliSayi": 23,
+      "sansliRenk": "Sarı"
     },
     "yengec": {
-      "yorum": "Duygusal dalgalanmalar olabilir; kendine zaman ayırıp bir yürüyüş yapmak rahatlatır. Aileyle vakit geçirmek, iç huzurunu pekiştirir. Şanslı sayın 31, renk mavi.",
-      "sansliSayi": 31,
-      "sansliRenk": "mavi"
+      "yorum": "İç sesin bugün 'pijamaları çek, evden çıkma' diye bağırıyor olabilir ama sorumluluklar yakandan düşmüyor. Neyse ki günün sonunda evdeki huzurlu köşen tüm yorgunluğuna değecek.",
+      "sansliSayi": 4,
+      "sansliRenk": "Gümüş"
     },
     "aslan": {
-      "yorum": "Kendine güvenin yüksek, bu yüzden liderlik gerektiren görevlerde parlayabilirsin. Romantik bir sürpriz, günün tatlı bir noktasını oluşturur. Şanslı sayın 5, renk kırmızı.",
-      "sansliSayi": 5,
-      "sansliRenk": "kırmızı"
+      "yorum": "Hey Aslan, yine sahnede sensin ve herkes senin ne diyeceğini merakla bekliyor. Aşk hayatında yapacağın minik bir jest, karşı tarafın ayaklarını yerden kesebilir, benden tüyo.",
+      "sansliSayi": 1,
+      "sansliRenk": "Altın Sarısı"
     },
     "basak": {
-      "yorum": "Detaycı yapın, bugünkü işlerde hata yapma ihtimalin düşük. Sağlıklı bir kahvaltı, odaklanmanı güçlendirir. Şanslı sayın 48, renk lacivert.",
-      "sansliSayi": 48,
-      "sansliRenk": "lacivert"
+      "yorum": "Titiz Başak, masandaki o ufak dağınıklığı toplarken bulabilirsin kendini ama bırak her şey simetrik olmak zorunda değil. Günün mottosu: 'Bazen akışına bırakmak da bir başarıdır.'",
+      "sansliSayi": 15,
+      "sansliRenk": "Lacivert"
     },
     "terazi": {
-      "yorum": "İçsel dengeyi bulmak için hafif bir yoga seansı işe yarar. İş yerinde adil bir karar alman, çevrendekilerin saygısını kazanır. Şanslı sayın 27, renk pembe.",
-      "sansliSayi": 27,
-      "sansliRenk": "pembe"
+      "yorum": "Sevgili Terazi, iki seçenek arasında kalıp yine saatlerce düşüneceksin, kesin bilgi. Neyse ki estetik bakış açın sayesinde karar verdiğinde sonuç herkesin gözünü kamaştıracak.",
+      "sansliSayi": 6,
+      "sansliRenk": "Pembe"
     },
     "akrep": {
-      "yorum": "Gizli bir proje ortaya çıkabilir; araştırmacı yönün devreye girer. Tutkulu bir sohbet, aşk hayatına hareket katabilir. Şanslı sayın 9, renk mor.",
+      "yorum": "Gizemli Akrep, kimse senin içinden geçenleri tahmin edemez, o yüzden bugün biraz açık kart oynaman gerekebilir. İş hayatındaki sezgilerine güven, seni yine yanıltmayacak.",
       "sansliSayi": 9,
-      "sansliRenk": "mor"
+      "sansliRenk": "Bordo"
     },
     "yay": {
-      "yorum": "Macera arayışın, akşam saatlerinde yeni bir rotaya yönlendirebilir. İşte ufak bir risk, uzun vadede fayda sağlayabilir. Şanslı sayın 63, renk turkuaz.",
-      "sansliSayi": 63,
-      "sansliRenk": "turkuaz"
+      "yorum": "Yerinde duramayan Yay, sırt çantasını alıp uzaklaşma isteğin tavan yapmış durumda. İşleri biraz erken bitirip akşam kendini açık havaya atarsan ruh sağlığına kocaman bir iyilik yapmış olursun.",
+      "sansliSayi": 33,
+      "sansliRenk": "Mor"
     },
     "oglak": {
-      "yorum": "Disiplinin sayesinde birikmiş görevleri ertelemeye son verirsin. Kariyer hedeflerine bir adım daha yaklaşmak mümkün. Şanslı sayın 18, renk kahverengi.",
-      "sansliSayi": 18,
-      "sansliRenk": "kahverengi"
+      "yorum": "Çalışkan Oğlak, bugün yapılacaklar listen o kadar uzun ki, Claude bile hayret eder! Kendine biraz mola vermeyi unutmazsan, akşamki dinlenme keyfin iki katına çıkacak.",
+      "sansliSayi": 8,
+      "sansliRenk": "Gri"
     },
     "kova": {
-      "yorum": "Yaratıcı fikirlerin akıyor; bir beyin fırtınası toplantısında öne çıkabilirsin. Arkadaşlarınla bir kahve molası, enerjini tazeler. Şanslı sayın 42, renk açık mavi.",
-      "sansliSayi": 42,
-      "sansliRenk": "açık mavi"
+      "yorum": "Geleceğin fikirleriyle yaşayan Kova, bugün çevrendekilere yine 'bu insan ne diyor ya' dedirteceksin. Farklı tarzınla aşkta sürpriz bir gelişme kapını çalabilir, şaşırmaya hazır ol.",
+      "sansliSayi": 11,
+      "sansliRenk": "Turkuaz"
     },
     "balik": {
-      "yorum": "Hayal gücün yüksek, sanatsal bir aktivite ruhunu dinlendirir. Sevdiklerinle duygusal bir paylaşım, bağları güçlendirir. Şanslı sayın 77, renk pastel pembe.",
-      "sansliSayi": 77,
-      "sansliRenk": "pastel pembe"
+      "yorum": "Hayalperest Balık, yine bulutların üzerinde geziniyorsun ama dikkat et faturalar gerçek! Yaratıcı işlerle uğraşıyorsan bugün parmaklarından resmen ilham fışkıracak.",
+      "sansliSayi": 18,
+      "sansliRenk": "Deniz Mavisi"
     }
   }
 }
