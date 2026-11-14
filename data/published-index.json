@@ -874,5 +874,14 @@
     "format": "quiz",
     "yayinTarihi": "2026-11-13T05:02:42.699Z",
     "otomatikYayinlandi": true
+  },
+  {
+    "slug": "bilim-tarihinin-baslangicina-dair-ezber-bozan-5-gercek",
+    "baslik": "Bilim Tarihinin Başlangıcına Dair Ezber Bozan 5 Gerçek",
+    "konuParmakIzi": "bilim",
+    "kategori": "bilim",
+    "format": "trivia",
+    "yayinTarihi": "2026-11-14T05:03:19.046Z",
+    "otomatikYayinlandi": false
   }
 ]
