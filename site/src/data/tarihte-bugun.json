@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-11-13",
+  "tarih": "2026-11-14",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1715,
-      "baslik": "Dorothea Erxleben'in Doğumu",
-      "metin": "Almanya'nın ilk kadın tıp doktoru unvanını alan Dorothea Christiane Erxleben dünyaya geldi. Bilim dünyasında kadınların varlık gösterme mücadelesinde öncü bir rol oynayan Erxleben, tıp tarihindeki engelleri aşarak kariyer yaptı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Dorothea_Erxleben"
-    },
-    {
-      "yil": 1841,
-      "baslik": "James Braid ve Hipnotizma Çalışmaları",
-      "metin": "İskoç cerrah James Braid, Charles Lafontaine'in hayvanî mıknatıs gösterisini izleyerek hipnotizma üzerine derinlemesine çalışmalarına başladı. Tıp tarihinde çığır açan bu gözlem, daha sonra hipnoz olarak adlandırılacak bilimsel incelemelerin temelini attı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/James_Braid_(surgeon)"
-    },
-    {
-      "yil": 1850,
-      "baslik": "Robert Louis Stevenson'ın Doğumu",
-      "metin": "Hazine Adası ve Dr. Jekyll ve Mr. Hyde gibi dünya klasiklerinin yazarı İskoç romancı ve şair Robert Louis Stevenson dünyaya geldi. Edebiyat dünyasında bıraktığı derin izler, onu macera ve korku türlerinin en önemli kalemlerinden biri haline getirdi.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Robert_Louis_Stevenson"
-    },
-    {
-      "yil": 1940,
-      "baslik": "Fantasia Filmi ve Ses Teknolojisi",
-      "metin": "Walt Disney'in unutulmaz eseri Fantasia, New York'taki Broadway Theatre'da sinemaseverlerle buluştu. Bu yapım, stereofonik ses teknolojisiyle gösterime giren ilk ticari film olarak sinema tarihine adını yazdırdı.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Walt_Disney"
-    },
-    {
-      "yil": 1947,
-      "baslik": "AK-47'nin Geliştirilmesi Tamamlandı",
-      "metin": "Sovyetler Birliği, tarihin ilk gerçek taarruz tüfeklerinden biri olan AK-47'nin geliştirme süreçlerini tamamladı. Geniş bir coğrafyaya yayılmış olan bu devlette tasarlanan silah, askeri teknoloji tarihinde dönüm noktası oldu.",
-      "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Soviet_Union"
-    },
-    {
-      "yil": 2009,
-      "baslik": "Ay'da Su Varlığı Kesinleşti",
-      "metin": "Su bulma umuduyla Ay'ın güney kutbunu bombalayan NASA, çarpma sonuçlarını açıkladığı basın toplantısında, Ay'da önemli miktarda su bulunduğunu duyurdu. Güneş Sistemi'nin beşinci büyük doğal uydusu olan Ay hakkındaki bu keşif, uzay araştırmalarında yeni bir dönüm noktası oldu.",
+      "yil": 1680,
+      "baslik": "Gottfried Kirch ve 1680 Büyük Kuyruklu Yıldızı",
+      "metin": "Alman astronom Gottfried Kirch, teleskopla keşfedilen ilk kuyruklu yıldız olan 1680 Büyük Kuyruklu Yıldızı'nı buldu. Bu gözlem astronomi tarihinde önemli bir eşik oldu.",
       "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ay"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Gottfried_Kirch"
+    },
+    {
+      "yil": 1851,
+      "baslik": "Moby-Dick",
+      "metin": "Amerikalı yazar Herman Melville'in epik romanı Moby-Dick Amerika'da ilk kez yayımlandı. Eser, gemi kaptanı Ahab'ın bir balinaya karşı duyduğu intikam hırsını ve denizci İsmail'in anlattıklarını merkeze alıyor.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Moby-Dick"
+    },
+    {
+      "yil": 1914,
+      "baslik": "Fuat Uzkınay ve İlk Türk Filmi",
+      "metin": "Fuat Uzkınay, ilk Türk filmi sayılan \"Ayastefanos'taki Rus Abidesinin Yıkılışı\"nı çekti. Bu yapım Türk sinema tarihinde film çeken ilk kişi olma özelliği taşıyor.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Fuat_Uzk%C4%B1nay"
+    },
+    {
+      "yil": 1967,
+      "baslik": "Theodore Maiman ve Lazer Sistemi",
+      "metin": "Amerikalı fizikçi Theodore Maiman'a dünyanın ilk lazeri olan yakut lazer sistemleri için patent verildi. Bu buluş, ilerleyen dönemlerde pek çok farklı lazer türünün geliştirilmesinin önünü açtı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Theodore_Maiman"
+    },
+    {
+      "yil": 1971,
+      "baslik": "Mariner 9",
+      "metin": "Mariner 9, Mars gezegenine ulaştı ve başka bir gezegenin yörüngesinde dönen ilk uzay aracı olma unvanını kazandı. ABD tarafından Mars hakkında bilgi toplamak için fırlatılan bu insansız uzay aracı tarihe geçti.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Mariner_9"
+    },
+    {
+      "yil": 2003,
+      "baslik": "Sedna Cüce Gezegeni",
+      "metin": "Astronomlar, Neptün'ün yörüngesinin çok ötesinde yer alan uzak bir cüce gezegen olan Sedna'yı keşfettiler. Yaklaşık 1000 kilometre çapındaki bu gök cismi Güneş Sistemi'nin en dış kısımlarında yer alıyor.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Sedna_(dwarf_planet)"
     }
   ]
 }
