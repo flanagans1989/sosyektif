@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-11-14",
+  "tarih": "2026-11-15",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1680,
-      "baslik": "Gottfried Kirch ve 1680 Büyük Kuyruklu Yıldızı",
-      "metin": "Alman astronom Gottfried Kirch, teleskopla keşfedilen ilk kuyruklu yıldız olan 1680 Büyük Kuyruklu Yıldızı'nı buldu. Bu gözlem astronomi tarihinde önemli bir eşik oldu.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Gottfried_Kirch"
-    },
-    {
-      "yil": 1851,
-      "baslik": "Moby-Dick",
-      "metin": "Amerikalı yazar Herman Melville'in epik romanı Moby-Dick Amerika'da ilk kez yayımlandı. Eser, gemi kaptanı Ahab'ın bir balinaya karşı duyduğu intikam hırsını ve denizci İsmail'in anlattıklarını merkeze alıyor.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Moby-Dick"
-    },
-    {
-      "yil": 1914,
-      "baslik": "Fuat Uzkınay ve İlk Türk Filmi",
-      "metin": "Fuat Uzkınay, ilk Türk filmi sayılan \"Ayastefanos'taki Rus Abidesinin Yıkılışı\"nı çekti. Bu yapım Türk sinema tarihinde film çeken ilk kişi olma özelliği taşıyor.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Fuat_Uzk%C4%B1nay"
-    },
-    {
-      "yil": 1967,
-      "baslik": "Theodore Maiman ve Lazer Sistemi",
-      "metin": "Amerikalı fizikçi Theodore Maiman'a dünyanın ilk lazeri olan yakut lazer sistemleri için patent verildi. Bu buluş, ilerleyen dönemlerde pek çok farklı lazer türünün geliştirilmesinin önünü açtı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Theodore_Maiman"
+      "yil": 1956,
+      "baslik": "Orta Doğu Teknik Üniversitesi",
+      "metin": "Ankara'da kurulan Orta Doğu Teknik Üniversitesi, dönemin başbakanı ve akademisyenlerin öncülüğünde eğitim hayatına başladı. Üniversite, kısa sürede ülkenin en köklü ve öncü bilim yuvalarından biri haline geldi.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Orta_Do%C4%9Fu_Teknik_%C3%9Cniversitesi"
     },
     {
       "yil": 1971,
-      "baslik": "Mariner 9",
-      "metin": "Mariner 9, Mars gezegenine ulaştı ve başka bir gezegenin yörüngesinde dönen ilk uzay aracı olma unvanını kazandı. ABD tarafından Mars hakkında bilgi toplamak için fırlatılan bu insansız uzay aracı tarihe geçti.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Mariner_9"
+      "baslik": "Intel 4004 Mikroişlemci",
+      "metin": "Intel şirketi, dünyanın ilk ticari tek çipli mikroişlemcisi olan 4004'ü kullanıcıların hizmetine sundu. Bu devrim niteliğindeki buluş, modern bilgisayar ve yarı iletken teknolojisinin önünü açtı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Intel"
     },
     {
-      "yil": 2003,
-      "baslik": "Sedna Cüce Gezegeni",
-      "metin": "Astronomlar, Neptün'ün yörüngesinin çok ötesinde yer alan uzak bir cüce gezegen olan Sedna'yı keşfettiler. Yaklaşık 1000 kilometre çapındaki bu gök cismi Güneş Sistemi'nin en dış kısımlarında yer alıyor.",
+      "yil": 1977,
+      "baslik": "Veli Ballı'nın Maraton Zaferi",
+      "metin": "Türk atleti Veli Ballı, Pakistan'da düzenlenen Uluslararası Atletizm Yarışmaları'nda maraton dalında birinci oldu. Uzun mesafe koşucusu olan sporcu, uluslararası alanda elde ettiği bu dereceyle adını duyurdu.",
+      "kategori": "spor",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Veli_Ball%C4%B1"
+    },
+    {
+      "yil": 1988,
+      "baslik": "Sovyet Uzay Mekiği Buran",
+      "metin": "NASA'nın Uzay Mekiği programına rakip olarak geliştirilen Sovyet uzay mekiği Buran, mürettebatsız olarak ilk ve tek uçuşunu gerçekleştirdi. Bu uçuş, uzay havacılığı tarihinin en dikkat çekici insansız denemelerinden biri olarak kayıtlara geçti.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Sedna_(dwarf_planet)"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Buran_(spacecraft)"
+    },
+    {
+      "yil": 2012,
+      "baslik": "Altay Muharebe Tankı",
+      "metin": "Türkiye'nin ilk millî muharebe tankı Altay'ın tanıtımı gerçekleştirildi. Adını Türk Kurtuluş Savaşı'nın kahraman komutanlarından Fahrettin Altay'dan alan tank, ülkenin savunma sanayiinde önemli bir dönüm noktası oldu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Altay_(tank)"
+    },
+    {
+      "yil": 2022,
+      "baslik": "Dünya Nüfusu 8 Milyarı Aştı",
+      "metin": "Birleşmiş Milletler tarafından yapılan açıklamaya göre dünya nüfusu resmi olarak 8 milyar sınırını geçti. İnsanlık tarihi boyunca nüfusun bu büyüklüğe ulaşması yüz binlerce yıl sürdü.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/D%C3%BCnya_n%C3%BCfusu"
     }
   ]
 }
