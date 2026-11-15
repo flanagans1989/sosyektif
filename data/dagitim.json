@@ -2444,5 +2444,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "turk-tiyatrosunun-ve-ekranlarin-dehasi-berkun-oya-hakkinda-bilmeniz-gereken-5-sasirtici-gercek": {
+    "eklendi": "2026-11-15T05:04:10.641Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-11-15T05:04:11.980Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3n2daft2afm2p"
+      }
+    },
+    "reelIdleri": {}
   }
 }
