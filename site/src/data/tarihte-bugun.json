@@ -1,49 +1,63 @@
 {
-  "tarih": "2026-11-15",
+  "tarih": "2026-11-16",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1956,
-      "baslik": "Orta Doğu Teknik Üniversitesi",
-      "metin": "Ankara'da kurulan Orta Doğu Teknik Üniversitesi, dönemin başbakanı ve akademisyenlerin öncülüğünde eğitim hayatına başladı. Üniversite, kısa sürede ülkenin en köklü ve öncü bilim yuvalarından biri haline geldi.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Orta_Do%C4%9Fu_Teknik_%C3%9Cniversitesi"
+      "yil": 1717,
+      "baslik": "Ansiklopedi'nin Mimarı Jean le Rond d'Alembert Doğdu",
+      "metin": "Fransız matematikçi, fizikçi ve filozof Jean le Rond d'Alembert dünyaya geldi. Denis Diderot ile birlikte Aydınlanma Çağı'nın anıtsal eseri olan 'Encyclopédie'nin editörlüğünü üstlenen d'Alembert, çağının bilim ve düşünce dünyasına damgasını vurdu.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Jean_Le_Rond_d'Alembert"
     },
     {
-      "yil": 1971,
-      "baslik": "Intel 4004 Mikroişlemci",
-      "metin": "Intel şirketi, dünyanın ilk ticari tek çipli mikroişlemcisi olan 4004'ü kullanıcıların hizmetine sundu. Bu devrim niteliğindeki buluş, modern bilgisayar ve yarı iletken teknolojisinin önünü açtı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Intel"
-    },
-    {
-      "yil": 1977,
-      "baslik": "Veli Ballı'nın Maraton Zaferi",
-      "metin": "Türk atleti Veli Ballı, Pakistan'da düzenlenen Uluslararası Atletizm Yarışmaları'nda maraton dalında birinci oldu. Uzun mesafe koşucusu olan sporcu, uluslararası alanda elde ettiği bu dereceyle adını duyurdu.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Veli_Ball%C4%B1"
-    },
-    {
-      "yil": 1988,
-      "baslik": "Sovyet Uzay Mekiği Buran",
-      "metin": "NASA'nın Uzay Mekiği programına rakip olarak geliştirilen Sovyet uzay mekiği Buran, mürettebatsız olarak ilk ve tek uçuşunu gerçekleştirdi. Bu uçuş, uzay havacılığı tarihinin en dikkat çekici insansız denemelerinden biri olarak kayıtlara geçti.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Buran_(spacecraft)"
-    },
-    {
-      "yil": 2012,
-      "baslik": "Altay Muharebe Tankı",
-      "metin": "Türkiye'nin ilk millî muharebe tankı Altay'ın tanıtımı gerçekleştirildi. Adını Türk Kurtuluş Savaşı'nın kahraman komutanlarından Fahrettin Altay'dan alan tank, ülkenin savunma sanayiinde önemli bir dönüm noktası oldu.",
+      "yil": 1904,
+      "baslik": "John Ambrose Fleming'den Radyoyu Değiştiren Vakum Tüpü",
+      "metin": "İngiliz mühendis John Ambrose Fleming, termiyonik valf yani vakum tüpü için patent aldı. İlk transatlantik radyo yayınını mümkün kılan bu icat, elektronik ve haberleşme teknolojisinin en kritik yapı taşlarından biri haline geldi.",
       "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Altay_(tank)"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/John_Ambrose_Fleming"
     },
     {
-      "yil": 2022,
-      "baslik": "Dünya Nüfusu 8 Milyarı Aştı",
-      "metin": "Birleşmiş Milletler tarafından yapılan açıklamaya göre dünya nüfusu resmi olarak 8 milyar sınırını geçti. İnsanlık tarihi boyunca nüfusun bu büyüklüğe ulaşması yüz binlerce yıl sürdü.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/D%C3%BCnya_n%C3%BCfusu"
+      "yil": 1938,
+      "baslik": "Albert Hofmann, Laboratuvarda LSD'yi Sentezledi",
+      "metin": "İsviçreli kimyager Dr. Albert Hofmann, Basel'deki Sandoz Laboratuvarlarında çavdar mahmuzundan elde ettiği bileşenlerle ilk kez LSD'yi sentezledi. Tatsız ve kokusuz psikoaktif bir halüsinojen olan bu madde, tıp ve kimya tarihinde önemli bir dönüm noktası oldu.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/LSD"
+    },
+    {
+      "yil": 1965,
+      "baslik": "Venüs'e Doğru Tarihî Yolculuk: Venera 3 Fırlatıldı",
+      "metin": "Sovyetler Birliği, Venera uzay programı kapsamında Venera 3 sondasını uzaya gönderdi. Gezegen hakkında bilgi toplamak üzere yola çıkan bu araç, ilerleyen süreçte başka bir gezegenin yüzeyine ulaşan ilk uzay aracı olma unvanını elde etti.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Venera_program"
+    },
+    {
+      "yil": 1974,
+      "baslik": "Derin Uzaya Gönderilen Mesaj: Arecibo Yayını",
+      "metin": "Porto Riko'daki dev antenden uzaya fırlatılan Arecibo mesajı, insanlık ve Dünya hakkında temel bilgileri yıldızlararası boşluğa taşıdı. Messier 13 küresel yıldız kümesine doğru iletilen bu radyo dalgası, insanlığın teknolojik yeteneklerini evrene duyurma amacı taşıyordu.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Arecibo_message"
+    },
+    {
+      "yil": 1986,
+      "baslik": "Sedad Hakkı Eldem'e Zeyrek Binasıyla Ağa Han Ödülü",
+      "metin": "20. yüzyıl Türk mimarlığının en önemli isimlerinden Sedad Hakkı Eldem, prestijli Ağa Han Mimarlık Ödülü'ne layık görüldü. Klasik Osmanlı mimarisi üzerine derin çalışmalarıyla tanınan usta mimar, bu ödüle İstanbul Zeyrek'teki Sosyal Sigortalar Kurumu Binası ile ulaştı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Sedad_Hakk%C4%B1_Eldem"
+    },
+    {
+      "yil": 1990,
+      "baslik": "Milli Vanilli Grubunun Şoke Eden Grammy Skandalı",
+      "metin": "Pop müziğin zirvesindeki ikili Milli Vanilli'ye verilen Grammy Ödülü, şarkıları kendilerinin söylemediği ortaya çıkınca geri alındı. 'Girl You Know It's True' albümündeki tüm vokallerin stüdyo müzisyenlerine ait olduğunun anlaşılması müzik dünyasında büyük yankı uyandırdı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Pop_music"
+    },
+    {
+      "yil": 1992,
+      "baslik": "Suffolk'ta Keşfedilen Dev Roma Hazinesi: Hoxne Definesi",
+      "metin": "İngiltere'nin Suffolk bölgesindeki Hoxne köyünde, Britanya'da o güne kadar bulunmuş en büyük Geç Roma dönemi altın ve gümüş definesi ortaya çıkarıldı. 4. ve 5. yüzyıllara ait bu koleksiyon, eski Roma İmparatorluğu sınırları içinde bulunmuş en zengin sikke hazinelerinden biri olarak tarihe geçti.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Hoxne_Hoard"
     }
   ]
 }
