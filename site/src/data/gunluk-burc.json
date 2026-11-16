@@ -1,66 +1,66 @@
 {
-  "tarih": "2026-11-15",
-  "uretenProvider": "gemini",
+  "tarih": "2026-11-16",
+  "uretenProvider": "groq",
   "burclar": {
     "koc": {
-      "yorum": "Bugün enerjin tavan yapmış durumda, aceleci kararlar alıp sonra 'ben bunu niye yaptım' dememek için derin bir nefes al. İş yerinde liderliği ele alırken etrafındakilere biraz alan tanımakta fayda var.",
+      "yorum": "Bugün enerjin tavan yapıyor, yeni projelere atılmak için harika bir zaman. İş ortamında yaratıcı fikrinle dikkat çekecek, aşk hayatında ise spontane bir buluşma seni güldürebilir.",
       "sansliSayi": 7,
-      "sansliRenk": "Kırmızı"
+      "sansliRenk": "kırmızı"
     },
     "boga": {
-      "yorum": "Konfor alanından çıkmak bugün biraz gözünü korkutabilir ama ufak bir değişiklik ruhi rehavetine çok iyi gelecektir. Akşam saatlerinde lezzetli bir yemek ve sevdiğin bir film, tüm haftanın yorgunluğunu unutturur.",
-      "sansliSayi": 12,
-      "sansliRenk": "Yeşil"
+      "yorum": "Stabil bir gün seni bekliyor; finansal konularda temkinli adımlar atmak faydalı. Sevdiğinle birlikte uzun yürüyüşler, ruhunu dinlendirecek.",
+      "sansliSayi": 22,
+      "sansliRenk": "yeşil"
     },
     "ikizler": {
-      "yorum": "Zihnin yine aynı anda kırk farklı yerde, maşallah rüzgar gibisin! Gelen ani bir mesaj veya seyahat planı tüm günün akışını keyifli bir şekilde değiştirebilir, dedikodulara kulak tıkamayı unutma.",
-      "sansliSayi": 3,
-      "sansliRenk": "Sarı"
+      "yorum": "Zihin bir bulut gibi hafif, sosyal medyada yeni bir trend yakalayabilirsin. İş arkadaşlarınla kısa bir kahve molası, yeni fikirlerin kıvılcımını yakabilir.",
+      "sansliSayi": 13,
+      "sansliRenk": "turuncu"
     },
     "yengec": {
-      "yorum": "Evde vakit geçirme isteğin dorukta, battaniye ve kahve ikilisi bugünkü en yakın dostun olabilir. Aile bireyleriyle yapacağın samimi bir sohbet içindeki bazı taşları yerine oturtacak.",
-      "sansliSayi": 4,
-      "sansliRenk": "Gümüş"
+      "yorum": "Duygusal dalgalar bugün hafifçe kabarıyor, içsel sesine kulak ver. Aileyle vakit geçirmek enerjini yeniden doldurur, işte ise sabırla ilerlemek en iyisi.",
+      "sansliSayi": 5,
+      "sansliRenk": "mavi"
     },
     "aslan": {
-      "yorum": "Sahne senin sevgili Aslan, girdiğin her ortamda dikkatleri üzerine çekmemen imkansız gibi bir şey. Aşk hayatında ise küçük bir sürpriz kalbinin yeniden pır pır etmesini sağlayabilir.",
-      "sansliSayi": 1,
-      "sansliRenk": "Altın Sarısı"
+      "yorum": "Parlak bir ışık gibi sahnedesin; liderlik yeteneğinle bir toplantıyı yönlendirebilirsin. Romantik bir sürpriz, günün en tatlı anı olabilir.",
+      "sansliSayi": 31,
+      "sansliRenk": "altın"
     },
     "basak": {
-      "yorum": "Etrafındaki dağınıklığı toplama dürtün bugün tavan yapabilir, aman diyelim ev halkının eşyalarına müdahale ederken savaş çıkmasın. Detaylarda boğulmak yerine büyük resme odaklanmak enerjini korumanı sağlar.",
-      "sansliSayi": 15,
-      "sansliRenk": "Lacivert"
+      "yorum": "Detaycılık gücün bugün işin içinde; planladığın rapor tam istediğin gibi şekillenecek. Sağlıklı bir kahvaltı enerji seviyeni yükseltecek, aşk hayatında ise küçük bir jest büyük fark yaratır.",
+      "sansliSayi": 48,
+      "sansliRenk": "beyaz"
     },
     "terazi": {
-      "yorum": "Kararsızlıklar yaka silktirse de estetik zevkinin en yüksek olduğu günlerden birindesin. Sanatsal faaliyetlere vakit ayırmak veya alışverişte kendini şımartmak ruhuna çok iyi gelecektir.",
-      "sansliSayi": 6,
-      "sansliRenk": "Pembe"
+      "yorum": "Dengeyi bulmakta zorlanıyorsan, bir kahve molası zihnini rahatlatır. İş ortamında ortaklık teklifleri gelebilir; bu fırsatı değerlendir.",
+      "sansliSayi": 26,
+      "sansliRenk": "mor"
     },
     "akrep": {
-      "yorum": "Gizemli havan bugün etrafındakileri adeta mıknatıs gibi çekecek, kimse sırrını çözemiyor. Finansal konularda içine doğan hislere güvenebilirsin ama harcama yaparken kantarın topuzunu kaçırma.",
+      "yorum": "Yoğun duygular seni sarmış olabilir, bu enerjiyi yaratıcı bir projeye yönlendirmek iyi gelir. Aşk hayatında tutkulu bir konuşma, ilişkine yeni bir soluk getirebilir.",
       "sansliSayi": 9,
-      "sansliRenk": "Bordo"
+      "sansliRenk": "kırmızı"
     },
     "yay": {
-      "yorum": "Macera ruhun yine sırt çantasını hazırlamış durumda, yeni bir şeyler öğrenmek için harika bir gün. Sosyal çevrende yapacağın eğlenceli sohbetler neşene neşe katacak.",
-      "sansliSayi": 11,
-      "sansliRenk": "Mor"
+      "yorum": "Macera isteğin bugün yüksek; yeni bir hobi ya da kısa bir gezi planı canını sıkmayacak. İşte ise esnek çalışma saatleri verimliliğini artırır.",
+      "sansliSayi": 58,
+      "sansliRenk": "sarı"
     },
     "oglak": {
-      "yorum": "Kariyer planların kafanı meşgul etse de bugün biraz durup dinlenmeye hakkın var. Disiplinli yapın sayesinde bir süredir biriktirdiğin işlerin üstesinden kolayca geleceksin.",
-      "sansliSayi": 8,
-      "sansliRenk": "Kahverengi"
+      "yorum": "Sorumlulukların ön planda, disiplinli yaklaşımın takdir toplar. Aile içinde bir sorumluluk alman, sevgi bağlarını güçlendirebilir.",
+      "sansliSayi": 34,
+      "sansliRenk": "kahverengi"
     },
     "kova": {
-      "yorum": "Geleceğe dair çılgın fikirlerin bugün herkesi şaşırtabilir, vizyonunla yine göz dolduruyorsun. Teknolojik aletlerle ilgili yaşanabilecek küçük aksiliklere karşı sakinliğini korumanda fayda var.",
-      "sansliSayi": 17,
-      "sansliRenk": "Turkuaz"
+      "yorum": "Yenilikçi fikirlerin akıyor, bir arkadaşınla beyin fırtınası yapmalısın. Romantik bir mesaj günün en tatlı sürprizi olabilir.",
+      "sansliSayi": 71,
+      "sansliRenk": "turkuaz"
     },
     "balik": {
-      "yorum": "Hayal dünyan o kadar zengin ki, gerçek dünyadan biraz kopmuş olabilirsin, bu da gayet normal. Müzik dinlemek, resim yapmak veya sadece hayal kurmak bugün senin en şifalı terapin olacak.",
+      "yorum": "Hayal gücün bugün yüksek; bir sanat projesi ya da yaratıcı bir yazı sana iyi gelecek. Sevdiğinle duygusal bir sohbet ruhunu besler, işte ise sezgilerin kararlarını yönlendirebilir.",
       "sansliSayi": 2,
-      "sansliRenk": "Deniz Mavisi"
+      "sansliRenk": "pembe"
     }
   }
 }
