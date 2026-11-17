@@ -1,9 +1,12 @@
 {
-  "tarih": "2026-11-16T05:07:59.121Z",
+  "tarih": "2026-11-17T05:01:59.373Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 0,
   "onayaDusen": 1,
-  "reddedilen": 0,
-  "hatalar": []
+  "reddedilen": 2,
+  "hatalar": [
+    "Çiğdem Karaaslan: uygun değil: Yaşayan gerçek bir siyasi figür.",
+    "Berke Özer: uygun değil: Yaşayan bir gerçek kişi (sporcu) olduğu için odak seçilemedi."
+  ]
 }

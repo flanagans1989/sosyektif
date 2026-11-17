@@ -1,101 +1,5 @@
 [
   {
-    "parmakIzi": "cemil tugay",
-    "baslik": "Cemil Tugay",
-    "sebep": "uygun değil: Yaşayan bir siyasetçi ve yerel yönetici hakkında olduğu için site kurallarına ve politik içerik yasağına aykırıdır.",
-    "tarih": "2026-10-08T05:02:18.764Z"
-  },
-  {
-    "parmakIzi": "atilla taş",
-    "baslik": "Atilla Taş",
-    "sebep": "uygun değil: Yaşayan bir gerçek kişi (sanatçı/fenomen) odakta olduğu için site politikalarına uygun değil.",
-    "tarih": "2026-10-09T05:02:18.510Z"
-  },
-  {
-    "parmakIzi": "ankara garı saldırısı",
-    "baslik": "Ankara Garı Saldırısı",
-    "sebep": "uygun değil: Suç, şiddet, adli olaylar, terör ve felaket haberleri site politikamız gereği uygun değildir.",
-    "tarih": "2026-10-11T05:01:56.760Z"
-  },
-  {
-    "parmakIzi": "seks ve genç kız (film)",
-    "baslik": "Seks ve Genç Kız (film)",
-    "sebep": "uygun değil: Cinsellik ve +18 içerik barındırdığı için site politikalarına uygun değildir.",
-    "tarih": "2026-10-11T05:01:57.689Z"
-  },
-  {
-    "parmakIzi": "mehmet ağar",
-    "baslik": "Mehmet Ağar",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişi veya yakın dönemin siyasi/adli figürleri site politikası gereği içerik odağı olamaz.",
-    "tarih": "2026-10-11T05:01:58.578Z"
-  },
-  {
-    "parmakIzi": "i̇pek tanrıyar",
-    "baslik": "İpek Tanrıyar",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için içerik politikamıza uygun değildir.",
-    "tarih": "2026-10-11T05:01:59.312Z"
-  },
-  {
-    "parmakIzi": "gibi bölümleri listesi",
-    "baslik": "Gibi bölümleri listesi",
-    "sebep": "\"Gibi\" daha önce işlendi",
-    "tarih": "2026-10-11T05:02:00.178Z"
-  },
-  {
-    "parmakIzi": "dünya kız çocukları günü",
-    "baslik": "Dünya Kız Çocukları Günü",
-    "sebep": "uygun değil: Çocuklarla ilgili hassas konular ve özel günler içerik politikamız gereği uygun değildir.",
-    "tarih": "2026-10-12T05:01:53.422Z"
-  },
-  {
-    "parmakIzi": "buğrahan tuncer",
-    "baslik": "Buğrahan Tuncer",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için içerik politikamıza uygun değildir.",
-    "tarih": "2026-10-12T05:01:54.363Z"
-  },
-  {
-    "parmakIzi": "eda ece",
-    "baslik": "Eda Ece",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odaklı içerik üretimine uygun değildir.",
-    "tarih": "2026-10-12T05:01:55.228Z"
-  },
-  {
-    "parmakIzi": "salih güney",
-    "baslik": "Salih Güney",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odağı olarak uygun değildir.",
-    "tarih": "2026-10-12T05:01:56.129Z"
-  },
-  {
-    "parmakIzi": "husiler",
-    "baslik": "Husiler",
-    "sebep": "uygun değil: Siyaset ve güncel çatışma konuları sitenin yayın politikasına ve güvenlik kurallarına uygun değildir.",
-    "tarih": "2026-10-13T05:01:53.341Z"
-  },
-  {
-    "parmakIzi": "rj mitte",
-    "baslik": "RJ Mitte",
-    "sebep": "\"Breaking Bad\" daha önce işlendi",
-    "tarih": "2026-10-14T05:01:52.757Z"
-  },
-  {
-    "parmakIzi": "mihraç ural",
-    "baslik": "Mihraç Ural",
-    "sebep": "uygun değil: Güncel, siyasi ve tartışmalı bir figür olması nedeniyle sitenin içerik politikasına ve zamansız içerik anlayışına uygun değildir.",
-    "tarih": "2026-10-16T05:01:56.211Z"
-  },
-  {
-    "parmakIzi": "2027 uefa ülkeler sıralaması",
-    "baslik": "2027 UEFA ülkeler sıralaması",
-    "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
-    "tarih": "2026-10-16T05:01:57.037Z"
-  },
-  {
-    "parmakIzi": "2026 uefa ülkeler sıralaması",
-    "baslik": "2026 UEFA ülkeler sıralaması",
-    "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
-    "tarih": "2026-10-17T05:01:47.976Z"
-  },
-  {
     "parmakIzi": "2013 reyhanlı bombalı saldırıları",
     "baslik": "2013 Reyhanlı bombalı saldırıları",
     "sebep": "uygun değil: Suç, şiddet, adli olaylar, terör ve savaş haberleri sitenin yayın ilkelerine ve konu odağına uygun değildir.",
@@ -268,5 +172,17 @@
     "baslik": "Fatma Betül Sayan Kaya",
     "sebep": "uygun değil: Yaşayan gerçek bir siyasetçi ve kişi odağı olduğu için site kurallarına uygun değil.",
     "tarih": "2026-11-07T05:01:48.591Z"
+  },
+  {
+    "parmakIzi": "çiğdem karaaslan",
+    "baslik": "Çiğdem Karaaslan",
+    "sebep": "uygun değil: Yaşayan gerçek bir siyasi figür.",
+    "tarih": "2026-11-17T05:01:42.234Z"
+  },
+  {
+    "parmakIzi": "berke özer",
+    "baslik": "Berke Özer",
+    "sebep": "uygun değil: Yaşayan bir gerçek kişi (sporcu) olduğu için odak seçilemedi.",
+    "tarih": "2026-11-17T05:01:43.129Z"
   }
 ]
