@@ -2480,8 +2480,14 @@
       "bluesky": {
         "durum": "ok",
         "deneme": 1,
-        "sonDeneme": "2026-11-18T05:07:54.405Z",
-        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3n2krz7kbgs2j"
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3n2krz7kbgs2j",
+        "sonDeneme": "2026-11-18T05:07:54.405Z"
+      },
+      "instagram": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-11-18T05:10:24.137Z",
+        "id": "18030937289860979"
       }
     },
     "reelIdleri": {}
