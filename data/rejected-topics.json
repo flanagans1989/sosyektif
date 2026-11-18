@@ -1,41 +1,5 @@
 [
   {
-    "parmakIzi": "2013 reyhanlı bombalı saldırıları",
-    "baslik": "2013 Reyhanlı bombalı saldırıları",
-    "sebep": "uygun değil: Suç, şiddet, adli olaylar, terör ve savaş haberleri sitenin yayın ilkelerine ve konu odağına uygun değildir.",
-    "tarih": "2026-10-18T05:01:49.453Z"
-  },
-  {
-    "parmakIzi": "alpay (şarkıcı)",
-    "baslik": "Alpay (şarkıcı)",
-    "sebep": "\"Alpay\" daha önce işlendi",
-    "tarih": "2026-10-18T05:01:50.329Z"
-  },
-  {
-    "parmakIzi": "abdullah çatlı",
-    "baslik": "Abdullah Çatlı",
-    "sebep": "uygun değil: Suç, şiddet, adli olaylar ve yakın tarihli tartışmalı siyasi/suç figürleri site yayın ilkelerine uygun değildir.",
-    "tarih": "2026-10-18T05:01:51.159Z"
-  },
-  {
-    "parmakIzi": "ozan kabak",
-    "baslik": "Ozan Kabak",
-    "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir ve sitenin kuralları gereği yaşayan kişilerin kendisi içerik odağı olamaz.",
-    "tarih": "2026-10-18T05:01:51.953Z"
-  },
-  {
-    "parmakIzi": "sinem dedetaş",
-    "baslik": "Sinem Dedetaş",
-    "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir (Sinem Dedetaş) ve site kuralları gereği yaşayan kişiler doğrudan içerik odağı olamaz.",
-    "tarih": "2026-10-18T05:01:52.732Z"
-  },
-  {
-    "parmakIzi": "türkiye halk kurtuluş partisi-cephesi (acilciler)",
-    "baslik": "Türkiye Halk Kurtuluş Partisi-Cephesi (Acilciler)",
-    "sebep": "uygun değil: Siyasi örgütler, partiler ve yakın dönem siyasi tarih/eylem grupları site yayın politikası gereği uygun değildir.",
-    "tarih": "2026-10-18T05:01:53.700Z"
-  },
-  {
     "parmakIzi": "araçla gelip eğlence mekanına kurşun yağdırdılar",
     "baslik": "Araçla gelip eğlence mekanına kurşun yağdırdılar",
     "sebep": "uygun değil: Suç, şiddet, adli olaylar ve güvenlik konuları site yayın politikasına uygun değildir.",
@@ -184,5 +148,35 @@
     "baslik": "Berke Özer",
     "sebep": "uygun değil: Yaşayan bir gerçek kişi (sporcu) olduğu için odak seçilemedi.",
     "tarih": "2026-11-17T05:01:43.129Z"
+  },
+  {
+    "parmakIzi": "porno film",
+    "baslik": "Porno film",
+    "sebep": "uygun değil: Cinsellik ve +18 içerik barındırdığı için site politikalarına uygun değildir.",
+    "tarih": "2026-11-18T05:01:38.479Z"
+  },
+  {
+    "parmakIzi": "2026-27 uefa uluslar b ligi",
+    "baslik": "2026-27 UEFA Uluslar B Ligi",
+    "sebep": "\"UEFA Uluslar Ligi\" daha önce işlendi",
+    "tarih": "2026-11-18T05:01:39.267Z"
+  },
+  {
+    "parmakIzi": "burak akbay",
+    "baslik": "Burak Akbay",
+    "sebep": "uygun değil: Yaşayan bir gerçek kişinin kendisi konu odağı olamaz.",
+    "tarih": "2026-11-18T05:01:45.969Z"
+  },
+  {
+    "parmakIzi": "xhamster",
+    "baslik": "XHamster",
+    "sebep": "uygun değil: Cinsellik ve +18 içerik barındırdığı için sitenin yayın politikasına uygundur değildir.",
+    "tarih": "2026-11-18T05:01:46.699Z"
+  },
+  {
+    "parmakIzi": "mustafa altıoklar",
+    "baslik": "Mustafa Altıoklar",
+    "sebep": "uygun değil: Yaşayan gerçek bir kişinin kendisi doğrudan konu odağı olarak seçilemez.",
+    "tarih": "2026-11-18T05:01:52.790Z"
   }
 ]

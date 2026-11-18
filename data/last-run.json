@@ -1,12 +1,15 @@
 {
-  "tarih": "2026-11-17T05:01:59.373Z",
+  "tarih": "2026-11-18T05:07:05.456Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 0,
-  "onayaDusen": 1,
-  "reddedilen": 2,
+  "otomatikYayinlanan": 1,
+  "onayaDusen": 0,
+  "reddedilen": 5,
   "hatalar": [
-    "Çiğdem Karaaslan: uygun değil: Yaşayan gerçek bir siyasi figür.",
-    "Berke Özer: uygun değil: Yaşayan bir gerçek kişi (sporcu) olduğu için odak seçilemedi."
+    "Porno film: uygun değil: Cinsellik ve +18 içerik barındırdığı için site politikalarına uygun değildir.",
+    "2026-27 UEFA Uluslar B Ligi: \"UEFA Uluslar Ligi\" daha önce işlendi",
+    "Burak Akbay: uygun değil: Yaşayan bir gerçek kişinin kendisi konu odağı olamaz.",
+    "XHamster: uygun değil: Cinsellik ve +18 içerik barındırdığı için sitenin yayın politikasına uygundur değildir.",
+    "Mustafa Altıoklar: uygun değil: Yaşayan gerçek bir kişinin kendisi doğrudan konu odağı olarak seçilemez."
   ]
 }
