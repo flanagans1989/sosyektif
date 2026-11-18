@@ -2473,5 +2473,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "bir-baskadir-dizisi-hakkinda-duyunca-derinlesmenizi-saglayacak-7-bilgi": {
+    "eklendi": "2026-11-18T05:07:53.448Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-11-18T05:07:54.405Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3n2krz7kbgs2j"
+      }
+    },
+    "reelIdleri": {}
   }
 }
