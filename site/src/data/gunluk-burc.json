@@ -1,66 +1,66 @@
 {
-  "tarih": "2026-11-17",
-  "uretenProvider": "groq",
+  "tarih": "2026-11-18",
+  "uretenProvider": "gemini",
   "burclar": {
     "koc": {
-      "yorum": "Bugün enerjin tavan yapıyor, yeni projelere atılmak için harika bir gün. İş ortamında atılgan tavırların takdir toplar, aşk hayatında ise spontane bir sürpriz seni bekliyor.",
+      "yorum": "Bugün enerjin tavan yapmış durumda, adeta koşa koşa kahve almaya gitmek isteyeceksin ama önce önündeki işleri bitir. Aşk hayatında ise ani bir sürpriz kalbini hızlandırabilir, hazırlıklı ol.",
       "sansliSayi": 7,
-      "sansliRenk": "kırmızı"
+      "sansliRenk": "Kırmızı"
     },
     "boga": {
-      "yorum": "Rutinlerin içinde bir rahatlama fırsatı yakalayabilirsin, bu da iş verimliliğini artırır. Partnerinle sakin bir akşam yemeği, iç huzurunu pekiştirebilir.",
-      "sansliSayi": 22,
-      "sansliRenk": "yeşil"
+      "yorum": "Sevgili Boğa, yastığından ve konfor alanından ayrılmak bugün biraz zor gelebilir. İş yerinde ufak bir şekerleme yapma hayali kursan da, pratik zekanla günü başarıyla kapatacaksın.",
+      "sansliSayi": 12,
+      "sansliRenk": "Yeşil"
     },
     "ikizler": {
-      "yorum": "Sözlerin bugün altın değerinde, iletişimdeki kıvılcım seni etrafındakileri etkiliyor. Yeni bir iş fikriyle karşılaşabilir ya da eski bir arkadaşla keyifli bir sohbetin tadını çıkarabilirsin.",
-      "sansliSayi": 15,
-      "sansliRenk": "sarı"
+      "yorum": "Aklında yine kırk tane tilki, dolaşıp duruyor. Bu devasa enerji dalgasını ikili ilişkilerde tatlı sohbetlere dönüştürürsen, günün kazananı sen olursun.",
+      "sansliSayi": 23,
+      "sansliRenk": "Sarı"
     },
     "yengec": {
-      "yorum": "Evdeki küçük dokunuşlar ruh halini yükseltecek, duygusal dengeyi bulmana yardımcı olacak. Sevdiğin biriyle paylaşacağın samimi bir an, kalbini ısıtabilir.",
-      "sansliSayi": 3,
-      "sansliRenk": "mavi"
+      "yorum": "Duygusal radarın bugün en yüksek hassasiyette çalışıyor, etrafındaki herkesin derdine koşturmak isteyebilirsin. Akşamı kendine ayırıp en sevdiğin battaniyenin altında dinlenmeyi ihmal etme.",
+      "sansliSayi": 4,
+      "sansliRenk": "Gümüş"
     },
     "aslan": {
-      "yorum": "Parlak bir ışık gibi sahnede hissediyorsun; liderlik fırsatları karşına çıkabilir. Romantik bir jest, ilişkine renk katabilir.",
-      "sansliSayi": 11,
-      "sansliRenk": "altın"
+      "yorum": "Girdiği ortamda tüm dikkatleri üzerine çekmek senin göbek adın zaten, bugün de istisna olmayacak. Kariyerinde parlamak için harika bir gün, sadece fazla iddialı konuşup mesai arkadaşlarını korkutma.",
+      "sansliSayi": 19,
+      "sansliRenk": "Altın Sarısı"
     },
     "basak": {
-      "yorum": "Detaylara odaklanman işlerde seni bir adım öne taşıyor, planladığın şeyler sorunsuz ilerliyor. Kendine biraz zaman ayırıp bir hobiye yönelmek enerjini dengeleyebilir.",
-      "sansliSayi": 28,
-      "sansliRenk": "turuncu"
+      "yorum": "Mükemmeliyetçilik katsayısı yine zirvede, masandaki kalemlerin bile hizasını düzeltmek istiyorsun. Bu detaycı kafayı işine yansıtırsan yöneticilerinin beğenisini toplaman işten bile değil.",
+      "sansliSayi": 15,
+      "sansliRenk": "Lacivert"
     },
     "terazi": {
-      "yorum": "Dengeyi bulmak bugün senin süper gücün; karar verme sürecinde iç sesinle uyum içinde olacaksın. Partnerinle ortak bir plan yapmak, ilişkideki uyumu pekiştirir.",
-      "sansliSayi": 9,
-      "sansliRenk": "mor"
+      "yorum": "Kararsızlıklar prensi veya prensesi olarak yine iki seçenek arasında gidip geleceksin. Aşk konusunda kalbinin sesini dinle, en azından bu sefer mantığı biraz arka koltuğa oturt.",
+      "sansliSayi": 6,
+      "sansliRenk": "Pembe"
     },
     "akrep": {
-      "yorum": "Yoğun duyguların seni derin bir iç gözleme yönlendiriyor; bu, kişisel dönüşüm için güzel bir zemin oluşturur. İşte gizli bir fırsat belirebilir, sezgilerine güven.",
-      "sansliSayi": 33,
-      "sansliRenk": "siyah"
+      "yorum": "Gizemli havan bugün yine etrafındakileri büyüleyecek, kimse ne düşündüğünü tam olarak kestiremeyecek. İş hayatında sezgilerine güvenerek stratejik hamleler yapabilirsin.",
+      "sansliSayi": 8,
+      "sansliRenk": "Bordo"
     },
     "yay": {
-      "yorum": "Macera arzun yüksek, yeni bir kurs ya da seyahat planı seni heyecanlandırabilir. Romantik bir sohbet, kalbini hafifçe çarptırabilir.",
-      "sansliSayi": 18,
-      "sansliRenk": "turkuaz"
+      "yorum": "Pencereden dışarı bakıp seyahat planları yapma isteğin dorukta, canın rutinden sıkıldı biliyoruz. Günlük işleri hızlıca halledip akşam kendini dışarıya, yeni keşiflere atabilirsin.",
+      "sansliSayi": 9,
+      "sansliRenk": "Mor"
     },
     "oglak": {
-      "yorum": "Kariyer hedeflerin netleşiyor, disiplininle bir adım daha öne geçebilirsin. Aile içindeki sorumlulukları dengeli bir şekilde yönetmek, iç huzurunu korur.",
-      "sansliSayi": 42,
-      "sansliRenk": "lacivert"
+      "yorum": "Disiplin abidesi Oğlak, bugün yine işlerin etrafında pervane oluyorsun. Biraz mola verip kahveni yavaş içmek ve etraftaki güzellikleri fark etmek suçu işlemezsin, merak etme.",
+      "sansliSayi": 10,
+      "sansliRenk": "Kahverengi"
     },
     "kova": {
-      "yorum": "Yaratıcı fikirlerin akıyor, takım içinde yenilikçi bir çözüm sunabilirsin. Sosyal çevrende ilginç bir buluşma, gününe renk katabilir.",
-      "sansliSayi": 5,
-      "sansliRenk": "gümüş"
+      "yorum": "Aklına gelen o deli dolu ve yaratıcı fikirleri hemen projelendirmek isteyeceksin. Sosyal çevrende atacağın yenilikçi adımlar, gelecekteki sürpriz kapıları aralayabilir.",
+      "sansliSayi": 17,
+      "sansliRenk": "Turkuaz"
     },
     "balik": {
-      "yorum": "İçgüdülerin bugün güçlü; sezgilerinle bir sorunu çözmek kolaylaşır. Sanatsal bir aktivite, ruh halini dengeleyip keyifli bir kaçış sağlar.",
-      "sansliSayi": 27,
-      "sansliRenk": "pembe"
+      "yorum": "Hayal dünyasından gerçek dünyaya ani inişler yapman gereken bir gün olabilir. Sanatsal ilhamın çok yüksek, bu enerjiyi yaratıcı işlere yönlendirirsen ruhuna çok iyi gelecektir.",
+      "sansliSayi": 3,
+      "sansliRenk": "Deniz Mavisi"
     }
   }
 }

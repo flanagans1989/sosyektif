@@ -1,42 +1,42 @@
 {
-  "tarih": "2026-11-17",
+  "tarih": "2026-11-18",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1820,
-      "baslik": "Antarktika'yı Gören İlk Amerikalı",
-      "metin": "Kaptan Nathaniel Palmer Antarktika'yı gören ilk Amerikalı kaşif oldu. Kıtanın güneyindeki devasa yarımadaya sonradan bu kaşifin adı verildi.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Nathaniel_Palmer"
+      "yil": 1787,
+      "baslik": "Louis Daguerre ve Fotoğrafçılığın Doğuşu",
+      "metin": "Fransız sanatçı ve kimyager Louis Daguerre, kendi adıyla anılan dagerreyotipi fotoğrafçılık sürecini icat etti. Bu buluş, kalıcı fotoğrafların elde edilmesini sağlayarak modern fotoğrafçılığın temellerini attı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Louis_Daguerre"
     },
     {
-      "yil": 1869,
-      "baslik": "Süveyş Kanalı'nın Açılışı",
-      "metin": "Akdeniz'i Kızıldeniz'e bağlayan Süveyş Kanalı görkemli bir törenle açıldı. Bu devasa mühendislik projesi dünya deniz ticaretinin çehresini tamamen değiştirdi.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Akdeniz"
+      "yil": 1913,
+      "baslik": "Belkıs Şevket Hanım'ın Tayyare Uçuşu",
+      "metin": "Belkıs Şevket Hanım, tek motorlu üstü açık tayyareye binme cesareti gösteren ilk kadın oldu. İstanbul üzerinde uçarken aşağı attığı kartlarda, Osmanlı Müdafaa-i Hukuk-u Nisvan Derneği üyelerine selam yolluyordu.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Belk%C4%B1s_%C5%9Eevket"
     },
     {
-      "yil": 1947,
-      "baslik": "Transistörün Temelleri",
-      "metin": "Amerikalı bilim insanları John Bardeen ve Walter Houser Brattain transistörün temel prensiplerini gözlemledi. Bu buluş 20. yüzyılın elektronik devrimine kapı araladı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/John_Bardeen"
+      "yil": 1928,
+      "baslik": "Mickey Mouse'un İlk Gösterimi",
+      "metin": "Walt Disney'in yarattığı çizgi film karakteri Mickey Mouse, ilk kez izleyici karşısına çıktı. Bu gösterim, animasyon dünyasında çığır açan bir dönemin başlangıcı oldu.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Walt_Disney"
     },
     {
-      "yil": 1970,
-      "baslik": "Lunokhod 1'in Ay'a İnişi",
-      "metin": "Sovyetler Birliği Luna programı kapsamında Lunokhod 1 aracını Ay yüzeyine indirdi. Bu araç, başka bir dünyada hareket eden uzaktan kumandalı ilk gezgin robot olarak tarihe geçti.",
+      "yil": 1963,
+      "baslik": "İlk Tuşlu Telefonun Tanıtımı",
+      "metin": "Bell Telephone Company, iletişim tarihinde yeni bir sayfa açarak ilk tuşlu telefon modelini tanıttı. Bu yenilikçi cihaz, telefon kullanımını kökten değiştirerek hayatı hızlandırdı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Bell_Telephone_Company"
+    },
+    {
+      "yil": 2013,
+      "baslik": "NASA'nın MAVEN Mars Probesi",
+      "metin": "NASA, Mars'ın atmosferini incelemek üzere MAVEN uzay aracını başarıyla fırlattı. Bu görev, Kızıl Gezegen'in kayıp atmosferik geçmişine ışık tutmayı hedefliyor.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Luna_programme"
-    },
-    {
-      "yil": 2006,
-      "baslik": "Röntgenyum Elementi",
-      "metin": "1994 yılında keşfedilen 111 atom numaralı yapay elemente resmen Röntgenyum adı verildi. Bu yeni element bilim dünyasında büyük yankı uyandırdı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/1994"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/NASA"
     }
   ]
 }
