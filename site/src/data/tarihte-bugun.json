@@ -1,42 +1,56 @@
 {
-  "tarih": "2026-11-18",
+  "tarih": "2026-11-19",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1787,
-      "baslik": "Louis Daguerre ve Fotoğrafçılığın Doğuşu",
-      "metin": "Fransız sanatçı ve kimyager Louis Daguerre, kendi adıyla anılan dagerreyotipi fotoğrafçılık sürecini icat etti. Bu buluş, kalıcı fotoğrafların elde edilmesini sağlayarak modern fotoğrafçılığın temellerini attı.",
+      "yil": 1711,
+      "baslik": "Mikhail Lomonosov'un Doğumu",
+      "metin": "Rus bilim insanı Mikhail Lomonosov dünyaya geldi. Venus'ün atmosferini keşfetmesi ve kütlenin korunumu kanununa katkılarıyla tanınan önemli bir bilgin oldu.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Louis_Daguerre"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Mikhail_Lomonosov"
     },
     {
-      "yil": 1913,
-      "baslik": "Belkıs Şevket Hanım'ın Tayyare Uçuşu",
-      "metin": "Belkıs Şevket Hanım, tek motorlu üstü açık tayyareye binme cesareti gösteren ilk kadın oldu. İstanbul üzerinde uçarken aşağı attığı kartlarda, Osmanlı Müdafaa-i Hukuk-u Nisvan Derneği üyelerine selam yolluyordu.",
+      "yil": 1722,
+      "baslik": "Leopold Auenbrugger'in Doğumu",
+      "metin": "Avusturyalı hekim Leopold Auenbrugger dünyaya geldi. Tıpta teşhis tekniği olarak perküsyonu icat etmesiyle tıp tarihine adını yazdırdı.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Leopold_Auenbrugger"
+    },
+    {
+      "yil": 1816,
+      "baslik": "Varşova Üniversitesi Kuruldu",
+      "metin": "Polonya'nın en büyük üniversitesi olan Varşova Üniversitesi kuruldu. Günümüzde binlerce öğrenciye ev sahipliği yapan ülkenin en köklü eğitim kurumlarından biri haline geldi.",
       "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Belk%C4%B1s_%C5%9Eevket"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Var%C5%9Fova_%C3%9Cniversitesi"
     },
     {
-      "yil": 1928,
-      "baslik": "Mickey Mouse'un İlk Gösterimi",
-      "metin": "Walt Disney'in yarattığı çizgi film karakteri Mickey Mouse, ilk kez izleyici karşısına çıktı. Bu gösterim, animasyon dünyasında çığır açan bir dönemin başlangıcı oldu.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Walt_Disney"
-    },
-    {
-      "yil": 1963,
-      "baslik": "İlk Tuşlu Telefonun Tanıtımı",
-      "metin": "Bell Telephone Company, iletişim tarihinde yeni bir sayfa açarak ilk tuşlu telefon modelini tanıttı. Bu yenilikçi cihaz, telefon kullanımını kökten değiştirerek hayatı hızlandırdı.",
+      "yil": 1949,
+      "baslik": "İstanbul Radyosu Yeniden Yayında",
+      "metin": "Türkiye'nin ilk radyosu olan İstanbul Radyosu, Harbiye'deki yeni binasında tekrar yayınına başladı. Dinleyicileriyle yeni stüdyolarından buluştu.",
       "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Bell_Telephone_Company"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/TRT_%C4%B0stanbul_Radyosu"
     },
     {
-      "yil": 2013,
-      "baslik": "NASA'nın MAVEN Mars Probesi",
-      "metin": "NASA, Mars'ın atmosferini incelemek üzere MAVEN uzay aracını başarıyla fırlattı. Bu görev, Kızıl Gezegen'in kayıp atmosferik geçmişine ışık tutmayı hedefliyor.",
+      "yil": 1969,
+      "baslik": "Apollo 12 ile Ay'a İniş",
+      "metin": "Apollo 12 astronotları Pete Conrad ve Alan Bean, Fırtınalar Okyanusu'na iniş yaptı. Bu tarihi görevle birlikte Ay'da yürüyen üçüncü ve dördüncü insan oldular.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/NASA"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Apollo_program"
+    },
+    {
+      "yil": 1969,
+      "baslik": "Pelé'den Bininci Gol",
+      "metin": "Brezilyalı futbolcu Pelé, Maracanã Stadyumu'nda oynanan maçta kariyerindeki bininci golünü kaydetti. Bu unutulmaz başarı futbol tarihine geçti.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Santos_FC"
+    },
+    {
+      "yil": 1999,
+      "baslik": "Shenzhou 1 Uzay Aracı Fırlatıldı",
+      "metin": "Çin Halk Cumhuriyeti ilk Shenzhou uzay aracını fırlattı. Yaşam destek sisteminden yoksun olan bu insansız test uçuşu, ülkenin uzay programında önemli bir dönüm noktası oldu.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Shenzhou_1"
     }
   ]
 }
