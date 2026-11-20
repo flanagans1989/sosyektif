@@ -1,13 +1,9 @@
 {
-  "tarih": "2026-11-19T05:05:15.758Z",
+  "tarih": "2026-11-20T05:03:09.838Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 0,
   "onayaDusen": 1,
-  "reddedilen": 3,
-  "hatalar": [
-    "Şahap Kavcıoğlu: uygun değil: Yaşayan siyasetçiler ve bürokratlar site politikası gereği konu odağı olamaz.",
-    "Hayati Yazıcı: uygun değil: Yaşayan bir siyasetçi ve gerçek kişi olması nedeniyle içerik politikalarımıza uygun değildir.",
-    "Abdullah Öcalan: uygun değil: Siyaset ve terör olaylarıyla bağlantılı yaşayan/tarihî siyasi figürler sitenin yayın politikasına ve güvenlik kurallarına uygun değildir."
-  ]
+  "reddedilen": 0,
+  "hatalar": []
 }
