@@ -1,56 +1,56 @@
 {
-  "tarih": "2026-11-19",
+  "tarih": "2026-11-20",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1711,
-      "baslik": "Mikhail Lomonosov'un Doğumu",
-      "metin": "Rus bilim insanı Mikhail Lomonosov dünyaya geldi. Venus'ün atmosferini keşfetmesi ve kütlenin korunumu kanununa katkılarıyla tanınan önemli bir bilgin oldu.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Mikhail_Lomonosov"
+      "yil": 1805,
+      "baslik": "Beethoven'ın Tek Operası Fidelio Viyana'da Sahnelendi",
+      "metin": "Müzik tarihinin dâhisi Ludwig van Beethoven'ın bestelediği tek opera olan Fidelio, Viyana'da ilk kez müzikseverlerle buluştu. Klasik dönemden Romantik döneme geçişin kilit figürlerinden biri olan Alman besteci, bu eserle opera sahnesinde de kalıcı bir iz bıraktı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Ludwig_van_Beethoven"
     },
     {
-      "yil": 1722,
-      "baslik": "Leopold Auenbrugger'in Doğumu",
-      "metin": "Avusturyalı hekim Leopold Auenbrugger dünyaya geldi. Tıpta teşhis tekniği olarak perküsyonu icat etmesiyle tıp tarihine adını yazdırdı.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Leopold_Auenbrugger"
-    },
-    {
-      "yil": 1816,
-      "baslik": "Varşova Üniversitesi Kuruldu",
-      "metin": "Polonya'nın en büyük üniversitesi olan Varşova Üniversitesi kuruldu. Günümüzde binlerce öğrenciye ev sahipliği yapan ülkenin en köklü eğitim kurumlarından biri haline geldi.",
+      "yil": 1820,
+      "baslik": "Moby-Dick Romanına İlham Veren Balina Saldırısı",
+      "metin": "Amerikan balina gemisi Essex, Güney Amerika'nın batı kıyılarından binlerce mil uzakta dev bir ispermeçet balinasının hedefi oldu. Geminin batmasıyla sonuçlanan bu sıra dışı deniz kazası, sonradan dünya edebiyatının başyapıtlarından biri olan Moby-Dick romanına ilham kaynağı oldu.",
       "kategori": "tarih",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Var%C5%9Fova_%C3%9Cniversitesi"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Essex_(whaleship)"
     },
     {
-      "yil": 1949,
-      "baslik": "İstanbul Radyosu Yeniden Yayında",
-      "metin": "Türkiye'nin ilk radyosu olan İstanbul Radyosu, Harbiye'deki yeni binasında tekrar yayınına başladı. Dinleyicileriyle yeni stüdyolarından buluştu.",
+      "yil": 1905,
+      "baslik": "Peru'nun Pasco Bölgesinde Vanadyum Keşfedildi",
+      "metin": "ABD Jeoloji Araştırmaları Kurumu'nca Peru'nun Pasco bölgesinde yürütülen çalışmalar sonucunda vanadyum elementinin varlığı tespit edildi. Güney Amerika'nın dağlık coğrafyasında gerçekleştirilen bu keşif bilim dünyasında yankı uyandırdı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Pasco_b%C3%B6lgesi"
+    },
+    {
+      "yil": 1984,
+      "baslik": "Dünya Dışı Yaşam Arayışı İçin SETI Kuruldu",
+      "metin": "Evrende dünya dışı canlıların varlığını araştırmak ve başka gezegenlerden gelebilecek sinyalleri incelemek amacıyla SETI kuruldu. ABD öncülüğünde geliştirilen bu projeyle uzaydaki akıllı yaşam izlerinin aranmasında yeni bir dönem başladı.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/D%C3%BCnya_D%C4%B1%C5%9F%C4%B1_Ak%C4%B1ll%C4%B1_Ya%C5%9Fam_Ara%C5%9Ft%C4%B1rmas%C4%B1"
+    },
+    {
+      "yil": 1985,
+      "baslik": "Microsoft Windows 1.0 Kullanıcılarla Buluştu",
+      "metin": "ABD merkezli teknoloji devi Microsoft'un merakla beklenen işletim sistemi Windows 1.0 resmi olarak piyasaya sürüldü. Bu ilk büyük sürüm, kişisel bilgisayar dünyasında grafik arayüz döneminin kapılarını araladı.",
       "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/TRT_%C4%B0stanbul_Radyosu"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Microsoft"
     },
     {
-      "yil": 1969,
-      "baslik": "Apollo 12 ile Ay'a İniş",
-      "metin": "Apollo 12 astronotları Pete Conrad ve Alan Bean, Fırtınalar Okyanusu'na iniş yaptı. Bu tarihi görevle birlikte Ay'da yürüyen üçüncü ve dördüncü insan oldular.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Apollo_program"
-    },
-    {
-      "yil": 1969,
-      "baslik": "Pelé'den Bininci Gol",
-      "metin": "Brezilyalı futbolcu Pelé, Maracanã Stadyumu'nda oynanan maçta kariyerindeki bininci golünü kaydetti. Bu unutulmaz başarı futbol tarihine geçti.",
+      "yil": 1994,
+      "baslik": "Naim Süleymanoğlu'ndan Dünya Halter Şampiyonası'nda Rekor Yağmuru",
+      "metin": "Dünya Halter Şampiyonası'nda podyuma çıkan efsane sporcu Naim Süleymanoğlu, 64 kiloda tam 5 dünya rekoru birden kırdı. Üstün performansını 3 altın madalyayla taçlandıran milli halterci tarihe adını altın harflerle yazdırdı.",
       "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Santos_FC"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/D%C3%BCnya_Halter_%C5%9Eampiyonas%C4%B1"
     },
     {
-      "yil": 1999,
-      "baslik": "Shenzhou 1 Uzay Aracı Fırlatıldı",
-      "metin": "Çin Halk Cumhuriyeti ilk Shenzhou uzay aracını fırlattı. Yaşam destek sisteminden yoksun olan bu insansız test uçuşu, ülkenin uzay programında önemli bir dönüm noktası oldu.",
+      "yil": 1998,
+      "baslik": "Uluslararası Uzay İstasyonu'nun İlk Modülü Zarya Fırlatıldı",
+      "metin": "Uluslararası Uzay İstasyonu'nun temel yapı taşı olan ilk modül Zarya, Kazakistan'daki Baykonur Uzay Üssü'nden fırlatıldı. İşlevsel kargo bloğu olarak tasarlanan bu modül, istasyonun ilk yıllarında temel güç ve yörünge desteğini sağladı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Shenzhou_1"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Zarya_(ISS_module)"
     }
   ]
 }
