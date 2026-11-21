@@ -1,6 +1,6 @@
 {
-  "sonDenetim": "2026-11-20T20:32:22.627Z",
-  "toplamKontrol": 49,
+  "sonDenetim": "2026-11-21T00:01:14.091Z",
+  "toplamKontrol": 48,
   "sorunlar": {
     "onay-bekleyen": {
       "alan": "İçerik üretimi",
@@ -14,6 +14,13 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "llm-cerebras": {
+      "alan": "Yapay zekâ",
+      "durum": "hata",
+      "detay": "Cerebras: 429 <!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endi",
+      "cozum": "CEREBRAS_API_KEY geçersiz/kotası dolmuş olabilir.",
+      "ilkGorulme": "2026-11-21T00:01:14.091Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
