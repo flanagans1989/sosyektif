@@ -1,56 +1,56 @@
 {
-  "tarih": "2026-11-20",
+  "tarih": "2026-11-21",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1805,
-      "baslik": "Beethoven'ın Tek Operası Fidelio Viyana'da Sahnelendi",
-      "metin": "Müzik tarihinin dâhisi Ludwig van Beethoven'ın bestelediği tek opera olan Fidelio, Viyana'da ilk kez müzikseverlerle buluştu. Klasik dönemden Romantik döneme geçişin kilit figürlerinden biri olan Alman besteci, bu eserle opera sahnesinde de kalıcı bir iz bıraktı.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Ludwig_van_Beethoven"
+      "yil": 1676,
+      "baslik": "Ole Rømer Işık Hızının İlk Nicel Ölçümünü Sundu",
+      "metin": "Danimarkalı gökbilimci Ole Rømer, ışık hızının sonlu bir değere sahip olduğunu gösteren ilk nicel ölçümleri sundu. Bu devrim niteliğindeki gözlem, o döneme kadar ışığın anlık yayıldığına inanan bilim dünyasının evren anlayışını kökten değiştirdi.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Astronomer"
     },
     {
-      "yil": 1820,
-      "baslik": "Moby-Dick Romanına İlham Veren Balina Saldırısı",
-      "metin": "Amerikan balina gemisi Essex, Güney Amerika'nın batı kıyılarından binlerce mil uzakta dev bir ispermeçet balinasının hedefi oldu. Geminin batmasıyla sonuçlanan bu sıra dışı deniz kazası, sonradan dünya edebiyatının başyapıtlarından biri olan Moby-Dick romanına ilham kaynağı oldu.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Essex_(whaleship)"
+      "yil": 1694,
+      "baslik": "Aydınlanma Çağı Düşünürü Voltaire Doğdu",
+      "metin": "Fransız yazar, tarihçi ve filozof Voltaire dünyaya geldi. Keskin hiciv yeteneği ve dönemin dogmalarına yönelttiği cesur eleştirilerle Aydınlanma Çağı'nın ve modern özgürlük düşüncesinin en etkili figürlerinden biri oldu.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Voltaire"
+    },
+    {
+      "yil": 1783,
+      "baslik": "Sıcak Hava Balonuyla İlk İnsanlı Serbest Uçuş Yapıldı",
+      "metin": "Paris'te Jean-François Pilâtre de Rozier ve François Laurent d'Arlandes, sıcak hava balonuyla tarihteki ilk serbest insanlı uçuşu gerçekleştirdi. İki öncünün hiçbir yere bağlı olmadan gökyüzünde süzülmesi, havacılık tarihinde yepyeni bir çağ başlattı.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Paris"
+    },
+    {
+      "yil": 1877,
+      "baslik": "Thomas Edison Ses Kayıt Cihazını Duyurdu",
+      "metin": "Amerikalı mucit Thomas Edison, insan sesini kaydedip yeniden çalabilen fonografı (pikap) icat ettiğini duyurdu. Bu buluş sayesinde tarihte ilk kez sesler somut bir şekilde kaydedilip saklanabilir hale geldi.",
+      "kategori": "icat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Thomas_Edison"
+    },
+    {
+      "yil": 1898,
+      "baslik": "Gerçeküstücülüğün Usta İsmi René Magritte Doğdu",
+      "metin": "Belçikalı sürrealist ressam René Magritte dünyaya geldi. Sıradan ve tanıdık nesneleri akıl almaz bağlamlarda resmederek gerçekliğin algısını sorgulatan eserleriyle 20. yüzyıl sanatına damgasını vurdu.",
+      "kategori": "dogum",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Ren%C3%A9_Magritte"
     },
     {
       "yil": 1905,
-      "baslik": "Peru'nun Pasco Bölgesinde Vanadyum Keşfedildi",
-      "metin": "ABD Jeoloji Araştırmaları Kurumu'nca Peru'nun Pasco bölgesinde yürütülen çalışmalar sonucunda vanadyum elementinin varlığı tespit edildi. Güney Amerika'nın dağlık coğrafyasında gerçekleştirilen bu keşif bilim dünyasında yankı uyandırdı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Pasco_b%C3%B6lgesi"
+      "baslik": "Albert Einstein'ın E=mc² Denklemini İçeren Makalesi Yayımlandı",
+      "metin": "Albert Einstein'ın kütle ile enerji arasındaki ilişkiyi meşhur E=mc² denklemiyle açıkladığı makalesi Annalen der Physik dergisinde yayımlandı. Bu çalışma, maddenin aslında devasa bir enerji barındırdığını göstererek modern fiziğin seyrini değiştirdi.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Albert_Einstein"
     },
     {
-      "yil": 1984,
-      "baslik": "Dünya Dışı Yaşam Arayışı İçin SETI Kuruldu",
-      "metin": "Evrende dünya dışı canlıların varlığını araştırmak ve başka gezegenlerden gelebilecek sinyalleri incelemek amacıyla SETI kuruldu. ABD öncülüğünde geliştirilen bu projeyle uzaydaki akıllı yaşam izlerinin aranmasında yeni bir dönem başladı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/D%C3%BCnya_D%C4%B1%C5%9F%C4%B1_Ak%C4%B1ll%C4%B1_Ya%C5%9Fam_Ara%C5%9Ft%C4%B1rmas%C4%B1"
-    },
-    {
-      "yil": 1985,
-      "baslik": "Microsoft Windows 1.0 Kullanıcılarla Buluştu",
-      "metin": "ABD merkezli teknoloji devi Microsoft'un merakla beklenen işletim sistemi Windows 1.0 resmi olarak piyasaya sürüldü. Bu ilk büyük sürüm, kişisel bilgisayar dünyasında grafik arayüz döneminin kapılarını araladı.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Microsoft"
-    },
-    {
-      "yil": 1994,
-      "baslik": "Naim Süleymanoğlu'ndan Dünya Halter Şampiyonası'nda Rekor Yağmuru",
-      "metin": "Dünya Halter Şampiyonası'nda podyuma çıkan efsane sporcu Naim Süleymanoğlu, 64 kiloda tam 5 dünya rekoru birden kırdı. Üstün performansını 3 altın madalyayla taçlandıran milli halterci tarihe adını altın harflerle yazdırdı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/D%C3%BCnya_Halter_%C5%9Eampiyonas%C4%B1"
-    },
-    {
-      "yil": 1998,
-      "baslik": "Uluslararası Uzay İstasyonu'nun İlk Modülü Zarya Fırlatıldı",
-      "metin": "Uluslararası Uzay İstasyonu'nun temel yapı taşı olan ilk modül Zarya, Kazakistan'daki Baykonur Uzay Üssü'nden fırlatıldı. İşlevsel kargo bloğu olarak tasarlanan bu modül, istasyonun ilk yıllarında temel güç ve yörünge desteğini sağladı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Zarya_(ISS_module)"
+      "yil": 1953,
+      "baslik": "Piltdown Adamı Fosili Büyük Bir Sahtekarlık Çıktı",
+      "metin": "Londra Doğa Tarihi Müzesi, evrimin en önemli fosil keşiflerinden biri sayılan Piltdown Adamı kafatasının ustaca hazırlanmış bir sahtekarlık olduğunu duyurdu. Yapılan incelemeler, fosilin bir insan kafatası ile bir orangutan çenesinin birleştirilmesiyle üretildiğini kanıtladı.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Natural_History_Museum%2C_London"
     }
   ]
 }
