@@ -1,17 +1,5 @@
 [
   {
-    "parmakIzi": "can bonomo",
-    "baslik": "Can Bonomo",
-    "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir.",
-    "tarih": "2026-10-20T05:01:52.514Z"
-  },
-  {
-    "parmakIzi": "berke özer",
-    "baslik": "Berke Özer",
-    "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir (Berke Özer). Canlı sporcular veya yaşayan kişiler site politikaları gereği doğrudan içerik odağı olamaz.",
-    "tarih": "2026-10-22T05:01:59.793Z"
-  },
-  {
     "parmakIzi": "ahmet eşref fakıbaba",
     "baslik": "Ahmet Eşref Fakıbaba",
     "sebep": "uygun değil: Yaşayan bir siyasetçi ve eski devlet görevlisi olması nedeniyle site politika kurallarına (siyaset ve yaşayan kişi yasağı) aykırıdır.",
@@ -178,5 +166,29 @@
     "baslik": "Abdullah Öcalan",
     "sebep": "uygun değil: Siyaset ve terör olaylarıyla bağlantılı yaşayan/tarihî siyasi figürler sitenin yayın politikasına ve güvenlik kurallarına uygun değildir.",
     "tarih": "2026-11-19T05:01:49.081Z"
+  },
+  {
+    "parmakIzi": "kemalettin aydın",
+    "baslik": "Kemalettin Aydın",
+    "sebep": "uygun değil: Yaşayan bir gerçek kişi (akademisyen/siyasetçi) olduğu için site politikalarına uygun değil.",
+    "tarih": "2026-11-21T05:01:58.007Z"
+  },
+  {
+    "parmakIzi": "rae lil black",
+    "baslik": "Rae Lil Black",
+    "sebep": "uygun değil: Yetişkin içerik ve yaşayan gerçek kişi barındırması nedeniyle site politikalarına uygun değildir.",
+    "tarih": "2026-11-21T05:01:58.736Z"
+  },
+  {
+    "parmakIzi": "levent alpöge",
+    "baslik": "Levent Alpöge",
+    "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir ve ansiklopedik/zamansız içerik üretimine uygun değildir.",
+    "tarih": "2026-11-21T05:01:59.468Z"
+  },
+  {
+    "parmakIzi": "sibel kekilli",
+    "baslik": "Sibel Kekilli",
+    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odağı olarak kabul edilemez.",
+    "tarih": "2026-11-21T05:02:00.092Z"
   }
 ]
