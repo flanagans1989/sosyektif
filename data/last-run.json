@@ -1,15 +1,11 @@
 {
-  "tarih": "2026-11-21T05:05:14.932Z",
+  "tarih": "2026-11-22T05:01:53.724Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 1,
-  "onayaDusen": 0,
-  "reddedilen": 5,
+  "otomatikYayinlanan": 0,
+  "onayaDusen": 1,
+  "reddedilen": 1,
   "hatalar": [
-    "Türkiye'de Öğretmenler Günü (2026): \"Türkiye'de Öğretmenler Günü\" (2026) için içerik zaten üretildi",
-    "Kemalettin Aydın: uygun değil: Yaşayan bir gerçek kişi (akademisyen/siyasetçi) olduğu için site politikalarına uygun değil.",
-    "Rae Lil Black: uygun değil: Yetişkin içerik ve yaşayan gerçek kişi barındırması nedeniyle site politikalarına uygun değildir.",
-    "Levent Alpöge: uygun değil: Konu odağı yaşayan bir gerçek kişidir ve ansiklopedik/zamansız içerik üretimine uygun değildir.",
-    "Sibel Kekilli: uygun değil: Yaşayan gerçek bir kişi olduğu için konu odağı olarak kabul edilemez."
+    "Türkiye'de Öğretmenler Günü (2026): \"Türkiye'de Öğretmenler Günü\" (2026) için içerik zaten üretildi"
   ]
 }
