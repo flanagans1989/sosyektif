@@ -1,56 +1,49 @@
 {
-  "tarih": "2026-11-21",
+  "tarih": "2026-11-22",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1676,
-      "baslik": "Ole Rømer Işık Hızının İlk Nicel Ölçümünü Sundu",
-      "metin": "Danimarkalı gökbilimci Ole Rømer, ışık hızının sonlu bir değere sahip olduğunu gösteren ilk nicel ölçümleri sundu. Bu devrim niteliğindeki gözlem, o döneme kadar ışığın anlık yayıldığına inanan bilim dünyasının evren anlayışını kökten değiştirdi.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Astronomer"
-    },
-    {
-      "yil": 1694,
-      "baslik": "Aydınlanma Çağı Düşünürü Voltaire Doğdu",
-      "metin": "Fransız yazar, tarihçi ve filozof Voltaire dünyaya geldi. Keskin hiciv yeteneği ve dönemin dogmalarına yönelttiği cesur eleştirilerle Aydınlanma Çağı'nın ve modern özgürlük düşüncesinin en etkili figürlerinden biri oldu.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Voltaire"
-    },
-    {
-      "yil": 1783,
-      "baslik": "Sıcak Hava Balonuyla İlk İnsanlı Serbest Uçuş Yapıldı",
-      "metin": "Paris'te Jean-François Pilâtre de Rozier ve François Laurent d'Arlandes, sıcak hava balonuyla tarihteki ilk serbest insanlı uçuşu gerçekleştirdi. İki öncünün hiçbir yere bağlı olmadan gökyüzünde süzülmesi, havacılık tarihinde yepyeni bir çağ başlattı.",
+      "yil": 1574,
+      "baslik": "Juan Fernández Takımadası",
+      "metin": "İspanyol kaşif Juan Fernández, Şili açıklarında kendi adını taşıyan takımadayı keşfetti. Bu keşif, Pasifik bölgesindeki deniz rotalarının gelişiminde önemli bir rol oynadı.",
       "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Paris"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Juan_Fern%C3%A1ndez_(explorer)"
     },
     {
-      "yil": 1877,
-      "baslik": "Thomas Edison Ses Kayıt Cihazını Duyurdu",
-      "metin": "Amerikalı mucit Thomas Edison, insan sesini kaydedip yeniden çalabilen fonografı (pikap) icat ettiğini duyurdu. Bu buluş sayesinde tarihte ilk kez sesler somut bir şekilde kaydedilip saklanabilir hale geldi.",
+      "yil": 1922,
+      "baslik": "Tutankhamun'un Mezarı",
+      "metin": "Mısır'da Howard Carter, yardımcısı George Herbert de Carnarvon ile birlikte firavun Tutankhamun'un mezarını açtı. Gerçekleştirilen bu keşif, arkeoloji tarihinin en büyük ve en çok ses getiren buluntularından biri olarak kayıtlara geçti.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/M%C4%B1s%C4%B1r"
+    },
+    {
+      "yil": 1928,
+      "baslik": "Ravel'in Boléro'su",
+      "metin": "Joseph-Maurice Ravel'in ünlü eseri Boléro ilk kez Paris'te sahnelendi. Bestecinin bu unutulmaz eseri, müzik dünyasının en bilinen ve en özgün kompozisyonları arasına girdi.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Maurice_Ravel"
+    },
+    {
+      "yil": 1968,
+      "baslik": "Türkiye'de İlk Kalp Nakli",
+      "metin": "Türkiye'de ilk kalp nakli Doktor Kemal Beyazıt ve ekibi tarafından gerçekleştirildi. Tarihî ameliyatın ardından hasta 18 saat hayatta kalabildi.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye"
+    },
+    {
+      "yil": 1988,
+      "baslik": "B-2 Spirit Hayalet Bombardıman Uçağı",
+      "metin": "Amerika Birleşik Devletleri Hava Kuvvetleri'ne ait B-2 Spirit hayalet bombardıman uçağı, Kaliforniya'daki Palmdale'de ilk kez halka sergilendi. Bu uçak, havacılık teknolojisinde radar izini en aza indiren devrim niteliğindeki tasarımıyla dikkat çekti.",
       "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Thomas_Edison"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Northrop_B-2_Spirit"
     },
     {
-      "yil": 1898,
-      "baslik": "Gerçeküstücülüğün Usta İsmi René Magritte Doğdu",
-      "metin": "Belçikalı sürrealist ressam René Magritte dünyaya geldi. Sıradan ve tanıdık nesneleri akıl almaz bağlamlarda resmederek gerçekliğin algısını sorgulatan eserleriyle 20. yüzyıl sanatına damgasını vurdu.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Ren%C3%A9_Magritte"
-    },
-    {
-      "yil": 1905,
-      "baslik": "Albert Einstein'ın E=mc² Denklemini İçeren Makalesi Yayımlandı",
-      "metin": "Albert Einstein'ın kütle ile enerji arasındaki ilişkiyi meşhur E=mc² denklemiyle açıkladığı makalesi Annalen der Physik dergisinde yayımlandı. Bu çalışma, maddenin aslında devasa bir enerji barındırdığını göstererek modern fiziğin seyrini değiştirdi.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Albert_Einstein"
-    },
-    {
-      "yil": 1953,
-      "baslik": "Piltdown Adamı Fosili Büyük Bir Sahtekarlık Çıktı",
-      "metin": "Londra Doğa Tarihi Müzesi, evrimin en önemli fosil keşiflerinden biri sayılan Piltdown Adamı kafatasının ustaca hazırlanmış bir sahtekarlık olduğunu duyurdu. Yapılan incelemeler, fosilin bir insan kafatası ile bir orangutan çenesinin birleştirilmesiyle üretildiğini kanıtladı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Natural_History_Museum%2C_London"
+      "yil": 1995,
+      "baslik": "Oyuncak Hikâyesi",
+      "metin": "Tamamı bilgisayar desteği ile oluşturulmuş ilk uzun metrajlı konulu animasyon film olan Oyuncak Hikâyesi gösterime girdi. Bu yapım, sinema dünyasında animasyon teknolojisinin çehresini tamamen değiştiren yepyeni bir dönemin kapılarını araladı.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Animasyon"
     }
   ]
 }
