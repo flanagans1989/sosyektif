@@ -1,11 +1,12 @@
 {
-  "tarih": "2026-11-22T05:01:53.724Z",
+  "tarih": "2026-11-23T05:07:54.139Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 0,
-  "onayaDusen": 1,
-  "reddedilen": 1,
+  "otomatikYayinlanan": 1,
+  "onayaDusen": 0,
+  "reddedilen": 2,
   "hatalar": [
-    "Türkiye'de Öğretmenler Günü (2026): \"Türkiye'de Öğretmenler Günü\" (2026) için içerik zaten üretildi"
+    "Türkiye'de Öğretmenler Günü (2026): \"Türkiye'de Öğretmenler Günü\" (2026) için içerik zaten üretildi",
+    "Büşra Develi: uygun değil: Yaşayan gerçek bir kişi olduğu için konu odaklı zamansız içerik üretimine uygun değil."
   ]
 }

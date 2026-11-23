@@ -1,17 +1,5 @@
 [
   {
-    "parmakIzi": "ahmet eşref fakıbaba",
-    "baslik": "Ahmet Eşref Fakıbaba",
-    "sebep": "uygun değil: Yaşayan bir siyasetçi ve eski devlet görevlisi olması nedeniyle site politika kurallarına (siyaset ve yaşayan kişi yasağı) aykırıdır.",
-    "tarih": "2026-10-22T05:02:00.897Z"
-  },
-  {
-    "parmakIzi": "victor osimhen",
-    "baslik": "Victor Osimhen",
-    "sebep": "uygun değil: Yaşayan gerçek bir kişi (sporcu) odakta olduğu için site yayın politikasına uygun değildir.",
-    "tarih": "2026-10-22T05:02:01.774Z"
-  },
-  {
     "parmakIzi": "2027 uefa ülkeler sıralaması",
     "baslik": "2027 UEFA ülkeler sıralaması",
     "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
@@ -190,5 +178,11 @@
     "baslik": "Sibel Kekilli",
     "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odağı olarak kabul edilemez.",
     "tarih": "2026-11-21T05:02:00.092Z"
+  },
+  {
+    "parmakIzi": "büşra develi",
+    "baslik": "Büşra Develi",
+    "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odaklı zamansız içerik üretimine uygun değil.",
+    "tarih": "2026-11-23T05:01:36.038Z"
   }
 ]
