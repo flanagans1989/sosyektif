@@ -2531,5 +2531,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "gulten-dayioglu-hakkinda-duyunca-sasiracaginiz-4-gercek": {
+    "eklendi": "2026-11-23T05:08:48.636Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-11-23T05:08:49.808Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3n2xefhotfw2h"
+      }
+    },
+    "reelIdleri": {}
   }
 }
