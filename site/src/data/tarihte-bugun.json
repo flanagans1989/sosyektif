@@ -1,49 +1,49 @@
 {
-  "tarih": "2026-11-22",
+  "tarih": "2026-11-23",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1574,
-      "baslik": "Juan Fernández Takımadası",
-      "metin": "İspanyol kaşif Juan Fernández, Şili açıklarında kendi adını taşıyan takımadayı keşfetti. Bu keşif, Pasifik bölgesindeki deniz rotalarının gelişiminde önemli bir rol oynadı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Juan_Fern%C3%A1ndez_(explorer)"
-    },
-    {
-      "yil": 1922,
-      "baslik": "Tutankhamun'un Mezarı",
-      "metin": "Mısır'da Howard Carter, yardımcısı George Herbert de Carnarvon ile birlikte firavun Tutankhamun'un mezarını açtı. Gerçekleştirilen bu keşif, arkeoloji tarihinin en büyük ve en çok ses getiren buluntularından biri olarak kayıtlara geçti.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/M%C4%B1s%C4%B1r"
-    },
-    {
-      "yil": 1928,
-      "baslik": "Ravel'in Boléro'su",
-      "metin": "Joseph-Maurice Ravel'in ünlü eseri Boléro ilk kez Paris'te sahnelendi. Bestecinin bu unutulmaz eseri, müzik dünyasının en bilinen ve en özgün kompozisyonları arasına girdi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Maurice_Ravel"
-    },
-    {
-      "yil": 1968,
-      "baslik": "Türkiye'de İlk Kalp Nakli",
-      "metin": "Türkiye'de ilk kalp nakli Doktor Kemal Beyazıt ve ekibi tarafından gerçekleştirildi. Tarihî ameliyatın ardından hasta 18 saat hayatta kalabildi.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye"
-    },
-    {
-      "yil": 1988,
-      "baslik": "B-2 Spirit Hayalet Bombardıman Uçağı",
-      "metin": "Amerika Birleşik Devletleri Hava Kuvvetleri'ne ait B-2 Spirit hayalet bombardıman uçağı, Kaliforniya'daki Palmdale'de ilk kez halka sergilendi. Bu uçak, havacılık teknolojisinde radar izini en aza indiren devrim niteliğindeki tasarımıyla dikkat çekti.",
+      "yil": 1889,
+      "baslik": "Otomatik Plakçalar",
+      "metin": "İlk otomatik plakçalar (jukebox), San Francisco'da bir salonda hizmete girdi. Müzik dinleme alışkanlıklarını sokaklara taşıyan bu icat, eğlence kültüründe yepyeni bir dönemi başlattı.",
       "kategori": "icat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Northrop_B-2_Spirit"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/San_Francisco"
     },
     {
-      "yil": 1995,
-      "baslik": "Oyuncak Hikâyesi",
-      "metin": "Tamamı bilgisayar desteği ile oluşturulmuş ilk uzun metrajlı konulu animasyon film olan Oyuncak Hikâyesi gösterime girdi. Bu yapım, sinema dünyasında animasyon teknolojisinin çehresini tamamen değiştiren yepyeni bir dönemin kapılarını araladı.",
+      "yil": 1924,
+      "baslik": "Edwin Hubble ve Andromeda Galaksisi",
+      "metin": "Edwin Hubble'ın Andromeda'nın Samanyolu'nun bir parçası olmayıp bambaşka bir ada galaksi olduğunu kanıtlayan keşfi yayımlandı. Bu gözlem, evrenin ölçeğine dair bilinen tüm algıyı kökten değiştirdi.",
+      "kategori": "kesif",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Edwin_Hubble"
+    },
+    {
+      "yil": 1963,
+      "baslik": "Doctor Who",
+      "metin": "BBC Televizyonu, dünyanın en uzun süre yayınlanan bilimkurgu televizyon dizisi olan Doctor Who'nun ilk bölümünü yayına verdi. Seri, uzay ve zamanın ötesinde maceralar yaşayan doktorun hikayesini ekranlara taşıyor.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Animasyon"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/BBC"
+    },
+    {
+      "yil": 1976,
+      "baslik": "Jacques Mayol",
+      "metin": "Jacques Mayol, serbest dalışta 100 metre derinliğe inen ilk insan unvanını kazandı. Bu inanılmaz rekor, kültürel olarak da sinema dünyasına ilham kaynağı oldu.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Jacques_Mayol"
+    },
+    {
+      "yil": 1992,
+      "baslik": "IBM Simon",
+      "metin": "Dünyanın ilk akıllı telefonu olan IBM Simon, Las Vegas'taki COMDEX fuarında tanıtıldı. Cihaz, hücresel telefon ile kişisel dijital asistan özelliklerini bir araya getiriyordu.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/IBM_Simon"
+    },
+    {
+      "yil": 2015,
+      "baslik": "Blue Origin'in New Shepard Aracı",
+      "metin": "Blue Origin'in New Shepard uzay aracı, uzaya başarıyla uçup ardından kontrollü ve dikey bir inişle Dünya'ya dönen ilk roket oldu. Bu tarihi uçuş, özel uzay taşımacılığında yeni bir çığır açtı.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Blue_Origin"
     }
   ]
 }
