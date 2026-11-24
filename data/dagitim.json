@@ -2560,5 +2560,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "ahmet-ulucay-ve-karpuz-gemileri-5-sasirtici-gercek": {
+    "eklendi": "2026-11-24T05:18:58.287Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-11-24T05:18:59.035Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3n2zvgk646f2z"
+      }
+    },
+    "reelIdleri": {}
   }
 }
