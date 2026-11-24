@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-11-24T12:01:28.715Z",
+  "sonDenetim": "2026-11-24T12:18:17.633Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -14,6 +14,13 @@
       "durum": "uyari",
       "detay": "Unsplash: UNSPLASH_ACCESS_KEY tanımlı değil (yedek kaynak, zorunlu değil).",
       "ilkGorulme": "2026-09-13T18:46:39.852Z"
+    },
+    "telegram-bot": {
+      "alan": "Telegram",
+      "durum": "hata",
+      "detay": "Bot: erişilemedi",
+      "cozum": "TELEGRAM_BOT_TOKEN'ı kontrol et.",
+      "ilkGorulme": "2026-11-24T12:18:17.633Z"
     },
     "kanal-telegram": {
       "alan": "Sosyal kanallar",
