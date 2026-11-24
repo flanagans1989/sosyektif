@@ -1,5 +1,5 @@
 {
-  "sonDenetim": "2026-11-24T18:01:14.120Z",
+  "sonDenetim": "2026-11-24T18:18:15.707Z",
   "toplamKontrol": 49,
   "sorunlar": {
     "onay-bekleyen": {
@@ -8,13 +8,6 @@
       "detay": "22 taslak 24 saatten uzun süredir onay bekliyor.",
       "cozum": "Telegram'daki onay mesajlarına bak (✅/❌).",
       "ilkGorulme": "2026-09-25T05:06:15.135Z"
-    },
-    "workflow-saglik-denetimi.yml": {
-      "alan": "Zamanlayıcı",
-      "durum": "hata",
-      "detay": "Sağlık Denetimi son çalışması başarısız (failure): https://github.com/flanagans1989/sosyektif/actions/runs/45392139881",
-      "cozum": "Logu incele.",
-      "ilkGorulme": "2026-11-24T18:01:14.120Z"
     },
     "gorsel-unsplash": {
       "alan": "Görsel",
