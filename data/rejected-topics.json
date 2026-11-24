@@ -1,11 +1,5 @@
 [
   {
-    "parmakIzi": "2027 uefa ülkeler sıralaması",
-    "baslik": "2027 UEFA ülkeler sıralaması",
-    "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
-    "tarih": "2026-10-24T05:01:41.043Z"
-  },
-  {
     "parmakIzi": "ümit kocasakal",
     "baslik": "Ümit Kocasakal",
     "sebep": "uygun değil: Yaşayan bir gerçek kişi (siyasetçi/akademisyen) olduğu için içerik politikalarımıza uymuyor.",
@@ -184,5 +178,11 @@
     "baslik": "Büşra Develi",
     "sebep": "uygun değil: Yaşayan gerçek bir kişi olduğu için konu odaklı zamansız içerik üretimine uygun değil.",
     "tarih": "2026-11-23T05:01:36.038Z"
+  },
+  {
+    "parmakIzi": "emre mor",
+    "baslik": "Emre Mor",
+    "sebep": "uygun değil: Yaşayan gerçek kişi olduğu için konu odağı uygun değildir",
+    "tarih": "2026-11-24T05:01:45.558Z"
   }
 ]
