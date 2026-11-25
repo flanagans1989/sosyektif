@@ -2589,5 +2589,17 @@
       }
     },
     "reelIdleri": {}
+  },
+  "aslanlarin-az-bilinen-6-sasirtici-gercegi": {
+    "eklendi": "2026-11-25T05:05:00.478Z",
+    "kanallar": {
+      "bluesky": {
+        "durum": "ok",
+        "deneme": 1,
+        "sonDeneme": "2026-11-25T05:05:01.296Z",
+        "id": "at://did:plc:3kd4ehwycnuxmrpb67pxliiy/app.bsky.feed.post/3n34f4iojo72w"
+      }
+    },
+    "reelIdleri": {}
   }
 }
