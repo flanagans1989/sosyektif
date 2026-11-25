@@ -1,63 +1,41 @@
 {
-  "tarih": "2026-11-24",
+  "tarih": "2026-11-25",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1642,
-      "baslik": "Abel Tasman'ın Tazmanya'ya Ayak Basması",
-      "metin": "Hollandalı kâşif ve denizci Abel Tasman, Tazmanya adasına ayak basan ilk Avrupalı oldu. Hollanda Doğu Hindistan Şirketi adına seferler düzenleyen Tasman, bu yolculuklarıyla Yeni Zelanda ve Fiji Adaları'na da ulaşarak dünya denizcilik tarihine adını yazdırdı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Abel_Tasman"
-    },
-    {
-      "yil": 1826,
-      "baslik": "Pinokyo'nun Yaratıcısı Carlo Collodi Doğdu",
-      "metin": "İtalyan yazar ve gazeteci Carlo Lorenzini, bilinen mahlasıyla Carlo Collodi Floransa'da dünyaya geldi. Yazarın kaleme aldığı Pinokyo'nun Maceraları, yalan söyledikçe burnu uzayan tahta kuklanın unutulmaz hikâyesiyle dünya çocuk edebiyatının en sevilen klasiklerinden biri haline geldi.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Carlo_Collodi"
-    },
-    {
-      "yil": 1859,
-      "baslik": "Charles Darwin'in Türlerin Kökeni Kitabının Basılması",
-      "metin": "İngiliz doğa bilimci Charles Darwin, evrim kuramını sunduğu başyapıtı Türlerin Kökeni'ni yayımladı. Tüm canlıların ortak bir atadan evrildiği fikrini savunan kitap, çıktığı ilk gün basılan tüm nüshalarının tükenmesiyle bilim dünyasında büyük yankı uyandırdı.",
-      "kategori": "bilim",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0ngiltere"
-    },
-    {
-      "yil": 1874,
-      "baslik": "Joseph Farwell Glidden'ın Dikenli Tel Patenti",
-      "metin": "Amerikalı Joseph Farwell Glidden, 157.124 numaralı patent ile modern dikenli telin tescilini aldı. Dış yüzeyi açıkta bırakılan ve sivri uçlarla güçlendirilen bu basit ama etkili tasarım, arazilerin sınırlarını belirleme yöntemlerini tüm dünyada kalıcı olarak değiştirdi.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Dikenli_tel"
-    },
-    {
-      "yil": 1969,
-      "baslik": "Apollo 12'nin İkinci Ay Görevinden Dönüşü",
-      "metin": "Apollo 12 komuta modülü Pasifik Okyanusu'na başarıyla iniş yaparak insanlı ikinci Ay seferini tamamladı. NASA'nın Apollo programı çerçevesinde yürütülen bu görev, astronotların Ay yüzeyine başarıyla inip güvenle geri dönebileceğini bir kez daha kanıtladı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Apollo_program"
-    },
-    {
-      "yil": 1974,
-      "baslik": "Etiyopya'da Hominin Fosili Lucy'nin Keşfi",
-      "metin": "Donald Johanson ve ekibi, Etiyopya'nın Hadar bölgesinde yaklaşık dört milyon yıllık Australopithecus afarensis fosilini gün ışığına çıkardı. Adını The Beatles'ın ünlü şarkısından alan ve 105 santimetre boyunda olan Lucy, insanın evrim basamaklarını aydınlatan en ünlü fosil keşiflerinden biri oldu.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Fransa"
-    },
-    {
-      "yil": 1977,
-      "baslik": "Makedonya Kralı II. Filip'in Mezarının Bulunması",
-      "metin": "Yunanistan'da gerçekleştirilen arkeolojik kazılarda, Büyük İskender'in babası antik Makedonya Kralı II. Filip'in mezarının bulunduğu açıklandı. Bu keşif, antik dönemin en kudretli hükümdarlarından birinin izlerini ortaya çıkararak tarih dünyasında heyecan yarattı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Yunanistan"
-    },
-    {
-      "yil": 2005,
-      "baslik": "Picasso İstanbul'da Sergisi Sakıp Sabancı Müzesi'nde",
-      "metin": "20. yüzyıl sanatının en büyük ustalarından ve kübizm akımının öncülerinden Pablo Picasso'nun eserleri, Sakıp Sabancı Müzesi'nde sanatseverlerle buluştu. Bu kapsamlı sergi, modern sanatın dâhisinin özgün mirasını Türkiye'deki izleyicilerle doğrudan buluşturan önemli bir kültür olayı oldu.",
+      "yil": 1870,
+      "baslik": "Diyojen Mizah Dergisi",
+      "metin": "İstanbul'da ilk mizah dergisi olan Diyojen'in birinci sayısı yayınlandı. Dönemin basın hayatına yepyeni bir soluk getiren dergi, kısa sürede büyük bir ilgi topladı.",
       "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Pablo_Picasso"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/%C4%B0stanbul"
+    },
+    {
+      "yil": 1915,
+      "baslik": "Genel Görelilik Teorisi",
+      "metin": "Albert Einstein, genel görelilik teorisinin alan denklemlerini Prussian Bilimler Akademisi'ne sundu. Bu devrimci çalışma, fizik biliminde uzay ve zaman algısını kökten değiştirdi.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Albert_Einstein"
+    },
+    {
+      "yil": 1940,
+      "baslik": "Ağaçkakan Woody İlk Kez Perdede",
+      "metin": "Kült çizgi film karakteri Ağaçkakan Woody, Knock Knock isimli yapımla ilk kez seyirci karşısına çıktı. Bu eğlenceli başlangıç, animasyon dünyasında unutulmaz bir dönemin kapılarını araladı.",
+      "kategori": "sanat"
+    },
+    {
+      "yil": 1958,
+      "baslik": "Yunus Emre Oratoryosu New York'ta",
+      "metin": "Ahmet Adnan Saygun'un bestelediği Yunus Emre Oratoryosu, BM'nin yeni çalışma dönemi dolayısıyla New York'ta seslendirildi. Eserin orkestra ve korosunu ünlü şef Leopold Stokowski yönetti.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Ahmet_Adnan_Saygun"
+    },
+    {
+      "yil": 2001,
+      "baslik": "500. Yıl Vakfı Türk Musevileri Müzesi",
+      "metin": "Türkiye'nin ilk ve tek Yahudi müzesi olan 500. Yıl Vakfı Türk Musevileri Müzesi kapılarını açtı. Bu özel müze, ülkenin kültürel zenginliğine ve çok kültürlü geçmişine ışık tutuyor.",
+      "kategori": "sanat",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye"
     }
   ]
 }
