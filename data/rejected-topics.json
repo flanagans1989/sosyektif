@@ -1,17 +1,5 @@
 [
   {
-    "parmakIzi": "ümit kocasakal",
-    "baslik": "Ümit Kocasakal",
-    "sebep": "uygun değil: Yaşayan bir gerçek kişi (siyasetçi/akademisyen) olduğu için içerik politikalarımıza uymuyor.",
-    "tarih": "2026-10-26T05:01:42.867Z"
-  },
-  {
-    "parmakIzi": "oktay saral",
-    "baslik": "Oktay Saral",
-    "sebep": "uygun değil: Yaşayan bir siyasi figür ve güncel kişiliktir; sitemizin yaşayan gerçek kişiler politikası ve siyaset yasağı kapsamına girmektedir.",
-    "tarih": "2026-10-26T05:01:44.182Z"
-  },
-  {
     "parmakIzi": "2026 i̇srail yasama seçimi",
     "baslik": "2026 İsrail yasama seçimi",
     "sebep": "uygun değil: Siyaset ve seçimlerle ilgili konular site politikası gereği uygun değildir.",
@@ -196,5 +184,17 @@
     "baslik": "Ertuğrul Dursun Önkuzu",
     "sebep": "uygun değil: Güncel olmayan siyasi ve ideolojik olaylar ile yakın tarihli tartışmalı siyasi figürler/ölümler sitenin politika ve güvenlik ilkeleri gereği uygun değildir.",
     "tarih": "2026-11-25T05:01:29.664Z"
+  },
+  {
+    "parmakIzi": "2027 uefa ülkeler sıralaması",
+    "baslik": "2027 UEFA ülkeler sıralaması",
+    "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
+    "tarih": "2026-11-26T05:10:22.753Z"
+  },
+  {
+    "parmakIzi": "2026 uefa ülkeler sıralaması",
+    "baslik": "2026 UEFA ülkeler sıralaması",
+    "sebep": "\"UEFA ülke puanı\" daha önce işlendi",
+    "tarih": "2026-11-26T05:10:23.408Z"
   }
 ]

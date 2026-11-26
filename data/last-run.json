@@ -1,12 +1,12 @@
 {
-  "tarih": "2026-11-25T05:04:18.791Z",
+  "tarih": "2026-11-26T05:11:16.022Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
-  "otomatikYayinlanan": 1,
-  "onayaDusen": 0,
+  "otomatikYayinlanan": 0,
+  "onayaDusen": 1,
   "reddedilen": 2,
   "hatalar": [
-    "Bir sonraki Türkiye genel seçimleri: uygun değil: Siyaset, partiler ve seçimler ile ilgili konular site politikası gereği uygun değildir.",
-    "Ertuğrul Dursun Önkuzu: uygun değil: Güncel olmayan siyasi ve ideolojik olaylar ile yakın tarihli tartışmalı siyasi figürler/ölümler sitenin politika ve güvenlik ilkeleri gereği uygun değildir."
+    "2027 UEFA ülkeler sıralaması: \"UEFA ülkeler sıralaması\" daha önce işlendi",
+    "2026 UEFA ülkeler sıralaması: \"UEFA ülke puanı\" daha önce işlendi"
   ]
 }
