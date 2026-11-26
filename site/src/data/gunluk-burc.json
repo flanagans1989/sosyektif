@@ -1,66 +1,66 @@
 {
-  "tarih": "2026-11-25",
-  "uretenProvider": "groq",
+  "tarih": "2026-11-26",
+  "uretenProvider": "gemini",
   "burclar": {
     "koc": {
-      "yorum": "Bugün enerjin tavan yapıyor, iş yerinde yeni projelere atılmak için harika bir gün. Ancak kahve molasını kaçırma, çünkü kahve olmadan koçlar yavaşlar!",
-      "sansliSayi": 7,
-      "sansliRenk": "kırmızı"
+      "yorum": "İçindeki kıpır kıpır enerji bugün seni ofiste veya evde bir oraya bir buraya koşturabilir. İş yerinde aklına gelen ani bir fikir takdir toplayabilir ama hemen aceleyle uygulamaya koyulma. Akşam saatlerinde aşk hayatında esprili bir sohbet tüm günün yorgunluğunu unutturacak.",
+      "sansliSayi": 9,
+      "sansliRenk": "Ateş Kırmızısı"
     },
     "boga": {
-      "yorum": "Kalbinde bir sıcaklık hissediyorsun, sevdiğinle küçük bir sürpriz planlamak ilişkine renk katabilir. Finansal konularda da temkinli adımlar atmak iyi gelecek.",
-      "sansliSayi": 34,
-      "sansliRenk": "yeşil"
+      "yorum": "Bugün konfor alanından çıkmak istemeyebilirsin ama masanın üzerinde bekleyen pratik işler seni çağırıyor. Maddi konularda küçük ama akılcı adımlar atmak kafanı rahatlatabilir. Akşamı sevdiğin bir tatlı ve huzurlu bir müzikle taçlandırmak modunu yükseltecek.",
+      "sansliSayi": 24,
+      "sansliRenk": "Zümrüt Yeşili"
     },
     "ikizler": {
-      "yorum": "Sosyal kelebek kanatlarını açıyor, yeni sohbetler seni gülümsetecek. Çalışma masanda bekleyen bir e-posta var, ona hızlı bir yanıt ver, aklı rahatlayacak.",
-      "sansliSayi": 58,
-      "sansliRenk": "turuncu"
+      "yorum": "Kelimeler bugün senin en büyük gücün; hem iş görüşmelerinde hem de arkadaş ortamında adeta parlıyorsun. Aşkta ise ufak bir yanlış anlaşılmayı tatlı dilinle hemen çözebilirsin. Zihnini dinlendirmek için akşam ekranları biraz erken kapatmayı deneyebilirsin.",
+      "sansliSayi": 17,
+      "sansliRenk": "Hardal Sarısı"
     },
     "yengec": {
-      "yorum": "Evdeki rahat köşe, duygusal bir rahatlama sunuyor; aile üyeleriyle sıcak bir çay sohbeti harika olacak. İşte ise duygusal zekânla zor bir durumu aşabilirsin.",
-      "sansliSayi": 21,
-      "sansliRenk": "mavi"
+      "yorum": "Duygusal radarın yine sonuna kadar açık, etrafındakilerin ne hissettiğini tek bakışta anlayabiliyorsun. İş ortamında sınırlarını nazikçe korursan enerjini boş yere tüketmemiş olursun. Sevdiğin bir dostunla yapacağın kahve sohbeti sana çok iyi gelebilir.",
+      "sansliSayi": 42,
+      "sansliRenk": "İnci Beyazı"
     },
     "aslan": {
-      "yorum": "Parlayan ışığınla ofiste dikkatleri üzerine çekiyorsun; liderlik fırsatları kapını çalabilir. Akşam biraz kendine zaman ayır, bir film ya da favori dizinle rahatla.",
-      "sansliSayi": 88,
-      "sansliRenk": "altın"
+      "yorum": "Bugün girdiğin her ortamda dikkatleri üzerine çekmen işten bile değil, karizman tavan yapmış durumda. İş hayatında yaratıcı bir projeyi üstlenmek için harika bir gün olabilir. Aşkta ise biraz dinleyici rolünü üstlenirsen partnerinin kalbini yeniden fethedebilirsin.",
+      "sansliSayi": 1,
+      "sansliRenk": "Altın Sarısı"
     },
     "basak": {
-      "yorum": "Detaycı yapınla bugün bir raporu mükemmel hale getirebilirsin, patronun hayran kalacak. Sağlık açısından hafif bir yürüyüş, zihnini tazeleyecek.",
-      "sansliSayi": 12,
-      "sansliRenk": "gri"
+      "yorum": "Detaylar arasındaki kusursuz dansın bugün işte hayat kurtarabilir, gözünden hiçbir şey kaçmıyor. Ancak her şeyi mükemmel yapmaya çalışırken enerjini tüketmemeye dikkat etmelisin. Akşam planlarını sade tutup kendine biraz şefkat göstermek sana ilaç gibi gelecektir.",
+      "sansliSayi": 33,
+      "sansliRenk": "Toprak Tonları"
     },
     "terazi": {
-      "yorum": "İlişkilerde dengeyi bulmak için harika bir gün; bir arkadaşına küçük bir jest yapmak kalplerinizi ısıtabilir. İşte ise diplomasi yeteneğinle bir anlaşma kapatabilirsin.",
-      "sansliSayi": 45,
-      "sansliRenk": "pembe"
+      "yorum": "İlişkilerde uyum ve denge arayışın bugün sonuç veriyor, gergin bir konuyu tatlıya bağlayabilirsin. İş ortamında ise estetik bakış açın sayesinde sıradan bir işi bile çok şık bir sunuma dönüştürebilirsin. Gardırobundan renkli bir parça seçmek enerjini anında yükseltecek.",
+      "sansliSayi": 15,
+      "sansliRenk": "Pudra Pembesi"
     },
     "akrep": {
-      "yorum": "Yoğun hisler içinde kaybolma; tutkunla bir proje ya da hobiye yönelmek enerjini olumlu bir kanala yönlendirecek. Akşam bir kitap ya da derin bir sohbet, ruhunu dinlendirebilir.",
-      "sansliSayi": 3,
-      "sansliRenk": "mor"
+      "yorum": "Sezgilerin bugün adeta bir dedektif gibi çalışıyor, hissettiğin şeylerin altının boş olmadığını görebilirsin. İş projelerinde perde arkasından yönettiğin stratejiler çok daha verimli sonuçlar verebilir. Aşk hayatında ise gizemli tavırların karşındaki kişinin merakını iyice kabartıyor.",
+      "sansliSayi": 88,
+      "sansliRenk": "Mürdüm"
     },
     "yay": {
-      "yorum": "Macera ruhun bugün dışarıda, yeni bir hobi ya da kısa bir seyahat planı seni canlandıracak. İşte ise yaratıcı fikirlerinle ekip arkadaşlarını etkileyebilirsin.",
-      "sansliSayi": 77,
-      "sansliRenk": "lacivert"
+      "yorum": "Ruhun bugün yeni bir rota çizmek, küçük de olsa bir maceraya atılmak istiyor. Çalışma ortamında rutin işler biraz canını sıksa da eğlenceli yaklaşımlarınla günü güzelleştirmeyi başaracaksın. Akşam saatlerinde sürpriz bir telefon ya da mesaj keyfini ikiye katlayabilir.",
+      "sansliSayi": 51,
+      "sansliRenk": "Turuncu"
     },
     "oglak": {
-      "yorum": "Kariyer hedeflerin net, disiplinli adımlarla ilerlemek sana güven veriyor. Kişisel yaşamda ise bir arkadaşının önerisi yeni bir perspektif kazandırabilir.",
-      "sansliSayi": 26,
-      "sansliRenk": "siyah"
+      "yorum": "Kariyer hedeflerine odaklanmışken gösterdiğin sabır bugün küçük bir takdir veya güzel bir geri dönüşle ödüllendirilebilir. Sorumlulukların arasında kaybolmadan önce sevdiklerine de vakit ayırmayı ihmal etme. Günün sonunda omzundaki görünmez yükleri bir kenara bırakıp dinlenmelisin.",
+      "sansliSayi": 10,
+      "sansliRenk": "Antrasit"
     },
     "kova": {
-      "yorum": "İnovatif fikirlerinle etrafındakileri şaşırtıyorsun; bir beyin fırtınası toplantısında parlaman kaçınılmaz. Sosyal medyada bir paylaşım, beklenmedik güzel bir etkileşim getirebilir.",
-      "sansliSayi": 19,
-      "sansliRenk": "turkuaz"
+      "yorum": "Geleneksel çözümler bugün seni tatmin etmeyebilir; işleri kendi özgün yönteminle halletmek isteyeceksin. Arkadaş gruplarında ortaya atacağın ilginç bir fikir uzun bir beyin fırtınasına dönüşebilir. Aşkta ise zihinsel uyum yakaladığın an kalbinin ritmi hızlanabilir.",
+      "sansliSayi": 73,
+      "sansliRenk": "Elektrik Mavisi"
     },
     "balik": {
-      "yorum": "Hayal gücün bugün yoğun, bir sanat projesi ya da yaratıcı bir yazı ruhunu besleyecek. Duygusal olarak ise bir arkadaşının yanında olmak, ikinizin de içini ısıtacak.",
-      "sansliSayi": 64,
-      "sansliRenk": "deniz mavisi"
+      "yorum": "Hayal gücün bugün tavan yapmış durumda, yaratıcı işlerle uğraşıyorsan harikalar yaratabilirsin. Günlük koşuşturmanın içinde bazen gerçeklerden uzaklaşmak istesen de ayaklarını yere sağlam basmaya çalış. Akşam sevdiğin bir film veya kitap ruhunu dinlendirmek için birebir.",
+      "sansliSayi": 27,
+      "sansliRenk": "Deniz Mavisi"
     }
   }
 }
