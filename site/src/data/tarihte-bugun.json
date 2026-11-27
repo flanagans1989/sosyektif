@@ -1,56 +1,56 @@
 {
-  "tarih": "2026-11-26",
+  "tarih": "2026-11-27",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1778,
-      "baslik": "Kaptan James Cook Maui'yi Ziyaret Eden İlk Avrupalı Oldu",
-      "metin": "Kaptan James Cook, Hawaii Adaları'na bağlı Maui adasını ziyaret eden ilk Avrupalı kaşif oldu. Bu seyahat, Pasifik Okyanusu'ndaki adaların Avrupalılar tarafından keşfedilmesi ve haritalandırılması sürecinde önemli bir adım oluşturdu.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Hawaiian_Islands"
-    },
-    {
-      "yil": 1865,
-      "baslik": "Alice Harikalar Diyarında İlk Kez Basıldı",
-      "metin": "Lewis Carroll'un kaleme aldığı unutulmaz eser Alice Harikalar Diyarında ilk kez basıldı. Yazarın kelime oyunları ve sıra dışı mantığıyla ördüğü bu fantastik dünya, edebiyat tarihinde çığır açarak tüm zamanların en çok okunan klasiklerinden biri haline geldi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Lewis_Carroll"
-    },
-    {
-      "yil": 1876,
-      "baslik": "Modern Klimaların İcatçısı Willis Carrier Doğdu",
-      "metin": "Modern klimaları icat ederek günümüzdeki havalandırma sistemlerinin temelini atan Amerikalı mühendis Willis Carrier dünyaya geldi. Geliştirdiği ilk elektrikli klima ünitesiyle endüstriyel süreçlerden günlük yaşama kadar pek çok alanı kökten değiştirdi.",
+      "yil": 1701,
+      "baslik": "Anders Celsius'un Doğumu",
+      "metin": "Termometre ölçeğiyle tanınan İsveçli astronom, fizikçi ve matematikçi Anders Celsius dünyaya geldi. Bilim insanı, Uppsala Üniversitesi'nde astronomi profesörlüğü yaparak meteoroloji ve astronomi alanlarına kalıcı katkılar sundu.",
       "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Willis_Carrier"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Anders_Celsius"
     },
     {
-      "yil": 1922,
-      "baslik": "Tutankhamun'un Mezarına 3000 Yıl Sonra Giren İlk İnsanlar",
-      "metin": "Howard Carter ve George Herbert de Carnarvon, Mısır Firavunu Tutankhamun'un mezarına 3000 yıl sonra giren ilk insanlar oldu. Bu keşif, aradan geçen milenyumlara rağmen dokunulmamış hazineleri gün yüzüne çıkararak arkeoloji dünyasında eşsiz bir dönüm noktası yarattı.",
-      "kategori": "kesif",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Howard_Carter"
+      "yil": 1895,
+      "baslik": "Alfred Nobel'in Vasiyeti ve Nobel Ödülleri",
+      "metin": "İsveçli kimyager ve mucit Alfred Nobel, ölümünün ardından Nobel Ödülleri'nin kurulmasını sağlayacak son vasiyetini imzaladı. Bu adım, dünya çapında bilim ve sanat alanındaki en prestijli ödüllerin doğmasına yol açtı.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Alfred_Nobel"
     },
     {
-      "yil": 1922,
-      "baslik": "İki Renkli Technicolor Kullanan İlk Film: The Toll of the Sea",
-      "metin": "The Toll of the Sea, iki renkli Technicolor teknolojisini kullanan ilk genel vizyon filmi olarak sinema tarihindeki yerini aldı. Başrolünde Anna May Wong'un yer aldığı bu sessiz dram filmi, sinemada renkli dönemin kapılarını araladı.",
+      "yil": 1896,
+      "baslik": "Richard Strauss'un Also sprach Zarathustra Eseri",
+      "metin": "Alman besteci Richard Strauss'un Friedrich Nietzsche'nin aynı adlı eserinden esinlenerek yazdığı Also sprach Zarathustra adlı ton şiiri ilk kez seslendirildi. Eser, klasik müzik repertuarının en bilinen parçalarından biri haline geldi.",
       "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Toll_of_the_Sea"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Also_sprach_Zarathustra"
     },
     {
-      "yil": 1926,
-      "baslik": "Türkiye'nin İlk Şeker Fabrikası Alpullu Faaliyete Geçti",
-      "metin": "Türkiye'nin ilk şeker fabrikası olan Alpullu Şeker Fabrikası Kırklareli'nde işletmeye açıldı. Temeli kısa süre önce atılan tesis, genç Cumhuriyet'in sanayileşme hamlesinde tarihi bir adım olarak üretime başladı.",
+      "yil": 1909,
+      "baslik": "Thomas Edison'un İlk Sesli Film Gösterisi",
+      "metin": "Thomas Edison, tarihteki ilk sesli film gösterisini gerçekleştirdi. Bu gösteri, sinema ve ses teknolojilerinin geleceğini kökten değiştiren adımlardan biri oldu.",
       "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Alpullu_%C5%9Eeker_Fabrikas%C4%B1"
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Thomas_Edison"
     },
     {
-      "yil": 1965,
-      "baslik": "Fransa'nın İlk Uydusu Astérix Uzaya Gönderildi",
-      "metin": "Astérix, Cezayir'deki Hammaguir'den bir Diamant roketiyle yörüngeye fırlatıldı ve Fransa'nın ilk uydusu oldu. Bu başarılı fırlatışla birlikte Fransa, kendi yapay uydusunu uzaya gönderen altıncı ülke unvanını kazandı.",
+      "yil": 1968,
+      "baslik": "Penny Ann Early'nin Profesyonel Basketbol Ligi Maçı",
+      "metin": "Penny Ann Early, Kentucky Colonels formasıyla bir ABA maçına çıkarak büyük profesyonel erkekler basketbol liginde oynayan ilk kadın sporcu oldu. Bu tarihi an, spor dünyasında kadınların varlığı için önemli bir dönüm noktasıydı.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Penny_Ann_Early"
+    },
+    {
+      "yil": 1971,
+      "baslik": "Sovyet Uzay Programı'nın Mars 2 Görevi",
+      "metin": "Sovyet uzay programının Mars 2 yörünge aracı bir iniş modülü bıraktı. Her ne kadar modül arızalanıp çökse de, Mars yüzeyine ulaşan ilk insan yapımı nesne olmayı başardı.",
       "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Ast%C3%A9rix_(satellite)"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Soviet_space_program"
+    },
+    {
+      "yil": 2001,
+      "baslik": "HD 209458 b Gezegeninin Atmosferinde Sodyum Tespiti",
+      "metin": "Astronomlar, Güneş Sistemi dışındaki HD 209458 b gezegeninin atmosferinde sodyum tespit edildiğini duyurdu. Bu gelişme, bir ötegezegenin atmosferinin ölçülebildiği ilk olay olarak kayıtlara geçti.",
+      "kategori": "bilim",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Sodium"
     }
   ]
 }
