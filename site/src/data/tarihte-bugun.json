@@ -1,56 +1,49 @@
 {
-  "tarih": "2026-11-27",
+  "tarih": "2026-11-28",
   "uretenProvider": "gemini",
   "hakemProvider": "groq",
   "olaylar": [
     {
-      "yil": 1701,
-      "baslik": "Anders Celsius'un Doğumu",
-      "metin": "Termometre ölçeğiyle tanınan İsveçli astronom, fizikçi ve matematikçi Anders Celsius dünyaya geldi. Bilim insanı, Uppsala Üniversitesi'nde astronomi profesörlüğü yaparak meteoroloji ve astronomi alanlarına kalıcı katkılar sundu.",
-      "kategori": "dogum",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Anders_Celsius"
-    },
-    {
-      "yil": 1895,
-      "baslik": "Alfred Nobel'in Vasiyeti ve Nobel Ödülleri",
-      "metin": "İsveçli kimyager ve mucit Alfred Nobel, ölümünün ardından Nobel Ödülleri'nin kurulmasını sağlayacak son vasiyetini imzaladı. Bu adım, dünya çapında bilim ve sanat alanındaki en prestijli ödüllerin doğmasına yol açtı.",
-      "kategori": "tarih",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Alfred_Nobel"
-    },
-    {
-      "yil": 1896,
-      "baslik": "Richard Strauss'un Also sprach Zarathustra Eseri",
-      "metin": "Alman besteci Richard Strauss'un Friedrich Nietzsche'nin aynı adlı eserinden esinlenerek yazdığı Also sprach Zarathustra adlı ton şiiri ilk kez seslendirildi. Eser, klasik müzik repertuarının en bilinen parçalarından biri haline geldi.",
-      "kategori": "sanat",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Also_sprach_Zarathustra"
-    },
-    {
-      "yil": 1909,
-      "baslik": "Thomas Edison'un İlk Sesli Film Gösterisi",
-      "metin": "Thomas Edison, tarihteki ilk sesli film gösterisini gerçekleştirdi. Bu gösteri, sinema ve ses teknolojilerinin geleceğini kökten değiştiren adımlardan biri oldu.",
-      "kategori": "icat",
-      "kaynakUrl": "https://tr.wikipedia.org/wiki/Thomas_Edison"
-    },
-    {
-      "yil": 1968,
-      "baslik": "Penny Ann Early'nin Profesyonel Basketbol Ligi Maçı",
-      "metin": "Penny Ann Early, Kentucky Colonels formasıyla bir ABA maçına çıkarak büyük profesyonel erkekler basketbol liginde oynayan ilk kadın sporcu oldu. Bu tarihi an, spor dünyasında kadınların varlığı için önemli bir dönüm noktasıydı.",
-      "kategori": "spor",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Penny_Ann_Early"
-    },
-    {
-      "yil": 1971,
-      "baslik": "Sovyet Uzay Programı'nın Mars 2 Görevi",
-      "metin": "Sovyet uzay programının Mars 2 yörünge aracı bir iniş modülü bıraktı. Her ne kadar modül arızalanıp çökse de, Mars yüzeyine ulaşan ilk insan yapımı nesne olmayı başardı.",
-      "kategori": "uzay",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Soviet_space_program"
-    },
-    {
-      "yil": 2001,
-      "baslik": "HD 209458 b Gezegeninin Atmosferinde Sodyum Tespiti",
-      "metin": "Astronomlar, Güneş Sistemi dışındaki HD 209458 b gezegeninin atmosferinde sodyum tespit edildiğini duyurdu. Bu gelişme, bir ötegezegenin atmosferinin ölçülebildiği ilk olay olarak kayıtlara geçti.",
+      "yil": 1660,
+      "baslik": "Royal Society Kuruldu",
+      "metin": "Robert Boyle, Christopher Wren ve aralarında önde gelen bilim insanlarının da bulunduğu bir grup, Londra'daki Gresham College'da bir araya gelerek bugün Royal Society olarak bilinen köklü bilim topluluğunu kurdu. Bu buluşma, modern bilimsel metodolojinin kurumsallaşmasında dönüm noktası oldu.",
       "kategori": "bilim",
-      "kaynakUrl": "https://en.wikipedia.org/wiki/Sodium"
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Robert_Boyle"
+    },
+    {
+      "yil": 1814,
+      "baslik": "The Times Buharlı Matbaayla Basıldı",
+      "metin": "Londra merkezli The Times gazetesi, Koenig & Bauer ekibi tarafından inşa edilen buhar gücüyle çalışan matbaa presinde üretilen ilk gazete oldu. Bu yenilik, gazetecilik ve basım tarihinde devrim yarattı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/The_Times"
+    },
+    {
+      "yil": 1862,
+      "baslik": "Notts County F.C. Kuruldu",
+      "metin": "İngiltere'nin Nottingham kentinde kurulan Notts County Football Club, profesyonel futbolun bugüne ulaşan en eski kulübü unvanını kazandı. Kulüp, 1862'den beri aralıksız olarak futbol faaliyetlerini sürdürmektedir.",
+      "kategori": "spor",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Notts_County_F.C."
+    },
+    {
+      "yil": 1893,
+      "baslik": "Yeni Zelanda'da Kadınlar İlk Kez Oy Kullandı",
+      "metin": "Yeni Zelanda genel seçimlerinde kadınlar tarihte ilk kez bir ulusal seçimde sandık başına gitti. Bu gelişme, kadınların siyasi haklar mücadelesinde dünya çapında emsal teşkil eden tarihi bir adım oldu.",
+      "kategori": "tarih",
+      "kaynakUrl": "https://tr.wikipedia.org/wiki/Yeni_Zelanda"
+    },
+    {
+      "yil": 1958,
+      "baslik": "SM-65 Atlas Roketinin İlk Uçuşu",
+      "metin": "Amerika Birleşik Devletleri tarafından geliştirilen ilk kıtalararası balistik füze olan SM-65 Atlas, ilk başarılı uçuşunu gerçekleştirdi. Bu tarihi uçuş, uzay ve savunma teknolojisinde yeni bir dönemin kapılarını araladı.",
+      "kategori": "icat",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/SM-65_Atlas"
+    },
+    {
+      "yil": 1967,
+      "baslik": "İlk Pulsar Keşfedildi",
+      "metin": "Astrofizikçi Jocelyn Bell Burnell, radyo teleskop verilerini incelerken tuhaf sinyaller fark etti ve bu sayede evrendeki ilk pulsar keşfedilmiş oldu. Bu dönüm noktası niteliğindeki keşif, astrofizik dünyasında çığır açtı.",
+      "kategori": "uzay",
+      "kaynakUrl": "https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell"
     }
   ]
 }
