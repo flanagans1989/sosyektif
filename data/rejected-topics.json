@@ -1,11 +1,5 @@
 [
   {
-    "parmakIzi": "2026 i̇srail yasama seçimi",
-    "baslik": "2026 İsrail yasama seçimi",
-    "sebep": "uygun değil: Siyaset ve seçimlerle ilgili konular site politikası gereği uygun değildir.",
-    "tarih": "2026-10-28T05:01:50.268Z"
-  },
-  {
     "parmakIzi": "29 ekim cumhuriyet bayramı",
     "baslik": "29 Ekim Cumhuriyet Bayramı",
     "sebep": "\"Cumhuriyet Bayramı\" daha önce işlendi",
@@ -202,5 +196,29 @@
     "baslik": "Doğan Alemdar",
     "sebep": "uygun değil: Yaşayan bir gerçek kişi (Doğan Alemdar) konu odağı olarak seçilemez ve kişi-dışı genel bir odak üretilememiştir.",
     "tarih": "2026-11-27T05:01:29.001Z"
+  },
+  {
+    "parmakIzi": "sera kadıgil",
+    "baslik": "Sera Kadıgil",
+    "sebep": "uygun değil: Yaşayan bir gerçek kişi (siyasetçi) olduğu için site kurallarına göre uygun değildir.",
+    "tarih": "2026-11-28T05:01:36.287Z"
+  },
+  {
+    "parmakIzi": "kassoum ouattara",
+    "baslik": "Kassoum Ouattara",
+    "sebep": "uygun değil: Yaşayan bir gerçek sporcu (futbolcu) olduğu için site politikalarına uygun değil.",
+    "tarih": "2026-11-28T05:01:36.979Z"
+  },
+  {
+    "parmakIzi": "2028 uefa ülkeler sıralaması",
+    "baslik": "2028 UEFA ülkeler sıralaması",
+    "sebep": "\"UEFA ülkeler sıralaması\" daha önce işlendi",
+    "tarih": "2026-11-28T05:01:37.736Z"
+  },
+  {
+    "parmakIzi": "deniz bayramoğlu",
+    "baslik": "Deniz Bayramoğlu",
+    "sebep": "uygun değil: Konu odağı yaşayan bir gerçek kişidir.",
+    "tarih": "2026-11-28T05:01:38.497Z"
   }
 ]

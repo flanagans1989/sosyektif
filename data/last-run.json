@@ -1,11 +1,14 @@
 {
-  "tarih": "2026-11-27T05:02:21.448Z",
+  "tarih": "2026-11-28T05:05:01.545Z",
   "basarili": true,
   "uretilenIcerikSayisi": 1,
   "otomatikYayinlanan": 0,
   "onayaDusen": 1,
-  "reddedilen": 1,
+  "reddedilen": 4,
   "hatalar": [
-    "Doğan Alemdar: uygun değil: Yaşayan bir gerçek kişi (Doğan Alemdar) konu odağı olarak seçilemez ve kişi-dışı genel bir odak üretilememiştir."
+    "Sera Kadıgil: uygun değil: Yaşayan bir gerçek kişi (siyasetçi) olduğu için site kurallarına göre uygun değildir.",
+    "Kassoum Ouattara: uygun değil: Yaşayan bir gerçek sporcu (futbolcu) olduğu için site politikalarına uygun değil.",
+    "2028 UEFA ülkeler sıralaması: \"UEFA ülkeler sıralaması\" daha önce işlendi",
+    "Deniz Bayramoğlu: uygun değil: Konu odağı yaşayan bir gerçek kişidir."
   ]
 }
